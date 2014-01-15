@@ -1,0 +1,227 @@
+\documentclass{beamer}
+\newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+\let\code=\texttt
+\let\proglang=\textsf
+
+\title{Latticist CO2 demo}
+\subtitle{A demonstration of the \pkg{latticist} package}
+\author{Felix Andrews}
+\date{November 2008}
+
+% \VignetteIndexEntry{Latticist CO2 demo}
+% \VignettePackage{latticist}
+
+\begin{document}
+
+\SweaveOpts{echo=FALSE,prefix.string=figs/CO2,width=5,height=4}
+
+<<preliminaries, echo=FALSE, results=hide>>=
+if (!file.exists("figs")) dir.create("figs")
+library(latticist)
+ltheme <- custom.theme.2()
+ltheme$strip.background$col <- grey(7:1 / 8)
+ltheme$strip.shingle$col <- grey(6:0 / 8)
+lattice.options(default.theme = ltheme)
+ps.options(pointsize = 12)
+options(width = 45, continue = " ")
+source("common.R")
+## set up data object
+dat <- CO2
+datArg <- quote(CO2)
+## persistent variables
+spec <- list()
+plotCalls <- list()
+plotNum <- 0
+@
+
+\begin{frame}<handout:0>
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+\begin{frame}[fragile]
+  \frametitle{Introduction}
+  \setlength{\parindent}{3ex}
+
+  \noindent
+  The \pkg{latticist} package provides a graphical user interface for
+  exploratory visualisation in \proglang{R}.
+  It is primarily an interface to the \pkg{lattice}
+  graphics system, but also produces displays from the \pkg{vcd}
+  package for categorical data.
+
+  While latticist is normally used interactively (as a GUI),
+  this document gives a sequence of the plots produced, where each
+  step can be taken in the graphical user interface.
+  Note that the displays can be customised by editing the calls used
+  to generate them (see appendix for full code).
+
+  The dataset here is \code{CO2}, available in \proglang{R}'s
+  \pkg{datasets} package. The data are from an experiment on the cold
+  tolerance of a grass species.
+  The CO2 uptake of six plants from Quebec and six plants from
+  Mississippi was measured at several levels of ambient CO2
+  concentration. Half the plants of each type were chilled overnight
+  before the experiment was conducted. \emph{-- from \code{?CO2}}
+\end{frame}
+
+
+\section{Initial display}
+\begin{frame}[fragile]
+  \frametitle{Initial display}
+<<eval=FALSE, echo=TRUE>>=
+  spec <- list()
+  latticist(CO2, spec = spec)
+@
+<<results=tex>>=
+  plotNum <- plotNum + 1
+  plotCalls[[plotNum]] <-
+    latticistCompose(dat, spec = spec, datArg = datArg)
+  writeCallAndRef(plotCalls[[plotNum]], plotNum)
+@
+\begin{center}
+<<fig=TRUE>>=
+  print(eval(plotCalls[[plotNum]]))
+@
+\end{center}
+\end{frame}
+
+
+\section{Set y variable}
+\begin{frame}[fragile]
+  \frametitle{Set y variable}
+<<echo=TRUE>>=
+  spec$yvar <- "uptake"
+@ %$
+<<results=tex>>=
+  plotNum <- plotNum + 1
+  plotCalls[[plotNum]] <-
+    latticistCompose(dat, spec = spec, datArg = datArg)
+  writeCallAndRef(plotCalls[[plotNum]], plotNum)
+@
+\begin{center}
+<<fig=TRUE>>=
+  print(eval(plotCalls[[plotNum]]))
+@
+\end{center}
+\end{frame}
+
+
+\section{Set x variable}
+\begin{frame}[fragile]
+  \frametitle{Set x variable}
+<<echo=TRUE>>=
+  spec$xvar <- "conc"
+@ %$
+<<results=tex>>=
+  plotNum <- plotNum + 1
+  plotCalls[[plotNum]] <-
+    latticistCompose(dat, spec = spec, datArg = datArg)
+  writeCallAndRef(plotCalls[[plotNum]], plotNum)
+@
+\begin{center}
+<<fig=TRUE>>=
+  print(eval(plotCalls[[plotNum]]))
+@
+\end{center}
+\end{frame}
+
+
+\section{Set grouping variable}
+\begin{frame}[fragile]
+  \frametitle{Set grouping variable}
+<<echo=TRUE>>=
+  spec$groups <- "Treatment"
+@ %$
+<<results=tex>>=
+  plotNum <- plotNum + 1
+  plotCalls[[plotNum]] <-
+    latticistCompose(dat, spec = spec, datArg = datArg)
+  writeCallAndRef(plotCalls[[plotNum]], plotNum)
+@
+\begin{center}
+<<fig=TRUE>>=
+  print(eval(plotCalls[[plotNum]]))
+@
+\end{center}
+\end{frame}
+
+
+\section{Set conditioning variable}
+\begin{frame}[fragile]
+  \frametitle{Set conditioning variable}
+<<echo=TRUE>>=
+  spec$cond <- "Type"
+@ %$
+<<results=tex>>=
+  plotNum <- plotNum + 1
+  plotCalls[[plotNum]] <-
+    latticistCompose(dat, spec = spec, datArg = datArg)
+  writeCallAndRef(plotCalls[[plotNum]], plotNum)
+@
+\begin{center}
+<<fig=TRUE>>=
+  print(eval(plotCalls[[plotNum]]))
+@
+\end{center}
+\end{frame}
+
+
+\section{Each plant separately}
+\begin{frame}[fragile]
+  \frametitle{Each plant separately}
+<<echo=TRUE>>=
+  spec$cond <- "Plant"
+@ %$
+<<results=tex>>=
+  plotNum <- plotNum + 1
+  plotCalls[[plotNum]] <-
+    latticistCompose(dat, spec = spec, datArg = datArg)
+  writeCallAndRef(plotCalls[[plotNum]], plotNum)
+@
+\begin{center}
+<<fig=TRUE>>=
+  print(eval(plotCalls[[plotNum]]))
+@
+\end{center}
+\end{frame}
+
+
+\section{Details}
+\begin{frame}[fragile]
+  \frametitle{Details}
+
+  The results in this document were obtained using \proglang{R}
+  \Sexpr{paste(R.Version()[6:7], collapse = ".")} with the packages
+  \pkg{latticist}
+  \Sexpr{gsub("-", "--", packageDescription("latticist")$Version)#$},
+  \pkg{lattice}
+  \Sexpr{gsub("-", "--", packageDescription("lattice")$Version)#$}, and
+  \pkg{latticeExtra}
+  \Sexpr{gsub("-", "--", packageDescription("latticeExtra")$Version)#$}.
+  \proglang{R} itself and all packages used are available from
+  CRAN at \url{http://CRAN.R-project.org/}.
+  \bigskip
+
+  For an excellent introduction to and coverage of Lattice:
+  \begin{center}
+  \begin{tabular}{|p{0.9\textwidth}|}
+    \hline
+    Sarkar, Deepayan (2008).
+    \emph{Lattice: Multivariate Data Visualization with R},
+    Springer. \url{http://lmdvr.r-forge.r-project.org/}\\
+    \hline
+  \end{tabular}
+  \end{center}
+\end{frame}
+
+
+\section{Appendix: Code}
+
+<<results=tex>>=
+  writePlotCallsAppendix(plotCalls)
+@
+
+\end{document}
+
+

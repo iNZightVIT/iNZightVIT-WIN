@@ -1,0 +1,6 @@
+useDynLib(minqa, .registration = TRUE)
+
+export(bobyqa, newuoa, uobyqa)
+
+S3method(print, minqa)
+

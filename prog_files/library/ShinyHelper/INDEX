@@ -1,0 +1,17 @@
+ShinyHelper-package     Making shiny application creation easier
+checkboxGroupArrayInput
+                        Checkbox Group Input Control (Array Layout)
+createApp               Create the Shiny application from the
+                        accumulated objects
+epi                     2012 Environmental Performance Index Data
+headerPanelAdd          Create a header panel
+injectData              Inject a data set into the Shiny application
+                        under construction
+numericInputAdd         Create a numeric input control
+plotOutputAdd           Create an plot output element
+selectInputAdd          Create a select list input control
+shinySkeleton           Create a skeleton for a Shiny application
+showUI                  Convenience functions for the Shiny application
+                        creation process
+sliderInputAdd          Slider Input Widget
+textInputAdd            Create a text input control

@@ -1,0 +1,13 @@
+custom.theme.black	custom.theme.black
+cutEq	cutEq
+latticeStyleDemo	latticeStyleDemo
+latticeStyleGUI	latticeStyleGUI
+latticeStyleToBasePar	latticeStyleGUI
+latticist	latticist
+latticist.getOption	latticist.options
+latticist.options	latticist.options
+latticistCompose	latticistCompose
+n.level.colors	latticistCompose
+reorderByFreq	cutEq
+simpleColorKey	latticistCompose
+try.prepanel.loess	latticistCompose

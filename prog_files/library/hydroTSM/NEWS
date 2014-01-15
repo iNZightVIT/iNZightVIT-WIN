@@ -1,0 +1,81 @@
+NEWS/ChangeLog for hydroTSM
+--------------------------
+0.4-1	31-May-2013
+        o DESCRIPTION : 'xts' package was added to the 'Imports' section
+        o 'fdc'       :  truncation of some lines in the PDF manual are fixed now.
+        o 'sname2plot':  truncation of some lines in the PDF manual are fixed now.
+
+0.4-0	31-May-2013
+        o major changes: -) all the functions should now be compatible with sub-daily time series. See details below.
+                         -) package is now tested against R 3.0.X
+                         -) updated vignette. Now it includes some examples about computation of extreme indices of daily precipitation.
+                         -) new dataset: 'KarameaAtGorgeQts', with hourly streamflows for the Karamea River(New Zeland), provided by the 
+                            National Institute of Water and Atmospheric Research (http://www.niwa.co.nz/), thanks to the kind collaboration 
+                            of Shailesh Singh.
+                         -) e-mail address of maintainer was changed from the @ing.unit.it to the @gmail.com domain
+                         -) DESCRIPTION: new 'MailingList' field, indicating the r-sig mailing list to be used for questions related to this 
+                            package
+ 
+        o new function: 'subdaily2daily' for aggregating sub-daily values into daily ones
+        o new function: 'subdaily2monthly' for computing monthly values from sub-daily time series        
+        o new function: 'subdaily2annual' for computing annual values from sub-daily time series 
+        o new function: 'subdaily2seasonal' for computing seasonal values for every year of a sub-daily time series
+        o new function: 'hip' for creating a sequence (or counting the number) of hours between two date/time objects   
+        o 'sname2plot'                 : -) new argument 'season.names', to customise the names of the weather seasons used for plotting 
+                                         -) default value for 'dates' argument was set to 1 (before it was missing)  
+        o 'hydroplot'                  : new argument 'season.names', to customise the names of the weather seasons used for plotting 
+        o 'daily2monthly'              : now it handles sub-daily and weekly values         
+        o 'daily2annual'               : now it handles sub-daily, weekly and quarterly values      
+        o 'monthlyfunction'            : now it handles sub-daily values 
+        o 'dm2seasonal'                : -) now it handles sub-daily and weekly values 
+                                         -) improved examples
+        o 'time2season'                : now it handles "POSIXct" and "POSIXt" values       
+        o 'seasonalfunction.zoo'       : season names are now correctly given (instead of just numbers) for zoo objects that are matrix/data.frame 
+                                         as well
+        o 'annualfunction.zoo'         : 'na.rm' argument is now used when the input zoo object is a matrix/data.frame (previously a single value 
+                                          of 1 was artificially introduced to the annual ts of each column when 'na.rm=TRUE', while a single value 
+                                          of 0 was artificially introduced to the annual ts of each column when 'na.rm=FALSE') => generally a very 
+                                          small difference
+        o 'dip'                        : more informative error messages  
+        o 'mip'                        : more informative error messages      
+        o 'yip'                        : more informative error messages                                                        
+        o 'monthlyfunction.matrix'     : default value for 'dates' argument was set to 1 (before it was missing)
+        o 'monthlyfunction.data.frame' : default value for 'dates' argument was set to 1 (before it was missing)  
+        o 'annualfunction.matrix'      : default value for 'dates' argument was set to 1 (before it was missing)
+        o 'annualfunction.data.frame'  : default value for 'dates' argument was set to 1 (before it was missing)  
+        o 'seasonalfunction.matrix'    : default value for 'dates' argument was set to 1 (before it was missing)
+        o 'seasonalfunction.data.frame': default value for 'dates' argument was set to 1 (before it was missing)                                              
+        o 'daily2annual.matrix'        : default value for 'dates' argument was set to 1 (before it was missing)
+        o 'daily2annual.data.frame'    : default value for 'dates' argument was set to 1 (before it was missing)   
+        o 'daily2monthly.matrix'       : default value for 'dates' argument was set to 1 (before it was missing)
+        o 'daily2monthly.data.frame'   : default value for 'dates' argument was set to 1 (before it was missing)  
+        o 'dm2seasonal.matrix'         : default value for 'dates' argument was set to 1 (before it was missing)
+        o 'dm2seasonal.data.frame'     : default value for 'dates' argument was set to 1 (before it was missing) 
+        o 'hydrokrige.data.frame'      : default value for 'dates' argument was set to 1 (before it was missing)    
+        o 'sname2ts'                   : default value for 'dates' argument was set to 1 (before it was missing)  
+        o 'zoo2RHtest'                 : broken links were removed and replaced by new ones. Thanks to Gang Dong and Yan Li !
+        o NAMESPACE                    : functions from packages zoo and xts are now imported explicitly        	
+
+
+###################################################
+# Previous Releases (see old file 'WhatsNew.txt)' #
+###################################################
+
+0.3-6	18-Oct-2012
+0.3-5	04-Jul-2012
+0.3-4	03-May-2012
+0.3-3	07-Nov-2011
+0.3-2	15-Sep-2011
+0.3-1	14-Sep-2011
+0.3-0   01-Sep-2011
+0.2-2	14-Apr-2011
+0.2-1	30-Nov-2010
+0.2-0	10-Oct-2010
+0.1.7	05-Mar-2009 (It was never released, because it finally becomes v0.2-0)
+0.1.6	30-Nov-2009
+0.1.5	16-Nov-2009
+0.1.4	02-Nov-2009
+0.1.3	13-Oct-2009
+0.1.2	01-Oct-2009
+0.1.1	15-Sep-2009
+0.1.0	07-Sep-2009 (but the functions were developed since 2007)

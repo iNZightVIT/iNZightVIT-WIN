@@ -1,0 +1,1 @@
+Season	Cases	ControlsJan-Feb	11	75Dec-Mar	15	96Nov-Apr	20	74Oct-May	27	88Sep-Jun	23	83Aug-Jul	32	87

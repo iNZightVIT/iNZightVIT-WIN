@@ -1,0 +1,14 @@
+create_gist             Function that takes a list of files and creates
+                        payload for API
+get_assets              Create page head for a library
+get_token               Get basic authorization token from Github using
+                        curl
+post_gist               Publish a list of files as a gist
+rPlot                   Main plotting function
+renderChart             renderChart (use with Shiny)
+showOutput              Use rCharts as Shiny output. First, use
+                        'renderChart' in 'server.R' to assign the chart
+                        object to an Shiny output. Then create an
+                        chartOutput with the same name in #' 'ui.R'.
+                        'chartOutput' is currently just an alias for
+                        'htmlOutput'.

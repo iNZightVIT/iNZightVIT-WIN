@@ -1,0 +1,35 @@
+%<a-%                   Create an active binding.
+%<c-%                   Create a constant (locked) binding.
+%<d-%                   Create an delayed binding.
+address                 Return the memory address of an R object.
+call_tree               Display a call (or expression) as a tree.
+compose                 Compose multiple functions
+dots                    Capture unevaluated dots.
+f                       A compact syntax for anonymous functions.
+fget                    Find a function with specified name.
+find_funs               Find functions matching criteria.
+ftype                   Determine function type.
+inspect                 Inspect internal attributes of R objects.
+is_promise              Promise info
+make_function           Make a function from its components.
+method_from_call        Given a function class, find correspoding S4
+                        method
+modify_lang             Recursively modify a language object
+otype                   Determine object type.
+parent_promise          Find the parent (first) promise.
+parenv                  Get parent/ancestor environment
+partial                 Partial apply a function, filling in some
+                        arguments.
+rebind                  Rebind an existing name.
+rls                     Recursive ls.
+standardise_call        Standardise a function call
+subs                    A version of substitute that works in the
+                        global environment.
+substitute2             A version of substitute that evaluates its
+                        first argument.
+track_copy              Track if an object is copied
+typename                Determine the C typename associated with a
+                        name.
+unenclose               Unenclose a closure.
+uneval                  Capture the call associated with a promise.
+where                   Find where a name is defined.

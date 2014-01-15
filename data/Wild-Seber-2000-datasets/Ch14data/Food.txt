@@ -1,0 +1,1 @@
+Food	Expenditure	WeightFruit.Vege	15.6	0.1555Meat	18.5	0.1844Grocery	47.1	0.4696Meals.out	19.1	0.1904

@@ -1,0 +1,9 @@
+allPartialResPlots      Draws multiple partial residual plots
+histogramArray          Histogram Array
+iNZightSummary          Informative summary information for linear
+                        models
+moecalc                 Margin of Error Calculations
+multicomp               Multiple Comparisons Between Factor Levels
+partialResPlot          Partial residual plots
+plotlm6                 Extended Plot Diagnostics for (g)lm models
+qqplotArray             QQ Plot Array

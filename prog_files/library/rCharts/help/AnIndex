@@ -1,0 +1,9 @@
+create_gist	create_gist
+get_assets	get_assets
+get_token	get_token
+post_gist	post_gist
+renderChart	renderChart
+rPlot	rPlot
+showOutput	showOutput
+toChain	toChain
+toJSONArray	toJSONArray

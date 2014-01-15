@@ -1,0 +1,1 @@
+sites	Male.New	Female.New	Male.Deaths	Female.DeathsOral	20.6	9.7	5.2	2.8Colo.Rectum	79	77	28.9	29.4Lung	102	66	93	53Skin	17	15	4.1	2.6Breast	1	180	0.3	46Uterus	0	45.5	0	10Prostate	99	0	28	0Other	246.4	171.8	115.5	101.2

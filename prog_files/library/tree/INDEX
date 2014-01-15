@@ -1,0 +1,16 @@
+cv.tree                 Cross-validation for Choosing Tree Complexity
+deviance.tree           Extract Deviance from a Tree Object
+misclass.tree           Misclassifications by a Classification Tree
+na.tree.replace         Replace NAs in Predictor Variables
+partition.tree          Plot the Partitions of a simple Tree Model
+plot.tree               Plot a Tree Object
+plot.tree.sequence      Plot a Tree Sequence
+predict.tree            Predictions from a Fitted Tree Object
+prune.tree              Cost-complexity Pruning of Tree Object
+snip.tree               Snip Parts of Tree Objects
+text.tree               Annotate a Tree Plot
+tile.tree               Add Class Barcharts to a Classification Tree
+                        Plot
+tree                    Fit a Classification or Regression Tree
+tree.control            Select Parameters for Tree
+tree.screens            Split Screen for Plotting Trees

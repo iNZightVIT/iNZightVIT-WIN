@@ -1,0 +1,16 @@
+Package: statmod
+Version: 1.4.18
+Date: 2013/09/27
+Title: Statistical Modeling
+Author: Gordon Smyth [cre, aut], Yifang Hu [ctb], Peter Dunn [ctb], Belinda Phipson [ctb], Yunshun Chen [ctb]
+Maintainer: Gordon Smyth <smyth@wehi.edu.au>
+Depends: R (>= 1.6.1)
+Suggests: MASS, tweedie
+Description: Various statistical modeling functions including growth curve comparisons, limiting dilution analysis, mixed linear models, heteroscedastic regression, Tweedie family generalized linear models, the inverse-Gaussian distribution and Gauss quadrature.
+License: GPL (>= 2)
+Packaged: 2013-09-27 09:41:42 UTC; smyth
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2013-09-27 11:53:12
+Built: R 3.0.2; x86_64-w64-mingw32; 2013-12-05 22:27:45 UTC; windows
+Archs: i386, x64

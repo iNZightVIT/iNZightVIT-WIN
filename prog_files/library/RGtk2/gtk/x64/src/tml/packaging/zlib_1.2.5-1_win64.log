@@ -1,0 +1,32 @@
+++ patch -p0
+patching file zconf.h
+patching file zlib.h
+patching file zutil.h
+patching file gzguts.h
+patching file gzlib.c
+patching file win32/zlib.def
+++ x86_64-w64-mingw32-windres --define GCC_WINDRES -o zlibrc.o -v win32/zlib1.rc
+Using `c:\opt\mingw64\bin\x86_64-w64-mingw32-gcc -E -xc -DRC_INVOKED -DGCC_WINDRES win32/zlib1.rc'
+Using popen to read preprocessor output
+++ x86_64-w64-mingw32-gcc -O3 -Wall -shared win32/zlib.def -o zlib1.dll -Wl,--out-implib,libz.dll.a adler32.c compress.c crc32.c deflate.c gzclose.c gzlib.c gzread.c gzwrite.c infback.c inffast.c inflate.c inftrees.c trees.c uncompr.c zutil.c zlibrc.o
+Creating library file: libz.dll.a
+++ lib -def:win32/zlib.def -machine:X64 -name:zlib1.dll -out:zdll.lib
+Microsoft (R) Library Manager Version 9.00.30729.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+   Creating library zdll.lib and object zdll.exp
+++ mkdir -p c:/devel/target/5a0166769a42c52f6b9e6fda12b0e889/bin c:/devel/target/5a0166769a42c52f6b9e6fda12b0e889/include c:/devel/target/5a0166769a42c52f6b9e6fda12b0e889/lib
+++ cp zlib1.dll c:/devel/target/5a0166769a42c52f6b9e6fda12b0e889/bin
+++ cp libz.dll.a c:/devel/target/5a0166769a42c52f6b9e6fda12b0e889/lib
+++ cp zdll.lib win32/zlib.def c:/devel/target/5a0166769a42c52f6b9e6fda12b0e889/lib
+++ cp zlib.h zconf.h c:/devel/target/5a0166769a42c52f6b9e6fda12b0e889/include
+++ rm -f /tmp/zlib_1.2.5-1_win64.zip /tmp/zlib-dev_1.2.5-1_win64.zip
+++ cd /devel/target/5a0166769a42c52f6b9e6fda12b0e889
+++ zip /tmp/zlib_1.2.5-1_win64.zip bin/zlib1.dll
+  adding: bin/zlib1.dll (200 bytes security) (deflated 60%)
+++ zip -r -D /tmp/zlib-dev_1.2.5-1_win64.zip lib include
+  adding: lib/libz.dll.a (200 bytes security) (deflated 93%)
+  adding: lib/zdll.lib (200 bytes security) (deflated 82%)
+  adding: lib/zlib.def (200 bytes security) (deflated 64%)
+  adding: include/zconf.h (200 bytes security) (deflated 70%)
+  adding: include/zlib.h (200 bytes security) (deflated 73%)

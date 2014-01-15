@@ -1,0 +1,7 @@
+clear_caches            Clear all roxygen caches.
+collate_roclet          Roclet: make Collate field in DESCRIPTION.
+namespace_roclet        Roclet: make NAMESPACE.
+rd_roclet               Roclet: make Rd files.
+roxygen                 Literate Programming in R
+roxygenize              Process a package with the Rd, namespace and
+                        collate roclets.

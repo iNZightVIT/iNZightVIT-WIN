@@ -1,0 +1,1 @@
+region	radiation	percentMiddle.Atlantic	23	2.2South.Atlantic	20	2.4New.England	22	1.9East.North-Central	29	3.9West.North-Central	32	3.6East.Southern	21	2.6Central.Southern	16	0.0Mountain	37	4.2pacific	44	5.0

@@ -1,0 +1,1 @@
+Faculty	ses1	ses2	ses3	ses4	ses5	ses6Arts	895	1095	739	616	189	157Commerce	446	617	320	242	69	49Science	242	330	213	194	51	36Engineering	254	261	190	146	39	26Arcitecture	177	144	106	96	19	15Law	170	140	106	80	15	15Medicine	184	120	78	39	9	9

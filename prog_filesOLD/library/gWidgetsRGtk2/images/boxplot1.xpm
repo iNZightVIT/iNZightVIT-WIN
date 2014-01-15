@@ -1,0 +1,23 @@
+/* XPM */
+static char * g_hbox_xpm[] = {
+"20 16 4 1",
+" 	c #FFFFFFFFFFFF",
+".	c #000000000000",
+"X	c #618514511040",
+"o	c #FFFF0000FFFF",
+"                    ",
+"....................",
+".                  .",
+".   XXXXXX         .",
+". X XooooX X       .",
+". XXXooooXXX       .",
+". X XooooX X       .",
+".   XXXXXX         .",
+".          XXXX    .",
+".       X  XooX  X .",
+".       XXXXooXXXX .",
+".       X  XooX  X .",
+".          XXXX    .",
+".                  .",
+"....................",
+"                    "};

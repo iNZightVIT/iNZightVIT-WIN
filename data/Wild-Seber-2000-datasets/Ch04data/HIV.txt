@@ -1,0 +1,1 @@
+country	AIDS	PopulationUS	218301	252.7Canada	6116	26.7Aus	3238	16.8NZ	323	3.4UK	5451	57.3Ireland	142	3.6

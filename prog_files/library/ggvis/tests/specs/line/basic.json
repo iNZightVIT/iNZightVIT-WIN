@@ -1,0 +1,117 @@
+{
+	"data" : [
+		{
+			"name" : "df_176991690869283a6ffde232ed9aa63c",
+			"format" : {
+				"type" : "csv",
+				"parse" : {
+					"x" : "number",
+					"y" : "number"
+				}
+			},
+			"values" : "\"x\",\"y\"\n0.825354,0.1755048\n0.483322,0.9252008\n0.022078,0.6054964\n0.396723,0.8794503\n0.838725,0.3620446\n0.592421,0.2395159\n0.706805,0.0064791\n0.012628,0.1549140\n0.150009,0.5741544\n0.060366,0.7329625\n0.192939,0.4898781\n0.575030,0.8700661"
+		}
+	],
+	"scales" : [
+		{
+			"name" : "x",
+			"type" : "linear",
+			"reverse" : false,
+			"round" : false,
+			"clamp" : false,
+			"nice" : true,
+			"zero" : false,
+			"range" : "width",
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "df_176991690869283a6ffde232ed9aa63c",
+						"field" : "data.x"
+					}
+				]
+			}
+		},
+		{
+			"name" : "y",
+			"type" : "linear",
+			"reverse" : false,
+			"round" : false,
+			"clamp" : false,
+			"nice" : true,
+			"zero" : false,
+			"range" : "height",
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "df_176991690869283a6ffde232ed9aa63c",
+						"field" : "data.y"
+					}
+				]
+			}
+		}
+	],
+	"marks" : [
+		{
+			"type" : "line",
+			"properties" : {
+				"update" : {
+					"stroke" : {
+						"value" : "#000000"
+					},
+					"x" : {
+						"scale" : "x",
+						"field" : "data.x"
+					},
+					"y" : {
+						"scale" : "y",
+						"field" : "data.y"
+					}
+				},
+				"ggvis" : {
+					"data" : {
+						"value" : "df_176991690869283a6ffde232ed9aa63c"
+					}
+				}
+			},
+			"from" : {
+				"data" : "df_176991690869283a6ffde232ed9aa63c"
+			}
+		}
+	],
+	"width" : 600,
+	"height" : 400,
+	"legends" : [],
+	"axes" : [
+		{
+			"type" : "x",
+			"scale" : "x",
+			"orient" : "bottom",
+			"layer" : "back",
+			"grid" : true,
+			"title" : "x"
+		},
+		{
+			"type" : "y",
+			"scale" : "y",
+			"orient" : "left",
+			"layer" : "back",
+			"grid" : true,
+			"title" : "y"
+		}
+	],
+	"padding" : null,
+	"ggvis_opts" : {
+		"width" : 600,
+		"height" : 400,
+		"keep_aspect" : false,
+		"resizable" : true,
+		"padding" : {},
+		"duration" : 250,
+		"renderer" : "canvas",
+		"hover_duration" : 0,
+		"enter_duration" : 250,
+		"exit_duration" : 250,
+		"brush_policy" : "debounce",
+		"brush_delay" : 250
+	}
+}

@@ -1,0 +1,14 @@
+bootsempls              Bootstrap a PLS path model
+hanafi2007              Hanafi (2007): Example Data
+mobi                    Measurement Instrument for the Mobile Phone
+                        Industry
+pathDiagram             Draw Path Diagram
+plsm                    Specification of Path Model
+plsm2sem                Convert Model for Use in 'sem'
+plsmUtils               Utility methods for 'plsm' objects.
+read.splsm              Import of XML Model Description Specified in
+                        SmartPLS
+sempls                  Structural Equation Modeling by Partial Least
+                        Squares
+semplsGOF               Quality Indices and Goodness of fit measures
+                        for pls path models

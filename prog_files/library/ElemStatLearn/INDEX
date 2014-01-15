@@ -1,0 +1,26 @@
+SAheart                 South African Hearth Disease Data
+bone                    Bone Mineral Density Data
+countries               Country Dissimilarities
+galaxy                  Galaxy Data
+marketing               Market Basket Analysis
+mixture.example         Mixture Example
+nci                     NCI microarray data (chap 14)
+orange10.test           Simulated Orange Data
+orange10.train          Simulated Orange Data
+orange4.test            Simulated Orange Data
+orange4.train           Simulated Orange Data
+ozone                   Ozone Data
+phoneme                 Data From a Acoustic-Phonetic Continuous Speech
+                        Corpus
+prostate                Prostate Cancer Data
+simple.ridge            Simple Ridge Regression
+spam                    Email Spam Data
+vowel.test              Vowel Recognition (Deterding data)
+vowel.train             Vowel Recognition (Deterding data)
+waveform                Function to simulate waveform data
+waveform.test           Simulated Waveform Data
+waveform.train          Simulated Waveform Data
+zip.test                Handwritten Digit Recognition Data
+zip.train               Handwritten Digit Recognition Data
+zip2image               function to convert row of zip file to format
+                        used by image()

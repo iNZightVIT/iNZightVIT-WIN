@@ -1,0 +1,64 @@
+Acf                     (Partial) Autocorrelation Function Estimation
+Arima                   Fit ARIMA model to univariate time series
+BoxCox                  Box Cox Transformation
+BoxCox.lambda           Automatic selection of Box Cox transformation
+                        parameter
+CV                      Cross-validation statistic
+accuracy                Accuracy measures for forecast model
+arfima                  Fit a fractionally differenced ARFIMA model
+arima.errors            ARIMA errors
+auto.arima              Fit best ARIMA model to univariate time series
+bats                    BATS model (Exponential smoothing state space
+                        model with Box-Cox transformation, ARMA errors,
+                        Trend and Seasonal components)
+croston                 Forecasts for intermittent demand using
+                        Croston's method
+dm.test                 Diebold-Mariano test for predictive accuracy
+dshw                    Double-Seasonal Holt-Winters Forecasting
+ets                     Exponential smoothing state space model
+fitted.Arima            One-step in-sample forecasts using ARIMA models
+forecast                Forecasting time series
+forecast.Arima          Forecasting using ARIMA or ARFIMA models
+forecast.HoltWinters    Forecasting using Holt-Winters objects
+forecast.StructTS       Forecasting using Structural Time Series models
+forecast.bats           Forecasting using BATS and TBATS models
+forecast.ets            Forecasting using ETS models
+forecast.lm             Forecast a linear model with possible time
+                        series components
+forecast.stl            Forecasting using stl objects
+gas                     Australian monthly gas production
+getResponse             Get response variable from time series model.
+gold                    Daily morning gold prices
+logLik.ets              Log-Likelihood of an ets object
+ma                      Moving-average smoothing
+meanf                   Mean Forecast
+monthdays               Number of days in each season
+msts                    Multi-Seasonal Time Series
+na.interp               Interpolate missing values in a time series
+naive                   Naive forecasts
+ndiffs                  Number of differences required for a stationary
+                        series
+nnetar                  Neural Network Time Series Forecasts
+plot.bats               Plot components from BATS model
+plot.ets                Plot components from ETS model
+plot.forecast           Forecast plot
+rwf                     Random Walk Forecast
+seasadj                 Seasonal adjustment
+seasonaldummy           Seasonal dummy variables
+seasonplot              Seasonal plot
+ses                     Exponential smoothing forecasts
+simulate.ets            Simulation from a time series model
+sindexf                 Forecast seasonal index
+splinef                 Cubic Spline Forecast
+subset.ts               Subsetting a time series
+taylor                  Half-hourly electricity demand
+tbats                   TBATS model (Exponential smoothing state space
+                        model with Box-Cox transformation, ARMA errors,
+                        Trend and Seasonal components)
+tbats.components        Extract components of a TBATS model
+thetaf                  Theta method forecast
+tsdisplay               Time series display
+tslm                    Fit a linear model with time series components
+wineind                 Australian total wine sales
+woolyrnq                Quarterly production of woollen yarn in
+                        Australia

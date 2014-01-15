@@ -1,0 +1,79 @@
+citHeader("To cite package 'pgmm' in publications use:")
+     
+     ## R >= 2.8.0 passes package metadata to citation().
+     if(!exists("meta") || is.null(meta)) meta <- packageDescription("pgmm")
+     year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+     vers <- paste("R package version", meta$Version)
+
+citEntry(entry="Manual",
+              title = "pgmm: Parsimonious Gaussian Mixture Models",
+              author = personList(as.person("Paul D. McNicholas"),as.person("K. Raju Jampani"),as.person("Aaron F. McDaid"),
+                                  as.person("T. Brendan Murphy"),as.person("Larry Banks")),
+              year = year,
+              note = vers,
+              textVersion = paste("Paul D. McNicholas, K. Raju Jampani, Aaron F. McDaid, T. Brendan Murphy and Larry Banks (", year, "). pgmm: Parsimonious Gaussian Mixture Models. ", vers, ".", sep="")
+)
+
+citEntry(entry = "TechReport",
+     	title = "pgmm Version 1.0 for R: Model-based clustering and classification via latent Gaussian mixture models",
+     	author = personList(as.person("Paul D. McNicholas"),as.person("T. Brendan Murphy"),as.person("K. Raju Jampani"),as.person("Aaron F. McDaid"),as.person("Larry Banks")),
+	textVersion = paste("Paul D. McNicholas, K. Raju Jampani, Aaron F. McDaid, T. Brendan Murphy, Larry Banks. (2011). pgmm Version 1.0 for R: Model-based clustering and classification via latent Gaussian mixture models. Technical Report 2011-320, Department of Mathematics and Statistics, University of Guelph, Ontario, Canada."),
+     	year = "2011",
+     	institution = "Department of Mathematics and Statistics, University of Guelph",
+	address = "Ontario, Canada",
+	number = "2011-320",
+)
+
+citEntry(entry = "Article",
+     	title = "Model-Based Clustering of Microarray Expression Data via Latent Gaussian Mixture Models",
+     	author = personList(as.person("Paul D. McNicholas"),as.person("T. Brendan Murphy")),
+	textVersion = paste("Paul D. McNicholas and T. Brendan Murphy (2010). Model-based clustering of microarray expression data via latent Gaussian mixture models. Bioinformatics 26(21), 2705-2712."),
+     	year = "2010",
+     	journal = "Bioinformatics",
+     	volume = "26",
+     	number = "21",
+     	pages  = "2705--2712",
+)
+
+citEntry(entry = "Article",
+     	title = "Model-Based Classification Using Latent Gaussian Mixture Models",
+     	author = personList(as.person("Paul D. McNicholas")),
+	textVersion = paste("Paul D. McNicholas (2010). Model-based classification using latent Gaussian mixture models. Journal of Statistical Planning and Inference 140(5), 1175-1181."),
+     	year = "2010",
+     	journal = "Journal of Statistical Planning and Inference",
+     	volume = "140",
+     	number = "5",
+     	pages  = "1175--1181",
+)
+
+citEntry(entry="Article",
+	title = "Serial and Parallel Implementations of Model-Based Clustering via Parsimonious Gaussian Mixture Models",
+        author = personList(as.person("Paul D. McNicholas"),as.person("T. Brendan Murphy"),
+	                    as.person("Aaron F. McDaid"),as.person("Dermot Frost")),
+        year = 2010,
+        journal = "Computational Statistics and Data Analysis",
+	volume = "54",
+     	number = "3",
+     	pages  = "711--723",
+        textVersion = paste("Paul D. McNicholas, T. Brendan Murphy, Aaron F. McDaid and Dermot Frost (2010). Serial and parallel implementations of model-based clustering via parsimonious Gaussian mixture models. Computational Statistics and Data Analysis 54(3), 711-723."),
+)
+
+citEntry(entry = "Article",
+     	title = "Parsimonious Gaussian Mixture Models",
+     	author = personList(as.person("Paul D. McNicholas"),as.person("T. Brendan Murphy")),
+	textVersion = paste("Paul D. McNicholas and T. Brendan Murphy (2008). Parsimonious Gaussian mixture models. Statistics and Computing 18(3), 285-296."),
+     	year = "2008",
+     	journal = "Statistics and Computing",
+     	volume = "18",
+     	number = "3",
+     	pages  = "285--296",
+)
+
+citEntry(entry = "TechReport",
+     	title = "Parsimonious Gaussian Mixture Models",
+     	author = personList(as.person("Paul D. McNicholas"),as.person("T. Brendan Murphy")),
+	textVersion = paste("Paul D. McNicholas and T. Brendan Murphy (2005). Parsimonious Gaussian mixture models. Technical Report 05/11, Department of Statistics, Trinity College Dublin."),
+     	year = "2005",
+     	institution = "Department of Statistics, Trinity College Dublin",
+	number = "05/11",
+)

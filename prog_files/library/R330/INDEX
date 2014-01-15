@@ -1,0 +1,52 @@
+HLstat                  Performs a Hosmer-Lemeshow test
+R330-package            Useful functions for Stats 330
+ROC.curve               draws an ROC curve
+WB.test                 Performs a Weisberg-Bingham test for normality
+acc.df                  Data from the Auckland City Council
+acet.df                 Acetylene Data
+ad.df                   Advertising data
+added.variable.plots    Draws an added variable plot for each
+                        independent variable
+allpossregs             Calculates all possible regressions
+births.df               Risk factors for low birthweight
+boxcoxplot              Draws a Box-Cox plot
+budworm.df              Budworm data
+cancer.df               Death Rates for Child Cancer
+chd.df                  Coronary heart disease data
+chem.df                 Yield of Chemical Process
+cherry.df               Girth, Height and Volume for Black Cherry Trees
+chickwts.df             Chicken Weights Data
+coag.df                 Blood Coagulation Data
+cross.val               Calculates cross-validated estimates of
+                        prediction error
+cycles.df               Cycles to failure of worsted yarn
+diets.df                Weight gains of rats
+drug.df                 Drug addiction data
+educ.df                 Educations expenditure data
+err.boot                Calculates a bootstrap estimate of prediction
+                        error
+ethanol.df              Engine exhaust fumes from burning ethanol
+evap.df                 Moisture evaporation data
+fatty.df                Fatty acid data
+funnel                  Plots for checking for unequal variances
+housing.df              Housing conditions satisfaction
+influenceplots          Draws plots of influence measures
+ingots.df               Unreadiness for rolling of metal ingots
+kyphosis.df             Data on Children who have had Corrective Spinal
+                        Surgery
+lizard.df               Lizard data
+metal.df                Metal Removal
+mines.df                Mining accident data
+onions.df               Onion growing data
+plum.df                 Plum tree data
+rats.df                 Rat growth data
+reg3d                   3d plot of data
+rubber.df               Rubber Specimen Data
+salary.df               Study of Supervisor Performance
+sport.df                Australian Institute of Sport
+stamford.df             Maximum Daily Ozone Concertrations
+test.lc                 tests hypothesis cc^Tb=c
+traffic.df              Highway accdient rates
+vapour.df               Hydrocarbon data
+vaso.df                 vaso-constriction data
+wine.df                 Bordeaux Wine data

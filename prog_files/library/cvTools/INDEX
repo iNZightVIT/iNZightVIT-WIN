@@ -1,0 +1,21 @@
+accessors               Access or set information on cross-validation
+                        results
+aggregate.cv            Aggregate cross-validation results
+bwplot.cv               Box-and-whisker plots of cross-validation
+                        results
+cost                    Prediction loss
+cvFit                   Cross-validation for model evaluation
+cvFolds                 Cross-validation folds
+cvReshape               Reshape cross-validation results
+cvSelect                Model selection based on cross-validation
+cvTool                  Low-level function for cross-validation
+cvTools-package         Cross-validation tools for regression models
+cvTuning                Cross-validation for tuning parameter selection
+densityplot.cv          Kernel density plots of cross-validation
+                        results
+dotplot.cv              Dot plots of cross-validation results
+plot.cv                 Plot cross-validation results
+repCV                   Cross-validation for linear models
+subset.cv               Subsetting cross-validation results
+summary.cv              Summarize cross-validation results
+xyplot.cv               X-Y plots of cross-validation results

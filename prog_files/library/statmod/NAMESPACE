@@ -1,0 +1,5 @@
+#  Calling the dynamic library
+useDynLib(statmod)
+
+#  All functions exported other than those starting with "."
+exportPattern("^[^\\.]")

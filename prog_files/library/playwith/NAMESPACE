@@ -1,0 +1,117 @@
+useDynLib(playwith, do_interrupt)
+
+import(RGtk2)
+import(gWidgets)
+import(gridBase)
+#import(grid) ## gridBase needs grid attached
+import(grDevices)
+importFrom(graphics, par, plot)
+importFrom(stats, case.names)
+import(utils)
+
+## playwith.R
+export(playwith,
+       playNewPlot,
+       playReplot,
+       plotOnePage)
+
+## parameterControlTool.R
+export(parameterControlTool)
+
+## autoplay.R
+export(autoplay)
+
+## settings.R
+export(playwith.options,
+       playwith.getOption)
+
+## apiMain.R
+export(playwith.history)
+export(playDevCur,
+       playDevSet,
+       playDevList,
+       playDevOff,
+       callArg,
+       "callArg<-",
+       mainCall,
+       "mainCall<-",
+       updateMainCall,
+       rawXLim,
+       rawYLim,
+       "rawXLim<-",
+       "rawYLim<-",
+       playSourceCode,
+       playPrompt,
+       playFreezeGUI,
+       playThawGUI)
+S3method(print, playState)
+
+## apiIdentify.R
+export(playSelectData,
+       playGetIDs,
+       playSetIDs,
+       playClear,
+       playUndo,
+       playUnlink,
+       updateLinkedSubscribers)
+
+## apiAnnotation.R
+export(playAnnotate,
+       playDo,
+       playPointInput,
+       playLineInput,
+       playRectInput)
+
+## apiData.R
+export(getDataArg,
+       xyCoords,
+       xyData,
+       spaceCoordsToDataCoords,
+       dataCoordsToSpaceCoords)
+
+## plotCoords.R
+export(plotCoords,
+       plotCoords.plot,
+       plotCoords.biplot)
+S3method(plotCoords, default)
+S3method(plotCoords, qqnorm)
+S3method(plotCoords, qqplot)
+S3method(plotCoords.plot, default)
+S3method(plotCoords.plot, SpatialPoints)
+S3method(plotCoords.plot, SpatialPointsDataFrame)
+S3method(plotCoords.plot, dendrogram)
+S3method(plotCoords.plot, hclust)
+S3method(plotCoords.plot, mca)
+#S3method(plotCoords.biplot, default)
+#S3method(plotCoords.biplot, prcomp)
+#S3method(plotCoords.biplot, princomp)
+S3method(plotCoords, qqmath)
+S3method(plotCoords, cloud)
+S3method(plotCoords, parallel)
+S3method(plotCoords, splom)
+S3method(case.names, SpatialPoints)
+S3method(case.names, SpatialPointsDataFrame)
+S3method(case.names, dendrogram)
+S3method(case.names, hclust)
+S3method(case.names, prcomp)
+S3method(case.names, princomp)
+S3method(case.names, mca)
+S3method(case.names, zoo)
+S3method(case.names, Date)
+S3method(case.names, POSIXt)
+S3method(case.names, yearmon)
+S3method(case.names, yearqtr)
+
+## gridwork.R
+export(convertFromDevicePixels,
+       convertToDevicePixels,
+       inViewport,
+       grobBBDevicePixels,
+       grobBoundingBoxes,
+       showGrobsBB,
+       identifyGrob)
+
+## panel.misc.R
+export(panel.usertext,
+       panel.brushpoints,
+       panel.brushlines)

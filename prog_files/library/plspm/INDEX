@@ -1,0 +1,30 @@
+arizona                 Arizona vegetation dataset
+cereals                 Cereals datset
+college                 College datasets
+futbol                  Futbol dataset from Spain-England-Italy
+innerplot               Plot inner model
+it.reb                  Iterative steps of Response-Based Unit
+                        Segmentation (REBUS)
+local.models            PLS-PM for global and local models
+mobile                  ECSI Mobile Phone Provider dataset
+offense                 Offense dataset
+orange                  Orange Juice dataset
+outerplot               Plot outer model
+plot.plspm              Plots for PLS Path Models
+plspm                   PLS-PM: Partial Least Squares Path Modeling
+plspm-package           Tools for Partial Least Squares Path Modeling
+plspm.fit               Basic results for Partial Least Squares Path
+                        Modeling
+plspm.groups            Two Groups Comparison in PLS-PM
+rebus.pls               Response Based Unit Segmentation (REBUS)
+rebus.test              Permutation Test for REBUS Multi-Group
+                        Comparison
+res.clus                Cluster Analysis on communality and structural
+                        residuals of a PLS-PM object
+rescale                 Rescale Latent Variable Scores
+russett                 Russett dataset
+satisfaction            Satisfaction dataset
+simdata                 Simulated data for REBUS with two groups
+spainfoot               Spanish football dataset
+technology              Technology data set
+wines                   Wines dataset

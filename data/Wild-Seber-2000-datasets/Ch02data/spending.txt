@@ -1,0 +1,1 @@
+country	spendingAustralia	4.0Britain	13.0Canada	7.0France	8.0Netherlands	2.0Italy	5.5Japan	30.0Spain	5.5US	87.0WestGermany	10.0

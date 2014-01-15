@@ -1,0 +1,19 @@
+Package: iNZightRegression
+Type: Package
+Title: iNZightRegression
+Version: 0.0.2-20130803
+Date: 2012-09-10
+Authors@R: c(person("Simon", "Potter", role = c("aut", "cre"),
+                    email = "spot023@aucklanduni.ac.nz"),
+             person("David", "Banks", role = "aut"))
+Depends: R (>= 2.13)
+Imports: grid, car
+Suggests: iNZight
+Enhances: iNZight
+Description: Core functions for iNZight
+License: GPL-2
+Packaged: 2013-08-03 03:28:02 UTC; simon
+Author: Simon Potter [aut, cre],
+  David Banks [aut]
+Maintainer: Simon Potter <spot023@aucklanduni.ac.nz>
+Built: R 3.0.1; ; 2013-08-03 03:28:03 UTC; unix

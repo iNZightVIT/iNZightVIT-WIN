@@ -1,0 +1,1 @@
+issue	A.mean	A.std	B.mean	B.stdvalue.4.money	6.8	0.2	7	0.3program	5.5	0.2	7.3	0.3safety	8.8	0.4	4.1	0.8comfort	7.4	0.8	6.2	1.2care.4.envir	6.2	0.5	5.1	0.4

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: classes and methods for spatio-temporal data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+<h1> classes and methods for spatio-temporal data
+<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]">
+</h1>
+<hr>
+<div align="center">
+<a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
+<a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
+</div><h2>Documentation for package &lsquo;spacetime&rsquo; version 1.0-9</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../demo">Code demos</a>.  Use <a href="../../utils/help/demo">demo()</a> to run them.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td width="25%"><a href="ST-class.html">$-method</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">$&lt;--method</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="over.html">aggregate-method</a></td>
+<td>consistent spatio-temporal overlay for objects inheriting from ST</td></tr>
+<tr><td width="25%"><a href="air.html">air</a></td>
+<td>Air quality data, rural background PM10 in Germany, daily averages 1998-2009</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">as.data.frame.STF</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="unstack.html">as.data.frame.STFDF</a></td>
+<td>write STFDF to table forms</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">as.data.frame.STI</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">as.data.frame.STIDF</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">as.data.frame.STS</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">as.data.frame.STSDF</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">as.zoo</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">as.zoo.STFDF</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">cbind.ST</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">coerce-method</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">coerce-method</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">coerce-method</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">coerce-method</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="delta.html">delta</a></td>
+<td>find default time interval end points when intervals are regular</td></tr>
+<tr><td width="25%"><a href="air.html">DE_NUTS1</a></td>
+<td>Air quality data, rural background PM10 in Germany, daily averages 1998-2009</td></tr>
+<tr><td width="25%"><a href="ST-class.html">dim.ST</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="eof.html">EOF</a></td>
+<td>Compute spatial or temporal empirical orthogonal function (EOF)</td></tr>
+<tr><td width="25%"><a href="fires.html">fires</a></td>
+<td>Northern Los Angeles County Fires</td></tr>
+<tr><td width="25%"><a href="timematch.html">index</a></td>
+<td>match two (time) sequences</td></tr>
+<tr><td width="25%"><a href="ST-class.html">is.projected-method</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">ltraj-class</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="timematch.html">MATCH</a></td>
+<td>match two (time) sequences</td></tr>
+<tr><td width="25%"><a href="na.html">na.approx</a></td>
+<td>replace NA attribute values; disaggregation time series</td></tr>
+<tr><td width="25%"><a href="na.html">na.approx.STFDF</a></td>
+<td>replace NA attribute values; disaggregation time series</td></tr>
+<tr><td width="25%"><a href="na.html">na.locf</a></td>
+<td>replace NA attribute values; disaggregation time series</td></tr>
+<tr><td width="25%"><a href="na.html">na.locf.STFDF</a></td>
+<td>replace NA attribute values; disaggregation time series</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">na.omit.STFDF</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="na.html">na.spline</a></td>
+<td>replace NA attribute values; disaggregation time series</td></tr>
+<tr><td width="25%"><a href="na.html">na.spline.STFDF</a></td>
+<td>replace NA attribute values; disaggregation time series</td></tr>
+<tr><td width="25%"><a href="nbmult.html">nbMult</a></td>
+<td>convert a spatial nb object to a matching STF object</td></tr>
+<tr><td width="25%"><a href="over.html">over</a></td>
+<td>consistent spatio-temporal overlay for objects inheriting from ST</td></tr>
+<tr><td width="25%"><a href="over.html">over-method</a></td>
+<td>consistent spatio-temporal overlay for objects inheriting from ST</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">plot-method</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">plot-method</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">plot-method</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">plot-method</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">proj4string-method</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">proj4string&lt;--method</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">rbind.STFDF</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">rbind.STIDF</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">rbind.STSDF</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="tgrass.html">read.tgrass</a></td>
+<td>read or write tgrass (time-enabled grass) files</td></tr>
+<tr><td width="25%"><a href="air.html">rural</a></td>
+<td>Air quality data, rural background PM10 in Germany, daily averages 1998-2009</td></tr>
+<tr><td width="25%"><a href="ST-class.html">ST</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">ST-class</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="stplot.html">stack.STFDF</a></td>
+<td>produce trellis plot for STxDF object</td></tr>
+<tr><td width="25%"><a href="stplot.html">stack.STIDF</a></td>
+<td>produce trellis plot for STxDF object</td></tr>
+<tr><td width="25%"><a href="stplot.html">stack.STSDF</a></td>
+<td>produce trellis plot for STxDF object</td></tr>
+<tr><td width="25%"><a href="stconstruct.html">stConstruct</a></td>
+<td>create ST* objects from long or wide tables</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">STF</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">STF-class</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">STFDF</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">STFDF-class</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">STI</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">STI-class</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">STIDF</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">STIDF-class</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="stinteraction.html">stInteraction</a></td>
+<td>subtract marginal (spatial and temporal) means from observations</td></tr>
+<tr><td width="25%"><a href="stplot.html">stplot</a></td>
+<td>produce trellis plot for STxDF object</td></tr>
+<tr><td width="25%"><a href="stplot.html">stplot-method</a></td>
+<td>produce trellis plot for STxDF object</td></tr>
+<tr><td width="25%"><a href="stplot.html">stplot.STFDF</a></td>
+<td>produce trellis plot for STxDF object</td></tr>
+<tr><td width="25%"><a href="stplot.html">stplot.STIDF</a></td>
+<td>produce trellis plot for STxDF object</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">STS</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">STS-class</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">STSDF</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">STSDF-class</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">STT</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">STT-class</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">STTDF</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">STTDF-class</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="interval.html">timeIsInterval</a></td>
+<td>retrieve, or set, information whether time reflects instance (FALSE) or intervals (TRUE)</td></tr>
+<tr><td width="25%"><a href="interval.html">timeIsInterval-method</a></td>
+<td>retrieve, or set, information whether time reflects instance (FALSE) or intervals (TRUE)</td></tr>
+<tr><td width="25%"><a href="interval.html">timeIsInterval&lt;-</a></td>
+<td>retrieve, or set, information whether time reflects instance (FALSE) or intervals (TRUE)</td></tr>
+<tr><td width="25%"><a href="interval.html">timeIsInterval&lt;--method</a></td>
+<td>retrieve, or set, information whether time reflects instance (FALSE) or intervals (TRUE)</td></tr>
+<tr><td width="25%"><a href="timematch.html">timeMatch</a></td>
+<td>match two (time) sequences</td></tr>
+<tr><td width="25%"><a href="timematch.html">timeMatch-method</a></td>
+<td>match two (time) sequences</td></tr>
+<tr><td width="25%"><a href="unstack.html">unstack.STFDF</a></td>
+<td>write STFDF to table forms</td></tr>
+<tr><td width="25%"><a href="tgrass.html">write.tgrass</a></td>
+<td>read or write tgrass (time-enabled grass) files</td></tr>
+<tr><td width="25%"><a href="ST-class.html">xts-class</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">zoo-class</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="STFDF-class.html">[-method</a></td>
+<td>Class "STFDF"</td></tr>
+<tr><td width="25%"><a href="STIDF-class.html">[-method</a></td>
+<td>Class "STIDF"</td></tr>
+<tr><td width="25%"><a href="STSDF-class.html">[-method</a></td>
+<td>Class "STSDF"</td></tr>
+<tr><td width="25%"><a href="STTDF-class.html">[-method</a></td>
+<td>Class "STTDF"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">[[-method</a></td>
+<td>Class "ST"</td></tr>
+<tr><td width="25%"><a href="ST-class.html">[[&lt;--method</a></td>
+<td>Class "ST"</td></tr>
+</table>
+</body></html>

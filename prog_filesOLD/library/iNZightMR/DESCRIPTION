@@ -1,0 +1,19 @@
+Package: iNZightMR
+Type: Package
+Title: iNZightMR
+Version: 0.0.2-20130821
+Date: 2013-07-11
+Authors@R: c(person("Simon", "Potter", role = c("aut", "cre"),
+                    email = "spot023@aucklanduni.ac.nz"),
+             person("Junjie", "Zeng", role = "aut"))
+Depends: R (>= 2.13)
+Imports: iNZightRegression
+Suggests: iNZight
+Enhances: iNZight
+Description: Interaction and analysis of Multiple Response Data
+License: GPL-2
+Packaged: 2013-08-21 06:36:38 UTC; simon
+Author: Simon Potter [aut, cre],
+  Junjie Zeng [aut]
+Maintainer: Simon Potter <spot023@aucklanduni.ac.nz>
+Built: R 3.0.1; ; 2013-08-21 06:36:38 UTC; unix

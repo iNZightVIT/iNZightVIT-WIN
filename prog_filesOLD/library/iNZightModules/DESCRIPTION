@@ -1,0 +1,14 @@
+Package: iNZightModules
+Type: Package
+Title: iNZight GUI Modules
+Version: 1.0.0
+Date: 2014-01-XX
+Authors@R: c(person("Junjie", "Zeng", role = c('cre', 'aut'),
+                    email = "jzen188@aucklanduni.ac.nz"))
+Depends: R (>= 2.13)
+Imports: iNZightRegression, iNZightMR
+License: GPL-2
+Description: A suite of add-on modules for the iNZight GUI.
+Author: Junjie Zeng [cre, aut]
+Maintainer: Junjie Zeng <jzen188@aucklanduni.ac.nz>
+Built: R 3.0.1; ; 2014-01-14 03:47:29 UTC; unix

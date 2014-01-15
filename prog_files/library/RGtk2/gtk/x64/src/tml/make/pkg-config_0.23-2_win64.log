@@ -1,0 +1,235 @@
++++ latest-win64 glib
+++ GLIB=glib-2.18.0-2
+++ sed -e 's/need_relink=yes/need_relink=no # no way --tml/'
+++ mv ltmain.temp ltmain.sh
+++ sed -e 's/-lglib-2.0 -liconv -lintl/-lglib-2.0/'
+++ mv configure.temp configure
+++ PKG_CONFIG_PATH=/devel/dist/win64/glib-2.18.0-2/lib/pkgconfig
+++ patch -p0
+patching file `./ChangeLog'
+patching file `./main.c'
+patching file `./parse.c'
+patching file `./pkg-config.1'
+++ mkdir /devel/target/abec40befa834993b38d15f543124391
+mkdir: cannot create directory `/devel/target/abec40befa834993b38d15f543124391': File exists
+++ CC=x86_64-pc-mingw32-gcc
++++ /opt/local/bin/pkg-config.sh --cflags glib-2.0
+++ CPPFLAGS='-mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include'
++++ /opt/local/bin/pkg-config.sh --libs glib-2.0
+++ LDFLAGS='-Lc:/devel/dist/win64/glib-2.18.0-2/lib -lglib-2.0 -lintl   -L/opt/proxy-libintl/lib64 -Wl,--exclude-libs=libintl.a'
+++ CFLAGS=-O2
+++ ./configure --host=x86_64-pc-mingw32 --disable-static --prefix=c:/devel/target/abec40befa834993b38d15f543124391
+configure: WARNING: If you wanted to set the --build type, don't use --host.
+    If a cross compiler is detected then cross compile mode will be used.
+checking for a BSD-compatible install... /opt/local/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for x86_64-pc-mingw32-strip... x86_64-pc-mingw32-strip
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking build system type... i686-pc-mingw32
+checking host system type... x86_64-pc-mingw32
+checking for style of include used by make... GNU
+checking for x86_64-pc-mingw32-gcc... x86_64-pc-mingw32-gcc
+checking for C compiler default output file name... a.exe
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... .exe
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-pc-mingw32-gcc accepts -g... yes
+checking for x86_64-pc-mingw32-gcc option to accept ISO C89... none needed
+checking dependency style of x86_64-pc-mingw32-gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /opt/gnuwin32/bin/grep
+checking for egrep... /opt/gnuwin32/bin/grep -E
+checking for ld used by x86_64-pc-mingw32-gcc... c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe
+checking if the linker (c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe) is GNU ld... yes
+checking for c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe option to reload object files... -r
+checking for BSD-compatible nm... /opt/mingw64/bin/x86_64-pc-mingw32-nm
+checking whether ln -s works... no, using cp -p
+checking how to recognize dependent libraries... file_magic ^x86 archive import|^x86 DLL
+checking how to run the C preprocessor... x86_64-pc-mingw32-gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for x86_64-pc-mingw32-g++... x86_64-pc-mingw32-g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether x86_64-pc-mingw32-g++ accepts -g... yes
+checking dependency style of x86_64-pc-mingw32-g++... gcc3
+checking how to run the C++ preprocessor... x86_64-pc-mingw32-g++ -E
+checking for x86_64-pc-mingw32-g77... no
+checking for x86_64-pc-mingw32-xlf... no
+checking for x86_64-pc-mingw32-f77... no
+checking for x86_64-pc-mingw32-frt... no
+checking for x86_64-pc-mingw32-pgf77... no
+checking for x86_64-pc-mingw32-cf77... no
+checking for x86_64-pc-mingw32-fort77... no
+checking for x86_64-pc-mingw32-fl32... no
+checking for x86_64-pc-mingw32-af77... no
+checking for x86_64-pc-mingw32-xlf90... no
+checking for x86_64-pc-mingw32-f90... no
+checking for x86_64-pc-mingw32-pgf90... no
+checking for x86_64-pc-mingw32-pghpf... no
+checking for x86_64-pc-mingw32-epcf90... no
+checking for x86_64-pc-mingw32-gfortran... x86_64-pc-mingw32-gfortran
+checking whether we are using the GNU Fortran 77 compiler... yes
+checking whether x86_64-pc-mingw32-gfortran accepts -g... yes
+checking the maximum length of command line arguments... 8192
+checking command to parse /opt/mingw64/bin/x86_64-pc-mingw32-nm output from x86_64-pc-mingw32-gcc object... ok
+checking for objdir... .libs
+checking for x86_64-pc-mingw32-ar... x86_64-pc-mingw32-ar
+checking for x86_64-pc-mingw32-ranlib... x86_64-pc-mingw32-ranlib
+checking for x86_64-pc-mingw32-strip... (cached) x86_64-pc-mingw32-strip
+checking if x86_64-pc-mingw32-gcc supports -fno-rtti -fno-exceptions... no
+checking for x86_64-pc-mingw32-gcc option to produce PIC... -DDLL_EXPORT
+checking if x86_64-pc-mingw32-gcc PIC flag -DDLL_EXPORT works... yes
+checking if x86_64-pc-mingw32-gcc static flag -static works... yes
+checking if x86_64-pc-mingw32-gcc supports -c -o file.o... yes
+checking whether the x86_64-pc-mingw32-gcc linker (c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... Win32 ld.exe
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+configure: creating libtool
+appending configuration tag "CXX" to libtool
+checking for ld used by x86_64-pc-mingw32-g++... c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe
+checking if the linker (c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe) is GNU ld... yes
+checking whether the x86_64-pc-mingw32-g++ linker (c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe) supports shared libraries... yes
+checking for x86_64-pc-mingw32-g++ option to produce PIC... -DDLL_EXPORT
+checking if x86_64-pc-mingw32-g++ PIC flag -DDLL_EXPORT works... yes
+checking if x86_64-pc-mingw32-g++ static flag -static works... yes
+checking if x86_64-pc-mingw32-g++ supports -c -o file.o... yes
+checking whether the x86_64-pc-mingw32-g++ linker (c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe) supports shared libraries... yes
+checking dynamic linker characteristics... Win32 ld.exe
+checking how to hardcode library paths into programs... immediate
+appending configuration tag "F77" to libtool
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for x86_64-pc-mingw32-gfortran option to produce PIC... -DDLL_EXPORT
+checking if x86_64-pc-mingw32-gfortran PIC flag -DDLL_EXPORT works... yes
+checking if x86_64-pc-mingw32-gfortran static flag -static works... yes
+checking if x86_64-pc-mingw32-gfortran supports -c -o file.o... yes
+checking whether the x86_64-pc-mingw32-gfortran linker (c:/opt/mingw64/bin/../lib/gcc/x86_64-pc-mingw32/4.4.0/../../../../x86_64-pc-mingw32/bin/ld.exe) supports shared libraries... yes
+checking dynamic linker characteristics... Win32 ld.exe
+checking how to hardcode library paths into programs... immediate
+checking for x86_64-pc-mingw32-gcc... (cached) x86_64-pc-mingw32-gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether x86_64-pc-mingw32-gcc accepts -g... (cached) yes
+checking for x86_64-pc-mingw32-gcc option to accept ISO C89... (cached) none needed
+checking dependency style of x86_64-pc-mingw32-gcc... (cached) gcc3
+checking whether to list both direct and indirect dependencies... sh: line 316: ^x86: command not found
+no
+checking for Win32... yes
+checking for working alloca.h... no
+checking for alloca... yes
+checking for setresuid... no
+checking for setreuid... no
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking for unistd.h... (cached) yes
+checking sys/wait.h usability... no
+checking sys/wait.h presence... no
+checking for sys/wait.h... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating check/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+++ make -j3 install
+Making install in check
+make[1]: Entering directory `/devel/src/freedesktop/pkg-config/0.23-2_win64/check'
+make[2]: Entering directory `/devel/src/freedesktop/pkg-config/0.23-2_win64/check'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/devel/src/freedesktop/pkg-config/0.23-2_win64/check'
+make[1]: Leaving directory `/devel/src/freedesktop/pkg-config/0.23-2_win64/check'
+make[1]: Entering directory `/devel/src/freedesktop/pkg-config/0.23-2_win64'
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT pkg.o -MD -MP -MF ".deps/pkg.Tpo" \
+	  -c -o pkg.o `test -f 'pkg.c' || echo './'`pkg.c; \
+	then mv -f ".deps/pkg.Tpo" ".deps/pkg.Po"; \
+	else rm -f ".deps/pkg.Tpo"; exit 1; \
+	fi
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT partial-glib.o -MD -MP -MF ".deps/partial-glib.Tpo" \
+	  -c -o partial-glib.o `test -f 'partial-glib.c' || echo './'`partial-glib.c; \
+	then mv -f ".deps/partial-glib.Tpo" ".deps/partial-glib.Po"; \
+	else rm -f ".deps/partial-glib.Tpo"; exit 1; \
+	fi
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT parse.o -MD -MP -MF ".deps/parse.Tpo" \
+	  -c -o parse.o `test -f 'parse.c' || echo './'`parse.c; \
+	then mv -f ".deps/parse.Tpo" ".deps/parse.Po"; \
+	else rm -f ".deps/parse.Tpo"; exit 1; \
+	fi
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT main.o -MD -MP -MF ".deps/main.Tpo" \
+	  -c -o main.o `test -f 'main.c' || echo './'`main.c; \
+	then mv -f ".deps/main.Tpo" ".deps/main.Po"; \
+	else rm -f ".deps/main.Tpo"; exit 1; \
+	fi
+pkg.c: In function 'scan_dir':
+pkg.c:154: warning: assignment discards qualifiers from pointer target type
+pkg.c: In function 'verify_package':
+pkg.c:872: warning: assignment discards qualifiers from pointer target type
+pkg.c:878: warning: assignment discards qualifiers from pointer target type
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT findme.o -MD -MP -MF ".deps/findme.Tpo" \
+	  -c -o findme.o `test -f 'findme.c' || echo './'`findme.c; \
+	then mv -f ".deps/findme.Tpo" ".deps/findme.Po"; \
+	else rm -f ".deps/findme.Tpo"; exit 1; \
+	fi
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT popt.o -MD -MP -MF ".deps/popt.Tpo" \
+	  -c -o popt.o `test -f 'popt.c' || echo './'`popt.c; \
+	then mv -f ".deps/popt.Tpo" ".deps/popt.Po"; \
+	else rm -f ".deps/popt.Tpo"; exit 1; \
+	fi
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT poptconfig.o -MD -MP -MF ".deps/poptconfig.Tpo" \
+	  -c -o poptconfig.o `test -f 'poptconfig.c' || echo './'`poptconfig.c; \
+	then mv -f ".deps/poptconfig.Tpo" ".deps/poptconfig.Po"; \
+	else rm -f ".deps/poptconfig.Tpo"; exit 1; \
+	fi
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT popthelp.o -MD -MP -MF ".deps/popthelp.Tpo" \
+	  -c -o popthelp.o `test -f 'popthelp.c' || echo './'`popthelp.c; \
+	then mv -f ".deps/popthelp.Tpo" ".deps/popthelp.Po"; \
+	else rm -f ".deps/popthelp.Tpo"; exit 1; \
+	fi
+if x86_64-pc-mingw32-gcc -DHAVE_CONFIG_H -I. -I. -I. -DPKG_CONFIG_PC_PATH="\"c:/devel/target/abec40befa834993b38d15f543124391/lib/pkgconfig:c:/devel/target/abec40befa834993b38d15f543124391/share/pkgconfig\"" -Ic:/devel/target/abec40befa834993b38d15f543124391/include/glib-2.0 -Ic:/devel/target/abec40befa834993b38d15f543124391/lib/glib-2.0/include  -mms-bitfields -Ic:/devel/dist/win64/glib-2.18.0-2/include/glib-2.0 -Ic:/devel/dist/win64/glib-2.18.0-2/lib/glib-2.0/include   -I/opt/proxy-libintl/include  -O2 -MT poptparse.o -MD -MP -MF ".deps/poptparse.Tpo" \
+	  -c -o poptparse.o `test -f 'poptparse.c' || echo './'`poptparse.c; \
+	then mv -f ".deps/poptparse.Tpo" ".deps/poptparse.Po"; \
+	else rm -f ".deps/poptparse.Tpo"; exit 1; \
+	fi
+/bin/sh ./libtool --mode=link x86_64-pc-mingw32-gcc  -O2  -Lc:/devel/dist/win64/glib-2.18.0-2/lib -lglib-2.0 -lintl   -L/opt/proxy-libintl/lib64 -Wl,--exclude-libs=libintl.a -o pkg-config.exe  pkg.o partial-glib.o parse.o main.o findme.o popt.o poptconfig.o popthelp.o poptparse.o -Lc:/devel/target/abec40befa834993b38d15f543124391/lib -lglib-2.0 
+mkdir .libs
+x86_64-pc-mingw32-gcc -O2 -Wl,--exclude-libs=libintl.a -o pkg-config.exe pkg.o partial-glib.o parse.o main.o findme.o popt.o poptconfig.o popthelp.o poptparse.o  -Lc:/devel/dist/win64/glib-2.18.0-2/lib -lintl -L/opt/proxy-libintl/lib64 -Lc:/devel/target/abec40befa834993b38d15f543124391/lib -lglib-2.0  
+make[2]: Entering directory `/devel/src/freedesktop/pkg-config/0.23-2_win64'
+/bin/sh ./mkinstalldirs c:/devel/target/abec40befa834993b38d15f543124391/share/aclocal
+/bin/sh ./mkinstalldirs c:/devel/target/abec40befa834993b38d15f543124391/share/man/man1
+mkdir -p -- c:/devel/target/abec40befa834993b38d15f543124391/share/man/man1
+mkdir -p -- c:/devel/target/abec40befa834993b38d15f543124391/share/aclocal
+ /opt/local/bin/install -c -m 644 pkg.m4 c:/devel/target/abec40befa834993b38d15f543124391/share/aclocal/pkg.m4
+ /opt/local/bin/install -c -m 644 ./pkg-config.1 c:/devel/target/abec40befa834993b38d15f543124391/share/man/man1/pkg-config.1
+/bin/sh ./mkinstalldirs c:/devel/target/abec40befa834993b38d15f543124391/bin
+mkdir -p -- c:/devel/target/abec40befa834993b38d15f543124391/bin
+  /bin/sh ./libtool --mode=install /opt/local/bin/install -c pkg-config.exe c:/devel/target/abec40befa834993b38d15f543124391/bin/pkg-config.exe
+/opt/local/bin/install -c pkg-config.exe c:/devel/target/abec40befa834993b38d15f543124391/bin/pkg-config.exe
+make[2]: Leaving directory `/devel/src/freedesktop/pkg-config/0.23-2_win64'
+make[1]: Leaving directory `/devel/src/freedesktop/pkg-config/0.23-2_win64'
+++ rm -f /tmp/pkg-config_0.23-2_win64.zip /tmp/pkg-config-dev_0.23-2_win64.zip
+++ cd /devel/target/abec40befa834993b38d15f543124391
+++ zip /tmp/pkg-config_0.23-2_win64.zip bin/pkg-config.exe
+  adding: bin/pkg-config.exe (224 bytes security) (deflated 65%)
+++ zip /tmp/pkg-config-dev_0.23-2_win64.zip man/man1/pkg-config.1 share/aclocal/pkg.m4
+  adding: share/aclocal/pkg.m4 (224 bytes security) (deflated 60%)
+	zip warning: name not matched: man/man1/pkg-config.1

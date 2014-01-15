@@ -1,0 +1,7 @@
+useDynLib(pgmm,pgmm_c)
+
+export(pgmmEM)
+
+S3method(print, pgmm)
+S3method(plot, pgmm)
+S3method(summary, pgmm)

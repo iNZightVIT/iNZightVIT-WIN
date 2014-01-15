@@ -1,0 +1,12 @@
+exportPattern("^[^\\.]")
+
+S3method(print, Krig)
+S3method(print, mKrig)
+S3method(summary, Krig)
+S3method(summary, mKrig)
+S3method(plot, Krig)
+
+useDynLib(fields)
+
+import("spam", "methods","maps")
+

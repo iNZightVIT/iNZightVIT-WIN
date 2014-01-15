@@ -1,0 +1,1 @@
+Treatment	Improve	NoChange	WorsePlacebo	35	70	95Single dose	62	76	62Double dose	88	80	32

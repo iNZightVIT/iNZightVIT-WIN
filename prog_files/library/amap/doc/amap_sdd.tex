@@ -1,0 +1,213 @@
+\documentclass[twoside,10pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[english,french]{babel}
+\usepackage{multicol}
+\usepackage{a4wide}
+%\usepackage{a5}
+%\usepackage{graphics}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+%\usepackage{hyperref}
+\usepackage{lettrine}
+%\usepackage{times}
+%\usepackage[Glenn]{fncychap}
+\usepackage{color} 
+%\usepackage{draftcopy}
+%\usepackage{SFHeaders}
+
+%\usepackage{hieroglf} % hieroglyphes
+
+\usepackage{geometry}
+
+\bibliographystyle{amsplain}
+
+%dvips  -T 14.85cm,21cm -o amap_sdd.ps amap_sdd.dvi; psbook amap_sdd.ps tmp.ps ;  psnup -2 -pa4 -Pa5 tmp.ps tmpa4.ps; pstops '2:0U(21cm,29.7cm),1' tmpa4.ps amap_sdd.ps
+
+%\geometry{verbose,paperwidth=148.5mm,paperheight=210mm,
+%  tmargin=15mm,bmargin=15mm ,lmargin=25mm,rmargin=20mm}
+\usepackage{graphicx} 
+\DeclareGraphicsExtensions{.eps} 
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\cfoot{$\thepage$}
+
+\title{\bf Amap Software Design Description \\(SDD)}
+%\date{}
+\author{Antoine Lucas\thanks{e-mail: antoinelucas@gmail.com}\\[0.2cm]
+\normalsize Brest
+}
+
+\newcounter{numeroreq}
+
+	
+\newcommand{\req}[1]{\stepcounter{numeroreq} \small{ \em \noindent [BEGIN REQUIREMENT AMAP\_SDD\_\arabic{numeroreq}] }\\ \noindent \rm \normalsize #1 \\ \small{ \em \noindent [END REQUIREMENT] \\ } }
+
+\begin{document}
+
+
+\maketitle
+
+\sloppy
+
+
+%% \begin{table}[htb]
+%% \centering
+%% \begin{tabular}{cc}
+%% \hline
+%% \bf Name & \bf e-mail \\
+%% \hline
+%% \hline
+%% Antoine Lucas & antoinelucas@gmail.com\\
+%% \hline
+%% \end{tabular}
+%% \caption{Authors}
+%% \end{table}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{ccc}
+\hline
+\bf Version & \bf date & \bf Update \\
+\hline
+\hline
+0.1 & 30/09/2007  & Initial revision\\
+\hline
+\end{tabular}
+\caption{Version history}
+\end{table}
+
+
+%\section{Introduction}
+
+
+%\subsection{Purpose}
+
+\begin{multicols}{2}
+
+
+\section{Software description}
+
+\subsection{Existent}
+
+Amap is based on some open source code. Kmeans and hierarchical
+clustering (with distance matrix computation) 
+are taken from R-project. An R code implementing robust pca
+described in \cite{caussinu+ruiz2} is provided by the article author.
+Amap use Fortran code from Michel Petitjean \cite{mpetitjean}. 
+
+A summary of evolutions:
+\begin{itemize}
+\item An evolution of Kmeans is required 
+in order to satisfy exigence SRS\_3.
+\item An evolution of hierarchical clustering is required in order
+to satisfy exigence SRS\_4 and SRS\_6.
+\item Robust pca must be written in C, C++ or Frotran in order
+to satisfy exigence SRS\_5.
+\item Interfaces of Fortran code from Michel Petitjean must
+be reworked in order to fit with R call.
+\end{itemize}
+
+
+\subsection{Detailed description}
+
+\req{Amap package use a modification of Kmeans function from R-project, to
+provide a choice on distance used. Distance primitive function
+are common between kmeans, distance (matrix computation) and hierachical
+clustering}
+
+
+\req{Amap package port hclust fortran function and distance C function
+from R-project to C++ in order to
+\begin{itemize}
+ \item launch directly distance from an ``hcluster'' call; this will avoid duplication of matrix distance in R in order to satisfy SRS\_6.
+ \item desalocate memory used by matrix distance after computation
+ \item use many threads (number of threads will be a parameter sent by R command), in order to satisfy speed aspect of SRS\_6
+ \item use templates in order to propose same algorithm in simple or double
+floating point precision.
+\item add new metrics, including pearson and rank based metrics (spearman).
+ \end{itemize}
+ ~
+}
+
+\req{Fortran code from Michel Petitjean is adapted to a use in R}
+ 
+\req{A new code is developped in C to implement robust pca
+described in \cite{caussinu+ruiz2}.}
+
+\section{Validation}
+
+\req{Validation of implementation of k-means, hierarchical clustering and
+distance computation are done by two ways:
+\begin{itemize}
+\item  verification that r-project k-means gives same result when using
+same metrics.
+\item verification for all metrics that it computes the correct result,
+with small examples (by hand).
+\end{itemize}
+Then results are archived to check non regression.
+}
+
+\req{Validation of implementation of robust pca is done by comparing
+results from C code, and R code given by the author of article. Result
+is now archived for non regression tests.}
+
+\req{Validation of implementation of optimal partition will be done
+by cheking that amap output and Michel Petitjean software output
+are the same.
+ Result
+is now archived for non regression tests.}
+
+
+\section{Methods, tools and techniques}
+
+
+
+\req{C and C++ code will use doxygen inline documentation}
+
+\req{Amap package will be host on a sourceforge-like project 
+manager\footnote{At address http://mulcyber.toulouse.inra.fr/projects/amap}
+i.e. a bug manager, a repository like
+CVS and news for all releases or bug correction.}
+
+\req{Amap will be compilant with SRS\_7}
+
+\section{Tracability matrix}
+
+%See Tab. \ref{matrix_srs_sdd}.
+
+%\begin{table}[hbt]
+%\label{matrix_srs_sdd}
+\centering
+\begin{tabular}{ccc}
+\hline
+\bf SRS & \bf SDD  \\
+\hline
+\hline
+SRS\_1 & SDD\_4\\
+SRS\_2 & SDD\_3\\
+SRS\_3 & SDD\_1\\
+SRS\_4 & SDD\_2\\
+SRS\_5 & SDD\_1 SDD\_2 SDD\_3 SDD\_4\\
+SRS\_6 & SDD\_2\\
+SRS\_7 & SDD\_10\\
+SRS\_8 & SDD\_5 SDD\_6 SDD\_7\\
+SRS\_9 & SDD\_7\\
+SRS\_10 &  SDD\_5 SDD\_6 SDD\_7\\
+\hline
+\end{tabular}
+%\caption{Tracability matrix}
+~\\
+
+Tab.~2: Tracability matrix
+%\end{table}
+
+
+
+
+\bibliography{amap}
+
+\end{multicols}
+
+\end{document}

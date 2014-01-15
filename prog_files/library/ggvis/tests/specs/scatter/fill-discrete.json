@@ -1,0 +1,144 @@
+{
+	"data" : [
+		{
+			"name" : "df_5d6dccca750b57e8b95a60db154cdb8e",
+			"format" : {
+				"type" : "csv",
+				"parse" : {
+					"x" : "number",
+					"y" : "number"
+				}
+			},
+			"values" : "\"x\",\"y\",\"factor(z)\"\n1,5,\"0.0807501375675201\"\n2,4,\"0.834333037259057\"\n3,3,\"0.600760886212811\"\n4,2,\"0.157208441523835\"\n5,1,\"0.0073994412086904\""
+		}
+	],
+	"scales" : [
+		{
+			"name" : "x",
+			"type" : "linear",
+			"reverse" : false,
+			"round" : false,
+			"clamp" : false,
+			"nice" : true,
+			"zero" : false,
+			"range" : "width",
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "df_5d6dccca750b57e8b95a60db154cdb8e",
+						"field" : "data.x"
+					}
+				]
+			}
+		},
+		{
+			"name" : "y",
+			"type" : "linear",
+			"reverse" : false,
+			"round" : false,
+			"clamp" : false,
+			"nice" : true,
+			"zero" : false,
+			"range" : "height",
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "df_5d6dccca750b57e8b95a60db154cdb8e",
+						"field" : "data.y"
+					}
+				]
+			}
+		},
+		{
+			"name" : "fill",
+			"type" : "ordinal",
+			"reverse" : false,
+			"round" : false,
+			"points" : true,
+			"sort" : true,
+			"range" : "category10",
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "df_5d6dccca750b57e8b95a60db154cdb8e",
+						"field" : "data.factor(z)"
+					}
+				]
+			}
+		}
+	],
+	"marks" : [
+		{
+			"type" : "symbol",
+			"properties" : {
+				"update" : {
+					"size" : {
+						"value" : 100
+					},
+					"x" : {
+						"scale" : "x",
+						"field" : "data.x"
+					},
+					"y" : {
+						"scale" : "y",
+						"field" : "data.y"
+					},
+					"fill" : {
+						"scale" : "fill",
+						"field" : "data.factor(z)"
+					}
+				},
+				"ggvis" : {
+					"data" : {
+						"value" : "df_5d6dccca750b57e8b95a60db154cdb8e"
+					}
+				}
+			},
+			"from" : {
+				"data" : "df_5d6dccca750b57e8b95a60db154cdb8e"
+			}
+		}
+	],
+	"width" : 600,
+	"height" : 400,
+	"legends" : [
+		{
+			"fill" : "fill",
+			"orient" : "right",
+			"title" : "factor(z)"
+		}
+	],
+	"axes" : [
+		{
+			"type" : "x",
+			"scale" : "x",
+			"orient" : "bottom",
+			"layer" : "back",
+			"grid" : true,
+			"title" : "x"
+		},
+		{
+			"type" : "y",
+			"scale" : "y",
+			"orient" : "left",
+			"layer" : "back",
+			"grid" : true,
+			"title" : "y"
+		}
+	],
+	"padding" : null,
+	"ggvis_opts" : {
+		"width" : 600,
+		"height" : 400,
+		"keep_aspect" : false,
+		"resizable" : true,
+		"padding" : {},
+		"duration" : 250,
+		"renderer" : "canvas",
+		"hover_duration" : 0,
+		"enter_duration" : 250,
+		"exit_duration" : 250,
+		"brush_policy" : "debounce",
+		"brush_delay" : 250
+	}
+}

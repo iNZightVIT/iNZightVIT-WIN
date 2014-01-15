@@ -1,0 +1,30 @@
+<ui>
+  <toolbar name='CallToolbar'>
+    <toolitem action='Back'/>
+    <toolitem action='Forward'/>
+    <toolitem action='Redraw'/>
+    <toolitem action='Interrupt'/>
+    <toolitem action='HelpPlot'/>
+    <placeholder name='AddressBar'/>
+  </toolbar>
+  <toolbar name='LeftToolbar'>
+    <toolitem action='StayOnTop'/>
+    <separator/>
+    <toolitem action='Zoom'/>
+    <toolitem action='Pan'/>
+    <toolitem action='Identify'/>
+    <toolitem action='Brush'/>
+    <toolitem action='Annotation'/>
+    <toolitem action='Arrow'/>
+    <separator/>
+    <toolitem action='Expand'/>
+    <toolitem action='Zoomfit'/>
+    <toolitem action='ZeroY'/>
+    <toolitem action='ZeroX'/>
+    <toolitem action='PlotSettings'/>
+    <separator/>
+  </toolbar>
+  <toolbar name='TopToolbar'></toolbar>
+  <toolbar name='RightToolbar'></toolbar>
+  <toolbar name='BottomToolbar'></toolbar>
+</ui>

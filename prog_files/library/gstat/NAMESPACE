@@ -1,0 +1,74 @@
+useDynLib(gstat, 
+	gstat_debug_level,
+	gstat_exit,
+	gstat_fit_variogram,
+	gstat_get_variogram_models,
+	gstat_init,
+	gstat_load_command,
+	gstat_load_ev,
+	gstat_load_variogram,
+	gstat_new_data,
+	gstat_new_dummy_data,
+	gstat_predict,
+	gstat_variogram,
+	gstat_variogram_values
+)
+
+import(methods)
+import(lattice)
+importFrom(zoo, zoo, is.regular)
+import(sp)
+import(spacetime)
+
+export(as.vgm.variomodel,
+	cross.name,
+	fit.lmc,
+	fit.variogram,
+	fit.variogram.reml,
+	fit.variogram.gls,
+	fit.StVariogram,
+	get.contr,
+	gstat,
+	gstat.cv,
+	"[.gstat",
+	hscat,
+	idw0,
+	krigeTg,
+	krige0, krigeST,
+	map.to.lev,
+	ossfim,
+	predict.gstat,
+	show.vgms,
+	spplot.vcov,
+	variogram,
+	variogramST,
+	variogram.line,
+	variogramLine,
+	variogramSurface,
+	vgm, vgmST,
+	vgm.panel.xyplot,
+	panel.pointPairs,
+	xyz2img)
+
+exportMethods(krige, idw, krige.cv)
+
+S3method(as.data.frame, variogramCloud)
+
+S3method(image, data.frame)
+
+S3method(plot, pointPairs)
+S3method(plot, gstatVariogram)
+S3method(plot, variogramMap)
+S3method(plot, variogramCloud)
+S3method(plot, StVariogram)
+
+S3method(predict, gstat)
+
+S3method(print, gstat)
+S3method(print, gstatVariogram)
+S3method(print, variogramCloud)
+S3method(print, variogramModel)
+
+S3method(variogram, default)
+S3method(variogram, formula)
+S3method(variogram, gstat)

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Cross-validation tools for regression models</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+<h1> Cross-validation tools for regression models
+<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]">
+</h1>
+<hr>
+<div align="center">
+<a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
+<a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
+</div><h2>Documentation for package &lsquo;cvTools&rsquo; version 0.3.2</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td width="25%"><a href="cvTools-package.html">cvTools-package</a></td>
+<td>Cross-validation tools for regression models</td></tr>
+<tr><td width="25%"><a href="accessors.html">accessors</a></td>
+<td>Access or set information on cross-validation results</td></tr>
+<tr><td width="25%"><a href="aggregate.cv.html">aggregate.cv</a></td>
+<td>Aggregate cross-validation results</td></tr>
+<tr><td width="25%"><a href="aggregate.cv.html">aggregate.cvSelect</a></td>
+<td>Aggregate cross-validation results</td></tr>
+<tr><td width="25%"><a href="aggregate.cv.html">aggregate.cvTuning</a></td>
+<td>Aggregate cross-validation results</td></tr>
+<tr><td width="25%"><a href="bwplot.cv.html">bwplot.cv</a></td>
+<td>Box-and-whisker plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="bwplot.cv.html">bwplot.cvSelect</a></td>
+<td>Box-and-whisker plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="cost.html">cost</a></td>
+<td>Prediction loss</td></tr>
+<tr><td width="25%"><a href="repCV.html">cvExamples</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="cvFit.html">cvFit</a></td>
+<td>Cross-validation for model evaluation</td></tr>
+<tr><td width="25%"><a href="cvFit.html">cvFit.call</a></td>
+<td>Cross-validation for model evaluation</td></tr>
+<tr><td width="25%"><a href="cvFit.html">cvFit.default</a></td>
+<td>Cross-validation for model evaluation</td></tr>
+<tr><td width="25%"><a href="cvFit.html">cvFit.function</a></td>
+<td>Cross-validation for model evaluation</td></tr>
+<tr><td width="25%"><a href="cvFolds.html">cvFolds</a></td>
+<td>Cross-validation folds</td></tr>
+<tr><td width="25%"><a href="repCV.html">cvLm</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="repCV.html">cvLmrob</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="repCV.html">cvLts</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="accessors.html">cvNames</a></td>
+<td>Access or set information on cross-validation results</td></tr>
+<tr><td width="25%"><a href="accessors.html">cvNames&lt;-</a></td>
+<td>Access or set information on cross-validation results</td></tr>
+<tr><td width="25%"><a href="cvReshape.html">cvReshape</a></td>
+<td>Reshape cross-validation results</td></tr>
+<tr><td width="25%"><a href="cvReshape.html">cvReshape.cv</a></td>
+<td>Reshape cross-validation results</td></tr>
+<tr><td width="25%"><a href="cvReshape.html">cvReshape.cvSelect</a></td>
+<td>Reshape cross-validation results</td></tr>
+<tr><td width="25%"><a href="cvSelect.html">cvSelect</a></td>
+<td>Model selection based on cross-validation</td></tr>
+<tr><td width="25%"><a href="cvTool.html">cvTool</a></td>
+<td>Low-level function for cross-validation</td></tr>
+<tr><td width="25%"><a href="cvTools-package.html">cvTools</a></td>
+<td>Cross-validation tools for regression models</td></tr>
+<tr><td width="25%"><a href="cvTuning.html">cvTuning</a></td>
+<td>Cross-validation for tuning parameter selection</td></tr>
+<tr><td width="25%"><a href="cvTuning.html">cvTuning.call</a></td>
+<td>Cross-validation for tuning parameter selection</td></tr>
+<tr><td width="25%"><a href="cvTuning.html">cvTuning.function</a></td>
+<td>Cross-validation for tuning parameter selection</td></tr>
+<tr><td width="25%"><a href="densityplot.cv.html">densityplot.cv</a></td>
+<td>Kernel density plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="densityplot.cv.html">densityplot.cvSelect</a></td>
+<td>Kernel density plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="dotplot.cv.html">dotplot.cv</a></td>
+<td>Dot plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="dotplot.cv.html">dotplot.cvSelect</a></td>
+<td>Dot plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="accessors.html">fits</a></td>
+<td>Access or set information on cross-validation results</td></tr>
+<tr><td width="25%"><a href="accessors.html">fits&lt;-</a></td>
+<td>Access or set information on cross-validation results</td></tr>
+<tr><td width="25%"><a href="cost.html">mape</a></td>
+<td>Prediction loss</td></tr>
+<tr><td width="25%"><a href="cost.html">mspe</a></td>
+<td>Prediction loss</td></tr>
+<tr><td width="25%"><a href="accessors.html">ncv</a></td>
+<td>Access or set information on cross-validation results</td></tr>
+<tr><td width="25%"><a href="accessors.html">nfits</a></td>
+<td>Access or set information on cross-validation results</td></tr>
+<tr><td width="25%"><a href="plot.cv.html">plot.cv</a></td>
+<td>Plot cross-validation results</td></tr>
+<tr><td width="25%"><a href="plot.cv.html">plot.cvSelect</a></td>
+<td>Plot cross-validation results</td></tr>
+<tr><td width="25%"><a href="cvFit.html">print.cv</a></td>
+<td>Cross-validation for model evaluation</td></tr>
+<tr><td width="25%"><a href="cvFolds.html">print.cvFolds</a></td>
+<td>Cross-validation folds</td></tr>
+<tr><td width="25%"><a href="cvSelect.html">print.cvSelect</a></td>
+<td>Model selection based on cross-validation</td></tr>
+<tr><td width="25%"><a href="cvTuning.html">print.cvTuning</a></td>
+<td>Cross-validation for tuning parameter selection</td></tr>
+<tr><td width="25%"><a href="repCV.html">repCV</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="repCV.html">repCV.lm</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="repCV.html">repCV.lmrob</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="repCV.html">repCV.lts</a></td>
+<td>Cross-validation for linear models</td></tr>
+<tr><td width="25%"><a href="cost.html">rmspe</a></td>
+<td>Prediction loss</td></tr>
+<tr><td width="25%"><a href="cost.html">rtmspe</a></td>
+<td>Prediction loss</td></tr>
+<tr><td width="25%"><a href="subset.cv.html">subset.cv</a></td>
+<td>Subsetting cross-validation results</td></tr>
+<tr><td width="25%"><a href="subset.cv.html">subset.cvSelect</a></td>
+<td>Subsetting cross-validation results</td></tr>
+<tr><td width="25%"><a href="summary.cv.html">summary.cv</a></td>
+<td>Summarize cross-validation results</td></tr>
+<tr><td width="25%"><a href="summary.cv.html">summary.cvSelect</a></td>
+<td>Summarize cross-validation results</td></tr>
+<tr><td width="25%"><a href="summary.cv.html">summary.cvTuning</a></td>
+<td>Summarize cross-validation results</td></tr>
+<tr><td width="25%"><a href="cost.html">tmspe</a></td>
+<td>Prediction loss</td></tr>
+<tr><td width="25%"><a href="xyplot.cv.html">xyplot.cv</a></td>
+<td>X-Y plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="xyplot.cv.html">xyplot.cvSelect</a></td>
+<td>X-Y plots of cross-validation results</td></tr>
+<tr><td width="25%"><a href="xyplot.cv.html">xyplot.cvTuning</a></td>
+<td>X-Y plots of cross-validation results</td></tr>
+</table>
+</body></html>

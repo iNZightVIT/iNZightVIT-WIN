@@ -1,0 +1,28 @@
+
+citHeader("To cite package latticist in publications use:")
+
+## R >= 2.8.0 passes package metadata to citation().
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("latticist")
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+citEntry(entry = "Manual",
+   title = "{latticist}: A Graphical User Interface for Exploratory Visualisation",
+   author = person("Felix", "Andrews", email = "felix@nfrac.org"),
+   year = year,
+   note = note,
+   url = "http://latticist.googlecode.com/",
+
+   textVersion =
+   paste("Felix Andrews",
+      sprintf("(%s).", year),
+      "latticist: A Graphical User Interface for Exploratory Visualisation",
+      paste(note, ".", sep = ""),
+      "URL http://latticist.googlecode.com/")
+)
+
+citFooter("Latticist is only an interface.",
+   "The plot functions are provided by other packages.",
+   "Please cite them according to",
+   sQuote('citation("lattice")'), "and",
+   sQuote('citation("vcd")'), ".")

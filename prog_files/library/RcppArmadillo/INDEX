@@ -1,0 +1,5 @@
+RcppArmadillo-package   Rcpp/Armadillo bridge
+RcppArmadillo.package.skeleton
+                        Create a skeleton for a new package that
+                        intends to use RcppArmadillo
+fastLm                  Bare-bones linear model fitting function

@@ -1,0 +1,94 @@
+% building this document: (in R) Sweave ("ctc.Rnw")
+\documentclass[a4paper]{article}
+
+\title{Amap Package}
+\author{Antoine Lucas}
+%\VignetteIndexEntry{Introduction to amap}
+%\VignettePackage{amap}
+\SweaveOpts{echo=FALSE}
+%\usepackage{a4wide}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Overview}
+
+{\tt Amap} package includes standard hierarchical  
+clustering and k-means. We optimize implementation 
+(with a parallelized hierarchical clustering) and
+allow the possibility of using different distances like
+Eulidean or Spearman (rank-based metric).
+
+We implement a principal component analysis (with robusts methods).
+
+\section{Usage}
+
+\subsection{Clustering}
+
+The standard way of building  a hierarchical clustering:
+<<echo=TRUE>>=
+library(amap)
+data(USArrests)
+h = hcluster(USArrests)
+plot(h)
+@ 
+ Or for the ``heatmap'':
+<<echo=TRUE>>=
+heatmap(as.matrix(USArrests),
+        hclustfun=hcluster,
+        distfun=function(u){u})
+@ 
+On a multiprocessor computer:
+<<echo=TRUE>>=
+h = hcluster(USArrests,nbproc=4)   
+@ 
+The K-means clustering:
+<<echo=TRUE,results=hide>>=
+Kmeans(USArrests,centers=3,method="correlation")
+@ 
+
+\subsection{Robust tools}
+
+A robust variance computation:
+<<echo=TRUE,results=hide>>=
+data(lubisch)
+lubisch <- lubisch[,-c(1,8)]
+varrob(scale(lubisch),h=1)
+@ 
+A robust principal component analysis:
+<<echo=TRUE,results=hide>>=
+p <- acpgen(lubisch,h1=1,h2=1/sqrt(2))
+plot(p)
+@ 
+Another robust pca:
+<<echo=TRUE,results=hide>>=
+p <- acprob(lubisch,h=4)
+plot(p)
+@ 
+
+
+\section{See Also}
+
+Theses examples can be tested with command
+{\tt demo(amap)}.\\
+
+\noindent
+All functions has got man pages, try 
+{\tt help.start()}.\\
+
+\noindent
+Robust tools has been published: \cite{caussinu+ruiz} and
+\cite{caussinu+ruiz2}.
+
+
+\bibliographystyle{plain}
+\bibliography{amap}
+
+
+
+\end{document}
+
+

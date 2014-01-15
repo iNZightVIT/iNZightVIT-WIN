@@ -1,0 +1,9 @@
+Package: tools
+Version: 3.0.1
+Priority: base
+Title: Tools for Package Development
+Author: R Core Team
+Maintainer: R Core Team <R-core@r-project.org>
+Description: Tools for package development, administration and documentation
+License: Part of R 3.0.1
+Built: R 3.0.1; x86_64-w64-mingw32; 2013-05-16 10:48:32 UTC; windows

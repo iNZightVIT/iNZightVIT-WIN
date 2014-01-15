@@ -1,0 +1,240 @@
+{
+	"data" : [
+		{
+			"name" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c_tree",
+			"format" : {
+				"type" : "treejson"
+			},
+			"values" : {
+				"children" : [
+					{
+						"children" : [
+							{
+								"cyl" : 4,
+								"x" : 0.5,
+								"count__" : 0
+							},
+							{
+								"cyl" : 4,
+								"x" : 1.5,
+								"count__" : 4
+							},
+							{
+								"cyl" : 4,
+								"x" : 2.5,
+								"count__" : 5
+							},
+							{
+								"cyl" : 4,
+								"x" : 3.5,
+								"count__" : 2
+							},
+							{
+								"cyl" : 4,
+								"x" : 4.5,
+								"count__" : 0
+							}
+						]
+					},
+					{
+						"children" : [
+							{
+								"cyl" : 6,
+								"x" : 1.5,
+								"count__" : 0
+							},
+							{
+								"cyl" : 6,
+								"x" : 2.5,
+								"count__" : 3
+							},
+							{
+								"cyl" : 6,
+								"x" : 3.5,
+								"count__" : 4
+							},
+							{
+								"cyl" : 6,
+								"x" : 4.5,
+								"count__" : 0
+							}
+						]
+					},
+					{
+						"children" : [
+							{
+								"cyl" : 8,
+								"x" : 2.5,
+								"count__" : 0
+							},
+							{
+								"cyl" : 8,
+								"x" : 3.5,
+								"count__" : 10
+							},
+							{
+								"cyl" : 8,
+								"x" : 4.5,
+								"count__" : 1
+							},
+							{
+								"cyl" : 8,
+								"x" : 5.5,
+								"count__" : 3
+							},
+							{
+								"cyl" : 8,
+								"x" : 6.5,
+								"count__" : 0
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"name" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c",
+			"source" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c_tree",
+			"transform" : [
+				{
+					"type" : "flatten"
+				}
+			]
+		}
+	],
+	"scales" : [
+		{
+			"name" : "stroke",
+			"type" : "linear",
+			"reverse" : false,
+			"round" : false,
+			"clamp" : false,
+			"nice" : true,
+			"zero" : false,
+			"range" : [
+				"#132B43",
+				"#56B1F7"
+			],
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c",
+						"field" : "data.cyl"
+					}
+				]
+			}
+		},
+		{
+			"name" : "x",
+			"type" : "linear",
+			"reverse" : false,
+			"round" : false,
+			"clamp" : false,
+			"nice" : true,
+			"zero" : false,
+			"range" : "width",
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c",
+						"field" : "data.x"
+					}
+				]
+			}
+		},
+		{
+			"name" : "y",
+			"type" : "linear",
+			"reverse" : false,
+			"round" : false,
+			"clamp" : false,
+			"nice" : true,
+			"zero" : false,
+			"range" : "height",
+			"domain" : {
+				"fields" : [
+					{
+						"data" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c",
+						"field" : "data.count__"
+					}
+				]
+			}
+		}
+	],
+	"marks" : [
+		{
+			"type" : "group",
+			"from" : {
+				"data" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c_tree"
+			},
+			"marks" : [
+				{
+					"type" : "line",
+					"properties" : {
+						"update" : {
+							"stroke" : {
+								"scale" : "stroke",
+								"field" : "data.cyl"
+							},
+							"x" : {
+								"scale" : "x",
+								"field" : "data.x"
+							},
+							"y" : {
+								"scale" : "y",
+								"field" : "data.count__"
+							}
+						},
+						"ggvis" : {
+							"data" : {
+								"value" : "mtcars_a63c70e73b58d0823ab3bcbd3b543d6f_split_83b487e0_bin_f47a3a9c_tree"
+							}
+						}
+					}
+				}
+			]
+		}
+	],
+	"width" : 600,
+	"height" : 400,
+	"legends" : [
+		{
+			"stroke" : "stroke",
+			"orient" : "right",
+			"title" : "cyl"
+		}
+	],
+	"axes" : [
+		{
+			"type" : "x",
+			"scale" : "x",
+			"orient" : "bottom",
+			"layer" : "back",
+			"grid" : true,
+			"title" : "x"
+		},
+		{
+			"type" : "y",
+			"scale" : "y",
+			"orient" : "left",
+			"layer" : "back",
+			"grid" : true,
+			"title" : "count__"
+		}
+	],
+	"padding" : null,
+	"ggvis_opts" : {
+		"width" : 600,
+		"height" : 400,
+		"keep_aspect" : false,
+		"resizable" : true,
+		"padding" : {},
+		"duration" : 250,
+		"renderer" : "canvas",
+		"hover_duration" : 0,
+		"enter_duration" : 250,
+		"exit_duration" : 250,
+		"brush_policy" : "debounce",
+		"brush_delay" : 250
+	}
+}

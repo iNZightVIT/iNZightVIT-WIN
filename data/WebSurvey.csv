@@ -1,0 +1,642 @@
+course,sex,day,month,year,ethnicity,numyears,numcountries,weightactual,weightideal,religion,restricted,speed,tickets,drinkcount,drinkspend,looks,intelligence,shoes,ipod_t,txtmessages,loan_t,repay,hoursworked,weeklywage,earn,vote,mayor
+101,female,20,5,1992,New Zealand European,18,8,48,48,Catholic,1,120,0,4,10,7,6,7,y,200,y,2,6,72,35000-39999,National,other
+101,female,27,1,1991,New Zealand European,19,5,60,55,None,99,110,0,5,10,6,7,37,y,20,n,3,0,0,20000-,Green,Len Brown
+101,female,17,10,1981,Maori,10,3,70,67,Protestant,4,180,2,1,4,8,7,15,y,5,y,5,40,550,50000+,Maori Party,Len Brown
+101,female,17,1,1992,New Zealand European,14,6,61,58,None,2,140,0,1,2,7,7,10,y,200,y,10,0,0,30000-34999,National,other
+101,male,7,1,1963,New Zealand European,47,2,94,80,None,99,120,0,5,11,3,8,2,n,10,y,5,5,75,50000+,Labour,Len Brown
+101G,female,13,9,1987,Chinese,1,0,50,45,None,99,0,0,0,0,6,6,5,y,1,n,0,0,0,40000-44999,Labour,John Banks
+101,female,25,11,1991,Chinese,8,5,58,52,None,2,110,0,0,0,7,7,16,y,20,y,5,0,0,30000-34999,National,John Banks
+108,female,7,3,1992,New Zealand European,18,1,69,63,Catholic,1,140,0,3,5,7,8,10,y,30,y,7,12,150,35000-39999,none,other
+101,female,8,5,1991,Indian,4,1,40,50,Other,99,0,0,0,0,5,5,5,n,2,y,3,0,0,?,Labour,other
+101,female,20,12,1989,New Zealand European,20,1,45,45,None,2,110,0,0,0,3,6,15,y,50,y,15,0,0,?,Green,other
+101,female,5,9,1991,Pacific Islander,18,2,96,80,Other,0,80,0,0,0,8,8,12,n,300,n,0,0,0,20000-24999,Labour,other
+108,female,1,2,1992,New Zealand European,18,2,65,60,Other,1,140,0,1,0,7,7,20,y,70,y,10,0,0,45000-49999,National,Len Brown
+101G,female,30,9,1962,New Zealand European,47,12,54,53,None,1,160,2,14,50,5,7,30,y,15,y,10,0,0,50000+,Labour,other
+101,female,31,7,1989,New Zealand European,21,4,63,60,Other,99,60,0,7,15,7,8,17,y,20,y,25,6,60,35000-39999,Other,John Banks
+101,female,20,1,1992,Chinese,18,6,50,45,None,2,90,0,4,20,5,8,22,y,60,y,20,10,100,20000-24999,Labour,John Banks
+101,female,10,5,1991,New Zealand European,19,7,67,66,Catholic,3,120,0,1,5,8,8,15,y,12,y,6,0,0,50000+,Other,other
+101,male,10,4,1992,New Zealand European,18,7,65,60,None,1,110,0,0,0,6,8,3,y,5,y,5,14,140,40000-44999,National,Len Brown
+101,male,24,6,1991,Other European,11,8,71,80,None,1,110,0,8,35,8,8,3,y,12,y,12,0,0,20000-,Green,other
+108,female,3,8,1982,Korean,9,3,58,46,Other,99,110,0,1,10,7,7,7,y,15,y,5,10,0,35000-39999,none,other
+108,female,11,9,1991,Other,4,2,50,48,Buddhism,1,0,0,1,0,7,7,10,y,10,n,0,0,0,40000-44999,United Future,John Banks
+101,female,26,12,1983,Other,3,2,55,55,Other,99,80,0,1,10,8,8,15,y,5,y,1,17,240,50000+,Labour,other
+101G,female,29,4,1992,Indian,18,2,47,47,Hindu,99,50,0,0,0,6,6,4,n,15,y,6,12,100,35000-39999,none,John Banks
+101G,female,3,8,1991,Other,5,6,58,58,Buddhism,1,120,0,0,0,6,9,15,y,300,n,0,0,0,?,Labour,John Banks
+101,female,28,10,1989,Chinese,1,4,56,48,Catholic,99,100,0,1,5,7,7,23,n,60,n,0,17,170,40000-44999,none,other
+101,female,7,4,1989,Korean,12,5,48,44,None,1,100,0,5,70,7,7,40,y,180,y,4,0,0,45000-49999,none,other
+108,male,23,8,1992,Chinese,1,0,67,60,None,99,0,0,0,0,5,5,4,y,3,n,0,0,0,20000-24999,none,Len Brown
+101,female,14,4,1991,Korean,16,10,54,49,Other,99,60,0,0,0,2,4,5,y,200,y,5,0,0,20000-24999,National,other
+101,female,14,4,1990,New Zealand European,20,9,55,53,None,1,130,2,2,10,7,7,13,y,100,y,10,13,138,45000-49999,National,other
+108,female,3,4,1992,Pacific Islander,8,4,78,64,Other,99,80,0,0,0,5,7,20,y,3,y,2,0,0,35000-39999,National,other
+101G,female,6,10,1991,Chinese,16,5,50,45,Catholic,1,100,0,0,0,8,7,5,y,40,n,0,0,0,?,none,other
+108,female,28,2,1992,Chinese,4,1,60,50,None,99,60,0,0,0,8,10,8,y,100,y,10,9,100,35000-39999,none,other
+108,male,14,9,1991,Other,18,4,95,75,Catholic,99,100,0,0,0,6,8,7,y,5,y,5,0,0,35000-39999,National,John Banks
+108,female,15,2,1990,Other,4,6,50,43,Protestant,99,60,0,0,0,6,6,8,y,50,n,0,0,0,?,Other,other
+101,female,12,6,1992,Chinese,8,2,54,49,None,99,0,0,0,0,2,6,2,n,20,y,7,0,0,30000-34999,Labour,other
+108,female,14,11,1989,Other European,1,7,60,55,None,1,130,0,1,5,7,7,15,y,4,n,0,20,240,35000-39999,none,other
+101,male,18,1,1992,Other,4,2,58,70,Islam,99,0,0,0,0,8,5,4,y,3,y,5,0,0,30000-34999,Labour,Len Brown
+101,female,22,6,1991,Other,1,5,54,50,Catholic,99,130,0,0,0,7,7,8,y,7,n,0,0,0,35000-39999,none,other
+108,male,18,2,1992,New Zealand European,18,6,60,60,None,99,0,0,0,0,5,6,4,y,2,y,10,0,0,30000-34999,Maori Party,Len Brown
+101,female,23,8,1978,New Zealand European,32,12,55,45,Catholic,3,100,0,0,0,5,5,6,y,0,y,5,0,0,35000-39999,Labour,Len Brown
+108,female,25,7,1967,New Zealand European,30,16,59,55,Other,1,140,0,4,25,7,7,20,y,6,n,0,0,0,50000+,National,John Banks
+101G,male,23,3,1990,Chinese,20,2,70,68,None,99,80,0,0,0,5,6,3,y,20,y,20,7,60,?,none,John Banks
+101,female,25,3,1991,New Zealand European,19,1,58,58,Other,1,120,0,0,0,7,7,20,y,500,n,0,12,135,40000-44999,none,other
+101,female,2,12,1991,New Zealand European,18,0,45,45,None,1,110,0,2,4,6,8,12,y,30,y,6,0,0,25000-29999,Green,other
+101,male,9,4,1992,New Zealand European,18,4,85,79,None,1,140,78,23,30,6,7,12,y,70,y,2,20,200,35000-39999,Labour,Len Brown
+101,female,15,6,1990,Chinese,0,3,42,40,Protestant,99,0,0,0,0,7,8,7,n,5,n,0,0,0,35000-39999,Other,other
+101,female,28,8,1991,Chinese,2,3,50,45,Other,99,60,0,0,0,4,5,6,n,20,y,4,0,0,?,National,other
+101,female,18,3,1991,Korean,10,1,52,50,None,2,80,0,0,0,7,5,19,y,70,y,15,0,0,?,Labour,other
+108,female,21,9,1991,Other,0,1,55,50,Other,3,60,0,0,0,6,4,4,y,5,n,0,0,0,?,none,other
+108,female,22,10,1990,New Zealand European,19,24,60,54,None,1,170,2,0,0,7,7,25,y,100,y,1,15,200,45000-49999,National,other
+101,male,30,12,1986,Pacific Islander,12,2,112,95,Other,99,150,1,0,0,5,7,5,y,100,y,5,0,0,50000+,Labour,John Banks
+101,female,31,10,1984,New Zealand European,25,0,75,70,Other,1,120,0,1,8,5,7,10,y,10,y,30,0,0,30000-34999,National,John Banks
+108,male,22,8,1991,New Zealand European,18,2,88,90,Catholic,99,60,0,4,10,6,7,10,y,40,n,0,10,100,40000-44999,National,other
+101,female,21,5,1992,Chinese,1,7,48,45,None,99,0,0,0,3,6,8,10,y,25,n,0,0,0,?,none,other
+108,female,21,3,1992,Chinese,9,2,55,50,None,99,40,0,2,0,5,5,6,y,50,y,5,0,0,20000-24999,National,John Banks
+101,female,9,4,1990,Korean,8,2,55,50,Catholic,2,80,0,3,10,9,9,20,y,50,y,3,0,0,40000-44999,Labour,other
+101,female,26,12,1989,Other,15,4,45,45,None,99,80,0,1,10,8,8,8,y,6,n,0,12,140,?,National,other
+101,female,25,3,1992,New Zealand European,18,9,61,59,None,1,110,0,1,1,8,8,10,y,100,y,5,12,140,30000-34999,none,other
+108,female,29,5,1982,Chinese,10,3,49,52,Buddhism,99,110,0,1,3,7,7,30,y,2,y,5,0,0,35000-39999,National,John Banks
+101,female,22,11,1991,Other European,2,1,52,50,Other,1,100,0,0,0,6,7,10,y,30,y,10,0,0,20000-24999,National,other
+101,male,16,9,1990,Chinese,19,3,73,70,None,1,120,0,2,10,3,7,4,y,10,y,7,8,83,25000-29999,Act,John Banks
+101,male,1,9,1990,Other,2,13,69,72,Buddhism,1,110,0,0,0,7,7,4,y,85,n,0,0,0,50000+,Labour,Len Brown
+101,male,8,4,1983,Other,4,30,83,77,Other,99,230,0,15,20,7,8,6,y,2,y,7,14,110,50000+,Green,other
+101,female,5,7,1991,Indian,15,1,64,60,Hindu,99,70,0,0,0,6,7,7,n,100,y,6,0,0,45000-49999,Labour,other
+101G,female,21,9,1988,New Zealand European,21,0,54,50,None,99,40,0,0,0,8,6,20,n,15,y,6,12,136,20000-24999,Green,other
+101,male,28,7,1989,New Zealand European,20,20,73,80,None,1,140,2,9,25,7,7,2,n,5,y,5,0,0,40000-44999,Green,other
+101,male,25,7,1989,Chinese,0,10,60,55,None,1,160,0,0,0,7,7,6,y,7,n,0,0,0,20000-24999,none,other
+101,male,13,8,1988,Korean,5,0,58,65,Catholic,1,120,1,0,0,5,5,3,y,10,n,0,0,0,30000-34999,none,other
+101G,male,6,5,1992,Other,18,2,67,75,Catholic,1,120,0,0,0,8,8,5,y,5,y,5,8.5,91,40000-44999,National,Len Brown
+108,female,20,8,1990,New Zealand European,19,1,56,50,None,1,140,0,0,0,6,6,11,n,50,y,2,0,0,40000-44999,National,John Banks
+101G,female,10,2,1992,Other European,12,4,54,54,None,99,80,0,6,10,5,5,6,y,100,y,6,6,65,?,National,other
+108,female,16,12,1991,Indian,12,4,56,54,Other,1,50,0,0,0,5,5,14,y,200,y,10,6,60,35000-39999,none,other
+108,male,3,1,1991,Other European,9,7,70,70,None,1,120,1,0,0,9,8,3,y,5,y,10,0,0,30000-34999,Act,other
+108,male,14,4,1987,Chinese,1,1,74,75,Other,0,0,0,0,0,8,8,3,y,2,n,0,10,200,30000-34999,Labour,John Banks
+108,female,14,8,1991,Other,18,5,50,48,Buddhism,1,120,3,0,0,6,6,40,y,50,y,5,0,0,?,National,John Banks
+108,female,2,10,1990,Chinese,3,0,60,50,Other,99,0,0,0,0,6,6,15,y,10,n,0,0,0,?,Labour,John Banks
+108,female,30,7,1991,Chinese,9,1,56,50,None,99,60,0,0,0,8,8,9,y,100,y,20,0,0,25000-29999,Labour,other
+101,female,15,12,1984,Other,3,2,65,55,Islam,1,150,0,0,0,5,8,50,n,2,y,5,14,170,50000+,Labour,other
+101G,female,2,11,1991,Chinese,7,3,44,48,None,99,80,0,0,0,6,6,10,y,50,y,2,0,0,25000-29999,National,Len Brown
+101,male,7,7,1991,New Zealand European,15,4,90,85,Protestant,1,150,0,3,10,7,8,12,y,30,n,0,7,90,40000-44999,National,other
+101G,female,13,12,1990,Other,7,3,70,65,Other,99,0,0,0,0,7,7,12,y,30,y,5,0,0,50000+,Labour,other
+108,female,1,9,1989,Other,2,2,60,55,Catholic,99,0,0,0,0,5,5,10,n,50,y,2,0,0,25000-29999,Labour,other
+101,female,12,9,1991,Other European,9,3,68,62,Other,99,110,0,7,20,6,7,10,y,50,y,15,7,75,30000-34999,National,John Banks
+101,male,6,10,1980,Other,1,6,62,59,Catholic,99,120,0,2,10,7,8,6,y,20,n,0,27,400,35000-39999,Labour,John Banks
+108,female,15,10,1991,Other,5,1,90,65,Islam,99,130,0,0,0,8,8,26,n,100,y,10,0,0,50000+,Labour,Len Brown
+108,female,26,8,1991,Korean,4,4,55,49,None,1,120,0,10,120,7,3,51,y,200,n,0,0,0,?,none,John Banks
+108,female,7,8,1990,Other,10,1,58,58,Hindu,2,100,0,0,0,5,5,4,n,5,y,4,0,0,?,Labour,John Banks
+101,female,6,12,1983,Other European,10,3,50,55,None,99,0,0,4,20,5,7,5,y,10,y,15,25,200,40000-44999,Labour,other
+101,male,24,12,1991,Chinese,7,1,85,70,None,1,110,0,0,0,5,6,2,y,0,y,7,3,100,40000-44999,Other,other
+101,female,10,7,1991,New Zealand European,19,5,60,57,Other,1,130,0,2,10,8,8,15,y,15,y,5,4,50,?,National,other
+108,male,29,6,1953,Other,4,8,85,65,None,1,140,0,10,35,1,5,3,y,1,n,0,5,0,50000+,none,other
+101,female,16,6,1981,Chinese,9,1,55,56,None,2,110,0,0,0,6,6,10,n,2,y,2,0,0,30000-34999,National,John Banks
+101,female,4,2,1992,Chinese,10,3,50,47,None,2,100,0,0,0,6,8,30,y,50,n,0,0,0,?,National,John Banks
+108,female,27,2,1989,Indian,1,0,58,58,Catholic,0,100,0,0,0,8,8,40,y,100,y,10,0,0,45000-49999,Labour,John Banks
+101,male,27,7,1988,Korean,14,1,54,56,Other,1,240,0,0,0,6,7,4,y,50,y,10,0,0,45000-49999,none,other
+108,female,8,3,1991,Other,1,5,41,41,Buddhism,99,0,0,0,0,6,6,10,y,20,n,0,0,0,?,none,other
+101,male,25,11,1991,Chinese,18,1,62,70,Other,99,80,0,0,0,5,6,4,y,50,y,7,0,0,?,none,Len Brown
+101,female,11,10,1990,Pacific Islander,7,1,65,60,Catholic,1,120,2,0,0,8,8,11,y,50,y,10,0,0,25000-29999,Labour,other
+101,female,29,7,1990,New Zealand European,20,10,70,66,Catholic,1,130,0,3,4,8,8,20,y,40,y,5,10,130,?,Labour,other
+101,female,1,11,1991,New Zealand European,18,0,52,48,Other,1,180,0,4,10,7,7,20,y,30,y,0,0,0,?,Labour,John Banks
+101,male,2,11,1991,New Zealand European,18,4,70,80,None,99,110,0,6,10,6,8,6,y,30,n,0,0,0,?,Labour,other
+101,female,31,5,1990,Other,0,2,60,60,Islam,2,120,0,0,0,10,7,5,y,25,n,0,0,0,20000-,National,John Banks
+101,female,7,4,1989,New Zealand European,21,5,75,70,None,1,150,0,0,1,6,8,12,y,15,y,10,5,90,30000-34999,National,John Banks
+101,female,11,6,1992,New Zealand European,18,4,55,50,None,99,100,0,10,30,3,4,18,n,50,y,5,3,35,?,none,other
+101G,male,27,2,1992,Other,5,5,60,55,None,99,0,1,2,10,7,5,4,n,4,n,0,8,80,20000-24999,National,John Banks
+101G,female,12,9,1989,Korean,12,2,50,48,Catholic,99,0,0,1,5,7,7,3,y,20,y,3,0,0,20000-,Labour,other
+101G,male,17,3,1984,Chinese,3,5,80,70,None,99,80,0,0,0,7,4,7,n,1,n,0,0,0,50000+,National,John Banks
+101G,male,11,12,1991,New Zealand European,18,12,100,90,None,99,70,0,1,0,5,9,3,y,50,y,10,0,0,45000-49999,Labour,Len Brown
+108,male,13,7,1990,New Zealand European,21,8,63,60,Catholic,99,70,0,8,20,8,8,12,y,15,y,5,20,400,30000-34999,National,other
+101,male,22,7,1991,Other,3,0,70,70,Other,1,100,0,0,0,10,7,2,n,5,y,10,0,0,?,Labour,other
+108,female,19,10,1991,New Zealand European,18,3,59,55,Other,1,120,0,0,0,6,5,20,y,30,n,0,11,110,20000-24999,National,other
+101,female,28,9,1991,Indian,16,5,55,50,Other,99,60,0,0,0,6,5,10,y,10,y,10,0,0,40000-44999,National,other
+101,male,4,7,1991,New Zealand European,9,4,80,90,None,2,100,0,30,40,10,10,34,y,423,y,34,0,0,50000+,Other,other
+101,female,12,4,1990,New Zealand European,20,2,70,65,None,1,120,1,10,50,5,7,50,y,100,y,5,15,200,40000-44999,none,John Banks
+101,male,22,1,1991,Other European,4,10,85,85,None,1,130,0,3,10,5,6,4,y,7,y,5,8,100,?,Labour,John Banks
+108,female,5,5,1988,Chinese,3,3,44,41,Other,1,80,0,0,0,5,5,7,y,10,n,0,0,0,20000-24999,Other,other
+108,female,26,6,1991,Chinese,19,4,44,43,None,1,80,0,0,0,5,7,12,y,8,n,0,0,0,30000-34999,National,other
+101G,female,11,10,1991,Chinese,5,6,59,57,Other,2,110,0,0,0,3,5,16,y,5,y,3,8,88,25000-29999,none,Len Brown
+101,female,20,12,1990,Korean,17,8,45,45,Other,99,0,0,2,10,7,5,6,y,200,n,0,20,130,40000-44999,National,John Banks
+101G,female,25,2,1992,Indian,18,6,80,70,None,99,0,0,10,35,6,7,25,y,30,y,10,7,80,50000+,Green,John Banks
+101,female,29,11,1990,Chinese,4,8,50,45,None,99,0,0,0,0,7,7,10,y,30,n,0,0,0,?,none,other
+101,female,21,10,1987,New Zealand European,20,7,90,69,Catholic,99,110,0,20,60,5,7,5,y,1,y,5,0,0,45000-49999,Labour,other
+101,male,2,9,1991,New Zealand European,18,0,80,85,Protestant,2,130,0,2,5,7,8,4,y,40,y,10,8,100,30000-34999,Act,John Banks
+108,male,11,7,1989,Chinese,2,0,60,70,Buddhism,99,80,0,3,30,7,7,3,y,10,n,0,20,218,20000-24999,Labour,Len Brown
+108,male,27,12,1979,Pacific Islander,0,0,100,104,Protestant,99,90,0,1,5,9,6,4,n,2,y,5,0,0,25000-29999,none,Len Brown
+101,female,29,6,1991,New Zealand European,19,2,68,65,Protestant,1,120,0,1,0,7,7,10,y,30,n,0,3,40,20000-,National,other
+101,female,4,6,1991,New Zealand European,19,16,60,55,None,99,80,0,30,30,8,8,20,n,50,n,0,4,45,20000-24999,Green,other
+108,male,29,4,1983,Chinese,10,4,75,70,Other,1,10,1,1,20,7,7,10,y,100,n,0,0,10,30000-34999,National,John Banks
+101,female,4,6,1992,Other,14,5,54,50,Other,99,70,0,0,0,6,7,13,y,300,y,10,0,0,?,National,Len Brown
+101,female,5,6,1991,New Zealand European,19,3,68,63,None,1,100,0,8,40,7,7,20,y,15,y,10,2,225,20000-,National,John Banks
+108,female,12,2,1991,Korean,14,10,57,51,Protestant,99,0,0,0,0,5,5,30,y,80,n,0,0,0,50000+,none,other
+101,female,24,12,1990,New Zealand European,19,3,55,55,Catholic,1,120,0,3,10,5,5,16,y,50,y,2,0,0,?,National,John Banks
+101,male,3,12,1974,New Zealand European,25,2,88,85,None,1,160,0,1,10,7,8,4,y,3,y,10,0,0,40000-44999,National,other
+101,male,19,10,1970,New Zealand European,2,4,130,110,None,1,160,0,0,0,6,8,1,n,1,y,5,0,0,50000+,none,other
+108,male,1,12,1988,Chinese,8,4,70,75,None,1,120,3,1,1,7,7,7,n,10,y,3,10,130,40000-44999,National,John Banks
+101,male,20,3,1992,New Zealand European,9,5,75,75,Other,1,110,0,0,0,7,8,4,y,20,y,5,0,0,50000+,none,John Banks
+108,female,15,7,1990,Other European,1,8,58,55,None,4,90,0,3,50,5,7,10,y,6,n,0,0,0,20000-24999,none,other
+101G,female,27,4,1992,New Zealand European,18,1,75,53,Catholic,2,100,0,0,0,5,8,10,y,2,y,2,4,43,45000-49999,Act,Len Brown
+108,female,28,8,1989,Korean,6,2,56,50,None,99,0,0,1,5,6,5,10,y,30,n,0,0,0,?,none,other
+101,male,25,8,1982,New Zealand European,5,17,88,70,None,1,160,1,1,3,7,9,3,y,2,y,1,20,800,50000+,Green,other
+101,male,24,12,1988,Korean,8,1,65,70,None,1,150,0,1,3,6,6,4,y,10,y,3,0,0,50000+,none,other
+108,male,17,1,1991,New Zealand European,5,10,60,70,None,1,200,0,8,10,6,7,7,y,15,y,6,0,0,35000-39999,Other,John Banks
+101,male,5,8,1991,New Zealand European,15,4,80,80,Catholic,1,120,0,1,0,7,8,3,y,10,y,3,0,0,?,National,John Banks
+101,male,29,9,1991,New Zealand European,18,1,78,74,Catholic,99,80,0,5,20,8,8,3,y,15,n,0,9,104,50000+,National,John Banks
+101,female,19,9,1991,New Zealand European,19,3,62,58,None,1,120,0,1,0,5,6,15,y,50,y,1,12,200,45000-49999,National,other
+101,female,18,4,1987,Pacific Islander,23,2,98,80,Other,1,120,0,0,0,6,7,20,n,5,y,10,0,0,?,Labour,other
+108,female,1,1,1992,Other,18,7,62,52,None,1,120,2,0,0,7,7,10,y,100,y,5,10,100,50000+,National,Len Brown
+108,male,2,3,1987,Indian,19,3,72,83,Islam,3,150,3,0,0,7,7,5,n,15,y,10,0,0,45000-49999,none,John Banks
+108,male,28,4,1992,Maori,18,2,93,80,Catholic,0,100,0,4,20,7,7,5,y,100,y,5,0,0,35000-39999,National,Len Brown
+108,female,22,7,1991,Chinese,16,2,58,55,None,2,120,0,0,0,5,5,10,n,10,y,8,16,150,35000-39999,National,other
+101,female,2,12,1991,Chinese,18,23,65,60,Catholic,1,130,0,1,5,6,7,5,y,20,y,3,3,30,?,National,John Banks
+101,female,13,1,1991,New Zealand European,19,7,67,63,None,1,140,0,1,0,7,8,20,y,30,y,5,15,160,40000-44999,National,Len Brown
+108,male,2,2,1972,Maori,32,6,85,80,Protestant,2,130,0,0,0,7,7,3,n,2,y,10,0,65,30000-34999,National,John Banks
+101G,male,21,5,1990,Chinese,2,3,60,55,None,99,0,0,1,5,7,7,5,y,10,n,0,20,220,50000+,National,John Banks
+108,male,14,5,1991,Chinese,12,2,65,62,None,1,110,0,0,3,7,7,5,y,30,y,5,0,0,35000-39999,National,John Banks
+101G,male,14,8,1991,New Zealand European,18,0,86,86,Protestant,2,120,0,1,0,5,8,7,y,45,n,0,0,0,35000-39999,none,John Banks
+101,female,25,4,1991,Other,7,4,58,50,None,99,150,0,5,30,2,4,6,y,5,y,8,12,120,?,Green,other
+101,male,16,2,1992,Pacific Islander,18,2,98,100,Other,99,120,0,1,0,5,5,3,n,30,y,20,0,0,?,Labour,Len Brown
+101,female,5,4,1980,Other European,4,8,55,53,None,1,110,0,4,20,7,6,5,y,0,n,0,0,0,40000-44999,National,other
+101,female,24,2,1978,New Zealand European,32,7,60,55,None,2,140,1,5,20,6,7,11,n,8,y,20,0,0,50000+,Green,John Banks
+108,male,29,5,1992,New Zealand European,18,8,67,72,None,99,160,0,16,30,8,7,3,y,50,y,5,0,0,50000+,Act,John Banks
+101,female,14,3,1990,Other European,0,11,50,45,None,1,120,0,1,10,7,8,5,n,10,n,0,0,0,?,Green,other
+101,male,16,9,1983,New Zealand European,26,3,80,70,None,1,120,0,0,0,8,8,5,y,10,y,15,20,432,45000-49999,Green,Len Brown
+101,female,25,8,1991,Chinese,15,2,52,50,None,99,100,0,0,0,7,8,7,y,10,n,0,4,40,25000-29999,Labour,John Banks
+108,female,10,10,1992,Pacific Islander,17,1,65,60,Protestant,99,0,0,0,0,4,7,5,n,30,n,0,0,0,?,Labour,Len Brown
+108,female,9,4,1992,Indian,5,4,62,45,Hindu,99,80,0,0,0,5,5,5,y,50,y,2,0,0,50000+,Labour,John Banks
+101,male,6,5,1991,Pacific Islander,18,52,96,85,Protestant,0,60,0,0,0,10,7,5,y,52,y,20,0,36,50000+,Labour,Len Brown
+101,female,7,2,1990,Chinese,5,6,51,50,None,99,0,0,0,0,8,7,10,y,10,n,0,0,0,50000+,none,other
+101G,female,25,11,1987,New Zealand European,21,8,60,55,None,99,100,0,7,20,7,5,12,y,15,y,8,17,200,?,Labour,other
+101G,female,2,11,1991,Chinese,7,3,70,50,None,99,50,0,0,0,4,5,10,y,20,y,5,7,77,50000+,National,John Banks
+108,male,27,10,1991,New Zealand European,18,5,77,70,Catholic,1,110,1,2,20,7,6,3,y,10,y,10,4,80,?,Labour,John Banks
+101G,female,13,4,1992,Chinese,11,5,57,52,Other,99,0,0,0,0,6,7,6,y,30,y,20,0,0,30000-34999,Labour,Len Brown
+101,female,17,8,1989,Korean,6,7,43,45,Catholic,99,20,0,0,0,5,4,5,y,100,n,0,0,0,?,National,other
+108,female,17,1,1991,Chinese,1,1,70,65,None,99,0,0,1,5,8,7,10,y,20,n,0,0,0,30000-34999,Green,Len Brown
+101,female,17,5,1992,Pacific Islander,2,3,67,67,Other,1,80,0,0,0,10,7,10,n,10,n,0,0,0,?,Other,other
+108,female,12,8,1990,New Zealand European,19,4,66,55,None,3,130,0,4,12,8,7,40,y,10,y,12,0,0,?,National,Len Brown
+101,female,16,1,1986,Chinese,2,4,45,50,Buddhism,2,110,0,1,0,7,6,12,n,10,n,0,15,150,?,none,other
+101,female,14,9,1968,Other,18,16,52,50,Other,1,120,1,2,8,7,7,12,y,8,n,0,0,0,?,Green,other
+101,female,7,4,1985,Korean,0,9,50,45,Buddhism,0,0,0,1,20,6,6,15,y,2,n,0,0,0,25000-29999,none,other
+101,female,27,9,1990,New Zealand European,19,5,59,55,Other,1,130,0,8,10,7,7,15,y,25,y,10,5,70,35000-39999,Green,John Banks
+108,female,24,11,1991,Chinese,11,5,52,47,None,1,100,0,1,10,5,6,8,y,5,y,7,10,100,30000-34999,Labour,Len Brown
+108,female,31,7,1991,New Zealand European,18,1,62,60,None,1,100,0,0,0,7,8,15,y,10,y,10,0,0,50000+,National,John Banks
+108,male,1,2,1981,New Zealand European,29,1,110,102,None,1,260,0,2,10,6,8,10,n,15,y,4,5,150,40000-44999,none,other
+101,female,13,5,1991,New Zealand European,19,0,76,63,None,99,40,0,0,0,6,5,11,y,65,n,0,0,0,?,none,other
+108,male,25,10,1991,Other,5,3,60,70,Buddhism,1,100,0,0,0,6,5,4,n,3,y,2,0,0,25000-29999,Labour,Len Brown
+108,female,7,9,1991,Other,1,0,52,50,Buddhism,99,0,0,0,0,8,6,6,n,15,n,0,6,65,50000+,Progressive,other
+108,female,16,10,1991,Korean,5,3,65,55,Protestant,1,40,0,0,0,5,8,5,y,10,n,0,0,0,30000-34999,Other,other
+101,female,23,3,1992,New Zealand European,18,1,75,69,None,99,100,0,0,0,6,6,25,y,30,y,10,4,50,20000-24999,none,other
+101,female,24,7,1991,Korean,3,6,55,48,Other,4,100,0,1,25,6,7,6,y,100,n,0,0,0,35000-39999,none,other
+101,male,26,11,1990,Korean,17,2,105,85,Other,99,50,0,0,0,8,10,4,y,30,y,8,0,0,30000-34999,National,John Banks
+101,female,24,1,1992,Chinese,7,4,46,40,Buddhism,99,80,0,0,0,5,6,6,y,30,y,4,0,0,?,Labour,Len Brown
+101G,female,18,3,1991,Korean,3,15,48,46,Protestant,99,0,0,0,0,6,6,30,y,40,y,2,0,0,?,none,other
+108,female,26,3,1991,Other,1,2,60,55,Other,99,0,0,1,10,9,8,20,y,50,n,0,0,0,45000-49999,none,other
+108,female,15,4,1980,Pacific Islander,10,2,70,94,Protestant,1,50,2,0,0,8,8,6,n,0,y,5,20,0,?,Labour,John Banks
+101,male,7,2,1991,Other,11,7,70,70,Other,0,240,1,0,0,10,10,2,y,5,y,8,0,0,45000-49999,Labour,John Banks
+101,female,21,7,1991,Other,6,10,58,54,Protestant,2,120,0,2,15,6,6,23,y,35,n,0,0,0,?,National,John Banks
+108,male,18,5,1992,New Zealand European,18,8,85,90,None,1,160,0,10,12,9,7,5,y,7,n,0,0,0,50000+,National,John Banks
+101,female,4,7,1990,New Zealand European,19,11,62,58,None,1,140,0,3,7,7,7,8,y,50,y,5,30,350,40000-44999,Labour,Len Brown
+101,female,29,6,1991,New Zealand European,19,1,60,56,None,1,100,0,1,5,7,7,10,y,150,y,10,17,360,?,National,Len Brown
+101G,male,21,10,1990,Pacific Islander,19,2,76,76,Other,5,10,0,10,19,7,7,7,n,400,y,7,42,340,25000-29999,Labour,Len Brown
+108,male,14,9,1963,Chinese,7,5,60,60,Other,99,60,1,0,1,5,6,6,n,0,y,5,0,0,50000+,Labour,John Banks
+101,male,19,4,1990,Korean,8,1,85,70,None,99,100,0,0,0,5,5,2,n,20,y,3,0,0,?,none,other
+101,male,3,9,1991,New Zealand European,18,7,73,71,Other,1,110,0,1,0,6,7,3,y,7,n,0,12,150,?,National,John Banks
+101,female,9,4,1992,Indian,18,2,65,58,Hindu,1,110,0,0,0,8,7,10,y,2,y,10,0,0,?,National,John Banks
+101G,female,19,11,1990,New Zealand European,19,4,80,60,None,1,130,0,0,0,5,9,20,y,15,n,0,0,0,50000+,National,other
+101,female,14,7,1984,New Zealand European,26,9,72,65,None,1,140,3,6,30,5,5,5,y,10,y,20,11,130,?,Labour,other
+101,female,12,10,1990,New Zealand European,19,1,70,70,Other,99,50,0,2,14,5,6,8,y,8,y,4,3,60,?,Labour,Len Brown
+108,male,18,7,1991,Other,14,4,65,60,Protestant,1,180,0,0,0,8,8,8,y,50,y,5,15,150,40000-44999,Labour,John Banks
+101,male,12,3,1990,New Zealand European,2,17,85,85,None,99,140,0,10,30,7,9,3,n,5,y,4,0,0,?,National,John Banks
+101,male,17,12,1991,Chinese,16,5,70,60,None,99,0,0,0,0,5,7,2,y,0,y,4,8,60,30000-34999,National,John Banks
+101,female,2,2,1990,Other,16,5,58,49,Other,99,50,0,0,0,6,5,5,y,8,y,5,0,0,25000-29999,none,other
+101,female,21,2,1992,Other European,15,16,62,61,Protestant,99,40,0,2,0,4,8,5,y,50,y,5,6,72,45000-49999,Labour,John Banks
+101,female,13,11,1991,New Zealand European,18,6,62,58,None,2,130,1,3,12,6,7,20,y,20,y,4,10,120,45000-49999,National,John Banks
+101,male,2,8,1991,Other,18,5,65,65,Other,2,190,0,10,10,6,7,9,y,5,y,10,0,0,35000-39999,National,Len Brown
+101,male,29,4,1990,Indian,5,1,65,80,Hindu,1,180,0,3,15,6,6,6,y,300,y,3,20,350,50000+,Green,John Banks
+101,female,11,10,1991,New Zealand European,18,6,55,50,Catholic,1,130,2,2,5,10,10,20,y,50,n,0,20,200,20000-24999,Labour,other
+101G,male,25,9,1990,New Zealand European,19,4,80,76,None,1,150,0,12,60,5,6,17,y,30,y,5,15,160,40000-44999,Labour,John Banks
+108,female,3,8,1987,New Zealand European,19,3,78,69,Other,99,0,0,3,10,5,5,9,n,3,y,10,18,175,?,Labour,Len Brown
+101,male,19,1,1992,Other European,15,22,83,85,None,1,260,0,20,40,8,8,6,y,100,y,7,14,170,50000+,National,John Banks
+108,male,24,4,1991,Korean,12,4,56,65,Other,1,110,0,0,0,6,7,5,y,5,n,0,0,0,?,none,other
+108,male,1,6,1991,New Zealand European,10,8,67,70,None,1,190,0,4,40,8,8,4,y,25,y,4,0,0,45000-49999,Other,John Banks
+108,female,7,11,1990,Pacific Islander,19,4,65,60,Catholic,1,100,1,4,10,7,7,10,y,20,y,5,10,123,30000-34999,National,Len Brown
+101,male,18,3,1992,New Zealand European,6,8,76,80,Protestant,1,160,1,20,30,7,7,2,y,0,y,30,0,0,50000+,Green,John Banks
+108,male,15,10,1991,New Zealand European,18,4,86,90,None,1,200,0,30,40,6,8,7,n,20,y,15,0,0,?,National,Len Brown
+108,female,29,6,1991,New Zealand European,19,6,80,70,None,2,130,0,3,20,6,7,14,y,20,y,10,10,120,40000-44999,National,other
+101G,female,9,12,1991,Other,18,5,59,48,None,1,130,0,0,0,6,8,27,y,100,n,0,0,0,?,none,other
+101,female,24,8,1990,Maori,19,2,65,60,Catholic,2,150,1,10,25,7,8,30,n,100,y,20,8,80,?,Labour,John Banks
+108,male,1,6,1989,New Zealand European,21,1,81,75,None,2,190,0,20,40,7,7,5,n,20,y,5,25,250,30000-34999,Act,John Banks
+101,male,26,7,1990,New Zealand European,18,27,70,70,Protestant,1,140,0,1,2,6,6,8,n,4,y,10,0,0,?,Other,other
+101G,female,21,3,1990,New Zealand European,20,10,79,65,None,1,20,0,1,10,6,9,22,y,15,y,10,8,75,35000-39999,Labour,other
+101,female,13,8,1989,Other European,5,13,63,65,Catholic,1,120,0,1,10,5,7,6,y,15,y,10,15,120,?,National,other
+101,female,26,7,1988,Pacific Islander,0,2,120,85,Other,1,110,1,1,0,7,7,12,y,6,y,15,0,0,45000-49999,Progressive,Len Brown
+108,male,9,12,1991,New Zealand European,16,9,68,70,None,1,160,0,1,0,5,5,3,y,4,n,0,15,175,30000-34999,Maori Party,other
+108,female,3,3,1992,New Zealand European,18,5,58,56,Protestant,99,60,0,5,10,6,7,10,y,80,n,0,12,200,?,National,other
+101,female,2,3,1990,New Zealand European,20,1,74,60,None,2,130,0,1,5,6,7,10,y,1,y,5,0,0,?,Green,John Banks
+101,female,12,8,1991,New Zealand European,18,4,46,48,Catholic,1,110,0,0,0,6,7,10,y,50,n,0,2,40,?,National,John Banks
+101G,male,1,5,1991,Chinese,4,0,65,70,Buddhism,1,100,0,0,0,5,5,15,y,10,y,3,0,0,25000-29999,National,John Banks
+101G,female,27,2,1992,Chinese,15,2,60,55,None,99,0,0,0,0,7,7,11,y,100,y,3,0,0,?,National,Len Brown
+108,male,2,5,1990,Korean,8,2,66,68,Buddhism,1,150,10,0,0,5,5,6,y,30,y,1,0,0,30000-34999,Labour,other
+101,female,22,7,1991,Other,1,5,55,50,Protestant,99,100,0,1,8,6,7,20,y,20,y,3,3,30,50000+,National,John Banks
+108,female,4,12,1991,New Zealand European,18,3,60,57,Catholic,99,50,0,5,20,6,7,13,y,70,y,7,15,0,35000-39999,National,John Banks
+101,male,29,4,1991,New Zealand European,13,5,73,75,Catholic,1,180,0,10,30,7,7,6,y,50,y,15,0,0,50000+,National,John Banks
+108,male,13,7,1990,New Zealand European,20,18,78,78,None,2,120,0,15,100,7,7,8,y,50,y,2,16,160,20000-,Act,John Banks
+101,female,18,1,1992,Other,13,2,50,50,None,99,0,0,0,0,6,8,7,y,25,y,9,0,0,20000-,none,other
+101,male,1,1,1992,Other European,8,2,79,75,None,1,140,0,0,0,5,7,3,y,30,y,4,0,0,20000-24999,none,other
+101G,female,9,9,1990,New Zealand European,19,10,60,52,None,1,140,0,5,10,8,8,12,y,15,n,0,0,0,30000-34999,National,John Banks
+101,female,12,4,1991,Other European,5,1,60,55,None,1,100,0,0,0,7,9,12,y,15,n,0,10,100,?,Green,other
+108,male,26,3,1990,Korean,1,1,70,68,None,99,0,0,0,0,7,8,8,y,50,y,5,0,0,?,National,other
+108,male,1,8,1983,Other,2,0,64,60,Catholic,1,120,0,24,40,5,6,5,n,100,y,5,12,200,45000-49999,Labour,John Banks
+101,female,7,11,1989,New Zealand European,20,4,57,55,Protestant,99,0,0,1,7,5,6,8,y,5,y,10,0,0,20000-24999,Green,other
+101G,female,12,12,1991,Chinese,14,2,54,48,Protestant,99,60,0,0,0,7,8,10,y,30,y,4,0,0,25000-29999,National,Len Brown
+101,male,21,4,1987,New Zealand European,23,1,70,75,Protestant,2,190,0,0,0,5,8,5,y,0,y,10,0,0,?,none,John Banks
+101,female,19,2,1991,Chinese,19,7,57,57,None,1,120,0,0,0,7,7,8,y,100,y,5,0,0,?,National,other
+108,female,17,11,1988,Chinese,6,4,47,47,Catholic,1,90,0,0,0,7,7,2,y,10,n,0,0,0,20000-24999,none,other
+101,female,19,4,1991,New Zealand European,6,8,157,152,None,1,80,0,1,10,6,7,10,y,15,y,2,8,93,?,none,other
+108,female,5,8,1991,Chinese,7,6,57,51,None,1,180,0,1,1,6,8,30,y,30,y,3,0,0,?,National,Len Brown
+101,male,2,8,1976,Other European,5,1,75,75,Islam,5,160,4,2,10,8,9,3,n,20,y,5,16,220,50000+,Labour,John Banks
+101,female,16,2,1981,Maori,29,3,81,70,Other,1,130,0,0,0,5,5,10,n,5,y,10,8,120,50000+,Labour,Len Brown
+101,female,23,1,1992,Korean,10,3,50,50,Catholic,1,160,2,2,0,6,8,9,y,100,y,3,12,140,?,Labour,other
+101,female,14,9,1990,New Zealand European,12,22,95,75,None,1,170,0,6,10,5,8,8,y,5,y,10,4,65,40000-44999,Green,John Banks
+108,male,1,2,1992,New Zealand European,10,53,72,74,None,1,240,0,15,40,8,7,5,y,100,y,1,0,0,50000+,National,John Banks
+108,male,1,11,1989,Chinese,1,2,70,68,None,2,10,2,10,70,10,10,5,y,10,n,0,0,0,25000-29999,none,Len Brown
+108,male,18,12,1991,New Zealand European,18,1,65,55,Protestant,1,150,0,0,0,6,7,9,y,300,n,0,7,80,?,none,other
+101,male,21,6,1991,Korean,8,2,68,62,Protestant,1,150,0,5,10,7,6,5,y,70,y,50,0,0,?,National,Len Brown
+108,female,20,5,1989,Other,8,7,67,55,Buddhism,99,0,0,0,0,5,6,5,n,2,n,0,0,0,?,National,other
+101,female,12,12,1988,New Zealand European,21,6,60,55,None,1,150,5,5,20,6,9,8,y,15,y,10,14,180,?,Labour,other
+108,female,1,7,1991,New Zealand European,19,0,65,60,Other,1,120,0,0,0,8,7,15,y,30,y,5,6,70,40000-44999,National,other
+108,male,22,6,1984,New Zealand European,26,13,74,80,None,1,170,2,15,30,8,9,5,y,20,y,5,0,0,50000+,Labour,Len Brown
+101,female,12,11,1991,Korean,18,1,50,46,Protestant,99,0,0,0,0,5,6,7,y,50,n,0,0,0,30000-34999,National,other
+101,male,27,1,1989,Other European,7,3,79,70,None,1,120,0,1,2,8,8,3,y,30,y,10,14,170,50000+,none,other
+101,male,31,12,1991,Other,7,6,73,70,Hindu,1,200,0,6,40,6,9,5,y,40,y,5,10,400,50000+,National,John Banks
+101,male,26,2,1990,New Zealand European,5,5,55,61,Other,1,130,1,3,10,5,7,3,y,5,y,10,0,0,?,NZ First,other
+108,male,10,3,1992,Chinese,11,4,86,75,None,99,0,0,10,25,7,8,6,y,35,y,0,0,0,40000-44999,Labour,other
+108,female,24,11,1990,Other,19,2,70,65,Other,1,110,0,0,0,5,5,3,y,20,n,0,12,135,?,Labour,Len Brown
+108,female,31,1,1987,Other,2,7,56,54,Protestant,2,130,1,0,0,9,8,10,y,9,y,2,20,100,35000-39999,National,other
+101,female,30,8,1991,Indian,8,12,60,55,Catholic,99,0,0,0,0,5,6,8,y,8,y,3,11,120,40000-44999,none,John Banks
+101,female,3,11,1990,New Zealand European,19,10,62,62,None,1,130,0,3,10,5,7,10,y,30,n,0,3,40,?,National,other
+101,female,25,10,1991,Korean,10,0,48,45,Protestant,99,0,0,0,0,3,3,9,y,40,y,5,0,0,20000-24999,Labour,John Banks
+101,male,30,8,1991,New Zealand European,18,1,75,75,None,1,220,0,30,40,8,8,4,y,70,y,10,6,80,35000-39999,Labour,John Banks
+101,female,24,9,1981,New Zealand European,28,3,63,60,Other,1,120,0,0,0,8,9,20,y,30,y,20,5,60,35000-39999,National,other
+108,female,13,2,1992,New Zealand European,18,1,60,55,None,99,120,0,1,5,6,5,20,y,25,y,2,5,50,40000-44999,National,Len Brown
+101,male,10,8,1985,New Zealand European,24,1,80,80,None,1,200,5,3,10,5,10,7,y,15,y,5,0,0,40000-44999,Other,other
+101,male,21,7,1990,Other European,0,10,72,74,Other,1,180,0,12,20,8,9,5,y,5,n,0,0,0,?,Green,John Banks
+108,female,4,1,1990,Other,5,7,53,45,Buddhism,99,110,0,4,10,3,7,10,y,10,n,0,0,0,?,none,other
+101,male,10,2,1992,New Zealand European,18,1,54,61,Other,99,0,0,5,5,3,7,6,y,10,y,5,0,0,?,Green,other
+101,female,1,8,1990,Other European,10,7,51,60,None,99,90,0,13,10,8,8,21,y,30,y,3,12,110,?,none,other
+108,female,20,9,1990,New Zealand European,15,10,85,75,None,1,110,0,0,0,2,7,35,y,8,y,1,6,40,30000-34999,National,John Banks
+101,female,30,1,1992,Maori,18,4,58,58,None,1,110,0,2,10,7,7,8,y,8,n,0,0,0,?,Green,other
+108,male,25,2,1992,Chinese,8,5,58,65,Other,1,140,0,0,0,5,5,10,n,50,y,5,5,100,30000-34999,none,John Banks
+101,female,22,1,1975,New Zealand European,35,8,78,72,Protestant,2,150,0,4,12,6,6,20,y,4,y,4,8,120,40000-44999,National,John Banks
+101,male,25,10,1988,Chinese,2,0,72,62,None,99,0,0,0,0,6,7,5,y,10,n,0,5,35,50000+,National,other
+101,female,14,3,1989,Other,0,2,62,60,None,1,110,0,1,10,7,8,20,y,30,n,0,0,0,20000-24999,Other,other
+101,male,31,1,1991,New Zealand European,19,7,92,102,Catholic,1,120,0,15,20,6,7,4,y,50,y,10,0,0,25000-29999,Labour,Len Brown
+108,female,18,2,1983,Korean,5,2,58,52,Buddhism,1,140,0,0,5,8,8,23,n,20,y,5,0,0,50000+,National,John Banks
+101,male,12,8,1988,New Zealand European,21,5,65,65,None,2,160,0,5,15,7,9,4,n,10,y,8,9,160,30000-34999,Green,John Banks
+101,male,9,9,1991,New Zealand European,10,18,63,68,Other,1,230,0,3,30,7,8,13,y,50,y,2,0,0,30000-34999,Labour,John Banks
+101,female,4,2,1989,Chinese,21,5,60,50,None,2,140,2,10,20,6,7,10,n,25,y,0,10,180,35000-39999,Labour,other
+108,female,2,9,1991,New Zealand European,18,3,83,70,None,1,110,0,1,0,6,7,14,y,60,y,2,0,0,40000-44999,National,John Banks
+108,male,13,8,1990,Other,1,6,50,50,Buddhism,99,180,0,0,0,9,5,5,y,20,n,0,0,0,20000-24999,none,other
+108,female,17,4,1992,Other,7,7,50,50,Islam,99,80,0,0,0,8,8,20,y,100,y,10,0,0,50000+,Labour,other
+108,female,31,7,1991,New Zealand European,19,1,55,47,None,1,150,0,0,0,7,7,25,y,60,y,6,0,0,25000-29999,Green,other
+101,female,24,11,1991,New Zealand European,18,4,52,48,None,1,110,1,4,10,8,7,10,y,10,n,0,0,0,?,National,John Banks
+108,female,16,10,1991,Other,1,5,48,46,Catholic,1,180,0,0,0,7,8,5,y,3,n,0,0,0,30000-34999,National,John Banks
+101G,male,7,9,1991,Chinese,6,4,71,72,None,1,140,0,1,5,6,6,8,y,20,y,3,12,120,?,none,other
+101,male,3,4,1991,New Zealand European,19,4,76,80,None,1,120,0,1,5,5,9,3,y,30,y,10,8,90,?,none,other
+108,female,13,5,1991,New Zealand European,19,3,54,50,None,1,130,1,5,10,5,7,10,y,20,y,100,12,120,?,National,other
+108,male,9,12,1991,New Zealand European,18,4,80,90,Catholic,1,190,0,7,20,6,6,8,y,120,y,3,20,350,?,none,other
+108,female,17,8,1991,New Zealand European,18,1,50,48,None,1,110,0,4,10,6,7,30,n,20,n,0,4,50,40000-44999,National,other
+101G,female,21,7,1991,New Zealand European,18,1,62,55,None,1,110,0,8,30,7,8,15,y,30,y,8,0,0,50000+,National,John Banks
+101,female,18,12,1991,Chinese,14,6,60,53,Catholic,99,0,0,0,0,5,4,5,y,200,y,3,0,0,?,Labour,other
+108,male,2,4,1985,Other,2,3,63,63,None,2,200,0,8,10,1,1,5,y,5,n,0,0,0,35000-39999,National,other
+108,female,5,6,1991,New Zealand European,19,5,60,57,None,1,140,0,2,10,6,7,18,y,10,y,4,3,40,45000-49999,National,other
+108,female,1,12,1991,Chinese,10,3,46,40,None,1,70,0,0,0,8,9,10,y,50,y,10,3,90,?,Labour,other
+108,female,3,4,1991,New Zealand European,19,14,60,55,None,1,130,0,10,20,6,6,18,y,50,y,3,10,500,40000-44999,Labour,John Banks
+108,female,28,10,1990,Chinese,2,3,47,44,None,99,0,0,0,0,1,10,30,y,20,y,6,0,0,20000-24999,Labour,John Banks
+101G,male,9,5,1989,New Zealand European,21,10,78,78,Protestant,2,130,0,4,20,8,9,5,y,1,n,0,0,0,20000-,Act,John Banks
+101,female,13,2,1991,New Zealand European,19,0,72,66,None,2,120,0,0,0,6,5,5,y,20,y,5,0,0,25000-29999,Green,other
+101,male,29,11,1991,Indian,1,10,47,60,Hindu,1,100,0,0,0,5,7,5,y,5,n,0,0,0,?,none,other
+108,female,27,7,1991,Chinese,1,1,75,60,None,99,0,0,0,0,5,5,10,y,25,n,0,0,0,30000-34999,none,John Banks
+101,male,1,4,1964,New Zealand European,30,23,77,75,None,2,120,0,4,20,5,6,10,y,0,n,0,4,100,35000-39999,Labour,Len Brown
+108,male,14,3,1992,New Zealand European,18,6,67,67,Protestant,1,100,0,1,0,7,7,2,y,10,n,0,9,98.31,40000-44999,Labour,John Banks
+101,male,9,9,1991,Other,15,1,63,65,None,99,0,0,1,10,4,7,3,y,30,y,10,0,0,?,National,Len Brown
+101G,female,7,4,1990,Korean,15,15,40,40,Catholic,99,0,0,0,0,5,5,25,y,20,y,5,2,100,35000-39999,Labour,other
+101,female,29,2,1992,New Zealand European,18,1,75,65,None,1,120,0,1,10,6,8,10,y,20,y,8,18,166,?,Act,other
+101,female,30,10,1991,New Zealand European,18,3,60,55,None,99,110,0,0,0,6,8,6,y,100,y,6,6,78,35000-39999,National,John Banks
+108,male,3,5,1992,Chinese,8,2,75,70,None,99,100,0,0,0,6,9,3,y,10,y,2,3,40,50000+,Labour,John Banks
+101G,female,3,8,1991,Other,14,13,60,58,Protestant,1,100,0,2,10,5,6,10,y,65,y,20,4,80,?,Labour,other
+108,female,16,11,1992,Maori,17,2,50,53,None,99,110,0,1,0,7,7,14,y,15,y,10,0,0,45000-49999,Labour,other
+101G,female,28,12,1990,Korean,9,6,52,48,Other,1,130,0,0,0,7,7,20,y,50,n,0,0,0,50000+,National,John Banks
+101,male,21,1,1992,New Zealand European,18,1,60,60,None,1,180,0,0,0,5,5,3,y,10,y,1,6,72,?,none,other
+101G,male,7,11,1991,Indian,18,5,80,80,Other,1,130,0,5,20,7,7,4,y,60,n,0,0,0,?,National,Len Brown
+101,female,30,12,1989,Indian,20,1,49,45,Other,99,0,0,0,0,7,8,11,n,6,y,2,0,0,25000-29999,National,Len Brown
+101,female,4,8,1985,Other,25,3,91,75,None,2,150,0,0,0,7,7,5,y,60,y,5,19,226,35000-39999,Labour,Len Brown
+101,male,9,4,1991,New Zealand European,19,8,78,80,None,1,100,0,0,0,7,7,12,n,2,y,2,0,0,50000+,National,John Banks
+108,female,3,11,1991,Chinese,18,1,63,55,None,2,90,0,0,0,2,3,10,y,10,n,0,9,100,45000-49999,none,other
+101,female,20,10,1991,New Zealand European,18,1,55,50,None,99,50,0,3,15,8,8,6,y,50,y,10,11,110,35000-39999,Labour,Len Brown
+101,female,29,6,1990,Other European,5,7,56,53,None,1,130,0,5,20,7,6,15,y,10,y,10,20,150,20000-24999,none,other
+101G,male,9,7,1991,Chinese,13,4,62,62,Protestant,1,110,0,0,0,7,8,10,n,15,y,20,0,0,30000-34999,National,other
+108,female,20,12,1969,New Zealand European,40,34,60,55,Protestant,1,130,0,2,15,4,8,21,n,2,n,0,26,800,?,National,John Banks
+108,female,24,7,1992,Chinese,1,12,50,45,None,99,0,0,0,0,7,7,15,y,1,n,0,0,0,?,National,John Banks
+108,female,28,2,1991,Other,8,6,45,50,Islam,99,0,0,0,0,7,8,6,y,40,y,5,0,0,?,Labour,other
+101,male,20,12,1990,New Zealand European,19,7,60,65,None,1,190,0,0,0,6,7,3,y,2,n,0,8,1000,50000+,none,other
+108,male,22,11,1991,New Zealand European,18,3,80,75,None,1,180,0,6,20,5,5,6,y,85,n,0,9,100,40000-44999,National,John Banks
+101,female,17,10,1989,Chinese,2,2,60,55,None,99,0,0,0,0,7,7,30,y,20,n,0,0,0,50000+,none,other
+108,female,4,4,1992,Other,12,2,49,46,Catholic,1,70,0,0,0,6,8,20,y,10,y,5,0,0,20000-24999,National,other
+101,female,20,3,1992,New Zealand European,18,2,53,46,Other,1,130,0,1,0,6,5,24,y,50,y,15,8,83,50000+,none,John Banks
+108,female,13,10,1992,Other,16,5,43,50,Buddhism,99,0,0,0,0,7,9,25,y,20,y,3,14,150,35000-39999,Labour,John Banks
+101G,female,6,7,1991,Korean,4,2,48,45,Protestant,99,0,0,0,0,7,7,20,y,30,n,0,0,0,?,Other,other
+108,male,3,12,1991,Chinese,1,6,69,77,Buddhism,1,140,0,0,0,5,6,10,y,10,n,0,0,0,20000-,none,other
+108,male,18,6,1991,Chinese,6,3,61,64,None,99,0,0,0,0,6,5,4,y,10,n,0,0,0,?,Green,John Banks
+101,male,5,6,1989,Korean,10,3,73,80,None,1,140,0,0,0,5,9,1,y,1,y,10,0,0,?,none,John Banks
+108,male,30,9,1991,Indian,5,7,71,73,Hindu,99,40,0,0,0,7,8,2,y,30,y,8,0,0,35000-39999,none,Len Brown
+101,male,14,1,1992,New Zealand European,18,1,74,70,None,99,130,0,8,15,6,5,4,y,30,y,12,8,83,40000-44999,Labour,John Banks
+108,female,15,10,1989,Chinese,1,0,60,55,None,99,0,0,1,6,7,7,8,y,5,n,0,0,0,35000-39999,National,John Banks
+108,female,11,2,1992,Other,14,8,60,55,Protestant,99,0,0,0,0,3,5,7,y,1,y,2,0,0,20000-,none,other
+108,female,8,2,1988,Chinese,1,4,50,50,None,0,0,0,0,0,5,3,5,y,3,n,0,0,0,35000-39999,Labour,John Banks
+108,male,19,6,1992,Chinese,18,5,79,79,Protestant,99,100,0,1,6,7,7,7,y,40,y,15,15,13,25000-29999,National,John Banks
+101,female,10,8,1991,New Zealand European,18,8,59,55,None,1,110,0,0,0,5,7,10,y,30,n,0,8,125,30000-34999,Labour,John Banks
+101G,female,22,12,1991,Korean,6,2,58,54,Other,99,0,0,0,0,4,4,11,y,40,y,6,0,0,?,NZ First,other
+108,female,2,8,1991,New Zealand European,19,12,66,62,None,1,200,0,8,20,6,5,22,y,60,y,4,5,55,?,National,John Banks
+108,female,14,5,1990,Chinese,1,0,60,55,Protestant,99,0,0,1,2,7,8,12,n,40,n,0,3,30,40000-44999,Labour,John Banks
+108,female,25,4,1990,Maori,20,2,63,56,None,1,180,0,16,40,6,7,12,y,25,y,8,0,0,?,Other,other
+108,female,5,7,1992,Chinese,14,5,52,50,None,99,110,0,0,0,7,8,12,y,60,y,3,0,0,?,National,John Banks
+108,female,20,8,1991,Chinese,3,4,47,42,None,99,0,0,0,0,6,8,5,y,30,n,0,0,0,30000-34999,none,other
+101,female,19,3,1990,Chinese,1,2,45,48,Catholic,99,0,0,0,0,6,6,12,n,40,n,0,0,0,20000-24999,none,Len Brown
+101,female,1,11,1991,Other,18,4,58,55,None,1,120,0,8,10,7,7,7,y,50,y,2,1,30,?,none,other
+108,female,24,4,1992,Chinese,18,3,54,52,Other,2,120,0,0,0,5,6,6,y,20,y,10,8,90,20000-24999,National,Len Brown
+101,female,23,4,1986,Other European,0,8,58,55,None,1,200,0,1,5,8,7,10,y,1,y,5,0,0,30000-34999,Green,Len Brown
+108,female,7,1,1992,Pacific Islander,1,0,120,80,Other,1,60,0,0,0,1,5,8,n,20,y,5,0,0,?,none,other
+101,female,18,10,1989,Chinese,2,2,55,45,None,99,0,0,0,0,10,5,25,y,5,n,0,0,0,?,Green,John Banks
+101,male,19,5,1988,New Zealand European,22,3,85,83,None,0,120,0,8,15,7,6,4,y,5,y,15,9,100,30000-34999,Green,other
+101,male,20,6,1991,New Zealand European,19,1,93,84,None,1,130,0,4,5,5,8,2,y,10,y,10,10,120,?,none,other
+108,male,23,3,1989,New Zealand European,12,19,80,80,None,2,220,0,20,50,8,8,6,y,7,y,5,40,700,50000+,National,John Banks
+101,male,17,11,1989,New Zealand European,20,1,62,65,None,2,120,0,0,0,6,7,6,n,4,y,5,0,0,35000-39999,National,John Banks
+101,female,5,8,1991,Chinese,11,7,56,54,None,1,110,0,0,0,5,5,10,y,20,y,10,0,0,20000-24999,National,John Banks
+108,male,14,5,1991,Chinese,4,2,68,100,None,1,180,0,0,0,2,2,2,n,30,y,100,10,0,20000-,Other,other
+108,male,8,11,1989,Other,12,7,100,89,Hindu,1,120,0,0,0,5,5,8,y,35,y,2,0,0,45000-49999,Labour,John Banks
+101,male,7,2,1992,Korean,7,1,80,80,Catholic,1,130,0,0,0,6,6,6,y,1,y,2,0,0,?,National,Len Brown
+108,female,20,9,1990,Chinese,3,5,52,45,None,99,0,0,0,0,10,5,15,y,50,n,0,0,0,50000+,none,other
+108,male,16,5,1992,Korean,15,9,68,64,Protestant,99,100,0,1,4,7,8,5,y,150,y,1,0,0,30000-34999,Green,other
+101,female,25,10,1990,New Zealand European,19,1,65,55,None,99,50,0,0,0,4,7,15,y,1,y,5,0,0,?,Green,Len Brown
+108,female,11,4,1990,Chinese,2,0,54,40,None,99,90,0,1,0,6,5,10,y,100,n,0,7,126,25000-29999,Labour,John Banks
+101,female,7,12,1991,Chinese,2,7,53,51,None,1,100,0,0,0,6,6,6,y,10,y,10,0,0,20000-24999,Labour,other
+108,male,4,4,1991,Indian,19,5,60,62,Hindu,2,170,0,0,0,5,7,5,y,100,y,2,6,90,50000+,National,other
+101,female,3,2,1989,Other,8,3,70,63,Protestant,99,0,0,0,0,10,10,18,n,9,y,20,0,0,35000-39999,none,Len Brown
+108,female,25,1,1990,Korean,1,1,49,43,Protestant,99,0,0,0,0,7,8,5,n,5,n,0,0,0,40000-44999,National,John Banks
+101G,female,30,6,1991,Chinese,8,6,50,55,Protestant,1,110,0,0,0,7,7,4,y,50,y,6,0,0,50000+,National,other
+108,male,16,10,1990,Chinese,6,10,75,69,None,1,130,0,30,100,5,3,12,n,20,n,0,20,200,25000-29999,Labour,John Banks
+108,male,13,4,1992,Other,18,0,80,60,Other,99,0,0,0,0,5,5,2,y,1,y,2,0,0,?,Labour,Len Brown
+101,female,1,11,1986,Indian,22,4,58,58,Islam,1,180,0,0,0,5,5,20,y,10,n,0,40,700,50000+,none,other
+108,male,24,9,1989,Indian,2,5,70,65,Hindu,99,100,0,0,0,3,3,4,n,4,n,0,8,120,40000-44999,National,John Banks
+101,female,25,10,1990,Other,0,3,61,56,Other,1,160,0,2,30,5,5,8,y,10,n,0,0,0,30000-34999,none,other
+101,female,12,5,1990,New Zealand European,20,2,56,55,Other,1,140,0,1,0,5,6,22,y,1,y,10,0,0,20000-24999,National,John Banks
+101,female,24,2,1986,New Zealand European,25,4,55,58,None,2,190,1,3,15,6,6,10,y,20,y,6,10,150,25000-29999,Labour,Len Brown
+108,female,25,2,1990,Maori,20,1,60,55,Catholic,1,120,0,2,10,7,5,10,y,20,y,15,0,0,45000-49999,Labour,Len Brown
+101,female,20,1,1992,Other European,10,6,53,46,Other,1,120,1,8,20,5,6,10,y,50,y,3,10,90,45000-49999,National,John Banks
+108,female,13,6,1991,New Zealand European,19,2,68,60,Catholic,99,20,0,1,10,8,6,15,y,20,y,10,0,0,?,National,John Banks
+101,male,10,8,1991,Pacific Islander,5,3,90,95,Other,99,80,0,2,0,8,6,4,y,50,y,2,0,0,40000-44999,Labour,Len Brown
+101G,male,6,12,1991,Pacific Islander,19,3,106,120,Protestant,99,100,0,0,0,1,6,5,y,2,y,5,0,0,40000-44999,Labour,other
+101,male,9,6,1987,Korean,2,1,70,75,None,2,160,0,5,30,2,6,4,y,20,n,4,0,0,30000-34999,Labour,Len Brown
+101,male,4,8,1991,Other,5,6,78,63,Buddhism,99,100,0,0,0,2,2,5,n,20,y,10,0,0,?,Labour,other
+101,male,28,8,1965,New Zealand European,25,20,75,75,None,99,140,0,1,5,5,7,5,n,0,y,3,10,600,?,Other,other
+101,female,8,6,1978,Pacific Islander,31,2,73,68,Other,1,180,1,2,10,9,7,20,y,20,y,5,16,400,?,none,Len Brown
+108,male,30,3,1988,Chinese,1,5,60,70,Buddhism,1,120,0,4,20,6,6,4,y,30,n,0,0,0,?,none,other
+101,female,12,11,1990,New Zealand European,19,7,60,54,Other,1,140,1,4,50,8,7,25,n,10,y,1,9,100,?,National,John Banks
+101,male,8,9,1991,Maori,18,1,95,85,None,1,160,0,2,10,7,7,10,y,20,n,0,0,0,?,National,Len Brown
+108,female,19,10,1991,Chinese,18,1,50,50,None,1,100,0,0,0,5,7,20,y,50,y,5,0,0,40000-44999,Labour,other
+108,female,14,2,1992,New Zealand European,18,4,72,62,Protestant,1,140,0,5,10,7,7,20,y,40,y,3,3,40,20000-24999,National,John Banks
+101,male,21,12,1990,Other European,14,2,69,69,None,1,20,0,0,0,5,7,3,n,5,y,15,0,0,40000-44999,National,other
+101,female,1,4,1990,Other,3,4,64,65,Islam,1,140,0,0,0,9,9,30,y,50,n,0,0,0,?,none,other
+101,male,16,2,1990,Pacific Islander,20,1,110,90,Other,99,140,3,10,70,4,6,6,y,40,y,5,0,0,?,Green,other
+108,female,15,9,1990,Other,2,0,45,43,Catholic,99,0,0,0,0,8,7,6,y,20,y,1,0,0,40000-44999,Labour,other
+101,male,3,7,1992,Indian,6,1,64,64,Islam,2,170,0,0,0,7,8,3,y,20,y,3,16,200,?,National,other
+101,male,20,3,1988,New Zealand European,22,8,75,80,None,1,230,0,4,20,7,7,10,y,5,y,10,0,0,50000+,National,John Banks
+101,male,26,7,1991,Indian,6,7,60,65,Other,1,110,0,0,0,6,7,9,y,160,y,3,0,0,50000+,National,John Banks
+108,female,21,3,1992,Chinese,16,3,48,45,Buddhism,0,180,1,0,0,6,7,20,y,18,y,4,0,0,?,Labour,John Banks
+108,female,20,5,1992,Other European,5,20,62,65,Other,1,120,2,5,50,7,9,30,y,100,y,1,20,300,50000+,Green,other
+101,female,12,3,1990,New Zealand European,6,3,58,55,Catholic,1,140,0,10,20,7,7,10,y,300,y,10,15,160,50000+,National,other
+101,female,13,10,1990,New Zealand European,19,3,69,65,None,1,120,0,1,10,6,5,15,y,70,y,5,0,0,?,Labour,John Banks
+101G,female,20,3,1989,Korean,8,0,45,43,None,1,0,0,0,0,10,10,12,y,20,n,0,0,0,40000-44999,none,other
+108,male,22,2,1992,New Zealand European,18,1,78,85,None,1,120,0,10,30,6,6,3,n,20,y,3,0,0,50000+,National,John Banks
+108,female,29,6,1971,Korean,7,20,52,48,Catholic,1,60,0,0,0,8,10,5,n,50,n,0,0,0,?,none,other
+101,male,14,3,1992,Other,13,7,84,80,None,1,120,0,2,5,6,7,3,y,7,y,8,5,50,?,Green,other
+108,female,28,10,1991,Other,0,4,63,60,Other,1,180,0,3,0,7,7,15,y,10,n,0,0,0,50000+,none,other
+101,female,17,1,1992,Pacific Islander,18,1,60,60,Protestant,99,60,0,0,0,8,6,12,n,50,y,5,0,0,30000-34999,Labour,Len Brown
+108,female,23,10,1988,New Zealand European,21,4,68,65,Other,1,130,0,2,5,2,5,5,y,60,y,6,11,269,?,Labour,John Banks
+108,male,10,7,1990,Indian,20,2,60,70,None,99,60,0,20,20,7,8,3,n,35,n,0,0,0,50000+,none,other
+101G,female,19,4,1992,Other European,14,4,61,57,Other,1,100,1,2,20,7,6,12,y,10,y,10,10,90,25000-29999,Labour,Len Brown
+108,female,20,7,1991,Indian,5,5,70,60,Hindu,99,80,0,1,20,10,10,10,y,50,y,3,7,70,40000-44999,Green,Len Brown
+101,female,10,9,1991,New Zealand European,18,3,57,54,None,1,130,0,10,15,6,7,10,y,1,y,8,0,0,35000-39999,National,other
+108,female,15,5,1991,Chinese,5,2,56,52,None,99,0,0,0,0,5,5,8,y,20,n,0,0,0,40000-44999,none,other
+108,male,22,6,1990,Chinese,2,0,68,65,None,0,0,0,0,0,6,6,5,y,4,n,0,0,0,45000-49999,Labour,John Banks
+101,female,27,12,1980,Other,4,12,60,56,Protestant,1,160,0,1,3,8,8,7,y,2,y,5,0,0,50000+,Labour,John Banks
+108,female,15,9,1977,New Zealand European,32,5,69,65,Other,1,160,1,4,10,7,7,10,n,20,y,6,10,75,50000+,National,Len Brown
+101,male,8,4,1991,New Zealand European,19,13,68,68,None,1,140,0,15,20,7,7,2,y,15,y,1,12,120,50000+,Green,other
+101,female,29,3,1988,New Zealand European,22,3,70,60,None,99,110,0,30,50,6,7,35,y,20,y,30,8,80,30000-34999,Labour,other
+108,male,15,6,1991,New Zealand European,19,1,78,78,None,1,200,0,16,30,7,7,10,y,20,y,10,15,150,40000-44999,National,Len Brown
+101,male,10,6,1980,Other European,9,2,87,85,Catholic,1,160,1,0,0,8,8,4,n,0,y,6,0,0,?,Labour,John Banks
+108,male,18,11,1988,New Zealand European,21,12,70,80,Other,1,200,3,20,40,10,8,4,y,35,y,0,0,0,50000+,National,other
+101,male,23,11,1991,Indian,8,1,106,100,Hindu,99,60,0,0,0,10,8,3,n,40,y,20,0,0,50000+,Labour,Len Brown
+108,male,12,12,1991,New Zealand European,15,1,72,75,Other,99,110,0,0,0,8,7,1,y,10,y,5,0,0,?,none,John Banks
+101,female,7,2,1992,Other European,2,5,53,50,None,1,120,0,20,10,6,7,4,y,25,y,6,8,100,50000+,none,John Banks
+108,female,23,8,1991,Chinese,5,4,54,54,None,99,0,0,0,0,5,5,20,y,60,y,2,0,0,?,Labour,other
+101,female,16,1,1990,Other,0,5,60,55,Other,1,170,0,1,5,3,3,8,y,3,y,10,6,60,45000-49999,Maori Party,Len Brown
+101G,male,16,1,1989,Chinese,21,2,70,90,None,99,60,0,6,40,6,7,2,y,70,y,10,15,400,50000+,none,other
+101,male,8,9,1991,Other,7,3,68,75,Catholic,1,110,0,0,0,7,7,5,y,150,y,10,8,80,50000+,Labour,other
+101,female,14,8,1992,Chinese,10,5,56,50,Protestant,1,100,0,0,0,2,5,5,y,40,y,3,0,0,20000-,none,Len Brown
+108,male,26,5,1991,New Zealand European,13,5,78,78,None,3,110,0,0,0,6,8,4,y,10,y,5,0,0,?,National,John Banks
+101G,female,26,12,1990,New Zealand European,19,27,60,55,None,3,150,0,30,30,6,8,20,y,10,y,5,0,0,30000-34999,Labour,other
+101,male,26,6,1991,New Zealand European,19,10,76,85,None,99,40,0,7,10,7,7,7,y,40,y,5,0,0,?,Labour,other
+108,female,19,7,1992,Chinese,18,3,42,42,Buddhism,99,0,0,0,0,7,9,14,n,35,n,0,0,0,35000-39999,Labour,other
+101G,female,9,12,1991,Chinese,18,1,43,43,None,99,70,0,0,0,6,6,8,n,50,y,2,8,80,50000+,none,Len Brown
+108,female,14,11,1991,New Zealand European,14,3,90,75,None,99,90,0,15,50,6,6,12,y,5,y,15,0,0,?,National,John Banks
+101,male,1,2,1992,Indian,6,2,60,60,Other,99,0,0,0,0,5,6,2,y,100,y,3,0,0,?,National,other
+108,male,16,11,1991,Chinese,18,3,65,69,None,1,160,0,0,0,10,10,3,y,50,y,200,40,600,50000+,National,other
+108,male,5,7,1991,Other,19,9,78,80,Other,1,160,0,12,50,9,10,5,y,50,y,2,5,80,50000+,National,John Banks
+108,male,15,9,1990,Korean,4,8,60,67,None,2,170,2,1,20,10,5,3,y,30,y,3,13,100,50000+,Maori Party,other
+101G,female,31,8,1988,Chinese,1,2,50,48,None,1,130,1,0,0,7,7,9,y,5,n,0,15,150,20000-24999,National,John Banks
+101,male,16,11,1987,New Zealand European,22,0,85,85,None,1,200,0,2,15,8,9,2,y,15,y,10,0,0,35000-39999,Labour,other
+101,male,12,7,1991,New Zealand European,19,1,87,85,Other,1,120,0,0,0,7,7,5,y,50,y,4,10,95,?,National,John Banks
+108,female,12,5,1991,New Zealand European,19,2,62,58,Catholic,1,110,0,1,10,7,6,10,y,10,y,5,6,150,25000-29999,National,John Banks
+101,male,27,2,1991,New Zealand European,19,7,72,72,None,1,140,0,0,0,6,7,2,n,5,y,10,0,0,40000-44999,Labour,other
+108,male,22,6,1983,New Zealand European,27,50,70,68,None,3,150,0,2,10,6,7,3,y,1,y,3,45,700,50000+,National,John Banks
+108,female,17,11,1988,Chinese,6,0,43,40,None,1,150,9,0,0,5,7,8,y,10,y,5,0,0,40000-44999,National,John Banks
+108,female,20,1,1989,Chinese,1,0,75,45,None,99,0,0,1,25,8,6,6,y,10,n,0,0,0,35000-39999,none,other
+101,male,6,7,1973,New Zealand European,4,6,77,80,None,99,80,0,0,0,7,8,4,y,4,y,2,0,0,50000+,Green,other
+108,male,31,5,1990,Chinese,4,4,72,75,None,99,0,0,2,10,8,7,20,y,100,n,0,0,200,20000-,Green,John Banks
+101,female,26,11,1989,New Zealand European,19,10,56,55,None,1,120,0,0,0,6,7,15,y,15,y,2,15,180,45000-49999,Labour,other
+101,female,23,7,1992,New Zealand European,18,0,65,60,Catholic,1,130,0,3,0,7,8,12,y,15,n,0,8,100,?,Green,other
+101,male,27,1,1984,Maori,26,1,69,69,None,1,160,1,40,40,10,10,3,n,0,y,2,0,0,50000+,NZ First,other
+101G,female,12,10,1989,Chinese,6,0,35,45,None,99,0,0,0,0,5,5,8,n,20,y,0,8,80,30000-34999,Labour,John Banks
+108,female,29,12,1991,New Zealand European,18,3,83,70,None,1,170,0,20,35,7,7,12,y,30,y,6,18,200,30000-34999,Labour,other
+101G,female,21,6,1989,Other European,21,2,55,50,None,1,140,0,3,8,8,8,10,y,15,y,2,0,0,20000-24999,Green,other
+101,female,25,12,1991,New Zealand European,14,15,58,58,None,1,100,0,2,5,4,6,10,y,20,n,0,0,0,40000-44999,National,John Banks
+108,female,5,4,1992,New Zealand European,18,11,55,50,None,2,110,0,0,0,7,8,20,y,10,y,10,7,80,25000-29999,National,John Banks
+108,male,22,10,1991,New Zealand European,18,8,82,78,Other,1,150,0,15,30,8,7,4,y,10,y,3,3,30,45000-49999,National,John Banks
+108,female,28,6,1991,Korean,7,1,60,55,Protestant,99,30,0,0,0,5,5,5,y,20,y,6,9,100,40000-44999,Labour,John Banks
+108,male,7,4,1991,New Zealand European,19,5,85,100,Catholic,1,150,0,2,10,8,9,5,n,10,y,3,0,0,35000-39999,National,Len Brown
+101,male,19,5,1982,Chinese,22,5,89,85,Other,1,20,0,0,0,5,5,30,y,300,n,0,0,0,?,NZ First,other
+108,female,27,3,1992,Other,6,3,65,60,Buddhism,99,50,0,0,0,7,8,10,y,30,n,0,0,0,30000-34999,National,John Banks
+101,female,19,5,1992,Indian,18,5,58,55,Hindu,99,70,0,7,20,5,8,17,n,100,y,3,0,0,35000-39999,Labour,John Banks
+101,female,8,4,1991,Pacific Islander,6,2,65,60,Islam,99,60,0,0,0,8,8,40,y,20,y,10,0,0,40000-44999,National,Len Brown
+101,male,17,3,1990,Chinese,1,0,49,60,None,99,0,0,0,0,8,8,4,y,3,n,0,0,0,30000-34999,United Future,other
+101,male,24,2,1992,Korean,10,3,55,70,Catholic,1,180,0,0,0,6,5,20,y,50,n,0,0,0,?,Labour,John Banks
+108,male,14,7,1991,New Zealand European,19,5,70,70,None,1,100,0,2,15,7,7,2,y,5,n,0,0,0,35000-39999,National,John Banks
+101,female,2,1,1986,New Zealand European,24,17,47,47,Other,1,120,0,0,0,5,6,20,y,7,y,10,10,160,35000-39999,Labour,Len Brown
+108,male,1,4,1992,Indian,5,50,140,110,None,1,120,0,0,0,6,7,4,y,30,y,0,0,0,50000+,none,other
+101,male,27,1,1992,Indian,18,2,65,60,Hindu,99,110,0,0,0,7,5,2,y,200,y,20,0,0,30000-34999,National,other
+108,male,28,3,1990,Chinese,15,2,85,70,Buddhism,1,160,0,0,0,3,3,3,y,2,n,0,0,0,?,National,other
+108,male,7,2,1988,Chinese,12,2,50,45,None,1,150,50,80,80,5,5,60,y,150,y,5,0,0,50000+,none,Len Brown
+108,male,29,3,1989,Pacific Islander,1,3,79,75,Other,99,100,0,2,30,8,7,4,y,100,y,3,16,125,35000-39999,Labour,other
+101,female,13,4,1992,Indian,18,2,45,50,Hindu,1,100,0,0,0,5,7,6,y,50,y,5,10,200,50000+,Labour,other
+101,male,7,5,1987,Pacific Islander,23,3,78,75,Other,4,230,0,0,0,7,8,5,n,2,y,15,1,15,45000-49999,Labour,Len Brown
+108,female,15,1,1992,Indian,6,3,59,55,Hindu,99,70,0,0,0,6,8,9,n,90,y,8,0,0,50000+,Green,other
+101G,male,17,9,1991,Other European,7,4,47,55,Other,99,80,0,3,20,10,7,4,y,250,y,4,0,0,?,Other,other
+101G,female,15,7,1991,Korean,8,3,59,49,None,99,110,0,0,0,10,10,12,y,50,n,0,0,0,50000+,Maori Party,John Banks
+108,male,1,7,1990,Korean,8,2,64,60,Buddhism,1,120,1,0,0,5,5,5,y,50,y,5,0,0,50000+,Labour,other
+101,male,11,3,1992,Other European,5,15,64,69,Protestant,0,140,0,30,40,7,7,4,y,10,y,5,22,260,50000+,National,other
+101,female,28,6,1990,Chinese,2,8,60,48,Protestant,99,0,0,0,0,6,7,7,y,20,n,0,0,0,20000-24999,Labour,other
+108,male,3,1,1990,New Zealand European,20,7,70,70,None,1,170,10,10,100,6,7,3,y,10,y,10,15,200,45000-49999,National,John Banks
+101,female,27,2,1992,New Zealand European,18,3,75,70,None,1,110,0,3,13,2,5,6,y,6,y,5,0,0,?,Labour,other
+101,male,1,10,1991,New Zealand European,18,5,68,65,None,99,110,0,3,0,6,8,4,y,50,n,0,0,0,35000-39999,Green,John Banks
+101,male,15,10,1990,New Zealand European,16,8,68,75,None,1,140,1,0,0,6,7,2,y,50,y,6,16,160,?,Maori Party,other
+101,female,23,11,1990,New Zealand European,19,2,61,59,None,1,120,0,0,0,6,7,8,y,50,y,6,13,130,?,Labour,other
+101,male,16,12,1985,Korean,3,1,79,73,None,99,170,0,2,30,1,5,9,y,20,n,0,0,0,?,none,other
+108,male,17,2,1992,New Zealand European,18,10,101,99,Protestant,1,120,0,0,0,5,7,14,y,50,y,10,0,0,45000-49999,Labour,Len Brown
+101,female,8,6,1989,Other European,1,15,62,60,None,3,220,0,2,10,7,8,7,y,3,y,10,12,120,?,none,other
+108,female,6,8,1991,Other,8,2,50,46,Protestant,99,100,0,0,0,5,8,3,y,10,y,5,20,200,50000+,National,Len Brown
+101,female,26,10,1991,Pacific Islander,3,1,173,173,Other,99,0,0,0,0,5,5,4,n,30,y,10,0,0,?,Labour,Len Brown
+101,male,22,1,1992,Indian,3,1,83,90,Other,1,110,0,0,20,1,1,2,y,0,y,200,0,0,?,Maori Party,other
+108,male,5,10,1981,New Zealand European,9,13,70,90,None,1,100,0,0,0,6,6,7,y,4,y,5,8,40,40000-44999,Other,other
+101,female,16,4,1991,New Zealand European,19,3,68,60,None,1,120,0,2,20,6,7,8,y,25,y,1,15,200,35000-39999,National,John Banks
+108,male,7,3,1992,Other European,10,0,70,75,Other,1,60,0,10,20,7,6,5,y,25,y,5,6,60,50000+,Labour,other
+101,male,8,1,1992,New Zealand European,18,1,85,80,None,1,180,1,20,20,7,8,5,n,10,y,2,0,0,35000-39999,National,John Banks
+101,male,25,1,1991,Korean,3,10,68,66,Protestant,99,130,0,1,0,6,7,4,y,50,n,0,0,0,30000-34999,none,John Banks
+101,female,24,4,1991,Other,14,2,75,65,Catholic,99,60,0,5,8,5,5,8,y,8,y,4,17,200,40000-44999,Labour,Len Brown
+108,female,12,9,1989,New Zealand European,20,11,60,60,None,1,130,0,3,10,5,6,10,y,3,n,0,0,0,45000-49999,National,Len Brown
+108,male,23,6,1989,Chinese,7,4,68,65,None,1,180,0,0,0,5,6,4,y,10,n,0,0,0,40000-44999,National,John Banks
+108,male,1,6,1991,Indian,8,4,65,70,Hindu,1,120,0,0,0,6,6,3,y,5,n,0,0,0,?,National,other
+101G,female,7,5,1991,Indian,7,6,40,50,Hindu,99,0,0,0,0,7,8,5,y,400,y,2,10,90,45000-49999,Labour,John Banks
+101,male,29,8,1990,Chinese,13,2,64,60,Catholic,1,120,0,2,15,5,6,4,y,10,y,6,0,0,20000-24999,none,John Banks
+101,male,10,2,1991,New Zealand European,19,12,60,68,None,1,150,1,12,13,6,8,2,y,8,n,0,0,0,35000-39999,Labour,John Banks
+108,female,21,3,1985,Maori,24,6,58,55,Catholic,1,130,0,6,30,6,8,8,y,5,y,10,8,150,50000+,Labour,John Banks
+108,female,14,6,1991,New Zealand European,19,2,58,55,None,2,160,0,5,80,5,5,30,y,20,n,0,40,350,50000+,National,John Banks
+108,female,10,4,1990,Pacific Islander,1,3,67,65,Other,99,0,0,0,0,6,8,10,n,3,y,3,0,0,50000+,Labour,other
+101,male,2,1,1989,Indian,9,3,71,75,None,1,170,0,3,20,5,5,2,y,3,y,3,12,180,30000-34999,Labour,other
+101,female,9,10,1991,Other European,10,4,64,55,None,1,50,0,5,10,5,5,65,y,60,y,5,0,0,30000-34999,National,John Banks
+101,female,8,8,1990,Other,4,50,50,49,None,1,110,0,10,20,7,7,25,y,60,y,20,6,200,20000-,Green,other
+101,male,5,9,1989,Other,20,1,62,70,Buddhism,1,140,0,0,0,6,6,4,n,100,y,3,10,120,35000-39999,Labour,other
+101,female,7,10,1989,Korean,9,20,54,50,Protestant,1,130,1,3,20,8,9,10,y,25,y,10,6,100,50000+,National,other
+101,female,9,6,1988,Other European,15,18,66,62,Protestant,1,110,0,1,10,7,7,20,y,10,y,100,9,120,?,Green,other
+101,female,10,9,1991,Pacific Islander,18,4,74,67,Protestant,99,120,0,4,60,8,7,7,n,100,y,20,3,40,35000-39999,Labour,other
+101,male,14,7,1989,New Zealand European,21,1,58,60,Other,2,140,2,1,2,6,7,6,y,4,y,25,13,140,?,National,other
+101,female,1,3,1989,Korean,7,2,60,55,Catholic,99,0,0,0,0,8,8,5,y,10,y,2,1,20,?,Green,other
+101,male,20,2,1987,Korean,10,3,73,67,Catholic,1,130,1,1,30,5,7,9,y,40,y,3,0,0,25000-29999,none,other
+101,male,7,1,1992,Other,8,0,88,85,Catholic,1,120,0,0,0,5,7,10,y,25,y,10,16,190,25000-29999,Labour,Len Brown
+108,male,17,2,1992,New Zealand European,18,6,70,80,Other,1,120,1,1,0,8,8,6,y,5,y,5,10,120,40000-44999,National,Len Brown
+108,female,21,10,1989,Korean,1,0,40,45,Catholic,99,0,0,0,0,7,7,13,y,60,n,0,17,300,35000-39999,Labour,John Banks
+108,female,23,7,1992,Other European,1,15,80,70,Other,99,120,0,0,0,7,9,50,y,40,n,0,5,100,50000+,none,other
+101,male,1,2,1991,New Zealand European,19,12,65,100,None,2,140,0,16,30,6,7,3,y,20,y,10,0,0,35000-39999,none,John Banks
+101,female,14,4,1989,Other European,7,24,62,55,Other,99,130,0,2,10,6,7,25,y,20,n,0,0,0,40000-44999,Green,other
+108,male,29,6,1989,New Zealand European,21,2,62,75,Protestant,2,130,0,2,10,8,7,3,y,10,y,10,21,190,45000-49999,National,John Banks
+101,male,23,9,1991,New Zealand European,18,2,81,86,None,1,120,0,5,10,7,7,5,y,80,y,5,4,40,50000+,National,Len Brown
+101,male,20,6,1991,Chinese,19,5,60,60,None,1,110,0,0,0,5,5,6,y,5,y,4,0,0,?,none,other
+101,male,5,7,1991,New Zealand European,19,1,83,78,None,99,100,0,1,0,7,7,3,y,50,y,0,0,0,?,none,Len Brown
+101,female,11,8,1991,New Zealand European,18,4,60,58,None,1,100,0,2,10,6,7,25,y,40,y,0,0,0,20000-,Labour,other
+108,male,8,12,1991,New Zealand European,18,6,60,65,None,1,160,0,20,30,6,7,8,y,40,y,10,12,1000,40000-44999,National,Len Brown
+101,female,17,6,1987,Chinese,20,4,58,48,Other,1,120,2,0,0,6,6,4,y,20,y,3,0,0,50000+,none,other
+108,female,22,7,1991,Indian,8,7,58,55,Hindu,99,20,0,0,0,9,7,10,y,80,y,10,16,172,50000+,Labour,other
+101,female,28,12,1991,Indian,8,2,52,50,Other,99,100,0,0,0,5,5,8,y,100,y,3,0,0,?,Green,Len Brown
+101,female,25,7,1991,New Zealand European,19,2,90,45,Buddhism,2,120,0,0,0,3,5,6,y,5,y,10,0,0,?,Green,John Banks
+108,male,23,8,1984,Chinese,1,1,60,65,None,1,100,2,0,0,7,8,10,y,30,y,2,10,100,30000-34999,Labour,John Banks
+101,male,30,1,1992,New Zealand European,18,3,66,66,None,1,120,0,7,10,7,8,2,n,60,y,10,0,0,30000-34999,Labour,John Banks
+101,male,24,12,1991,New Zealand European,18,2,93,83,None,1,140,0,2,10,3,5,5,y,4,y,8,0,0,50000+,National,Len Brown
+101,female,26,9,1991,New Zealand European,18,2,75,70,Other,2,140,0,0,0,5,6,6,y,20,y,50,0,0,35000-39999,none,John Banks
+101,female,22,1,1981,New Zealand European,29,4,75,55,None,1,130,0,6,20,7,8,4,y,2,y,20,11,137.5,30000-34999,Green,other
+101,female,14,3,1986,Other European,13,15,63,61,None,99,110,0,2,15,6,6,6,y,20,y,8,12,190,30000-34999,Other,other
+108,male,16,4,1992,Chinese,18,7,66,77,None,1,120,0,0,0,6,6,6,y,15,n,0,0,0,?,National,John Banks
+101,female,13,8,1990,Chinese,16,3,70,60,None,1,140,0,2,5,6,7,10,y,40,y,10,0,0,30000-34999,Labour,other
+108,female,16,10,1990,Chinese,2,1,52,48,None,99,0,0,0,0,7,8,30,y,20,n,0,0,0,50000+,none,John Banks
+101,male,2,2,1990,Chinese,0,1,81,73,None,99,0,0,0,0,7,6,4,y,2,n,0,0,0,50000+,Labour,Len Brown
+101,male,31,1,1992,Other,9,4,74,75,Other,1,120,0,1,2,7,8,10,y,50,y,5,13,250,?,National,Len Brown
+101,female,2,3,1991,New Zealand European,19,1,65,60,Other,2,120,0,0,0,4,5,17,y,10,y,8,0,0,20000-,none,other
+108,male,9,4,1990,New Zealand European,20,6,60,65,None,1,180,0,15,30,6,8,12,y,25,n,0,10,95,35000-39999,Labour,other
+101G,female,19,6,1989,Chinese,2,0,60,50,None,99,0,0,0,0,6,7,10,y,15,n,0,10,80,?,Labour,John Banks
+101G,female,9,5,1991,New Zealand European,19,3,60,55,None,99,50,0,4,10,7,6,10,y,20,y,10,0,0,20000-24999,Green,John Banks
+108,male,21,10,1990,New Zealand European,19,15,86,90,None,1,160,0,12,15,2,10,8,y,20,y,2,12,130,50000+,National,other
+108,male,31,1,1988,Chinese,13,0,86,78,None,1,210,10,0,1,5,5,6,n,20,y,10,16,160,35000-39999,National,Len Brown
+101,female,9,11,1989,Pacific Islander,4,1,65,60,Other,2,110,0,0,0,10,8,10,y,50,y,8,0,0,25000-29999,Labour,other
+108,female,11,5,1992,New Zealand European,18,1,49,42,Catholic,2,140,2,30,80,7,8,1,y,40,y,5,0,0,35000-39999,Green,other
+108,male,8,5,1992,Indian,18,4,50,54,Hindu,99,0,0,0,0,7,7,2,y,14,n,0,0,0,50000+,National,other
+108,female,2,2,1988,Other European,0,8,57,55,Protestant,99,0,0,1,10,7,8,7,y,1,n,0,20,0,45000-49999,none,other
+101,female,13,10,1989,Other,0,3,55,53,Islam,99,0,0,0,0,10,10,4,n,10,y,5,0,0,20000-24999,none,other
+101,female,28,9,1990,New Zealand European,19,3,67,55,None,99,80,0,0,0,4,7,10,y,4,y,10,6,90,?,Labour,other
+101G,female,23,11,1991,Other,18,4,63,55,Hindu,99,120,0,0,0,6,6,6,y,7,y,3,0,0,?,Labour,other
+101,male,27,10,1989,Chinese,10,2,70,65,None,99,100,0,0,0,7,5,2,y,5,y,4,0,0,40000-44999,Labour,John Banks
+101,female,31,5,1991,Chinese,6,4,47,45,Other,99,0,0,0,0,5,5,7,y,2,y,4,0,0,?,none,Len Brown
+108,male,22,4,1992,Chinese,18,1,57,55,Buddhism,99,130,0,1,0,7,7,5,y,80,y,3,0,0,50000+,none,other
+108,female,15,5,1986,Pacific Islander,7,4,72,65,Other,99,110,0,0,0,9,7,50,y,50,y,5,0,0,40000-44999,Labour,John Banks
+101,female,4,9,1991,Maori,18,1,57,55,Other,99,80,0,2,10,9,8,20,y,50,y,5,10,180,40000-44999,Labour,other
+101,male,13,9,1991,New Zealand European,18,3,87,85,None,1,110,0,0,0,6,8,7,y,2,n,0,8,120,?,Labour,Len Brown
+108,male,18,10,1991,Korean,13,3,68,65,None,99,0,0,0,0,8,8,2,y,30,y,10,0,0,?,Labour,other
+101,female,20,10,1991,Chinese,9,3,62,60,None,1,120,2,0,0,5,6,20,y,50,n,0,0,0,30000-34999,National,John Banks
+101,female,12,2,1992,New Zealand European,18,1,54,50,None,99,120,0,8,40,4,7,10,y,100,n,0,6,100,?,National,John Banks
+101,female,5,1,1992,Chinese,9,1,47,45,Buddhism,1,110,0,0,0,8,8,7,y,20,y,5,0,0,50000+,National,John Banks
+101,female,11,11,1983,New Zealand European,26,1,57,55,None,1,110,0,1,10,5,5,8,y,10,y,10,12,180,40000-44999,none,Len Brown
+101,female,23,1,1992,Indian,13,6,45,40,Islam,1,120,0,1,2,6,7,10,y,75,y,10,0,0,20000-24999,Green,other
+101,male,13,10,1983,New Zealand European,20,6,75,80,Protestant,2,190,0,0,0,7,7,15,y,20,y,4,0,0,?,National,John Banks
+108,female,24,8,1991,Indian,18,5,48,50,Hindu,99,100,0,0,0,6,7,23,y,150,y,4,6,64,20000-,Labour,John Banks
+101,female,3,2,1992,Indian,5,1,60,50,Hindu,1,120,0,0,0,5,7,14,y,50,y,10,8,81,45000-49999,Labour,Len Brown
+108,female,15,10,1990,Chinese,1,2,57,50,None,99,0,0,0,0,5,5,5,y,20,n,0,10,80,?,National,other
+108,male,14,1,1992,New Zealand European,18,0,69,69,Catholic,1,100,0,0,0,10,9,6,y,90,y,5,0,0,?,none,other
+101,female,15,10,1991,New Zealand European,18,1,67,63,None,1,110,1,0,0,5,7,10,y,10,y,10,0,0,20000-24999,Labour,Len Brown
+108,male,27,4,1986,Other,5,10,60,60,None,1,120,0,3,10,5,8,4,y,10,n,0,20,250,50000+,Act,John Banks
+101,female,18,5,1991,Maori,19,3,67,55,None,1,110,0,0,0,8,7,52,y,20,y,0,4,60,?,Labour,other
+101,male,26,7,1989,Chinese,2,2,70,70,None,99,160,0,0,0,10,10,6,y,20,n,0,5,58,50000+,United Future,John Banks
+101,male,20,10,1989,Chinese,2,1,85,70,None,99,0,0,2,8,6,7,5,y,20,n,0,20,200,50000+,National,John Banks
+108,female,28,10,1990,Chinese,1,1,54,50,None,99,0,0,0,0,5,7,30,y,1,n,0,0,0,30000-34999,none,Len Brown
+108,female,4,12,1990,Other European,16,15,45,50,Protestant,1,100,0,0,0,8,8,14,y,10,n,0,7,80,20000-24999,National,other
+108,male,14,4,1991,Indian,19,4,64,75,Hindu,1,120,0,0,0,7,7,3,y,60,y,3,8,65,?,Labour,John Banks
+101,female,1,2,1991,New Zealand European,13,4,67,62,Protestant,1,110,0,1,2,7,7,15,y,5,y,8,0,0,35000-39999,National,Len Brown
+108,male,12,8,1977,New Zealand European,32,5,96,90,None,1,140,0,1,5,5,6,9,n,20,y,15,10,150,30000-34999,National,Len Brown
+101,female,10,9,1989,New Zealand European,20,6,54,50,Other,1,110,1,3,10,6,6,20,y,10,y,5,20,270,30000-34999,Act,John Banks
+108,female,5,9,1990,Other,2,6,40,43,Buddhism,99,0,0,0,0,10,10,10,y,10,n,0,0,0,50000+,Labour,other
+101,male,5,7,1989,New Zealand European,16,5,72,80,Other,1,150,0,0,0,1,3,6,y,0,y,0,0,0,?,none,other
+108,female,28,3,1992,Chinese,18,2,54,50,None,1,160,0,5,3,7,6,30,y,30,y,2,0,0,45000-49999,Labour,John Banks
+108,male,16,1,1990,Other,0,7,60,65,Islam,2,120,0,0,0,3,5,3,y,10,n,0,0,0,35000-39999,none,John Banks
+108,male,1,12,1988,Chinese,2,0,78,65,None,99,130,2,0,0,6,7,3,n,15,n,0,20,230,25000-29999,Labour,other
+108,female,6,3,1992,Indian,8,4,56,50,Hindu,99,90,0,0,0,7,7,15,y,300,y,5,15,70,25000-29999,Labour,John Banks
+108,female,23,4,1985,Chinese,9,2,60,50,Buddhism,1,120,1,0,0,5,6,20,y,20,y,1,40,450,35000-39999,Labour,other
+108,male,30,8,1991,Korean,14,2,65,60,None,99,0,0,0,0,10,10,2,y,2,y,5,0,0,40000-44999,National,Len Brown
+101,female,30,4,1990,Chinese,15,8,59,51,None,1,110,0,0,0,7,8,5,y,10,n,0,1,25,?,Green,Len Brown
+101,female,30,5,1991,Chinese,3,1,68,60,None,99,50,0,0,0,5,5,7,y,100,n,0,0,0,?,National,Len Brown
+108,female,1,2,1992,Chinese,18,1,52,52,Other,1,110,0,0,0,6,6,4,n,5,y,3,0,0,20000-,Labour,Len Brown
+108,male,6,7,1991,Chinese,9,1,72,75,None,3,140,1,0,0,7,7,6,y,7,y,3,6,60,50000+,National,John Banks
+108,female,27,4,1991,Chinese,1,1,65,50,None,99,0,0,1,5,6,7,17,y,65,n,0,14,150,50000+,none,Len Brown
+101,female,14,7,1991,New Zealand European,18,3,53,50,Other,99,50,0,0,0,7,6,10,y,50,y,10,0,0,?,Green,other
+101,male,30,6,1991,Indian,3,1,60,70,Hindu,2,150,0,0,0,10,7,2,n,6,y,10,15,150,?,none,other
+108,male,8,4,1990,Indian,1,4,87,87,Hindu,99,10,0,0,0,7,8,5,y,15,n,0,0,0,45000-49999,National,John Banks
+108,female,16,11,1990,Other,3,20,46,44,Other,1,100,0,0,0,8,5,10,n,2,n,0,0,0,20000-24999,National,other
+108,female,26,8,1991,Chinese,15,4,45,42,None,2,110,1,0,0,7,8,9,y,30,y,1,11,130,?,Green,other
+101,male,10,1,1991,New Zealand European,19,2,65,65,Catholic,1,100,0,0,0,7,7,8,y,1,y,6,0,0,?,NZ First,John Banks
+108,male,4,2,1992,Chinese,18,2,60,65,Buddhism,2,120,0,0,0,5,5,3,y,70,y,20,0,0,?,Labour,John Banks
+101G,female,31,5,1990,Korean,5,7,58,50,None,1,130,2,0,0,4,6,5,y,100,n,0,0,0,25000-29999,NZ First,John Banks
+101G,female,5,5,1992,New Zealand European,18,10,62,60,None,1,120,1,8,10,8,9,9,y,20,y,5,7,95,20000-24999,Green,other
+101,male,14,3,1990,Other,18,15,87,87,Other,99,0,0,2,20,8,8,4,y,3,y,7,0,0,?,Green,other
+108,male,28,6,1991,Chinese,11,5,74,70,Other,1,160,0,0,0,7,7,5,y,20,y,5,0,0,50000+,National,other
+108,female,15,5,1959,Korean,9,4,53,50,Protestant,1,130,2,0,0,6,7,7,n,10,y,3,0,0,50000+,none,other
+101,female,10,1,1989,Korean,0,0,56,52,None,1,60,0,1,12,5,6,7,y,40,n,0,4,45,50000+,Labour,other
+101,female,25,9,1990,New Zealand European,13,4,60,58,Protestant,1,110,0,0,0,6,7,20,y,20,y,5,3,30,50000+,National,John Banks
+101,male,13,4,1992,Chinese,8,5,64,60,None,99,100,0,0,0,7,6,2,y,1,y,2,0,0,?,National,John Banks
+101,female,3,12,1990,New Zealand European,19,1,69,62,None,1,130,0,10,35,6,7,10,y,50,n,0,25,250,50000+,National,Len Brown
+101,male,6,1,1989,Chinese,1,2,60,65,None,99,0,0,0,0,4,5,7,y,2,n,0,0,0,20000-24999,none,other
+101,female,14,9,1990,Korean,9,2,65,57,Catholic,1,150,0,0,0,5,5,20,y,100,y,3,0,0,30000-34999,Labour,Len Brown
+101,female,28,7,1989,Other,13,6,68,65,Islam,99,60,1,0,0,4,4,20,n,50,y,5,10,0,?,Labour,other
+101,female,11,3,1992,Other,13,0,55,52,None,99,100,0,0,0,6,3,20,y,60,y,0,16,160,?,none,other
+101,male,6,5,1981,New Zealand European,0,15,79,65,None,99,130,0,10,20,3,7,2,y,0,y,3,0,0,?,Green,other
+108,female,31,12,1991,New Zealand European,18,2,60,60,None,1,140,0,30,250,10,6,15,y,30,y,6,28,460,50000+,National,John Banks
+101,male,31,8,1989,Chinese,1,4,60,60,None,99,0,0,0,0,5,5,2,y,0,n,0,0,0,?,none,other
+101,male,3,3,1992,New Zealand European,10,1,65,65,None,99,10,0,0,0,5,8,3,n,0,y,5,4,22,20000-24999,Labour,other
+101,female,22,7,1991,New Zealand European,10,2,80,55,None,1,120,0,1,5,7,6,9,y,20,y,7,0,0,?,none,John Banks
+101,female,18,1,1991,Other,0,2,59,59,Other,1,0,0,0,0,6,8,10,y,10,n,0,0,0,45000-49999,Act,John Banks

@@ -1,0 +1,8 @@
+Dear Emacs, please make this -*-Text-*- mode!
+
+NEWS for ProgGUIinR
+
+Changes for 0.0-3
+------------------
+
+* deprecate `make_graph_icon` -- Underlying call to `ggplot2` functionality is broken

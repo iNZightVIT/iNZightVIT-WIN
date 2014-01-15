@@ -1,0 +1,361 @@
+
+Changes in Version 0.9-54
+
+  o renamed showGrobsBB to grobBoundingBoxes;
+    change autoplay to use hook "before.plot.new".
+
+Changes in Version 0.9-53
+
+  o updated to work with the new RGtk2 >= 2.20
+    (the return value of gtkWidgetGetAllocation() changed).
+
+Changes in Version 0.9-52
+  
+  o modifier keys when clicking were not working under Linux, it seems.
+    Reported with a suggested fix by Raghav Puranmalka.
+
+Changes in Version 0.9-51
+
+  o there were errors on startup with some types of plots (e.g. splom()),
+    caused by trying to detect data types for time.mode = NA. Now uses try().
+
+  o playwith() failed when given a call with no arguments.
+
+  o adding row names and covariate values as labels was using the wrong one.
+
+  o adding labels to splom() now only adds one, rather than one for each panel.
+
+Changes in Version 0.9-50
+
+  o implemented session history: playwith windows load and save history.
+    (based on a suggestion from Liviu Andronic). See ?playwith.history
+
+  o row names and covariate values can now be added as labels (right-click).
+
+  o added support for sp package: SpatialPoints and SpatialPointsDataFrame.
+
+  o try as.data.frame() on the first call argument to get covariates.
+
+  o always turn off devAskNewPage, e.g. from demo(), because of redraws.
+
+  o fixed demo("clusterApp"), the parallel() function had stopped working.
+
+  o fixed showGrobsBB() and identifyGrob(), was not working for several
+    types of grobs. Note: these will be moved to gridExtra package soon.
+
+Changes in Version 0.9-45
+
+  o fixed mouse click events under Linux - was interpreted as Alt click
+    when NumLock was active (thanks to Liviu Andronic and Trey Greer).
+
+  o 'autoplay' detects plots from Rcmdr (thanks to Liviu Andronic).
+
+  o playwith.options("time.mode") now defaults to NA, i.e. automatic.
+    Its previous default was FALSE.
+
+  o "grob inspector" etc now pads bounding boxes, so it is possible to
+    click on straight lines.
+
+  o eliminated "ignoring non-pairlist attributes" warnings.
+
+  o changed select.list() to the cross-platform menu() in autoplay.
+
+Changes in Version 0.9-44
+
+  o Added a "Stop" action to interrupt plotting.
+
+  o Added 'preplot.actions' argument to playwith().
+
+  o A custom 'handler' function can be specified for 'parameters' widgets.
+
+  o Improved demo("clusterApp").
+
+  o Brushing a single data point (line) in a parallel plot now works.
+
+  o "Select from table" to identify points now works in more cases.
+
+  o New function identifyGrob(), returns names of clicked grid-objects.
+
+Changes in Version 0.9-43
+
+  o Fixed bug that caused annotations outside the plot area to fail.
+
+Changes in Version 0.9-42
+
+  o Fixed "protection stack overflow" triggered by resizing grid plots.
+
+  o "Full scale" tools now work with Lattice's "free" scales.
+
+  o Page annotations are now inside Lattice's toplevel viewport.
+
+  o Added a Theme menu for Lattice themes (moved out from Style menu).
+
+Changes in Version 0.9-40
+
+  o Split Latticist out into a new package 'latticist'.
+
+  o Handles plots from the 'vcd' package without falling over.
+
+  o Detects pages of a Lattice plot when 'layout' arg is missing.
+
+Changes in Version 0.9-32
+
+  o Select IDs from Table works correctly when columns are sorted.
+
+  o Latticist reorders factor levels again (when reorder = TRUE),
+    and variable expressions involving "dat" have been fixed.
+
+Changes in Version 0.9-31
+
+  o Latticist API abstracted into functions latticistParse() and
+    latticistCompose(); the function latticist() is purely a GUI.
+
+  o Support for more plots via plotCoords and case.names methods.
+
+  o New tools "Pan" (scroll), "Line", "Rect".
+
+  o "Undo" is now available in more cases, and is part of the API.
+
+  o Changed some click actions and keyboard shortcuts.
+
+  o "Point / line style" dialog box.
+
+  o Labels menu: "Select from table" now implemented.
+
+  o Fixed initial window size.
+
+  o Editing text fields in "Plot Settings" is now detected even
+    when <Enter> is not pressed.
+
+  o Fixed occasional freeze-up of latticist.
+
+  o "Set axis labels..." button in Plot Settings (Lattice only).
+
+  o Zoom out applies to x-axis only in "time mode".
+
+Changes in Version 0.9-21
+
+  o Fixed style shortcuts setting region$col palette.
+
+  o Fixed element 'update.action' in tool specification lists.
+
+  o Latticist: dodge bug in latticeExtra::marginal.plot().
+
+Changes in Version 0.9-20
+
+  o Package overhaul! Menus, new tools, new infrastructure, etc.
+    Note that playwith() arguments and playwith.options have changed.
+
+  o Plot Settings overhaul, allows scales and axes to be customised.
+
+  o latticeStyleGUI(), a stand-alone function to edit the lattice theme.
+
+  o latticist supports a depth variable (3D) and a color covariate.
+    Also produces better plots with multiple categoricals.
+
+Changes in Version 0.9-11
+
+  o latticist uses hexbinplot, and many other changes.
+
+  o playwith() now returns the playState object, not the plot result.
+
+  o revised and expanded all examples in help("playwith").
+
+  o common errors in playwith and latticist are caught and shown in
+    a dialog box (unless playwith.options(catch.errors = FALSE)).
+    On Linux this avoids killing R with "stack smashing detected".
+
+  o call history (back/forward buttons) works correctly.
+
+  o improved local cacheing of objects appearing in the plot call.
+    now stores local functions as well as objects, and works better.
+
+  o re-used playwith windows are resized to account for toolbars etc.
+
+  o grob inspector tool allows removing grobs (but note bug in 'grid').
+
+  o fixed zooming with lattice categorical scales (again).
+
+Changes in Version 0.9-10
+
+  o grob inspector tool (currently only shows str() of grobs).
+
+  o moved marginals() and c.trellis() into latticeExtra package.
+
+  o plot settings dialog now does not fail for lattice plots
+    where scales="free".
+
+  o lattice theme selector now includes an option for custom.theme()
+    from latticeExtra.
+
+Changes in Version 0.9-9
+
+  o fix bug when tooltips are turned on: this runs the GTK Main Loop,
+    and sometimes when the window was closed it was not stopped,
+    freezing the R terminal.
+
+  o fix bug in parameter slider ("Invalid property value").
+
+  o make sliders and scrollbars update continuously (but constrained
+    by plot redrawing), rather than only on mouse button release.
+
+Changes in Version 0.9-8
+
+  o compatability with older versions of RGtk2.
+
+  o draw x scales in marginals().
+
+Changes in Version 0.9-7
+
+  o click on plot makes a pop-up menu with labels for nearby points.
+    Select one to add that label to the plot.
+
+  o clicks on plot avoid looking up data points unless neccessary.
+
+  o reorder factor levels only once in latticist(), which removes
+    lots of ugly reorderByFreq() from the plot calls.
+
+  o latticist preloads some useful variable expressions and subsets.
+
+  o latticist converts integers with only 1 or 2 levels to factor.
+
+  o use shingle levels for labels in strips and on axes.
+
+  o latticist gives more error messages in dialog boxes.
+
+  o latticist passes labels argument to playwith(), which stops it
+    from trying to guess labels from the plot call each time.
+
+Changes in Version 0.9-6
+
+  o use of equal.count and cutEq in latticist.
+
+  o use of useOuterStrips and layout in latticist.
+
+Changes in Version 0.9-5
+
+  o marginals()
+
+  o reorderByFreq()
+
+  o fix click-and-hold identify, to account for lattice subscripts.
+
+  o playGetIDs() now returns subscripts into original data from
+    multi-panel lattice plots (was indexing data in each panel).
+    (And the internal representation is now as lattice subscripts).
+
+Changes in Version 0.9-4
+
+  o latticist!
+
+  o callArg gains a logical 'eval' argument.
+
+  o fix error when using a single argument that is a formula.
+
+  o fix error when identifying points with univariate lattice
+    plots (e.g. data$x is NULL).
+
+  o remove effect of 'title' on choosing replacement device.
+
+Changes in Version 0.9-3
+
+  o recognise un-named "data" argument to formula methods
+    such as plot.formula, boxplot.formula.
+
+Changes in Version 0.9-2
+
+  o tooltips show labels for points when click and hold mouse button.
+
+  o improvements to basic device mode (options(device="playwith")):
+    preview button in annotation tool now works; and there is an
+    "undo annotation" tool, allowing last annotation to be removed.
+    (still some problems with mixing base and grid graphics).
+
+  o improved code for guessing xy coordinates and labels.
+
+  o improved code for guessing main function (assume "plot" if found).
+
+Changes in Version 0.9-1
+
+  o cairoDevice package in Depends rather than Imports, since
+    it sets options(device="Cairo"), which is bad if not attached!
+
+Changes in Version 0.9-0
+
+  o user settings: playwith.options / playwith.getOption.
+
+Changes in Version 0.8-57
+
+  o now works on Linux!
+    (had problems related to event loop -- sizing widgets etc).
+
+  o new function playGetIDs() gives currently identified points.
+
+  o device size, rather than window size, can now be specifed.
+    This matches other devices. Also pointsize can now be set.
+
+  o option to show tooltips for toolbar buttons (uses gtkMain()).
+
+  o mouse clicks better distinguished from drags: time <= 1/4 sec.
+
+  o xlim/ylim and time mode now handles date-time classes better,
+    including "yearmon" and "yearqtr" from the zoo package.
+
+  o zooming now tries to account for axis padding.
+
+  o plot call is now deparsed without showAttributes option (for
+    clarity). Call objects are used to maintain date time classes.
+
+  o "clear" button now shows a graphical dialog under linux.
+
+  o warning about lattice subscripts now checks the panelArgs
+    (it was warning spuriously before, eg xyplot.zoo).
+
+  o more use of locks to try to avoid multi-thread conflicts.
+
+  o attempt to set GTK tooltips is now a *silent* try(), again.
+
+  o zoom and identify tools check par("mfrow") in case it is a
+    multi-figure base graphics plot, and omit themselves if so.
+
+Changes in Version 0.8-56
+
+  o arguments to `parameters` can use I() to force a spinbutton
+    rather than slider.
+
+Changes in Version 0.8-55
+
+  o argument `parameters`: automatically constructs
+    widgets to control parameter values appearing in the call.
+
+  o default action when dragging on the plot is zoom.
+    default action on right-click is zoomout.
+
+  o restrict zooming to x axis in time.mode
+    only if a time.vector was not specified.
+
+  o whether to start in time.mode is determined by looking at
+    the data: TRUE if the x data has a 'ts' or 'zoo' class.
+
+  o concept of the "main function" which accepts typical plot
+    arguments (xlim, ylim, main, etc) -- not necessarily the
+    top-level call. By default, a depth-first search is used
+    to find a function that accepts `xlim` or `...`.
+
+  o use of relevant lattice plots without subscripts=TRUE
+    will give a warning that identified points may be wrong.
+
+  o callArg() now uses standard evaluation by default, rather than
+    quoting its argument. Old code will need to be changed!
+
+  o use RGtk2 rather than gWidgets for edit.call and edit.annotations
+    because gWidgets is very slow.
+
+  o reasonable guess for data points and labels with ggplot::qplot()
+
+  o enabled pretty ggplot2 plots (print.ggplot with pretty=TRUE)
+    if using grid package version >= 2.7
+    (older versions had a problem with viewports being popped).
+
+  o code reorganisation: split tools into separate files; ESS style.
+

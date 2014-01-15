@@ -1,0 +1,125 @@
+<ui>
+  <menubar name='MenuBar'>
+    <menu action='FileMenu'>
+      <menuitem action='Clone'/>
+      <menuitem action='Unlink'/>
+      <separator/>
+      <menuitem action='Keep'/>
+      <menuitem action='SaveCode'/>
+      <separator/>
+      <menuitem action='Save'/>
+      <menuitem action='Copy'/>
+      <separator/>
+      <menuitem action='Print'/>
+      <separator/>
+      <menuitem action='Close'/>
+    </menu>
+    <menu action='ViewMenu'>
+      <menuitem action='StayOnTop'/>
+      <separator/>
+      <menuitem action='Back'/>
+      <menuitem action='Forward'/>
+      <menuitem action='Redraw'/>
+      <menuitem action='Reload'/>
+      <separator/>
+      <menuitem action='SetSize'/>
+      <menuitem action='IncrFont'/>
+      <menuitem action='DecrFont'/>
+      <separator/>
+      <menuitem action='ViewSource'/>
+    </menu>
+    <menu action='StyleMenu'>
+      <menuitem action='StyleSettings'/>
+      <menuitem action='SetPointLineStyle'/>
+      <menuitem action='SetBrushStyle'/>
+      <menuitem action='SetLabelStyle'/>
+      <menuitem action='SetArrowStyle'/>
+      <separator/>
+      <menuitem action='StyleSolidPoints'/>
+      <menuitem action='StyleTransPoints'/>
+      <menuitem action='StyleThickLines'/>
+      <separator/>
+    </menu>
+    <menu action='ThemeMenu'>
+      <menuitem action='DefaultTheme'/>
+    </menu>
+    <menu action='LabelsMenu'>
+      <menuitem action='SetLabelsTo'/>
+      <separator/>
+      <menuitem action='Identify'/>
+      <menuitem action='IdTable'/>
+      <menuitem action='FindLabels'/>
+      <separator/>
+      <menuitem action='SaveIDs'/>
+      <separator/>
+      <menuitem action='Clear'/>
+    </menu>
+    <menu action='ToolsMenu'>
+      <menuitem action='PlotSettings'/>
+      <menuitem action='EditCall'/>
+      <menuitem action='EditAnnotations'/>
+      <menuitem action='UndoAnnotation'/>
+      <menuitem action='Clear'/>
+      <separator/>
+      <menuitem action='Zoom'/>
+      <menuitem action='Pan'/>
+      <menuitem action='Identify'/>
+      <menuitem action='Brush'/>
+      <menuitem action='Annotation'/>
+      <menuitem action='Arrow'/>
+      <menuitem action='Line'/>
+      <menuitem action='Rect'/>
+      <separator/>
+      <menuitem action='Expand'/>
+      <menuitem action='Zoomin'/>
+      <menuitem action='Zoomout'/>
+      <menuitem action='Zoomfit'/>
+      <menuitem action='ZeroY'/>
+      <menuitem action='ZeroX'/>
+      <separator/>
+      <menuitem action='GrobInspector'/>
+      <separator/>
+    </menu>
+    <menu action='DataMenu'>
+      <menuitem action='SummariseData'/>
+      <menuitem action='EditData'/>
+      <menuitem action='SaveData'/>
+      <separator/>
+      <menuitem action='PurgeObjects'/>
+    </menu>
+    <menu action='OptionsMenu'>
+      <menuitem action='TimeMode'/>
+      <separator/>
+      <menuitem action='ClipAnnot'/>
+      <menuitem action='PageAnnot'/>
+      <separator/>
+      <menuitem action='ShowStatusbar'/>
+      <menuitem action='ShowToolbars'/>
+      <menuitem action='ShowTooltips'/>
+    </menu>
+    <menu action='HelpMenu'>
+      <menuitem action='HelpPlot'/>
+      <separator/>
+      <menuitem action='HelpPlaywith'/>
+      <separator/>
+      <menuitem action='About'/>
+      <menuitem action='Website'/>
+    </menu>
+  </menubar>
+  <popup name='ContextMenu'>
+      <menuitem action='Zoom'/>
+      <menuitem action='Pan'/>
+      <menuitem action='Identify'/>
+      <menuitem action='Brush'/>
+      <menuitem action='Annotation'/>
+      <menuitem action='Arrow'/>
+      <menuitem action='Line'/>
+      <menuitem action='Rect'/>
+      <separator/>
+      <menuitem action='PlotSettings'/>
+      <menuitem action='StyleSettings'/>
+      <menuitem action='SetSize'/>
+      <separator/>
+      <menuitem action='ViewSource'/>
+  </popup>
+</ui>

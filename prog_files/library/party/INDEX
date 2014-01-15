@@ -1,0 +1,27 @@
+BinaryTree-class        Class "BinaryTree"
+ForestControl-class     Class "ForestControl"
+LearningSample-class    Class "LearningSample"
+RandomForest-class      Class "RandomForest"
+SplittingNode-class     Class "SplittingNode"
+TreeControl-class       Class "TreeControl"
+cforest                 Random Forest
+cforest_control         Control for Conditional Tree Forests
+ctree                   Conditional Inference Trees
+ctree_control           Control for Conditional Inference Trees
+ctree_memory            Memory Allocation
+fit-methods             Fit 'StatModel' Objects to Data
+initVariableFrame-methods
+                        Set-up VariableFrame objects
+initialize              Methods for Function initialize in Package
+                        'party'
+mammoexp                Mammography Experience Study
+mob                     Model-based Recursive Partitioning
+mob_control             Control Parameters for Model-based Partitioning
+node_inner              Panel-Generators for Visualization of Party
+                        Trees
+plot.BinaryTree         Visualization of Binary Regression Trees
+plot.mob                Visualization of MOB Trees
+ptrafo                  Function for Data Transformations
+readingSkills           Reading Skills
+reweight                Re-fitting Models with New Weights
+varimp                  Variable Importance

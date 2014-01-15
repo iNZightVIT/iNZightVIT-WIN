@@ -1,0 +1,297 @@
+2013-06-30 15:46  edzer
+
+	* spacetime/DESCRIPTION, spacetime/inst/doc, spacetime/vignettes,
+	  spacetime/vignettes/cls.fig, spacetime/vignettes/cls.pdf,
+	  spacetime/vignettes/hov.pdf,
+	  spacetime/vignettes/ifgi-logo_int.pdf,
+	  spacetime/vignettes/jss816.Rnw, spacetime/vignettes/jss816.bib,
+	  spacetime/vignettes/jsslogo.jpg, spacetime/vignettes/logo52n.pdf,
+	  spacetime/vignettes/move.fig, spacetime/vignettes/move.pdf,
+	  spacetime/vignettes/produc.jpg, spacetime/vignettes/sto.Rnw,
+	  spacetime/vignettes/stpg.Rnw, spacetime/vignettes/ti.fig,
+	  spacetime/vignettes/ti.pdf, spacetime/vignettes/tp.pdf,
+	  spacetime/vignettes/ts.pdf, spacetime/vignettes/wind.pdf,
+	  spacetime/vignettes/windts.pdf: moved vignettes to vignettes
+	  directory.
+
+2013-06-27 02:59  jinlong
+
+	* trajectories/demo/read.R, trajectories/notes: - Notes updated
+	  - First take on read.R
+
+2013-06-25 15:08  edzer
+
+	* trajectories/demo/read.R: read.R reads GeoLife trajectories into
+	  STI object
+
+2013-06-24 07:13  jinlong
+
+	* trajectories/notes: Fixed typos in Weekly Report 1
+
+2013-06-24 06:50  jinlong
+
+	* trajectories/notes: Update on Weekly Report 1
+
+2013-06-24 06:09  jinlong
+
+	* trajectories/notes: Jinlong's commit test
+
+2013-06-17 15:21  edzer
+
+	* trajectories/notes: next meeting
+
+2013-06-17 15:13  edzer
+
+	* trajectories/notes: final notes
+
+2013-06-17 15:04  edzer
+
+	* trajectories/notes: notes of the Jun 17 telco of Edzer and
+	  Jinlong
+
+2013-06-17 08:43  edzer
+
+	* spacetime/R/STIDF-methods.R, spacetime/R/stplot.R,
+	  spacetime/man/stconstruct.Rd, spacetime/man/stplot.Rd,
+	  spacetime/tests/stconstruct.R,
+	  spacetime/tests/stconstruct.Rout.save: modified subs.STIDF to
+	  take care of duplicate selection;
+	  modified STIDF stplot method to use spplot;
+	  modified stconstruct examples which then no longer ran well;
+
+2013-06-08 21:11  edzer
+
+	* spacetime/DESCRIPTION, spacetime/NAMESPACE,
+	  spacetime/R/Class-xts.R, spacetime/R/STFDF-methods.R,
+	  spacetime/R/aggregate.R, spacetime/R/stplot.R,
+	  spacetime/man/ST-class.Rd, spacetime/man/STFDF-class.Rd,
+	  spacetime/man/stplot.Rd: added as.array() method
+	  improved stplot for STIDF
+	  improved as.zoo.STFDF
+	  added options "time" and "space" for by argument in
+	  aggregate.STFDF
+	  added S4 class zoo
+
+2013-05-31 21:46  edzer
+
+	* spacetime/R/coerce.R, spacetime/R/plot.R,
+	  spacetime/man/STFDF-class.Rd, spacetime/man/STSDF-class.Rd,
+	  spacetime/man/stinteraction.Rd: added plot method for ST[FS]DF,
+	  indicating missing value pattern;
+	  added STI <--> stpp coercion (using as.POSIXct, with origing
+	  1970-01-01 GMT)
+
+2013-05-17 15:09  edzer
+
+	* trajectories/DESCRIPTION, trajectories/NAMESPACE,
+	  trajectories/man/traj_stats.Rd: initial check.
+
+2013-05-17 14:56  edzer
+
+	* trajectories, trajectories/DESCRIPTION, trajectories/NAMESPACE,
+	  trajectories/R, trajectories/R/traj_stats.R, trajectories/demo,
+	  trajectories/demo/traj_stats.R, trajectories/man,
+	  trajectories/man/traj_stats.Rd: initial upload of Jinlong's
+	  Geolife trajectory reader
+
+2013-05-17 10:53  edzer
+
+	* ChangeLogOld, DESCRIPTION, NAMESPACE, R, data, demo, inst, man,
+	  spacetime, spacetime/ChangeLogOld, spacetime/DESCRIPTION,
+	  spacetime/NAMESPACE, spacetime/R, spacetime/data, spacetime/demo,
+	  spacetime/inst, spacetime/man, spacetime/svn2cl.xsl,
+	  spacetime/tests, svn2cl.xsl, tests: made room for additional
+	  packages, next to spacetime
+
+2013-05-16 20:09  edzer
+
+	* man/stconstruct.Rd: line break
+
+2013-05-14 16:55  edzer
+
+	* DESCRIPTION, NAMESPACE, R/stinteraction.R, man/stinteraction.Rd:
+	  added stInteraction(), an idea from agile workshop
+
+2013-05-08 08:00  edzer
+
+	* inst/doc/jss816.Rnw: updated cshapes example to deal with missing
+	  date (-1) in cshapes 0.4-2
+
+2013-04-29 18:24  edzer
+
+	* DESCRIPTION, R/ST-methods.R,
+	  tests/Examples/spacetime-Ex.Rout.save, tests/basic.Rout.save,
+	  tests/raster.Rout.save, tests/stconstruct.Rout.save,
+	  tests/traj.Rout.save, tests/wind.Rout.save: updated spTransform;
+	  clean R CMD check for R 3.0.0.
+
+2013-04-19 13:32  edzer
+
+	* R/ST-methods.R: added require(rgdal) before the spTransform()
+	  call on Spatial objects.
+
+2013-04-15 07:30  edzer
+
+	* DESCRIPTION: updated DESCRIPTION
+
+2013-04-10 22:47  edzer
+
+	* R/Class-STSDF.R, R/ST-methods.R, R/timematch.R: added some more
+	  useful error messages, after r-sig-geo email from Saman
+
+2013-03-02 11:25  edzer
+
+	* NAMESPACE, R/ST-methods.R, R/STFDF-methods.R, R/STTDF-methods.R,
+	  R/coerce.R, R/stplot.R, R/timematch.R, demo/CressieWikle.R,
+	  inst/doc/jss816.Rnw, inst/doc/sto.Rnw, man/STTDF-class.Rd,
+	  tests/Examples/spacetime-Ex.Rout.save, tests/rw.R: added manual
+	  entries;
+	  updated (completed) [ for STT and STTDF
+	  added length methods for STT
+	  removed warnings from sto.Rnw
+	  added/improved coerces from/to STT
+	  added require(zoo) to CressieWikle demo
+	  added documentation and vignette text on [.STT; examples
+
+2013-03-01 00:22  edzer
+
+	* DESCRIPTION, NAMESPACE, R/Class-ST.R, R/aggregate.R, R/coerce.R,
+	  R/over.R, R/stconstruct.R, R/timematch.R, demo/CressieWikle.R:
+	  added zoo back to Suggests: and loaded it in demo/CressieWikle.R
+	  cleaned up timeIsInterval stuff
+
+2013-02-19 20:48  edzer
+
+	* DESCRIPTION: starting 1.0-5
+
+2013-02-19 20:48  edzer
+
+	* DESCRIPTION, R/ST-methods.R, inst/doc/stpg.Rnw,
+	  tests/Examples/spacetime-Ex.Rout.save, tests/raster.Rout.save,
+	  tests/wind.Rout.save: 1.0-4 release to CRAN.
+
+2013-02-15 21:58  edzer
+
+	* R/raster.R: use timeBased()
+
+2013-02-15 21:50  edzer
+
+	* NAMESPACE, R/ST-methods.R, R/STFDF-methods.R, R/STIDF-methods.R,
+	  R/STSDF-methods.R: use xts::timeBased() when time is not xts upon
+	  construction;
+	  drop tzone in xts() call when index is Date (to suppress warning)
+
+2013-02-14 13:04  edzer
+
+	* DESCRIPTION: dependency on gstat 1.0-16.
+
+2013-02-13 21:29  ben_graeler
+
+	* inst/doc/jss816.Rnw: - adapted to changes in gstat (i.e. using
+	  vgmST)
+
+2013-02-09 19:10  edzer
+
+	* DESCRIPTION: tidy
+
+2013-02-09 19:04  edzer
+
+	* DESCRIPTION: date update
+
+2013-02-09 19:02  edzer
+
+	* R/stplot.R: update, to accomodate plotting legend handling for
+	  points
+
+2013-02-04 14:53  edzer
+
+	* DESCRIPTION: date update
+
+2013-01-29 20:56  edzer
+
+	* DESCRIPTION: triggering rebuild on r-forge.
+
+2013-01-25 12:45  edzer
+
+	* DESCRIPTION, NAMESPACE, R/STTDF-methods.R, inst/doc/jss816.Rnw,
+	  man/STTDF-class.Rd: added [ method to STTDF; minor update on
+	  vignette
+
+2013-01-25 10:08  ben_graeler
+
+	* ., inst/doc/jss816.Rnw: - updated the jss816.Rnw to the new
+	  spatio-temporal variogram definition from gstat
+
+2013-01-08 12:47  edzer
+
+	* inst/doc/jss816.Rnw: tidy vignette
+
+2012-12-27 19:08  edzer
+
+	* inst/doc/sto.Rnw: added trick to avoid build break on r-forge.
+
+2012-12-25 15:01  edzer
+
+	* DESCRIPTION: version update after CRAN release of 1.0-3
+
+2012-12-25 14:01  edzer
+
+	* DESCRIPTION, R/STFDF-methods.R, data/air.rda: updated air.rda to
+	  pass new rgdal check
+
+2012-12-17 12:11  edzer
+
+	* NAMESPACE, R/STFDF-methods.R, R/tgrass.R, man/nbmult.Rd: added
+	  nbMult, for space-time neighbours in STF* objects;
+	  reverted changes to tgrass back (using setwd() etc)
+
+2012-12-17 09:08  edzer
+
+	* DESCRIPTION: put zoo and xts versions one down, to match (?)
+	  those on r-forge
+
+2012-12-15 17:19  edzer
+
+	* R/tgrass.R: removed setwd() in tgrass.R to check if this blocked
+	  building on r-forge...
+
+2012-12-14 14:00  edzer
+
+	* ChangeLog, ChangeLogOld, DESCRIPTION: moved 52N svn repo
+	  ChangeLog to ChangeLogOld; added makefile
+
+2012-12-14 13:56  edzer
+
+	* ChangeLog, DESCRIPTION, NAMESPACE, R, R/Class-ST.R,
+	  R/Class-STFDF.R, R/Class-STIDF.R, R/Class-STSDF.R,
+	  R/Class-STTDF.R, R/Class-xts.R, R/ST-methods.R,
+	  R/STFDF-methods.R, R/STIDF-methods.R, R/STSDF-methods.R,
+	  R/STTDF-methods.R, R/aggregate.R, R/apply.R, R/bind.R,
+	  R/coerce.R, R/endtime.R, R/eof.R, R/interval.R, R/na.R, R/over.R,
+	  R/plot.R, R/raster.R, R/stconstruct.R, R/stplot.R, R/tgrass.R,
+	  R/timematch.R, data, data/air.rda, data/fires.rda, demo,
+	  demo/00Index, demo/CW.R, demo/CressieWikle.R, demo/edc.R,
+	  demo/gvis.R, demo/sos4R.R, demo/trip.R, inst, inst/CITATION,
+	  inst/doc, inst/doc/cls.fig, inst/doc/cls.pdf, inst/doc/hov.pdf,
+	  inst/doc/ifgi-logo_int.pdf, inst/doc/jss816.Rnw,
+	  inst/doc/jss816.bib, inst/doc/jsslogo.jpg, inst/doc/logo52n.pdf,
+	  inst/doc/move.fig, inst/doc/move.pdf, inst/doc/produc.jpg,
+	  inst/doc/sto.Rnw, inst/doc/stpg.Rnw, inst/doc/ti.fig,
+	  inst/doc/ti.pdf, inst/doc/tp.pdf, inst/doc/ts.pdf,
+	  inst/doc/wind.pdf, inst/doc/windts.pdf, man, man/ST-class.Rd,
+	  man/STFDF-class.Rd, man/STIDF-class.Rd, man/STSDF-class.Rd,
+	  man/STTDF-class.Rd, man/air.Rd, man/delta.Rd, man/eof.Rd,
+	  man/fires.Rd, man/interval.Rd, man/na.Rd, man/over.Rd,
+	  man/stconstruct.Rd, man/stplot.Rd, man/tgrass.Rd,
+	  man/timematch.Rd, man/unstack.Rd, svn2cl.xsl, tests,
+	  tests/Examples, tests/Examples/spacetime-Ex.Rout.save,
+	  tests/basic.R, tests/basic.Rout.save, tests/over.R,
+	  tests/over.Rout.save, tests/raster.R, tests/raster.Rout.save,
+	  tests/stconstruct.R, tests/stconstruct.Rout.save, tests/traj.R,
+	  tests/traj.Rout.save, tests/wind.R, tests/wind.Rout.save: initial
+	  commit to r-forge
+
+2011-09-15 15:26  stefan7th
+
+	* .: small themeroot fix
+
