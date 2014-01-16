@@ -6,7 +6,7 @@
 
 # set the default help type
 # options(help_type="text")
-options(help_type="html", warn = -1)
+options(help_type="html") ##, warn = -1)
 
 # set a site library
 # .Library.site <- file.path(chartr("\\", "/", R.home()), "site-library")
