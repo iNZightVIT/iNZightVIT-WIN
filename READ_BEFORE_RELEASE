@@ -13,12 +13,14 @@ mv READ_BEFORE_RELEASE ../inz-tmp
 
 - convert to .zip file
 cd ..
-zip -r iNZightVIT-2.0.0 iNZightVIT-RELEASE
+zip -r iNZightVIT-2.0.0.zip iNZightVIT-2.0.0
 
 - restore the files
 cd iNZightVIT-2.0.0
-mv -r ../inz-tmp/* ./
-rm -r ../inz-tmp
+mv ../inz-tmp/* ./
+mv ../inz-tmp/.git ./
 
+- cleanup
 cd ..
+rm -r inz-tmp
 mv iNZightVIT-2.0.0 iNZightVIT-RELEASE
