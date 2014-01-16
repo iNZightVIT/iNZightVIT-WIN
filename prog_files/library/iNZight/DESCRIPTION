@@ -11,4 +11,4 @@ License: GPL-2
 Depends: R (>= 2.15.3), objectProperties, gWidgets2,
        gWidgets2RGtk2, iNZightPlots, cairoDevice, grid
 Suggests: rgl, gpairs, iNZightTS, iNZightMR, iNZightModules
-Built: R 3.0.1; ; 2014-01-15 22:31:26 UTC; unix
+Built: R 3.0.1; ; 2014-01-16 01:47:29 UTC; unix
