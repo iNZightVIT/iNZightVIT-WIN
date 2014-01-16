@@ -42,6 +42,11 @@ test_that("errors during printing visible values are captured", {
   stopifnot("error" %in% class(ev[[2]]))
 })
 
+test_that("options(warn = -1) suppresses warnings", {
+  ev <- evaluate("op = options(warn = -1); warning('hi'); options(op)")
+  expect_that(classes(ev), equals("source"))
+})
+
 op <- options(device = function(...) {
   pdf(file = NULL)
   dev.control("enable")
@@ -55,6 +60,20 @@ test_that("output and plots interleaved correctly", {
   ev <- evaluate(file("interleave-2.r"))
   expect_equal(classes(ev),
                c("source", "recordedplot", "character", "recordedplot", "character"))
+})
+
+test_that("return value of value handler inserted directly in output list", {
+  ev <- evaluate(file("raw-output.r"), output_handler = new_output_handler(value = identity))
+  expect_equal(classes(ev),
+               c("source", "numeric", "source", "source", "source", "gg"))
+})
+
+test_that("invisible values can also be saved if value handler has two arguments", {
+  handler <- new_output_handler(value = function(x, visible) {
+    x  # always returns a visible value
+  })
+  ev <- evaluate("x<-1:10", output_handler = handler)
+  expect_equal(classes(ev), c("source", "integer"))
 })
 
 options(op)

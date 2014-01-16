@@ -1,0 +1,24 @@
+Before releasing, please do the following:
+
+- Set the correct name of the directory
+mv iNZightVIT-RELEASE iNZightVIT-2.0.0
+
+- Copy the following directories/files outside of the current directory:
+
+cd iNZightVIT-2.0.0
+mkdir ../inz-tmp
+mv .git/ ../inz-tmp
+mv README.md ../inz-tmp
+mv READ_BEFORE_RELEASE ../inz-tmp
+
+- convert to .zip file
+cd ..
+zip -r iNZightVIT-2.0.0 iNZightVIT-RELEASE
+
+- restore the files
+cd iNZightVIT-2.0.0
+mv -r ../inz-tmp/* ./
+rm -r ../inz-tmp
+
+cd ..
+mv iNZightVIT-2.0.0 iNZightVIT-RELEASE

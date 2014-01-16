@@ -4,6 +4,7 @@ as.envlist	as.envlist
 as.package	as.package
 bash	bash
 build	build
+build_github_devtools	build_github_devtools
 build_vignettes	build_vignettes
 build_win	build_win
 check	check
@@ -37,6 +38,7 @@ imports_env	imports_env
 inst	inst
 install	install
 install_bitbucket	install_bitbucket
+install_deps	install_deps
 install_git	install_git
 install_github	install_github
 install_gitorious	install_gitorious

@@ -1,4 +1,0 @@
-import(iNZightRegression)
-
-# For now, just export everything
-exportPattern("^[^\\.]")

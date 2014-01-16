@@ -88,7 +88,6 @@ print(  image(t.mm)  ) # print(.) the lattice object
 ### code chunk number 11: npk_ex
 ###################################################
 data(npk, package="MASS")
-
 npk.mf <- model.frame(yield ~ block + N*P*K, data = npk)
 ## str(npk.mf) # the data frame + "terms" attribute
 

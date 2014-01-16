@@ -13,6 +13,7 @@ bbox3d	bbox
 bg3d	bg
 box3d	axes3d
 clear3d	scene
+clipplanes3d	planes
 cube3d	mesh3d
 cube3d.ib	rgl-internal
 cube3d.vb	rgl-internal
@@ -86,6 +87,7 @@ rgl.bool	rgl-internal
 rgl.bringtotop	rgl.bringtotop
 rgl.clamp	rgl-internal
 rgl.clear	scene
+rgl.clipplanes	planes
 rgl.close	rgl-package
 rgl.color	rgl-internal
 rgl.cur	rgl-package

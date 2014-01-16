@@ -838,14 +838,14 @@ structable(survival ~ ., data = tab)
 ### code chunk number 101: oc3
 ###################################################
 dpa <- list(var_offset = 1.2, rot = -30, just_leveltext= "left")
-pairs(tab, diag_panel_args = dpa)
+pairs(tab, diag_panel = pairs_barplot, diag_panel_args = dpa)
 
 
 ###################################################
 ### code chunk number 102: ocpairs
 ###################################################
 dpa <- list(var_offset = 1.2, rot = -30, just_leveltext= "left")
-pairs(tab, diag_panel_args = dpa)
+pairs(tab, diag_panel = pairs_barplot, diag_panel_args = dpa)
 
 
 ###################################################

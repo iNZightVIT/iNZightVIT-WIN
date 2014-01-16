@@ -1,17 +1,14 @@
 ELISA                   Data from an ELISA assay
-addLast-deprecated      Add a function to be executed when R exits.
 ask                     Display a prompt and collect the user's
                         response
 binsearch               Binary Search
-capture                 Capture printed output of an R expression in a
-                        string
 checkRVersion           Check if a newer version of R is available
 combinations            Enumerate the Combinations or Permutations of
                         the Elements of a Vector
 defmacro                Define a macro
 foldchange              Compute fold-change or convert between
                         log-ratio and fold-change.
-gtools-defunct          Deprecated Functions in the gtools package
+gtools-defunct          Defunct Functions in package 'gtools'
 gtools-deprecated       Deprecated Functions in the gtools package
 invalid                 Test if a value is missing, empty, or contains
                         only NA or NULL values
@@ -33,3 +30,4 @@ setTCPNoDelay           Modify the TCP\_NODELAY ('de-Nagle') flag for
                         socket objects
 smartbind               Efficient rbind of data framesy, even if the
                         column names don't match
+stars.pval              Generate significance stars from p-values

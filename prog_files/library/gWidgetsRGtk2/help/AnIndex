@@ -199,6 +199,7 @@ gWidgetsRGtk2-package	gWidgetsRGtk2-package
 .font,GtkWindow,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
 .font-methods	gWidgetsRGtk2-undocumented
 .font<-,gButtonRGtk,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
+.font<-,gExpandgroupRGtk,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
 .font<-,gStatusbarRGtk,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
 .font<-,gTextRGtk,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
 .font<-,gWidgetRGtk,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented

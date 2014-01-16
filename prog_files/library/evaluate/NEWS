@@ -1,3 +1,42 @@
+Version 0.5.1
+------------------------------------------------------------------------------
+
+BUG FIXES
+
+* under R 2.15.x, evaluate() was unable to filter out the plots triggered by
+  clip() (thanks, Uwe Ligges)
+
+Version 0.5
+------------------------------------------------------------------------------
+
+NEW FEATURES
+
+* evaluate() is better at telling if a new plot should render a new page due
+  to the new par('page') in R 3.0.2
+
+BUG FIXES
+
+* fixed yihui/knitr#600: when the last expression in the code is a comment,
+  the previous incomplete plot was not captured
+
+* the empty plots produced by strwidth(), strheight(), and clip() are no
+  longer recorded
+
+MAJOR CHANGES
+
+* evaluate() no longer records warnings in case of options(warn = -1); see
+  yihui/knitr#610
+
+* for 'output_handler' in evaluate(), visible values from the 'value' handler
+  will be saved to the output list; this makes it possible for users to save
+  the original values instead of their printed side effects; this change
+  will not affect those who use the default output handlers (#40, thanks,
+  Gabriel Becker)
+
+* the 'value' handler in new_output_handler() may take an additional
+  argument that means if the value is visible or not; this makes it possible
+  to save the invisible values as well (#41, thanks, Joroen Ooms)
+
 Version 0.4.7
 ------------------------------------------------------------------------------
 
