@@ -6,7 +6,7 @@
 
 # set the default help type
 # options(help_type="text")
-options(help_type="html")
+options(help_type="html", warn = -1)
 
 # set a site library
 # .Library.site <- file.path(chartr("\\", "/", R.home()), "site-library")
@@ -55,31 +55,6 @@ message("Please wait while iNZightVIT loads...")
 suppressWarnings({
     library(vit)
 })
-
-#### TEMPORARY FIX ####
-modifyList <- function (x, val, keep.null = FALSE) {
-    stopifnot(is.list(x), is.list(val))
-    xnames <- names(x)
-    vnames <- names(val)
-    vnames <- vnames[vnames != ""]
-    if (keep.null) {
-        for (v in vnames) {
-            x[v] <- if (v %in% xnames && is.list(x[[v]]) && is.list(val[[v]])) 
-                list(modifyList(x[[v]], val[[v]], keep.null = keep.null))
-            else val[v]
-        }
-    }
-    else {
-        for (v in vnames) {
-            x[[v]] <- if (v %in% xnames && is.list(x[[v]]) && 
-                is.list(val[[v]])) 
-                modifyList(x[[v]], val[[v]], keep.null = keep.null)
-            else val[[v]]
-        }
-    }
-    x
-}
-## Will load this into iNZight package
 
 # Killing the splash screen, assigning to remove print
 tmp <- dev.off()
