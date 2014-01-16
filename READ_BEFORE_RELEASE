@@ -1,0 +1,16 @@
+Before releasing, please do the following:
+
+- Copy the following directories/files outside of the current directory:
+
+mkdir ../inz-tmp
+mv .git ../tmp
+mv README.md ../tmp
+mv READ_BEFORE_DELETE ../tmp
+
+- convert to .zip file
+
+zip ./
+
+- restore the files
+mv ../inz-tmp/* ./
+rm -r ../inz-tmp
