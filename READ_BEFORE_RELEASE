@@ -1,5 +1,21 @@
 Before releasing, please do the following:
 
+
+
+-----------------------------------
+-- Remove some messages from gWidgets2RGtk2 ("get drag data") by
+-- cloning gWidgets2RGtk2 from github:
+git clone git@github.com:jverzani/gWidgets2RGtk2
+
+-- then navigate to gWidgets2RGtk2 > GComponent.R
+-- comment out lines 207 and 216
+message("get drag data") and message("get drag data factor")
+
+-- now create binaries add these to the release
+R CMD INSTALL -l tmp gWidgets2RGtk2
+-----------------------------------
+
+
 - Set the correct name of the directory
 mv iNZightVIT-RELEASE iNZightVIT-2.0.0
 
