@@ -1,8 +1,10 @@
 import(grid)
+import(gpairs)
 importFrom(car, Anova)
 
 export(iNZightSummary, plotlm6, partialResPlot, allPartialResPlots,
        histogramArray, iNZightQQplot, moecalc, multicomp, ses.moecalc)
+export(gpairs)
 
 S3method("plot", "moecalc")
 S3method("print", "moecalc")
