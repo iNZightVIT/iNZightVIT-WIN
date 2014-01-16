@@ -23,4 +23,4 @@ Collate: 'gWidgets2RGtk2-package.R' 'misc.R' 'gtk-misc.R'
        'gtext.R' 'gimage.R' 'glabel.R' 'gtimer.R' 'gtree.R'
        'gvarbrowser.R' 'gedit.R' 'gformlayout.R'
        'gprogressbar.R'
-Built: R 3.0.1; ; 2014-01-16 02:28:28 UTC; unix
+Built: R 3.0.1; ; 2014-01-16 02:49:54 UTC; unix
