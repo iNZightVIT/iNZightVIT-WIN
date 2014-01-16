@@ -1,3 +1,4 @@
 export(modelFitting, multipleResponseWindow, mrSummaryWindow, plot3D,
        scatterPlotMatrix, timeSeries)
 import(iNZightRegression, iNZightMR, rgl, mgcv, survey, barcode, gpairs)
+export(barcode)
