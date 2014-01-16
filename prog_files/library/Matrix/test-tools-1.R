@@ -11,42 +11,95 @@ if(!exists("paste0", .BaseNamespaceEnv)) # have in R >= 2.15.0
 identical3 <- function(x,y,z)	  identical(x,y) && identical (y,z)
 identical4 <- function(a,b,c,d)   identical(a,b) && identical3(b,c,d)
 identical5 <- function(a,b,c,d,e) identical(a,b) && identical4(b,c,d,e)
+identical6 <- function(a,b,c,d,e,f)  identical(a,b) && identical5(b,c,d,e,f)
+identical7 <- function(a,b,c,d,e,f,g)identical(a,b) && identical6(b,c,d,e,f,g)
+
+if( exists("assertCondition", asNamespace("tools")) ) { ## R > 3.0.1
+
+assertError <- function(expr, verbose=getOption("verbose"))
+    tools::assertCondition(expr, "error", verbose=verbose)
+assertWarning <- function(expr, verbose=getOption("verbose"))
+    tools::assertCondition(expr, "warning", verbose=verbose)
+assertWarningAtLeast <- function(expr, verbose=getOption("verbose"))
+    tools::assertCondition(expr, "error", "warning", verbose=verbose)
+
+} else { ## in R <= 3.0.1 :
 
 ##' @title Ensure evaluating 'expr' signals an error
 ##' @param expr
 ##' @return the caught error, invisibly
 ##' @author Martin Maechler
-assertError <- function(expr) {
+assertError <- function(expr, verbose=getOption("verbose")) {
     d.expr <- deparse(substitute(expr))
     t.res <- tryCatch(expr, error = function(e) e)
     if(!inherits(t.res, "error"))
 	stop(d.expr, "\n\t did not give an error", call. = FALSE)
+    cat("Asserted Error:", conditionMessage(t.res),"\n")
     invisible(t.res)
 }
 
-##' @title Ensure evaluating 'expr' signals a warning or an error
-##' @param expr
-##' @return the caught error/warning, invisibly
-##' @author Martin Maechler
-assertWarningAtLeast <- function(expr) {
-    d.expr <- deparse(substitute(expr))
-    t.res <- tryCatch(expr, error = function(e)e, warning = function(w)w)
-    if(!inherits(t.res, "error") && !inherits(t.res, "warning"))
-	stop(d.expr, "\n\t did not give an error or warning", call. = FALSE)
-    invisible(t.res)
+## Note that our previous version of assertWarning() did *not* work correctly:
+##     x <- 1:3; assertWarning({warning("bla:",x[1]); x[2] <- 99}); x
+## had 'x' not changed!
+
+
+## From ~/R/D/r-devel/R/src/library/tools/R/assertCondition.R :
+assertCondition <- function(expr, ...,
+                            .exprString = .deparseTrim(substitute(expr), cutoff = 30L),
+                            verbose = FALSE) {
+    fe <- function(e)e
+    getConds <- function(expr) {
+	conds <- list()
+	tryCatch(withCallingHandlers(expr,
+				     warning = function(w) {
+					 conds <<- c(conds, list(w))
+					 invokeRestart("muffleWarning")
+				     },
+				     condition = function(cond)
+					 conds <<- c(conds, list(cond))),
+		 error = function(e)
+		     conds <<- c(conds, list(e)))
+	conds
+    }
+    conds <- if(nargs() > 1) c(...) # else NULL
+    .Wanted <- if(nargs() > 1) paste(c(...), collapse = " or ") else "any condition"
+    res <- getConds(expr)
+    if(length(res)) {
+	if(is.null(conds)) {
+            if(verbose)
+                message("assertConditon: Successfully caught a condition\n")
+	    invisible(res)
+        }
+	else {
+	    ii <- sapply(res, function(cond) any(class(cond) %in% conds))
+	    if(any(ii)) {
+                if(verbose) {
+                    found <-
+                        unique(sapply(res, function(cond) class(cond)[class(cond) %in% conds]))
+                    message(sprintf("assertCondition: caught %s",
+                                    paste(dQuote(found), collapse =", ")))
+                }
+		invisible(res)
+            }
+	    else {
+                .got <- paste(unique((sapply(res, function(obj)class(obj)[[1]]))),
+                                     collapse = ", ")
+		stop(gettextf("Got %s in evaluating %s; wanted %s",
+			      .got, .exprString, .Wanted))
+            }
+	}
+    }
+    else
+	stop(gettextf("Failed to get %s in evaluating %s",
+		      .Wanted, .exprString))
 }
 
-##' @title Ensure evaluating 'expr' signals a warning
-##' @param expr
-##' @return the caught warning, invisibly
-##' @author Martin Maechler
-assertWarning <- function(expr) {
-    d.expr <- deparse(substitute(expr))
-    t.res <- tryCatch(expr, warning = function(w)w)
-    if(!inherits(t.res, "warning"))
-	stop(d.expr, "\n\t did not give a warning", call. = FALSE)
-    invisible(t.res)
-}
+assertWarning <- function(expr, verbose=getOption("verbose"))
+    assertCondition(expr, "warning", verbose=verbose)
+assertWarningAtLeast <- function(expr, verbose=getOption("verbose"))
+    assertCondition(expr, "error", "warning", verbose=verbose)
+
+}# [else: no assertCondition ]
 
 ##' [ from R's  demo(error.catching) ]
 ##' We want to catch *and* save both errors and warnings, and in the case of
@@ -70,7 +123,7 @@ tryCatch.W.E <- function(expr)
 }
 
 
-isValid <- function(x, class) validObject(x, test=TRUE) && is(x, class)
+isValid <- function(x, class) isTRUE(validObject(x, test=TRUE)) && is(x, class)
 
 ## Some (sparse) Lin.Alg. algorithms return 0 instead of NA, e.g.
 ## qr.coef(<sparseQR>, y).
@@ -164,6 +217,26 @@ S4_2list <- function(obj) {
    structure(lapply(sn, slot, object = obj), .Names = sn)
 }
 
+assert.EQ <- function(target, current, tol = if(showOnly) 0 else 1e-15,
+                      giveRE = FALSE, showOnly = FALSE, ...) {
+    ## Purpose: check equality *and* show non-equality
+    ## ----------------------------------------------------------------------
+    ## showOnly: if TRUE, return (and hence typically print) all.equal(...)
+    T <- isTRUE(ae <- all.equal(target, current, tol = tol, ...))
+    if(showOnly) return(ae) else if(giveRE && T) { ## don't show if stop() later:
+	ae0 <- if(tol == 0) ae else all.equal(target, current, tol = 0, ...)
+	if(!isTRUE(ae0)) cat(ae0,"\n")
+    }
+    if(!T) stop("all.equal() |-> ", paste(ae, collapse=sprintf("%-19s","\n")))
+}
+
+##' a version with other "useful" defaults (tol, giveRE, check.attr..)
+assert.EQ. <- function(target, current,
+		       tol = if(showOnly) 0 else .Machine$double.eps^0.5,
+		       giveRE = TRUE, showOnly = FALSE, ...) {
+    assert.EQ(target, current, tol=tol, giveRE=giveRE, showOnly=showOnly,
+	      check.attributes=FALSE, ...)
+}
 
 ### ------- Part II  -- related to matrices, but *not* "Matrix" -----------
 
@@ -182,24 +255,24 @@ as.mat <- function(m) {
     m
 }
 
-assert.EQ.mat <- function(M, m, tol = if(show) 0 else 1e-15, show=FALSE) {
+assert.EQ.mat <- function(M, m, tol = if(showOnly) 0 else 1e-15,
+                          showOnly=FALSE, giveRE = FALSE, ...) {
     ## Purpose: check equality of  'Matrix' M with  'matrix' m
     ## ----------------------------------------------------------------------
     ## Arguments: M: is(., "Matrix") typically {but just needs working as(., "matrix")}
     ##            m: is(., "matrix")
-    ##            show: if TRUE, return (and hence typically print) all.equal(...)
+    ##            showOnly: if TRUE, return (and hence typically print) all.equal(...)
     validObject(M)
     MM <- as.mat(M)                     # as(M, "matrix")
     if(is.logical(MM) && is.numeric(m))
 	storage.mode(MM) <- "integer"
     attr(MM, "dimnames") <- attr(m, "dimnames") <- NULL
-    if(show) all.equal(MM, m, tol = tol)
-    else if(!isTRUE(r <- all.equal(MM, m, tol = tol)))
-	stop("all.equal() |->  ", r)
+    assert.EQ(MM, m, tol=tol, showOnly=showOnly, giveRE=giveRE)
 }
 ## a short cut
-assert.EQ.Mat <- function(M, M2, tol = if(show) 0 else 1e-15, show=FALSE)
-    assert.EQ.mat(M, as.mat(M2), tol=tol, show=show)
+assert.EQ.Mat <- function(M, M2, tol = if(showOnly) 0 else 1e-15,
+                          showOnly=FALSE, giveRE = FALSE, ...)
+    assert.EQ.mat(M, as.mat(M2), tol=tol, showOnly=showOnly, giveRE=giveRE)
 
 
 chk.matrix <- function(M) {

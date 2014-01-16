@@ -1,5 +1,15 @@
 NEWS/Changelog
 
+0.1-7	2013-12-03
+    o	fix endianness issue in writePNG() on big-endian machines
+	when using nativeRaster
+
+0.1-6	2013-07-02
+    o	add support for text tags as well as R object metadata
+	which is serialized into the text field
+	(Thanks to Duncan Temple Lang for the idea)
+
+
 0.1-5	2013-06-03
     o	add dpi and asp to writePNG() which allows to store the
 	image resolution or aspect ratio (via the sPHYs PNG tag).

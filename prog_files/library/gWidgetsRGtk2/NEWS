@@ -2,6 +2,13 @@ Dear Emacs, please make this -*-Text-*- mode!
 
      	    NEWS for gWidgetsRGtk2
 
+Changes for version 0.0-82
+--------------------------
+
+* add character value for filter argument of gfile
+* fix font<- for size. (Thanks Yuhie)
+* gtree `update` function is improved
+
 Changes for version 0.0-81
 --------------------------
 

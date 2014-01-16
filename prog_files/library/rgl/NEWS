@@ -513,3 +513,51 @@ v0.93.963
     imported but not attached.  Similarly, r3dDefaults need not be on
     the search path.
     
+v0.93.975
+  - rgl.texts without a window failed because it queried the window
+    before opening it.
+  - the scene3d() function now records complete information about the
+    bounding box and the background.
+  - rgl declares most of its C++ objects in the global namespace.  
+    Recently this has caused clashes with the igraph package, which 
+    does the same, and which also has a Shape class.  As a temporary 
+    workaround the rgl class has been renamed to rglShape.  A full 
+    rgl namespace will eventually be added, with only the API functions 
+    left in the global namespace.
+    
+v0.93.984
+  - most rgl C++ functions and classes are now in namespace "rgl".  
+    Others have prefix rgl_, with the exception of gl2ps functions,
+    which all have that prefix, and FTGL functions, which generally
+    have an FT prefix.
+  - entry points to the rgl DLL are now registered within the DLL,
+    and on systems that support it, all entry points other than the
+    registration function are hidden.
+  - writeWebGL() and the other write methods did not handle material
+    information properly after 0.93.975.
+    
+v0.93.986
+  - The FTGL functions were mistakenly added to the rgl namespace
+    on some OSX compiles.
+  - Changes have been made to satisfy the stringent requirements of
+    the Solaris compiler.
+    
+v0.93.987
+  - Added clipplanes3d function to implement clip planes.  (Still
+    only partially implemented.)
+    
+v0.93.991
+  - Some cleanup of the declarations (submitted by Karl Millar).
+  
+v0.93.995
+  - Improved the approximation to the surface normal for degenerate
+    grids in surface3d and persp3d.  (Problem found by Graham Griffiths
+    using polar coordinates; all r=0 points were at the same location.)
+  - The new surface normals are now saved in memory, so rgl.attrib
+    will return them even if they were calculated by rgl.
+  - Bounding box calculations for surfaces with user normals were 
+    incorrect.
+  - An array-overrun bug in rgl.attrib() showed up in writeWebGL.  
+    (Reported by Brian Ripley.)
+  - scene3d() now records light settings.
+    

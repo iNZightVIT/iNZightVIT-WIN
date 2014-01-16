@@ -10,6 +10,7 @@ Diagonal                Create Diagonal Matrix Object
 Hilbert                 Generate a Hilbert matrix
 KNex                    Koenker-Ng Example Sparse Model Matrix and
                         Response Vector
+KhatriRao               Khatri-Rao Matrix Product
 LU-class                LU (dense) Matrix Decompositions
 Matrix                  Construct a Classed Matrix
 Matrix-class            Virtual Class "Matrix" Class of Matrices
@@ -43,6 +44,7 @@ bdiag                   Construct a Block Diagonal Matrix
 cBind                   Versions of 'cbind' and 'rbind' recursively
                         built on cbind2/rbind2
 chol                    Choleski Decomposition - 'Matrix' S4 Generic
+                        and Methods
 chol2inv-methods        Inverse from Choleski or QR Decomposition -
                         Matrix Methods
 colSums                 Form Row and Column Sums and Means
@@ -76,7 +78,7 @@ dsparseMatrix-class     Virtual Class "dsparseMatrix" of Numeric Sparse
 dsyMatrix-class         Symmetric Dense Numeric Matrices
 dtCMatrix-class         Triangular, (compressed) sparse column matrices
 dtRMatrix-class         Triangular Sparse Compressed Row Matrices
-dtpMatrix-class         Packed triangular dense matrices
+dtpMatrix-class         Packed Triangular Dense Matrices - "dtpMatrix"
 dtrMatrix-class         Triangular, dense, numeric matrices
 expand                  Expand a Decomposition into Factors
 expm                    Matrix Exponential
@@ -85,9 +87,11 @@ forceSymmetric          Force a Matrix to 'symmetricMatrix' Without
                         Symmetry Checks
 formatSparseM           Formatting Sparse Numeric Matrices Utilities
 generalMatrix-class     Class "generalMatrix" of General Matrices
+graph2T                 Conversions "graph" <-> (sparse) Matrix
 iMatrix-class           Virtual Classes Not Yet Really Implemented and
                         Used
 image-methods           Methods for image() in Package 'Matrix'
+indMatrix-class         Index matrices
 index-class             Virtual Class "index" - Simple Class for Matrix
                         Indices
 invPerm                 Inverse Permutation Vector
@@ -96,6 +100,7 @@ is.na-methods           is.na(), is.infinite() Methods for 'Matrix'
 is.null.DN              Are the Dimnames 'dn' NULL-like ?
 isSymmetric-methods     Methods for Function isSymmetric in Package
                         'Matrix'
+isTriangular            isTriangular() and isDiagonal() Methods
 kronecker-methods       Methods for Function 'kronecker()' in Package
                         'Matrix'
 ldenseMatrix-class      Virtual Class "ldenseMatrix" of Dense Logical
@@ -130,6 +135,8 @@ rep2abI                 Replicate Vectors into 'abIndex' Result
 replValue-class         Virtual Class "replValue" - Simple Class for
                         subassignment Values
 rleDiff-class           Class "rleDiff" of rle(diff(.)) Stored Vectors
+solve-methods           Methods in Package Matrix for Function
+                        'solve()'
 spMatrix                Sparse Matrix Constructor From Triplet
 sparse.model.matrix     Construct Sparse Design / Model Matrices
 sparseLU-class          Sparse LU decomposition of a square sparse

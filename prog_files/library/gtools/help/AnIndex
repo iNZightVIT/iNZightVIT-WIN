@@ -1,9 +1,8 @@
-addLast	gtools-deprecated
-addLast-deprecated	addLast-deprecated
+addLast	gtools-defunct
 ask	ask
 assert	gtools-defunct
 binsearch	binsearch
-capture	capture
+capture	gtools-defunct
 checkRVersion	checkRVersion
 combinations	combinations
 ddirichlet	dirichlet
@@ -31,5 +30,6 @@ running	running
 scat	scat
 setTCPNoDelay	setTCPNoDelay
 smartbind	smartbind
-sprint	capture
+sprint	gtools-defunct
+stars.pval	stars.pval
 strmacro	defmacro

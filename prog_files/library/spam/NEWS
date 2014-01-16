@@ -1,4 +1,20 @@
-	CHANGES IN VERSION 0.30
+	CHANGES IN VERSION 0.40-0
+
+BUG FIXES
+   
+   o    A severe bug in subsetting a spam object with a nx2
+        matrix crept in spam in version 0.29-3.
+	Thanks to Andrew Hong and Beat Briner for pointing out.	
+
+	To simplify communication, we have switched increased
+	the tenth version number. 
+
+	All other changes are of cosmetic nature.
+
+
+
+
+	CHANGES IN VERSION 0.30-x
 
 
 SIGNIFICANT USER-VISIBLE CHANGES

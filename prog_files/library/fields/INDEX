@@ -83,12 +83,13 @@ plot.surface            Plots a surface
 poly.image              Image plot for cells that are irregular
                         quadrilaterals.
 predict.Krig            Evaluation of Krig spatial process estimate.
-predict.derivative      Predicted derivatives
-predict.se              Standard errors of predictions
-predict.se.Krig         Standard errors of predictions for Krig spatial
+predict.surface         This older surface function has been renamed as
+                        predictSurface
+predictSE               Standard errors of predictions for Krig spatial
                         process estimate
-predict.surface         Evaluates a fitted function or its standard
-                        errors as a surface object
+predictSurface          Evaluates a fitted function as a surface that
+                        is suitable for plotting with the image, persp,
+                        or contour functions.
 print.Krig              Print kriging fit results.
 pushpin                 Adds a "push pin" to an existing 3-d plot
 qsreg                   Quantile or Robust spline regression

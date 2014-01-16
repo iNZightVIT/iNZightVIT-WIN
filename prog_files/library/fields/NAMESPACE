@@ -4,9 +4,9 @@ S3method(print, Krig)
 S3method(print, mKrig)
 S3method(summary, Krig)
 S3method(summary, mKrig)
+S3method(plot, Krig)
 
-useDynLib(fields,evlpoly, evlpoly2, multeb, dmaket, ddfind, inpoly, igpoly, 
-           rcss, radbas, multrb, css)
+useDynLib(fields)
 
-import("spam")
+import("spam", "methods","maps")
 

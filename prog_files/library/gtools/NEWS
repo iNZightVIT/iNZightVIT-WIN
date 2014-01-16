@@ -1,3 +1,50 @@
+gtools 3.2.0 - 2014-01-11
+-------------------------
+
+New features:
+
+- The keywords() function now accepts a function or function name as
+  an argument and will return the list of keywords associated with the
+  named function.
+
+- New function stars.pval() which will generate p-value significance
+  symbols ('***', '**', etc.)
+
+Bug fixes:
+
+- R/mixedsort.R: mixedorder() was failing to correctly handle numbers
+  including decimals due to a faulty regular expression.
+
+Other changes:
+
+- capture() and sprint() are now defunct.
+
+
+gtools 3.1.1 - 2013-11-06
+-------------------------
+
+Bug fixes:
+
+- Fix problem with mixedorder/mixedsort when there is zero or one
+  elements in the argument vector.
+
+
+gtools 3.1.0 - 2013-09-22
+-------------------------
+
+Major changes:
+
+- The function 'addLast()' (deprecated since gtools 3.0.0) is no
+  longer available, and has been marked defunct.
+
+Bug fixes:
+
+- Modified 'mixedorder()' to use Use 'suppressWarnings() instead of
+  'options(warn=-1)'.  This will avoid egregious warning messages when
+  called from within a nested environment, such as when run from
+  within 'knitr'
+
+
 gtools 3.0.0 - 2013-07-06
 -------------------------
 
@@ -5,7 +52,7 @@ Major changes:
 
 - The function 'addLast()' has been deprecated because it directly
   manipulates the global environment, which is expressly prohibited by
-  the CRAN policies.  
+  the CRAN policies.
 
 - A new function, 'lastAdd()' has been created to replace 'addLast()'.
   The name has been changed because the two functions require

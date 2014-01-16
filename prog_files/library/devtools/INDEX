@@ -1,5 +1,7 @@
 bash                    Open bash shell in package directory.
 build                   Build package.
+build_github_devtools   Build the development version of devtools from
+                        GitHub.
 build_vignettes         Build package vignettes.
 build_win               Build windows binary package.
 check                   Build and check a package, cleaning up
@@ -24,9 +26,12 @@ document                Use roxygen to make documentation.
 eval_clean              Evaluate code in a clean R session.
 git_path                Retrieve the current running path of the git
                         binary.
+has_devel               Check if you have a development environment
+                        installed.
 inst                    Get the installation path of a package
 install                 Install a local development package.
 install_bitbucket       Install a package directly from bitbucket
+install_deps            Install package dependencies
 install_git             Install a package from a git repository
 install_github          Attempts to install a package directly from
                         github.
@@ -45,7 +50,7 @@ parenvs                 Given an environment or object, return an
 path                    Get/set the PATH variable.
 release                 Release package to CRAN.
 reload                  Unload and reload package.
-revdep                  Reverese dependency tools.
+revdep                  Reverse dependency tools.
 run_examples            Run all examples in a package.
 show_news               Show package news
 source_gist             Run a script on gist
