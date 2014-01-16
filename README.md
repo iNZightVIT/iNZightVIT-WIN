@@ -1,5 +1,5 @@
-iNZightVIT-3.0
-==============
+iNZightVIT
+==========
 
 The new *release* version of iNZightVIT, using R v3.0 to solve package compatibility issues.
 
@@ -8,4 +8,4 @@ The new *release* version of iNZightVIT, using R v3.0 to solve package compatibi
 To do:
 ------
 
-- remove unnecessary packages
+
