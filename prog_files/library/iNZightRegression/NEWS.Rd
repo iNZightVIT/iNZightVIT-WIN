@@ -2,7 +2,59 @@
 \title{NEWS file for the iNZightRegression package}
 \encoding{UTF-8}
 
-\section{Changes in version 0.0.2-20130913}{
+\section{Changes in version 1.1}{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      
+      \item Support for generalised lienar models (GLMs) and `svyglm`
+      objects from the `survey` package.
+
+      \item Changes to the `iNZightSummary` output include:
+      \itemize{
+	\item Output now hides output of counfounding
+	variables through the `exclude` argument, and lists these at the
+	top of the output.
+
+	\item Displays the type of fit (e.g., Suvey / Generalised Linear
+	/ Model).
+      }
+
+      \item The QQ-plot array has been replaced by a single plot with
+      the parametric bootstrap data QQ-plots all on a single plot,
+      overlaid by the QQ plot of the true data (this was suggested by
+      Thomas Lumley).
+      
+    }
+  }
+
+  \subsection{CHANGES}{
+    The entire `iNZightVIT` bundle has been modified, and version
+    numbers updated. Previous versioning was stuck in a `beta` stage,
+    even though it had been released. These versions were updated to
+    v1.x, and this new release makes the necessary version increments.
+  }
+
+  \subsection{BUG FIXES}{
+    \itemize{
+
+      \item The bootstrap models functions have been re-written to
+      account for the `design` option in survey GLMs, as well as the
+      case when the GLM binomial response is SUCCESS / N.TRIALS. This
+      caused errors in the `fit$model` that was previously being used.
+
+      \item The bootstrap lines from `plotlm6` have been fixed so that
+      they now work for `(svy)glm` objects. There is also an optional
+      cut-off if the sample size becomes too small (which can be
+      overridden by the `showBootstraps = TRUE|FALSE` argument.
+
+      \item `factorMeans` and `adjustedMeans` have be fixed so they work
+      for GLMs.
+      
+    }
+  }
+}
+
+\section{Changes in version 1.0.2-20130913}{
   \subsection{NEW FEATURES}{
     \itemize{
 
@@ -13,7 +65,7 @@
   }
 }
 
-\section{Changes in version 0.0.2-20130122}{
+\section{Changes in version 1.0.2-20130122}{
   \subsection{NEW FEATURES}{
     \itemize{
       \item First release of new package. Contains model fitting subset

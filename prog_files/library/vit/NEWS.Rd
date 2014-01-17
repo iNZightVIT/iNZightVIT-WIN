@@ -2,7 +2,45 @@
 \title{NEWS file for the vit package}
 \encoding{UTF-8}
 
-\section{Changes in version 0.1.0-20130227}{
+\section{Changes in version 1.2.0}{
+  \subsection{MAJOR CHANGES}{
+    \itemize{
+
+      \item Because `iNZight` has been rewritten using `gWidgets2`, we
+      needed to rewrite several functions in the `vit` package to ensure
+      users could still switch between iNZight and VIT (and back again)
+      without restarting their session. The current version involves
+      detaching and attaching the correct gWidgets version when iNZight
+      is loaded or closed.
+      
+    }
+  }
+
+  \subsection{MINOR CHANGES}{
+    \itemize{
+
+      \item As with other packages in the iNZightVIT bundle, the version
+      numbering has been updated. The previous version was updated from
+      beta to version 1.x, and the new release as version 1.2 (this is
+      because there is no functional difference between the versions,
+      however they are no longer compatible).
+      
+    }
+  }
+
+  \subsection{BUG FIXES}{
+    \itemize{
+
+      \item Users can now close the graphics device in the VIT module,
+      and are able to return to the home screen (previously, they
+      experienced a fatal error when trying to return to the home screen
+      if they closed the graphics device).
+      
+    }
+  }
+}
+
+\section{Changes in version 1.1.0-20130227}{
   \subsection{BUG FIXES}{
     \itemize{
 
@@ -15,7 +53,7 @@
   }
 }
 
-\section{Changes in version 0.1.0-20130122}{
+\section{Changes in version 1.1.0-20130122}{
   \subsection{MINOR CHANGES}{
     \itemize{
 
@@ -29,7 +67,7 @@
   }
 }
 
-\section{Changes in version 0.1.0-20121008}{
+\section{Changes in version 1.1.0-20121008}{
   \subsection{NEW FEATURES}{
     \itemize{
       \item Added updating mechanism to keep VIT up to date without
@@ -64,7 +102,7 @@
   }
 }
 
-\section{Changes in version 0.1.0-20120822}{
+\section{Changes in version 1.1.0-20120822}{
   \subsection{NEW FEATURES}{
     \itemize{
       \item Better handling of large datasets. The data-view is now
@@ -85,7 +123,7 @@
   }
 }
 
-\section{Changes in version 0.1.0-20120725}{
+\section{Changes in version 1.1.0-20120725}{
   \subsection{NEW FEATURES}{
     \itemize{
       \item Minor improvements.
@@ -93,7 +131,7 @@
   }
 }
 
-\section{Changes in version 0.1.0-20120417}{
+\section{Changes in version 1.1.0-20120417}{
   \subsection{NEW FEATURES}{
     \itemize{
       \item Major enhancements.
