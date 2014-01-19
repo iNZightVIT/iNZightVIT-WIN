@@ -10,8 +10,8 @@ Authors@R: c(person("Junjie", "Zeng", role = c('cre', 'aut'),
                     email = "spot023@aucklanduni.ac.nz"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 2.13)
-Imports: iNZightRegression, iNZightMR, survey, mgcv, rgl, barcode,
-        gpairs
+Imports: iNZightRegression, iNZightMR, survey, mgcv, rgl,
+       barcode, gpairs
 License: GPL-2
 Description: A suite of add-on modules for the iNZight GUI, including model fitting module, multiple response, time series, and some advanced plotting.
 Author: Junjie Zeng [cre, aut],
@@ -19,4 +19,4 @@ Author: Junjie Zeng [cre, aut],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Junjie Zeng <jzen188@aucklanduni.ac.nz>
-Built: R 3.0.1; ; 2014-01-18 23:21:25 UTC; unix
+Built: R 3.0.1; ; 2014-01-19 20:05:17 UTC; unix
