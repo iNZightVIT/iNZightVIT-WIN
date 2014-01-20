@@ -1,0 +1,15 @@
+import(grid)
+
+export(decompositionplot,
+       forecastplot,
+       multiseries,
+       seasonplot,
+       rawplot,
+       iNZightTS)
+
+S3method("print", "iNZightTS")
+S3method("decompositionplot", "iNZightTS")
+S3method("forecastplot", "iNZightTS")
+S3method("multiseries", "iNZightTS")
+S3method("seasonplot", "iNZightTS")
+S3method("rawplot", "iNZightTS")

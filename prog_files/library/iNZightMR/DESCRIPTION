@@ -9,10 +9,9 @@ Authors@R: c(person("Simon", "Potter", role = c("aut", "cre"),
 Depends: R (>= 2.13)
 Imports: iNZightRegression
 Suggests: iNZight
-Enhances: iNZight
 Description: Interaction and analysis of Multiple Response Data
 License: GPL-2
 Author: Simon Potter [aut, cre],
   Junjie Zeng [aut]
 Maintainer: Simon Potter <spot023@aucklanduni.ac.nz>
-Built: R 3.0.1; ; 2013-12-11 02:56:58 UTC; windows
+Built: R 3.0.1; ; 2014-01-20 20:59:34 UTC; unix
