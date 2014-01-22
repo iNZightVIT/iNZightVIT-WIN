@@ -61,4 +61,6 @@ tmp <- dev.off()
 rm(tmp)
 
 # Let's go!
-iNZightVIT()
+iNZightVIT(disposeR = TRUE)
+# the `disposeR = TRUE` makes sure when a user closes iNZight, they
+# close the entire R session (but not if they open it through R!)
