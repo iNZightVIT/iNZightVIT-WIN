@@ -11,12 +11,11 @@ Authors@R: c(person("Dineika", "Chandrananda", role = "ctb"),
 Description: An interactive GUI for easy visual exploration of datasets.
 License: GPL-2
 Depends: R (>= 2.15), objectProperties, gWidgets2, cairoDevice
-Imports: grid, RGtk2, RODBC, gdata, gWidgets2RGtk2,
-       iNZightPlots
+Imports: grid, RGtk2, RODBC, gdata, gWidgets2RGtk2, iNZightPlots
 Suggests: rgl, gpairs, iNZightTS, iNZightMR, iNZightModules
 Author: Dineika Chandrananda [ctb],
   Simon Potter [ctb],
   Marco Kuper [aut, cre],
   David Banks [ctb]
 Maintainer: Marco Kuper <MarcoKuper42@gmail.com>
-Built: R 3.0.1; ; 2014-01-24 01:07:48 UTC; unix
+Built: R 3.0.1; ; 2014-01-25 03:38:50 UTC; unix

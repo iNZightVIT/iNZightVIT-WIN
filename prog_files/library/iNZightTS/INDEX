@@ -1,8 +1,7 @@
-decompositionplot    Plot a Time Series Decomposition
-forecastplot         Forecast plot
-iNZightTS            iNZightTS (Time-Series) Objects
-multiseries          Compare multiple timeseries
-print.iNZightTS      Print an iNZightTS object
-rawplot              Draw a simple time series plot
-seasonplot           Plot Seasonal Subseries from a Time
-                     Series
+decompositionplot       Plot a Time Series Decomposition
+forecastplot            Forecast plot
+iNZightTS               iNZightTS (Time-Series) Objects
+multiseries             Compare multiple timeseries
+print.iNZightTS         Print an iNZightTS object
+rawplot                 Draw a simple time series plot
+seasonplot              Plot Seasonal Subseries from a Time Series
