@@ -2,4 +2,9 @@ import(grid)
 import(boot)
 import(s20x)
 
-export(iNZightPlot, inzPlotDefaults, resetPlot)
+export(iNZightPlot, inzPlotDefaults, resetPlot, inference)
+
+S3method(print, iNZightObject)
+S3method(plot, iNZightObject)
+S3method(summary, iNZightObject)
+S3method(inference, iNZightObject)
