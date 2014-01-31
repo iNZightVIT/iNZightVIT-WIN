@@ -1,6 +1,7 @@
 import(grid)
 import(boot)
 import(s20x)
+import(survey)
 
 export(iNZightPlot, inzPlotDefaults, resetPlot, inference, convert.to.factor)
 
