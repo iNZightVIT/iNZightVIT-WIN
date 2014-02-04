@@ -2,6 +2,20 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.0.1}{
+  \subsection{MAJOR CHANGES}{
+    \item It is now possible to plot all levels of both subsetting
+    variables against each other in a matrix, allowing all
+    combinations to be seen in a single plot.
+  }
+
+  \subsection{MINOR CHANGES}{
+    \item Quantile smoothers can be added using the `quant.smooth`
+    argument. This adds 50th, 25th, and 10th percentile smoothers to
+    plots, dependent on the sample size.
+  }
+}
+
 \section{Changes in version 1.0.0}{
   \subsection{MAJOR CHANGES}{
     \itemize{
@@ -10,17 +24,30 @@
       standalone pacakge.
 
       \item Plots are now using the `grid` package.
+
+      \item New behaviour for large sample sizes. For univariate data,
+      histograms are used instead of dot plots; for bivariate
+      (numeric) data, grid-density plots are drawn instead of
+      scatterplots.
+
+      
       
     }
   }
+}
 
   \subsection{MINOR CHANGES}{
     \itemize{
+
       \item Grid lines have been added to inference information on
       dotplots and bar plots.
-
+      
       \item Bar plots of two variables now have their bars widths
       proportional to the sample size, known also as a spine plot.
+      
+      \item Transparency can be altered for scatterplots and dot
+      plots. For large sample sizes, this affects the scale of contract
+      between low and high density cells in the grid-density plot.      
     }
   }
 }
