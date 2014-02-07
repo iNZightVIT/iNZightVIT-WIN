@@ -1,0 +1,12 @@
+Package: iNZightTools
+Type: Package
+Title: Tools for iNZight
+Version: 1.0.0
+Depends: survey
+Suggests: iNZight
+Date: 2014-02-07
+Author: Tom Elliott [aut, cre]
+Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
+Description: Contains functions used by various other iNZight packages.
+License: GPL-2
+Built: R 3.0.1; ; 2014-02-07 03:11:47 UTC; unix
