@@ -38,7 +38,8 @@ updateDistribution <- function() {
         on.exit(options(repos = currCRAN))
     }
 
-    v <- read.csv("http://www.stat.auckland.ac.nz/~wild/downloads/versions.txt",
+   # v <- read.csv("http://www.stat.auckland.ac.nz/~wild/downloads/versions.txt",
+    v <- read.csv(file.choose(),
                   header = TRUE, stringsAsFactors = FALSE)
 
     # Check whether the updater itself needs replacing
