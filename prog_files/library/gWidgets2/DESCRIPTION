@@ -12,18 +12,16 @@ Description: Re-implementation of gWidgets API. The API is
 Depends: methods, digest
 License: GPL (>= 3)
 LazyLoad: yes
-Collate: 'misc.R' 'guiToolkit.R' 'BasicInterface.R'
-       'S4-methods.R' 'S3-methods.R' 'methods.R' 'dialogs.R'
-       'ws-model.R' 'command-stack.R' 'gWidgets2-package.R'
-       'gwindow.R' 'gaction.R' 'gbutton.R' 'gcalendar.R'
-       'gcheckbox.R' 'gcheckboxgroup.R' 'gcombobox.R'
-       'handler-methods.R' 'gdf.R' 'ggroup.R' 'gnotebook.R'
-       'gfile.R' 'gformlayout.R' 'gframe.R' 'ggraphics.R'
-       'ghtml.R' 'gimage.R' 'glabel.R' 'glayout.R' 'gmenu.R'
-       'gpanedgroup.R' 'gprogressbar.R' 'gradio.R'
-       'gseparator.R' 'gslider.R' 'gspinbutton.R'
-       'gstackwidget.R' 'gstatusbar.R' 'gtable.R' 'gtext.R'
-       'gtimer.R' 'gtoolbar.R' 'gtree.R' 'gedit.R'
-       'gexpandgroup.R' 'gvarbrowser.R' 'icons.R'
-       'gdfnotebook.R' 'gfilter.R' 'ggraphicsnotebook.R'
-Built: R 3.0.1; ; 2014-02-14 02:40:00 UTC; unix
+Collate: 'misc.R' 'guiToolkit.R' 'BasicInterface.R' 'S4-methods.R'
+        'S3-methods.R' 'methods.R' 'dialogs.R' 'ws-model.R'
+        'command-stack.R' 'gWidgets2-package.R' 'gwindow.R' 'gaction.R'
+        'gbutton.R' 'gcalendar.R' 'gcheckbox.R' 'gcheckboxgroup.R'
+        'gcombobox.R' 'handler-methods.R' 'gdf.R' 'ggroup.R'
+        'gnotebook.R' 'gfile.R' 'gformlayout.R' 'gframe.R'
+        'ggraphics.R' 'ghtml.R' 'gimage.R' 'glabel.R' 'glayout.R'
+        'gmenu.R' 'gpanedgroup.R' 'gprogressbar.R' 'gradio.R'
+        'gseparator.R' 'gslider.R' 'gspinbutton.R' 'gstackwidget.R'
+        'gstatusbar.R' 'gtable.R' 'gtext.R' 'gtimer.R' 'gtoolbar.R'
+        'gtree.R' 'gedit.R' 'gexpandgroup.R' 'gvarbrowser.R' 'icons.R'
+        'gdfnotebook.R' 'gfilter.R' 'ggraphicsnotebook.R'
+Built: R 3.0.1; ; 2014-02-14 23:31:48 UTC; unix
