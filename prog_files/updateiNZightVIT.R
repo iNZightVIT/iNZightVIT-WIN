@@ -142,7 +142,7 @@ updateDistribution <- function() {
         # e.g. iNZight, vit
         # Have to manually specify gWidgets packages as using dev version
         if (! r$Name %in% rownames(available.packages()) |
-            r$Name %in% c("gWidgets2", "gWidgets2RGtk2") {
+            r$Name %in% c("gWidgets2", "gWidgets2RGtk2")) {
             getNewPackage <-
                 if (r$Name %in% rownames(installed.packages()))
                     package_version(r$Version) > packageVersion(r$Name)
