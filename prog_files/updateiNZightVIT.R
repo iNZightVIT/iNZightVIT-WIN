@@ -147,8 +147,9 @@ updateDistribution <- function() {
                     TRUE
 
             if (getNewPackage) {
-                urlprefix <- sprintf("http://www.stat.auckland.ac.nz/~wild/downloads/iNZight/%s.%s/",
-                                     getRversion()$major, getRversion()$minor)
+                urlprefix <-
+                    sprintf("http://www.stat.auckland.ac.nz/~wild/downloads/iNZight/%s.%s/",
+                            getRversion()$major, getRversion()$minor)
                 fn <- paste(r$Name, FILE_EXT, sep = "")
 
                 # If OSX, we need to be able to install from zip.
