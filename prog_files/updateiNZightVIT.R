@@ -10,6 +10,7 @@ if (.Platform$OS.type == "windows") {
     isLinux <- FALSE
     OSstring <- "Windows"
     downloadMethod <- getOption("download.file.method", default = "auto")
+    utils::setInternet2(TRUE)
 } else if (isOSX) {
     isWindows <- FALSE
     isLinux <- FALSE
@@ -42,7 +43,7 @@ updateDistribution <- function() {
     }
 
     versionsURL <- "https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/versions.txt"
-    download.file(versionsURL, "versions.txt", method = "curl")
+    download.file(versionsURL, "versions.txt", method = downloadMethod)
     v <- read.csv("versions.txt", header = TRUE, stringsAsFactors = FALSE)
 
     # Check whether the updater itself needs replacing
