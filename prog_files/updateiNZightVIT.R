@@ -43,8 +43,8 @@ updateDistribution <- function() {
     }
 
     versionsURL <- "https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/versions.txt"
-    download.file(versionsURL, "versions.txt", method = downloadMethod)
-    v <- read.csv("versions.txt", header = TRUE, stringsAsFactors = FALSE)
+    download.file(versionsURL, "prog_files/versions.txt", method = downloadMethod)
+    v <- read.csv("prog_files/versions.txt", header = TRUE, stringsAsFactors = FALSE)
 
     # Check whether the updater itself needs replacing
     updaterLoc <-
