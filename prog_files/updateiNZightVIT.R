@@ -69,7 +69,9 @@ updateDistribution <- function() {
     # and give instructions to start again
     newestUpdater <- numeric_version(v[1, "Version"])
     if (UPDATER_VERSION < newestUpdater) {
-        webUpdaterLoc <- paste("https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/", v[1, "Name"], sep = "")
+        webUpdaterLoc <-
+            paste("https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/",
+                  v[1, "Name"], sep = "")
         download.file(webUpdaterLoc, updaterLoc, method = downloadMethod)
         if (isOSX) {
             cat("A new version of the iNZightVIT updater has been downloaded\n\nClose R and run the updater script again to use it.\n")
