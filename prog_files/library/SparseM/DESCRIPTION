@@ -6,10 +6,10 @@ Depends: R (>= 2.4.1), methods, stats, utils
 Description: Basic linear algebra for sparse matrices
 License: GPL (>= 2)
 Title: Sparse Linear Algebra
-URL:
-       http://www.econ.uiuc.edu/~roger/research/sparse/sparse.html
+URL: http://www.econ.uiuc.edu/~roger/research/sparse/sparse.html
 Packaged: 2013-08-01 15:28:43 UTC; root
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2013-08-01 18:50:17
-Built: R 3.0.1; x86_64-pc-linux-gnu; 2014-02-25 00:30:53 UTC; unix
+Built: R 3.0.1; x86_64-w64-mingw32; 2013-08-02 12:14:38 UTC; windows
+Archs: i386, x64
