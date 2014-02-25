@@ -18,8 +18,8 @@ Authors@R: c(person("Roger", "Koenker",  role = c("cre","aut"), email =  "rkoenk
 	"ripley@stats.ox.ac.uk"))
 Maintainer: Roger Koenker <rkoenker@illinois.edu>
 Depends: R (>= 2.6), stats, SparseM
-Suggests: tripack, akima, MASS, survival, rgl, logspline,
-       nor1mix, MatrixModels, Matrix, Formula, zoo, dynlm
+Suggests: tripack, akima, MASS, survival, rgl, logspline, nor1mix,
+        MatrixModels, Matrix, Formula, zoo, dynlm
 License: GPL (>= 2)
 URL: http://www.r-project.org
 Repository: CRAN
@@ -35,4 +35,5 @@ Author: Roger Koenker [cre, aut],
     everlasting shame -- how could I have been so slow to adopt R!) and
     for numerous other suggestions and useful advice)
 NeedsCompilation: yes
-Built: R 3.0.1; x86_64-pc-linux-gnu; 2014-02-25 00:30:57 UTC; unix
+Built: R 3.0.2; x86_64-w64-mingw32; 2014-02-22 23:38:06 UTC; windows
+Archs: i386, x64
