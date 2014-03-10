@@ -23,15 +23,15 @@
       the parametric bootstrap data QQ-plots all on a single plot,
       overlaid by the QQ plot of the true data (this was suggested by
       Thomas Lumley).
-      
     }
   }
 
   \subsection{CHANGES}{
-    The entire `iNZightVIT` bundle has been modified, and version
-    numbers updated. Previous versioning was stuck in a `beta` stage,
-    even though it had been released. These versions were updated to
-    v1.x, and this new release makes the necessary version increments.
+    \itemize{
+      \item The Histogram Array has been rewritten using `grid`, and
+      minimises margin whitespace and draws simulated histograms in a
+      different color.
+    }
   }
 
   \subsection{BUG FIXES}{

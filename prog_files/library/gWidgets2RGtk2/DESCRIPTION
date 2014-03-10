@@ -12,13 +12,15 @@ Depends: methods, memoise, RGtk2, gWidgets2
 Suggests: testthat, cairoDevice
 LazyLoad: yes
 Collate: 'gWidgets2RGtk2-package.R' 'misc.R' 'gtk-misc.R'
-        'GComponent.R' 'GContainer.R' 'GWidget.R' 'icons.R' 'startup.R'
-        'gbutton.R' 'ggroup.R' 'gframe.R' 'gexpandgroup.R'
-        'gcheckbox.R' 'gcheckboxgroup.R' 'gcombobox.R' 'gnotebook.R'
-        'gpanedgroup.R' 'gseparator.R' 'gstackwidget.R' 'gwindow.R'
-        'gmenu.R' 'gstatusbar.R' 'gtoolbar.R' 'gslider.R'
-        'gspinbutton.R' 'glayout.R' 'gradio.R' 'dialogs.R'
-        'gcalendar.R' 'gfile.R' 'gaction.R' 'ggraphics.R' 'gtable.R'
-        'gdf.R' 'gtext.R' 'gimage.R' 'glabel.R' 'gtimer.R' 'gtree.R'
-        'gvarbrowser.R' 'gedit.R' 'gformlayout.R' 'gprogressbar.R'
-Built: R 3.0.1; ; 2014-02-26 22:06:38 UTC; unix
+       'GComponent.R' 'GContainer.R' 'GWidget.R' 'icons.R'
+       'startup.R' 'gbutton.R' 'ggroup.R' 'gframe.R'
+       'gexpandgroup.R' 'gcheckbox.R' 'gcheckboxgroup.R'
+       'gcombobox.R' 'gnotebook.R' 'gpanedgroup.R'
+       'gseparator.R' 'gstackwidget.R' 'gwindow.R' 'gmenu.R'
+       'gstatusbar.R' 'gtoolbar.R' 'gslider.R' 'gspinbutton.R'
+       'glayout.R' 'gradio.R' 'dialogs.R' 'gcalendar.R'
+       'gfile.R' 'gaction.R' 'ggraphics.R' 'gtable.R' 'gdf.R'
+       'gtext.R' 'gimage.R' 'glabel.R' 'gtimer.R' 'gtree.R'
+       'gvarbrowser.R' 'gedit.R' 'gformlayout.R'
+       'gprogressbar.R'
+Built: R 3.0.3; ; 2014-03-10 22:21:32 UTC; unix
