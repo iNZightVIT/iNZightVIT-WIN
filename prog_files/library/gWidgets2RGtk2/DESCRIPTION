@@ -1,7 +1,7 @@
 Package: gWidgets2RGtk2
 Type: Package
 Title: Implementation of gWidgets2 for RGtk2 package
-Version: 1.0-3
+Version: 1.0-4
 Date: 2011-09-18
 Author: John Verzani
 Maintainer: John Verzani <jverzani@gmail.com>
@@ -23,4 +23,4 @@ Collate: 'gWidgets2RGtk2-package.R' 'misc.R' 'gtk-misc.R'
        'gtext.R' 'gimage.R' 'glabel.R' 'gtimer.R' 'gtree.R'
        'gvarbrowser.R' 'gedit.R' 'gformlayout.R'
        'gprogressbar.R'
-Built: R 3.0.3; ; 2014-03-10 22:21:32 UTC; unix
+Built: R 3.0.3; ; 2014-03-10 22:30:20 UTC; unix
