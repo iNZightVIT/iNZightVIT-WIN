@@ -17,6 +17,23 @@
       surrounding the main plot (excluding the plot labels and
       legend). Note that this only works if the data haven't been broken
       down by `g1`.
+
+      \item Display which variables cannot be plot due to too many
+      levels, as well as the number of levels, when attempting to draw
+      bar plot. (max levels = 101).
+
+      \item Trend lines and smoothers added to the legend.
+
+      \item Alternative method of shading grid-tiles on the grid-density
+      plot using quantiles rather than absolute counts. This prevents
+      large counts having too large of an influence.
+    }
+  }
+
+  \subsection{BUG FIXED}{
+    \itemize{
+      A bug where the grid-density plot is not using the correct scale
+      has been fixed.
     }
   }
 }

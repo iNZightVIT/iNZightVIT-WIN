@@ -4,6 +4,7 @@ export(decompositionplot,
        forecastplot,
        multiseries,
        seasonplot,
+       compareplot,
        rawplot,
        iNZightTS)
 

@@ -3,6 +3,13 @@
 \encoding{UTF-8}
 
 \section{Changes in Version 1.1.1}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item New functionality using proportion values to calcualate `x`,
+      and calculated using order to control the x-axis.
+    }
+  }
+  
   \subsection{BUG FIXES}{
     \itemize{
       \item Changed some of the graphical parameter settings to avoid

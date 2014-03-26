@@ -2,6 +2,37 @@
 \title{NEWS file for the iNZightRegression package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.1.1}{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item Residual summary plots from `plotlm6` can now make use of
+      the `iNZightPlots` graphics rather than the defaults. It requires
+      the user to have `iNZightPlots` installed to work, but reverts to
+      the old plots if it is not.
+
+      \item In the new `grid` based plots, quantile smoothers are used
+      rather than loess smoothers. This greatly increases efficiency
+      when large data sets are analysed.
+    }
+  }
+
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item Maximum sample size for drawing bootstraps implemented
+      (currently at 4000), as over this they don't provide much
+      information (this can be overridded by `showBootstraps = TRUE`).
+
+      \item p-values for normality test are printed as "P < 0.001"
+      rather than "P = 0".
+    }
+  }
+
+  \subsection{BUG FIXES}{
+    \item Shapiro Wilk test not used if sample size > 5000 (resulted in an
+    error).
+  }
+}
+
 \section{Changes in version 1.1}{
   \subsection{NEW FEATURES}{
     \itemize{
