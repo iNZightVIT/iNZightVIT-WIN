@@ -29,6 +29,6 @@ source_https <- function(url, ...) {
     })
 }
 
-source_https("https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/update-WIN.R")
+source_https("https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/update.R")
 #source(file.choose())  # this is for debugging
 updateDistribution()
