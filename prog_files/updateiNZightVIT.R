@@ -20,15 +20,18 @@ update.ext <- "-WIN"  # this will be "-WIN", "-MAC", "-MAC-snowleopard" etc...
 source_https <- function(url, ...) {
   # load package
     require(RCurl)
- 
-  # parse and evaluate each .R script
+
+  # Download the new file to a temporary location and source it.
     sapply(c(url, ...), function(u) {
-        eval(parse(text = getURL(u, followlocation = TRUE,
-                       cainfo = system.file("CurlSSL", "cacert.pem",
-                           package = "RCurl"))), envir = .GlobalEnv)
+        text <- getURL(u, followlocation = TRUE,
+                       cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
+        ftmp <- tempfile()
+        con <- file(ftmp, open = "w")
+        writeLines(text, con)
+        close(con)
+        source(ftmp)
     })
 }
-
 source_https("https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/update.R")
 #source(file.choose())  # this is for debugging
 updateDistribution()
