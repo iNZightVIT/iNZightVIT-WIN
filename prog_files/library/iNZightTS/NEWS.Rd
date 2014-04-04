@@ -2,6 +2,20 @@
 \title{NEWS file for the iNZightTS package}
 \encoding{UTF-8}
 
+\section{Changes in Version 1.1.2}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item y-axis label support now on all plots.
+    }
+  }
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item Various bug fixes to accomodate multiplicative time series.
+    }
+  }
+}
+
 \section{Changes in Version 1.1.1}{
   \subsection{MINOR CHANGES}{
     \itemize{

@@ -2,6 +2,21 @@
 \title{NEWS file for the iNZightModules package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.0.2}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item Changes to the time series module to allow specification of
+      multiplicative time series models.
+
+      \item Add y-axis label functionality.
+    }
+  }
+}
+
+\section{Changes in version 1.0.1}{
+  Minor changes in package information and structure.
+}
+
 \section{Changes in version 1.0.0}{
   This is the first release of this package, although it was previously
   bundled inside the iNZight package. 

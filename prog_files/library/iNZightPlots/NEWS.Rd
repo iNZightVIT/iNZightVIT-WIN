@@ -2,6 +2,16 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 1.0.2}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item An error where the response was printed instead of the
+      x-variable name in summary output for quadratic curves has been
+      fixed.
+    }
+  }
+}
+
 
 \section{Changes in Version 1.0.1}{
   \subsection{MINOR CHANGES}{
@@ -30,9 +40,9 @@
     }
   }
 
-  \subsection{BUG FIXED}{
+  \subsection{BUG FIXES}{
     \itemize{
-      A bug where the grid-density plot is not using the correct scale
+      \item A bug where the grid-density plot is not using the correct scale
       has been fixed.
     }
   }

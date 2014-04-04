@@ -2,6 +2,16 @@
 \title{NEWS file for the iNZightRegression package}
 \encoding{UTF-8}
 
+\section{Changes in Version 1.1.2}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item Continuing on from previous update, the partial residual
+      plots are now modified to make use of the `iNZightPlots` library
+      if it is installed.
+    }
+  }
+}
+
 \section{Changes in version 1.1.1}{
   \subsection{NEW FEATURES}{
     \itemize{
