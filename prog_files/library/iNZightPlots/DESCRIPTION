@@ -12,8 +12,4 @@ Description: Simple plotting function(s) for exploratory data analysis with flex
 License: GPL-2
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-<<<<<<< HEAD
-Built: R 3.0.2; ; 2014-04-09 22:27:37 UTC; unix
-=======
-Built: R 3.0.1; ; 2014-04-14 04:58:05 UTC; unix
->>>>>>> 7bf83af7b8d6423cba9ab307b627619cc8db865e
+Built: R 3.0.2; ; 2014-04-17 00:10:37 UTC; unix

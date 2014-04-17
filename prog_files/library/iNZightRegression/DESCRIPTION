@@ -17,8 +17,4 @@ Author: Simon Potter [aut],
   David Banks [aut],
   Tom Elliott [cre, aut]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-<<<<<<< HEAD
-Built: R 3.0.2; ; 2014-04-09 22:27:32 UTC; unix
-=======
-Built: R 3.0.1; ; 2014-04-14 04:58:00 UTC; unix
->>>>>>> 7bf83af7b8d6423cba9ab307b627619cc8db865e
+Built: R 3.0.2; ; 2014-04-17 00:10:31 UTC; unix
