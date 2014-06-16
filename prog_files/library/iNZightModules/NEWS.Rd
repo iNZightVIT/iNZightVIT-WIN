@@ -2,13 +2,31 @@
 \title{NEWS file for the iNZightModules package}
 \encoding{UTF-8}
 
-\section{Changes in version 1.0.2}{
+\section{Changes in version 1.0.3}{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item the pairs plot, or scatter plot matrix, now takes a grouping
+      variable.
+
+      \item  2-variable explore plots in the Quick Explore menu
+    }
+  }
+  
   \subsection{MINOR CHANGES}{
     \itemize{
       \item Changes to the time series module to allow specification of
       multiplicative time series models.
 
       \item Add y-axis label functionality.
+    }
+  }
+}
+
+\section{Changes in version 1.0.2}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item the pairs/scatter plot matrix draws a jittered dotplot rather than a 
+      barcode plot.
     }
   }
 }

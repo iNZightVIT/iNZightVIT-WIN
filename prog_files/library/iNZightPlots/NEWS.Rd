@@ -2,6 +2,17 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 1.0.3}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item specifying `g2.level` with numbers wasn't working, has been fixed for plots,
+      summary and inference information.
+
+      \item added more space to the y-axis on scatter plots
+    }
+  }
+}
+
 \section{Changes in Version 1.0.2}{
   \subsection{BUG FIXES}{
     \itemize{
