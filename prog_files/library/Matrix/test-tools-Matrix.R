@@ -101,11 +101,11 @@ Q.eq <- function(x, y,
 	if(isDense)
 	    all(x == y | (is.na(x) & is.na(y)))
 	else ## 'x == y' blows up for large sparse matrices:
-	    isTRUE(all.equal(asC(x), asC(y), tol = 0.,
+	    isTRUE(all.equal(asC(x), asC(y), tolerance = 0.,
 			     check.attributes = dimnames.check))
     }
     else if(is.numeric(tol) && tol >= 0) {
-        isTRUE(all.equal(asC(x), asC(y), tol = tol,
+        isTRUE(all.equal(asC(x), asC(y), tolerance = tol,
                          check.attributes = dimnames.check))
     }
     else stop("'tol' must be NA or non-negative number")
@@ -206,7 +206,9 @@ rUnitTri <- function(n, upper = TRUE, ...)
     r
 }
 
-mkLDL <- function(n, density = 1/3) {
+mkLDL <- function(n, density = 1/3,
+		  d0 = 10, ## use '10' to be "different" from L entries
+		  rcond = (n < 99), condest = (n >= 100)) {
     ## Purpose: make nice artificial   A = L D L'  (with exact numbers) decomp
     ## ----------------------------------------------------------------------
     ## Author: Martin Maechler, Date: 15 Mar 2008
@@ -218,14 +220,17 @@ mkLDL <- function(n, density = 1/3) {
     L[sample(n*n, nnz)] <- seq_len(nnz)
     L <- tril(L,-1)
     diag(L) <- 1
-    d.half <- sample(10*(n:1))# random permutation ; use '10*' to be "different" from L entries
+    d.half <- d0 * sample.int(n)# random permutation
     D <- Diagonal(x = d.half * d.half)
     A <- tcrossprod(L * rep(d.half, each=n))
     ## = as(L %*% D %*% t(L), "symmetricMatrix")
-    list(A = A, L = L, d.half = d.half, D = D)
+    list(A = A, L = L, d.half = d.half, D = D,
+         rcond.A = if(rcond) rcond(A, useInv=TRUE),
+         cond.A  = if(condest) condest(A)$est)
 }
 
-eqDeterminant <- function(m1, m2, NA.Inf.ok=FALSE, ...) {
+eqDeterminant <- function(m1, m2, NA.Inf.ok=FALSE, tol=.Machine$double.eps^0.5, ...)
+{
     d1 <- determinant(m1) ## logarithm = TRUE
     d2 <- determinant(m2)
     d1m <- as.vector(d1$modulus)# dropping attribute
@@ -243,7 +248,7 @@ eqDeterminant <- function(m1, m2, NA.Inf.ok=FALSE, ...) {
     if(is.infinite(d1m)) d1$modulus <- sign(d1m)* .Machine$double.xmax
     if(is.infinite(d2m)) d2$modulus <- sign(d2m)* .Machine$double.xmax
     ## now they are finite or *one* of them is NA/NaN, and all.equal() will tell so:
-    all.equal(d1, d2, ...)
+    all.equal(d1, d2, tolerance=tol, ...)
 }
 
 ##' @param A a non-negative definite sparseMatrix, typically "dsCMatrix"

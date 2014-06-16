@@ -1,7 +1,7 @@
 # This is file ../spam/demo/spam.R
 # This file is part of the spam package, 
 #      http://www.math.uzh.ch/furrer/software/spam/
-# written and maintained by Reinhard Furrer.
+# by Reinhard Furrer [aut, cre], Florian Gerber [ctb]
      
 
 

@@ -1,5 +1,61 @@
+2014-05-28  warnes
+
+	* [r1815] tests/smartbind_Dates.R: Add test to ensure smartbind()
+	  properly handles Date columns.
+	* [r1814] R/smartbind.R: smartbind: Convert non-native type columns
+	  (except factor) to character.
+
+2014-04-18  arnima
+
+	* [r1813] R/ASCIIfy.R, man/ASCIIfy.Rd: Main arg is 'x' like
+	  showNonASCII(x), preformatted notes instead of verb
+
+2014-04-17  warnes
+
+	* [r1810] man/ASCIIfy.Rd: Update ASCIIfy man page to match source
+	  code and add keywords
+	* [r1809] inst/NEWS: Update NEWS for gtools 3.4.0
+	* [r1808] DESCRIPTION, NAMESPACE, R/ASCIIfy.R, man/ASCIIfy.Rd: Add
+	  ASCIIfy function posted to RDevel by Arni Magnusson
+
+2014-03-01  warnes
+
+	* [r1776] tests/test_mixedorder.R: Fix cut-and-paste error.
+	* [r1775] DESCRIPTION, inst/NEWS: Update files for gtools 3.3.1
+	  release
+	* [r1774] R/mixedsort.R, tests/test_mixedorder.R: Fix bug in
+	  gtools::mixedorder regular expression for regognizing numbers.
+	  (Periods weren't escaped).
+
+2014-02-11  warnes
+
+	* [r1773] R/clean_up_dependencies2.R: Create and use locate copy of
+	  tools:::.split_op_version.
+	* [r1772] inst/NEWS: Update for gtools 3.3.0.
+	* [r1771] man/getDependencies.Rd: Fix arguments
+	* [r1770] man/getDependencies.Rd: Update arguments to match code.
+	* [r1769] DESCRIPTION, NAMESPACE, R/clean_up_dependencies2.R,
+	  R/getDependencies.R, man/getDependencies.Rd: Add
+	  getDependencies() function to return a list of package
+	  dependencies.
+
+2014-01-14  warnes
+
+	* [r1768] DESCRIPTION, inst/NEWS: Update for bug-fix release
+	* [r1767] tests, tests/test_binsearch.R: Add test file for
+	  binsearch() function.
+	* [r1766] R/binsearch.R: Fixed bug where binsearch() returned the
+	  wrong endpoint & value when the found value was at the upper
+	  endpoint.
+
+2014-01-13  warnes
+
+	* [r1765] man/smartbind.Rd: Fix typo
+
 2014-01-11  warnes
 
+	* [r1764] inst/NEWS: Update for gtools release 3.2.0
+	* [r1763] man/gtools-defunct.Rd: fixes for R CMD check
 	* [r1762] DESCRIPTION, NAMESPACE, R/capture.R, R/defunct.R,
 	  R/keywords.R, man/capture.Rd, man/gtools-defunct.Rd,
 	  man/stars.pval.Rd: Fixes for gtools release 3.2.0

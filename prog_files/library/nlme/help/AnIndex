@@ -247,7 +247,6 @@ lme.groupedData	lme.groupedData
 lme.lmList	lme.lmList
 lmeControl	lmeControl
 lmeObject	lmeObject
-lmeScale	lmeScale
 lmeStruct	lmeStruct
 lmList	lmList
 lmList.formula	lmList

@@ -1,3 +1,4 @@
+%*%-methods             Matrix (Cross) Products (of Transpose)
 BunchKaufman-methods    Bunch-Kaufman Decomposition Methods
 CAex                    Albers' example Matrix with "Difficult" Eigen
                         Factorization
@@ -135,6 +136,7 @@ rep2abI                 Replicate Vectors into 'abIndex' Result
 replValue-class         Virtual Class "replValue" - Simple Class for
                         subassignment Values
 rleDiff-class           Class "rleDiff" of rle(diff(.)) Stored Vectors
+rsparsematrix           Random Sparse Matrix
 solve-methods           Methods in Package Matrix for Function
                         'solve()'
 spMatrix                Sparse Matrix Constructor From Triplet
@@ -152,7 +154,6 @@ symmetricMatrix-class   Virtual Class of Symmetric Matrices in
                         package:Matrix
 symmpart                Symmetric Part and Skew(symmetric) Part of a
                         Matrix
-tcrossprod              Cross-product of transpose
 triangularMatrix-class
                         Virtual Class of Triangular Matrices in
                         package:Matrix

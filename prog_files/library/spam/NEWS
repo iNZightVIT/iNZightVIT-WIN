@@ -1,4 +1,33 @@
+	CHANGES IN VERSION 0.41-0
+
+
+NEW FEATURES
+
+   o   Functions grid_trace2() received more functionality.
+
+
+BUG FIXES
+
+   o   Eliminated bug in cov.mat(). Pointed out by Joshua French
+
+
+INTERNAL CHANGES
+
+   o 	Updated DESCRIPTION: added Florian Gerber [ctb]
+
+   o    Minor code and help cleanup. Additional testing files. 
+   	File header edits.
+
+   o	Addressed Rdevel CMD check --as-cran Notes, especially
+   	workaround for DUP=FALSE
+
+
+
+
+
 	CHANGES IN VERSION 0.40-0
+
+
 
 BUG FIXES
    

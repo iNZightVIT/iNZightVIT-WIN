@@ -22,7 +22,7 @@ importFrom("methods",
 	   , callGeneric, as, is, extends, new
 	   , getClass, getClassDef, validObject
 	   , setClass, setClassUnion, setMethod, setOldClass
-	   , setValidity, slot, "slot<-"
+	   , setValidity, slot, "slot<-", .hasSlot
 	   , signature, representation, prototype)
 
 
@@ -32,7 +32,7 @@ export("Cholesky", ".SuiteSparse_version",
        "Hilbert", "KhatriRao",
        "Matrix",
        "spMatrix",
-       "sparseMatrix",
+       "sparseMatrix", "rsparsematrix",
        "Schur",
        "abIseq", "abIseq1", "rep2abI",
        "band",
@@ -44,6 +44,7 @@ export("Cholesky", ".SuiteSparse_version",
        "condest", "onenormest",
        "det",# << "identical" as base - but with correct determinant()
        ## "mkDet", # <- useful in other packages (Rmpfr, gmp) .. hmm --> 'stats' ?
+       ".dsy2mat", ".dxC2mat", ".T2Cmat", "..2dge",
        ".diag.dsC",# -> R/dsCMatrix.R --has FIXME
        "diagN2U", "diagU2N", ".diagU2N", ".diag2tT", ".diag2sT",
        "drop0",
@@ -73,8 +74,7 @@ export("Cholesky", ".SuiteSparse_version",
        "symmpart",
        "skewpart",
        "tcrossprod",
-       "tril",
-       "triu",
+       "tril", "triu",
        "updown",
        "pack", "unpack"
        , ".updateCHMfactor"
@@ -90,11 +90,18 @@ export("cBind",
 
 
 exportClasses(
-	      ## Class unions:
+    ## Class unions:
 	      "index",
 	      "replValue", # if we don't export it, things fail in dispatch
 	      "atomicVector",
 	      "number",
+	      "xsparseVector", # the class union of all 'x' slot sparseVector's
+              ## not exported (but exporting does not help for method dispatch bug!)
+              ## "numLike", 
+              ## "xMatrix", 
+              ## "mMatrix", 
+
+    ## all others:
 ## LOGIC      "logic",
 	      "abIndex", "rleDiff",
 
@@ -177,8 +184,7 @@ exportClasses(
 	      "ntRMatrix",
 	      "ntTMatrix",
 
-	      "indMatrix",
-	  "pMatrix",
+	      "indMatrix", "pMatrix",
 
 	      "corMatrix", # unused
 
@@ -216,8 +222,7 @@ exportClasses(
 	      "isparseVector",
 	      "lsparseVector",
 	      "nsparseVector",
-	      "zsparseVector",
-	      "xsparseVector" # the class union of all 'x' lost sparseVector's
+	      "zsparseVector"
 	      )
 
 
@@ -312,7 +317,7 @@ exportMethods(## for both own and "other" generics:
 	      "which",
 	      "zapsmall"
 	      )
-if(getRversion() > "3.1.0")
+if(getRversion() >= "3.1.0")
 exportMethods("anyNA")
 
 

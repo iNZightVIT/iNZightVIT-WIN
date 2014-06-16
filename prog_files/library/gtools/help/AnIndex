@@ -1,4 +1,5 @@
 addLast	gtools-defunct
+ASCIIfy	ASCIIfy
 ask	ask
 assert	gtools-defunct
 binsearch	binsearch
@@ -11,6 +12,7 @@ ELISA	ELISA
 even	oddeven
 foldchange	foldchange
 foldchange2logratio	foldchange
+getDependencies	getDependencies
 gtools-defunct	gtools-defunct
 gtools-deprecated	gtools-deprecated
 inv.logit	logit

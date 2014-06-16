@@ -9,23 +9,22 @@ add_headers             Add additional headers to a request.
 authenticate            Use http authentication.
 config                  Set curl options.
 content                 Extract content from a request.
-guess_media             Guess the media type of a path from it's
+guess_media             Guess the media type of a path from its
                         extension.
 handle                  Create a handle tied to a particular host.
 http_error              Take action on http error.
 http_status             Give information on the status of a request.
 httr                    'httr' makes http easy.
 modify_url              Modify a url.
-oauth1.0_token          Retrieve OAuth 1.0 acces token.
-oauth2.0_token          Retrieve OAuth 2.0 access token.
+oauth1.0_token          Generate an oauth1.0 token.
+oauth2.0_token          Generate an oauth2.0 token.
 oauth_app               Create an OAuth application.
 oauth_endpoint          Describe an OAuth endpoint.
+oauth_endpoints         Popular oauth endpoints.
 parse_url               Parse and build urls according to RFC1808.
 response                The response object.
 set_config              Set (and reset) global httr configuration.
 set_cookies             Set cookies.
-sign_oauth1.0           Sign an OAuth 1.0 request
-sign_oauth2.0           Sign an OAuth 2.0 request
 timeout                 Set maximum request time.
 upload_file             Upload a file with 'POST' or 'PUT'.
 url_ok                  Check for an http OK status.
