@@ -1,6 +1,0 @@
-(un)serializeJSON       serialize R objects to 'JSON'
-prettify, minify        Prettify or minify a 'JSON' string
-toJSON, fromJSON        Convert R objects to/from 'JSON'
-toMongo                 Export to MongoDB
-unbox                   Unbox a vector or data frame
-validate                Validate JSON
