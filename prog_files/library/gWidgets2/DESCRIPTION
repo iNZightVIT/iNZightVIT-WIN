@@ -1,7 +1,7 @@
 Package: gWidgets2
 Type: Package
 Title: Rewrite of gWidgets API for simplified GUI construction
-Version: 1.0-7
+Version: 1.0-8
 Author: John Verzani
 Maintainer: John Verzani <jverzani@gmail.com>
 URL: https://github.com/jverzani/gWidgets2
@@ -25,4 +25,4 @@ Collate: 'misc.R' 'guiToolkit.R' 'BasicInterface.R'
        'gtimer.R' 'gtoolbar.R' 'gtree.R' 'gedit.R'
        'gexpandgroup.R' 'gvarbrowser.R' 'icons.R'
        'gdfnotebook.R' 'gfilter.R' 'ggraphicsnotebook.R'
-Built: R 3.0.2; ; 2014-06-16 20:05:11 UTC; unix
+Built: R 3.0.2; ; 2014-06-17 00:52:08 UTC; unix
