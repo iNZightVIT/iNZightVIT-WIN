@@ -96,6 +96,8 @@ addHandlerColumnDoubleclicked	gWidgets-handlers
 addHandlerColumnDoubleclicked.default	gWidgets-handlers
 addHandlerColumnRightclicked	gWidgets-handlers
 addHandlerColumnRightclicked.default	gWidgets-handlers
+addHandlerControlclick	gWidgets-handlers
+addHandlerControlclick.default	gWidgets-handlers
 addHandlerDestroy	gWidgets-handlers
 addHandlerDestroy.default	gWidgets-handlers
 addHandlerDoubleclick	gWidgets-handlers
@@ -116,6 +118,8 @@ addHandlerSelect	gWidgets-handlers
 addHandlerSelect.default	gWidgets-handlers
 addHandlerSelectionChanged	gWidgets-handlers
 addHandlerSelectionChanged.default	gWidgets-handlers
+addHandlerShiftclick	gWidgets-handlers
+addHandlerShiftclick.default	gWidgets-handlers
 addHandlerUnrealize	gWidgets-handlers
 addHandlerUnrealize.default	gWidgets-handlers
 addPopupMenu	gWidgets-handlers
