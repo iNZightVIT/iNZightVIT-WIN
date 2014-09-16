@@ -2,6 +2,15 @@
 \title{NEWS file for the iNZightRegression package}
 \encoding{UTF-8}
 
+\section{Changes in Version 1.1.3}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item on some graphics devices (eg. RStudio) grid.rect() is not
+      transparent - now enforces these to be transparent
+    }
+  }
+}
+
 \section{Changes in Version 1.1.2}{
   \subsection{MINOR CHANGES}{
     \itemize{

@@ -2,6 +2,14 @@
 \title{NEWS file for the iNZightModules package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.0.4}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item along with change in iNZightTS, allow x-label on more plots
+    }
+  }
+}
+
 \section{Changes in version 1.0.3}{
   \subsection{NEW FEATURES}{
     \itemize{

@@ -2,6 +2,14 @@
 \title{NEWS file for the iNZightTS package}
 \encoding{UTF-8}
 
+\section{Changes in Version 1.1.3}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item added x label to additional plots
+    }
+  }
+}
+
 \section{Changes in Version 1.1.2}{
   \subsection{MINOR CHANGES}{
     \itemize{
