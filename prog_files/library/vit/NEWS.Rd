@@ -2,6 +2,17 @@
 \title{NEWS file for the vit package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.2.1}{
+  \subsection{MINOR CHANGES}{
+    \itemize{
+
+      \item Can now read in data files which have comments in them -
+      denoted by #'s
+      
+    }
+  }
+}
+
 \section{Changes in version 1.2.0}{
   \subsection{MAJOR CHANGES}{
     \itemize{

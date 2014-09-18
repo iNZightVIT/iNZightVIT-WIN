@@ -12,11 +12,11 @@ Description: An interactive GUI for easy visual exploration of datasets.
 License: GPL-2
 Depends: R (>= 2.15), objectProperties, gWidgets2, cairoDevice
 Imports: grid, RGtk2, RODBC, gdata, reshape2, gWidgets2RGtk2,
-       iNZightPlots, iNZightTools
+        iNZightPlots, iNZightTools
 Suggests: rgl, gpairs, iNZightTS, iNZightMR, iNZightModules
 Author: Dineika Chandrananda [ctb],
   Simon Potter [ctb],
   Marco Kuper [aut, cre],
   David Banks [ctb]
 Maintainer: Marco Kuper <MarcoKuper42@gmail.com>
-Built: R 3.0.2; ; 2014-09-16 21:50:35 UTC; unix
+Built: R 3.0.2; ; 2014-09-18 08:48:52 UTC; unix
