@@ -1,9 +1,9 @@
-citHeader("To cite spam in publications use:")
+citHeader("To cite `spam` in publications use:")
 
 citEntry(entry = "Article",
-  title        = "{spam}: A Sparse Matrix {R} Package with Emphasis on MCMC Methods for Gaussian Markov Random Fields",
+  title        = "{spam}: A Sparse Matrix {R} Package with Emphasis on {MCMC} Methods for {G}aussian {M}arkov Random Fields",
   author       = personList(as.person("Reinhard Furrer"),
-                   as.person("Stephan R. Sain")),
+      as.person("Stephan R. Sain")),
   journal      = "Journal of Statistical Software",
   year         = "2010",
   volume       = "36",
@@ -15,5 +15,6 @@ citEntry(entry = "Article",
   paste("Reinhard Furrer, Stephan R. Sain (2010).",
         "spam: A Sparse Matrix R Package with Emphasis on MCMC Methods for Gaussian Markov Random Fields.",
         "Journal of Statistical Software, 36(10), 1-25.",
-        "URL http://www.jstatsoft.org/v36/i10/.")
+        "URL http://www.jstatsoft.org/v36/i10/."),
 )
+

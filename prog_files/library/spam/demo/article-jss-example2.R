@@ -15,12 +15,17 @@
 # - improved formatting
 # - more comments, e.g. how to run the code using regular matrices 
 # - the code to construct the figures
+# - minor modifcations due to evolvement of spam
 
-cat("\nThis demo contains the R code of the second example\nin the JSS article. As pointed out by Steve Geinitz\nand Andrea Riebler, the Gibbs sampler is not correct\nand contains several bugs. \n\nI'll post an updated sampler in a future release.\n\n") 
+################################################################################
+
+cat("\nThis demo contains the R code of the second example in the JSS article.\nAs pointed out by Steve Geinitz and Andrea Riebler, the Gibbs sampler\nis not correct and contains a few bugs. \n\n")
+cat("A corrected sampler is posted (among other things) in the upcoming JSS article:\n      Gerber R. and Furrer R. (2014) Pitfalls in the implementation of \n          Bayesian hierarchical modeling of areal count data.\n          An illustration using BYM and Leroux models. JSS, accepted.\n\n") 
 
 
 # INITALIZE AND FUNCTIONS:
 require("fields", warn.conflict=FALSE)
+spam.options(structurebased=TRUE)
 
 
 # READ DATA:
@@ -43,7 +48,7 @@ set.seed(14)
 # (based on unit precision parameters kappa, denoted with k):
 
 Q1 <- R <- diag.spam( diff(A@rowpointers)) - A   # this is R in (2)
-dim(Q1) <- c(2*n,2*n)
+pad(Q1) <- c(2*n,2*n)  # previously:  dim(Q1) <- c(2*n,2*n)
 
 Q2 <-  rbind(cbind( diag.spam(n), -diag.spam(n)),
        	     cbind(-diag.spam(n),  diag.spam(n)))

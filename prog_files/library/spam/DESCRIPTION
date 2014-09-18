@@ -1,6 +1,6 @@
 Package: spam
-Version: 0.41-0
-Date: 2014-02-26
+Version: 1.0-1
+Date: 2014-09-09
 Authors@R: c(person("Reinhard", "Furrer", role = c("aut", "cre"),
                      email = "reinhard.furrer@math.uzh.ch"),
               person("Florian", "Gerber", role = "ctb",
@@ -8,7 +8,7 @@ Authors@R: c(person("Reinhard", "Furrer", role = c("aut", "cre"),
 Author: Reinhard Furrer [aut, cre], Florian Gerber [ctb]
 Maintainer: Reinhard Furrer <reinhard.furrer@math.uzh.ch>
 Depends: R (>= 2.15), methods, grid
-Suggests: fields, SparseM, Matrix
+Suggests: fields, Matrix
 Description: Set of functions for sparse matrix algebra.
   Differences with SparseM/Matrix are: 
   (1) we only support (essentially) one sparse matrix format, 
@@ -17,12 +17,12 @@ Description: Set of functions for sparse matrix algebra.
   (4) S3 and S4 like-"compatible"  ...     and it is fast.
 LazyLoad: Yes
 LazyData: Yes
-License: GPL | file LICENSE
+License: LGPL-2
 Title: SPArse Matrix
 URL: http://www.math.uzh.ch/furrer/software/spam/
-Packaged: 2014-02-26 08:14:03 UTC; furrer
+Packaged: 2014-09-09 10:53:35 UTC; furrer
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2014-02-26 10:18:01
-Built: R 3.0.3; i386-w64-mingw32; 2014-06-16 05:33:53 UTC; windows
+Date/Publication: 2014-09-09 15:03:03
+Built: R 3.0.3; i386-w64-mingw32; 2014-09-18 05:40:50 UTC; windows
 Archs: i386, x64

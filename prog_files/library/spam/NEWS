@@ -1,14 +1,207 @@
+	CHANGES IN VERSION 1.0 and 1.0-1
+ 
+    o   This version is up to 'DESCRIPTION' and its implied changes
+	identical to 0.90-1. With the upcoming JSS article "Pitfalls
+	in the implementation of Bayesian hierarchical modeling of
+	areal count data. An illustration using BYM and Leroux
+	models." a "major" version jump is adequate.
+
+
+    o   Referencing to spam data through spam::...
+
+
+    o	Implemented `1.1.3.1 Suggested packages` approach.
+
+
+
+	CHANGES IN VERSION 0.70/0.80/0.90/0.90-1
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o	Introduction of many as('spam','...') functions.
+
+    o   Coercion function `as.vector` for spam objects. 
+
+    o   Wrapper functions `spam_rdist` and 'spam_rdist.earth`
+	for smooth use in `fields`.
+
+    o   The use of `update(A, B)` without assignment has been 
+    	eliminated. This is one way to address the change in
+	memory handling changes from R 3.0.2 to R 3.1.0.
+
+   	There is a slight overhead in memory. If this causes 
+	problems, let me know.
+
+    o   Adjustment of the license.
+
+
+NEW FEATURES
+
+   o    Arguments `diag` and `eps` in `nearest.dist` cause now
+	an error.
+
+   o    Further augmented help pages.
+
+
+BUG FIXES
+
+   o    The demo now points to the new JSS article.
+
+
+INTERNAL CHANGES
+
+    o	Set 'structurebased=TRUE' for the demos.
+
+    o   Link to upcoming JSS article in one of the demos. 
+
+    o 	'update.spam.chol.NgPeyton' preserves the structure
+	(pointed out by Chris Paciorek), see above.
+
+    o   Using similar License approach as SparseM. New files
+	`README`, `inst/0LICENSE`.
+
+    o   File renaming (OChangeLog -> 0ChangeLog) 
+
+
+    o   Adjusted error messages for precmat.RW2
+
+
+	CHANGES IN VERSION 0.60-0
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+   o	Using the flag 'structurebased', the behavior 
+	of spam is now more consistent.
+
+   o    "Arith", "Compare", "Logic" (getGroupMembers("Ops")) 
+	have now a consistent behavior.
+
+
+
+NEW FEATURES
+
+   o    Few new S3 functions for simplicity: 
+	'var.spam', 'eigen.spam', ...
+
+   o 	New constructor functions 'colindices<-' etc.
+	Maybe additional tests may be required.
+
+   o 	Operators from 'Arith' obey now the 
+   	structure based calculation. 
+
+
+BUG FIXES
+
+   o    'inefficiencywarning' passes message correctly.
+
+
+INTERNAL CHANGES
+
+   o 	many more spam/tests/*.
+
+   o    Consistent use of 'spam' and 'vector' siglist for 'Ops'.
+
+   o    Minor cleaning of Fortran code.
+    
+   o    Renaming/restructuring/cleaning of files...
+
+   o    Fortran arguments are copied when updating the cholesky 
+	structure.
+
+ 
+
+
+	CHANGES IN VERSION 0.50-0
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+   o	Using the flag 'structurebased=FALSE', the behavior 
+	of spam is now much, much closer to regular matrix
+	calculations. This is illustrated when calculating
+	gamma of a sparse matrix.
+
+   o    Along the same lines, the flag 'NAOK=TRUE' allows the
+	use of the "not finite numbers" (NA, NaN, Inf).
+	We have tested many, many functions but full fledged
+	use is not yet guaranteed.
+
+   o    Currently, we can still guarantee backwards 
+	compatibility...
+
+
+NEW FEATURES
+
+   o    New functions 'crossprod' and 'tcrossprod' as well
+	as according method definitions.
+
+   o 	New constructor functions 'rowpointers<-' etc.
+
+   o 	Better option handling. The option 'safemode' is
+	now 'safemodevalidity'. Additionally, new option
+	'NAOK'.
+
+   o    Help pages have been improved.
+
+   o 	Operators from 'Summary' and 'Math' obey now the 
+   	structure based calculation. 
+	('Math2' inherently does).
+
+
+BUG FIXES
+
+   o    rmvnorm.[].const now work properly for any number of
+	constraints and n.
+
+   o	Assignment handles properly recycling.
+
+   o	todo() now works properly.
+
+
+INTERNAL CHANGES
+
+   o 	eliminated {d,i}check by equivalent coercion.
+
+   o    Consistent use of NAOK in Fortran calls.
+
+   o    Minor cleaning of Fortran code.
+    
+   o    Renaming/restructuring of files...
+
+ 
+
+
+
+	CHANGES IN VERSION 0.42-0
+
+NEW FEATURES
+
+   o    More consistent handling of subsetting. 
+   	Warning is issued if subsetting with NA
+
+
+BUG FIXES
+
+   o    Fixed several issues when rowsubsetting...
+
+
+INTERNAL CHANGES
+
+   o 	Additional tests for positive definiteness in 'chol'.
+
+
+
+
 	CHANGES IN VERSION 0.41-0
 
 
 NEW FEATURES
 
-   o   Functions grid_trace2() received more functionality.
+   o    Functions grid_trace2() received more functionality.
 
 
 BUG FIXES
 
-   o   Eliminated bug in cov.mat(). Pointed out by Joshua French
+   o    Eliminated bug in cov.mat(). Pointed out by Joshua French
 
 
 INTERNAL CHANGES

@@ -1,8 +1,10 @@
 mgcv-package	mgcv-package
 adaptive.smooth	smooth.construct.ad.smooth.spec
+AIC.gam	logLik.gam
 anova.gam	anova.gam
 bam	bam
 bam.update	bam.update
+betar	Beta
 choose.k	choose.k
 coef.pdIdnot	pdIdnot
 coef.pdTens	pdTens
@@ -10,6 +12,7 @@ columb	columb
 columb.polys	columb
 concurvity	concurvity
 corMatrix.pdIdnot	pdIdnot
+cox.ph	coxph
 cSplineDes	cSplineDes
 cubic.regression.spline	smooth.construct.cr.smooth.spec
 cyclic.cubic.spline	smooth.construct.cr.smooth.spec
@@ -20,6 +23,7 @@ exclude.too.far	exclude.too.far
 extract.lme.cov	extract.lme.cov
 extract.lme.cov2	extract.lme.cov
 factor.smooth.interaction	smooth.construct.fs.smooth.spec
+family.mgcv	family.mgcv
 fix.family.link	fix.family.link
 fix.family.ls	fix.family.link
 fix.family.qf	fix.family.link
@@ -41,6 +45,7 @@ gam.fit3	gam.fit3
 gam.models	gam.models
 gam.outer	gam.outer
 gam.performance	gam.convergence
+gam.scale	gam.scale
 gam.selection	gam.selection
 gam.side	gam.side
 gam.vcomp	gam.vcomp
@@ -49,6 +54,7 @@ gam2objective	gam2objective
 gamm	gamm
 gamObject	gamObject
 gamSim	gamSim
+gaulss	gaulss
 get.var	get.var
 in.out	in.out
 influence.gam	influence.gam
@@ -63,12 +69,15 @@ ls.size	ls.size
 magic	magic
 magic.post.proc	magic.post.proc
 mgcv	mgcv-package
-mgcv-FAQ	mgcv-FAQ
-mgcv-parallel	mgcv-parallel
+mgcv.FAQ	mgcv-FAQ
+mgcv.package	mgcv-package
+mgcv.parallel	mgcv-parallel
 model.matrix.gam	model.matrix.gam
 mono.con	mono.con
 mrf	smooth.construct.mrf.smooth.spec
 mroot	mroot
+mvn	mvn
+nb	negbin
 negbin	negbin
 new.name	new.name
 notExp	notExp
@@ -76,6 +85,8 @@ notExp2	notExp2
 notLog	notExp
 notLog2	notExp2
 null.space.dimension	null.space.dimension
+ocat	ocat
+ordered.categorical	ocat
 p.spline	smooth.construct.ps.smooth.spec
 pcls	pcls
 pdConstruct.pdIdnot	pdIdnot
@@ -122,6 +133,7 @@ rig	rig
 Rrank	Rrank
 rTweedie	rTweedie
 s	s
+scat	scat
 signal.regression	linear.functional.terms
 slanczos	slanczos
 smooth.construct	smooth.construct
@@ -157,14 +169,18 @@ step.gam	step.gam
 summary.gam	summary.gam
 summary.pdIdnot	pdIdnot
 summary.pdTens	pdTens
+t.scaled	scat
 t2	t2
 te	te
 tensor.prod.model.matrix	tensor.prod.model.matrix
 tensor.prod.penalties	tensor.prod.model.matrix
 ti	te
 tprs	smooth.construct.tp.smooth.spec
+tw	Tweedie
 Tweedie	Tweedie
 uniquecombs	uniquecombs
 user.defined.smooth	smooth.construct
 vcov.gam	vcov.gam
 vis.gam	vis.gam
+ziP	ziP
+ziplss	ziplss

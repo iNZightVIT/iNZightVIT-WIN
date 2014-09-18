@@ -87,9 +87,10 @@ predict.surface         This older surface function has been renamed as
                         predictSurface
 predictSE               Standard errors of predictions for Krig spatial
                         process estimate
-predictSurface          Evaluates a fitted function as a surface that
-                        is suitable for plotting with the image, persp,
-                        or contour functions.
+predictSurface          Evaluates a fitted function or the prediction
+                        error as a surface that is suitable for
+                        plotting with the image, persp, or contour
+                        functions.
 print.Krig              Print kriging fit results.
 pushpin                 Adds a "push pin" to an existing 3-d plot
 qsreg                   Quantile or Robust spline regression
@@ -107,7 +108,7 @@ sim.rf                  Simulates a random field
 smooth.2d               Kernel smoother for irregular 2-d data
 spind2spam              Conversion of formats for sparse matrices
 splint                  Cubic spline interpolation
-sreg                    Smoothing spline regression
+sreg                    Cubic smoothing spline regression
 stationary.image.cov    Exponential, Matern and general covariance
                         functions for 2-d gridded locations.
 stats                   Calculate summary statistics

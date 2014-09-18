@@ -12,7 +12,7 @@ estimation
 <div align="center">
 <a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
 <a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
-</div><h2>Documentation for package &lsquo;mgcv&rsquo; version 1.7-29</h2>
+</div><h2>Documentation for package &lsquo;mgcv&rsquo; version 1.8-3</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -33,6 +33,7 @@ estimation
 <a href="#L">L</a>
 <a href="#M">M</a>
 <a href="#N">N</a>
+<a href="#O">O</a>
 <a href="#P">P</a>
 <a href="#Q">Q</a>
 <a href="#R">R</a>
@@ -40,6 +41,7 @@ estimation
 <a href="#T">T</a>
 <a href="#U">U</a>
 <a href="#V">V</a>
+<a href="#Z">Z</a>
 </p>
 
 <table width="100%">
@@ -52,6 +54,8 @@ estimation
 <table width="100%">
 <tr><td width="25%"><a href="smooth.construct.ad.smooth.spec.html">adaptive.smooth</a></td>
 <td>Adaptive smooths in GAMs</td></tr>
+<tr><td width="25%"><a href="logLik.gam.html">AIC.gam</a></td>
+<td>Log likelihood for a fitted GAM, for AIC</td></tr>
 <tr><td width="25%"><a href="anova.gam.html">anova.gam</a></td>
 <td>Approximate hypothesis tests related to GAM fits</td></tr>
 </table>
@@ -63,6 +67,8 @@ estimation
 <td>Generalized additive models for very large datasets</td></tr>
 <tr><td width="25%"><a href="bam.update.html">bam.update</a></td>
 <td>Update a strictly additive bam model for new data.</td></tr>
+<tr><td width="25%"><a href="Beta.html">betar</a></td>
+<td>GAM beta regression family</td></tr>
 </table>
 
 <h2><a name="C">-- C --</a></h2>
@@ -82,6 +88,8 @@ estimation
 <td>GAM concurvity measures</td></tr>
 <tr><td width="25%"><a href="pdIdnot.html">corMatrix.pdIdnot</a></td>
 <td>Overflow proof pdMat class for multiples of the identity matrix</td></tr>
+<tr><td width="25%"><a href="coxph.html">cox.ph</a></td>
+<td>Additive Cox Proportional Hazard Model</td></tr>
 <tr><td width="25%"><a href="cSplineDes.html">cSplineDes</a></td>
 <td>Evaluate cyclic B spline basis</td></tr>
 <tr><td width="25%"><a href="smooth.construct.cr.smooth.spec.html">cubic.regression.spline</a></td>
@@ -117,6 +125,8 @@ estimation
 <table width="100%">
 <tr><td width="25%"><a href="smooth.construct.fs.smooth.spec.html">factor.smooth.interaction</a></td>
 <td>Factor smooth interactions in GAMs</td></tr>
+<tr><td width="25%"><a href="family.mgcv.html">family.mgcv</a></td>
+<td>Distribution families in mgcv</td></tr>
 <tr><td width="25%"><a href="fix.family.link.html">fix.family.link</a></td>
 <td>Modify families for use in GAM fitting and checking</td></tr>
 <tr><td width="25%"><a href="fix.family.link.html">fix.family.ls</a></td>
@@ -164,6 +174,8 @@ estimation
 <td>Minimize GCV or UBRE score of a GAM using 'outer' iteration</td></tr>
 <tr><td width="25%"><a href="gam.convergence.html">gam.performance</a></td>
 <td>GAM convergence and performance issues</td></tr>
+<tr><td width="25%"><a href="gam.scale.html">gam.scale</a></td>
+<td>Scale parameter estimation in GAMs</td></tr>
 <tr><td width="25%"><a href="gam.selection.html">gam.selection</a></td>
 <td>Generalized Additive Model Selection</td></tr>
 <tr><td width="25%"><a href="gam.side.html">gam.side</a></td>
@@ -180,6 +192,8 @@ estimation
 <td>Fitted gam object</td></tr>
 <tr><td width="25%"><a href="gamSim.html">gamSim</a></td>
 <td>Simulate example data for GAMs</td></tr>
+<tr><td width="25%"><a href="gaulss.html">gaulss</a></td>
+<td>Gaussian location-scale model family</td></tr>
 <tr><td width="25%"><a href="get.var.html">get.var</a></td>
 <td>Get named variable or evaluate expression from list or data.frame</td></tr>
 </table>
@@ -209,7 +223,7 @@ estimation
 <tr><td width="25%"><a href="pdIdnot.html">logDet.pdIdnot</a></td>
 <td>Overflow proof pdMat class for multiples of the identity matrix</td></tr>
 <tr><td width="25%"><a href="logLik.gam.html">logLik.gam</a></td>
-<td>Extract the log likelihood for a fitted GAM</td></tr>
+<td>Log likelihood for a fitted GAM, for AIC</td></tr>
 <tr><td width="25%"><a href="ls.size.html">ls.size</a></td>
 <td>Size of list elements</td></tr>
 </table>
@@ -223,9 +237,11 @@ estimation
 <td>Auxilliary information from magic fit</td></tr>
 <tr><td width="25%"><a href="mgcv-package.html">mgcv</a></td>
 <td>Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation and GAMMs by REML/PQL</td></tr>
-<tr><td width="25%"><a href="mgcv-FAQ.html">mgcv-FAQ</a></td>
+<tr><td width="25%"><a href="mgcv-FAQ.html">mgcv.FAQ</a></td>
 <td>Frequently Asked Questions for package mgcv</td></tr>
-<tr><td width="25%"><a href="mgcv-parallel.html">mgcv-parallel</a></td>
+<tr><td width="25%"><a href="mgcv-package.html">mgcv.package</a></td>
+<td>Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation and GAMMs by REML/PQL</td></tr>
+<tr><td width="25%"><a href="mgcv-parallel.html">mgcv.parallel</a></td>
 <td>Parallel computation in mgcv.</td></tr>
 <tr><td width="25%"><a href="model.matrix.gam.html">model.matrix.gam</a></td>
 <td>Extract model matrix from GAM fit</td></tr>
@@ -235,13 +251,17 @@ estimation
 <td>Markov Random Field Smooths</td></tr>
 <tr><td width="25%"><a href="mroot.html">mroot</a></td>
 <td>Smallest square root of matrix</td></tr>
+<tr><td width="25%"><a href="mvn.html">mvn</a></td>
+<td>Multivariate normal additive models</td></tr>
 </table>
 
 <h2><a name="N">-- N --</a></h2>
 
 <table width="100%">
+<tr><td width="25%"><a href="negbin.html">nb</a></td>
+<td>GAM negative binomial families</td></tr>
 <tr><td width="25%"><a href="negbin.html">negbin</a></td>
-<td>GAM negative binomial family</td></tr>
+<td>GAM negative binomial families</td></tr>
 <tr><td width="25%"><a href="new.name.html">new.name</a></td>
 <td>Obtain a name for a new variable that is not already in use</td></tr>
 <tr><td width="25%"><a href="notExp.html">notExp</a></td>
@@ -254,6 +274,15 @@ estimation
 <td>Alternative to log parameterization for variance components</td></tr>
 <tr><td width="25%"><a href="null.space.dimension.html">null.space.dimension</a></td>
 <td>The basis of the space of un-penalized functions for a TPRS</td></tr>
+</table>
+
+<h2><a name="O">-- O --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="ocat.html">ocat</a></td>
+<td>GAM ordered categorical family</td></tr>
+<tr><td width="25%"><a href="ocat.html">ordered.categorical</a></td>
+<td>GAM ordered categorical family</td></tr>
 </table>
 
 <h2><a name="P">-- P --</a></h2>
@@ -366,6 +395,8 @@ estimation
 <table width="100%">
 <tr><td width="25%"><a href="s.html">s</a></td>
 <td>Defining smooths in GAM formulae</td></tr>
+<tr><td width="25%"><a href="scat.html">scat</a></td>
+<td>GAM scaled t family for heavy tailed data</td></tr>
 <tr><td width="25%"><a href="linear.functional.terms.html">signal.regression</a></td>
 <td>Linear functionals of a smooth in GAMs</td></tr>
 <tr><td width="25%"><a href="slanczos.html">slanczos</a></td>
@@ -441,6 +472,8 @@ estimation
 <h2><a name="T">-- T --</a></h2>
 
 <table width="100%">
+<tr><td width="25%"><a href="scat.html">t.scaled</a></td>
+<td>GAM scaled t family for heavy tailed data</td></tr>
 <tr><td width="25%"><a href="t2.html">t2</a></td>
 <td>Define alternative tensor product smooths in GAM formulae</td></tr>
 <tr><td width="25%"><a href="te.html">te</a></td>
@@ -453,8 +486,10 @@ estimation
 <td>Define tensor product smooths or tensor product interactions in GAM formulae</td></tr>
 <tr><td width="25%"><a href="smooth.construct.tp.smooth.spec.html">tprs</a></td>
 <td>Penalized thin plate regression splines in GAMs</td></tr>
+<tr><td width="25%"><a href="Tweedie.html">tw</a></td>
+<td>GAM Tweedie families</td></tr>
 <tr><td width="25%"><a href="Tweedie.html">Tweedie</a></td>
-<td>GAM Tweedie family</td></tr>
+<td>GAM Tweedie families</td></tr>
 </table>
 
 <h2><a name="U">-- U --</a></h2>
@@ -473,5 +508,14 @@ estimation
 <td>Extract parameter (estimator) covariance matrix from GAM fit</td></tr>
 <tr><td width="25%"><a href="vis.gam.html">vis.gam</a></td>
 <td>Visualization of GAM objects</td></tr>
+</table>
+
+<h2><a name="Z">-- Z --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="ziP.html">ziP</a></td>
+<td>GAM zero-inflated Poisson regression family</td></tr>
+<tr><td width="25%"><a href="ziplss.html">ziplss</a></td>
+<td>Zero inflated Poisson location-scale model family</td></tr>
 </table>
 </body></html>

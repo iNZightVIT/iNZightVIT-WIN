@@ -20,7 +20,7 @@
 
 # SETUP:
 library("spam")
-
+spam.options(structurebased=TRUE)
 data("UKDriverDeaths")
 
 y <- sqrt(c(UKDriverDeaths))       # square root counts
@@ -38,7 +38,7 @@ priorinvscale <- c(4, 0.1, 0.0005) # beta's
 
 # Qsy, Qty are trivial:
 Qsy <- diag.spam(n)
-dim(Qsy) <- c(n+m, n)
+pad(Qsy) <- c(n+m, n)  # previously:  dim(Qsy) <- c(n+m, n)
 
 Qty <- Qsy
 
@@ -50,7 +50,8 @@ Qst[cbind(1:n, 1:n)] <- rep(1, n)
 # Qss can be constructed with a loop:
 Qss <- spam(0, nm, nm)
 for (i in 0:(nm-m)) {
-    Qss[i+1:m,i+1:m] <- Qss[i+1:m, i+1:m]+1
+    Qss[i+1:m,i+1:m] <- Qss[i+1:m, i+1:m] + matrix(1,m,m)
+#     Qss[i+1:m,i+1:m] <- Qss[i+1:m, i+1:m] + 1 # for older versions of spam
 }
 
 # Note that for the final version we need:

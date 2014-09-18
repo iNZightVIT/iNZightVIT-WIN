@@ -2,6 +2,7 @@ useDynLib(spam)
 
 importFrom("graphics",image)
 importFrom("graphics",plot)           
+import(grid)           
 
 # Next two paragraphs are from Matrix....
 # Currently, group generics need to be explicitly imported (Bug?):
@@ -10,9 +11,7 @@ importFrom("methods", #Arith,Compare,
            )
 
 # Generic functions
-export("dcheck",
-       "icheck",
-
+export(
        "todo",
        "spam.history",
        "spam.options",
@@ -25,6 +24,8 @@ export("dcheck",
        "validspamobject",
 
        "nearest.dist",
+       "spam_rdist",
+       "spam_rdist.earth",
 
        "as.spam.matrix",
        "as.spam.numeric",
@@ -32,6 +33,8 @@ export("dcheck",
        "as.spam.dist",
        "as.spam.chol.NgPeyton",
        "as.spam.list",
+    
+       "as.vector.spam",
        "as.matrix.spam",
        "spam.list",
        "spam.numeric",
@@ -47,6 +50,7 @@ export("dcheck",
        "t.spam",
 
        "dim<-.spam",
+       "pad<-.spam",
 
        "isSymmetric.spam",
        "all.equal.spam",
@@ -128,6 +132,9 @@ export("dcheck",
        
        "bdiag.spam",
 
+    "var.spam",
+    "eigen.spam",
+
        "bandwidth",
        
 #       ".spam.matmul.mat",
@@ -153,6 +160,9 @@ export("dcheck",
 
        "permutation.spam",
        
+             "crossprod.spam",
+              "tcrossprod.spam",
+           
        "map.landkreis",
        "adjacency.landkreis",
 
@@ -161,11 +171,15 @@ export("dcheck",
        "grid_trace2",
        "grid_zoom",
 
+
+    "rowpointers<-",
+        "entries<-",
+        "colindices<-",
+    "dimension<-",
        
        "cleanup"
 #       "backsolve"
-
-     
+   
        )
 
 
@@ -195,10 +209,13 @@ exportMethods(
               "c",
               "dim",
               "dim<-",
+              "pad<-",
+  
               "rbind",
               "cbind",
               "as.spam",
               "spam",
+              "as.vector",
               "as.matrix",
               "determinant",
               "t",
@@ -227,6 +244,10 @@ exportMethods(
               "kronecker",
 
               "permutation",
+
+              "crossprod",
+              "tcrossprod",
+           
               
               "[",
               "[<-",

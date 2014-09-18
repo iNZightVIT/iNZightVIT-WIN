@@ -5,12 +5,6 @@
      
 
 
-
-
-
-
-
-
 # This demo contains the R code to construct the figures and the table of the
 # JSS article:
 #     "spam: A Sparse Matrix R Package with Emphasis on
@@ -24,7 +18,10 @@
 # - Instead of (100+1) factorizations only (50+1) are performed here;
 # - No figure fine-tuning is done here.
 # - We had a few additional gc(), just to be sure.  
+# - Minor change due to evolved of 'spam'
 
+# SETUP:
+spam.options(structurebased=TRUE)  # just to be sure
 
 ######################################################################
 # Figure 1:
