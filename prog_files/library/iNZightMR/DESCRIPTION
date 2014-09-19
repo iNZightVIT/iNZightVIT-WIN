@@ -1,8 +1,8 @@
 Package: iNZightMR
 Type: Package
 Title: iNZightMR
-Version: 1.1
-Date: 2013-07-11
+Version: 1.1.1
+Date: 2014-09-19
 Authors@R: c(person("Simon", "Potter", role = c("aut")),
              person("Junjie", "Zeng", role = c("aut", "cre"),
 	            email = "jzen188@aucklanduni.ac.nz"))
@@ -14,4 +14,4 @@ License: GPL-2
 Author: Simon Potter [aut],
   Junjie Zeng [aut, cre]
 Maintainer: Junjie Zeng <jzen188@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2014-09-18 22:11:41 UTC; unix
+Built: R 3.0.2; ; 2014-09-19 00:10:41 UTC; unix
