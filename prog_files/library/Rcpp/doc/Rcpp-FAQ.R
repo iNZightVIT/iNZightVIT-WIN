@@ -16,13 +16,13 @@ require(highlight)
 
 
 ###################################################
-### code chunk number 3: Rcpp-FAQ.Rnw:173-174 (eval = FALSE)
+### code chunk number 3: Rcpp-FAQ.Rnw:204-205 (eval = FALSE)
 ###################################################
 ## vignette("Rcpp-package")
 
 
 ###################################################
-### code chunk number 4: Rcpp-FAQ.Rnw:198-204
+### code chunk number 4: Rcpp-FAQ.Rnw:229-235
 ###################################################
 fx <- cxxfunction(signature(x = "numeric"),
     'NumericVector xx(x);
@@ -33,20 +33,20 @@ res
 
 
 ###################################################
-### code chunk number 5: Rcpp-FAQ.Rnw:205-206
+### code chunk number 5: Rcpp-FAQ.Rnw:236-237
 ###################################################
 stopifnot(identical(res, sum(seq(1, 10, by=0.5))))
 
 
 ###################################################
-### code chunk number 6: Rcpp-FAQ.Rnw:220-222 (eval = FALSE)
+### code chunk number 6: Rcpp-FAQ.Rnw:251-253 (eval = FALSE)
 ###################################################
 ## fx <- cxxfunction(signature(), paste(readLines("myfile.cpp"), collapse="\n"),
 ##                   plugin = "Rcpp")
 
 
 ###################################################
-### code chunk number 7: Rcpp-FAQ.Rnw:242-247
+### code chunk number 7: Rcpp-FAQ.Rnw:273-278
 ###################################################
 cppFunction('double accu(NumericVector x) {
    return(std::accumulate(x.begin(), x.end(), 0.0));
@@ -56,7 +56,7 @@ res
 
 
 ###################################################
-### code chunk number 11: Rcpp-FAQ.Rnw:505-524
+### code chunk number 11: Rcpp-FAQ.Rnw:554-573
 ###################################################
 inc <- 'template <typename T>
         class square : public std::unary_function<T,T> {
@@ -80,7 +80,7 @@ fun(2.2, 3L)
 
 
 ###################################################
-### code chunk number 14: Rcpp-FAQ.Rnw:605-609 (eval = FALSE)
+### code chunk number 14: Rcpp-FAQ.Rnw:654-658 (eval = FALSE)
 ###################################################
 ## fx <- cxxfunction(signature(x_="numeric", Y_="matrix", z_="numeric" ),
 ##                   paste(readLines("myfile.cpp"), collapse="\n"),
@@ -89,13 +89,13 @@ fun(2.2, 3L)
 
 
 ###################################################
-### code chunk number 15: Rcpp-FAQ.Rnw:611-612
+### code chunk number 15: Rcpp-FAQ.Rnw:660-661
 ###################################################
 unlink("myfile.cpp")
 
 
 ###################################################
-### code chunk number 17: Rcpp-FAQ.Rnw:671-678
+### code chunk number 17: Rcpp-FAQ.Rnw:720-727
 ###################################################
 fx <- cxxfunction(signature(), 
                   'RNGScope();
@@ -107,7 +107,7 @@ fx()
 
 
 ###################################################
-### code chunk number 18: Rcpp-FAQ.Rnw:687-694
+### code chunk number 18: Rcpp-FAQ.Rnw:736-743
 ###################################################
 cppFunction('Rcpp::NumericVector ff(int n) { return rnorm(n, 0, 100); }')
 set.seed(42)
@@ -119,7 +119,7 @@ rnorm(5, 0, 100)
 
 
 ###################################################
-### code chunk number 19: Rcpp-FAQ.Rnw:709-717
+### code chunk number 19: Rcpp-FAQ.Rnw:758-766
 ###################################################
 src <- 'Rcpp::NumericVector v(4);
         v[0] = R_NegInf;  // -Inf
@@ -132,7 +132,7 @@ fun()
 
 
 ###################################################
-### code chunk number 21: Rcpp-FAQ.Rnw:745-753 (eval = FALSE)
+### code chunk number 21: Rcpp-FAQ.Rnw:794-802 (eval = FALSE)
 ###################################################
 ## txt <- 'arma::mat Am = Rcpp::as< arma::mat >(A);
 ##         arma::mat Bm = Rcpp::as< arma::mat >(B);
@@ -145,7 +145,7 @@ fun()
 
 
 ###################################################
-### code chunk number 23: Rcpp-FAQ.Rnw:800-818 (eval = FALSE)
+### code chunk number 23: Rcpp-FAQ.Rnw:849-867 (eval = FALSE)
 ###################################################
 ## ## simple example of seeding RNG and drawing one random number
 ## gslrng <- '
@@ -168,7 +168,7 @@ fun()
 
 
 ###################################################
-### code chunk number 24: Rcpp-FAQ.Rnw:839-846 (eval = FALSE)
+### code chunk number 24: Rcpp-FAQ.Rnw:888-895 (eval = FALSE)
 ###################################################
 ## myplugin <- getPlugin("Rcpp")
 ## myplugin$env$PKG_CXXFLAGS <- "-std=c++11"
@@ -180,7 +180,7 @@ fun()
 
 
 ###################################################
-### code chunk number 25: Rcpp-FAQ.Rnw:862-874 (eval = FALSE)
+### code chunk number 25: Rcpp-FAQ.Rnw:911-923 (eval = FALSE)
 ###################################################
 ## src <- '
 ##   Rcpp::NumericMatrix x(2,2);
@@ -197,7 +197,7 @@ fun()
 
 
 ###################################################
-### code chunk number 27: Rcpp-FAQ.Rnw:904-918 (eval = FALSE)
+### code chunk number 27: Rcpp-FAQ.Rnw:953-967 (eval = FALSE)
 ###################################################
 ## BigInts <- cxxfunction(signature(),
 ##   'std::vector<long> bigints;

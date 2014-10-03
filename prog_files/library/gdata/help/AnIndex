@@ -3,8 +3,7 @@ gdata-package	gdata-package
 "[.listLevelsMap"	mapLevels
 .checkLevelsMap	mapLevels
 .checkListLevelsMap	mapLevels
-.runRUnitTestsGdata	runRUnitTests
-aggregate.table	aggregate.table
+aggregate.table	gdata-defunct
 ans	ans
 Args	Args
 as.levelsMap	mapLevels

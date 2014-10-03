@@ -3,6 +3,7 @@
 // Environment.h: Rcpp R/C++ interface class library -- access R environments
 //
 // Copyright (C) 2009 - 2013    Dirk Eddelbuettel and Romain Francois
+// Copyright (C) 2014           Dirk Eddelbuettel, Romain Francois and Kevin Ushey
 //
 // This file is part of Rcpp.
 //
@@ -21,6 +22,10 @@
 
 #ifndef Rcpp_Environment_h
 #define Rcpp_Environment_h
+
+// From 'R/Defn.h'
+// NOTE: can't include header directly as it checks for some C99 features
+extern "C" SEXP R_NewHashedEnv(SEXP, SEXP);
 
 namespace Rcpp{
 
@@ -349,7 +354,12 @@ namespace Rcpp{
         void update(SEXP){}
     };
 
-    typedef Environment_Impl<PreserveStorage> Environment ;
+typedef Environment_Impl<PreserveStorage> Environment ;
+
+inline Environment new_env(int size = 29) {
+    Shield<SEXP> sizeSEXP(Rf_ScalarInteger(size));
+    return R_NewHashedEnv(R_EmptyEnv, sizeSEXP);
+}
 
 
 } // namespace Rcpp

@@ -134,7 +134,7 @@ hccm.default	hccm
 hccm.lm	hccm
 Highway1	Highway1
 hist.boot	hist.boot
-identify3d	scatter3d
+Identify3d	scatter3d
 infIndexPlot	infIndexPlot
 infIndexPlot.lm	infIndexPlot
 influence.plot	influencePlot
@@ -175,6 +175,7 @@ linearHypothesis.polr	linearHypothesis
 linearHypothesis.svyglm	linearHypothesis
 loessLine	ScatterplotSmoothers
 logit	logit
+makeHypothesis	linearHypothesis
 Mandel	Mandel
 Manova	Anova
 Manova.mlm	Anova
@@ -222,6 +223,7 @@ print.linearHypothesis.mlm	linearHypothesis
 print.outlierTest	outlierTest
 print.spreadLevelPlot	spreadLevelPlot
 print.summary.Anova.mlm	Anova
+printHypothesis	linearHypothesis
 probabilityAxis	TransformationAxes
 qq.plot	car-deprecated
 qqp	qqPlot
@@ -293,7 +295,7 @@ tukeyNonaddTest	residualPlots
 UN	UN
 USPop	USPop
 vif	vif
-vif.lm	vif
+vif.default	vif
 Vocab	Vocab
 wcrossprod	wcrossprod
 WeightLoss	WeightLoss

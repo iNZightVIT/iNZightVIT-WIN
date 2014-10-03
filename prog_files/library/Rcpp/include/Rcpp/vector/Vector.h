@@ -79,7 +79,7 @@ public:
         Storage::set__( r_cast<RTYPE>(proxy.get()) ) ;
     }
 
-    explicit Vector( const no_init& obj) {
+    explicit Vector( const no_init_vector& obj) {
         Storage::set__( Rf_allocVector( RTYPE, obj.get() ) ) ;
     }
 
@@ -88,10 +88,14 @@ public:
         Storage::set__( Rf_allocVector( RTYPE, size) ) ;
         fill( u ) ;
     }
+
+    // constructor for CharacterVector() 
     Vector( const std::string& st ){
         RCPP_DEBUG_2( "Vector<%d>( const std::string& = %s )", RTYPE, st.c_str() )
         Storage::set__( internal::vector_from_string<RTYPE>(st) ) ;
     }
+
+    // constructor for CharacterVector() 
     Vector( const char* st ) {
         RCPP_DEBUG_2( "Vector<%d>( const char* = %s )", RTYPE, st )
         Storage::set__(internal::vector_from_string<RTYPE>(st) ) ;
@@ -891,13 +895,13 @@ private:
         iterator target_it = target.begin() ;
 
         SEXP names = RCPP_GET_NAMES(Storage::get__()) ;
-        iterator result ;
+        int result = 0;
         if( Rf_isNull(names) ){
             int i=0;
             for( ; it < first; ++it, ++target_it, i++ ){
                 *target_it = *it ;
             }
-            result = begin() + i + 1 ;
+            result = i;
             for( it = last ; it < this_end; ++it, ++target_it ){
                 *target_it = *it ;
             }
@@ -908,7 +912,7 @@ private:
                 *target_it = *it ;
                 SET_STRING_ELT( newnames, i, STRING_ELT(names, i ) );
             }
-            result = begin() + i + 1 ;
+            result = i;
             for( it = last ; it < this_end; ++it, ++target_it, i++ ){
                 *target_it = *it ;
                 SET_STRING_ELT( newnames, i, STRING_ELT(names, i + nremoved ) );
@@ -917,7 +921,7 @@ private:
         }
         Storage::set__( target.get__() ) ;
 
-        return result ;
+        return begin() + result;
 
     }
 

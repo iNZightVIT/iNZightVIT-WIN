@@ -309,6 +309,7 @@ svalue<-.GGroup	ggroup
 svalue<-.GHtml	ghtml
 svalue<-.GLabel	glabel
 svalue<-.GMenuBar	gmenu
+svalue<-.GNotebook	gnotebook
 svalue<-.GRadio	gradio
 svalue<-.GToolBar	gtoolbar
 svalue<-.GTree	gtree
@@ -346,6 +347,7 @@ XXX	XXX
 [.GEdit	gWidgets2-S3methods
 [.GFilter	gfilter
 [.GLayout	glayout
+[.GNotebook	gnotebook
 [.GTable	gtable
 [.GTree	gtree
 [<-.GCheckbox	gcheckbox

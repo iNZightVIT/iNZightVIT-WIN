@@ -1,4 +1,3 @@
-.runRUnitTestsGdata     Run RUnit tests for the gdata package
 Args                    Describe Function Arguments
 ConvertMedUnits         Convert medical measurements between
                         International Standard (SI) and US
@@ -6,7 +5,7 @@ ConvertMedUnits         Convert medical measurements between
 MedUnits                Table of conversions between Intertional
                         Standard (SI) and US 'Conventional' Units for
                         common medical measurements.
-aggregate.table         Create 2-Way Table of Summary Statistics
+aggregate.table         Defunct Functions in Package 'gdata'
 ans                     Value of Last Evaluated Expression
 bindData                Bind two data frames into a multivariate data
                         frame

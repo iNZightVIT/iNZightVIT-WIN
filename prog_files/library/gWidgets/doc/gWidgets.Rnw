@@ -2,7 +2,7 @@
 \newcommand{\VERSION}{0.0-7}
 %\VignetteIndexEntry{gWidgets}
 %\VignettePackage{gWidgets}
-%\VignetteDepends{methods,gWidgetsRGtk2}
+%\VignetteDepends{methods,gWidgetstcltk}
 
 \usepackage{times}              % for fonts
 \usepackage[]{geometry}
@@ -300,10 +300,11 @@ following
 
 <<>>=
 require(gWidgets)
-options("guiToolkit"="RGtk2")
+##options("guiToolkit"="RGtk2")
+options("guiToolkit"="tcltk")
 @
 <<echo=FALSE>>=
-require(gWidgetsRGtk2)
+require(gWidgetstcltk)
 @ 
 
 When \code{gWidgets} is started, it tries to figure out what its
@@ -951,7 +952,7 @@ Rmail <- function(draft = NULL, ...) {
   
   ## Make main window from top down
   
-  window <- gwindow("Compose mail")
+  window <- gwindow("Compose mail", visible=FALSE)
   group <- ggroup(horizontal=FALSE, spacing=0, container = window)
   ## Remove border
   svalue(group) <- 0
@@ -975,8 +976,9 @@ Rmail <- function(draft = NULL, ...) {
   
   
   ## To: field. Looks for buddyList
-  tbl[1,1] <- glabel("To:",container = tbl)
-  tbl[1,2] <- (widgets$to <- gcombobox(c(), editable=TRUE, container=tbl))
+  tbl[1,1] <- glabel("To:", container = tbl)
+  tbl[1,2] <- (widgets$to <- gcombobox(c(""), editable=TRUE, container=tbl, expand=TRUE))
+  size(widgets$to) <- c(300, -1)
   if(exists("buddyList")) widgets$to[] <- buddyList
   
   ## From: field. Click to edit value
@@ -984,7 +986,7 @@ Rmail <- function(draft = NULL, ...) {
   tbl[2,2] <- (widgets$from <- glabel(FROM, editable=TRUE, container=tbl))
   
   ## Subject: field. Handler updates window title
-  tbl[3,1] <- glabel("Subject:")
+  tbl[3,1] <- glabel("Subject:", container=tbl)
   tbl[3,2] <- (widgets$subject <- gedit("",container=tbl))
   addHandlerKeystroke(widgets$subject, handler = function(h,...)
                       svalue(window) <- paste("Compose mail:",svalue(h$obj),collapse=""))
@@ -1006,6 +1008,7 @@ Rmail <- function(draft = NULL, ...) {
     }
   }
 
+  visible(window) <- TRUE
   ## That's it.
 
 }
@@ -1014,7 +1017,7 @@ Rmail <- function(draft = NULL, ...) {
 %%$
 
 To compose an e-mail we call the function as follows. (The widget constructed looks like Figure~\ref{fig:Rmail}.)
-<<comd>>=
+<<comd, eval=FALSE>>=
   Rmail()
 @
 
@@ -1237,90 +1240,90 @@ built-in drag and drop which can be overridden, and in \pkg{gWidgetstcltk}
 everything must be done using the \pkg{gWidgets} interface, as drag and drop
 is not naturally implemented by the toolkit.]
 
-\subsection{DND from the data frame editor}
+%% \subsection{DND from the data frame editor}
 
-[This example applies only to \pkg{gWidgetsRGtk}, not
-\pkg{gWidgetsrJava} or \pkg{gWidgetstcltk}]
+%% [This example applies only to \pkg{gWidgetsRGtk}, not
+%% \pkg{gWidgetsrJava} or \pkg{gWidgetstcltk}]
 
 
-The \RFunc{gdf} constructor makes a widget for editing data
-frames. The columns of which can be dropped onto a widget. This is 
-done by dragging the column header. The code below also adds a handler
-so that changes to the column propagate to changes in the widget where
-the column is dropped. (Careful, this has some issues: the handler needs to
-be removed if the widget is closed.)
+%% The \RFunc{gdf} constructor makes a widget for editing data
+%% frames. The columns of which can be dropped onto a widget. This is 
+%% done by dragging the column header. The code below also adds a handler
+%% so that changes to the column propagate to changes in the widget where
+%% the column is dropped. (Careful, this has some issues: the handler needs to
+%% be removed if the widget is closed.)
 
-<<>>=
-## Drag a column onto plot to have a boxplot drawn.
-## Changing the column values will redraw the graph.
+%% <<>>=
+%% ## Drag a column onto plot to have a boxplot drawn.
+%% ## Changing the column values will redraw the graph.
 
-makeDynamicWidget <-  function() {
+%% makeDynamicWidget <-  function() {
   
-  win <- gwindow("Draw a boxplot")
-  gd <- ggraphics(container = win)
+%%   win <- gwindow("Draw a boxplot")
+%%   gd <- ggraphics(container = win)
   
-  adddroptarget(gd, targetType="object", handler=function(h,...) {
-    tag(gd,"data") <- h$dropdata
-    plotWidget(gd)
+%%   adddroptarget(gd, targetType="object", handler=function(h,...) {
+%%     tag(gd,"data") <- h$dropdata
+%%     plotWidget(gd)
     
-    ## this makes the dynamic part:
-    ## - we put a change handler of the column that we get the data from
-    ## - we store the handler id, so that we can clean up the handler when this
-    ##   window is closed
+%%     ## this makes the dynamic part:
+%%     ## - we put a change handler of the column that we get the data from
+%%     ## - we store the handler id, so that we can clean up the handler when this
+%%     ##   window is closed
     
-    ## The is.gdataframecolumn function checks if the drop value
-    ##   comes from the data frame editor (gdf)
-    if(gWidgetsRGtk2:::is.gdataframecolumn(h$dropdata)) {
-      view.col <- h$dropdata
+%%     ## The is.gdataframecolumn function checks if the drop value
+%%     ##   comes from the data frame editor (gdf)
+%%     if(gWidgetsRGtk2:::is.gdataframecolumn(h$dropdata)) {
+%%       view.col <- h$dropdata
       
-      ## Put change handler on column to update plotting widget
-      ## (use lower case, to fix oversight)
-      id <- addhandlerchanged(view.col, handler=function(h,...) plotWidget(gd))
-      ## Save drop handler id so that it can be removed when
-      ##   widget  is closed
-      dropHandlers <- tag(gd,"dropHandlers")
-      dropHandlers[[length(dropHandlers)+1]] <- 
-        list(view.col = view.col,
-             id = id
-             )
-      tag(gd,"dropHandlers") <- dropHandlers
-    }
-  })
+%%       ## Put change handler on column to update plotting widget
+%%       ## (use lower case, to fix oversight)
+%%       id <- addhandlerchanged(view.col, handler=function(h,...) plotWidget(gd))
+%%       ## Save drop handler id so that it can be removed when
+%%       ##   widget  is closed
+%%       dropHandlers <- tag(gd,"dropHandlers")
+%%       dropHandlers[[length(dropHandlers)+1]] <- 
+%%         list(view.col = view.col,
+%%              id = id
+%%              )
+%%       tag(gd,"dropHandlers") <- dropHandlers
+%%     }
+%%   })
   
-  ## Remove drop handlers if widget is unrealized.
-  addHandlerUnrealize(gd, handler = function(h,...) {
-    dropHandlers <- tag(gd,"dropHandlers")
-    if(length(dropHandlers) > 0) {
-      for(i in 1:length(dropHandlers)) {
-        removehandler(dropHandlers[[i]]$view.col,dropHandlers[[i]]$id)
-      }
-    }
-  })
-}
-@
-%% $
+%%   ## Remove drop handlers if widget is unrealized.
+%%   addHandlerUnrealize(gd, handler = function(h,...) {
+%%     dropHandlers <- tag(gd,"dropHandlers")
+%%     if(length(dropHandlers) > 0) {
+%%       for(i in 1:length(dropHandlers)) {
+%%         removehandler(dropHandlers[[i]]$view.col,dropHandlers[[i]]$id)
+%%       }
+%%     }
+%%   })
+%% }
+%% @
+%% %% $
 
-Next, we make the function that produces or updates the graphic. The
-data is stored in the tag-key "data". The use of \RFunc{id} and
-\RFunc{svalue} works for values which are either variable names or columns.
+%% Next, we make the function that produces or updates the graphic. The
+%% data is stored in the tag-key "data". The use of \RFunc{id} and
+%% \RFunc{svalue} works for values which are either variable names or columns.
 
-<<>>=
-plotWidget <- function(widget) {
-  data <- tag(widget, "data")
-  theName <- id(data)
-  values <- svalue(data)
-  boxplot(values, xlab=theName, horizontal=TRUE, col=gray(.75))
-}
-@
+%% <<eval=FALSE>>=
+%% plotWidget <- function(widget) {
+%%   data <- tag(widget, "data")
+%%   theName <- id(data)
+%%   values <- svalue(data)
+%%   boxplot(values, xlab=theName, horizontal=TRUE, col=gray(.75))
+%% }
+%% @
 
-Now show the two widgets, the \RFunc{gdf} function constructs the data
-frame editor widget.
+%% Now show the two widgets, the \RFunc{gdf} function constructs the data
+%% frame editor widget.
 
-<<dontshow, eval=FALSE>>=
-gdf(mtcars, container=TRUE)
-makeDynamicWidget()
-@ 
-%%$
+%% <<dontshow, eval=FALSE>>=
+%% gdf(mtcars, container=TRUE)
+%% makeDynamicWidget()
+%% @ 
+%% %%$
 
 
 \section{Notebooks}
@@ -1705,20 +1708,17 @@ In particular, if the argument to \RFunc{ggenericwidget} is a
 character, then it is assumed to be the name of a function. From the
 arguments of this function, a layout is guessed.
 
-For example, we could have done:
-<<>>=
-  our.t.test <- stats:::t.test.default
-  ggenericwidget("our.t.test", container=gwindow("t-test"))
-@
-As the arguments of this function are 
+%% For example, we could have done:
+%% <<eval=FALSE>>=
+%%   our.t.test <- stats:::t.test.default
+%%   ggenericwidget("our.t.test", container=gwindow("t-test"))
+%% @
 
-<<>>=
-args(our.t.test)
-@
+%% As the arguments of this function are  given by \code{args(out.t.test)}
 
-This widget has fields for selecting the alternative, the null,
-whether the data is paired, has equal variance assumption and a field
-to adjust the confidence level.
+%% This widget has fields for selecting the alternative, the null,
+%% whether the data is paired, has equal variance assumption and a field
+%% to adjust the confidence level.
 
 \subsection{An alternative to \RFunc{ggenericwidget}}
 \label{sec:an-altern-ggenericwidget}
@@ -1905,10 +1905,10 @@ widget with an initial value for \code{x} is shown in
 Figure~\ref{fig:gfunction}.
 
 
-<<>>=
-our.t.test <- stats:::t.test.default
-gfunction(our.t.test)
-@
+%% <<eval=FALSE>>=
+%% our.t.test <- stats:::t.test.default
+%% gfunction(our.t.test)
+%% @
 
 \begin{figure}[htbp]
   \centering

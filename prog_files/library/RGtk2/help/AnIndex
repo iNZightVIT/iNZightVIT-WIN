@@ -1003,9 +1003,10 @@ gdk-Pango-Interaction	gdk-Pango-Interaction
 GDK-Pixbuf	GDK-Pixbuf
 gdk-pixbuf-animation	gdk-pixbuf-animation
 gdk-pixbuf-creating	gdk-pixbuf-creating
-gdk-pixbuf-file-loading	gdk-pixbuf-file-loading
-gdk-pixbuf-file-saving	gdk-pixbuf-file-saving
+gdk-pixbuf-File-Loading	gdk-pixbuf-File-Loading
+gdk-pixbuf-File-saving	gdk-pixbuf-File-saving
 gdk-pixbuf-gdk-pixbuf	gdk-pixbuf-gdk-pixbuf
+gdk-pixbuf-Image-Data-in-Memory	gdk-pixbuf-Image-Data-in-Memory
 gdk-pixbuf-Module-Interface	gdk-pixbuf-Module-Interface
 gdk-pixbuf-scaling	gdk-pixbuf-scaling
 gdk-pixbuf-util	gdk-pixbuf-util
@@ -1626,7 +1627,7 @@ gdkPixbufRotateSimple	gdkPixbufRotateSimple
 GdkPixbufRotation	gdk-pixbuf-scaling
 gdkPixbufSaturateAndPixelate	gdkPixbufSaturateAndPixelate
 gdkPixbufSave	gdkPixbufSave
-GdkPixbufSaveFunc	gdk-pixbuf-file-saving
+GdkPixbufSaveFunc	gdk-pixbuf-File-saving
 gdkPixbufSaveToBuffer	gdkPixbufSaveToBuffer
 gdkPixbufSaveToBufferv	gdkPixbufSaveToBufferv
 gdkPixbufSaveToCallback	gdkPixbufSaveToCallback
@@ -4011,6 +4012,7 @@ gParamSpec	GParamSpec
 GPasswordSave	GMountOperation
 gPasswordSaveGetType	typeMacros
 GPriority	GLibIOEnums
+GQuark	GQuark
 GReallocFunc	GMemoryOutputStream
 GResolver	GResolver
 gResolverClassLookupByAddress	virtuals
@@ -9153,7 +9155,6 @@ pango-Coverage-Maps	pango-Coverage-Maps
 pango-Fonts	pango-Fonts
 pango-Glyph-Storage	pango-Glyph-Storage
 pango-Layout-Objects	pango-Layout-Objects
-pango-pango-renderer	pango-pango-renderer
 pango-Scripts-and-Languages	pango-Scripts-and-Languages
 pango-Tab-Stops	pango-Tab-Stops
 pango-Text-Attributes	pango-Text-Attributes
@@ -9590,7 +9591,7 @@ pangoParseMarkup	pangoParseMarkup
 pangoPixels	pangoMacros
 pangoRbearing	pangoMacros
 PangoRectangle	pango-Glyph-Storage
-PangoRenderer	pango-pango-renderer
+PangoRenderer	PangoRenderer
 pangoRendererActivate	pangoRendererActivate
 pangoRendererClassBegin	virtuals
 pangoRendererClassDrawErrorUnderline	virtuals
@@ -9620,7 +9621,7 @@ pangoRendererGetType	typeMacros
 pangoRendererPartChanged	pangoRendererPartChanged
 pangoRendererSetColor	pangoRendererSetColor
 pangoRendererSetMatrix	pangoRendererSetMatrix
-PangoRenderPart	pango-pango-renderer
+PangoRenderPart	PangoRenderer
 pangoReorderItems	pangoReorderItems
 PangoScript	pango-Scripts-and-Languages
 pangoScriptForUnichar	pangoScriptForUnichar

@@ -560,4 +560,44 @@ v0.93.995
   - An array-overrun bug in rgl.attrib() showed up in writeWebGL.  
     (Reported by Brian Ripley.)
   - scene3d() now records light settings.
+  
+v0.93.1098
+  - rgl.material() (for textures), rgl.postscript() and rgl.snapshot()
+    now call normalizePath() on filenames, so tilde expansion should
+    be supported.
+  - par3d() could generate an error if an unnamed list was passed in.
+  - material3d() lost settings for textures
+  - internals are updated to be consistent with MacOS 10.9 requirements
+  - fixed a bug in triangulation code:  it failed on locator() input.
+  - The Aqua support now works again, XQuartz is only needed for command
+    line use in Mac OSX.
+    
+v0.94
+  - Added "subscenes", i.e. scenes of objects nested within the 
+    main window.  This affects a lot of other functions as well,
+    which now act either on a single subscene or on the 
+    overall scene.
+  - Allowed the coordinates of the viewport to be set.
+  - Changed the behaviour of pop3d() and rgl.pop():  the type is
+    now ignored if id is non-zero.
+  - par3d("modelMatrix") no longer includes the observer translation
+  - Added configurable mouse wheel actions via par3d() or 
+    rgl.setWheelCallback().
+  - The par3d(), par3dinterp(), and spin3d() functions now
+    have arguments dev and subscene to specify where they apply.
+  - Included a copy of the source to CanvasMatrix.js (used by
+    writeWebGL()) at the request of the Debian administrators.
+  - The NULL device was not removed from the device list when
+    it was closed.  (Reported by Henrik Bengtsson.)
+  - Some of the animations have been sped up at the request of CRAN
+
+0.94.1143
+  - Added function methods for persp3d() and plot3d(), to allow
+    surfaces to be plotted just by specifying the function.
+  - Fixed a bug introduced in 0.94 that made user callbacks crash R.
+    (Reported by Dave Hadka.)
+  - Fixed a bug exposed in 0.94 (but really introduced in 0.93.952)
+    that caused writeWebGL() to fail when a NULL device was active.
+  - Fixed a bug introduced in 0.94 with writing 3D sprite objects.
+  - Fixed a bug computing the bounding box of an embedded subscene.
     

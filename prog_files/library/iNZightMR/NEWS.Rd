@@ -2,6 +2,10 @@
 \title{NEWS file for the iNZightMR package}
 \encoding{UTF-8}
 
+\section{New release Version 1.1.2}{
+  Fixes a bug that stopped missing values from working in iNZight
+}
+
 \section{New release Version 1.1.1}{
   Using iNZightPlots for graphics - this is an intermediate version, so
   any bugs will likely not be updated until the release of iNZightPlots

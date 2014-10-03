@@ -26,6 +26,10 @@
 
 #include <Rcpp/grow.h>
 
+#ifdef RCPP_USING_CXX11
+#include <Rcpp/InternalFunctionWithStdFunction.h>
+#endif
+
 namespace Rcpp{
 
     RCPP_API_CLASS(InternalFunction_Impl) {
@@ -33,8 +37,20 @@ namespace Rcpp{
 
         RCPP_GENERATE_CTOR_ASSIGN(InternalFunction_Impl)
 
-        #include <Rcpp/generated/InternalFunction__ctors.h>
+#ifdef RCPP_USING_CXX11
+    	template <typename RESULT_TYPE, typename... Args>
+        InternalFunction_Impl(const std::function<RESULT_TYPE(Args...)> &fun) {
+        	set(
+        		XPtr<Rcpp::InternalFunctionWithStdFunction::CppFunctionBaseFromStdFunction<RESULT_TYPE, Args...> >(
+        			new Rcpp::InternalFunctionWithStdFunction::CppFunctionBaseFromStdFunction<RESULT_TYPE, Args...>(fun),
+        			false
+        		)
+        	);
+        }
+#endif
 
+        #include <Rcpp/generated/InternalFunction__ctors.h>
+        void update(SEXP){}
     private:
 
         inline void set( SEXP xp){

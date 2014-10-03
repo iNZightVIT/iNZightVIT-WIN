@@ -35,6 +35,7 @@ public:
     typedef MatrixColumn<RTYPE> Column ;
     typedef SubMatrix<RTYPE> Sub ;
 
+    typedef StoragePolicy<Matrix> Storage ;
     typedef Vector<RTYPE, StoragePolicy> VECTOR ;
     typedef typename VECTOR::iterator iterator ;
     typedef typename VECTOR::const_iterator const_iterator ;
@@ -83,6 +84,10 @@ public:
         return *this ;
     }
     Matrix& operator=( const SubMatrix<RTYPE>& ) ;
+
+    explicit Matrix( const no_init_matrix& obj) {
+        Storage::set__( Rf_allocMatrix( RTYPE, obj.nrow(), obj.ncol() ) );
+    }
 
     inline int ncol() const {
         return VECTOR::dims()[1];
@@ -188,7 +193,15 @@ private:
         }
     }
 
-} ;
+};
+
+inline internal::DimNameProxy rownames(SEXP x) {
+    return internal::DimNameProxy(x, 0);
+}
+
+inline internal::DimNameProxy colnames(SEXP x) {
+    return internal::DimNameProxy(x, 1);
+}
 
 }
 

@@ -1,4 +1,5 @@
 .svycheck	as.svydesign2
+AIC.svyglm	anova.svyglm
 anova.svyglm	anova.svyglm
 anova.svyloglin	svyloglin
 api	api
@@ -16,6 +17,7 @@ as.vector.repweights_compressed	compressWeights
 barplot.svrepstat	barplot.svystat
 barplot.svyby	barplot.svystat
 barplot.svystat	barplot.svystat
+BIC.svyglm	anova.svyglm
 biplot.svyprcomp	svyprcomp
 bootstratum	bootweights
 bootweights	bootweights

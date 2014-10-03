@@ -1,3 +1,22 @@
+Version 0.5.5
+------------------------------------------------------------------------------
+
+* Actually use the `text` and `graphics` in `new_output_handler`
+
+* Multiple expressions separated by `;` on the same line can be printed as
+  expected when the result returned is visible, e.g. both `x` and `y` will
+  be printed when the source code is `x; y`. In previous versions, only `y`
+  is printed. (thanks, Bill Venables)
+
+Version 0.5.3
+------------------------------------------------------------------------------
+
+BUG FIXES
+
+* fixed the bug reported at https://github.com/yihui/knitr/issues/722
+  (repeatedly knitting the same code results in plots being omitted
+  randomly) (thanks, Simon Urbanek)
+
 Version 0.5.1
 ------------------------------------------------------------------------------
 

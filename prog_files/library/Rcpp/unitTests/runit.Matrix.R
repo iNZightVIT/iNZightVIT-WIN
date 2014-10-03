@@ -146,5 +146,24 @@ if (.runThisTest) {
         checkEquals(m, matrix_opequals(m))
     }
 
+    test.NumericMatrix.rownames.colnames.proxy <- function() {
+        m <- matrix(as.numeric(1:4), nrow = 2)
+        runit_rownames_colnames_proxy(m, letters[1:2], LETTERS[1:2])
+        checkEquals(rownames(m), letters[1:2])
+        checkEquals(colnames(m), LETTERS[1:2])
+        checkException(runit_rownames_colnames_proxy(m, letters[1:3], letters[1:3]))
+        checkException(runit_rownames_colnames_proxy(m, letters[1:2], NULL))
+
+        m <- matrix(as.numeric(1:9), nrow = 3)
+        runit_rownames_proxy(m)
+        checkEquals(rownames(m), c("A", "B", "C"))
+        checkEquals(colnames(m), NULL)
+    }
+
+    test.NumericMatrix.no.init <- function() {
+      m <- runit_no_init_matrix()
+      checkEquals(m, matrix(c(0, 1, 2, 3), nrow = 2))
+    }
+
 
 }

@@ -5,6 +5,7 @@ GDK-Pixbuf              GDK-Pixbuf
 GIO                     GIO
 GMainLoop               The GLib Main Loop
 GObject                 The GObject system in RGtk2
+GQuark                  GQuark
 GSignal                 The GSignal API
 GTK                     GTK
 GType                   The GType system

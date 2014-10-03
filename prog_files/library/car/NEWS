@@ -1,4 +1,38 @@
+Changes to Version 2.0-21
+
+    o residualPlot error when using 'type="rstudent" has been fixed.
+
+    o Minor change to "recode" documentation; improved error checking in recode().
+
+    o Fixed a bug in gamLine with non-canonical links. (Thanks to Hani Christoph)
+
+    O Added has.intercept.multinom() to make Anova() work with multinom objects fit to a dichotomous response (after bug report by Kristian Hovde Liland).
+
+    o Replaced vif.lm() with vif.default() to cover wider variety of models (after question by Laura Rigg about gls models).
+
+    o Diagonal panels in scatterplotMatrix() (except for histograms) show groups separately when plotted by groups (suggestion by Erich Neuwirth).
+
+    o Added vcov. argument to Anova.lm().
+
+Changes to Version 2.0-20
+
+    o Added new id.method="r" to showLabels for labeling plots of residuals; default id.method changed in residualPlots.
+
+    o Fixed handling of labels argument to outlierTest() (bug report by Stephane Laurent).
+
+    o Accommodate numeric variables consisting entirely of NAs in recode() (suggestion of Karl Ove Hufthammer).
+
+    o Prevent dataEllipse() from opening a graphics device when draw=FALSE (fixing bug reported by Rafael Laboissiere).
+
+    o The functions makeHypothesis() and printHypothesis(), intended for internal use, are exported so that they can be used in other packages (request of Arne Henningsen).
+
+    o Small fixes.
+
 Changes to Version 2.0-19
+
+    o allow a grouping variable for color, symbol and fits in residualPlots
+
+    o fixed axis labelling probelm in influenceIndexPlot
 
     o fixed scoping problems in Boot, bootCase, and ncvTest
 
@@ -10,7 +44,7 @@ Changes to Version 2.0-19
 
     o added .merMod methods to Anova(), deltaMethod(), linearHypothesis(), matchCoefs(), and unexported utilities df.residual() and has.intercept(); insured compatibility with nlme and CRAN and developments versions of lme4.
 
-    o added use argument to scatterplotMatrix() (suggstion of Antoine Lizee).
+    o added use argument to scatterplotMatrix() (suggestion of Antoine Lizee).
 
     o export linearHypothesis.default() for use in other packages (suggestion of Achim Zeileis).
 

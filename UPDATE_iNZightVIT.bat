@@ -1,2 +1,3 @@
-start prog_files/bin/i386/R.exe --quiet --no-save --no-restore --no-init-file -f prog_files/updateiNZightVIT.R
-
+cd prog_files
+start bin/i386/Rgui.exe --quiet --no-save --no-restore
+exit

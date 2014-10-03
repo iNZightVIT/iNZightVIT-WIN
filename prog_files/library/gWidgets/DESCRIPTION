@@ -1,17 +1,11 @@
 Package: gWidgets
-Version: 0.0-52
+Version: 0.0-54
 Title: gWidgets API for building toolkit-independent, interactive GUIs
-Author: John Verzani. Based on the iwidgets code of Simon Urbanek and
-        suggestions by Simon Urbanek, Philippe Grosjean and Michael
-        Lawrence
+Author: John Verzani. Based on  the iwidgets code of Simon Urbanek and suggestions by Simon Urbanek, Philippe Grosjean and Michael Lawrence
 Maintainer: John Verzani <jverzani@gmail.com>
 Depends: methods, utils
-Suggests: gWidgetsRGtk2, cairoDevice, gWidgetstcltk
-Description: gWidgets provides a toolkit-independent API for building
-        interactive GUIs. At least one of the 'gWidgetsXXX packages',
-        such as gWidgetstcltk, needs to be installed. Some icons are on
-        loan from the scigraphica project
-        http://scigraphica.sourceforge.net.
+Suggests: gWidgetstcltk
+Description: gWidgets provides a toolkit-independent API for building interactive GUIs. At least one of the 'gWidgetsXXX packages', such as gWidgetstcltk, needs to be installed. Some icons are on loan from the scigraphica project http://scigraphica.sourceforge.net.
 License: GPL (>= 2)
 URL: https://r-forge.r-project.org/R/?group_id=761
 Collate: aaaGenerics.R common.R toolkitClasses.R guiWidget.R
@@ -25,7 +19,8 @@ Collate: aaaGenerics.R common.R toolkitClasses.R guiWidget.R
         gwindow.R gdfnotebook.R gradio.R gedit.R gseparator.R icons.R
         gfile.R gformlayout.R gstatusbar.R bbbGenericsANY.R zzz.R
 LazyLoad: yes
-Packaged: 2012-10-09 00:00:16 UTC; verzani
+Packaged: 2014-08-27 20:53:43 UTC; verzani
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2012-10-09 05:49:59
-Built: R 3.0.2; ; 2013-12-03 22:36:27 UTC; windows
+Date/Publication: 2014-08-28 00:18:31
+Built: R 3.0.3; ; 2014-08-28 05:20:45 UTC; windows

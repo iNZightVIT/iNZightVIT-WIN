@@ -1,20 +1,26 @@
 Package: httr
 Type: Package
 Title: Tools for working with URLs and HTTP
-Version: 0.3
-Author: Hadley Wickham <h.wickham@gmail.com>
-Maintainer: Hadley Wickham <h.wickham@gmail.com>
-Description: Provides useful tools for working with HTTP connections.  Is a
-    simplified wrapper built on top of RCurl.  It is much much less configurable
-    but because it only attempts to encompass the most common operations it is
-    also much much simpler.
+Version: 0.5
+Authors@R: c(
+    person("Hadley", "Wickham", email = "hadley@rstudio.com",
+    role = c("cre", "aut", "cph")),
+    person("RStudio", role = "cph"))
+Description: Provides useful tools for working with HTTP. The API is based
+    around http verbs (GET(), POST(), etc) with pluggable components to control
+    the request (authenticate(), add_headers() and so on).
 Depends: R (>= 3.0.0)
-Imports: RCurl (>= 1.95-0), stringr (>= 0.6.1), digest, tools, methods
-Suggests: jsonlite, XML, testthat (>= 0.8.0), png, jpeg, httpuv
-Roxygen: list(wrap = FALSE)
+Imports: RCurl (>= 1.95-0), stringr (>= 0.6.1), digest, tools, methods,
+        jsonlite
+Suggests: XML, testthat (>= 0.8.0), png, jpeg, httpuv, knitr
+VignetteBuilder: knitr
 License: MIT + file LICENSE
-Packaged: 2014-03-19 02:04:19 UTC; hadley
-NeedsCompilation: no
+Packaged: 2014-09-02 15:28:39 UTC; hadley
+Author: Hadley Wickham [cre, aut, cph],
+  RStudio [cph]
+Maintainer: Hadley Wickham <hadley@rstudio.com>
+NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2014-03-20 03:03:51
-Built: R 3.0.3; ; 2014-06-16 05:43:51 UTC; windows
+Date/Publication: 2014-09-02 18:15:25
+Built: R 3.0.3; i386-w64-mingw32; 2014-10-03 05:49:48 UTC; windows
+Archs: i386, x64

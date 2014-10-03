@@ -2,8 +2,20 @@ Dear Emacs, please make this -*-Text-*- mode!
 
 NEWS for gWidgets
 
+Changes for 0.0-54
+------------------
+
+* fixes to variables to get working with pmg
+
+* fixes to ggenericwidget to work with tcltk
+
+Changes for 0.0-53
+------------------
+
+
 Changes for 0.0-52
 ------------------
+
  
 * fix typos, cont= to get past R CMD check
 

@@ -1,74 +1,75 @@
 ### R code from vignette source 'gWidgets.Rnw'
 
 ###################################################
-### code chunk number 1: gWidgets.Rnw:301-303
+### code chunk number 1: gWidgets.Rnw:301-304
 ###################################################
 require(gWidgets)
-options("guiToolkit"="RGtk2")
+##options("guiToolkit"="RGtk2")
+options("guiToolkit"="tcltk")
 
 
 ###################################################
-### code chunk number 2: gWidgets.Rnw:305-306
+### code chunk number 2: gWidgets.Rnw:306-307
 ###################################################
-require(gWidgetsRGtk2)
+require(gWidgetstcltk)
 
 
 ###################################################
-### code chunk number 3: gWidgets.Rnw:351-352
+### code chunk number 3: gWidgets.Rnw:352-353
 ###################################################
   obj <- gbutton("Hello world", container = gwindow())
 
 
 ###################################################
-### code chunk number 4: gWidgets.Rnw:356-357
+### code chunk number 4: gWidgets.Rnw:357-358
 ###################################################
   obj <- glabel("Hello world", container = gwindow())  
 
 
 ###################################################
-### code chunk number 5: gWidgets.Rnw:361-362
+### code chunk number 5: gWidgets.Rnw:362-363
 ###################################################
   obj <- gedit("Hello world", container = gwindow())
 
 
 ###################################################
-### code chunk number 6: gWidgets.Rnw:366-367
+### code chunk number 6: gWidgets.Rnw:367-368
 ###################################################
   obj <- gtext("Hello world", container = gwindow())
 
 
 ###################################################
-### code chunk number 7: gWidgets.Rnw:374-375
+### code chunk number 7: gWidgets.Rnw:375-376
 ###################################################
   obj <- gradio(c("hello","world"), container=gwindow())
 
 
 ###################################################
-### code chunk number 8: gWidgets.Rnw:381-382
+### code chunk number 8: gWidgets.Rnw:382-383
 ###################################################
   obj <- gcombobox(c("hello","world"), container=gwindow())
 
 
 ###################################################
-### code chunk number 9: gWidgets.Rnw:386-387
+### code chunk number 9: gWidgets.Rnw:387-388
 ###################################################
   obj <- gcombobox(c("hello","world"), editable=TRUE, container=gwindow())
 
 
 ###################################################
-### code chunk number 10: gWidgets.Rnw:392-393
+### code chunk number 10: gWidgets.Rnw:393-394
 ###################################################
   obj <- gtable(c("hello","world"), container=gwindow())
 
 
 ###################################################
-### code chunk number 11: gWidgets.Rnw:400-401
+### code chunk number 11: gWidgets.Rnw:401-402
 ###################################################
   obj <- gcheckboxgroup(c("hello","world"), container=gwindow())
 
 
 ###################################################
-### code chunk number 12: gWidgets.Rnw:408-412
+### code chunk number 12: gWidgets.Rnw:409-413
 ###################################################
   obj <- gslider(from=0, to = 7734, by =100, value=0,
     container=gwindow())
@@ -77,7 +78,7 @@ require(gWidgetsRGtk2)
 
 
 ###################################################
-### code chunk number 13: gWidgets.Rnw:425-434
+### code chunk number 13: gWidgets.Rnw:426-435
 ###################################################
   win <- gwindow("Hello World, ad nauseum", visible=TRUE)
   group <- ggroup(horizontal = FALSE, container=win)
@@ -91,7 +92,7 @@ require(gWidgetsRGtk2)
 
 
 ###################################################
-### code chunk number 14: gWidgets.Rnw:506-525
+### code chunk number 14: gWidgets.Rnw:507-526
 ###################################################
 confirmDialog <- function(message, handler=NULL)  {
   window <- gwindow("Confirm")
@@ -115,7 +116,7 @@ confirmDialog <- function(message, handler=NULL)  {
 
 
 ###################################################
-### code chunk number 15: gWidgets.Rnw:549-554
+### code chunk number 15: gWidgets.Rnw:550-555
 ###################################################
 confirmDialog("This space for rent", handler = function(h,...) {
   print("what to do... [Change accordingly]")
@@ -125,7 +126,7 @@ confirmDialog("This space for rent", handler = function(h,...) {
 
 
 ###################################################
-### code chunk number 16: gWidgets.Rnw:566-574
+### code chunk number 16: gWidgets.Rnw:567-575
 ###################################################
 w <- gwindow("Two widgets")
 g <- ggroup(container = w)
@@ -138,7 +139,7 @@ widget2 <- glabel(0, container=g)
 
 
 ###################################################
-### code chunk number 17: gWidgets.Rnw:621-628
+### code chunk number 17: gWidgets.Rnw:622-629
 ###################################################
 fileChoose <- function(action="print", text = "Select a file...",
                        type="open", ...) {
@@ -150,7 +151,7 @@ fileChoose <- function(action="print", text = "Select a file...",
 
 
 ###################################################
-### code chunk number 18: gWidgets.Rnw:661-669
+### code chunk number 18: gWidgets.Rnw:662-670
 ###################################################
 lstObjects <- function(envir= .GlobalEnv, pattern) {
   objlist <- ls(envir=envir, pattern=pattern)
@@ -163,7 +164,7 @@ lstObjects <- function(envir= .GlobalEnv, pattern) {
 
 
 ###################################################
-### code chunk number 19: gWidgets.Rnw:676-680
+### code chunk number 19: gWidgets.Rnw:677-681
 ###################################################
 browseEnv1 <- function(envir = .GlobalEnv, pattern) {
   listOfObjects <- lstObjects(envir=envir, pattern)
@@ -172,7 +173,7 @@ browseEnv1 <- function(envir = .GlobalEnv, pattern) {
 
 
 ###################################################
-### code chunk number 20: gWidgets.Rnw:689-697
+### code chunk number 20: gWidgets.Rnw:690-698
 ###################################################
 browseEnv2 <- function(envir = .GlobalEnv, pattern, action="summary") {
   listOfObjects <- lstObjects(envir=envir, pattern)
@@ -185,7 +186,7 @@ browseEnv2 <- function(envir = .GlobalEnv, pattern, action="summary") {
 
 
 ###################################################
-### code chunk number 21: gWidgets.Rnw:703-713
+### code chunk number 21: gWidgets.Rnw:704-714
 ###################################################
 browseEnv3 <- function(envir = .GlobalEnv, pattern, action="summary") {
   listOfObjects <- lstObjects(envir=envir, pattern)
@@ -353,7 +354,7 @@ Rmail <- function(draft = NULL, ...) {
   
   ## Make main window from top down
   
-  window <- gwindow("Compose mail")
+  window <- gwindow("Compose mail", visible=FALSE)
   group <- ggroup(horizontal=FALSE, spacing=0, container = window)
   ## Remove border
   svalue(group) <- 0
@@ -377,8 +378,9 @@ Rmail <- function(draft = NULL, ...) {
   
   
   ## To: field. Looks for buddyList
-  tbl[1,1] <- glabel("To:",container = tbl)
-  tbl[1,2] <- (widgets$to <- gcombobox(c(), editable=TRUE, container=tbl))
+  tbl[1,1] <- glabel("To:", container = tbl)
+  tbl[1,2] <- (widgets$to <- gcombobox(c(""), editable=TRUE, container=tbl, expand=TRUE))
+  size(widgets$to) <- c(300, -1)
   if(exists("buddyList")) widgets$to[] <- buddyList
   
   ## From: field. Click to edit value
@@ -386,7 +388,7 @@ Rmail <- function(draft = NULL, ...) {
   tbl[2,2] <- (widgets$from <- glabel(FROM, editable=TRUE, container=tbl))
   
   ## Subject: field. Handler updates window title
-  tbl[3,1] <- glabel("Subject:")
+  tbl[3,1] <- glabel("Subject:", container=tbl)
   tbl[3,2] <- (widgets$subject <- gedit("",container=tbl))
   addHandlerKeystroke(widgets$subject, handler = function(h,...)
                       svalue(window) <- paste("Compose mail:",svalue(h$obj),collapse=""))
@@ -408,6 +410,7 @@ Rmail <- function(draft = NULL, ...) {
     }
   }
 
+  visible(window) <- TRUE
   ## That's it.
 
 }
@@ -415,9 +418,9 @@ Rmail <- function(draft = NULL, ...) {
 
 
 ###################################################
-### code chunk number 30: comd
+### code chunk number 30: comd (eval = FALSE)
 ###################################################
-  Rmail()
+##   Rmail()
 
 
 ###################################################
@@ -460,7 +463,7 @@ gbutton("Hide by clicking arrow", cont=g2)
 
 
 ###################################################
-### code chunk number 32: gWidgets.Rnw:1126-1137
+### code chunk number 32: gWidgets.Rnw:1129-1140
 ###################################################
 tag(g,"state") <- TRUE                            # a global
 changeState <- function(h,...) {
@@ -476,7 +479,7 @@ changeState <- function(h,...) {
 
 
 ###################################################
-### code chunk number 33: gWidgets.Rnw:1180-1196
+### code chunk number 33: gWidgets.Rnw:1183-1199
 ###################################################
 doPlot <-  function() {
   ## Set up main group
@@ -497,82 +500,13 @@ doPlot <-  function() {
 
 
 ###################################################
-### code chunk number 34: gWidgets.Rnw:1199-1200 (eval = FALSE)
+### code chunk number 34: gWidgets.Rnw:1202-1203 (eval = FALSE)
 ###################################################
 ##  doPlot()
 
 
 ###################################################
-### code chunk number 35: gWidgets.Rnw:1253-1299
-###################################################
-## Drag a column onto plot to have a boxplot drawn.
-## Changing the column values will redraw the graph.
-
-makeDynamicWidget <-  function() {
-  
-  win <- gwindow("Draw a boxplot")
-  gd <- ggraphics(container = win)
-  
-  adddroptarget(gd, targetType="object", handler=function(h,...) {
-    tag(gd,"data") <- h$dropdata
-    plotWidget(gd)
-    
-    ## this makes the dynamic part:
-    ## - we put a change handler of the column that we get the data from
-    ## - we store the handler id, so that we can clean up the handler when this
-    ##   window is closed
-    
-    ## The is.gdataframecolumn function checks if the drop value
-    ##   comes from the data frame editor (gdf)
-    if(gWidgetsRGtk2:::is.gdataframecolumn(h$dropdata)) {
-      view.col <- h$dropdata
-      
-      ## Put change handler on column to update plotting widget
-      ## (use lower case, to fix oversight)
-      id <- addhandlerchanged(view.col, handler=function(h,...) plotWidget(gd))
-      ## Save drop handler id so that it can be removed when
-      ##   widget  is closed
-      dropHandlers <- tag(gd,"dropHandlers")
-      dropHandlers[[length(dropHandlers)+1]] <- 
-        list(view.col = view.col,
-             id = id
-             )
-      tag(gd,"dropHandlers") <- dropHandlers
-    }
-  })
-  
-  ## Remove drop handlers if widget is unrealized.
-  addHandlerUnrealize(gd, handler = function(h,...) {
-    dropHandlers <- tag(gd,"dropHandlers")
-    if(length(dropHandlers) > 0) {
-      for(i in 1:length(dropHandlers)) {
-        removehandler(dropHandlers[[i]]$view.col,dropHandlers[[i]]$id)
-      }
-    }
-  })
-}
-
-
-###################################################
-### code chunk number 36: gWidgets.Rnw:1307-1313
-###################################################
-plotWidget <- function(widget) {
-  data <- tag(widget, "data")
-  theName <- id(data)
-  values <- svalue(data)
-  boxplot(values, xlab=theName, horizontal=TRUE, col=gray(.75))
-}
-
-
-###################################################
-### code chunk number 37: dontshow (eval = FALSE)
-###################################################
-## gdf(mtcars, container=TRUE)
-## makeDynamicWidget()
-
-
-###################################################
-### code chunk number 38: gWidgets.Rnw:1355-1358
+### code chunk number 35: gWidgets.Rnw:1358-1361
 ###################################################
 win <- gwindow("Plot notebook")
 group <- ggroup(horizontal = FALSE, container=win)
@@ -580,7 +514,7 @@ nb <- gnotebook(container = group, expand=TRUE)
 
 
 ###################################################
-### code chunk number 39: gWidgets.Rnw:1373-1380
+### code chunk number 36: gWidgets.Rnw:1376-1383
 ###################################################
 tblist <- list(quit=gaction("Quit", icon="quit", handler=function(...) dispose(win)),
                separator=gseparator(),
@@ -592,7 +526,7 @@ gtoolbar(tblist, cont=group)
 
 
 ###################################################
-### code chunk number 40: gWidgets.Rnw:1436-1446
+### code chunk number 37: gWidgets.Rnw:1439-1449
 ###################################################
   ## function to find offspring
   offspring <- function(path, user.data=NULL) {
@@ -607,7 +541,7 @@ gtoolbar(tblist, cont=group)
 
 
 ###################################################
-### code chunk number 41: gWidgets.Rnw:1451-1454
+### code chunk number 38: gWidgets.Rnw:1454-1457
 ###################################################
 hasOffspring <- function(children,user.data=NULL, ...) {
   return(children$isdir)
@@ -615,7 +549,7 @@ hasOffspring <- function(children,user.data=NULL, ...) {
 
 
 ###################################################
-### code chunk number 42: gWidgets.Rnw:1460-1465
+### code chunk number 39: gWidgets.Rnw:1463-1468
 ###################################################
 icon.FUN <- function(children,user.data=NULL, ...) {
   x <- rep("file",length= nrow(children))
@@ -625,21 +559,21 @@ icon.FUN <- function(children,user.data=NULL, ...) {
 
 
 ###################################################
-### code chunk number 43: gWidgets.Rnw:1470-1472
+### code chunk number 40: gWidgets.Rnw:1473-1475
 ###################################################
   gtree(offspring, hasOffspring, icon.FUN = icon.FUN,
         container=gwindow(getwd()))
 
 
 ###################################################
-### code chunk number 44: gWidgets.Rnw:1492-1494
+### code chunk number 41: gWidgets.Rnw:1495-1497
 ###################################################
 gtree(offspring,  icon.FUN = icon.FUN,
       container=gwindow(getwd()))
 
 
 ###################################################
-### code chunk number 45: gWidgets.Rnw:1519-1529
+### code chunk number 42: gWidgets.Rnw:1522-1532
 ###################################################
 w <- gwindow("Click on button to change")
 g <- ggroup(cont = w)                   # abbreviate container
@@ -654,7 +588,7 @@ addPopupmenu(world, lst)
 
 
 ###################################################
-### code chunk number 46: t-test-ex
+### code chunk number 43: t-test-ex
 ###################################################
 ## layout a collection of widgets to generate a t.test
 
@@ -736,7 +670,7 @@ tTest <- list(type = "ggroup",
 
 
 ###################################################
-### code chunk number 47: dontshow (eval = FALSE)
+### code chunk number 44: dontshow (eval = FALSE)
 ###################################################
 ## ## Code to call the layout
 ## w <- gwindow("t.test")
@@ -760,7 +694,7 @@ tTest <- list(type = "ggroup",
 
 
 ###################################################
-### code chunk number 48: gWidgets.Rnw:1684-1694
+### code chunk number 45: gWidgets.Rnw:1687-1697
 ###################################################
 lst <- list()
 lst$title <- "t.test()"
@@ -775,26 +709,13 @@ lst$arguments$hypotheses$alternative <-
 
 
 ###################################################
-### code chunk number 49: ggenericw (eval = FALSE)
+### code chunk number 46: ggenericw (eval = FALSE)
 ###################################################
 ## ggenericwidget(lst, container=gwindow("One sample t test"))
 
 
 ###################################################
-### code chunk number 50: gWidgets.Rnw:1709-1711
-###################################################
-  our.t.test <- stats:::t.test.default
-  ggenericwidget("our.t.test", container=gwindow("t-test"))
-
-
-###################################################
-### code chunk number 51: gWidgets.Rnw:1715-1716
-###################################################
-args(our.t.test)
-
-
-###################################################
-### code chunk number 52: gWidgets.Rnw:1733-1826
+### code chunk number 47: gWidgets.Rnw:1733-1826
 ###################################################
 ## A constructor to automagically make a GUI for a function
 gfunction <- function(f, window = gwindow(title=fName), ...) {
@@ -892,7 +813,7 @@ gfunction <- function(f, window = gwindow(title=fName), ...) {
 
 
 ###################################################
-### code chunk number 53: gWidgets.Rnw:1833-1844
+### code chunk number 48: gWidgets.Rnw:1833-1844
 ###################################################
 getWidget <- function(x, cont=cont) {
   switch(class(x),
@@ -905,12 +826,5 @@ getWidget <- function(x, cont=cont) {
          gedit("", cont=cont)                     # default
     )
 }
-
-
-###################################################
-### code chunk number 54: gWidgets.Rnw:1908-1910
-###################################################
-our.t.test <- stats:::t.test.default
-gfunction(our.t.test)
 
 

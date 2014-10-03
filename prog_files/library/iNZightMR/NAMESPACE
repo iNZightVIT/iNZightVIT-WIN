@@ -8,7 +8,7 @@ import(hexbin)
 # For now, just export everything
 #exportPattern("^[^\\.]")
 
-export(iNZightMR, byMRO, mroPara, between2, plotcombn)
+export(iNZightMR, byMRO, mroPara, between2, plotcombn, calcmissing.data.frame)
 
 # summary
 S3method(summary, mrocalc)
