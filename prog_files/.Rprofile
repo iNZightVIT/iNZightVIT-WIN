@@ -4,7 +4,7 @@ Sys.setenv("R_HOME" = file.path(getwd()))
 library(utils)
 if (!"RCurl" %in% rownames(installed.packages()))
     install.packages("RCurl")
-library(RCurl)
+suppressPackageStartupMessages(library(RCurl))
 
 source_https <- function(url, ...) {
   # Download the new file to a temporary location and source it.
