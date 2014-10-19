@@ -20,6 +20,14 @@
     Includes a suite of bug fixes in the iNZightPlots package - see its
     NEWS file for these
   }
+
+  \subsection{PATCH 2.0.3-1} {
+    Fixed an issue in the Reorder Levels window that now adds scroll
+    bars to the window if it's too big.
+  }
+  \subsection{PATCH 2.0.3-2} {
+    Display the data set name
+  }
 }
 
 \section{Changes in version 2.0.2}{
