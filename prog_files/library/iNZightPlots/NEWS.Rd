@@ -42,6 +42,10 @@
       are cleared so plotting can continue
     }
   }
+
+  \subsection{PATCH 1.0.4-1} {
+    Fixed a bug that stopped matrix of plots for some variables.
+  }
 }
 
 

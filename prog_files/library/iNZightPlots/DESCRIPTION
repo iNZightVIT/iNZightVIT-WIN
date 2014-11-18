@@ -1,8 +1,8 @@
 Package: iNZightPlots
 Type: Package
 Title: iNZightPlots
-Version: 1.0.4
-Date: 2014-08-18
+Version: 1.0.4-1
+Date: 2014-10-29
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
 	            email = "tell029@aucklanduni.ac.nz"))
 Depends: R(>= 2.13)
@@ -12,4 +12,4 @@ Description: Simple plotting function(s) for exploratory data analysis with flex
 License: GPL-2
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2014-09-19 00:10:45 UTC; unix
+Built: R 3.0.2; ; 2014-11-18 00:06:51 UTC; unix
