@@ -1,8 +1,10 @@
-\name{NEWS}
-\title{NEWS file for the vit package}
+\name{Change Log}
+\title{Change Log for vit}
 \encoding{UTF-8}
 
 \section{Changes in version 1.2.1}{
+  Release date: 18 September 2014
+  
   \subsection{MINOR CHANGES}{
     \itemize{
 
@@ -14,6 +16,8 @@
 }
 
 \section{Changes in version 1.2.0}{
+  Release date: 18 January 2014
+  
   \subsection{MAJOR CHANGES}{
     \itemize{
 

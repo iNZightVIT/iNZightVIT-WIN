@@ -1,6 +1,27 @@
-\name{NEWS}
-\title{NEWS file for the iNZightModules package}
+\name{Change Log}
+\title{Change Log for iNZightModules}
 \encoding{UTF-8}
+
+\section{Changes in version 1.0.6}{
+  Release date: 04 February 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix an issue where RGL causes R on some Windows 8 machines to crash
+    }
+  }
+}
+
+\section{Changes in version 1.0.5}{
+  Release date: 27 November 2014
+  
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item add scrollbars to Time Series window if it doesn't fit on
+      the screen
+    }
+  }
+}
 
 \section{Changes in version 1.0.4}{
   \subsection{MINOR CHANGES}{
@@ -40,7 +61,9 @@
 }
 
 \section{Changes in version 1.0.1}{
-  Minor changes in package information and structure.
+  \itemize{
+    \item Minor changes in package information and structure.
+  }
 }
 
 \section{Changes in version 1.0.0}{

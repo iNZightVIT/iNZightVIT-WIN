@@ -1,8 +1,10 @@
-\name{NEWS}
-\title{NEWS file for the iNZightRegression package}
+\name{Change Log}
+\title{Change Log for iNZightRegression}
 \encoding{UTF-8}
 
-\section{Changes in Version 1.1.3}{
+\section{Changes in version 1.1.3}{
+  Release date: 17 September 2014
+  
   \subsection{BUG FIXES}{
     \itemize{
       \item on some graphics devices (eg. RStudio) grid.rect() is not
@@ -11,7 +13,9 @@
   }
 }
 
-\section{Changes in Version 1.1.2}{
+\section{Changes in version 1.1.2}{
+  Release date: 4 April 2014
+  
   \subsection{MINOR CHANGES}{
     \itemize{
       \item Continuing on from previous update, the partial residual
@@ -22,6 +26,8 @@
 }
 
 \section{Changes in version 1.1.1}{
+  Release date: 27 March 2014
+  
   \subsection{NEW FEATURES}{
     \itemize{
       \item Residual summary plots from `plotlm6` can now make use of
@@ -47,12 +53,16 @@
   }
 
   \subsection{BUG FIXES}{
-    \item Shapiro Wilk test not used if sample size > 5000 (resulted in an
-    error).
+    \itemize{
+      \item Shapiro Wilk test not used if sample size > 5000 (resulted in an
+      error).
+    }
   }
 }
 
 \section{Changes in version 1.1}{
+  Release date: 18 January 2014
+  
   \subsection{NEW FEATURES}{
     \itemize{
       

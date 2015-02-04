@@ -1,6 +1,8 @@
+iNZightRegression-package	iNZightRegression
 allPartialResPlots	allPartialResPlots
 histogramArray	histogramArray
-iNZightQQplot	qqplotArray
+iNZightQQplot	iNZightQQplot
+iNZightRegression	iNZightRegression
 iNZightSummary	iNZightSummary
 moecalc	moecalc
 multicomp	multicomp
