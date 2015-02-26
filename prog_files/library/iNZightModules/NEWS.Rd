@@ -2,6 +2,16 @@
 \title{Change Log for iNZightModules}
 \encoding{UTF-8}
 
+\section{Changes in version 1.0.7}{
+  Release date: 23 February 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item remove RGL from NAMESPACE completely
+    }
+  }
+}
+
 \section{Changes in version 1.0.6}{
   Release date: 04 February 2015
   
