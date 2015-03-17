@@ -63,8 +63,7 @@ add.GMenuBar	gmenu
 add.GNotebook	gnotebook
 add.GToolBar	gtoolbar
 add.GWindow	gwindow
-add3rdmousePopupMenu	gWidgets-handlers
-add3rdmousePopupMenu.default	gWidgets-handlers
+add3rdMousePopupMenu	add3rdMousePopupMenu
 addDragMotion	gWidgets-handlers
 addDragMotion.default	gWidgets-handlers
 addDropSource	gWidgets-handlers
@@ -124,6 +123,8 @@ addHandlerUnrealize	gWidgets-handlers
 addHandlerUnrealize.default	gWidgets-handlers
 addPopupMenu	gWidgets-handlers
 addPopupMenu.default	gWidgets-handlers
+addRightclickPopupMenu	gWidgets-handlers
+addRightclickPopupMenu.default	gWidgets-handlers
 addSpace	methods
 addSpace.GContainer	methods
 addSpring	methods

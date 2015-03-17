@@ -2,6 +2,16 @@
 \title{Change Log for iNZightTS}
 \encoding{UTF-8}
 
+\section{Changes in version 1.1.6}{
+  Release date: 02 February 2015
+
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item reposition the axis label
+    }
+  }
+}
+
 \section{Changes in version 1.1.5}{
   Release date: 12 January 2015
 

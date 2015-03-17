@@ -5,6 +5,7 @@ XXX                     Functions to message something needs doing.
                         Easy to search for
 [.GDefaultWidget        Return items
 add                     Add a child object to parent container
+add3rdMousePopupMenu    Alias for poor punctation choice
 addHandlerChanged.GGraphics
                         change handler for ggraphics
 addSpring               Add a spring to box containers

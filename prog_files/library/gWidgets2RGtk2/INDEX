@@ -1,3 +1,8 @@
+.gmessage.guiWidgetsToolkitRGtk2
+                        toolkit implementation for gmessage
+GButton-class           For RGtk2, the GButton class has the extra
+                        reference method 'set_border'. The 'border'
+                        argument has been deprecated.
 GComponentObservable    GComponentObservable adds the observable
                         interface
 GEdit                   The GEdit class adds some methods beyond the
@@ -11,9 +16,6 @@ add_editable_cell_renderer
                         variable
 ensure_type             S3 generic to ensure we don't change data type
                         when assigning into column
-gWidgets2RGtk2-package
-                        gWidgets2Rtk2
-getWidget.RGtkObject    method for stopping getWidget
 guiWidgetsToolkitRGtk2-class
                         toolkit class for RGtk2
 isFirstMouseClick       Return TRUE if first mouse click

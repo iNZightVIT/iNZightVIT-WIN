@@ -1,8 +1,8 @@
 Package: iNZightTS
 Type: Package
 Title: Time Series for iNZight
-Version: 1.1.5
-Date: 2015-01-12
+Version: 1.1.6
+Date: 2015-03-02
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
     email = "tell029@aucklanduni.ac.nz"),
     person("Junjie", "Zeng",   role = "aut"),
@@ -20,4 +20,4 @@ Author: Tom Elliott [aut, cre],
   David Banks [aut],
   Marco Kuper [aut]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-02-26 00:20:00 UTC; unix
+Built: R 3.0.2; ; 2015-03-17 08:14:18 UTC; unix
