@@ -1,62 +1,8 @@
-\name{Change Log}
-\title{Change Log for iNZightPlots}
+\name{NEWS}
+\title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
-\section{Changes in Version 1.0.4}{
-  Release date: 17 September 2014
-  
-  \subsection{MAJOR CHANGES}{
-    \itemize{
-      \item The confidence and comparison intervals on barcharts are now
-      being calculated using the iNZightMR package. While confidence
-      intervals are the same, the comparison intervals are hopefully now
-      more correct - the comparison of n bi/multi-nomials.
-    }
-  }
-  
-  \subsection{MINOR CHANGES}{
-    \itemize{
-      \item allow comparison intervals to be shown without CIs on barcharts
-    }
-  }
-  
-  \subsection{BUG FIXES}{
-    \itemize{
-      \item fixed a bug introduced in R 3.1.0 that yields invalid ylim
-      for dotplots
-
-      \item fixed a bug where any bar plots with 0 counts would result
-      in no plot at all
-
-      \item fixed the drawing of confidence + comparison intervals in
-      barcharts
-
-      \item fixed a bug in triangularMatrix() that was not accounting
-      for missing values when producing summary/inference output
-
-      \item various bugs rixed that were introduced by intergration of
-      iNZightMR
-
-      \item when using all categorical variables, a bug that resulted in
-      no plot if y and g1 were the same has been fixed
-
-      \item update to dev.flush() so any previously unsuccessful plots
-      are cleared so plotting can continue
-    }
-  }
-
-  \subsection{PATCH 1.0.4-1}{
-    Date: 29 October 2014
-    \itemize{
-      \item Fixed a bug that stopped matrix of plots for some variables.
-    }
-  }
-}
-
-
 \section{Changes in Version 1.0.3}{
-  Release date: 17 June 2014
-  
   \subsection{BUG FIXES}{
     \itemize{
       \item specifying `g2.level` with numbers wasn't working, has been fixed for plots,
@@ -68,8 +14,6 @@
 }
 
 \section{Changes in Version 1.0.2}{
-  Release date: 4 April 2014
-  
   \subsection{BUG FIXES}{
     \itemize{
       \item An error where the response was printed instead of the
@@ -81,8 +25,6 @@
 
 
 \section{Changes in Version 1.0.1}{
-  Release date: 27 March 2014
-  
   \subsection{MINOR CHANGES}{
     \itemize{
       \item The type of plot used can be specified by setting the
@@ -121,10 +63,5 @@
 
 
 \section{MAJOR RELEASE VERSION 1.0.0}{
-  Release date: 18 January 2014
-  
-  \itemize{
-    \item New major release of iNZightPlots released, completely
-    rewritten using `grid`.
-  }
+  New major release of iNZightPlots released, completely rewritten using `grid`.
 }
