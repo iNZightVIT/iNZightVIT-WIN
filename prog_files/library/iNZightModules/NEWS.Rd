@@ -2,6 +2,16 @@
 \title{Change Log for iNZightModules}
 \encoding{UTF-8}
 
+\section{Changes in version 1.0.8}{
+  Release date: 18 March 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix a bug where iNZightTS wasn't being imported properly
+    }
+  }
+}
+
 \section{Changes in version 1.0.7}{
   Release date: 23 February 2015
   

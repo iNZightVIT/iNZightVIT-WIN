@@ -63,5 +63,8 @@
 
 
 \section{MAJOR RELEASE VERSION 1.0.0}{
-  New major release of iNZightPlots released, completely rewritten using `grid`.
+  \itemize{
+    \item New major release of iNZightPlots released, completely rewritten
+    using `grid`.
+  }
 }
