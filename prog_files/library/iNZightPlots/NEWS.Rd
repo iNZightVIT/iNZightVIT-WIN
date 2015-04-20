@@ -2,6 +2,33 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 2.0}{
+  \subsection{MAJOR CHANGES}{
+    \itemize{
+      \item The entire package has been rewritten to accomodate complex
+      survey designs. At present, survey objects are not fully
+      supported, however the functionality will be added over time.
+
+      \item A huge reduction in computation requirements for plots to
+      increase efficiency.
+
+      \item Algorithms used to compute inference intervals have been
+      modified to use iNZightMR for comparisons.
+
+      \item lots of other changes to layout and presentation
+    }
+  }
+
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item the \code{col.by} and \code{size.by} arguments have been
+      replaced by \code{colby} and \code{sizeby}
+
+      \item documentation has been added for several of the functions (finally!)
+    }
+  }
+}
+
 \section{Changes in Version 1.0.3}{
   \subsection{BUG FIXES}{
     \itemize{
