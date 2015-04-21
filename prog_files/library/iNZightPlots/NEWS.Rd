@@ -3,6 +3,8 @@
 \encoding{UTF-8}
 
 \section{Changes in Version 2.0}{
+  Release Date: 22 April 2015
+  
   \subsection{MAJOR CHANGES}{
     \itemize{
       \item The entire package has been rewritten to accomodate complex

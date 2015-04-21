@@ -2,6 +2,17 @@
 \title{NEWS file for the iNZightMR package}
 \encoding{UTF-8}
 
+\section{Changes in version 2.0}{
+  Release date: 22 April 2015
+  
+  \subsection{MAJOR CHANGES}{
+    \itemize{
+      \item the new version of iNZightMR uses the latest iNZightPlots
+      (>2.0) instead of its own
+    }
+  }
+}
+
 \section{New release Version 1.1}{
   No user-level changes, however released to coincide with major update
   of iNZightVIT.

@@ -2,6 +2,12 @@
 \title{Change Log for iNZightModules}
 \encoding{UTF-8}
 
+\section{Changes in version 1.1}{
+  Release date: 22 April 2015
+  
+  The version was updated to conincide with the release of iNZight v2.1
+}p
+
 \section{Changes in version 1.0.8}{
   Release date: 18 March 2015
   
