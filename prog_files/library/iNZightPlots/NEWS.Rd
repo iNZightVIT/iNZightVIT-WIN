@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 
 \section{Changes in Version 2.0}{
-  Release Date: 22 April 2015
+  Release Date: 26 May 2015
   
   \subsection{MAJOR CHANGES}{
     \itemize{
@@ -18,6 +18,11 @@
       modified to use iNZightMR for comparisons.
 
       \item lots of other changes to layout and presentation
+
+      \item added additional arguments \code{locate}, \code{locate.id},
+      \code{locate.col} (and others) for locating points by IDs.
+      This is used in the improved locator functinoality in the main
+      \code{iNZight} program.
     }
   }
 
