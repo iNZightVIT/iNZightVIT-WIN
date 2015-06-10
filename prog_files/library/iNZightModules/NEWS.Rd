@@ -6,7 +6,7 @@
   Release date: 22 April 2015
   
   The version was updated to conincide with the release of iNZight v2.1
-}p
+}
 
 \section{Changes in version 1.0.8}{
   Release date: 18 March 2015
