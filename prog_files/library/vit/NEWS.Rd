@@ -2,6 +2,16 @@
 \title{Change Log for vit}
 \encoding{UTF-8}
 
+\section{Changes in version 1.2.2}{
+  Release date: 10 June 2015 
+  
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item New banner with the new iNZight logo in the main start up screen      
+    }
+  }
+}
+
 \section{Changes in version 1.2.1}{
   Release date: 18 September 2014
   

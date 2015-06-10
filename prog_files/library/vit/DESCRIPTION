@@ -1,6 +1,6 @@
 Package: vit
 License: GPL-2
-Version: 1.2.1
+Version: 1.2.2
 Title: Visual Inference Tools
 LazyData: true
 Type: Package
@@ -79,4 +79,4 @@ Author: Garrett Grolemund [aut],
   Vivian Li [ctb],
   Danny Chang [ctb]
 Maintainer: Simon Potter <spot023@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-06-10 02:26:18 UTC; unix
+Built: R 3.0.2; ; 2015-06-10 03:01:45 UTC; unix
