@@ -2,6 +2,30 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 2.0.1}{
+  RELEASE DATE: TBA
+  
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item Dotplot locating implemented using new methodology, with the
+      additional argument `label.extreme = numeric(2)`, allowing users
+      to specify how many lower and upper points to identify,
+      respectively.
+
+      \item equivalently, extreme points (by using Mahalanobis'
+      distance) can be labelled on scatter plots using `label.extreme =
+      numeric(1)`.
+    }
+  }
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fixed a small bug that stopped inference from working in
+      dotplots when `x` is a factor and `y` is the numeric variable.
+    }
+  }
+}
+
 \section{Changes in Version 2.0}{
   Release Date: 26 May 2015
   
