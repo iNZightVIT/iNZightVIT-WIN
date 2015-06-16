@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 
 \section{Changes in Version 2.0.1}{
-  RELEASE DATE: TBA
+  RELEASE DATE: 16 June 2015
   
   \subsection{MINOR CHANGES}{
     \itemize{
@@ -22,6 +22,8 @@
     \itemize{
       \item fixed a small bug that stopped inference from working in
       dotplots when `x` is a factor and `y` is the numeric variable.
+
+      \item fix a bug that caused `nbins = 0` in some cases.
     }
   }
 }

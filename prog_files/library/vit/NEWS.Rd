@@ -2,6 +2,21 @@
 \title{Change Log for vit}
 \encoding{UTF-8}
 
+\section{Changes in version 1.2.3}{
+  Release date: TBA
+  
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item the "File Browser" should now start in the iNZightVIT
+      directory on Macs (rather than the "Home" directory, `~`).
+
+      \item on mac machines, we provide the ability to create a
+      `.vitprofile` file in the main iNZightVIT folder which will
+      control the resolution of the graphics in the VIT module.
+    }
+  }
+}
+
 \section{Changes in version 1.2.2}{
   Release date: 10 June 2015 
   

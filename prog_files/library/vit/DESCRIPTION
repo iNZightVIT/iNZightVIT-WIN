@@ -1,12 +1,14 @@
 Package: vit
 License: GPL-2
-Version: 1.2.2
+Version: 1.2.3
 Title: Visual Inference Tools
 LazyData: true
 Type: Package
-Authors@R: c(person("Garrett", "Grolemund", role = "aut",
+Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
+	            email = "tell029@aucklanduni.ac.nz"),
+             person("Garrett", "Grolemund", role = "aut",
                     email = "grolemund@rice.edu"),
-             person("Simon", "Potter", role = c("aut", "cre"),
+             person("Simon", "Potter", role = c("aut"),
                     email = "spot023@aucklanduni.ac.nz"),
              person("Ben", "Stevenson", role = "aut",
                     email = "bcs5@st-andrews.ac.uk"),
@@ -73,10 +75,11 @@ Collate: 'canvas-refclass.R' 'canvas-viewports.R'
        'methods-sampvar-proportion.R'
        'methods-sampvar-proportion-diff.R'
        'methods-sampvar-slope.R' 'stackPoints.R'
-Author: Garrett Grolemund [aut],
-  Simon Potter [aut, cre],
+Author: Tom Elliott [aut, cre],
+  Garrett Grolemund [aut],
+  Simon Potter [aut],
   Ben Stevenson [aut],
   Vivian Li [ctb],
   Danny Chang [ctb]
-Maintainer: Simon Potter <spot023@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-06-15 04:04:48 UTC; unix
+Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
+Built: R 3.0.2; ; 2015-06-16 00:21:30 UTC; unix
