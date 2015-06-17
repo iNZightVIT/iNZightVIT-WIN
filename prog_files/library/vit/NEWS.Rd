@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 
 \section{Changes in version 1.2.3}{
-  Release date: TBA
+  Release date: 16 June 2015
   
   \subsection{MINOR CHANGES}{
     \itemize{
