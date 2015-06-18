@@ -2,6 +2,26 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 2.0.2}{
+  RELEASE DATE: 16 June 2015
+  
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item additional arguments `xlim` and `ylim` allow users to
+      specify the range of values shown on the plot
+    }
+  }
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item several issues for dotplots have been fixed
+
+      \item weighting variable used when drawing a scatter plot of
+      survey data
+    }
+  }
+}
+
 \section{Changes in Version 2.0.1}{
   RELEASE DATE: 16 June 2015
   
