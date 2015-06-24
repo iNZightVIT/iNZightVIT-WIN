@@ -2,6 +2,18 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 2.0.2}{
+  RELEASE DATE: 24 June 2015
+  
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item remove facility where the colour-by variable is ignored if
+      there are 'too many' levels---this is now left up to users to
+      decide if colour by a particular variable makes sense of not.
+    }
+  }
+}
+
 \section{Changes in Version 2.0.1}{
   RELEASE DATE: 16 June 2015
   
