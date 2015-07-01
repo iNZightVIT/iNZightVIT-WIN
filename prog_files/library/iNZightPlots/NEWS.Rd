@@ -2,6 +2,17 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 2.0.3}{
+  RELEASE DATE: 01 July 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix up the order of bars in segmented bar plots to
+      correspond to the legend
+    }
+  }
+}
+
 \section{Changes in Version 2.0.2}{
   RELEASE DATE: 24 June 2015
   
