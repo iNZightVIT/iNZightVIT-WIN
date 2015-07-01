@@ -2,8 +2,8 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
-\section{Changes in Version 2.0.2}{
-  RELEASE DATE: 16 June 2015
+\section{Changes in Version TBA}{
+  RELEASE DATE: TBA
   
   \subsection{NEW FEATURES}{
     \itemize{
@@ -18,6 +18,29 @@
 
       \item weighting variable used when drawing a scatter plot of
       survey data
+    }
+  }
+}
+
+\section{Changes in Version 2.0.3}{
+  RELEASE DATE: 01 July 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix up the order of bars in segmented bar plots to
+      correspond to the legend
+    }
+  }
+}
+
+\section{Changes in Version 2.0.2}{
+  RELEASE DATE: 24 June 2015
+  
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item remove facility where the colour-by variable is ignored if
+      there are 'too many' levels---this is now left up to users to
+      decide if colour by a particular variable makes sense of not.
     }
   }
 }
