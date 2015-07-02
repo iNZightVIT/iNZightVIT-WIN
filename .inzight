@@ -1,0 +1,2 @@
+structure(list(track = FALSE, check.updates = FALSE, window.size = c(870, 
+600)), .Names = c("track", "check.updates", "window.size"))
