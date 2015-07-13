@@ -2,7 +2,7 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
-\section{Changes in Version TBA}{
+\section{Changes in Version XYZ}{
   RELEASE DATE: TBA
   
   \subsection{NEW FEATURES}{

@@ -13,8 +13,8 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
 Description: An interactive GUI for easy visual exploration of datasets.
 License: GPL-2
 Depends: R (>= 2.1), objectProperties, gWidgets2, cairoDevice
-Imports: grid, RGtk2, RODBC, gdata, reshape2, plyr,
-       gWidgets2RGtk2, iNZightPlots, iNZightTools, survey
+Imports: grid, RGtk2, RODBC, gdata, reshape2, plyr, gWidgets2RGtk2,
+        iNZightPlots, iNZightTools, survey
 Suggests: rgl, gpairs, iNZightTS, iNZightModules
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
@@ -22,4 +22,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-07-13 02:11:21 UTC; unix
+Built: R 3.0.2; ; 2015-07-13 22:01:31 UTC; unix
