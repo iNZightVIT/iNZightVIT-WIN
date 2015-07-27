@@ -2,8 +2,8 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
-\section{Changes in Version XYZ}{
-  RELEASE DATE: TBA
+\section{Changes in Version 2.0.5}{
+  RELEASE DATE: 27 July 2015
   
   \subsection{NEW FEATURES}{
     \itemize{
@@ -18,6 +18,9 @@
 
       \item weighting variable used when drawing a scatter plot of
       survey data
+
+      \item \code{conf} now corresponds to Year 12 intervals in dot plot
+      inferences (previously, \code{comp} corresponded to this interval)
     }
   }
 }
