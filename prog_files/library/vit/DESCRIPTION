@@ -1,7 +1,7 @@
 Package: vit
 License: GPL-2
-Version: 1.2.3
-Date: 2015-06-16
+Version: 1.2.4-1
+Date: 2015-07-27
 Title: Visual Inference Tools
 LazyData: true
 Type: Package
@@ -74,4 +74,4 @@ Author: Tom Elliott [aut, cre],
   Vivian Li [ctb],
   Danny Chang [ctb]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-07-19 23:23:51 UTC; unix
+Built: R 3.0.2; ; 2015-07-27 01:02:11 UTC; unix
