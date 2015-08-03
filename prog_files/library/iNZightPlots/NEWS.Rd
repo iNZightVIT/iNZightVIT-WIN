@@ -2,8 +2,33 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
-\section{Changes in Version XYZ}{
-  RELEASE DATE: TBA
+\section{Changes in Version 2.1}{
+  RELEASE DATE: 04 August 2015
+
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item allow zooming of plots with the new \code{zoom}
+      argument. Works for both univariate and bivariate plots, and a
+      related funcionality for 'zooming in' on bars in a barplot. 
+    }
+  }
+}
+
+
+\section{Changes in Version 2.0.6}{
+  RELEASE DATE: 03 August 2015
+
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix an issue where requesting summary of 'dotplots' resulted
+      in creating a new device, which resulted in errors on the Shiny
+      server.
+    }
+  }
+}
+
+\section{Changes in Version 2.0.5}{
+  RELEASE DATE: 27 July 2015
   
   \subsection{NEW FEATURES}{
     \itemize{
@@ -18,6 +43,9 @@
 
       \item weighting variable used when drawing a scatter plot of
       survey data
+
+      \item \code{conf} now corresponds to Year 12 intervals in dot plot
+      inferences (previously, \code{comp} corresponded to this interval)
     }
   }
 }

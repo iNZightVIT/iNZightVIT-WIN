@@ -2,6 +2,26 @@
 \title{Change Log for iNZightRegression}
 \encoding{UTF-8}
 
+\section{Changes in version 1.1.4}{
+  Release date: 20 July 2015
+
+  \subsection{MINOR HANGES}{
+    \itemize{
+      \item added an extra argument \code{use.inzightplots} to the
+      plotting functions that allows users to enabled/disable the use of
+      them as desired. Currently, the default is \code{FALSE} as the
+      latest version of \code{iNZightPlots} is incompatible with
+      \code{iNZightRegression}.
+    }
+  }
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item added missed function and method exports
+    }
+  }
+}
+
 \section{Changes in version 1.1.3}{
   Release date: 17 September 2014
   
