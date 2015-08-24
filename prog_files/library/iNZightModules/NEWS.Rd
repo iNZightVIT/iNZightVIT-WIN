@@ -2,6 +2,16 @@
 \title{Change Log for iNZightModules}
 \encoding{UTF-8}
 
+\section{Changes in version 1.2}{
+  Release date: 25 August 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item Import entire \code{iNZightTools} package
+    }
+  }
+}
+
 \section{Changes in version 1.1}{
   Release date: 22 April 2015
   
