@@ -1,22 +1,23 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 1.1
-Date: 2015-04-22
-Authors@R: c(person("Junjie", "Zeng", role = c('cre', 'aut'),
-                    email = "jzen188@aucklanduni.ac.nz"),
+Version: 1.2
+Date: 2015-08-25
+Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
+                    email = "inzight_support@stat.auckland.ac.nz"),
+             person("Junjie", "Zeng", role = c('aut')),
              person("Dineika", "Chandrananda", role = "aut"),		
-             person("Simon", "Potter", role = "aut",
-                    email = "spot023@aucklanduni.ac.nz"),
+             person("Simon", "Potter", role = "aut"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 2.13)
 Imports: iNZightRegression, iNZightMR, iNZightTS, iNZightTools, survey,
         mgcv, barcode, gpairs
 License: GPL-2
 Description: A suite of add-on modules for the iNZight GUI, including model fitting module, multiple response, time series, and some advanced plotting.
-Author: Junjie Zeng [cre, aut],
+Author: Tom Elliott [aut, cre],
+  Junjie Zeng [aut],
   Dineika Chandrananda [aut],
   Simon Potter [aut],
   David Banks [aut]
-Maintainer: Junjie Zeng <jzen188@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-08-08 02:17:22 UTC; unix
+Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
+Built: R 3.0.2; ; 2015-08-28 02:19:21 UTC; unix
