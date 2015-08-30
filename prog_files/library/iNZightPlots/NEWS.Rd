@@ -2,6 +2,11 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+# Implement confidence and comparison intervals for survey histograms
+# Fix bug where non-existing inference on barplots would crash the plot
+# Implement confidence intervals for one/two-way barplots
+# Fix bug where inference info for survey scatter plots would break the plot
+
 \section{Changes in Version 2.1}{
   RELEASE DATE: 04 August 2015
 
@@ -10,6 +15,12 @@
       \item allow zooming of plots with the new \code{zoom}
       argument. Works for both univariate and bivariate plots, and a
       related funcionality for 'zooming in' on bars in a barplot. 
+    }
+  }
+
+  \subsection{PATCH 2.1-1: 28 August 2015}{
+    \itemize{
+      \item fix a bug that occurs when all survey weights are equal
     }
   }
 }
