@@ -6,7 +6,7 @@
 # Fix bug where non-existing inference on barplots would crash the plot
 # Implement confidence intervals for one/two-way barplots
 # Fix bug where inference info for survey scatter plots would break the plot
-# Summary information for dotplots/histograms
+# Summary information for dotplots/histograms, scatter plots, and bar plots
 
 \section{Changes in Version 2.1}{
   RELEASE DATE: 04 August 2015
