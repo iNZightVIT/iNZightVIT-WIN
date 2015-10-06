@@ -20,4 +20,8 @@ Author: Tom Elliott [aut, cre],
   David Banks [aut],
   Marco Kuper [aut]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
+<<<<<<< HEAD
 Built: R 3.0.2; ; 2015-08-28 02:24:50 UTC; unix
+=======
+Built: R 3.0.2; ; 2015-10-06 20:42:02 UTC; unix
+>>>>>>> beta
