@@ -2,8 +2,6 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
-<<<<<<< HEAD
-=======
 \section{Changes in Version 2.3}{
   RELEASE DATE: 1 October 2015
 
@@ -42,7 +40,6 @@
   }
 }
 
->>>>>>> beta
 \section{Changes in Version 2.1}{
   RELEASE DATE: 04 August 2015
 
