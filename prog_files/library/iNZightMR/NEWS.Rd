@@ -2,6 +2,16 @@
 \title{NEWS file for the iNZightMR package}
 \encoding{UTF-8}
 
+\section{Changes in version 2.1}{
+  Release date: 10 October 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix a bug that gave an "Inverse" error message
+    }
+  }
+}
+
 \section{Changes in version 2.0}{
   Release date: 26 May 2015
   

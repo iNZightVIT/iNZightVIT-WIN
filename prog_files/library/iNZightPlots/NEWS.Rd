@@ -2,6 +2,23 @@
 \title{NEWS file for the iNZightPlots package}
 \encoding{UTF-8}
 
+\section{Changes in Version 2.3}{
+  RELEASE DATE: 1 October 2015
+
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item new argument added for dotplots to allow group labels to be
+      placed inside the plot, rather than in the axis margin: \code{internal.labels=TRUE}
+    }
+  }
+
+  \subsection{PATCH 2.3.1}{
+    \itemize{
+      \item fix how viewports are named
+    }
+  }
+}
+
 \section{Changes in Version 2.2}{
   RELEASE DATE: 14 September 2015
 
