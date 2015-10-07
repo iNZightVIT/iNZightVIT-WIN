@@ -12,9 +12,15 @@
     }
   }
 
-  \subsection{PATCH 2.3.1}{
+  \subsection{PATCH 2.3.1 - 06/10/2015}{
     \itemize{
       \item fix how viewports are named
+    }
+  }
+  \subsection{PATCH 2.3.2 - 08/10/2015}{
+    \itemize{
+      \item fix a bug that prevented comparison lines to be drawn on
+      categorical dotplots
     }
   }
 }
