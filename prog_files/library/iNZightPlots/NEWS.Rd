@@ -23,6 +23,13 @@
       categorical dotplots
     }
   }
+  \subsection{PATCH 2.3.3 - 13/10/2015}{
+    \itemize{
+      \item fix a bug where adding comparison intervals would break the
+      plot if any of the subgroups in a dotplot were too small. New
+      behaviour ignores small groups and only compares large ones.
+    }
+  }
 }
 
 \section{Changes in Version 2.2}{
