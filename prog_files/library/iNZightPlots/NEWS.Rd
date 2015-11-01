@@ -30,6 +30,28 @@
       behaviour ignores small groups and only compares large ones.
     }
   }
+  \subsection{PATCH 2.3.4 - 13/10/2015}{
+    \itemize{
+      \item continuing from 2.3.3, but now use independent covariances 
+    }
+  }
+  \subsection{PATCH 2.3.4 - 13/10/2015}{
+    \itemize{
+      \item FIX for Lite: dotplots by factor labels now also on histograms
+    }
+  }
+  \subsection{PATCH 2.3.5 - 28/10/2015}{
+    \itemize{
+      \item fix the "number of missing observations" shown in summary output
+    }
+  }
+  \subsection{PATCH 2.3.7 - 02/11/2015}{
+    \itemize{
+      \item no longer redraws dotplots; instead, passes a logical
+      attribute for whether or not the scaling has changed (and
+      therefore that the plot should be redrawn).
+    }
+  }
 }
 
 \section{Changes in Version 2.2}{

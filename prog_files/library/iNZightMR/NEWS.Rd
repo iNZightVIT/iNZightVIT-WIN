@@ -10,6 +10,13 @@
       \item fix a bug that gave an "Inverse" error message
     }
   }
+
+  \subsection{PATCH 2.1.1 - 19/10/2015}{
+    \itemize{
+      \item remove \code{iNZightPlots} from imports, as this was causing
+      installation issues.
+    }
+  }
 }
 
 \section{Changes in version 2.0}{

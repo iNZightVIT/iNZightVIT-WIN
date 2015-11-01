@@ -34,6 +34,27 @@
       dependency pacakges. See their change logs for details.
     }
   }
+
+  \subsection{PATCH 2.4.1 - 21/10/2015}{
+    \itemize{
+      \item Remove dependency on \code{RODBC} package; this causes
+      issues on Mac attempting to manually install.
+    }
+  }
+
+  \subsection{PATCH 2.4.2 - 28/10/2015}{
+    \itemize{
+      \item Add option to display labels internally on numeric x factor
+      \item Fix from iNZightPlots for Get Summary (n.missing now correct)
+    }
+  }
+
+  \subsection{PATCH 2.4.3 - 02/11/2015}{
+    \itemize{
+      \item Improve smoothness of dotplot transitions by only redrawing
+      when the scaling has changed.
+    }
+  }
 }
 
 \section{Changes in version 2.3}{

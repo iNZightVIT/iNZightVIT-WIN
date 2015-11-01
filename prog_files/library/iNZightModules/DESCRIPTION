@@ -10,8 +10,8 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("Simon", "Potter", role = "aut"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 2.13)
-Imports: iNZightRegression, iNZightMR, iNZightTS,
-       iNZightTools, survey, mgcv, barcode, gpairs
+Imports: iNZightRegression, iNZightMR, iNZightTS, iNZightTools, survey,
+        mgcv, barcode, gpairs
 License: GPL-2
 Description: A suite of add-on modules for the iNZight GUI, including model fitting module, multiple response, time series, and some advanced plotting.
 Author: Tom Elliott [aut, cre],
@@ -20,4 +20,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.0.2; ; 2015-10-12 21:20:59 UTC; unix
+Built: R 3.0.2; ; 2015-11-01 22:45:27 UTC; unix
