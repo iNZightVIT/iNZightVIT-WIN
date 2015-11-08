@@ -1,8 +1,8 @@
 Package: iNZight
 Type: Package
 Title: iNZight GUI for Data Exploration
-Version: 2.4.3
-Date: 02-11-2015
+Version: 2.5
+Date: 03-11-2015
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tell029@aucklanduni.ac.nz"),
              person("Dineika", "Chandrananda", role = "ctb"),
@@ -22,4 +22,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-11-01 22:45:31 UTC; unix
+Built: R 3.0.2; ; 2015-11-08 02:07:17 UTC; unix
