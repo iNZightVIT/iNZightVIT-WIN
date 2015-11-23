@@ -52,6 +52,11 @@
       therefore that the plot should be redrawn).
     }
   }
+  \subsection{PATCH 2.3.8 - 16/11/2015}{
+    \itemize{
+      \item fix bug in \code{colby} if the variable has only one unique value
+    }
+  }
 }
 
 \section{Changes in Version 2.2}{
