@@ -17,6 +17,13 @@
       installation issues.
     }
   }
+
+  \subsection{PATCH 2.1.1 - 26/11/2015}{
+    \itemize{
+      \item BUX FIX: bar plot labels were printed alphabetially instead
+      of in the order the bars themselves were drawn.
+    }
+  }
 }
 
 \section{Changes in version 2.0}{
