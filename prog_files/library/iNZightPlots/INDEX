@@ -1,4 +1,5 @@
 convert.to.factor    Convert to Factor
+create               Method for creating plots for iNZight
 exploreAllPlots      Explore all Univariate Plots
 exploreAllSummaries
                      Explore all Univariate Summaries

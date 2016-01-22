@@ -1,2 +1,13 @@
-                     Suite of Add-on Modules for iNZight GUI
-                     software.
+allBivarPlots        Explore All Bivariate Plots
+allUniPlots          Explore All Univariate Plots
+iNZightMapMod-class
+                     iNZight Maps Module
+iNZightModules       iNZightModules: Add-on modules for
+                     iNZight
+iNZightMultiRes-class
+                     iNZight Multiple Response Module
+modelFitting         Model Fitting Module
+plot3D               3D Plot
+scatter3d            Plot three variable in a 3D interactive
+                     graphics window
+scatterPlotMatrix    Scatterplot Matrix

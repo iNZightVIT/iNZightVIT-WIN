@@ -2,12 +2,37 @@
 \title{NEWS file for the iNZightMR package}
 \encoding{UTF-8}
 
+\section{Changes in version 2.2}{
+  Release date: 22 Janurary 2016
+
+  \subsection{CHANGES}{
+    \itemize{
+      \item Mostly just changes to the NAMESPACE, which involved
+      renaming of some functions.
+    }
+  }
+}
+
 \section{Changes in version 2.1}{
   Release date: 10 October 2015
   
   \subsection{BUG FIXES}{
     \itemize{
       \item fix a bug that gave an "Inverse" error message
+    }
+  }
+
+  \subsection{PATCH 2.1.1 - 19/10/2015}{
+    \itemize{
+      \item remove \code{iNZightPlots} from imports, as this was causing
+      installation issues.
+    }
+  }
+
+  \subsection{PATCH 2.1.1 - 26/11/2015}{
+    \itemize{
+      \item BUX FIX: bar plot labels were printed alphabetially instead
+      of in the order the bars themselves were drawn.
     }
   }
 }

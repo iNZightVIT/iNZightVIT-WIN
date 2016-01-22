@@ -1,8 +1,8 @@
 Package: iNZight
 Type: Package
-Title: iNZight GUI for Data Exploration
-Version: 2.4
-Date: 12-10-2015
+Title: iNZight GUI for Data Exploration and Visualisation
+Version: 3.0-900
+Date: 2016-01-DD
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tell029@aucklanduni.ac.nz"),
              person("Dineika", "Chandrananda", role = "ctb"),
@@ -11,15 +11,17 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "MarcoKuper42@gmail.com"),
              person("David", "Banks", role = "ctb"))
 Description: An interactive GUI for easy visual exploration of datasets.
-License: GPL-2
-Depends: R (>= 2.1), objectProperties, gWidgets2, cairoDevice
-Imports: grid, RGtk2, RODBC, gdata, reshape2, plyr,
-       gWidgets2RGtk2, iNZightPlots, iNZightTools, survey
-Suggests: rgl, gpairs, iNZightTS, iNZightModules
+License: GPL-3
+Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2,
+       cairoDevice
+Imports: methods, grid, gdata, gWidgets2RGtk2, iNZightPlots,
+       iNZightTools, reshape2, plyr, survey, iNZightModules
+Suggests: iNZightModules, RODBC
+RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
   Simon Potter [ctb],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2015-10-07 20:22:59 UTC; unix
+Built: R 3.0.2; ; 2016-01-22 00:55:54 UTC; unix

@@ -2,6 +2,42 @@
 \title{Change Log for iNZight}
 \encoding{UTF-8}
 
+###### iNZight 3.0
+
+### New Features
+#
+# * Pop-out view enabled
+#
+### Changes
+#
+# * Add to Plot / Remove Additions / Inference Information buttons
+#   replaced with icons.
+#
+### Bug Fixes
+#
+# * Fixed a bug that caused Gtk-CRITICAL messages appearing in the R
+#   console
+#
+
+\section{Changes in version 2.5}{
+  Release date: 08 November, 2015
+
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item specify colours for dotplots and scatterplots from the Add
+      to Plot > Code more variables screen.
+    }
+  }
+
+  \subsection{PATCH 2.5.1 - 16/11/2015}{
+    \itemize{
+      \item correct the names and URLs in the 'Help > User Guides' menu
+      \item fix bug that occurs when 'Colour by' variable has only one
+      unique value
+    }
+  }
+}
+
 \section{Changes in version 2.4}{
   Release date: 12 October, 2015
 
@@ -32,6 +68,27 @@
 
       \item Various other small fixes throughout iNZight and other
       dependency pacakges. See their change logs for details.
+    }
+  }
+
+  \subsection{PATCH 2.4.1 - 21/10/2015}{
+    \itemize{
+      \item Remove dependency on \code{RODBC} package; this causes
+      issues on Mac attempting to manually install.
+    }
+  }
+
+  \subsection{PATCH 2.4.2 - 28/10/2015}{
+    \itemize{
+      \item Add option to display labels internally on numeric x factor
+      \item Fix from iNZightPlots for Get Summary (n.missing now correct)
+    }
+  }
+
+  \subsection{PATCH 2.4.3 - 02/11/2015}{
+    \itemize{
+      \item Improve smoothness of dotplot transitions by only redrawing
+      when the scaling has changed.
     }
   }
 }

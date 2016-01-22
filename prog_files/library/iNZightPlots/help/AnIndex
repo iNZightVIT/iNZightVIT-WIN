@@ -1,4 +1,5 @@
 convert.to.factor	convert.to.factor
+create	create
 exploreAllPlots	exploreAllPlots
 exploreAllSummaries	exploreAllSummaries
 getPlotSummary	getPlotSummary

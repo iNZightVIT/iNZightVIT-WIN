@@ -23,6 +23,40 @@
       categorical dotplots
     }
   }
+  \subsection{PATCH 2.3.3 - 13/10/2015}{
+    \itemize{
+      \item fix a bug where adding comparison intervals would break the
+      plot if any of the subgroups in a dotplot were too small. New
+      behaviour ignores small groups and only compares large ones.
+    }
+  }
+  \subsection{PATCH 2.3.4 - 13/10/2015}{
+    \itemize{
+      \item continuing from 2.3.3, but now use independent covariances 
+    }
+  }
+  \subsection{PATCH 2.3.4 - 13/10/2015}{
+    \itemize{
+      \item FIX for Lite: dotplots by factor labels now also on histograms
+    }
+  }
+  \subsection{PATCH 2.3.5 - 28/10/2015}{
+    \itemize{
+      \item fix the "number of missing observations" shown in summary output
+    }
+  }
+  \subsection{PATCH 2.3.7 - 02/11/2015}{
+    \itemize{
+      \item no longer redraws dotplots; instead, passes a logical
+      attribute for whether or not the scaling has changed (and
+      therefore that the plot should be redrawn).
+    }
+  }
+  \subsection{PATCH 2.3.8 - 16/11/2015}{
+    \itemize{
+      \item fix bug in \code{colby} if the variable has only one unique value
+    }
+  }
 }
 
 \section{Changes in Version 2.2}{

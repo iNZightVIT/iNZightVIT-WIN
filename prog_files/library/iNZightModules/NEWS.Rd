@@ -15,7 +15,10 @@
 \section{Changes in version 1.1}{
   Release date: 22 April 2015
   
-  The version was updated to conincide with the release of iNZight v2.1
+  \itemize{
+    \item The version was updated to conincide with the release of
+    iNZightv2.1
+  }
 }
 
 \section{Changes in version 1.0.8}{
@@ -116,8 +119,8 @@
 	\item Allows users to specify general linear models, and survey
 	designs for analysis of survey data.
 
-	\item Users can change the data type from numeric <->
-	categorical.
+	\item Users can change the data type from numeric to
+	categorical, and vice verca.
 
 	\item Confounding variables can be specified separately.
 

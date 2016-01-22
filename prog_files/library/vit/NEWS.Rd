@@ -2,6 +2,18 @@
 \title{Change Log for vit}
 \encoding{UTF-8}
 
+\section{Changes in version 1.2.5}{
+  Release date: 19 October 2015
+  
+  \subsection{CHANGES}{
+    \itemize{
+      \item Removed the "ODBC" dependency, which should only affect
+      import of Excel files on Windows. However, this dependency was
+      causing issues on Macs.
+    }
+  }
+}
+
 \section{Changes in version 1.2.4}{
   Release date: 27 July 2015
   
