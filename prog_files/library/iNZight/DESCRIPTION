@@ -16,7 +16,7 @@ Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2,
        cairoDevice
 Imports: methods, grid, gdata, gWidgets2RGtk2, iNZightPlots,
        iNZightTools, reshape2, plyr, survey, iNZightModules
-Suggests: iNZightModules, RODBC
+Suggests: RODBC
 RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
@@ -24,4 +24,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.0.2; ; 2016-01-22 00:55:54 UTC; unix
+Built: R 3.0.2; ; 2016-01-22 01:19:07 UTC; unix

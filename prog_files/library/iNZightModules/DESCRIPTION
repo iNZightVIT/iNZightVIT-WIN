@@ -13,7 +13,7 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
 Depends: R (>= 2.13)
 Imports: rgl, mgcv, gWidgets2, gWidgets2RGtk2, iNZightPlots,
        iNZightRegression, iNZightTools, iNZightMR, iNZightTS,
-       gpairs, methods
+       iNZightMaps, gpairs, methods
 License: GPL-2
 Description: A suite of add-on modules for the iNZight GUI, including model
     fitting module, multiple response, time series, and some advanced plotting.
@@ -25,4 +25,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.0.2; ; 2016-01-22 00:55:47 UTC; unix
+Built: R 3.0.2; ; 2016-01-22 01:19:01 UTC; unix
