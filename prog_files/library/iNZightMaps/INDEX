@@ -1,0 +1,18 @@
+Get.map.size         Get the size of the map in pixels
+col.fun              Plot an iNZight Map
+col.missing          Plot an iNZight Map
+color.bind           Plot an iNZight Map
+create.inz.mapplot   title
+data.trans           Plot an iNZight Map
+getNewMap            Get an new map object
+iNZightMap           Create an iNZight Map Object
+iNZightShapeMap      Create an iNZight Shape Map Object
+latlon.xy            latlon.xy
+lon.rescale          transform the latitude
+map.xylim            get the limit of x-axis and y-axis
+needNewMap           Need New Map
+nzquakes             Earthquakes in New Zealand
+order.match          Plot an iNZight Map
+plot.inzmap          Plot an iNZight Map
+plot.inzshapemap     Plot an iNZight Shape Map
+shape.extract        Plot an iNZight Map
