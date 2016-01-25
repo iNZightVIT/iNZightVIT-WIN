@@ -1,12 +1,13 @@
 col.fun	col.fun
-col.missing	col.missing
 color.bind	color.bind
 create.inz.mapplot	create.inz.mapplot
+create.inz.shapemapplot	create.inz.shapemapplot
 data.trans	data.trans
 Get.map.size	Get.map.size
 getNewMap	getNewMap
 iNZightMap	iNZightMap
 iNZightShapeMap	iNZightShapeMap
+is.google.map	is.google.map
 latlon.xy	latlon.xy
 lon.rescale	lon.rescale
 map.xylim	map.xylim
@@ -14,6 +15,8 @@ needNewMap	needNewMap
 nzquakes	nzquakes
 order.match	order.match
 plot.inzightmap	iNZightMap
+plot.inzightshapemap	plot.inzightshapemap
 plot.inzmap	plot.inzmap
 plot.inzshapemap	plot.inzshapemap
 shape.extract	shape.extract
+win.ratio	win.ratio
