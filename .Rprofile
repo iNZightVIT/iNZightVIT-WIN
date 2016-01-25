@@ -31,10 +31,6 @@ local({
 Sys.setenv("R_HOME" = file.path(getwd(), "prog_files"))
 .libPaths(file.path(getwd(), "prog_files", "library"))
 
-### BETA DEVELOPMENT STUFF:
-install.packages("maptools")
-library(iNZightModules)
-library(iNZightMaps)
 
 # Loading a splash screen in the case where we're minimising VIT
 # Suppressing messages and warnings so that the console remains clean
