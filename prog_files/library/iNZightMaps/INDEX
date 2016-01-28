@@ -1,6 +1,5 @@
 Get.map.size         Get the size of the map in pixels
 col.fun              Color Specification
-color.bind           Plot an iNZight Map
 create.inz.mapplot   title
 create.inz.shapemapplot
                      draw a shape file ...
@@ -8,6 +7,7 @@ data.trans           data transformation
 getNewMap            Get an new map object
 iNZightMap           Create an iNZight Map Object
 iNZightShapeMap      Create an iNZight Shape Map Object
+innerLim             inner limit
 is.google.map        Is Google Map?
 latlon.xy            latlon.xy
 lon.rescale          transform the latitude
@@ -15,9 +15,14 @@ map.xylim            get the limit of x-axis and y-axis
 needNewMap           Need New Map
 nzquakes             Earthquakes in New Zealand
 order.match          Plot an iNZight Map
+outerLim             outer limit
 plot.inzightshapemap
                      Create an iNZight Shape Map Object
 plot.inzmap          Plot an iNZight Map
 plot.inzshapemap     Plot an iNZight Shape Map
+re.scale             rearrange the limit
 shape.extract        extract and create a shape object
+subByLim             subset by limit
 win.ratio            compute the ratio of the window
+within               identify the which set of latitude and
+                     longitude are within the limit
