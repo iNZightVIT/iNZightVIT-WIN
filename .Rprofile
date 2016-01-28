@@ -21,7 +21,7 @@ options(help_type="html") ##, warn = -1)
 local({
   r <- getOption("repos")
   r["CRAN"] <- "http://cran.stat.auckland.ac.nz"
-  options(repos=r)
+  options(repos = r)
 })
 
 # Sometimes we have the case where packages can't be found,
@@ -35,33 +35,36 @@ Sys.setenv("R_HOME" = file.path(getwd(), "prog_files"))
 # Loading a splash screen in the case where we're minimising VIT
 # Suppressing messages and warnings so that the console remains clean
 # Any 'built under different version' warnings should be safely ignored
-suppressPackageStartupMessages({
-    library(grDevices)
-    library(graphics)
-    library(grid)
-    suppressWarnings({
-        library(png)
-    })
-})
-dev.new(width = 3.5, height = 2)
-grid.newpage()
+# suppressPackageStartupMessages({
+#     library(grDevices)
+#     library(graphics)
+#     library(grid)
+#     suppressWarnings({
+#         library(png)
+#     })
+# })
+
+grDevices::dev.new(width = 5, height = 2)
+grid::grid.newpage()
 # Will try to draw a raster if possible, otherwise an array of pixels
-splashImg <- readPNG(system.file("images", "inzightvit-splash.png", package = "vit"), exists("rasterImage"))
-grid.raster(splashImg, width = unit(3.5, "inches"), height = unit(2, "inches"))
+
+splashImg <- png::readPNG(file.path(getwd(), "prog_files", "images", "inzight-banner.png"),
+                          exists("rasterImage"))
+grid::grid.raster(splashImg, width = grid::unit(360, "points"), height = grid::unit(60, "points"))
 
 message("(Dept of Statistics, Uni. of Auckland)")
 message("")
-message("Please wait while iNZightVIT loads...")
+message("Please wait while iNZight loads...")
 
-suppressWarnings({
-    library(vit)
+suppressPackageStartupMessages({
+  library(iNZight)
 })
 
 # Killing the splash screen, assigning to remove print
-tmp <- dev.off()
+tmp <- grDevices::dev.off()
 rm(tmp)
 
 # Let's go!
-iNZightVIT(disposeR = TRUE)
+iNZight(disposeR = TRUE)
 # the `disposeR = TRUE` makes sure when a user closes iNZight, they
 # close the entire R session (but not if they open it through R!)
