@@ -44,27 +44,27 @@ Sys.setenv("R_HOME" = file.path(getwd(), "prog_files"))
 #     })
 # })
 
-grDevices::dev.new(width = 5, height = 2)
-grid::grid.newpage()
+#grDevices::dev.new(width = 5, height = 2)
+#grid::grid.newpage()
 # Will try to draw a raster if possible, otherwise an array of pixels
 
-splashImg <- png::readPNG(file.path(getwd(), "prog_files", "images", "inzight-banner.png"),
-                          exists("rasterImage"))
-grid::grid.raster(splashImg, width = grid::unit(360, "points"), height = grid::unit(60, "points"))
+#splashImg <- png::readPNG(file.path(getwd(), "prog_files", "images", "inzight-banner.png"),
+#                          exists("rasterImage"))
+#grid::grid.raster(splashImg, width = grid::unit(360, "points"), height = grid::unit(60, "points"))
 
-message("(Dept of Statistics, Uni. of Auckland)")
-message("")
-message("Please wait while iNZight loads...")
+#message("(Dept of Statistics, Uni. of Auckland)")
+#message("")
+#message("Please wait while iNZight loads...")
 
-suppressPackageStartupMessages({
-  library(iNZight)
-})
+#suppressPackageStartupMessages({
+#  library(iNZight)
+#})
 
 # Killing the splash screen, assigning to remove print
-tmp <- grDevices::dev.off()
-rm(tmp)
+#tmp <- grDevices::dev.off()
+#rm(tmp)
 
 # Let's go!
-iNZight(disposeR = TRUE)
+#iNZight(disposeR = TRUE)
 # the `disposeR = TRUE` makes sure when a user closes iNZight, they
 # close the entire R session (but not if they open it through R!)

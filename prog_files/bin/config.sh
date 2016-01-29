@@ -5,7 +5,7 @@
 ## Usage:
 ##   R CMD config [options] [VAR]
 
-## Copyright (C) 2002-13 The R Core Team
+## Copyright (C) 2002-2015 The R Core Team
 ##
 ## This document is free software; you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -18,13 +18,13 @@
 ## General Public License for more details.
 ##
 ## A copy of the GNU General Public License is available at
-## http://www.r-project.org/Licenses/
+## https://www.R-project.org/Licenses/
 
-revision='$Revision: 62610 $'
+revision='$Revision: 69170 $'
 version=`set - ${revision}; echo ${2}`
 version="R configuration information retrieval script: ${R_VERSION} (r${version})
 
-Copyright (C) 2002-13 The R Core Team.
+Copyright (C) 2002-2015 The R Core Team.
 This is free software; see the GNU General Public License version 2
 or later for copying conditions.  There is NO warranty."
 
@@ -38,9 +38,9 @@ Options:
   -h, --help            print short help message and exit
   -v, --version         print version info and exit
       --cppflags        print pre-processor flags required to compile
-			a program using R as a library
-      --ldflags         print linker flags needed for linking against
-			the R library
+			a C/C++ file using R as a library
+      --ldflags         print linker flags needed for linking a front-end
+                        against the R library
       --no-user-files  ignore customization files under ~/.R
       --no-site-files  ignore site customization files under R_HOME/etc
 
@@ -48,16 +48,22 @@ Variables:
   BLAS_LIBS     flags needed for linking against external BLAS libraries
   CC            C compiler command
   CFLAGS        C compiler flags
-  CPICFLAGS     special flags for compiling C code to be turned into a
+  CPICFLAGS     special flags for compiling C code to be included in a
 		shared library
   CPP           C preprocessor
   CPPFLAGS      C/C++ preprocessor flags, e.g. -I<dir> if you have
 		headers in a nonstandard directory <dir>
-  CXX           C++ compiler command
-  CXXCPP        C++ preprocessor
-  CXXFLAGS      C++ compiler flags
-  CXXPICFLAGS   special flags for compiling C++ code to be turned into a
+  CXX           compiler command for C++98 code
+  CXXCPP        C++98 preprocessor
+  CXXFLAGS      compiler flags for CXX
+  CXXPICFLAGS   special flags for compiling C++98 code to be included in a
 		shared library
+  CXX1X         compiler command for C++11 code
+  CXX1XSTD      flag used with CXX1X to enable C++11 support
+  CXX1XFLAGS    further compiler flags for CXX1X
+  CXX1XPICFLAGS
+                special flags for compiling C++11 code to be included in
+                a shared library
   DYLIB_EXT	file extension (including '.') for dynamic libraries
   DYLIB_LD      command for linking dynamic libraries which contain
 		object files from a C or Fortran compiler only
@@ -143,6 +149,9 @@ query="${MAKE} -s ${makefiles} print R_HOME=${R_HOME}"
 
 LIBR=`eval $query VAR=LIBR`
 STATIC_LIBR=`eval $query VAR=STATIC_LIBR`
+MAIN_LDFLAGS=`eval $query VAR=MAIN_LDFLAGS`
+LIBS=`eval $query VAR=LIBS`
+
 
 if test -n "${R_ARCH}"; then
   includes="-I${R_INCLUDE_DIR} -I${R_INCLUDE_DIR}${R_ARCH}"
@@ -172,14 +181,15 @@ while test -n "${1}"; do
       exit 0
       ;;
     --ldflags)
+      ## changed in R 3.1.0 to be those needed to link a front-end
       if test -z "${LIBR}"; then
 	if test -z "${STATIC_LIBR}"; then
 	  echo "R was not built as a library" >&2
 	else
-	  echo "${STATIC_LIBR}"
+	  echo "${MAIN_LDFLAGS} ${LDFLAGS} ${STATIC_LIBR}"
 	fi
       else
-	echo "${LIBR}"
+	echo "${MAIN_LDFLAGS} ${LDFLAGS} ${LIBR} ${LIBS}"
       fi
       exit 0
       ;;
@@ -219,7 +229,7 @@ if test "${personal}" = "yes"; then
       makefiles="${makefiles} -f ${HOME}/.R/Makevars"
     fi
   else
-    . ${R_HOME}/etc/Renviron
+    . ${R_HOME}/etc${R_ARCH}/Renviron
     if test -n "${R_MAKEVARS_USER}"; then
       makefiles="${makefiles} -f ${R_MAKEVARS_USER}"
     elif test -f "${HOME}/.R/Makevars-${R_PLATFORM}"; then
@@ -232,7 +242,7 @@ fi
 query="${MAKE} -s ${makefiles} print R_HOME=${R_HOME}"
 
 ok_c_vars="CC CFLAGS CPICFLAGS CPP CPPFLAGS"
-ok_cxx_vars="CXX CXXCPP CXXFLAGS CXXPICFLAGS"
+ok_cxx_vars="CXX CXXCPP CXXFLAGS CXXPICFLAGS CXX1X CXX1XSTD CXX1XFLAGS CXX1XPICFLAGS"
 ok_dylib_vars="DYLIB_EXT DYLIB_LD DYLIB_LDFLAGS"
 ok_objc_vars="OBJC OBJCFLAGS"
 ok_java_vars="JAVA JAVAC JAVAH JAR JAVA_HOME JAVA_LIBS JAVA_CPPFLAGS"
@@ -240,7 +250,7 @@ ok_f77_vars="F77 FFLAGS FPICFLAGS FLIBS SAFE_FFLAGS FC FCFLAGS FCPICFLAGS"
 ok_ld_vars="LDFLAGS"
 ok_shlib_vars="SHLIB_CFLAGS SHLIB_CXXLD SHLIB_CXXLDFLAGS SHLIB_EXT SHLIB_FFLAGS SHLIB_LD SHLIB_LDFLAGS SHLIB_FCLD SHLIB_FCLDFLAGS"
 ok_tcltk_vars="TCLTK_CPPFLAGS TCLTK_LIBS"
-ok_other_vars="BLAS_LIBS LAPACK_LIBS MAKE LIBnn"
+ok_other_vars="BLAS_LIBS LAPACK_LIBS MAKE LIBnn LOCAL_SOFT"
 
 ## Can we do this elegantly using case?
 

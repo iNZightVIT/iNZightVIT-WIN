@@ -74,6 +74,7 @@ grDevices	grDevices-package
 grey	gray
 grey.colors	gray.colors
 group	plotmath
+grSoftVersion	grSoftVersion
 hat	plotmath
 hcl	hcl
 heat.colors	palettes
@@ -102,7 +103,6 @@ plain	plotmath
 plotmath	plotmath
 png	png
 postscript	postscript
-postscriptFont	grDevices-defunct
 postscriptFonts	postscriptFonts
 pretty.Date	pretty.Date
 pretty.POSIXt	pretty.Date
