@@ -4,7 +4,6 @@ $.person	person
 .DollarNames.default	rcompgen
 .DollarNames.environment	rcompgen
 .DollarNames.list	rcompgen
-.S3methods	methods
 ?	Question
 ??	help.search
 adist	adist
@@ -40,7 +39,6 @@ bug.report	bug.report
 build	PkgUtils
 c.person	person
 capture.output	capture.output
-changedFiles	changedFiles
 check	PkgUtils
 checkCRAN	mirrorAdmin
 choose.dir	choose.dir
@@ -86,7 +84,6 @@ edit.vignette	vignette
 emacs	edit
 example	example
 file.edit	file.edit
-fileSnapshot	changedFiles
 file_test	filetest
 Filters	choose.files
 find	apropos
@@ -94,7 +91,6 @@ findLineNum	findLineNum
 fix	fix
 fixInNamespace	getFromNamespace
 flush.console	flush.console
-format.object_size	object.size
 format.person	person
 formatOL	format
 formatUL	format
@@ -130,9 +126,6 @@ help.request	help.request
 help.search	help.search
 help.start	help.start
 history	savehistory
-hsearch_db	hsearch-utils
-hsearch_db_concepts	hsearch-utils
-hsearch_db_keywords	hsearch-utils
 INSTALL	INSTALL
 install.packages	install.packages
 installed.packages	installed.packages
@@ -171,8 +164,6 @@ pico	edit
 print.bibentry	bibentry
 print.Bibtex	toLatex
 print.browseVignettes	browseVignettes
-print.changedFiles	changedFiles
-print.fileSnapshot	changedFiles
 print.getAnywhere	getAnywhere
 print.hsearch	help.search
 print.Latex	toLatex
@@ -191,7 +182,6 @@ prompt	prompt
 prompt.data.frame	prompt
 prompt.default	prompt
 promptData	promptData
-promptImport	prompt
 promptPackage	promptPackage
 Question	Question
 rc.getOption	rcompgen
@@ -222,7 +212,6 @@ relist.matrix	relist
 REMOVE	REMOVE
 remove.packages	remove.packages
 removeSource	removeSource
-RHOME	RHOME
 Rprof	Rprof
 Rprofmem	Rprofmem
 Rscript	Rscript
@@ -240,8 +229,6 @@ RweaveLatexOptions	SweaveUtils
 RweaveLatexSetup	RweaveLatex
 RweaveLatexWritedoc	SweaveUtils
 RweaveTryStop	SweaveUtils
-R_INSTALL_TAR	INSTALL
-R_WIN_INTERNET2	setInternet2
 savehistory	savehistory
 select.list	select.list
 sessionInfo	sessionInfo
@@ -264,7 +251,6 @@ str.default	str
 strOptions	str
 summary.packageStatus	packageStatus
 summaryRprof	summaryRprof
-suppressForeignCheck	globalVariables
 Sweave	Sweave
 SweaveHooks	SweaveUtils
 SweaveSyntaxLatex	Sweave

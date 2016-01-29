@@ -1,0 +1,20 @@
+Package: iNZightMR
+Type: Package
+Title: iNZightMR
+Version: 2.2
+Date: 2016-01-22
+Authors@R: c(person("Junjie", "Zeng", role = c("aut", "cre"),
+    email = "jzen188@aucklanduni.ac.nz"),
+    person("Simon", "Potter", role = c("aut"))
+    )
+Depends: R (>= 2.13)
+Imports: iNZightRegression, grid
+Suggests: iNZight, iNZightPlots
+LazyData: true
+Description: Interaction and analysis of Multiple Response Data
+License: GPL-2
+RoxygenNote: 5.0.1
+Author: Junjie Zeng [aut, cre],
+  Simon Potter [aut]
+Maintainer: Junjie Zeng <jzen188@aucklanduni.ac.nz>
+Built: R 3.0.2; ; 2016-01-28 23:04:17 UTC; unix

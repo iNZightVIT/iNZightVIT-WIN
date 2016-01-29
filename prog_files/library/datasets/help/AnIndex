@@ -56,7 +56,6 @@ mtcars	mtcars
 nhtemp	nhtemp
 Nile	Nile
 nottem	nottem
-npk	npk
 occupationalStatus	occupationalStatus
 Orange	Orange
 OrchardSprays	OrchardSprays
@@ -97,7 +96,6 @@ UKgas	UKgas
 UKLungDeaths	UKLungDeaths
 USAccDeaths	USAccDeaths
 USArrests	USArrests
-UScitiesD	eurodist
 USJudgeRatings	USJudgeRatings
 USPersonalExpenditure	USPersonalExpenditure
 uspop	uspop

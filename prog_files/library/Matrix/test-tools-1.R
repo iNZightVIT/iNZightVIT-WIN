@@ -40,7 +40,7 @@ assertError <- function(expr, verbose=getOption("verbose")) {
     t.res <- tryCatch(expr, error = function(e) e)
     if(!inherits(t.res, "error"))
 	stop(d.expr, "\n\t did not give an error", call. = FALSE)
-    if(verbose) cat("Asserted Error:", conditionMessage(t.res),"\n")
+    cat("Asserted Error:", conditionMessage(t.res),"\n")
     invisible(t.res)
 }
 
@@ -129,38 +129,19 @@ tryCatch.W.E <- function(expr)
 }
 
 
-##' Is 'x' a valid object of class 'class' ?
 isValid <- function(x, class) isTRUE(validObject(x, test=TRUE)) && is(x, class)
-
-##' Signal an error (\code{\link{stop}}), if \code{x} is not a valid object
-##' of class \code{class}.
-##'
-##' @title Stop if Not a Valid Object of Given Class
-##' @param x any \R object
-##' @param class character string specifying a class name
-##' @return \emph{invisibly}, the value of \code{\link{validObject}(x)}, i.e.,
-##'   \code{TRUE}; otherwise an error will have been signalled
-##' @author Martin Maechler, March 2015
-stopifnotValid <- function(x, class) {
-    if(!is(x, class))
-	stop(sprintf("%s is not of class \"%s\"",
-		     deparse(substitute(x)), class), call. = FALSE)
-    invisible(validObject(x))
-}
 
 ## Some (sparse) Lin.Alg. algorithms return 0 instead of NA, e.g.
 ## qr.coef(<sparseQR>, y).
 ## For those cases, need to compare with a version where NA's are replaced by 0
 mkNA.0 <- function(x) { x[is.na(x)] <- 0 ; x }
 
-##' ... : further arguments passed to all.equal() such as 'check.attributes'
-is.all.equal <- function(x,y, tol = .Machine$double.eps^0.5, ...)
-    identical(TRUE, all.equal(x,y, tolerance=tol, ...))
-is.all.equal3 <- function(x,y,z, tol = .Machine$double.eps^0.5, ...)
-    is.all.equal(x,y, tol=tol, ...) && is.all.equal(y,z, tol=tol, ...)
 
-is.all.equal4 <- function(x,y,z,u, tol = .Machine$double.eps^0.5, ...)
-    is.all.equal3(x,y,z, tol=tol, ...) && isTRUE(all.equal(z,u, tolerance=tol, ...))
+is.all.equal3 <- function(x,y,z, tol = .Machine$double.eps^0.5)
+    isTRUE(all.equal(x,y, tolerance=tol)) && isTRUE(all.equal(y,z, tolerance=tol))
+
+is.all.equal4 <- function(x,y,z,u, tol = .Machine$double.eps^0.5)
+    is.all.equal3(x,y,z, tol=tol) && isTRUE(all.equal(z,u, tolerance=tol))
 
 ## A version of all.equal() for the slots
 all.slot.equal <- function(x,y, ...) {
@@ -218,9 +199,9 @@ relErrV <- function(target, current) {
 pkgRversion <- function(pkgname)
     sub("^R ([0-9.]+).*", "\\1", packageDescription(pkgname)[["Built"]])
 
-showSys.time <- function(expr, ...) {
+showSys.time <- function(expr) {
     ## prepend 'Time' for R CMD Rdiff
-    st <- system.time(expr, ...)
+    st <- system.time(expr)
     writeLines(paste("Time", capture.output(print(st))))
     invisible(st)
 }
@@ -250,10 +231,9 @@ assert.EQ <- function(target, current, tol = if(showOnly) 0 else 1e-15,
     T <- isTRUE(ae <- all.equal(target, current, tolerance = tol, ...))
     if(showOnly) return(ae) else if(giveRE && T) { ## don't show if stop() later:
 	ae0 <- if(tol == 0) ae else all.equal(target, current, tolerance = 0, ...)
-	if(!isTRUE(ae0)) writeLines(ae0)
+	if(!isTRUE(ae0)) cat(ae0,"\n")
     }
     if(!T) stop("all.equal() |-> ", paste(ae, collapse=sprintf("%-19s","\n")))
-    else if(giveRE) invisible(ae0)
 }
 
 ##' a version with other "useful" defaults (tol, giveRE, check.attr..)
@@ -266,11 +246,10 @@ assert.EQ. <- function(target, current,
 
 ### ------- Part II  -- related to matrices, but *not* "Matrix" -----------
 
-add.simpleDimnames <- function(m, named=FALSE) {
+add.simpleDimnames <- function(m) {
     stopifnot(length(d <- dim(m)) == 2)
-    dimnames(m) <- setNames(list(if(d[1]) paste0("r", seq_len(d[1])),
-				 if(d[2]) paste0("c", seq_len(d[2]))),
-			    if(named) c("Row", "Col"))
+    dimnames(m) <- list(if(d[1]) paste0("r", seq_len(d[1])),
+                        if(d[2]) paste0("c", seq_len(d[2])))
     m
 }
 
@@ -316,28 +295,4 @@ chk.matrix <- function(M) {
 isOrthogonal <- function(x, tol = 1e-15) {
     all.equal(diag(as(zapsmall(crossprod(x)), "diagonalMatrix")),
               rep(1, ncol(x)), tolerance = tol)
-}
-
-.M.DN <- Matrix:::.M.DN ## from ../R/Auxiliaries.R :
-dnIdentical  <- function(x,y) identical(.M.DN(x), .M.DN(y))
-dnIdentical3 <- function(x,y,z) identical3(.M.DN(x), .M.DN(y), .M.DN(z))
-
-##' @title Are two matrices practically equal - including dimnames
-##' @param M1, M2: two matrices to be compared, maybe of _differing_ class
-##' @param tol
-##' @param dimnames logical indicating if dimnames must be equal
-##' @param ... passed to all.equal(M1, M2)
-##' @return TRUE or FALSE
-is.EQ.mat <- function(M1, M2, tol = 1e-15, dimnames = TRUE, ...) {
-    (if(dimnames) dnIdentical(M1,M2) else TRUE) &&
-    is.all.equal(unname(as(M1, "matrix")),
-		 unname(as(M2, "matrix")), tol=tol, ...)
-}
-
-##' see is.EQ.mat()
-is.EQ.mat3 <- function(M1, M2, M3, tol = 1e-15, dimnames = TRUE, ...) {
-    (if(dimnames) dnIdentical3(M1,M2,M3) else TRUE) &&
-    is.all.equal3(unname(as(M1, "matrix")),
-		  unname(as(M2, "matrix")),
-		  unname(as(M3, "matrix")), tol=tol, ...)
 }

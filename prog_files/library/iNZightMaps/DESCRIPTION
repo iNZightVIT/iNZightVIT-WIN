@@ -1,0 +1,21 @@
+Package: iNZightMaps
+Type: Package
+Title: iNZightMaps
+Version: 0.2-900
+Authors@R: c(person("Eric", "Lim", role = c("aut"),
+                    email = "jlim062@aucklanduni.ac.nz"),
+             person("Jason", "Wen", role = c("cre", "aut"),
+	            email = "jwen246@aucklanduni.ac.nz"),
+             person("Tom", "Elliott", role = "aut",
+	            email = "tom.elliott@auckland.ac.nz"))
+Depends: R (>= 3.0)
+Imports: RgoogleMaps, maptools, iNZightPlots, grid
+Suggests: iNZight
+Description: Simple plotting functions for geographical data.
+License: GPL-2
+RoxygenNote: 5.0.1
+Author: Eric Lim [aut],
+  Jason Wen [cre, aut],
+  Tom Elliott [aut]
+Maintainer: Jason Wen <jwen246@aucklanduni.ac.nz>
+Built: R 3.0.2; ; 2016-01-28 23:04:19 UTC; unix

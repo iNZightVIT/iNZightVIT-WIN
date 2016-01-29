@@ -58,7 +58,8 @@ From the announcement of the change (2001-Feb-05)
     To avoid any anomalies, the versions of the same files in R versions
     1.0.0 to 1.2.1 may also be used under LGPL or GPL.
 
-Import libraries are no longer used under Windows.
+As from R 2.3.0 import libraries are no longer used under Windows, and
+as from R 2.4.0 fewer export files are used under AIX.
 
 Some contributed files are also covered by the Library General Public License.
 These include (see also below)
@@ -110,17 +111,22 @@ in part
 	Copyright (C) 1997 R. Gentleman & R. Ihaka
 	Copyright (C) 1997, 1998 M. Maechler
 
-share/licenses/*
+shares/licenses/*
 
 	See the individual files.
 
 share/texmf/bibtex/bst/jss.bst
 
-	Copyright 1994-2007 Patrick W Daly
+	Copyright 1994-2005 Patrick W Daly
 
 share/texmf/tex/latex/jss.cls
 
 	Copyright: (C) Achim Zeileis
+
+share/texmf/tex/latex/upquote.sty
+
+	Copyright 2000 Michael A. Covington.
+	Copyright 2003 Michael A. Covington, Frank Mittelbach.
 
 src/library/graphics/R/mosaicplot.R
 
@@ -141,7 +147,6 @@ src/library/splines/R/splineClasses.R
 src/library/datasets/man/austres.Rd
 src/library/datasets/man/beavers.Rd
 src/library/datasets/man/lh.Rd
-src/library/datasets/man/npk.Rd
 src/library/datasets/man/rock.Rd
 src/library/datasets/man/UKLungDeaths.Rd
 src/library/datasets/man/USAccDeaths.Rd
@@ -259,91 +264,22 @@ src/main/xspline.c
  * notice remain intact.
 
 
-src/modules/nano{ftp,http}.c
-
- Copyright (C) 1998-2001 Daniel Veillard.  All Rights Reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is fur-
-nished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-
-NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-
 src/modules/lapack/dlapack.f, cmplx.f, dlamc.f
 
   Extracted from
-  *  -- LAPACK computational routine (version 3.5.0) --
+  *  -- LAPACK computational routine (version 3.4.0) --
   *  -- LAPACK is a software package provided by Univ. of Tennessee,    --
   *  -- Univ. of California Berkeley, Univ. of Colorado Denver and NAG Ltd..--
-  *     September 2012
+  *     November 2011
 
-  where the version number, providers and date vary by subroutine.
+  where the version number and date vary by subroutine.
 
-  LAPACK 3.5.0 contains a LICENSE file, copied to src/modules/lapack
-  (but many of these routines were originally copied from earlier
-  versions of LAPACK).  For binary distributions it is reproduced here:
+  The LAPACK README says
 
-  Copyright (c) 1992-2011 The University of Tennessee and The University
-                          of Tennessee Research Foundation.  All rights
-                          reserved.
-  Copyright (c) 2000-2011 The University of California Berkeley. All
-                          rights reserved.
-  Copyright (c) 2006-2012 The University of Colorado Denver.  All rights
-                          reserved.
+    It is freely-available software, and is copyrighted.
 
-  $COPYRIGHT$
+  but no copyright statements appear in the sources.
 
-  Additional copyrights may follow
-
-  $HEADER$
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are
-  met:
-
-  - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-
-  - Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer listed
-    in this license in the documentation and/or other materials
-    provided with the distribution.
-
-  - Neither the name of the copyright holders nor the names of its
-    contributors may be used to endorse or promote products derived from
-    this software without specific prior written permission.
-
-   The copyright holders provide no reassurances that the source code
-   provided does not infringe any patent, copyright, or any other
-  intellectual property rights of third parties.  The copyright holders
-  disclaim any liability to any recipient for claims brought against
-  recipient by any third party for infringement of that parties
-  intellectual property rights.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 src/extra/xdr/*
 
@@ -354,7 +290,7 @@ src/extra/xdr/*
 
 src/extra/zlib/README, *.c, *.h
 
-  Taken from zlib-1.2.8 (C) 1995-2013 Jean-loup Gailly and Mark Adler
+  Taken from zlib-1.2.7 (C) 1995-2012 Jean-loup Gailly and Mark Adler
   See src/extra/zlib/README for the licence.
 
 src/main/connections.c, src/main/gzio.h
@@ -372,9 +308,9 @@ src/extra/pcre/LICENCE
 src/extra/pcre/*.[ch]
 src/main/valid_utf8.h
 
-   Copyright (c) 1997-2013 University of Cambridge
+   Copyright (c) 1997-2012 University of Cambridge
    All rights reserved.
-   Copyright(c) 2009-2013 Zoltan Herczeg
+   Copyright(c) 2009-2012 Zoltan Herczeg
 
 See file src/extra/pcre/LICENCE.  For binary builds of R that requires
 us to include
@@ -458,27 +394,6 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 
-src/extra/tzone/strftime.c
-/*
-  Based on code from tzcode, which is turn said to be
-  'Based on the UCB version with the copyright notice appearing below.'
-
-** Copyright (c) 1989 The Regents of the University of California.
-** All rights reserved.
-**
-** Redistribution and use in source and binary forms are permitted
-** provided that the above copyright notice and this paragraph are
-** duplicated in all such forms and that any documentation,
-** advertising materials, and other materials related to such
-** distribution and use acknowledge that the software was developed
-** by the University of California, Berkeley. The name of the
-** University may not be used to endorse or promote products derived
-** from this software without specific prior written permission.
-** THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
-** IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
-** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-*/
-
 
 src/library/tools/src/md5.[ch]
 
@@ -492,12 +407,12 @@ Based on gettextize from gettext 0.17
    Distributed under the GNU Library General Public License
    version 2 or later.
 
-src/include/vg/memcheck.h
-src/include/vg/valgrind.h
+src/include/memcheck.h
+src/include/valgrind.h
 
-From valgrind 3.10.1,
+From valgrind,
 
-   Copyright (C) 2000-2013 Julian Seward.  All rights reserved.
+   Copyright (C) 2000-2005 Julian Seward.  All rights reserved.
 
 
 src/main/mkdtemp.c
@@ -531,7 +446,9 @@ share/licenses/LGPL-2
 share/licenses/LGPL-2.1
 share/licenses/LGPL-3
 src/main/strdup.c
+tools/config.quess
 tools/config.rpath
+tools/config.sub
 tools/help2man.pl
 tools/ltmain.sh
 tools/mdate-sh
@@ -539,20 +456,11 @@ tools/missing
 
    Copyright various dates Free Software Foundation
 
-tools/config.quess
-tools/config.sub
 
-   Copyright 1992-2013 Free Software Foundation.  
-   The Exception to GPL-3 applies.
-
-tools/install-sh
+tools/install-sh:
 
    Copyright (C) 1994 X Consortium
 
-m4/cxx_11.m4
-#   Copyright (c) 2008 Benjamin Kosnik <bkoz@redhat.com>
-#   Copyright (c) 2012 Zack Weinberg <zackw@panix.com>
-#   Copyright (c) 2013 Roy Stogner <roystgnr@ices.utexas.edu>
 
 m4/stat-time.m4
 
@@ -581,11 +489,6 @@ src/appl/{dchdc,dpfa,dpbsl,dpoco,dpodi,dpofa,dposl,dqrdc,
 
 are part of LINPACK, with authors J.J. Dongarra, Cleve Moler and
 G.W. Stewart
-
-src/appl/dqrdc2.f is based on dqrdc.f by G.W. Stewart.
-
-src/appl/lbfgsb.c is based on the work of Zhu, Byrd, Lu-Chen and
-Nocedal, which does not state any copyright.
 
 
 Windows version
@@ -721,13 +624,3 @@ libtiff: the Makefiles and configuration headers used are in the
 src/gnuwin32/bitmap direcctory.  The exact sources used for these
 libraries are available on request to R-windows@r-project.org (you
 will need to specify which binary installer version).
-
-A binay build may contain compiled sources from cairographics,
-distributed under LGPL 2.1 (our choice) or MPL 1.1.  The binary
-distribution used is that at http://www.rforge.net/Cairo/files/ .
-
-A binary build may contain compiled components from ICU, whose license
-can be viewed at
-http://source.icu-project.org/repos/icu/icu/trunk/license.html: the
-sources and binary libraries used are available at
-http://www.stats.ox.ac.uk/pub/Rtools/ .

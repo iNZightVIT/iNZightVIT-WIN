@@ -34,7 +34,6 @@ Foreign                 Foreign Function Interface
 ISOdatetime             Date-time Conversion Functions from Numeric
                         Representations
 InternalMethods         Internal Generic Functions
-La_version              LAPACK Version
 Logic                   Logical Operators
 Memory                  Memory Available for Data Storage
 Memory-limits           Memory Limits in R
@@ -67,6 +66,7 @@ Sys.setFileTime         Set File Time
 Sys.setenv              Set or Unset Environment Variables
 Sys.sleep               Suspend Execution for a Time Interval
 Sys.time                Get Current Date and Time
+Sys.timezone            Time Zones
 Sys.which               Find Full Paths to Executables
 Trig                    Trigonometric Functions
 UseMethod               Class Methods
@@ -101,8 +101,7 @@ autoload                On-demand Loading of Packages
 backsolve               Solve an Upper or Lower Triangular System
 base-package            The R Base Package
 basename                Manipulate File Paths
-bindenv                 Binding and Environment Locking, Active
-                        Bindings
+bindenv                 Binding and Environment Adjustments
 bitwNot                 Bitwise Logical Operations
 body                    Access to and Manipulation of the Body of a
                         Function
@@ -135,14 +134,12 @@ comment                 Query or Set a '"comment"' Attribute
 complex                 Complex Vectors
 conditions              Condition Handling and Recovery
 conflicts               Search for Masked Objects on the Search Path
-connections             Functions to Manipulate Connections (Files,
-                        URLs, ...)
+connections             Functions to Manipulate Connections
 contributors            R Project Contributors
 copyright               Copyrights of Files Used to Build R
 cosh                    Hyperbolic Functions
 crossprod               Matrix Crossproduct
 cumsum                  Cumulative Sums, Products, and Extremes
-curlGetHeaders          Retrieve Headers from URLs
 cut                     Convert Numeric to Factor
 cut.POSIXt              Convert a Date or Date-Time Object to a Factor
 data.class              Object Classes
@@ -161,7 +158,6 @@ dim                     Dimensions of an Object
 dimnames                Dimnames of an Object
 dir.create              Manipulaton of Directories and File Permissions
 do.call                 Execute a Function Call
-dontCheck               Identity Function to Suppress Checking
 double                  Double-Precision Vectors
 dput                    Write an Object to a File or Recreate it
 drop                    Drop Redundant Extent Information
@@ -179,18 +175,16 @@ exists                  Is an Object Defined?
 expand.grid             Create a Data Frame from All Combinations of
                         Factors
 expression              Unevaluated Expressions
-extSoftVersion          Report Versions of Third-Party Software
 factor                  Factors
 file.access             Ascertain File Accessibility
 file.choose             Choose a File Interactively
 file.info               Extract File Information
 file.path               Construct Path to File
-file.show               Display One or More Text Files
+file.show               Display One or More Files
 files                   File Manipulation
 find.package            Find Packages
 findInterval            Find Interval Numbers or Indices
 force                   Force Evaluation of an Argument
-forceAndCall            Call a function with Some Arguments Forced
 formals                 Access to and Manipulation of the Formal
                         Arguments
 format                  Encode in a Common Format
@@ -248,10 +242,8 @@ l10n_info               Localization Information
 labels                  Find Labels from Object
 lapply                  Apply a Function over a List or Vector
 length                  Length of an Object
-lengths                 Lengths of List or Vector Elements
 levels                  Levels Attributes
-libcurlVersion          Report Version of libcurl
-library                 Loading/Attaching and Listing of Packages
+library                 Loading and Listing of Packages
 library.dynam           Loading DLLs from Packages
 license                 The R License Terms
 list                    Lists - Generic and Dotted Pairs
@@ -306,7 +298,6 @@ outer                   Outer Product of Arrays
 parse                   Parse Expressions
 paste                   Concatenate Strings
 path.expand             Expand File Paths
-pcre_config             Report Configuration Options for PCRE
 pmatch                  Partial String Matching
 polyroot                Find Zeros of a Real or Complex Polynomial
 pos.to.env              Convert Positions in the Search Path to
@@ -412,7 +403,6 @@ taskCallbackManager     Create an R-level Task Callback Manager
 tempfile                Create Names for Temporary Files
 textConnection          Text Connections
 tilde                   Tilde Operator
-timezones               Time Zones
 toString                Convert an R Object to a Character String
 topenv                  Top Level Environment
 trace                   Interactive Tracing and Debugging of Calls to a
@@ -420,7 +410,6 @@ trace                   Interactive Tracing and Debugging of Calls to a
 traceback               Print Call Stacks
 tracemem                Trace Copying of Objects
 transform               Transform an Object, for Example a Data Frame
-trimws                  Remove Leading/Trailing Whitespace
 try                     Try an Expression Allowing Error Recovery
 typeof                  The Type of an Object
 union                   Set Operations
@@ -428,15 +417,14 @@ unique                  Extract Unique Elements
 unlink                  Delete Files and Directories
 unlist                  Flatten Lists
 unname                  Remove 'names' or 'dimnames'
-utf8ToInt               Convert Integer Vectors to or from
-                        UTF-8-encoded Character Vectors
+utf8ToInt               Convert to or from UTF-8-encoded Character
+                        Vectors
 vector                  Vectors
 warning                 Warning Messages
 warnings                Print Warning Messages
 weekdays                Extract Parts of a POSIXt or Date Object
 which                   Which indices are TRUE?
-which.min               Where is the Min() or Max() or first TRUE or
-                        FALSE ?
+which.min               Where is the Min() or Max() ?
 with                    Evaluate an Expression in a Data Environment
 withVisible             Return both a value and its visibility
 write                   Write Data to a File

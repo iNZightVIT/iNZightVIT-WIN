@@ -1,13 +1,16 @@
 useDynLib(nlme, .registration=TRUE)
 
-importFrom(graphics, pairs, par, plot)
-import(stats)
+importFrom(graphics, pairs, plot)
 
 importFrom(lattice,
            Rows, bwplot, dotplot, llines, lpoints, lsegments, ltext,
            panel.abline, panel.bwplot, panel.dotplot,  panel.grid,
            panel.histogram, panel.linejoin, panel.loess, panel.superpose,
            panel.xyplot, splom, strip.default, trellis.par.get, xyplot)
+
+importFrom(stats,
+           anova, coef, fitted, formula, logLik, nobs, predict, qqnorm,
+           residuals, update, vcov)
 
 export(ACF, allCoef, asOneFormula, asTable, augPred, balancedGrouped,
        "coef<-", "coefficients<-", collapse, compareFits,
@@ -385,7 +388,6 @@ S3method(residuals, lme)
 S3method(residuals, lmeStruct)
 S3method(residuals, lmList)
 S3method(residuals, nlmeStruct)
-S3method(simulate, lme)
 S3method(solve, pdBlocked)
 S3method(solve, pdDiag)
 S3method(solve, pdIdent)

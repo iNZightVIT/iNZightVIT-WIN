@@ -26,7 +26,6 @@ parRapply	clusterApply
 parSapply	clusterApply
 parSapplyLB	clusterApply
 pvec	mcdummies
-R_PARALLEL_PORT	makeCluster
 setDefaultCluster	makeCluster
 splitIndices	splitIndices
 stopCluster	makeCluster
