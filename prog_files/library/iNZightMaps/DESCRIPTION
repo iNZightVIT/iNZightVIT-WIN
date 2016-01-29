@@ -14,10 +14,8 @@ Suggests: iNZight
 Description: Simple plotting functions for geographical data.
 License: GPL-2
 RoxygenNote: 5.0.1
-NeedsCompilation: no
-Packaged: 2016-01-29 00:48:18 UTC; tell029
 Author: Eric Lim [aut],
   Jason Wen [cre, aut],
   Tom Elliott [aut]
 Maintainer: Jason Wen <jwen246@aucklanduni.ac.nz>
-Built: R 3.2.2; ; 2016-01-29 00:48:19 UTC; unix
+Built: R 3.2.2; ; 2016-01-29 02:29:05 UTC; unix

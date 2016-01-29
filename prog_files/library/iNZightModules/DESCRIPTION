@@ -19,8 +19,6 @@ License: GPL-2
 Description: A suite of add-on modules for the iNZight GUI, including model
     fitting module, multiple response, time series, and some advanced plotting.
 RoxygenNote: 5.0.1
-NeedsCompilation: no
-Packaged: 2016-01-29 00:48:45 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Eric Lim [aut],
   Junjie Zeng [aut],
@@ -28,4 +26,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2016-01-29 00:48:45 UTC; unix
+Built: R 3.2.2; ; 2016-01-29 02:29:07 UTC; unix

@@ -14,9 +14,7 @@ LazyData: true
 Description: Interaction and analysis of Multiple Response Data
 License: GPL-2
 RoxygenNote: 5.0.1
-NeedsCompilation: no
-Packaged: 2016-01-29 00:47:38 UTC; tell029
 Author: Junjie Zeng [aut, cre],
   Simon Potter [aut]
 Maintainer: Junjie Zeng <jzen188@aucklanduni.ac.nz>
-Built: R 3.2.2; ; 2016-01-29 00:47:38 UTC; unix
+Built: R 3.2.2; ; 2016-01-29 02:29:02 UTC; unix

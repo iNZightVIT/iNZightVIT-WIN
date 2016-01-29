@@ -76,8 +76,6 @@ Collate: 'canvas-refclass.R' 'canvas-viewports.R'
        'methods-sampvar-proportion.R'
        'methods-sampvar-proportion-diff.R'
        'methods-sampvar-slope.R' 'stackPoints.R'
-NeedsCompilation: no
-Packaged: 2016-01-29 00:50:29 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Garrett Grolemund [aut],
   Simon Potter [aut],
@@ -85,4 +83,4 @@ Author: Tom Elliott [aut, cre],
   Vivian Li [ctb],
   Danny Chang [ctb]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.2.2; ; 2016-01-29 00:50:29 UTC; unix
+Built: R 3.2.2; ; 2016-01-29 02:29:14 UTC; unix
