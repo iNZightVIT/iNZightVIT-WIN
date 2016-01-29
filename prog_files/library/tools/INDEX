@@ -10,7 +10,9 @@ Rdiff                   Difference R Output Files
 Rdindex                 Generate Index from Rd Files
 SweaveTeXFilter         Strip R code out of Sweave file
 add_datalist            Add a 'datalist' File to a Package
+assertCondition         Asserting Error Conditions
 bibstyle                Select or define a bibliography style.
+buildVignette           Build one vignette
 buildVignettes          List and Build Package Vignettes
 checkFF                 Check Foreign Function Calls
 checkMD5sums            Check and Create MD5 Checksum Files
@@ -30,8 +32,11 @@ dependsOnPkgs           Find Reverse Dependencies
 encoded_text_to_latex   Translate non-ASCII Text to LaTeX Escapes
 file_ext                File Utilities
 findHTMLlinks           Collect HTML Links from Package Documentation
+find_gs_cmd             Find a GhostScript Executable
 getDepList              Functions to Retrieve Dependency Information
+getVignetteInfo         Get information on installed vignettes.
 installFoundDepends     A function to install unresolved dependencies
+loadRdMacros            Load user-defined Rd help system macros.
 make_translations_pkg   Package the Current Translations in the R
                         sources
 md5sum                  Compute MD5 Checksums
@@ -44,7 +49,6 @@ parse_Rd                Parse an Rd file
 pskill                  Kill a Process
 psnice                  Get or Set the Priority (Niceness) of a Process
 read.00Index            Read 00Index-style Files
-readNEWS                Read R's NEWS file or a similar one
 showNonASCII            Pick Out Non-ASCII Characters
 startDynamicHelp        Start the Dynamic HTML Help System
 testInstalledPackage    Test Installed Packages
@@ -52,6 +56,7 @@ texi2dvi                Compile LaTeX Files
 toHTML                  Display an object in HTML.
 toRd                    Generic function to convert object to a
                         fragment of Rd code.
+toTitleCase             Convert Titles to Title Case
 tools-deprecated        Deprecated Objects in Package 'tools'
 tools-package           Tools for Package Development
 undoc                   Find Undocumented Objects

@@ -1,27 +1,37 @@
 useDynLib(survival, .registration = TRUE)
-importFrom(splines, ns, spline.des)
-import(stats,graphics)
-export("Surv", "aareg", "agreg.fit",
-       "agexact.fit", "attrassign", 
-       "basehaz", "cch", "clogit", "cluster", "cox.zph", 
-       "coxph", "coxph.control", "coxph.detail", "coxph.fit",
-       "coxph.wtest", "format.Surv", 
-       "frailty",  "frailty.gamma", 
-       "frailty.gaussian", "frailty.t", "is.Surv", 
-       "is.na.Surv", "is.na.coxph.penalty", 
-       "is.na.ratetable",  "is.ratetable", 
-       "labels.survreg", "match.ratetable", 
-       "psurvreg", "qsurvreg", "dsurvreg",
-       "pspline", "pyears", "ratetable", "ratetableDate", 
-       "ridge", "strata", "survConcordance",
-       "survSplit", "survdiff", "survexp",  "survfit" ,
-       "survfit.formula",
-       "survfitcoxph.fit", "survfitKM", "survfitCI",
-       "survobrien",  
-       "survpenal.fit", "survConcordance.fit",
-       "survreg", "survreg.control", "survreg.fit",
-       "survreg.distributions", "survregDtest", "tcut",
-       "untangle.specials")
+importFrom(splines, spline.des, ns)
+importFrom(stats, anova, approx, as.formula, coef, coefficients,
+           contr.treatment, cor, delete.response, extractAIC, formula, 
+           logLik, makepredictcall, median, model.extract,
+           model.frame, model.matrix, model.offset, model.response,
+           model.weights, na.fail, na.pass, napredict, naprint, naresid,
+           pchisq, pnorm, printCoefmat, predict, qnorm, quantile,
+           resid, residuals, runif, stat.anova, terms, var, vcov,
+           .checkMFClasses, .getXlevels)
+importFrom(graphics, plot, points, lines, axis, box, matlines, matplot, 
+           matpoints, par)
+importFrom(methods, as)
+importFrom(utils, getS3method, type.convert)
+export(Surv, aareg, agreg.fit,
+       agexact.fit, attrassign, 
+       basehaz, cch, clogit, cluster, cox.zph, 
+       coxph, coxph.control, coxph.detail, coxph.fit,
+       coxph.wtest, format.Surv, 
+       frailty,  frailty.gamma, 
+       frailty.gaussian, frailty.t, is.Surv, 
+       is.na.Surv, is.ratetable, 
+       labels.survreg, match.ratetable, neardate,
+       psurvreg, qsurvreg, dsurvreg,
+       pspline, pyears, ratetable, ratetableDate, 
+       ridge, strata, survConcordance,
+       survSplit, survdiff, survexp,  survfit ,
+       survfit.formula,
+       survfitcoxph.fit, survfitKM, survfitCI,
+       survobrien,  
+       survpenal.fit, survConcordance.fit,
+       survreg, survreg.control, survreg.fit,
+       survreg.distributions, survregDtest, tcut,
+       tmerge, untangle.specials)
 S3method('[', aareg)
 S3method('[', Surv)
 S3method('[', cox.zph)
@@ -38,7 +48,6 @@ S3method(Ops, ratetable)
 S3method(Summary, Surv)
 S3method(anova, coxph)
 S3method(anova, coxphlist)
-S3method(anova, coxmelist)
 S3method(anova, survreg)
 S3method(anova, survreglist)
 S3method(as.character, Surv)
@@ -50,6 +59,11 @@ S3method(attrassign, default)
 S3method(attrassign, lm)
 S3method(extractAIC,coxph.penal)
 S3method(dim, survfit)
+S3method(format, Surv)
+S3method(is.na, Surv)
+S3method(is.na, coxph.penalty)
+S3method(is.na, ratetable)
+S3method(labels, survreg)
 S3method(levels, tcut)
 S3method(lines, aareg)
 S3method(lines, survexp)
@@ -82,6 +96,7 @@ S3method(print, ratetable)
 S3method(print, summary.cch)
 S3method(print, summary.coxph)
 S3method(print, summary.coxph.penal)
+S3method(print, summary.survexp)
 S3method(print, summary.survfit)
 S3method(print, summary.survfitms)
 S3method(print, summary.survreg)
@@ -115,6 +130,7 @@ S3method(summary, survreg)
 S3method(summary,cch)
 S3method(survfit, coxph)
 S3method(survfit, formula)
+S3method(survfit, Surv)
 S3method(vcov, cch)
 S3method(vcov, coxph)
 S3method(vcov, survreg)
