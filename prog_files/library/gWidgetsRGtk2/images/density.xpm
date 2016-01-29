@@ -1,0 +1,23 @@
+/* XPM */
+static char * g_density_xpm[] = {
+"20 16 4 1",
+" 	c #FFFFFFFFFFFF",
+".	c #000000000000",
+"X	c #AEBAAAAAAEBA",
+"o	c #CF3CCF3CCF3C",
+"                    ",
+"....................",
+"...XXXooo   ...XXXo.",
+"..XXXooo   ...XXXoo.",
+".XXXooo   ...XXXooo.",
+".XXooo   ...XXXooo .",
+".Xooo   ...XXXooo  .",
+".ooo   ...XXXooo   .",
+".oo   ...XXXooo   ..",
+".o   ...XXXooo   ...",
+".   ...XXXooo   ....",
+".  ...XXXooo   ...X.",
+". ...XXXooo   ...XX.",
+"....XXXooo   ...XXX.",
+"....................",
+"                    "};

@@ -12,6 +12,7 @@ bam                     Generalized additive models for very large
 bam.update              Update a strictly additive bam model for new
                         data.
 betar                   GAM beta regression family
+bug.reports.mgcv        Reporting mgcv bugs.
 cSplineDes              Evaluate cyclic B spline basis
 choose.k                Basis dimension choice for smooths
 columb                  Reduced version of Columbus OH crime data
@@ -81,6 +82,7 @@ model.matrix.gam        Extract model matrix from GAM fit
 mono.con                Monotonicity constraints for a cubic regression
                         spline
 mroot                   Smallest square root of matrix
+multinom                GAM multinomial logistic regression
 mvn                     Multivariate normal additive models
 negbin                  GAM negative binomial families
 new.name                Obtain a name for a new variable that is not
