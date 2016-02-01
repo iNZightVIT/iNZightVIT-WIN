@@ -10,8 +10,11 @@ iNZightShapeMap      Create an iNZight Shape Map Object
 innerLim             inner limit
 is.google.map        Is Google Map?
 latlon.xy            latlon.xy
+lim.inside           identify the which set of latitude and
+                     longitude are within the limit.
 lon.rescale          transform the latitude
 map.xylim            get the limit of x-axis and y-axis
+name.match           Calaudate the bbox of a country
 needNewMap           Need New Map
 nzquakes             Earthquakes in New Zealand
 order.match          Plot an iNZight Map
@@ -21,8 +24,7 @@ plot.inzightshapemap
 plot.inzmap          Plot an iNZight Map
 plot.inzshapemap     Plot an iNZight Shape Map
 re.scale             rearrange the limit
+region.bbox          Calaudate the bbox of a country
 shape.extract        extract and create a shape object
 subByLim             subset by limit
-win.ratio            compute the ratio of the window
-within               identify the which set of latitude and
-                     longitude are within the limit
+win.ratio            compute the ratio of the window.

@@ -9,7 +9,8 @@ Authors@R: c(person("Eric", "Lim", role = c("aut"),
              person("Tom", "Elliott", role = "aut",
 	            email = "tom.elliott@auckland.ac.nz"))
 Depends: R (>= 3.0)
-Imports: RgoogleMaps, maptools, iNZightPlots, grid
+Imports: RgoogleMaps, maptools, iNZightPlots, grid,
+       RColorBrewer, countrycode
 Suggests: iNZight
 Description: Simple plotting functions for geographical data.
 License: GPL-2
@@ -18,4 +19,4 @@ Author: Eric Lim [aut],
   Jason Wen [cre, aut],
   Tom Elliott [aut]
 Maintainer: Jason Wen <jwen246@aucklanduni.ac.nz>
-Built: R 3.2.2; ; 2016-01-29 02:29:05 UTC; unix
+Built: R 3.2.2; ; 2016-02-01 20:04:01 UTC; unix
