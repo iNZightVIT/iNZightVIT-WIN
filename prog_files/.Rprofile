@@ -1,3 +1,5 @@
+## UPDATE iNZightVIT:
+
 Sys.setenv("R_HOME" = file.path(getwd()))
 .libPaths(file.path(getwd(), "library"))
 

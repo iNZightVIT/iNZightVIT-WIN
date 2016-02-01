@@ -1,3 +1,5 @@
+## START iNZight 
+
 # Things you might want to change
 
 # options(papersize="a4")
