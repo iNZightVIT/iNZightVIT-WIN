@@ -4,7 +4,7 @@
 !define VERSIONMINOR 0
 !define VERSIONBUILD 0
 
-RequestExecutionLevel admin
+#RequestExecutionLevel user
 
 ## Define installation directory
 InstallDir $PROGRAMFILES\${APPNAME}
