@@ -3,6 +3,12 @@
 Sys.setenv("R_HOME" = file.path(getwd()))
 .libPaths(file.path(getwd(), "library"))
 
+local({
+  r <- getOption("repos")
+  r["CRAN"] <- "http://cran.stat.auckland.ac.nz"
+  options(repos = r)
+})
+
 library(utils)
 if (!"RCurl" %in% rownames(installed.packages()))
     install.packages("RCurl")
