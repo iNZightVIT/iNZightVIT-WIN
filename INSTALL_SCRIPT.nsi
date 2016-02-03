@@ -12,6 +12,17 @@ Name "${APPNAME} - ${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}"
 Icon "icon.ico"
 outFile "${APPNAME}-installer.exe"
 
+LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
+VIProductVersion "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}.0"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "${APPNAME}"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductVersion" "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "${COMPANY}"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "GPL-2"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "An easy to use data visualisation tool."
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}"
+
+
+
 page directory
 page instfiles
 
@@ -55,6 +66,8 @@ Section "uninstall"
 	delete $INSTDIR\iNZight.lnk
 	delete $INSTDIR\Update.lnk
 	delete $INSTDIR\VIT.lnk
+	
+	delete $INSTDIR\.inzight  ; user settings file ...
 	
 	delete $INSTDIR\uninstall.exe
 	RMDir $INSTDIR
