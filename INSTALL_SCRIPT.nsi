@@ -4,10 +4,10 @@
 !define VERSIONMINOR 0
 !define VERSIONBUILD 0
 
-RequestExecutionLevel admin
+RequestExecutionLevel user
 
 ## Define installation directory
-InstallDir $PROGRAMFILES\${APPNAME}
+InstallDir $DOCUMENTS\${APPNAME}
 Name "${APPNAME} - ${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}"
 Icon "icon.ico"
 outFile "${APPNAME}-installer.exe"
@@ -40,26 +40,50 @@ Section "install"
 
 	# Create a read-only shortcut to the data folder:
 	createShortcut "$INSTDIR\Data.lnk" "$INSTDIR\data"
+	
+	# Start Menu Folder
+	createDirectory "$SMPROGRAMS\${APPNAME}"
+	createShortcut "$SMPROGRAMS\${APPNAME}\uninstall.lnk" "$INSTDIR\uninstall.exe"
 
 	# Create main shortcuts to run inzight/vit/updater
 	createShortcut "$INSTDIR\iNZight.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
 	createShortcut "$DESKTOP\iNZight.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
+	createShortcut "$SMPROGRAMS\${APPNAME}\iNZight.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
 
 	setOutPath $INSTDIR\prog_files
 	createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\prog_files\bin\i386\R.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWNORMAL
-
+	createShortcut "$SMPROGRAMS\${APPNAME}\Update.lnk" "$INSTDIR\prog_files\bin\i386\R.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWNORMAL
+	
 	setOutPath $INSTDIR\prog_files\vit
 	createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
 	createShortcut "$DESKTOP\VIT.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
-
+	createShortcut "$SMPROGRAMS\${APPNAME}\VIT.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
 
 SectionEnd
+
+
+
+## UNINSTALLER
+
+function un.onInit
+
+	MessageBox MB_OKCANCEL "Permanently remove ${APPNAME}?" IDOK next
+		Abort
+	next:
+functionEnd
 
 Section "uninstall"
 
 	# Remove desktop shortcuts
 	delete $DESKTOP\iNZight.lnk
 	delete $DESKTOP\VIT.lnk
+	
+	# Remove start menu shortcuts
+	delete $SMPROGRAMS\${APPNAME}\iNZight.lnk
+	delete $SMPROGRAMS\${APPNAME}\VIT.lnk
+	delete $SMPROGRAMS\${APPNAME}\Update.lnk
+	delete $SMPROGRAMS\${APPNAME}\uninstall.lnk
+	RMDir $SMPROGRAMS\${APPNAME}
 
 	# Remove files
 	RMDir /r $INSTDIR\prog_files
@@ -69,8 +93,8 @@ Section "uninstall"
 	delete $INSTDIR\iNZight.lnk
 	delete $INSTDIR\Update.lnk
 	delete $INSTDIR\VIT.lnk
-
-	delete $INSTDIR\.inzight  ; user settings file ...
+	delete $INSTDIR\Data.lnk
+	delete $INSTDIR\.inzight
 
 	delete $INSTDIR\uninstall.exe
 	RMDir $INSTDIR
