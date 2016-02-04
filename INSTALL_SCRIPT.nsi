@@ -39,7 +39,7 @@ Section "install"
 	writeUninstaller "$INSTDIR\uninstall.exe"
 
 	# Create a read-only shortcut to the data folder:
-	createShortcut "$INSTDIR\Data.lnk" "$INSTDIR\data"
+	createShortcut "$INSTDIR\Example Datasets.lnk" "$INSTDIR\data"
 	
 	# Start Menu Folder
 	createDirectory "$SMPROGRAMS\${APPNAME}"
