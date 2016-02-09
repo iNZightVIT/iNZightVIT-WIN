@@ -95,8 +95,10 @@ Section "uninstall"
 	delete $INSTDIR\VIT.lnk
 	delete $INSTDIR\Data.lnk
 	delete $INSTDIR\.inzight
-
+	
 	delete $INSTDIR\uninstall.exe
 	RMDir $INSTDIR
+	
+	MessageBox MB_OK "iNZightVIT has been uninstalled. You may need to manually remove the iNZightVIT folder from your Documents folder."
 
 SectionEnd
