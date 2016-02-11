@@ -1,5 +1,7 @@
                      Multiple Response Data Analysis
 barplotMR            MR Barplot
+census.at.school.5000
+                     Census at School 5000
 iNZightMR            Create iNZightMR multiple response object
                      (MRO)
 substrsplit          Help mro variables extrac common name out
