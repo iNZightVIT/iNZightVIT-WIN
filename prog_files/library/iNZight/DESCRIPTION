@@ -17,6 +17,7 @@ Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2,
 Imports: utils, methods, grid, gdata, gWidgets2RGtk2,
        iNZightPlots, iNZightTools, reshape2, plyr, survey
 Suggests: RODBC, iNZightMR, iNZightModules
+LazyData: true
 RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
@@ -24,4 +25,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
-Built: R 3.2.2; ; 2016-02-11 22:40:25 UTC; unix
+Built: R 3.2.2; ; 2016-02-11 22:46:16 UTC; unix
