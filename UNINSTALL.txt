@@ -1,5 +1,0 @@
-To Uninstall iNZight, simply delete the iNZightVIT folder.
-
-If you're having technical difficulties, please contact us at:
-   https://www.stat.auckland.ac.nz/~wild/iNZight/support/contact/
-   
