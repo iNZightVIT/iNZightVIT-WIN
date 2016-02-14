@@ -9,4 +9,4 @@ Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
 Description: Contains functions used by various other iNZight packages.
 License: GPL-2
-Built: R 3.2.2; ; 2016-02-14 21:12:43 UTC; unix
+Built: R 3.2.2; ; 2016-02-14 23:25:55 UTC; unix
