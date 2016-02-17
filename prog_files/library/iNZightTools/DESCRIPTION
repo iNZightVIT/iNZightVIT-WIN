@@ -1,12 +1,18 @@
 Package: iNZightTools
 Type: Package
 Title: Tools for iNZight
-Version: 1.1
-Depends: survey
-Suggests: iNZight
-Date: 2015-08-25
-Author: Tom Elliott [aut, cre]
-Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Description: Contains functions used by various other iNZight packages.
+Version: 1.1-900
+Imports: survey, grDevices
+Suggests: iNZight, Acinonyx, cairoDevice
+Date: 2016-02-18
+Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
+                    email = "inzight_support@stat.auckland.ac.nz"),
+             person("Christoph", "Knopf", role = "aut"))
+Description: Compatibility functions used for multiple packages and
+    distributions of iNZight, including Lite.
 License: GPL-2
-Built: R 3.2.2; ; 2016-02-15 20:25:29 UTC; unix
+RoxygenNote: 5.0.1
+Author: Tom Elliott [aut, cre],
+  Christoph Knopf [aut]
+Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
+Built: R 3.2.2; ; 2016-02-17 21:49:10 UTC; unix

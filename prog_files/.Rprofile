@@ -9,10 +9,11 @@ local({
   options(repos = r)
 })
 
+## Update modules in the Documents/iNZightVIT/modules directory:
+lib <- file.exists(file.path("~", "iNZightVIT", "modules"))
+if (!file.exists(lib)) lib <- NULL
+
 library(utils)
 
 source("https://www.stat.auckland.ac.nz/~wild/downloads/iNZight/update.R")
-updateDistribution()
-
-cat("\n")
-cat("         You can now close this window and run iNZightVIT.\n\n\n")
+updateDistribution(lib = lib)

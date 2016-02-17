@@ -1,2 +1,37 @@
+aggregate.data       aggregates the data over selected factor
+                     columns
+combine.levels       Combine the levels of factor variables.
+fitDesign            Fit Survey Design
+fitModel             Fit a Model
+get.collapsed.column
+                     Collapses selected levels in factor
+                     vector
+get.combinations     Takes a data.frame as generated from the
+                     'get.missing.categorical' function and
+                     converts it into a data.frame of all
+                     unique rows and there counts in the
+                     original data.
+get.form.class.interval
+                     Form class intervals from a column
+                     specified by column name or column index
+                     from the a data.frame.
+get.missing.categorical
+                     Converts specified columns into binary
+                     factor variables which get added to the
+                     input data.frame.
 iNZightTools-package
                      Tools for iNZight
+newdevice            Open a New Graphics Device
+order.overwrite      Order vectors
+rename.levels        Renames the levels of a factor.
+reorder.levels       This function changes the order of levels
+                     in the data.
+sample.data          Takes a sample of rows from a data.frame
+search.name          Searches a list recursivly for a name and
+                     returns the value associated with the
+                     name
+sort.data            Sorts the df data frame after the input
+                     variables
+stack.variables.perform
+                     Stacks the selected columns onto the
+                     data.
