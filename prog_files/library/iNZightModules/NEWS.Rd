@@ -2,6 +2,20 @@
 \title{Change Log for iNZightModules}
 \encoding{UTF-8}
 
+\section{Changes in version 2.0}{
+  Release date: TBA
+
+  \subsection{MAJOR CHANGES}{
+    \itemize{
+      \item Redesigned Multiple Response Module
+
+      \item Redesigned Maps module
+
+      \item Change how module dependencies are imported (using \code{::})
+    }
+  }
+}
+
 \section{Changes in version 1.2}{
   Release date: 25 August 2015
   

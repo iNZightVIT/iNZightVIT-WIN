@@ -2,6 +2,16 @@
 \title{Change Log for iNZightTools}
 \encoding{UTF-8}
 
+\section{Changes in version 1.2}{
+  Release Date: TBA
+
+  \section{MINOR CHANGES}{
+    \itemize{
+      \item New device function uses the cairo device on Linux
+    }
+  }
+}
+
 \section{Changes in version 1.1}{
   Release Date: 25 August 2015
   
