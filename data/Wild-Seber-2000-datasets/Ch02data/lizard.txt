@@ -1,1 +1,0 @@
-Species	Number	VolumeCentipedes	2	1.0Spiders	1	0.1Scorpions	3	2.7Grasshoppers	28	16.6Cockroaches	3	3.0Caterpillars	1	0.1Unidentified.Insects	7	2.6Lizards	53	83.6

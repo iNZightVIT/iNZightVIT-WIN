@@ -1,1 +1,0 @@
-value	NewEng	Found	Dixie	Bread	Mex	EcoSelf.respect	27	154	147	55	34	34Security	26	147	152	62	26	37Warm.rel	17	125	90	63	27	35Sense.Acc	17	88	65	38	17	23Self.fulf	11	74	55	23	24	24Being	10	65	72	31	4	8Sense.b	6	63	49	24	10	15Fun	6	34	23	11	8	13

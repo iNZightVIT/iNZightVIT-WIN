@@ -1,1 +1,0 @@
-utilities	value	numberlight	1.61	246130wash.dry	7.85	4500hot.water	25.9	900water.lawn	34.29	360air.con	224.13	65free.uti	558	45

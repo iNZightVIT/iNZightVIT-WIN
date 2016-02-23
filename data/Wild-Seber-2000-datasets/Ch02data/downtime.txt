@@ -1,1 +1,0 @@
-Reason	MinutesDie.change	48Nobody.at.machine	43Operator.adjustment	32Maintenance	21Die.repair.in.press	548Die.repair.in.toolroom	224Start.new.coil	81Inspection	20Operator.change	6R.R.die.for.repair	44Material.handling	98Steel.jammed	7

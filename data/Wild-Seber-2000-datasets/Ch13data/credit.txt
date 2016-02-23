@@ -1,1 +1,0 @@
-Month	Notes	TotalJan	10	144Feb	4	81Mar	4	100Apr	16	400May	9	225Jul	4	64Aug	3	100Sep	6	81Oct	5	169Nov	24	400Dec	10	100

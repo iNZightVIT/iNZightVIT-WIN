@@ -1,1 +1,0 @@
-no	activity	School0	To/from	Infant1205	To/from	Kinder3163	To/from	1-3Gr1213	To/from	4-6Gr1151	To/from	high2184	Playing	Infant2300	Playing	Kinder2373	Playing	1-3Gr719	Playing	4-6Gr182	Playing	high6552	Other	Infant7447	Other	Kinder7642	Other	1-3Gr2560	Other	4-6Gr1168	Other	high
