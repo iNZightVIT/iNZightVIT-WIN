@@ -9,6 +9,8 @@
     \itemize{
       \item made it possible to create new methods for plots (as done in
       iNZightMaps).
+      \item allow any colour function to be specified (at least, any
+      that take a single argument \code{n})
     }
   }
 
