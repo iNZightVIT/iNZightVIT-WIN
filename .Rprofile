@@ -52,7 +52,7 @@ grid::grid.newpage()
 
 splashImg <- png::readPNG(file.path(getwd(), "prog_files", "images", "inzight-banner.png"),
                           exists("rasterImage"))
-grid::grid.raster(splashImg, width = grid::unit(360, "points"), height = grid::unit(60, "points"))
+grid::grid.raster(splashImg)#, width = grid::unit(360, "points"), height = grid::unit(60, "points"))
 
 message("(Dept of Statistics, Uni. of Auckland)")
 message("")
