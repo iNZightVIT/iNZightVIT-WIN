@@ -84,6 +84,7 @@ Section "uninstall"
 	# Remove files
 	RMDir /r $INSTDIR\prog_files
 	RMDir /r $INSTDIR\data
+	RMDir /r $INSTDIR\modules
 	delete $INSTDIR\.Rprofile
 	delete $INSTDIR\icon.ico
 	delete $INSTDIR\iNZight.lnk
