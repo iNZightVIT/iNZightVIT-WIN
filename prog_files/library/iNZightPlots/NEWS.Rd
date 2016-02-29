@@ -18,6 +18,8 @@
     \itemize{
       \item changes to resizing algorithm (optional change between the
       two)
+      \item background color now applies to INSIDE the plot, not the
+      entire graphics window
     }
   }
 
