@@ -31,19 +31,15 @@ Section "install"
 
 	setOutPath $INSTDIR
 	File /r "prog_files"
-	File /r "data"
 	file ".Rprofile"
 	file "icon.ico"
 
 	# Create an uninstaller
-	writeUninstaller "$INSTDIR\uninstall.exe"
-
-	# Create a read-only shortcut to the data folder:
-	createShortcut "$INSTDIR\Example Datasets.lnk" "$INSTDIR\data"
+	writeUninstaller "$INSTDIR\Uninstall.exe"
 	
 	# Start Menu Folder
 	createDirectory "$SMPROGRAMS\${APPNAME}"
-	createShortcut "$SMPROGRAMS\${APPNAME}\uninstall.lnk" "$INSTDIR\uninstall.exe"
+	createShortcut "$SMPROGRAMS\${APPNAME}\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
 
 	# Create main shortcuts to run inzight/vit/updater
 	createShortcut "$INSTDIR\iNZight.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
