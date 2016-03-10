@@ -1,3 +1,5 @@
+!include LogicLib.nsh
+
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 !define VERSIONMAJOR 3
@@ -33,10 +35,26 @@ Section "install"
 	File /r "prog_files"
 	file ".Rprofile"
 	file "icon.ico"
+	
+	${If} $INSTDIR == "$DOCUMENTS\${APPNAME}"
+		createDirectory "$INSTDIR\Saved Plots"
+		createDirectory "$INSTDIR\Saved Data"
+	${Else}
+		MessageBox MB_YESNO|MB_ICONQUESTION|MB_USERICON "Do you want to create an iNZightVIT folder in My Documents for saved plots and data?" IDYES true IDNO next
+		true:
+			createDirectory "$DOCUMENTS\${APPNAME}"
+			createDirectory "$DOCUMENTS\${APPNAME}\Saved Plots"
+			createDirectory "$DOCUMENTS\${APPNAME}\Saved Data"
+		next:
+	${EndIf}
+	
+	# Make things hidden:
+	SetFileAttributes prog_files HIDDEN
+	SetFileAttributes .Rprofile HIDDEN
+	SetFileAttributes icon.ico HIDDEN
 
 	# Create an uninstaller
 	writeUninstaller "$INSTDIR\Uninstall.exe"
-	createDirectory "Saved Plots"
 	
 	# Start Menu Folder
 	createDirectory "$SMPROGRAMS\${APPNAME}"
@@ -84,15 +102,14 @@ Section "uninstall"
 
 	# Remove files
 	RMDir /r $INSTDIR\prog_files
-	RMDir /r $INSTDIR\data
 	RMDir /r $INSTDIR\modules
-	RMDir /r "$INSTDIR\Saved Plots"
+	RMDir "$INSTDIR\Saved Plots"
+	RMDir "$INSTDIR\Saved Data"
 	delete $INSTDIR\.Rprofile
 	delete $INSTDIR\icon.ico
 	delete $INSTDIR\iNZight.lnk
 	delete $INSTDIR\Update.lnk
 	delete $INSTDIR\VIT.lnk
-	delete $INSTDIR\Data.lnk
 	delete $INSTDIR\.inzight
 	
 	delete $INSTDIR\uninstall.exe
