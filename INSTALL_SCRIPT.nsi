@@ -36,6 +36,7 @@ Section "install"
 
 	# Create an uninstaller
 	writeUninstaller "$INSTDIR\Uninstall.exe"
+	createDirectory "Saved Plots"
 	
 	# Start Menu Folder
 	createDirectory "$SMPROGRAMS\${APPNAME}"
@@ -85,6 +86,7 @@ Section "uninstall"
 	RMDir /r $INSTDIR\prog_files
 	RMDir /r $INSTDIR\data
 	RMDir /r $INSTDIR\modules
+	RMDir /r $INSTDIR\Saved Plots
 	delete $INSTDIR\.Rprofile
 	delete $INSTDIR\icon.ico
 	delete $INSTDIR\iNZight.lnk
