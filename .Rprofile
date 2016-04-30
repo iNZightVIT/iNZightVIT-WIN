@@ -34,9 +34,9 @@ Sys.setenv("R_HOME" = file.path(getwd(), "prog_files"))
 .libPaths(file.path(getwd(), "prog_files", "library"))
 
 pkgs <- c("hextri")
-if (any(!pkgs %in% installed.packages()[, "Package"])) {
+if (any(!pkgs %in% utils::installed.packages()[, "Package"])) {
     cat("\nInstalling additional packages ...\n\n")
-    install.packages(pkgs)
+    utils::install.packages(pkgs)
 }
 
 
