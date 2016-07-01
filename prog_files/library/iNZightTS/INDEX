@@ -1,13 +1,12 @@
-decompositionplot    Plot a Time Series Decomposition
-forecastplot         Forecast plot
-iNZightTS            iNZightTS (Time-Series) Objects
-iNZightTS-package    Time Series Data Analysis
-multiseries          Compare multiple timeseries
-print.iNZightTS      Print an iNZightTS object
-rawplot              Draw a simple time series plot
-seaice               Sea Ice
-seasonplot           Plot Seasonal Subseries from a Time
-                     Series
-visitorsA2           Visitors (annual)
-visitorsM2           Visitors (monthly)
-visitorsQ            Visitors (quarterly)
+decompositionplot       Plot a Time Series Decomposition
+forecastplot            Forecast plot
+iNZightTS               iNZightTS (Time-Series) Objects
+iNZightTS-package       Time Series Data Analysis
+multiseries             Compare multiple timeseries
+print.iNZightTS         Print an iNZightTS object
+rawplot                 Draw a simple time series plot
+seaice                  Sea Ice
+seasonplot              Plot Seasonal Subseries from a Time Series
+visitorsA2              Visitors (annual)
+visitorsM2              Visitors (monthly)
+visitorsQ               Visitors (quarterly)
