@@ -17,7 +17,8 @@ Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2,
 Imports: utils, grDevices, methods, grid, gdata,
        gWidgets2RGtk2, iNZightPlots, iNZightTools, reshape2,
        plyr, survey, colorspace
-Suggests: RODBC, iNZightMR, iNZightModules, png, viridis
+Suggests: RODBC, iNZightMR, iNZightModules, png, viridis,
+       RColorBrewer
 LazyData: true
 RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
@@ -26,4 +27,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2016-08-25 01:50:19 UTC; unix
+Built: R 3.2.2; ; 2016-08-29 02:59:32 UTC; unix
