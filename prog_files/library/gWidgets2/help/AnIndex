@@ -63,7 +63,8 @@ add.GMenuBar	gmenu
 add.GNotebook	gnotebook
 add.GToolBar	gtoolbar
 add.GWindow	gwindow
-add3rdMousePopupMenu	add3rdMousePopupMenu
+add3rdMousePopupMenu	gWidgets-handlers
+add3rdmousePopupMenu	gWidgets-handlers
 addDragMotion	gWidgets-handlers
 addDragMotion.default	gWidgets-handlers
 addDropSource	gWidgets-handlers
@@ -200,7 +201,6 @@ getTopLevel	getToolkitWidget
 getTopLevel.GComponent	getToolkitWidget
 getWidget	getToolkitWidget
 getWidget.GComponent	getToolkitWidget
-getWidget.GDefaultWidget	getToolkitWidget
 getWithDefault	getWithDefault
 get_index_in_list	get_index_in_list
 get_object_from_string	get_object_from_string
@@ -354,6 +354,5 @@ XXX	XXX
 [<-.GCheckbox	gcheckbox
 [<-.GComboBox	gcombobox
 [<-.GComponent	gWidgets2-S3methods
-[<-.GDefaultWidget	gWidgets2-S3methods
 [<-.GLayout	glayout
 [<-.GRadio	gradio
