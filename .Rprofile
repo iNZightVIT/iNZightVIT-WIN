@@ -1,4 +1,4 @@
-## START iNZight 
+## START iNZight
 
 # Things you might want to change
 
@@ -40,26 +40,15 @@ if (any(!pkgs %in% utils::installed.packages()[, "Package"])) {
 }
 
 
-
-# Loading a splash screen in the case where we're minimising VIT
-# Suppressing messages and warnings so that the console remains clean
-# Any 'built under different version' warnings should be safely ignored
-# suppressPackageStartupMessages({
-#     library(grDevices)
-#     library(graphics)
-#     library(grid)
-#     suppressWarnings({
-#         library(png)
-#     })
-# })
-
 grDevices::dev.new(width = 5, height = 2)
 grid::grid.newpage()
 # Will try to draw a raster if possible, otherwise an array of pixels
 
-splashImg <- png::readPNG(file.path(getwd(), "prog_files", "images", "inzight-banner.png"),
-                          exists("rasterImage"))
-grid::grid.raster(splashImg)#, width = grid::unit(360, "points"), height = grid::unit(60, "points"))
+try({
+  splashImg <- png::readPNG(file.path(getwd(), "prog_files", "images", "inzight-banner.png"),
+                            exists("rasterImage"))
+  grid::grid.raster(splashImg)#, width = grid::unit(360, "points"), height = grid::unit(60, "points"))
+}, silent = TRUE)
 
 message("(Dept of Statistics, Uni. of Auckland)")
 message("")
