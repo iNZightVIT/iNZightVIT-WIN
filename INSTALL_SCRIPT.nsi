@@ -35,11 +35,12 @@ Section "install"
 	File /r "prog_files"
 	file ".Rprofile"
 	file "icon.ico"
-	
+
 	${If} $INSTDIR == "$DOCUMENTS\${APPNAME}"
 		createDirectory "$INSTDIR\Saved Plots"
 		createDirectory "$INSTDIR\Saved Data"
 	${Else}
+		IfFileExists $DOCUMENTS\${APPNAME} next 0
 		MessageBox MB_YESNO|MB_ICONQUESTION|MB_USERICON "Do you want to create an iNZightVIT folder in My Documents for saved plots and data?" IDYES true IDNO next
 		true:
 			createDirectory "$DOCUMENTS\${APPNAME}"
@@ -47,7 +48,7 @@ Section "install"
 			createDirectory "$DOCUMENTS\${APPNAME}\Saved Data"
 		next:
 	${EndIf}
-	
+
 	# Make things hidden:
 	SetFileAttributes prog_files HIDDEN
 	SetFileAttributes .Rprofile HIDDEN
@@ -55,7 +56,7 @@ Section "install"
 
 	# Create an uninstaller
 	writeUninstaller "$INSTDIR\Uninstall.exe"
-	
+
 	# Start Menu Folder
 	createDirectory "$SMPROGRAMS\${APPNAME}"
 	createShortcut "$SMPROGRAMS\${APPNAME}\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
@@ -68,7 +69,7 @@ Section "install"
 	setOutPath $INSTDIR\prog_files
 	createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\prog_files\bin\i386\R.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWNORMAL
 	createShortcut "$SMPROGRAMS\${APPNAME}\Update.lnk" "$INSTDIR\prog_files\bin\i386\R.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWNORMAL
-	
+
 	setOutPath $INSTDIR\prog_files\vit
 	createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
 	createShortcut "$DESKTOP\VIT.lnk" "$INSTDIR\prog_files\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\icon.ico" "" SW_SHOWMINIMIZED
@@ -92,7 +93,7 @@ Section "uninstall"
 	# Remove desktop shortcuts
 	delete $DESKTOP\iNZight.lnk
 	delete $DESKTOP\VIT.lnk
-	
+
 	# Remove start menu shortcuts
 	delete $SMPROGRAMS\${APPNAME}\iNZight.lnk
 	delete $SMPROGRAMS\${APPNAME}\VIT.lnk
@@ -111,10 +112,10 @@ Section "uninstall"
 	delete $INSTDIR\Update.lnk
 	delete $INSTDIR\VIT.lnk
 	delete $INSTDIR\.inzight
-	
+
 	delete $INSTDIR\uninstall.exe
 	RMDir $INSTDIR
-	
+
 	MessageBox MB_OK "iNZightVIT has been uninstalled. You may need to manually remove the iNZightVIT folder from your Documents folder."
 
 SectionEnd
