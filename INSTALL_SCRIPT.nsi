@@ -4,7 +4,7 @@
 !define COMPANY "The University of Auckland"
 !define VERSIONMAJOR 3
 !define VERSIONMINOR 0
-!define VERSIONBUILD 0
+!define VERSIONBUILD 3
 
 RequestExecutionLevel user
 
