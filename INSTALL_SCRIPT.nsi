@@ -3,14 +3,14 @@
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 !define VERSIONMAJOR 3
-!define VERSIONMINOR 0
-!define VERSIONBUILD 3
+!define VERSIONMINOR 1
+!define VERSIONBUILD 0
 
 RequestExecutionLevel user
 
 ## Define installation directory
 InstallDir $DOCUMENTS\${APPNAME}
-Name "${APPNAME} - ${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}"
+Name "${APPNAME} - ${VERSIONMAJOR}.${VERSIONMINOR}"
 Icon "icon.ico"
 outFile "${APPNAME}-installer.exe"
 
