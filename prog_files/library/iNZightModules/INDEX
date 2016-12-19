@@ -6,6 +6,7 @@ iNZightModules       iNZightModules: Add-on modules for
                      iNZight
 iNZightMultiRes-class
                      iNZight Multiple Response Module
+iNZightTSMod-class   iNZight Time Series Module
 modelFitting         Model Fitting Module
 plot3D               3D Plot
 scatter3d            Plot three variable in a 3D interactive
