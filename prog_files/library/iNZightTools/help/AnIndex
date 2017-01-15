@@ -1,6 +1,7 @@
 iNZightTools-package	iNZightTools-package
 aggregate.data	aggregate.data
 combine.levels	combine.levels
+convertSpssDetails	convertSpssDetails
 fitDesign	fitDesign
 fitModel	fitModel
 get.collapsed.column	get.collapsed.column
@@ -8,6 +9,19 @@ get.combinations	get.combinations
 get.form.class.interval	get.form.class.interval
 get.missing.categorical	get.missing.categorical
 iNZightTools	iNZightTools-package
+iNZread	iNZread
+iNZread.csv	iNZread
+iNZread.default	iNZread
+iNZread.delim	iNZread
+iNZread.dta	iNZread
+iNZread.excel	iNZread
+iNZread.sav	iNZread
+iNZread.txt	iNZread
+iNZread.xls	iNZread
+iNZread.xlsx	iNZread
+isColumnTypesCorrect	isColumnTypesCorrect
+isFullFile	isFullFile
+makeLocale	makeLocale
 newdevice	newdevice
 order.overwrite	order.overwrite
 rename.levels	rename.levels

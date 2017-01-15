@@ -1,7 +1,7 @@
 Package: gWidgets2RGtk2
 Type: Package
 Title: Implementation of gWidgets2 for the RGtk2 Package
-Version: 1.0-5
+Version: 1.0-5-1
 Author: John Verzani
 Maintainer: John Verzani <jverzani@gmail.com>
 URL: https://github.com/jverzani/gWidgets2RGtk2
@@ -11,18 +11,16 @@ Depends: methods, memoise, RGtk2, gWidgets2(>= 1.0.7)
 Suggests: testthat, cairoDevice
 LazyLoad: yes
 Collate: 'gWidgets2RGtk2-package.R' 'misc.R' 'gtk-misc.R'
-        'GComponent.R' 'GContainer.R' 'GWidget.R' 'aaa.R' 'dialogs.R'
-        'gaction.R' 'gbutton.R' 'gcalendar.R' 'gcheckbox.R'
-        'gcheckboxgroup.R' 'gcombobox.R' 'gtable.R' 'gmenu.R' 'gdf.R'
-        'gedit.R' 'ggroup.R' 'gframe.R' 'gexpandgroup.R' 'gfile.R'
-        'gformlayout.R' 'ggraphics.R' 'gimage.R' 'glabel.R' 'glayout.R'
-        'gnotebook.R' 'gpanedgroup.R' 'gprogressbar.R' 'gradio.R'
-        'gseparator.R' 'gslider.R' 'gspinbutton.R' 'gstackwidget.R'
-        'gstatusbar.R' 'gtext.R' 'gtimer.R' 'gtoolbar.R' 'gtree.R'
-        'gvarbrowser.R' 'gwindow.R' 'icons.R' 'startup.R'
+       'GComponent.R' 'GContainer.R' 'GWidget.R' 'aaa.R'
+       'dialogs.R' 'gaction.R' 'gbutton.R' 'gcalendar.R'
+       'gcheckbox.R' 'gcheckboxgroup.R' 'gcombobox.R'
+       'gtable.R' 'gmenu.R' 'gdf.R' 'gedit.R' 'ggroup.R'
+       'gframe.R' 'gexpandgroup.R' 'gfile.R' 'gformlayout.R'
+       'ggraphics.R' 'gimage.R' 'glabel.R' 'glayout.R'
+       'gnotebook.R' 'gpanedgroup.R' 'gprogressbar.R'
+       'gradio.R' 'gseparator.R' 'gslider.R' 'gspinbutton.R'
+       'gstackwidget.R' 'gstatusbar.R' 'gtext.R' 'gtimer.R'
+       'gtoolbar.R' 'gtree.R' 'gvarbrowser.R' 'gwindow.R'
+       'icons.R' 'startup.R'
 RoxygenNote: 5.0.1
-NeedsCompilation: no
-Packaged: 2016-06-06 12:00:04 UTC; jverzani
-Repository: CRAN
-Date/Publication: 2016-06-06 18:04:38
-Built: R 3.2.5; ; 2016-09-01 17:25:19 UTC; windows
+Built: R 3.2.2; ; 2017-01-15 22:26:32 UTC; unix

@@ -1,6 +1,8 @@
 aggregate.data       aggregates the data over selected factor
                      columns
 combine.levels       Combine the levels of factor variables.
+convertSpssDetails   Converts the data type of columns
+                     specified from numeric to date.
 fitDesign            Fit Survey Design
 fitModel             Fit a Model
 get.collapsed.column
@@ -21,6 +23,14 @@ get.missing.categorical
                      input data.frame.
 iNZightTools-package
                      Tools for iNZight
+iNZread              iNZight Import Data
+isColumnTypesCorrect
+                     Checks if the entered column types are
+                     allowed or not.
+isFullFile           Checks if the complete file was read or
+                     not.
+makeLocale           Creates a locale that cane be used with
+                     functions from readr package.
 newdevice            Open a New Graphics Device
 order.overwrite      Order vectors
 rename.levels        Renames the levels of a factor.
