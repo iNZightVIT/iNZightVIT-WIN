@@ -1,5 +1,9 @@
 aggregate.data       aggregates the data over selected factor
                      columns
+changeColumnTypes    Changes the datatype of columns of
+                     dataframe to the specified datatypes.
+changeToDatatype     Changes the datatype of a column of a
+                     dataframe to the specified datatype.
 combine.levels       Combine the levels of factor variables.
 convertSpssDetails   Converts the data type of columns
                      specified from numeric to date.
@@ -23,11 +27,10 @@ get.missing.categorical
                      input data.frame.
 iNZightTools-package
                      Tools for iNZight
-iNZread              iNZight Import Data
 isColumnTypesCorrect
                      Checks if the entered column types are
                      allowed or not.
-isFullFile           Checks if the complete file was read or
+isPreview            Checks if the complete file was read or
                      not.
 makeLocale           Creates a locale that cane be used with
                      functions from readr package.
