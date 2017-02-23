@@ -1,10 +1,10 @@
 Package: iNZightTools
 Type: Package
 Title: Tools for iNZight
-Version: 1.2
+Version: 1.2.2
 Imports: survey, grDevices
 Suggests: iNZight, Acinonyx, cairoDevice
-Date: 2016-TBA
+Date: 2017-02-03
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"))
@@ -15,4 +15,4 @@ RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2017-01-24 21:03:30 UTC; unix
+Built: R 3.2.2; ; 2017-02-23 21:52:42 UTC; unix

@@ -9,6 +9,7 @@ import(gWidgets)
 import(RGtk2)
 import(gWidgetsRGtk2)
 #import(RODBC)
+importFrom(iNZightTools, newdevice)
 
 # Just grabbing everything here *except* id, because
 # it breaks gWidgets::id

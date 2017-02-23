@@ -3,6 +3,7 @@ forecastplot         Forecast plot
 iNZightTS            iNZightTS (Time-Series) Objects
 iNZightTS-package    Time Series Data Analysis
 multiseries          Compare multiple timeseries
+newdevice            importFrom iNZightTools newdevice
 print.iNZightTS      Print an iNZightTS object
 rawplot              Draw a simple time series plot
 seaice               Sea Ice

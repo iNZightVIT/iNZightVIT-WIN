@@ -1,13 +1,6 @@
 iNZightTools-package	iNZightTools-package
 aggregate.data	aggregate.data
-changeColumnTypes	changeColumnTypes
-changeToDatatype	changeToDatatype
-changeToDatatype.default	changeToDatatype
-changeToDatatype.iNZclass.character	changeToDatatype
-changeToDatatype.iNZclass.factor	changeToDatatype
-changeToDatatype.iNZclass.numeric	changeToDatatype
 combine.levels	combine.levels
-convertSpssDetails	convertSpssDetails
 fitDesign	fitDesign
 fitModel	fitModel
 get.collapsed.column	get.collapsed.column
@@ -15,9 +8,6 @@ get.combinations	get.combinations
 get.form.class.interval	get.form.class.interval
 get.missing.categorical	get.missing.categorical
 iNZightTools	iNZightTools-package
-isColumnTypesCorrect	isColumnTypesCorrect
-isPreview	isPreview
-makeLocale	makeLocale
 newdevice	newdevice
 order.overwrite	order.overwrite
 rename.levels	rename.levels

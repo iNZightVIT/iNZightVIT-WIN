@@ -4,6 +4,7 @@ forecastplot	forecastplot
 iNZightMTS	iNZightTS
 iNZightTS	iNZightTS
 multiseries	multiseries
+newdevice	newdevice
 print.iNZightTS	print.iNZightTS
 rawplot	rawplot
 seaice	seaice
