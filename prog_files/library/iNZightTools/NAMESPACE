@@ -2,6 +2,9 @@
 
 export(fitDesign)
 export(fitModel)
+export(iNZexport)
+export(iNZread)
+export(isPreview)
 export(newdevice)
 export(sample.data)
 export(search.name)
