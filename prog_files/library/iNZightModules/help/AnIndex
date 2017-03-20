@@ -6,6 +6,8 @@ iNZightMapMod-class	iNZightMapMod-class
 iNZightModules	iNZightModules
 iNZightMultiRes	iNZightMultiRes-class
 iNZightMultiRes-class	iNZightMultiRes-class
+iNZightRegMod	iNZightRegMod-class
+iNZightRegMod-class	iNZightRegMod-class
 iNZightTSMod	iNZightTSMod-class
 iNZightTSMod-class	iNZightTSMod-class
 modelFitting	modelFitting
