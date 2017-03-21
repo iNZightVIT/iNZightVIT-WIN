@@ -6,8 +6,8 @@ Date: 2016-12-13
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
     email = "tom.elliott@auckland.ac.nz"))
 Depends: R(>= 2.13)
-Imports: grid, boot, s20x, survey, quantreg, SparseM, hexbin,
-       hextri, iNZightMR, colorspace, dichromat
+Imports: grid, boot, s20x, survey, quantreg, SparseM, hexbin, hextri,
+        iNZightMR, colorspace, dichromat
 Suggests: iNZight
 Description: Simple plotting function(s) for exploratory data analysis with
     flexible plotting options to allow users to customise plots.
@@ -15,4 +15,4 @@ License: GPL-2
 RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-03-21 00:32:03 UTC; unix
+Built: R 3.2.2; ; 2017-03-21 06:45:24 UTC; unix
