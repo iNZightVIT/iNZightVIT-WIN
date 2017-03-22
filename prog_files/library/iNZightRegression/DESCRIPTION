@@ -14,8 +14,9 @@ Suggests: iNZight, s20x, iNZightPlots
 Description: Core functions for iNZight Model Fitting module, and can also be
     used as a standalone package called directly from R.
 License: GPL-2
+RoxygenNote: 5.0.1
 Author: Simon Potter [aut],
   David Banks [aut],
   Tom Elliott [cre, aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-03-21 22:58:22 UTC; unix
+Built: R 3.2.2; ; 2017-03-22 02:22:54 UTC; unix
