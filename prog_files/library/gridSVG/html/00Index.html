@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: Export 'grid' Graphics as SVG</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> Export 'grid' Graphics as SVG
+<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;gridSVG&rsquo; version 1.5-0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="feComponentTransfer.html">addComponentFunction</a></td>
+<td>Perform Colour Component-wise Remapping.</td></tr>
+<tr><td style="width: 25%;"><a href="filterEffect.html">addFilterEffect</a></td>
+<td>Creating Filter Effects</td></tr>
+<tr><td style="width: 25%;"><a href="feMerge.html">addMergeNode</a></td>
+<td>Composite image layers together.</td></tr>
+<tr><td style="width: 25%;"><a href="animate.html">animate</a></td>
+<td>Convert animation specifications to SVG elements.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.animate.html">animateGrob</a></td>
+<td>Animate a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="animUnit.html">animUnit</a></td>
+<td>Generate a set of animation values.</td></tr>
+<tr><td style="width: 25%;"><a href="animUnit.html">animValue</a></td>
+<td>Generate a set of animation values.</td></tr>
+<tr><td style="width: 25%;"><a href="animUnit.html">as.animUnit</a></td>
+<td>Generate a set of animation values.</td></tr>
+<tr><td style="width: 25%;"><a href="animUnit.html">as.animValue</a></td>
+<td>Generate a set of animation values.</td></tr>
+<tr><td style="width: 25%;"><a href="registerClipPath.html">clipPath</a></td>
+<td>Create the definition of a non-rectangular clipping path.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.clipPath.html">clipPathGrob</a></td>
+<td>Apply a clipping path to a grid grob.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.comment.html">commentGrob</a></td>
+<td>Create a grid grob representing a comment</td></tr>
+<tr><td style="width: 25%;"><a href="gridsvg.html">dev.off</a></td>
+<td>gridSVG Graphics Device</td></tr>
+<tr><td style="width: 25%;"><a href="grid.element.html">elementGrob</a></td>
+<td>Create a grid grob representing an SVG element</td></tr>
+<tr><td style="width: 25%;"><a href="fe.html">fe</a></td>
+<td>Creating a generic filter effect</td></tr>
+<tr><td style="width: 25%;"><a href="feBlend.html">feBlend</a></td>
+<td>Blend two objects together.</td></tr>
+<tr><td style="width: 25%;"><a href="feColorMatrix.html">feColorMatrix</a></td>
+<td>Apply a matrix transformation on colour values.</td></tr>
+<tr><td style="width: 25%;"><a href="feComponentTransfer.html">feComponentTransfer</a></td>
+<td>Perform Colour Component-wise Remapping.</td></tr>
+<tr><td style="width: 25%;"><a href="feComposite.html">feComposite</a></td>
+<td>Combine images using Porter-Duff operations.</td></tr>
+<tr><td style="width: 25%;"><a href="feConvolveMatrix.html">feConvolveMatrix</a></td>
+<td>Apply a matrix convolution filter effect.</td></tr>
+<tr><td style="width: 25%;"><a href="feDiffuseLighting.html">feDiffuseLighting</a></td>
+<td>Light an image using the alpha channel as a bump map.</td></tr>
+<tr><td style="width: 25%;"><a href="feDisplacementMap.html">feDisplacementMap</a></td>
+<td>Displace pixel values from a filter input.</td></tr>
+<tr><td style="width: 25%;"><a href="feDistantLight.html">feDistantLight</a></td>
+<td>Create a Distant Light Source</td></tr>
+<tr><td style="width: 25%;"><a href="feFlood.html">feFlood</a></td>
+<td>Create and fill a rectangular region.</td></tr>
+<tr><td style="width: 25%;"><a href="feGaussianBlur.html">feGaussianBlur</a></td>
+<td>Apply a Gaussian blur to an image.</td></tr>
+<tr><td style="width: 25%;"><a href="feImage.html">feImage</a></td>
+<td>Draw a referred image.</td></tr>
+<tr><td style="width: 25%;"><a href="feMerge.html">feMerge</a></td>
+<td>Composite image layers together.</td></tr>
+<tr><td style="width: 25%;"><a href="feMerge.html">feMergeNode</a></td>
+<td>Composite image layers together.</td></tr>
+<tr><td style="width: 25%;"><a href="feMorphology.html">feMorphology</a></td>
+<td>"Fatten" or "thin" artwork.</td></tr>
+<tr><td style="width: 25%;"><a href="feOffset.html">feOffset</a></td>
+<td>Offset an input image relative to its current position.</td></tr>
+<tr><td style="width: 25%;"><a href="fePointLight.html">fePointLight</a></td>
+<td>Create a Point Light Source</td></tr>
+<tr><td style="width: 25%;"><a href="feSpecularLighting.html">feSpecularLighting</a></td>
+<td>Light an image using the alpha channel as a bump map.</td></tr>
+<tr><td style="width: 25%;"><a href="feSpotLight.html">feSpotLight</a></td>
+<td>Create a Spot Light Source</td></tr>
+<tr><td style="width: 25%;"><a href="feTile.html">feTile</a></td>
+<td>Fill a rectangle with a tiled pattern of an input image.</td></tr>
+<tr><td style="width: 25%;"><a href="feTurbulence.html">feTurbulence</a></td>
+<td>Create an image using the Perlin turbulence function.</td></tr>
+<tr><td style="width: 25%;"><a href="filterEffect.html">filterEffect</a></td>
+<td>Creating Filter Effects</td></tr>
+<tr><td style="width: 25%;"><a href="grid.filter.html">filterGrob</a></td>
+<td>Associate a filter effect with a grid grob.</td></tr>
+<tr><td style="width: 25%;"><a href="filterInputs.html">filterInputs</a></td>
+<td>Identifies input for a filter effect primitive.</td></tr>
+<tr><td style="width: 25%;"><a href="garnish.html">garnish</a></td>
+<td>Convert animation specifications to SVG elements.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.garnish.html">garnishGrob</a></td>
+<td>Associate arbitrary SVG attributes with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="getSVGFonts.html">getSVGFonts</a></td>
+<td>Manage SVG fonts</td></tr>
+<tr><td style="width: 25%;"><a href="getSVGMappings.html">getSVGMappings</a></td>
+<td>Retrieving Viewport, Grob, and Reference Names as SVG IDs, CSS Selectors and XPath Expressions</td></tr>
+<tr><td style="width: 25%;"><a href="setSVGoptions.html">getSVGoption</a></td>
+<td>Get and Set Global Options</td></tr>
+<tr><td style="width: 25%;"><a href="setSVGoptions.html">getSVGoptions</a></td>
+<td>Get and Set Global Options</td></tr>
+<tr><td style="width: 25%;"><a href="grid.gradientFill.html">gradientFillGrob</a></td>
+<td>Associate a gradient fill with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="grid.animate.html">grid.animate</a></td>
+<td>Animate a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="grid.clipPath.html">grid.clipPath</a></td>
+<td>Apply a clipping path to a grid grob.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.comment.html">grid.comment</a></td>
+<td>Create a grid grob representing a comment</td></tr>
+<tr><td style="width: 25%;"><a href="grid.element.html">grid.element</a></td>
+<td>Create a grid grob representing an SVG element</td></tr>
+<tr><td style="width: 25%;"><a href="grid.export.html">grid.export</a></td>
+<td>Generate SVG output from a grid graphic</td></tr>
+<tr><td style="width: 25%;"><a href="grid.filter.html">grid.filter</a></td>
+<td>Associate a filter effect with a grid grob.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.garnish.html">grid.garnish</a></td>
+<td>Associate arbitrary SVG attributes with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="grid.gradientFill.html">grid.gradientFill</a></td>
+<td>Associate a gradient fill with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="grid.hyperlink.html">grid.hyperlink</a></td>
+<td>Associate a hyperlink with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="grid.mask.html">grid.mask</a></td>
+<td>Apply an opacity mask to a grid grob.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.patternFill.html">grid.patternFill</a></td>
+<td>Associate a pattern fill with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="grid.script.html">grid.script</a></td>
+<td>Create a grid grob containing an SVG script</td></tr>
+<tr><td style="width: 25%;"><a href="grid.element.html">grid.textNode</a></td>
+<td>Create a grid grob representing an SVG element</td></tr>
+<tr><td style="width: 25%;"><a href="gridsvg.html">gridsvg</a></td>
+<td>gridSVG Graphics Device</td></tr>
+<tr><td style="width: 25%;"><a href="gridSVG.newpage.html">gridSVG.newpage</a></td>
+<td>Move to a New Page on a gridSVG Device</td></tr>
+<tr><td style="width: 25%;"><a href="coords.html">gridSVGCoords</a></td>
+<td>Importing an external coordinate system</td></tr>
+<tr><td style="width: 25%;"><a href="gridSVGMappings.html">gridSVGMappings</a></td>
+<td>Mapping Viewport, Grob and Reference Names to SVG IDs</td></tr>
+<tr><td style="width: 25%;"><a href="grid.export.html">gridToSVG</a></td>
+<td>Generate SVG output from a grid graphic</td></tr>
+<tr><td style="width: 25%;"><a href="grobToDev.html">grobToDev</a></td>
+<td>Convert a grob to device calls</td></tr>
+<tr><td style="width: 25%;"><a href="grid.hyperlink.html">hyperlinkGrob</a></td>
+<td>Associate a hyperlink with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="gradients.html">linearGradient</a></td>
+<td>Create Linear and Radial Gradients</td></tr>
+<tr><td style="width: 25%;"><a href="listSVGDefinitions.html">listSVGDefinitions</a></td>
+<td>List All Reference Definitions</td></tr>
+<tr><td style="width: 25%;"><a href="registerMask.html">mask</a></td>
+<td>Create the definition of an opacity mask.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.mask.html">maskGrob</a></td>
+<td>Apply an opacity mask to a grid grob.</td></tr>
+<tr><td style="width: 25%;"><a href="registerPatternFill.html">pattern</a></td>
+<td>Create a definition of a fill pattern.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.patternFill.html">patternFillGrob</a></td>
+<td>Associate a pattern fill with a grid grob</td></tr>
+<tr><td style="width: 25%;"><a href="pushClipPath.html">popClipPath</a></td>
+<td>Apply a clipping context to the current viewport.</td></tr>
+<tr><td style="width: 25%;"><a href="popContext.html">popContext</a></td>
+<td>Leaving A Modified Viewport Context</td></tr>
+<tr><td style="width: 25%;"><a href="pushMask.html">popMask</a></td>
+<td>Apply a masking context to the current viewport.</td></tr>
+<tr><td style="width: 25%;"><a href="primToDev.html">primToDev</a></td>
+<td>Convert a grob to device calls</td></tr>
+<tr><td style="width: 25%;"><a href="pushClipPath.html">pushClipPath</a></td>
+<td>Apply a clipping context to the current viewport.</td></tr>
+<tr><td style="width: 25%;"><a href="pushMask.html">pushMask</a></td>
+<td>Apply a masking context to the current viewport.</td></tr>
+<tr><td style="width: 25%;"><a href="gradients.html">radialGradient</a></td>
+<td>Create Linear and Radial Gradients</td></tr>
+<tr><td style="width: 25%;"><a href="readCoordsJS.html">readCoordsJS</a></td>
+<td>Importing JavaScript coordinate information.</td></tr>
+<tr><td style="width: 25%;"><a href="readMappingsJS.html">readMappingsJS</a></td>
+<td>Importing JavaScript mapping information.</td></tr>
+<tr><td style="width: 25%;"><a href="registerClipPath.html">registerClipPath</a></td>
+<td>Create the definition of a non-rectangular clipping path.</td></tr>
+<tr><td style="width: 25%;"><a href="registerFilter.html">registerFilter</a></td>
+<td>Create the definition a filter effect.</td></tr>
+<tr><td style="width: 25%;"><a href="registerGradientFill.html">registerGradientFill</a></td>
+<td>Create a definition of a gradient fill.</td></tr>
+<tr><td style="width: 25%;"><a href="registerMask.html">registerMask</a></td>
+<td>Create the definition of an opacity mask.</td></tr>
+<tr><td style="width: 25%;"><a href="registerPatternFill.html">registerPatternFill</a></td>
+<td>Create a definition of a fill pattern.</td></tr>
+<tr><td style="width: 25%;"><a href="registerPatternFill.html">registerPatternFillRef</a></td>
+<td>Create a definition of a fill pattern.</td></tr>
+<tr><td style="width: 25%;"><a href="grid.script.html">scriptGrob</a></td>
+<td>Create a grid grob containing an SVG script</td></tr>
+<tr><td style="width: 25%;"><a href="getSVGFonts.html">setSVGFonts</a></td>
+<td>Manage SVG fonts</td></tr>
+<tr><td style="width: 25%;"><a href="setSVGoptions.html">setSVGoptions</a></td>
+<td>Get and Set Global Options</td></tr>
+<tr><td style="width: 25%;"><a href="grid.element.html">textNodeGrob</a></td>
+<td>Create a grid grob representing an SVG element</td></tr>
+<tr><td style="width: 25%;"><a href="feComponentTransfer.html">transferFunction</a></td>
+<td>Perform Colour Component-wise Remapping.</td></tr>
+<tr><td style="width: 25%;"><a href="convert.html">viewportConvertDim</a></td>
+<td>Functions for using an imported coordinate system</td></tr>
+<tr><td style="width: 25%;"><a href="convert.html">viewportConvertHeight</a></td>
+<td>Functions for using an imported coordinate system</td></tr>
+<tr><td style="width: 25%;"><a href="convert.html">viewportConvertPos</a></td>
+<td>Functions for using an imported coordinate system</td></tr>
+<tr><td style="width: 25%;"><a href="convert.html">viewportConvertWidth</a></td>
+<td>Functions for using an imported coordinate system</td></tr>
+<tr><td style="width: 25%;"><a href="convert.html">viewportConvertX</a></td>
+<td>Functions for using an imported coordinate system</td></tr>
+<tr><td style="width: 25%;"><a href="convert.html">viewportConvertY</a></td>
+<td>Functions for using an imported coordinate system</td></tr>
+<tr><td style="width: 25%;"><a href="viewportCreate.html">viewportCreate</a></td>
+<td>Recreate a viewport from imported coordinate information.</td></tr>
+</table>
+</body></html>
