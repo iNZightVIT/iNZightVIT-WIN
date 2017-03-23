@@ -1,7 +1,7 @@
 Package: FutureLearnData
 Title: Data sets for the Data to Insight MOOC
-Version: 0.0.2
-Date: 2017-03-16
+Version: 0.0.3
+Date: 2017-03-23
 Authors@R: c(person("Tom", "Elliott", email = "tom.elliott@auckland.ac.nz",
                     role = c("aut", "cre")))
 Description: A collection of data sets that are used in the Future Learn "Data
@@ -14,4 +14,4 @@ LazyData: true
 RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-03-22 23:56:10 UTC; unix
+Built: R 3.2.2; ; 2017-03-23 00:52:58 UTC; unix

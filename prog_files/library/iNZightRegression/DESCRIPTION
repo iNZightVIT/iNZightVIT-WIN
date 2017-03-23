@@ -1,8 +1,8 @@
 Package: iNZightRegression
 Type: Package
 Title: iNZightRegression
-Version: 1.1.5
-Date: 2017-01-09
+Version: 1.1.6
+Date: 2017-03-23
 Authors@R: c(person("Simon", "Potter", role = c("aut"),
     email = "spot023@aucklanduni.ac.nz"),
     person("David", "Banks", role = "aut"),
@@ -19,4 +19,4 @@ Author: Simon Potter [aut],
   David Banks [aut],
   Tom Elliott [cre, aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-03-22 23:55:52 UTC; unix
+Built: R 3.2.2; ; 2017-03-23 00:52:39 UTC; unix

@@ -1,18 +1,21 @@
 Package: iNZightPlots
 Type: Package
 Title: iNZightPlots
-Version: 2.6
-Date: 2016-12-13
+Version: 2.7
+Date: 2017-03-23
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
-    email = "tom.elliott@auckland.ac.nz"))
+                    email = "tom.elliott@auckland.ac.nz"),
+             person("Yu Han", "Soh", role = "ctb"))
 Depends: R(>= 2.13)
 Imports: grid, boot, s20x, survey, quantreg, SparseM, hexbin,
-       hextri, iNZightMR, colorspace, dichromat
+       hextri, iNZightMR, colorspace, dichromat, gridSVG,
+       jsonlite, xtable
 Suggests: iNZight
 Description: Simple plotting function(s) for exploratory data analysis with
     flexible plotting options to allow users to customise plots.
 License: GPL-2
 RoxygenNote: 5.0.1
-Author: Tom Elliott [aut, cre]
+Author: Tom Elliott [aut, cre],
+  Yu Han Soh [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-03-22 23:55:53 UTC; unix
+Built: R 3.2.2; ; 2017-03-23 00:52:40 UTC; unix
