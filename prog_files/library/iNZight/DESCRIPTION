@@ -12,13 +12,10 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("David", "Banks", role = "ctb"))
 Description: An interactive GUI for easy visual exploration of datasets.
 License: GPL-3
-Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2,
-       cairoDevice
-Imports: utils, grDevices, methods, grid, gdata,
-       gWidgets2RGtk2, iNZightPlots, iNZightTools, reshape2,
-       plyr, survey, colorspace
-Suggests: RODBC, iNZightMR, iNZightModules, png, viridis,
-       RColorBrewer, FutureLearnData
+Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2, cairoDevice
+Imports: utils, grDevices, methods, grid, gdata, gWidgets2RGtk2, iNZightPlots, iNZightTools, reshape2,
+            plyr, survey, colorspace
+Suggests: RODBC, iNZightMR, iNZightModules, png, viridis, RColorBrewer, FutureLearnData
 LazyData: true
 RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
@@ -27,4 +24,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-04-10 23:55:51 UTC; unix
+Built: R 3.2.2; ; 2017-05-07 21:30:37 UTC; unix
