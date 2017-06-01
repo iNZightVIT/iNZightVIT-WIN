@@ -7,3 +7,4 @@ exportSVG	exportSVG
 getPlotSummary	getPlotSummary
 iNZightPlot	iNZightPlot
 inzpar	inzpar
+print.inzHTML	print.inzHTML
