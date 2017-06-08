@@ -6,6 +6,7 @@ iNZightRegression	iNZightRegression
 iNZightSummary	iNZightSummary
 moecalc	moecalc
 multicomp	multicomp
+multicomp.moecalc	multicomp
 partialResPlot	partialResPlot
 plot.moecalc	moecalc
 plotlm6	plotlm6
