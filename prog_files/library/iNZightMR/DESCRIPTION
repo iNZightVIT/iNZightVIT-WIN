@@ -10,15 +10,15 @@ Authors@R: c(person("Junjie", "Zeng", role = c("aut"),
            email = "tom.elliott@auckland.ac.nz")
     )
 Depends: R (>= 2.13)
-Imports: grid
+Imports: grid, grDevices, graphics, stats, utils
 Suggests: iNZightPlots
 Additional_repositories: http://r.docker.stat.auckland.ac.nz/R
 LazyData: true
 Description: Interaction and analysis of Multiple Response Data.
 License: GPL-2
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Author: Junjie Zeng [aut],
   Simon Potter [aut],
   Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-06-08 02:17:15 UTC; unix
+Built: R 3.2.2; ; 2017-06-09 03:20:40 UTC; unix

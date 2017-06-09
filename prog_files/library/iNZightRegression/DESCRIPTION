@@ -10,7 +10,7 @@ Authors@R: c(person("Simon", "Potter", role = c("aut"),
     email = "tom.elliott@auckland.ac.nz"))
 Depends: R (>= 2.13)
 Imports: stats, grDevices, graphics, grid, car
-Suggests: iNZight, s20x, iNZightPlots
+Suggests: iNZightPlots
 Description: Core functions for iNZight Model Fitting module, and can also be
     used as a standalone package called directly from R.
 License: GPL-2
@@ -19,4 +19,4 @@ Author: Simon Potter [aut],
   David Banks [aut],
   Tom Elliott [cre, aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-06-08 02:17:14 UTC; unix
+Built: R 3.2.2; ; 2017-06-09 03:20:40 UTC; unix
