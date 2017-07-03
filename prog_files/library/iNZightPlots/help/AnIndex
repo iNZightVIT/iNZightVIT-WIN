@@ -3,6 +3,8 @@ create	create
 exploreAllPlots	exploreAllPlots
 exploreAllSummaries	exploreAllSummaries
 exportHTML	exportHTML
+exportHTML.function	exportHTML
+exportHTML.inzplotoutput	exportHTML
 exportSVG	exportSVG
 getPlotSummary	getPlotSummary
 iNZightPlot	iNZightPlot
