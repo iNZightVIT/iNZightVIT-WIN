@@ -1,26 +1,31 @@
-census.at.school.500          Census at School 500
-gapminder                     Gapminder Dataset (1952 - 2012)
-gapminder_2008                Gapminder Dataset (2008)
-nhanes2009_2012               NHANES Dataset (2009 - 2012)
-nhanes_1000                   NHANES Dataset (First 1000 rows)
-nhanes_1000_50                NHANES Dataset (First 50 rows)
-nhanes_2000                   NHANES Dataset (First 2000 rows)
-olympics100m                  Olympics 100m
-week7_CanadaPop               Canada Population
-week7_CocaineTrtmtExpt        Cocaine Treatment Experiment
-week7_CocaineTrtmtExpt_2Trt   Cocaine Treatment Experiment (Lithum/Placebo)
+census.at.school.500    Census at School 500
+gapminder               Gapminder Dataset (1952 - 2012)
+gapminder_2008          Gapminder Dataset (2008)
+nhanes2009_2012         NHANES Dataset (2009 - 2012)
+nhanes_1000             NHANES Dataset (First 1000 rows)
+nhanes_1000_50          NHANES Dataset (First 50 rows)
+nhanes_2000             NHANES Dataset (First 2000 rows)
+olympics100m            Olympics 100m
+week7_CanadaPop         Canada Population
+week7_CocaineTrtmtExpt
+                        Cocaine Treatment Experiment
+week7_CocaineTrtmtExpt_2Trt
+                        Cocaine Treatment Experiment (Lithum/Placebo)
 week7_CocaineTrtmtExpt_2Trt_D_P
-                              Cocaine Treatment Experiment (Desipramine/Placebo)
+                        Cocaine Treatment Experiment
+                        (Desipramine/Placebo)
 week7_CocaineTrtmtExpt_Lith_Desip
-                              Cocaine Treatment Experiment (Lithium/Desipramine)
-week7_LightatNight            Light at Night for Mice
-week7_MindsetMatters          Mindset Matters
-week7_SleepDeprivationExpt    Light at Night for Mice
+                        Cocaine Treatment Experiment
+                        (Lithium/Desipramine)
+week7_LightatNight      Light at Night for Mice
+week7_MindsetMatters    Mindset Matters
+week7_SleepDeprivationExpt
+                        Light at Night for Mice
 week8_Actual_VisitorArrivalsMonthlyFrom1998
-                              Monthly Visitor Arrivals from 1998
+                        Monthly Visitor Arrivals from 1998
 week8_Actual_VisitorArrivalsQuarterlyFrom1998
-                              Quarterly Visitor Arrivals from 1998
+                        Quarterly Visitor Arrivals from 1998
 week8_AverageVisitorsMonthly
-                              Average Monthly Visitor Arrivals
+                        Average Monthly Visitor Arrivals
 week8_AverageVisitorsQuarterly
-                              Average Quarterly Visitor Arrivals
+                        Average Quarterly Visitor Arrivals
