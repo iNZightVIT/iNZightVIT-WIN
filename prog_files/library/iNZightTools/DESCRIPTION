@@ -3,18 +3,18 @@ Type: Package
 Title: Tools for iNZight
 Version: 1.3
 Date: 2017-03-23
-Imports: survey, grDevices
-Suggests: iNZight, Acinonyx, cairoDevice
+Imports: survey, grDevices, foreign, readr, readxl
+Suggests: Acinonyx, cairoDevice
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"),
              person("Akshay", "Gupta", role = "ctb"))
 Description: Compatibility functions used for multiple packages and
     distributions of iNZight, including Lite.
-License: GPL-2
+License: GPL-3 | LICENSE
 RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2017-03-23 01:19:45 UTC; unix
+Built: R 3.2.2; ; 2017-08-18 01:00:11 UTC; unix

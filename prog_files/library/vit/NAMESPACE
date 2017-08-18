@@ -13,18 +13,7 @@ importFrom(iNZightTools, newdevice)
 
 # Just grabbing everything here *except* id, because
 # it breaks gWidgets::id
-importFrom(plyr, ., a_ply, aaply, adply, alply, amv_dimnames, arrange,
-                 as.quoted, catcolwise, colwise, compact, count,
-                 create_progress_bar, d_ply, daply, ddply, defaults, desc,
-                 dlply, each, empty, eval.quoted, failwith, idata.frame,
-                 is.discrete, is.formula, is.quoted, isplit2, join.keys,
-                 join, l_ply, laply, ldply, liply, llply, m_ply, maply,
-                 match_df, mdply, mlply, mutate, numcolwise, progress_none,
-                 progress_text, progress_tk, progress_win, quickdf, r_ply,
-                 raply, rbind.fill.matrix, rbind.fill, rdply, rename,
-                 rlply, round_any, splat, split_labels, strip_splits,
-                 summarise, summarize, true, try_default, tryapply, unrowname,
-                 vaggregate)
+importFrom(plyr, ., a_ply, aaply, adply, alply, amv_dimnames, arrange, as.quoted, catcolwise, colwise, compact, count,create_progress_bar, d_ply, daply, ddply, defaults, desc, dlply, each, empty, eval.quoted, failwith, idata.frame, is.discrete, is.formula, is.quoted, isplit2, join.keys, join, l_ply, laply, ldply, liply, llply, m_ply, maply,	match_df, mdply, mlply, mutate, numcolwise, progress_none, progress_text, progress_tk, progress_win, quickdf, r_ply, raply, rbind.fill.matrix, rbind.fill, rdply, rename, rlply, round_any, splat, split_labels, strip_splits, summarise, summarize, true, try_default, tryapply, unrowname, vaggregate)
 
 S3method("drawDetails", "boxplot")
 S3method("editDetails", "boxplot")

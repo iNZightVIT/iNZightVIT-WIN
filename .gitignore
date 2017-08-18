@@ -2,3 +2,5 @@
 *.exe
 prog_files/library/iNZightMaps
 *.zip
+
+*.Rhistory
