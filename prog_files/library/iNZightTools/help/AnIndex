@@ -1,4 +1,3 @@
-iNZightTools-package	iNZightTools-package
 iNZightTools-package	iNZightTools
 aggregate.data	aggregate.data
 changeColumnTypes	changeColumnTypes
@@ -20,7 +19,6 @@ get.combinations	get.combinations
 get.form.class.interval	get.form.class.interval
 get.missing.categorical	get.missing.categorical
 iNZexport	iNZexport
-iNZightTools	iNZightTools-package
 iNZightTools	iNZightTools
 iNZread	iNZread
 isColumnTypesCorrect	isColumnTypesCorrect
