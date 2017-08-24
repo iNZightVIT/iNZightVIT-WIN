@@ -11,8 +11,9 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("Simon", "Potter", role = "aut"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 2.13)
-Imports: gWidgets2, gWidgets2RGtk2, iNZightPlots, iNZightRegression,
-        iNZightTools, iNZightMR, iNZightTS, gpairs, methods, survey
+Imports: gWidgets2, gWidgets2RGtk2, iNZightPlots,
+       iNZightRegression, iNZightTools, iNZightMR, iNZightTS,
+       gpairs, methods, survey
 Suggests: iNZightMaps, rgl, mgcv
 License: GPL-3 | file LICENSE
 Description: A suite of add-on modules for the iNZight GUI, including model
@@ -25,4 +26,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2017-08-24 01:34:54 UTC; unix
+Built: R 3.2.2; ; 2017-08-24 05:36:02 UTC; unix

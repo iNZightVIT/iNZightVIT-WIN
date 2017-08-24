@@ -1,7 +1,9 @@
 iNZightTools-package	iNZightTools-package
+iNZightTools-package	iNZightTools
 aggregate.data	aggregate.data
 changeColumnTypes	changeColumnTypes
 changeToDatatype	changeToDatatype
+code	code
 combine.levels	combine.levels
 convertSpssDetails	convertSpssDetails
 convertToMetadata	convertToMetadata
@@ -19,6 +21,7 @@ get.form.class.interval	get.form.class.interval
 get.missing.categorical	get.missing.categorical
 iNZexport	iNZexport
 iNZightTools	iNZightTools-package
+iNZightTools	iNZightTools
 iNZread	iNZread
 isColumnTypesCorrect	isColumnTypesCorrect
 isMetadataAvailable	isMetadataAvailable
@@ -28,6 +31,7 @@ makeDatatypeChar.character	makeDatatypeChar
 makeDatatypeChar.list	makeDatatypeChar
 makeLocale	makeLocale
 newdevice	newdevice
+numToCat	numToCat
 order.overwrite	order.overwrite
 readMetadata	readMetadata
 rename.levels	rename.levels

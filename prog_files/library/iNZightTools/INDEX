@@ -1,54 +1,66 @@
-aggregate.data          aggregates the data over selected factor
-                        columns
-changeColumnTypes       Changes the datatype of columns of dataframe to
-                        the specified datatypes.
-changeToDatatype        Changes the datatype of a column of a dataframe
-                        to the specified datatype.
-combine.levels          Combine the levels of factor variables.
-convertSpssDetails      Converts the data type of columns specified
-                        from numeric to date.
-convertToMetadata       Takes an object (list or a dataframe) and
-                        returns its metadata.
-extractFromFrame        Extracts more information from the dataframe
-                        (obj).
-fitDesign               Fit Survey Design
-fitModel                Fit a Model
-get.collapsed.column    Collapses selected levels in factor vector
-get.combinations        Takes a data.frame as generated from the
-                        'get.missing.categorical' function and converts
-                        it into a data.frame of all unique rows and
-                        there counts in the original data.
+aggregate.data       aggregates the data over selected factor
+                     columns
+changeColumnTypes    Changes the datatype of columns of
+                     dataframe to the specified datatypes.
+changeToDatatype     Changes the datatype of a column of a
+                     dataframe to the specified datatype.
+code                 Get Data's Code
+combine.levels       Combine the levels of factor variables.
+convertSpssDetails   Converts the data type of columns
+                     specified from numeric to date.
+convertToMetadata    Takes an object (list or a dataframe) and
+                     returns its metadata.
+extractFromFrame     Extracts more information from the
+                     dataframe (obj).
+fitDesign            Fit Survey Design
+fitModel             Fit a Model
+get.collapsed.column
+                     Collapses selected levels in factor
+                     vector
+get.combinations     Takes a data.frame as generated from the
+                     'get.missing.categorical' function and
+                     converts it into a data.frame of all
+                     unique rows and there counts in the
+                     original data.
 get.form.class.interval
-                        Form class intervals from a column specified by
-                        column name or column index from the a
-                        data.frame.
+                     Form class intervals from a column
+                     specified by column name or column index
+                     from the a data.frame.
 get.missing.categorical
-                        Converts specified columns into binary factor
-                        variables which get added to the input
-                        data.frame.
-iNZexport               iNZight Metadata Writer
-iNZightTools-package    Tools for iNZight
-iNZread                 iNZight Import Data
-isColumnTypesCorrect    Checks if the entered column types are allowed
-                        or not.
-isMetadataAvailable     Reads a file and checks if metadata is
-                        available.
-isPreview               Checks if the complete file was read or not.
-makeDatatypeChar        Converts the column datatypes to a single word
-                        or string which can be passed to
-                        readr::read_csv as an argument.
-makeLocale              Creates a locale that cane be used with
-                        functions from readr package.
-newdevice               Open a New Graphics Device
-order.overwrite         Order vectors
-readMetadata            iNZight Metadata Reader
-rename.levels           Renames the levels of a factor.
-reorder.levels          This function changes the order of levels in
-                        the data.
-sample.data             Takes a sample of rows from a data.frame
-search.name             Searches a list recursivly for a name and
-                        returns the value associated with the name
-sort.data               Sorts the df data frame after the input
-                        variables
+                     Converts specified columns into binary
+                     factor variables which get added to the
+                     input data.frame.
+iNZexport            iNZight Metadata Writer
+iNZightTools         Tools for data processing with iNZight
+iNZightTools-package
+                     Tools for iNZight
+iNZread              iNZight Import Data
+isColumnTypesCorrect
+                     Checks if the entered column types are
+                     allowed or not.
+isMetadataAvailable
+                     Reads a file and checks if metadata is
+                     available.
+isPreview            Checks if the complete file was read or
+                     not.
+makeDatatypeChar     Converts the column datatypes to a single
+                     word or string which can be passed to
+                     readr::read_csv as an argument.
+makeLocale           Creates a locale that cane be used with
+                     functions from readr package.
+newdevice            Open a New Graphics Device
+numToCat             Convert to Categorical
+order.overwrite      Order vectors
+readMetadata         iNZight Metadata Reader
+rename.levels        Renames the levels of a factor.
+reorder.levels       This function changes the order of levels
+                     in the data.
+sample.data          Takes a sample of rows from a data.frame
+search.name          Searches a list recursivly for a name and
+                     returns the value associated with the
+                     name
+sort.data            Sorts the df data frame after the input
+                     variables
 stack.variables.perform
-                        Stacks the selected columns onto the data.
+                     Stacks the selected columns onto the
+                     data.

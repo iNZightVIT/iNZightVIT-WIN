@@ -12,9 +12,9 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
 Description: Compatibility functions used for multiple packages and
     distributions of iNZight, including Lite.
 License: GPL-2
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2017-08-24 01:34:40 UTC; unix
+Built: R 3.2.2; ; 2017-08-24 05:36:01 UTC; unix
