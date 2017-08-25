@@ -15,10 +15,10 @@ Suggests: iNZightPlots
 Additional_repositories: http://r.docker.stat.auckland.ac.nz/R
 LazyData: true
 Description: Interaction and analysis of Multiple Response Data.
-License: GPL-2
+License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
 Author: Junjie Zeng [aut],
   Simon Potter [aut],
   Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-08-24 23:16:43 UTC; unix
+Built: R 3.2.2; ; 2017-08-25 01:39:54 UTC; unix
