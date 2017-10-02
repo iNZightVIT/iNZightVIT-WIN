@@ -54,3 +54,4 @@ sort.data               Sorts the df data frame after the input
                         variables
 stack.variables.perform
                         Stacks the selected columns onto the data.
+transform               Transform Numeric Variable
