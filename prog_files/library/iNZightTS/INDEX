@@ -1,3 +1,4 @@
+compareplot             Plot multiple time series
 decompositionplot       Plot a Time Series Decomposition
 forecastplot            Forecast plot
 iNZightTS               iNZightTS (Time-Series) Objects
@@ -6,6 +7,7 @@ multiseries             Compare multiple timeseries
 newdevice               importFrom iNZightTools newdevice
 print.iNZightTS         Print an iNZightTS object
 rawplot                 Draw a simple time series plot
+recompose               Recompose a decomposed time series
 seaice                  Sea Ice
 seasonplot              Plot Seasonal Subseries from a Time Series
 visitorsA2              Visitors (annual)
