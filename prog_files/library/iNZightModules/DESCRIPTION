@@ -1,8 +1,8 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 2.2.0-2
-Date: 2017-08-25
+Version: 2.2.0-3
+Date: 2017-10-20
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Eric", "Lim", role = "aut"),
@@ -25,4 +25,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2017-10-02 01:49:42 UTC; unix
+Built: R 3.2.2; ; 2017-10-19 21:18:58 UTC; unix
