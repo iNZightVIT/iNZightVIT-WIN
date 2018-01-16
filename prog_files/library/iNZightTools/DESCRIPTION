@@ -3,9 +3,10 @@ Type: Package
 Title: Tools for iNZight
 Version: 1.4-1
 Date: 2017-10-02
-Imports: utils, stats, methods, survey, grDevices, foreign, readr,
-        readxl, magrittr, tibble
-Suggests: Acinonyx, cairoDevice
+Imports: utils, stats, methods, survey, grDevices, foreign,
+       readr, readxl, magrittr, tibble, dplyr, forcats, tidyr,
+       stringr
+Suggests: Acinonyx, cairoDevice, testthat
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"),
@@ -18,4 +19,4 @@ Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2018-01-15 00:04:47 UTC; unix
+Built: R 3.2.2; ; 2018-01-16 21:20:55 UTC; unix
