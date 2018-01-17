@@ -1,23 +1,21 @@
 Package: iNZightPlots
 Type: Package
 Title: iNZightPlots
-Version: 2.7.4
-Date: 2017-12-08
+Version: 2.7.5
+Date: 2018-01-18
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
              person("Yu Han", "Soh", role = "ctb"))
 Depends: R(>= 3.0)
 Imports: grDevices, stats, utils, grid, boot, s20x, survey, quantreg,
         hexbin, hextri, colorspace, dichromat, iNZightMR
-Suggests: viridis, gridSVG, xtable, jsonlite
+Suggests: viridis, gridSVG, knitr, jsonlite
 Additional_repositories: http://r.docker.stat.auckland.ac.nz/R
 Description: Simple plotting function(s) for exploratory data analysis with
     flexible plotting options to allow users to customise plots.
 License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2017-12-08 00:54:00 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Yu Han Soh [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.4.0; ; 2017-12-08 00:54:01 UTC; unix
+Built: R 3.4.0; ; 2018-01-17 19:44:26 UTC; unix

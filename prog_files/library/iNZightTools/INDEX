@@ -50,8 +50,7 @@ reorder.levels          This function changes the order of levels in
 sample.data             Takes a sample of rows from a data.frame
 search.name             Searches a list recursivly for a name and
                         returns the value associated with the name
-sort.data               Sorts the df data frame after the input
-                        variables
+sort.data               Sort data by variables
 stack.variables.perform
                         Stacks the selected columns onto the data.
 transform               Transform Numeric Variable

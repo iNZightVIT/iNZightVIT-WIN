@@ -1,15 +1,12 @@
 iNZightTS-package	iNZightTS-package
 compareplot	compareplot
-compareplot.1	compareplot
-compareplot.2p	compareplot
 decompositionplot	decompositionplot
 forecastplot	forecastplot
 iNZightMTS	iNZightTS
 iNZightTS	iNZightTS
 multiseries	multiseries
-multiseries.1	multiseries
-multiseries.2p	multiseries
-newdevice	newdevice
+plot.iNZightMTS	plot.iNZightMTS
+plot.iNZightTS	plot.iNZightTS
 print.iNZightTS	print.iNZightTS
 rawplot	rawplot
 recompose	recompose
