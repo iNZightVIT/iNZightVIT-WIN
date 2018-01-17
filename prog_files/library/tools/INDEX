@@ -1,7 +1,9 @@
 .print.via.format       Printing Utilities
 Adobe_glyphs            Conversion Tables between Character Sets
+CRAN_package_db         CRAN Package Repository Tools
 HTMLheader              Generate a standard HTML header for R help
 QC                      QC Checks for R Code and/or Documentation
+Rcmd                    R CMD Interface
 Rd2HTML                 Rd Converters
 Rd2txt_options          Set formatting options for text help
 RdTextFilter            Select text in an Rd file.
@@ -33,16 +35,17 @@ encoded_text_to_latex   Translate non-ASCII Text to LaTeX Escapes
 file_ext                File Utilities
 findHTMLlinks           Collect HTML Links from Package Documentation
 find_gs_cmd             Find a GhostScript Executable
-getDepList              Functions to Retrieve Dependency Information
 getVignetteInfo         Get information on installed vignettes.
-installFoundDepends     A function to install unresolved dependencies
 loadRdMacros            Load user-defined Rd help system macros.
 make_translations_pkg   Package the Current Translations in the R
                         sources
+makevars_user           User and Site Compilation Variables
 md5sum                  Compute MD5 Checksums
-package.dependencies    Check Package Dependencies
 package_dependencies    Computations on the Dependency Hierarchy of
                         Packages
+package_native_routine_registration_skeleton
+                        Write Skeleton for Adding Native Routine
+                        Registration to a Package
 parseLatex              These experimental functions work with a subset
                         of LaTeX code.
 parse_Rd                Parse an Rd file

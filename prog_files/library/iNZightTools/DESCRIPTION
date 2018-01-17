@@ -3,10 +3,9 @@ Type: Package
 Title: Tools for iNZight
 Version: 1.4-1
 Date: 2017-10-02
-Imports: utils, stats, methods, survey, grDevices, foreign,
-       readr, readxl, magrittr, tibble, dplyr, forcats, tidyr,
-       stringr
-Suggests: Acinonyx, cairoDevice, testthat
+Imports: utils, stats, methods, survey, grDevices, foreign, readr,
+        readxl, magrittr, tibble
+Suggests: Acinonyx, cairoDevice
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"),
@@ -15,8 +14,10 @@ Description: Compatibility functions used for multiple packages and
     distributions of iNZight, including Lite.
 License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2017-10-02 02:03:22 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2018-01-17 00:59:23 UTC; unix
+Built: R 3.4.0; ; 2017-10-02 02:03:23 UTC; unix

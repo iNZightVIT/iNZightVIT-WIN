@@ -1,17 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>R: analysis of complex survey samples</title>
+<head><title>R: Analysis of Complex Survey Samples</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
-<h1> analysis of complex survey samples
-<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+<h1> Analysis of Complex Survey Samples
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;survey&rsquo; version 3.30-3</h2>
+</div><h2>Documentation for package &lsquo;survey&rsquo; version 3.32-1</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -44,6 +44,7 @@
 <a href="#U">U</a>
 <a href="#V">V</a>
 <a href="#W">W</a>
+<a href="#Y">Y</a>
 <a href="#misc">misc</a>
 </p>
 
@@ -112,6 +113,8 @@
 <tr><td style="width: 25%;"><a href="make.calfun.html">cal.logit</a></td>
 <td>Calibration metrics</td></tr>
 <tr><td style="width: 25%;"><a href="make.calfun.html">cal.raking</a></td>
+<td>Calibration metrics</td></tr>
+<tr><td style="width: 25%;"><a href="make.calfun.html">cal.sinh</a></td>
 <td>Calibration metrics</td></tr>
 <tr><td style="width: 25%;"><a href="calibrate.html">calibrate</a></td>
 <td>Calibration (GREG) estimators</td></tr>
@@ -449,6 +452,8 @@
 <td>Scatterplot smoothing and density estimation</td></tr>
 <tr><td style="width: 25%;"><a href="twophase.html">print.twophase</a></td>
 <td>Two-phase designs</td></tr>
+<tr><td style="width: 25%;"><a href="psrsq.html">psrsq</a></td>
+<td>Pseudo-Rsquareds</td></tr>
 </table>
 
 <h2><a name="Q">-- Q --</a></h2>
@@ -626,6 +631,8 @@
 <td>Plots for survey data</td></tr>
 <tr><td style="width: 25%;"><a href="svyprcomp.html">svyprcomp</a></td>
 <td>Sampling-weighted principal component analysis</td></tr>
+<tr><td style="width: 25%;"><a href="svypredmeans.html">svypredmeans</a></td>
+<td>Predictive marginal means</td></tr>
 <tr><td style="width: 25%;"><a href="svyquantile.html">svyquantile</a></td>
 <td>Quantiles for sample surveys</td></tr>
 <tr><td style="width: 25%;"><a href="svyquantile.html">svyquantile.survey.design</a></td>
@@ -654,6 +661,10 @@
 <td>Scatterplot smoothing and density estimation</td></tr>
 <tr><td style="width: 25%;"><a href="svystandardize.html">svystandardize</a></td>
 <td>Direct standardization within domains</td></tr>
+<tr><td style="width: 25%;"><a href="svysurvreg.html">svysurvreg</a></td>
+<td>Fit accelerated failure models to survey data</td></tr>
+<tr><td style="width: 25%;"><a href="svysurvreg.html">svysurvreg.survey.design</a></td>
+<td>Fit accelerated failure models to survey data</td></tr>
 <tr><td style="width: 25%;"><a href="svychisq.html">svytable</a></td>
 <td>Contingency tables for survey data</td></tr>
 <tr><td style="width: 25%;"><a href="svychisq.html">svytable.survey.design</a></td>
@@ -750,6 +761,13 @@
 <td>Compute variances by replicate weighting</td></tr>
 <tr><td style="width: 25%;"><a href="withReplicates.html">withReplicates.svyrep.design</a></td>
 <td>Compute variances by replicate weighting</td></tr>
+</table>
+
+<h2><a name="Y">-- Y --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="yrbs.html">yrbs</a></td>
+<td>One variable from the Youth Risk Behaviors Survey, 2015.</td></tr>
 </table>
 
 <h2><a name="misc">-- misc --</a></h2>

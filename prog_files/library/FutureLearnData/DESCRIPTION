@@ -8,9 +8,12 @@ Description: A collection of data sets that are used in the Future Learn "Data
     to Insight" MOOC, provided by the University of Auckland. This package provides
     an easy way to access the data from iNZight.
 Depends: R (>= 2.10)
+Suggests: iNZight
 License: GPL-3
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2017-06-07 00:44:36 UTC; tell029
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2018-01-17 00:59:36 UTC; unix
+Built: R 3.4.0; ; 2017-06-07 00:44:37 UTC; unix

@@ -1,4 +1,4 @@
-Range-class             Mutable ranges.
+Range                   Mutable ranges.
 abs_area                Point area palette (continuous), with area
                         proportional to value.
 alpha                   Modify colour transparency. Vectorised in both
@@ -36,6 +36,7 @@ extended_breaks         Extended breaks. Uses Wilkinson's extended
 format_format           Format with using any arguments to 'format'.
 gradient_n_pal          Arbitrary colour gradient palette (continous).
 grey_pal                Grey scale palette (discrete).
+hms_trans               Transformation for times (class hms).
 hue_pal                 Hue palette (discrete).
 identity_pal            Identity palette.
 identity_trans          Identity transformation (do nothing).
@@ -60,12 +61,14 @@ pretty_breaks           Pretty breaks. Uses default R break algorithm
                         as implemented in 'pretty'.
 probability_trans       Probability transformation.
 reciprocal_trans        Reciprocal transformation.
-rescale                 Rescale numeric vector to have specified
+regular_minor_breaks    Minor breaks Places minor breaks between major
+                        breaks.
+rescale                 Rescale continuous vector to have specified
                         minimum and maximum.
 rescale_max             Rescale numeric vector to have specified
                         maximum.
-rescale_mid             Rescale numeric vector to have specified
-                        minimum, midpoint, and maximum.
+rescale_mid             Rescale vector to have specified minimum,
+                        midpoint, and maximum.
 rescale_none            Don't peform rescaling
 rescale_pal             Rescale palette (continuous).
 reverse_trans           Reverse transformation.
@@ -76,7 +79,7 @@ show_col                Show colours.
 sqrt_trans              Square-root transformation.
 squish                  Squish values into range.
 squish_infinite         Squish infinite values to range.
-time_trans              Transformation for times (class POSIXt).
+time_trans              Transformation for date-times (class POSIXt).
 train_continuous        Train (update) a continuous scale
 train_discrete          Train (update) a discrete scale
 trans_breaks            Pretty breaks on transformed scale.
@@ -84,6 +87,7 @@ trans_format            Format labels after transformation.
 trans_new               Create a new transformation object.
 trans_range             Compute range of transformed values.
 unit_format             Add units to the labels
+viridis_pal             Viridis palette
 wrap_format             Wrap text to a specified width, adding newlines
                         for spaces if text exceeds the width
 zero_range              Determine if range of vector is close to zero,

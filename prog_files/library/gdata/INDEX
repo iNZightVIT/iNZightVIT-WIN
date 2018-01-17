@@ -38,6 +38,7 @@ ll                      Describe Objects or Elements
 ls.funs                 List function objects
 mapLevels               Mapping levels
 matchcols               Select columns names matching certain critera
+mv                      Rename an Object
 nPairs                  Number of variable pairs
 nobs                    Compute the Number of Non-missing Observations
 object.size             Report the Space Allocated for Objects
@@ -56,6 +57,7 @@ trimSum                 Trim a vector such that the last/first value
 unknownToNA             Change unknown values to NA and vice versa
 unmatrix                Convert a matrix into a vector, with
                         appropriate names
+update.list             Update the elements of a list
 upperTriangle           Extract or replace the upper/lower triangular
                         portion of a matrix
 wideByFactor            Create multivariate data by a given factor

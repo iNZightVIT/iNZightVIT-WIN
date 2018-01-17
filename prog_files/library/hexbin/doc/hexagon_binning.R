@@ -3,7 +3,8 @@
 ###################################################
 ### code chunk number 1: comphexsq
 ###################################################
-library("hexbin")#,lib.loc="/home/nikko/R-devel/hex.devel/tst")
+library("grid")
+library("hexbin")
 x <- rnorm(1000)
 y <- rnorm(1000)
 ##-- Hexagon Bins: --
@@ -49,7 +50,7 @@ nr <- length(fc.sq$x)/2
 
 
 ###################################################
-### code chunk number 3: hexagon_binning.Rnw:138-170
+### code chunk number 3: hexagon_binning.Rnw:139-171
 ###################################################
 par(mfrow = c(3,1))
 par(mai = c(.1667,0.2680,0.1667,0.2680)) ##par(mai=.25*par("mai"))
@@ -156,7 +157,7 @@ popViewport()
 
 
 ###################################################
-### code chunk number 7: hbox
+### code chunk number 7: hexagon_binning.Rnw:348-356
 ###################################################
 data(NHANES)
 #grid.newpage()
@@ -166,6 +167,11 @@ mai <- as.numeric(convertUnit(mar, "inches"))
 #          convertHeight(unit(1,"npc"), "inches"))
 vpin <- c(unit(6,"inches"),unit(4, "inches"))
 shape <- optShape(height = vpin[2], width = vpin[1], mar = mai)
+
+
+###################################################
+### code chunk number 8: hbox
+###################################################
 hb <- hexbin(NHANES$Transferin, NHANES$Hemoglobin, shape = shape)
 hbhp <- hboxplot(erode(hb,cdfcut = .05),unzoom = 1.3)
 pushHexport(hbhp,clip = 'on')
@@ -174,7 +180,7 @@ popViewport()
 
 
 ###################################################
-### code chunk number 8: hdiff
+### code chunk number 9: hdiff
 ###################################################
 #grid.newpage()
 shape <- optShape(height = vpin[2],width = vpin[1],mar = mai)
@@ -186,15 +192,15 @@ hbF <- hexbin(NHANES$Transferin[NHANES$Sex == "F"],
 hbM <- hexbin(NHANES$Transferin[NHANES$Sex == "M"],
               NHANES$Hemoglobin[NHANES$Sex == "M"],
               xbnds = xbnds, ybnds = ybnds, shape = shape)
-plot.new()
+#plot.new()
 hdiffplot(erode(hbF,cdfcut = .25),erode(hbM,cdfcut = .25),unzoom = 1.3)
 
 
 ###################################################
-### code chunk number 9: marray1
+### code chunk number 10: marray1
 ###################################################
 ### Need to redo this part.
-library("marray")
+if (require("marray")) {
 data(swirl, package = "marray") ## use swirl dataset
 
 hb1 <- hexbin(maA(swirl[,1]), maM(swirl[,1]), xbins = 40)
@@ -218,16 +224,23 @@ hb <- plotMAhex(swirl[,1], newpage = FALSE,
 hexVP.abline(hb$plot.vp,h = 0,col = gray(.6))
 hexMA.loess(hb)
 popViewport()
+} else {
+	plot(1)
+}
 
 
 ###################################################
-### code chunk number 10: addto
+### code chunk number 11: addto
 ###################################################
-hplt <- plot(hb1,style = 'centroid',border = gray(.65))
+if (require("marray")) {
+hplt <- plot(hb1, style = 'centroid', border = gray(.65))
 pushHexport(hplt$plot.vp)
 ll.fit <- loess(hb1@ycm ~ hb1@xcm, weights = hb1@count, span = .4)
 pseq <- seq(hb1@xbnds[1]+1, hb1@xbnds[2]-1, length = 100)
 grid.lines(pseq, predict(ll.fit,pseq),
            gp = gpar(col = 2), default.units = "native")
+} else {
+	plot(1)
+}
 
 

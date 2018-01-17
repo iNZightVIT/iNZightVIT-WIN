@@ -23,6 +23,7 @@ duplicated2	duplicated2
 elem	elem
 env	env
 first	first
+first<-	first
 format.object_sizes	object.size
 frameApply	frameApply
 gdata	gdata-package
@@ -63,6 +64,7 @@ isUnknown.matrix	unknown
 isUnknown.POSIXlt	unknown
 keep	keep
 last	first
+last<-	first
 left	left
 ll	ll
 lowerTriangle	upperTriangle
@@ -82,6 +84,7 @@ mapLevels<-.factor	mapLevels
 mapLevels<-.list	mapLevels
 matchcols	matchcols
 MedUnits	MedUnits
+mv	mv
 NAToUnknown	unknown
 NAToUnknown.data.frame	unknown
 NAToUnknown.default	unknown
@@ -115,6 +118,7 @@ unknownToNA.default	unknown
 unknownToNA.factor	unknown
 unknownToNA.list	unknown
 unmatrix	unmatrix
+update.list	update.list
 upperTriangle	upperTriangle
 upperTriangle<-	upperTriangle
 wideByFactor	wideByFactor

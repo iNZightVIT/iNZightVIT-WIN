@@ -2,6 +2,7 @@
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 options(tibble.print_min = 4L, tibble.print_max = 4L)
 library(tibble)
+set.seed(1014)
 
 ## ------------------------------------------------------------------------
 tibble(x = letters)
@@ -17,13 +18,15 @@ names(tibble(`crazy name` = 1))
 tibble(x = 1:5, y = x ^ 2)
 
 ## ------------------------------------------------------------------------
-l <- replicate(26, sample(100), simplify = FALSE)
-names(l) <- letters
+if (requireNamespace("microbenchmark", quiet = TRUE)) {
+  l <- replicate(26, sample(100), simplify = FALSE)
+  names(l) <- letters
 
-microbenchmark::microbenchmark(
-  as_tibble(l),
-  as.data.frame(l)
-)
+  microbenchmark::microbenchmark(
+    as_tibble(l),
+    as.data.frame(l)
+  )
+}
 
 ## ------------------------------------------------------------------------
 tibble(x = 1:1000)
@@ -47,4 +50,14 @@ df$a
 
 df2 <- tibble(abc = 1)
 df2$a
+
+## ------------------------------------------------------------------------
+tibble(a = 1:3)[, "a", drop = TRUE]
+
+## ---- error = TRUE-------------------------------------------------------
+tibble(a = 1, b = 1:3)
+tibble(a = 1:3, b = 1)
+tibble(a = 1:3, c = 1:2)
+tibble(a = 1, b = integer())
+tibble(a = integer(), b = 1)
 

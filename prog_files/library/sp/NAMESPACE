@@ -16,7 +16,8 @@ useDynLib(sp,
 
 importFrom(graphics, plot, hist, polygon, par, polypath, lines, strheight, 
 	text, contour, axTicks, axis, rasterImage, image, box, plot.new, 
-	plot.window, rect, segments, points, locator, identify, title)
+	plot.window, rect, segments, points, locator, identify, title,
+	layout, lcm)
 importFrom(stats, aggregate, na.omit, aggregate.data.frame, complete.cases, 
 	quantile, as.formula, dist, runif, model.frame, na.fail)
 import(utils)
@@ -102,7 +103,7 @@ export(
 	degreeLabelsNS,
 	longlat.scales,
 	bbexpand,
-        compassRose,
+	compassRose,
 
 	as.image.SpatialGridDataFrame,
 	image2Grid,
@@ -178,8 +179,12 @@ export(
 	Polygon,
 	Polygons,
 
+	cbind.Spatial,
+
 	rbind.SpatialPoints,
 	rbind.SpatialPointsDataFrame, 
+	rbind.SpatialMultiPoints,
+	rbind.SpatialMultiPointsDataFrame, 
 	rbind.SpatialPixels,
 	rbind.SpatialPixelsDataFrame,
 	rbind.SpatialPolygons,
@@ -243,6 +248,7 @@ exportMethods(
 	fullgrid,
 	"fullgrid<-",
 	geometry, 
+	"geometry<-", 
 	gridded,
 	"gridded<-",
 	is.projected,
@@ -291,6 +297,7 @@ S3method(as.matrix, SpatialPixelsDataFrame)
 
 S3method(aggregate, Spatial)
 
+S3method(cbind, Spatial)
 S3method(cbind, SpatialGridDataFrame)
 
 S3method(contour, SpatialPixelsDataFrame)
@@ -308,6 +315,8 @@ S3method(head, Spatial)
 S3method(image, SpatialPixelsDataFrame)
 S3method(image, SpatialPixels)
 S3method(image, SpatialGridDataFrame)
+
+S3method(labels, SpatialLines)
 
 S3method(length, SpatialGrid)
 S3method(length, SpatialLines)
@@ -380,6 +389,17 @@ S3method(print, SpatialPixelsDataFrame)
 S3method(print, SpatialLinesDataFrame)
 S3method(print, summary.Spatial)
 S3method(print, summary.GridTopology)
+
+S3method(rbind, SpatialLines)
+S3method(rbind, SpatialLinesDataFrame)
+S3method(rbind, SpatialMultiPoints)
+S3method(rbind, SpatialMultiPointsDataFrame)
+S3method(rbind, SpatialPixels)
+S3method(rbind, SpatialPixelsDataFrame)
+S3method(rbind, SpatialPoints)
+S3method(rbind, SpatialPointsDataFrame)
+S3method(rbind, SpatialPolygons)
+S3method(rbind, SpatialPolygonsDataFrame)
 
 S3method(split, SpatialPoints)
 

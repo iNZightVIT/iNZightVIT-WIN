@@ -1,12 +1,11 @@
 Package: viridis
 Type: Package
 Title: Default Color Maps from 'matplotlib'
-Version: 0.3.4
-Date: 2016-03-11
+Version: 0.4.1
 Authors@R: c(
       person("Simon", "Garnier", email = "garnier@njit.edu", role = c("aut", "cre")),
-      person("Noam", "Ross", email = "noam.ross@gmail.com", role = c("ctb", "cph"), comment = "Continuous scale"),
-      person("Bob", "Rudis", email = "bob@rudis.net", role = c("ctb", "cph"), comment = "Combined scales")
+      person("Noam", "Ross", email = "noam.ross@gmail.com", role = c("ctb", "cph")),
+      person("Bob", "Rudis", email = "bob@rud.is", role = c("ctb", "cph"))
   )
 Maintainer: Simon Garnier <garnier@njit.edu>
 Description: Port of the new 'matplotlib' color maps ('viridis' - the default
@@ -19,19 +18,20 @@ Description: Port of the new 'matplotlib' color maps ('viridis' - the default
 License: MIT + file LICENSE
 LazyData: TRUE
 Encoding: UTF-8
-Depends: R (>= 2.10)
-Imports: stats, grDevices, ggplot2 (>= 1.0.1), gridExtra
+Depends: R (>= 2.10), viridisLite (>= 0.2.0)
+Imports: stats, ggplot2 (>= 1.0.1), gridExtra
 Suggests: hexbin (>= 1.27.0), scales, MASS, knitr, dichromat,
-        colorspace, rasterVis, httr, mapproj
+        colorspace, rasterVis, httr, mapproj, vdiffr, svglite (>=
+        1.2.0), testthat, covr, rmarkdown, rgdal
 VignetteBuilder: knitr
 URL: https://github.com/sjmgarnier/viridis
 BugReports: https://github.com/sjmgarnier/viridis/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2016-03-12 00:32:35 UTC; simon
+Packaged: 2018-01-08 14:50:02 UTC; simon
 Author: Simon Garnier [aut, cre],
-  Noam Ross [ctb, cph] (Continuous scale),
-  Bob Rudis [ctb, cph] (Combined scales)
+  Noam Ross [ctb, cph],
+  Bob Rudis [ctb, cph]
 Repository: CRAN
-Date/Publication: 2016-03-12 06:17:29
-Built: R 3.2.5; ; 2016-08-22 19:09:08 UTC; windows
+Date/Publication: 2018-01-08 22:28:29 UTC
+Built: R 3.4.3; ; 2018-01-13 22:50:09 UTC; windows

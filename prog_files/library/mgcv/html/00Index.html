@@ -1,19 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>R: Mixed GAM Computation Vehicle with GCV/AIC/REML Smoothness
+<head><title>R: Mixed GAM Computation Vehicle with Automatic Smoothness
 Estimation</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
-<h1> Mixed GAM Computation Vehicle with GCV/AIC/REML Smoothness
+<h1> Mixed GAM Computation Vehicle with Automatic Smoothness
 Estimation
-<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;mgcv&rsquo; version 1.8-11</h2>
+</div><h2>Documentation for package &lsquo;mgcv&rsquo; version 1.8-22</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -65,10 +65,14 @@ Estimation
 <h2><a name="B">-- B --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="smooth.construct.bs.smooth.spec.html">b.spline</a></td>
+<td>Penalized B-splines in GAMs</td></tr>
 <tr><td style="width: 25%;"><a href="bam.html">bam</a></td>
 <td>Generalized additive models for very large datasets</td></tr>
 <tr><td style="width: 25%;"><a href="bam.update.html">bam.update</a></td>
 <td>Update a strictly additive bam model for new data.</td></tr>
+<tr><td style="width: 25%;"><a href="bandchol.html">bandchol</a></td>
+<td>Choleski decomposition of a band diagonal matrix</td></tr>
 <tr><td style="width: 25%;"><a href="Beta.html">betar</a></td>
 <td>GAM beta regression family</td></tr>
 <tr><td style="width: 25%;"><a href="bug.reports.mgcv.html">bug.reports.mgcv</a></td>
@@ -94,6 +98,8 @@ Estimation
 <td>Overflow proof pdMat class for multiples of the identity matrix</td></tr>
 <tr><td style="width: 25%;"><a href="coxph.html">cox.ph</a></td>
 <td>Additive Cox Proportional Hazard Model</td></tr>
+<tr><td style="width: 25%;"><a href="coxpht.html">cox.pht</a></td>
+<td>Additive Cox proportional hazard models with time varying covariates</td></tr>
 <tr><td style="width: 25%;"><a href="cSplineDes.html">cSplineDes</a></td>
 <td>Evaluate cyclic B spline basis</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.cr.smooth.spec.html">cubic.regression.spline</a></td>
@@ -107,6 +113,8 @@ Estimation
 <h2><a name="D">-- D --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="dDeta.html">dDeta</a></td>
+<td>Obtaining derivative w.r.t. linear predictor</td></tr>
 <tr><td style="width: 25%;"><a href="pdIdnot.html">Dim.pdIdnot</a></td>
 <td>Overflow proof pdMat class for multiples of the identity matrix</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.ds.smooth.spec.html">Duchon.spline</a></td>
@@ -172,12 +180,16 @@ Estimation
 <td>GAM P-IRLS estimation with GCV/UBRE smoothness estimation</td></tr>
 <tr><td style="width: 25%;"><a href="gam.fit3.html">gam.fit3</a></td>
 <td>P-IRLS GAM estimation with GCV &amp; UBRE/AIC or RE/ML derivative calculation</td></tr>
+<tr><td style="width: 25%;"><a href="gam.fit5.post.proc.html">gam.fit5.post.proc</a></td>
+<td>Post-processing output of gam.fit5</td></tr>
 <tr><td style="width: 25%;"><a href="gam.models.html">gam.models</a></td>
 <td>Specifying generalized additive models</td></tr>
 <tr><td style="width: 25%;"><a href="gam.outer.html">gam.outer</a></td>
 <td>Minimize GCV or UBRE score of a GAM using 'outer' iteration</td></tr>
 <tr><td style="width: 25%;"><a href="gam.convergence.html">gam.performance</a></td>
 <td>GAM convergence and performance issues</td></tr>
+<tr><td style="width: 25%;"><a href="gam.reparam.html">gam.reparam</a></td>
+<td>Finding stable orthogonal re-parameterization of the square root penalty.</td></tr>
 <tr><td style="width: 25%;"><a href="gam.scale.html">gam.scale</a></td>
 <td>Scale parameter estimation in GAMs</td></tr>
 <tr><td style="width: 25%;"><a href="gam.selection.html">gam.selection</a></td>
@@ -190,6 +202,10 @@ Estimation
 <td>Objective functions for GAM smoothing parameter estimation</td></tr>
 <tr><td style="width: 25%;"><a href="gam2objective.html">gam2objective</a></td>
 <td>Objective functions for GAM smoothing parameter estimation</td></tr>
+<tr><td style="width: 25%;"><a href="gamlss.etamu.html">gamlss.etamu</a></td>
+<td>Transform derivatives wrt mu to derivatives wrt linear predictor</td></tr>
+<tr><td style="width: 25%;"><a href="gamlss.gH.html">gamlss.gH</a></td>
+<td>Calculating derivatives of log-likelihood wrt regression coefficients</td></tr>
 <tr><td style="width: 25%;"><a href="gamm.html">gamm</a></td>
 <td>Generalized Additive Mixed Models</td></tr>
 <tr><td style="width: 25%;"><a href="gamObject.html">gamObject</a></td>
@@ -200,6 +216,8 @@ Estimation
 <td>Gaussian location-scale model family</td></tr>
 <tr><td style="width: 25%;"><a href="get.var.html">get.var</a></td>
 <td>Get named variable or evaluate expression from list or data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="gevlss.html">gevlss</a></td>
+<td>Generalized Extreme Value location-scale model family</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.gp.smooth.spec.html">gp.smooth</a></td>
 <td>Low rank Gaussian process smooths</td></tr>
 </table>
@@ -207,6 +225,8 @@ Estimation
 <h2><a name="I">-- I --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="identifiability.html">identifiability</a></td>
+<td>Identifiability constraints</td></tr>
 <tr><td style="width: 25%;"><a href="in.out.html">in.out</a></td>
 <td>Which of a set of points lie within a polygon defined region</td></tr>
 <tr><td style="width: 25%;"><a href="influence.gam.html">influence.gam</a></td>
@@ -229,6 +249,8 @@ Estimation
 <h2><a name="L">-- L --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="ldetS.html">ldetS</a></td>
+<td>Getting log generalized determinant of penalty matrices</td></tr>
 <tr><td style="width: 25%;"><a href="ldTweedie.html">ldTweedie</a></td>
 <td>Log Tweedie density evaluation</td></tr>
 <tr><td style="width: 25%;"><a href="linear.functional.terms.html">linear.functional.terms</a></td>
@@ -256,6 +278,10 @@ Estimation
 <td>Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation and GAMMs by REML/PQL</td></tr>
 <tr><td style="width: 25%;"><a href="mgcv-parallel.html">mgcv.parallel</a></td>
 <td>Parallel computation in mgcv.</td></tr>
+<tr><td style="width: 25%;"><a href="mini.roots.html">mini.roots</a></td>
+<td>Obtain square roots of penalty matrices</td></tr>
+<tr><td style="width: 25%;"><a href="missing.data.html">missing.data</a></td>
+<td>Missing data in GAMs</td></tr>
 <tr><td style="width: 25%;"><a href="model.matrix.gam.html">model.matrix.gam</a></td>
 <td>Extract model matrix from GAM fit</td></tr>
 <tr><td style="width: 25%;"><a href="mono.con.html">mono.con</a></td>
@@ -296,6 +322,8 @@ Estimation
 <table width="100%">
 <tr><td style="width: 25%;"><a href="ocat.html">ocat</a></td>
 <td>GAM ordered categorical family</td></tr>
+<tr><td style="width: 25%;"><a href="one.se.rule.html">one.se.rule</a></td>
+<td>The one standard error rule for smoother models</td></tr>
 <tr><td style="width: 25%;"><a href="ocat.html">ordered.categorical</a></td>
 <td>GAM ordered categorical family</td></tr>
 </table>
@@ -339,6 +367,8 @@ Estimation
 <td>Prediction from fitted GAM model</td></tr>
 <tr><td style="width: 25%;"><a href="Predict.matrix.html">Predict.matrix</a></td>
 <td>Prediction methods for smooth terms in a GAM</td></tr>
+<tr><td style="width: 25%;"><a href="smooth.construct.bs.smooth.spec.html">Predict.matrix.Bspline.smooth</a></td>
+<td>Penalized B-splines in GAMs</td></tr>
 <tr><td style="width: 25%;"><a href="Predict.matrix.cr.smooth.html">Predict.matrix.cr.smooth</a></td>
 <td>Predict matrix method functions</td></tr>
 <tr><td style="width: 25%;"><a href="Predict.matrix.cr.smooth.html">Predict.matrix.cs.smooth</a></td>
@@ -416,18 +446,30 @@ Estimation
 <td>Defining smooths in GAM formulae</td></tr>
 <tr><td style="width: 25%;"><a href="scat.html">scat</a></td>
 <td>GAM scaled t family for heavy tailed data</td></tr>
+<tr><td style="width: 25%;"><a href="sdiag.html">sdiag</a></td>
+<td>Extract or modify diagonals of a matrix</td></tr>
+<tr><td style="width: 25%;"><a href="sdiag.html">sdiag&lt;-</a></td>
+<td>Extract or modify diagonals of a matrix</td></tr>
 <tr><td style="width: 25%;"><a href="linear.functional.terms.html">signal.regression</a></td>
 <td>Linear functionals of a smooth in GAMs</td></tr>
 <tr><td style="width: 25%;"><a href="jagam.html">sim2jam</a></td>
 <td>Just Another Gibbs Additive Modeller: JAGS support for mgcv.</td></tr>
 <tr><td style="width: 25%;"><a href="single.index.html">single.index</a></td>
 <td>Single index models with mgcv</td></tr>
+<tr><td style="width: 25%;"><a href="Sl.initial.repara.html">Sl.initial.repara</a></td>
+<td>Re-parametrizing model matrix X</td></tr>
+<tr><td style="width: 25%;"><a href="Sl.repara.html">Sl.repara</a></td>
+<td>Applying re-parameterization from log-determinant of penalty matrix to model matrix.</td></tr>
+<tr><td style="width: 25%;"><a href="Sl.setup.html">Sl.setup</a></td>
+<td>Setting up a list representing a block diagonal penalty matrix</td></tr>
 <tr><td style="width: 25%;"><a href="slanczos.html">slanczos</a></td>
 <td>Compute truncated eigen decomposition of a symmetric matrix</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.html">smooth.construct</a></td>
 <td>Constructor functions for smooth terms in a GAM</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.ad.smooth.spec.html">smooth.construct.ad.smooth.spec</a></td>
 <td>Adaptive smooths in GAMs</td></tr>
+<tr><td style="width: 25%;"><a href="smooth.construct.bs.smooth.spec.html">smooth.construct.bs.smooth.spec</a></td>
+<td>Penalized B-splines in GAMs</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.cr.smooth.spec.html">smooth.construct.cc.smooth.spec</a></td>
 <td>Penalized Cubic regression splines in GAMs</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.ps.smooth.spec.html">smooth.construct.cp.smooth.spec</a></td>
@@ -468,6 +510,8 @@ Estimation
 <td>Constructor functions for smooth terms in a GAM</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.terms.html">smooth.terms</a></td>
 <td>Smooth terms in GAM</td></tr>
+<tr><td style="width: 25%;"><a href="smooth2random.html">smooth2random</a></td>
+<td>Convert a smooth to a form suitable for estimating as random effect</td></tr>
 <tr><td style="width: 25%;"><a href="smoothCon.html">smoothCon</a></td>
 <td>Prediction/Construction wrapper functions for GAM smooth terms</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.so.smooth.spec.html">soap</a></td>
@@ -509,8 +553,14 @@ Estimation
 <td>Utility functions for constructing tensor product smooths</td></tr>
 <tr><td style="width: 25%;"><a href="te.html">ti</a></td>
 <td>Define tensor product smooths or tensor product interactions in GAM formulae</td></tr>
+<tr><td style="width: 25%;"><a href="totalPenaltySpace.html">totalPenaltySpace</a></td>
+<td>Obtaining (orthogonal) basis for null space and range of the penalty matrix</td></tr>
 <tr><td style="width: 25%;"><a href="smooth.construct.tp.smooth.spec.html">tprs</a></td>
 <td>Penalized thin plate regression splines in GAMs</td></tr>
+<tr><td style="width: 25%;"><a href="trichol.html">trichol</a></td>
+<td>Choleski decomposition of a tri-diagonal matrix</td></tr>
+<tr><td style="width: 25%;"><a href="trind.generator.html">trind.generator</a></td>
+<td>Generates index arrays for upper triangular storage</td></tr>
 <tr><td style="width: 25%;"><a href="Tweedie.html">tw</a></td>
 <td>GAM Tweedie families</td></tr>
 <tr><td style="width: 25%;"><a href="Tweedie.html">Tweedie</a></td>

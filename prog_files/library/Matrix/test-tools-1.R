@@ -213,6 +213,22 @@ relErrV <- function(target, current) {
     RE
 }
 
+##' @title Number of correct digits: Based on relErrV(), recoding "Inf" to 'zeroDigs'
+##' @param target  numeric vector of "true" values
+##' @param current numeric vector of "approximate" values
+##' @param zeroDigs how many correct digits should zero error give
+##' @return basically   -log10 (| relErrV(target, current) | )
+##' @author Martin Maechler, Summer 2011 (for 'copula')
+nCorrDigits <- function(target, current, zeroDigs = 16) {
+    stopifnot(zeroDigs >= -log10(.Machine$double.eps))# = 15.65
+    RE <- relErrV(target, current)
+    r <- -log10(abs(RE))
+    r[RE == 0] <- zeroDigs
+    r[is.na(RE) | r < 0] <- 0 # no correct digit, when relErr is NA
+    r
+}
+
+
 ## is.R22 <- (paste(R.version$major, R.version$minor, sep=".") >= "2.2")
 
 pkgRversion <- function(pkgname)
@@ -232,6 +248,26 @@ showProc.time <- local({ ## function + 'pct' variable
 	cat('Time elapsed: ', (pct - ot)[1:3], final)
     }
 })
+
+##' A version of sfsmisc::Sys.memGB() which should never give an error
+##'  ( ~/R/Pkgs/sfsmisc/R/unix/Sys.ps.R  )
+##' TODO: A version that also works on Windows, using memory.size(max=TRUE)
+##' Windows help on memory.limit(): size in Mb (1048576 bytes), rounded down.
+
+Sys.memGB <- function(kind = "MemTotal") {## "MemFree" is typically more relevant
+    if(!file.exists(pf <- "/proc/meminfo"))
+	return(if(.Platform$OS.type == "windows")
+		   memory.limit() / 1000
+	       else NA)
+    mm <- tryCatch(drop(read.dcf(pf, fields=kind)),
+                   error = function(e) NULL)
+    if(is.null(mm) || any(is.na(mm)) || !all(grepl(" kB$", mm)))
+        return(NA)
+    ## return memory in giga bytes
+    as.numeric(sub(" kB$", "", mm)) / (1000 * 1024)
+}
+
+
 
 ##' @title turn an S4 object (with slots) into a list with corresponding components
 ##' @param obj an R object with a formal class (aka "S4")

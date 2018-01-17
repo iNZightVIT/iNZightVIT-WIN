@@ -3815,6 +3815,10 @@ gio-GFileAttribute	gio-GFileAttribute
 gio-GIOError	gio-GIOError
 gio-GIOScheduler	gio-GIOScheduler
 gio-Unix-Mounts	gio-Unix-Mounts
+giocon	giocon
+giocon.GInputStream	giocon
+giocon.GIOStream	giocon
+giocon.GOutputStream	giocon
 GIOCondition	GLibIOEnums
 GIOErrorEnum	gio-GIOError
 gIoErrorEnumGetType	typeMacros
@@ -9683,6 +9687,7 @@ RGtkObject	RGtkObject
 stock-items	stock-items
 toRGClosure	GClosure
 transparent-type	transparent-type
+[.enums	enums-and-flags
 [.flags	enums-and-flags
 [.GObject	GObject
 [.RGtkDataFrame	RGtkDataFrame

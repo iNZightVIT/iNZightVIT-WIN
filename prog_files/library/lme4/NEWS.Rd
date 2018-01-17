@@ -4,6 +4,130 @@
 \title{lme4 News}
 \encoding{UTF-8}
 
+\section{CHANGES IN VERSION 1.1-15}{
+  \subsection{BUG FIXES}{
+     \itemize{
+	\item \code{model.frame(., fixed.only=TRUE)} now handles models with
+	"non-syntactic" (e.g. space-containing/backtick-delimited)
+        variables in the formula.
+
+	\item \code{confint(<merMod>)} now works again for the default
+	method \code{"profile"}.
+      }
+    }
+    \subsection{USER-VISIBLE CHANGES}{
+      \itemize{
+	\item exported \code{dotplot.ranef.mer}
+      }
+    }
+}
+
+\section{CHANGES IN VERSION 1.1-14 (2017-09-27)}{
+  Primarily an R-devel/CRAN-compatibility release.
+
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item added \code{transf} argument to \code{dotplot.ranef.mer}
+      to allow back-transformation (Ferenci Tamás, GH #134)
+      \item added \code{as.data.frame.ranef.mer} convenience method
+      \item user can specify initial value for overdispersion parameter
+      in \code{glmer.nb} (Timothy Lau, GH #423)
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix bug where NAs in fitting data were carried over into
+      predictions on new data (!) (lmwang9527, GH #420)
+      \item fix bug with long terms in models with || notation
+      \item \code{nlmer} now respects user-specified lower/upper bounds
+      (GH #432)
+      \item \code{confint.thpr} (confint method applied to an
+      already-computed profile now respects "theta_"/"beta_"
+      specifications to return all random-effect or all fixed-effect
+      confidence intervals, respectively.
+    }
+  }
+  \subsection{DOCUMENTATION IMPROVEMENTS}{
+    \itemize{
+      \item document need to export packages and objects to workers
+      when using \code{bootMer} with snow
+    }
+  }
+  \subsection{USER-VISIBLE CHANGES}{
+    \itemize{
+      \item improved warning message when using
+      \code{lmerControl()} with \code{glmer} (GH #415)
+      \item avoid deparsing big data frames when checking data (GH
+      #410)
+      \item pass \code{verbose} options to nloptr optimizers when
+      using \code{nloptwrap} (previously ignored, with a warning)
+      \item the \code{fl} (factor list) component of \code{mkReTrms}
+      objects is now returned as a list rather than a data frame
+    }
+  }
+}
+
+
+\section{CHANGES IN VERSION 1.1-13 (2017-04-18) }{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item added \code{prof.scale} argument to \code{profile.merMod},
+      documented caveats about using \code{varianceProf}/\code{logProf}
+      transformation methods for correlation parameters
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item suppressed spurious contrast-dropping warning (GH #414)
+      \item fixed bug in \code{confint.lmList4} (GH #26)
+      \item fixed bug when \code{FUN} returned an unnamed
+      vector in \code{confint(.,FUN=FUN,method="boot")}
+      \item fixed small bug relating to \code{nAGQ0initStep=FALSE}
+    }
+  }
+  \subsection{CRAN-COMPATIBILITY UPDATES}{
+        \itemize{
+	  \item fixed time stamps on compiled versions of vignettes
+	}
+      }
+}
+
+\section{CHANGES IN VERSION 1.1-12 (2016-04-15)}{
+  This release is primarily a bump for compatibility with the new
+  Windows toolchain. Some small documentation and test changes.
+  \subsection{USER-VISIBLE CHANGES}{
+    \itemize{
+      \item reduced default print precision of fixed-effect correlation
+      matrix in \code{summary.merMod} (related to GH #300)
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fixed bug in \emph{de novo} Gamma-response simulations
+    }
+  }
+}
+\section{CHANGES IN VERSION 1.1-11 (2016-02-11)}{
+  \subsection{USER-VISIBLE CHANGES}{
+    \itemize{
+      \item change \code{VarCorr} method signature (for compatibility
+      with upstream \code{nlme} changes)
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item several \code{glmer.nb} bugs fixed (generally not
+      changing results, but causing warnings and errors e.g.
+      during bootstrapping)
+      \item fixes to some \code{lmList} bugs (Github #320)
+      \item minor documentation, vignette updates
+      \item minor fix to \code{plot.merMod} with \code{id} specified
+      \item \code{bootMer} now handles separate offset term properly
+      (Github #250)
+    }
+  }
+}
+
 \section{CHANGES IN VERSION 1.1-10 (2015-10-05)}{
   This release is primarily a version bump for the release of
   the paper in J. Stat. Software.
@@ -11,7 +135,7 @@
     \itemize{
       \item updated CITATION file.
     }
-  }    
+  }
   \subsection{NEW FEATURES}{
     \itemize{
       \item We export set of about a dozen printing utility functions

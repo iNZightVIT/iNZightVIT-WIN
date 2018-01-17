@@ -15,11 +15,10 @@ assertError( new("dgeMatrix", Dim = as.integer(c(2,2)), x= as.double(1:5)))
 
 checkMatrix(m1 <- Matrix(1:6, ncol=2))
 checkMatrix(m2 <- Matrix(1:7 +0, ncol=3)) # a (desired) warning
-stopifnot(all(match(is(m1),
-   c("dgeMatrix", "ddenseMatrix", "generalMatrix", "geMatrix", "dMatrix",
-     "denseMatrix", "compMatrix", "Matrix", "xMatrix", "mMatrix"), 0) > 0),
-	  dim(t(m1)) == 2:3,
-	  identical(m1, t(t(m1))))
+c("dgeMatrix", "ddenseMatrix", "generalMatrix", "geMatrix", "dMatrix",
+  "denseMatrix", "compMatrix", "Matrix", "xMatrix", "mMatrix") -> m1.cl
+stopifnot(!anyNA(match(m1.cl, is(m1))),
+	  dim(t(m1)) == 2:3, identical(m1, t(t(m1))))
 c.nam <- paste("C",1:2, sep='')
 dimnames(m1) <- list(NULL, c.nam)
 checkMatrix(m1) # failed in 0.999375-10
@@ -93,18 +92,20 @@ validObject(M <- new("dtCMatrix", Dim = c(n,n), diag = "U",
 stopifnot(identical(as.mat(T), diag(n)))
 
 set.seed(3) ; (p9 <- as(sample(9), "pMatrix"))
-## Check that the correct error message is triggered
+## Check that the correct error message is triggered:
 ind.try <- try(p9[1,1] <- 1, silent = TRUE)
-stopifnot(grep("replacing.*sensible", ind.try[1]) == 1,
+np9 <- as(p9, "ngTMatrix")
+stopifnot(grepl("replacing.*sensible", ind.try[1]),
 	  is.logical(p9[1,]),
 	  is(p9[2,, drop=FALSE], "indMatrix"),
 	  is(p9[9:1,], "indMatrix"),
 	  isTRUE(p9[-c(1:6, 8:9), 1]),
 	  identical(t(p9), solve(p9)),
-##	  identical(p9[TRUE,], as(p9, "ngTMatrix")),
+	  identical(p9[TRUE, ], p9),
+          all.equal(p9[, TRUE], np9), # currently...
 	  identical(as(diag(9), "pMatrix"), as(1:9, "pMatrix"))
 	  )
-assert.EQ.mat(p9[TRUE,], as.matrix(as(p9, "ngTMatrix")))
+assert.EQ.mat(p9[TRUE,], as.matrix(np9))
 
 ## validObject --> Cparse_validate(.)
 mm <- new("dgCMatrix", Dim = c(3L, 5L),

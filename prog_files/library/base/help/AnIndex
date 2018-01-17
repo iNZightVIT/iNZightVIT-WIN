@@ -150,6 +150,7 @@ $<-.data.frame	Extract.data.frame
 .Random.seed	Random
 .readRDS	base-defunct
 .Renviron	Startup
+.rmpkg	search
 .rowMeans	colSums
 .rowSums	colSums
 .row_names_info	base-internal
@@ -165,7 +166,10 @@ $<-.data.frame	Extract.data.frame
 .subset2	base-internal
 .TAOCP1997init	base-internal
 .Traceback	traceback
+.traceback	traceback
+.tryResumeInterrupt	conditions
 .userHooksEnv	userhooks
+.valid.factor	factor
 .__H__.cbind	cbind
 .__H__.rbind	cbind
 .__S3MethodsTable__.	ns-internal
@@ -408,6 +412,8 @@ by.default	by
 bzfile	connections
 c	c
 c.Date	Dates
+c.default	c
+c.difftime	difftime
 c.noquote	noquote
 c.numeric_version	numeric_version
 c.POSIXct	DateTimeClasses
@@ -428,6 +434,7 @@ charmatch	charmatch
 charToRaw	rawConversion
 chartr	chartr
 check_tzones	DateTimeClasses
+chkDots	chkDots
 chol	chol
 chol.default	chol
 chol2inv	chol2inv
@@ -519,6 +526,7 @@ diag<-	diag
 diff	diff
 diff.Date	diff
 diff.default	diff
+diff.difftime	difftime
 diff.POSIXt	diff
 difftime	difftime
 digamma	Special
@@ -553,6 +561,7 @@ duplicated.default	duplicated
 duplicated.matrix	duplicated
 duplicated.numeric_version	numeric_version
 duplicated.POSIXlt	DateTimeClasses
+duplicated.warnings	warnings
 dyn.load	dynload
 dyn.unload	dynload
 dynGet	get
@@ -566,6 +575,7 @@ enclosure	environment
 encodeString	encodeString
 Encoding	Encoding
 Encoding<-	Encoding
+endsWith	startsWith
 enquote	substitute
 env.profile	environment
 environment	environment
@@ -691,6 +701,7 @@ grepl	grep
 grepRaw	grepRaw
 group generic	groupGeneric
 groupGeneric	groupGeneric
+grouping	grouping
 GSC	EnvVar
 gsub	grep
 gzcon	gzcon
@@ -817,6 +828,7 @@ last.warning	warnings
 lazyLoad	lazyload
 lazyLoadDBexec	lazyload
 lazyLoadDBfetch	base-internal
+La_library	La_library
 La_version	La_version
 lbeta	Special
 lchoose	Special
@@ -839,7 +851,7 @@ levels<-	levels
 levels<-.factor	levels
 lfactorial	Special
 lgamma	Special
-libcurlVersion	curlVersion
+libcurlVersion	libcurlVersion
 library	library
 library.dynam	library.dynam
 library.dynam.unload	library.dynam
@@ -1046,6 +1058,7 @@ print.Dlist	print
 print.DLLInfo	getLoadedDLLs
 print.DLLInfoList	getLoadedDLLs
 print.DLLRegisteredRoutines	getDLLRegisteredRoutines
+print.eigen	eigen
 print.factor	print
 print.function	print
 print.hexmode	hexmode
@@ -1221,6 +1234,7 @@ R_LIBS	libPaths
 R_LIBS_SITE	libPaths
 R_LIBS_USER	libPaths
 R_PAPERSIZE	EnvVar
+R_PCRE_JIT_STACK_MAXSIZE	EnvVar
 R_PDFVIEWER	EnvVar
 R_PLATFORM	EnvVar
 R_PROFILE	Startup
@@ -1319,6 +1333,7 @@ srcfilecopy-class	srcfile
 srcref	srcfile
 srcref-class	srcfile
 standardGeneric	standardGeneric
+startsWith	startsWith
 Startup	Startup
 stderr	showConnections
 stdin	showConnections
@@ -1330,6 +1345,7 @@ storage.mode<-	mode
 str.POSIXt	DateTimeClasses
 strftime	strptime
 strptime	strptime
+strrep	strrep
 strsplit	strsplit
 strtoi	strtoi
 strtrim	strtrim
@@ -1502,6 +1518,8 @@ upper.tri	lower.tri
 url	connections
 UseMethod	UseMethod
 utf8ToInt	utf8Conversion
+validEnc	validUTF8
+validUTF8	validUTF8
 vapply	lapply
 vector	vector
 Vectorize	Vectorize
@@ -1518,6 +1536,7 @@ which.min	which.min
 while	Control
 with	with
 with.default	with
+withAutoprint	source
 withCallingHandlers	conditions
 within	with
 within.data.frame	with
@@ -1561,6 +1580,7 @@ zapsmall	zapsmall
 [.POSIXct	DateTimeClasses
 [.POSIXlt	DateTimeClasses
 [.simple.list	Extract
+[.table	table
 [.warnings	warnings
 [<-	Extract
 [<-.data.frame	Extract.data.frame

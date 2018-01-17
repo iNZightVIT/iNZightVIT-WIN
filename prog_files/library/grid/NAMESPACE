@@ -1,6 +1,7 @@
-useDynLib("grid", .registration = TRUE)
+useDynLib("grid", .registration = TRUE, .fixes = "C_")
 
 import(grDevices)
+importFrom(utils, str)
 
 export(
        "arcCurvature", "arrow",
@@ -20,7 +21,7 @@ export(
        "gpar", "get.gpar",
        "grid.collection",
        "grid.copy", "grid.display.list", "grid.draw",
-       "grid.record", "grid.delay", "grid.DLapply", 
+       "grid.record", "grid.delay", "grid.DLapply",
        "grid.grill",
        "grid.layout", "grid.locator",
        "grid.newpage",
@@ -68,7 +69,7 @@ export(
        "getGrob", "setGrob", "addGrob", "removeGrob", "editGrob", "forceGrob",
        "gEdit", "gEditList", "applyEdit", "applyEdits",
        "grid.grab", "grid.grabExpr",
-       "grid.force", "grid.revert", 
+       "grid.force", "grid.revert",
        "grid.reorder", "reorderGrob",
        "grid.cap",
        "setChildren",
@@ -131,6 +132,7 @@ S3method("[", "unit")
 S3method("[", "unit.arithmetic")
 S3method("[", "unit.list")
 S3method("[", "vpPath")
+S3method("[<-", "unit")
 S3method("Ops", "unit")
 S3method("Summary", "unit")
 S3method("as.character", "grob")
@@ -143,6 +145,9 @@ S3method("as.character", "viewport")
 S3method("as.character", "vpList")
 S3method("as.character", "vpStack")
 S3method("as.character", "vpTree")
+S3method("format", "unit")
+S3method("format", "unit.arithmetic")
+S3method("format", "unit.list")
 S3method("print", "grob")
 S3method("print", "gList")
 S3method("print", "unit")
@@ -332,6 +337,10 @@ S3method("descentDetails", "text")
 S3method("forceGrob", "default")
 S3method("forceGrob", "grob")
 S3method("forceGrob", "gTree")
+
+S3method("absolute.units", "unit")
+S3method("absolute.units", "unit.list")
+S3method("absolute.units", "unit.arithmetic")
 
 # S3 methods for internal generics that are used in calls to external fns
 S3method("depth", "viewport")

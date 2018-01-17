@@ -35,5 +35,5 @@ Date/Publication: 2015-05-29 10:36:40
 NeedsCompilation: yes
 Packaged: 2015-05-27 16:45:10 UTC; rforge
 Depends: R (>= 2.10)
-Built: R 3.2.3; x86_64-w64-mingw32; 2015-12-11 01:26:35 UTC; windows
+Built: R 3.4.1; x86_64-w64-mingw32; 2017-08-16 00:38:41 UTC; windows
 Archs: i386, x64

@@ -5,13 +5,13 @@
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 <h1> Formal Methods and Classes
-<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;methods&rsquo; version 3.2.3</h2>
+</div><h2>Documentation for package &lsquo;methods&rsquo; version 3.4.3</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -103,9 +103,11 @@
 <tr><td style="width: 25%;"><a href="BasicClasses.html">character-class</a></td>
 <td>Classes Corresponding to Basic Data Types</td></tr>
 <tr><td style="width: 25%;"><a href="Classes.html">Classes</a></td>
-<td>Class Definitions</td></tr>
+<td>S4 Class Documentation</td></tr>
 <tr><td style="width: 25%;"><a href="classesToAM.html">classesToAM</a></td>
 <td>Compute an Adjacency Matrix for Superclasses of Class Definitions</td></tr>
+<tr><td style="width: 25%;"><a href="Classes_Details.html">Classes_Details</a></td>
+<td>Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="setClass.html">classGeneratorFunction-class</a></td>
 <td>Create a Class Definition</td></tr>
 <tr><td style="width: 25%;"><a href="className.html">className</a></td>
@@ -116,16 +118,16 @@
 <td>Class Objects</td></tr>
 <tr><td style="width: 25%;"><a href="setClassUnion.html">ClassUnionRepresentation-class</a></td>
 <td>Classes Defined as the Union of Other Classes</td></tr>
-<tr><td style="width: 25%;"><a href="as.html">coerce</a></td>
-<td>Force an Object to Belong to a Class</td></tr>
-<tr><td style="width: 25%;"><a href="as.html">coerce-method</a></td>
-<td>Force an Object to Belong to a Class</td></tr>
+<tr><td style="width: 25%;"><a href="setAs.html">coerce</a></td>
+<td>Methods for Coercing an Object to a Class</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">coerce-method</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
-<tr><td style="width: 25%;"><a href="as.html">coerce-methods</a></td>
-<td>Force an Object to Belong to a Class</td></tr>
-<tr><td style="width: 25%;"><a href="as.html">coerce&lt;-</a></td>
-<td>Force an Object to Belong to a Class</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
+<tr><td style="width: 25%;"><a href="setAs.html">coerce-method</a></td>
+<td>Methods for Coercing an Object to a Class</td></tr>
+<tr><td style="width: 25%;"><a href="setAs.html">coerce-methods</a></td>
+<td>Methods for Coercing an Object to a Class</td></tr>
+<tr><td style="width: 25%;"><a href="setAs.html">coerce&lt;-</a></td>
+<td>Methods for Coercing an Object to a Class</td></tr>
 <tr><td style="width: 25%;"><a href="S4groupGeneric.html">Compare</a></td>
 <td>S4 Group Generic Functions</td></tr>
 <tr><td style="width: 25%;"><a href="S4groupGeneric.html">Complex</a></td>
@@ -200,7 +202,7 @@
 <tr><td style="width: 25%;"><a href="setOldClass.html">factor-class</a></td>
 <td>Register Old-Style (S3) Classes and Inheritance</td></tr>
 <tr><td style="width: 25%;"><a href="findClass.html">findClass</a></td>
-<td>Computations with Classes</td></tr>
+<td>Find Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="GenericFunctions.html">findFunction</a></td>
 <td>Tools for Managing Generic Functions</td></tr>
 <tr><td style="width: 25%;"><a href="getMethod.html">findMethod</a></td>
@@ -235,7 +237,7 @@
 <tr><td style="width: 25%;"><a href="getClass.html">getClassDef</a></td>
 <td>Get Class Definition</td></tr>
 <tr><td style="width: 25%;"><a href="findClass.html">getClasses</a></td>
-<td>Computations with Classes</td></tr>
+<td>Find Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="GenericFunctions.html">getGenerics</a></td>
 <td>Tools for Managing Generic Functions</td></tr>
 <tr><td style="width: 25%;"><a href="setLoadActions.html">getLoadActions</a></td>
@@ -312,10 +314,12 @@
 <td>Classes Corresponding to Basic Data Types</td></tr>
 <tr><td style="width: 25%;"><a href="setOldClass.html">integrate-class</a></td>
 <td>Register Old-Style (S3) Classes and Inheritance</td></tr>
+<tr><td style="width: 25%;"><a href="Introduction.html">Introduction</a></td>
+<td>Basic use of S4 Methods and Classes</td></tr>
 <tr><td style="width: 25%;"><a href="is.html">is</a></td>
 <td>Is an Object from a Class?</td></tr>
 <tr><td style="width: 25%;"><a href="findClass.html">isClass</a></td>
-<td>Computations with Classes</td></tr>
+<td>Find Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="setClassUnion.html">isClassUnion</a></td>
 <td>Classes Defined as the Union of Other Classes</td></tr>
 <tr><td style="width: 25%;"><a href="GenericFunctions.html">isGeneric</a></td>
@@ -327,7 +331,7 @@
 <tr><td style="width: 25%;"><a href="isSealedMethod.html">isSealedMethod</a></td>
 <td>Check for a Sealed Method or Class</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">isXS3Class</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 </table>
 
 <h2><a name="L">-- L --</a></h2>
@@ -383,11 +387,17 @@
 <tr><td style="width: 25%;"><a href="TraceClasses.html">MethodDefinitionWithTrace-class</a></td>
 <td>Classes Used Internally to Control Tracing</td></tr>
 <tr><td style="width: 25%;"><a href="Methods.html">Methods</a></td>
-<td>General Information on Methods</td></tr>
+<td>S4 Class Documentation</td></tr>
 <tr><td style="width: 25%;"><a href="testInheritedMethods.html">MethodSelectionReport-class</a></td>
 <td>Test for and Report about Selection of Inherited Methods</td></tr>
 <tr><td style="width: 25%;"><a href="MethodsList-class.html">MethodsList-class</a></td>
 <td>Class MethodsList, Defunct Representation of Methods</td></tr>
+<tr><td style="width: 25%;"><a href="Methods_Details.html">Methods_Details</a></td>
+<td>General Information on Methods</td></tr>
+<tr><td style="width: 25%;"><a href="Methods_for_Nongenerics.html">Methods_for_Nongenerics</a></td>
+<td>Methods for Non-Generic Functions in Other Packages</td></tr>
+<tr><td style="width: 25%;"><a href="Methods_for_S3.html">Methods_for_S3</a></td>
+<td>Methods For S3 and S4 Dispatch</td></tr>
 <tr><td style="width: 25%;"><a href="MethodWithNext-class.html">MethodWithNext-class</a></td>
 <td>Class MethodWithNext</td></tr>
 <tr><td style="width: 25%;"><a href="TraceClasses.html">MethodWithNextWithTrace-class</a></td>
@@ -499,11 +509,11 @@
 <tr><td style="width: 25%;"><a href="implicitGeneric.html">registerImplicitGenerics</a></td>
 <td>Manage Implicit Versions of Generic Functions</td></tr>
 <tr><td style="width: 25%;"><a href="findClass.html">removeClass</a></td>
-<td>Computations with Classes</td></tr>
+<td>Find Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="GenericFunctions.html">removeGeneric</a></td>
 <td>Tools for Managing Generic Functions</td></tr>
-<tr><td style="width: 25%;"><a href="setMethod.html">removeMethod</a></td>
-<td>Create and Save a Method</td></tr>
+<tr><td style="width: 25%;"><a href="removeMethod.html">removeMethod</a></td>
+<td>Remove a Method</td></tr>
 <tr><td style="width: 25%;"><a href="GenericFunctions.html">removeMethods</a></td>
 <td>Tools for Managing Generic Functions</td></tr>
 <tr><td style="width: 25%;"><a href="LanguageClasses.html">repeat-class</a></td>
@@ -511,7 +521,7 @@
 <tr><td style="width: 25%;"><a href="representation.html">representation</a></td>
 <td>Construct a Representation or a Prototype for a Class Definition</td></tr>
 <tr><td style="width: 25%;"><a href="findClass.html">resetClass</a></td>
-<td>Computations with Classes</td></tr>
+<td>Find Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="setOldClass.html">rle-class</a></td>
 <td>Register Old-Style (S3) Classes and Inheritance</td></tr>
 </table>
@@ -520,19 +530,19 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="S3Part.html">S3</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">S3-class</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">S3Class</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">S3Class&lt;-</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">S3Part</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">S3Part&lt;-</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">S4</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="BasicClasses.html">S4-class</a></td>
 <td>Classes Corresponding to Basic Data Types</td></tr>
 <tr><td style="width: 25%;"><a href="S4groupGeneric.html">S4groupGeneric</a></td>
@@ -540,27 +550,27 @@
 <tr><td style="width: 25%;"><a href="SClassExtension-class.html">SClassExtension-class</a></td>
 <td>Class to Represent Inheritance (Extension) Relations</td></tr>
 <tr><td style="width: 25%;"><a href="findClass.html">sealClass</a></td>
-<td>Computations with Classes</td></tr>
+<td>Find Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="MethodDefinition-class.html">SealedMethodDefinition-class</a></td>
 <td>Classes to Represent Method Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="getMethod.html">selectMethod</a></td>
 <td>Get or Test for the Definition of a Method</td></tr>
 <tr><td style="width: 25%;"><a href="selectSuperClasses.html">selectSuperClasses</a></td>
 <td>Super Classes (of Specific Kinds) of a Class</td></tr>
-<tr><td style="width: 25%;"><a href="as.html">setAs</a></td>
-<td>Force an Object to Belong to a Class</td></tr>
+<tr><td style="width: 25%;"><a href="setAs.html">setAs</a></td>
+<td>Methods for Coercing an Object to a Class</td></tr>
 <tr><td style="width: 25%;"><a href="setClass.html">setClass</a></td>
 <td>Create a Class Definition</td></tr>
 <tr><td style="width: 25%;"><a href="setClassUnion.html">setClassUnion</a></td>
 <td>Classes Defined as the Union of Other Classes</td></tr>
 <tr><td style="width: 25%;"><a href="setGeneric.html">setGeneric</a></td>
-<td>Define a New Generic Function</td></tr>
+<td>Create a Generic Version of a Function</td></tr>
 <tr><td style="width: 25%;"><a href="implicitGeneric.html">setGenericImplicit</a></td>
 <td>Manage Implicit Versions of Generic Functions</td></tr>
-<tr><td style="width: 25%;"><a href="setGeneric.html">setGroupGeneric</a></td>
-<td>Define a New Generic Function</td></tr>
-<tr><td style="width: 25%;"><a href="is.html">setIs</a></td>
-<td>Is an Object from a Class?</td></tr>
+<tr><td style="width: 25%;"><a href="setGroupGeneric.html">setGroupGeneric</a></td>
+<td>Create a Group Generic Version of a Function</td></tr>
+<tr><td style="width: 25%;"><a href="setIs.html">setIs</a></td>
+<td>Specify a Superclass Explicitly</td></tr>
 <tr><td style="width: 25%;"><a href="setLoadActions.html">setLoadAction</a></td>
 <td>Set Actions For Package Loading</td></tr>
 <tr><td style="width: 25%;"><a href="setLoadActions.html">setLoadActions</a></td>
@@ -606,7 +616,7 @@
 <tr><td style="width: 25%;"><a href="slot.html">slotNames</a></td>
 <td>The Slots in an Object from a Formal Class</td></tr>
 <tr><td style="width: 25%;"><a href="S3Part.html">slotsFromS3</a></td>
-<td>S3-style Objects and S4-class Objects</td></tr>
+<td>S4 Classes that Contain S3 Classes</td></tr>
 <tr><td style="width: 25%;"><a href="setOldClass.html">socket-class</a></td>
 <td>Register Old-Style (S3) Classes and Inheritance</td></tr>
 <tr><td style="width: 25%;"><a href="evalSource.html">sourceEnvironment-class</a></td>
@@ -678,9 +688,9 @@
 <td>List of Builtin and Special Functions</td></tr>
 <tr><td style="width: 25%;"><a href="TraceClasses.html">.doTracePrint</a></td>
 <td>Classes Used Internally to Control Tracing</td></tr>
-<tr><td style="width: 25%;"><a href="Classes.html">.environment-class</a></td>
+<tr><td style="width: 25%;"><a href="Classes_Details.html">.environment-class</a></td>
 <td>Class Definitions</td></tr>
-<tr><td style="width: 25%;"><a href="Classes.html">.externalptr-class</a></td>
+<tr><td style="width: 25%;"><a href="Classes_Details.html">.externalptr-class</a></td>
 <td>Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="slot.html">.hasSlot</a></td>
 <td>The Slots in an Object from a Formal Class</td></tr>
@@ -688,9 +698,9 @@
 <td>Classes Used Internally to Control Tracing</td></tr>
 <tr><td style="width: 25%;"><a href="TraceClasses.html">.makeTracedFunction</a></td>
 <td>Classes Used Internally to Control Tracing</td></tr>
-<tr><td style="width: 25%;"><a href="Classes.html">.name-class</a></td>
+<tr><td style="width: 25%;"><a href="Classes_Details.html">.name-class</a></td>
 <td>Class Definitions</td></tr>
-<tr><td style="width: 25%;"><a href="Classes.html">.NULL-class</a></td>
+<tr><td style="width: 25%;"><a href="Classes_Details.html">.NULL-class</a></td>
 <td>Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="setOldClass.html">.OldClassesList</a></td>
 <td>Register Old-Style (S3) Classes and Inheritance</td></tr>
@@ -708,7 +718,7 @@
 <td>Classes Used Internally to Control Tracing</td></tr>
 <tr><td style="width: 25%;"><a href="LanguageClasses.html">&lt;--class</a></td>
 <td>Classes to Represent Unevaluated Language Objects</td></tr>
-<tr><td style="width: 25%;"><a href="Classes.html">__ClassMetaData</a></td>
+<tr><td style="width: 25%;"><a href="Classes_Details.html">__ClassMetaData</a></td>
 <td>Class Definitions</td></tr>
 <tr><td style="width: 25%;"><a href="LanguageClasses.html">{-class</a></td>
 <td>Classes to Represent Unevaluated Language Objects</td></tr>

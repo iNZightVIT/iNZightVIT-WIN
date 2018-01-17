@@ -125,13 +125,13 @@ index2char.numeric	zoo
 index<-	index
 index<-.zoo	index
 index<-.zooreg	zooreg
+is.numeric.yearmon	yearmon
 is.numeric.yearqtr	yearqtr
 is.regular	is.regular
 is.regular.default	is.regular
 is.regular.ts	is.regular
 is.regular.zoo	is.regular
 is.regular.zooreg	is.regular
-is.yearmon	yearmon
 is.zoo	zoo
 lag.zoo	lag.zoo
 lag.zooreg	zooreg
@@ -176,6 +176,7 @@ na.locf	na.locf
 na.locf.data.frame	na.locf
 na.locf.default	na.locf
 na.locf.list	na.locf
+na.locf0	na.locf
 na.spline	na.approx
 na.spline.default	na.approx
 na.spline.ts	na.approx
@@ -230,6 +231,11 @@ range.yearmon	yearmon
 range.yearqtr	yearqtr
 range.zoo	zoo
 rbind.zoo	merge.zoo
+read.csv.zoo	read.zoo
+read.csv2.zoo	read.zoo
+read.delim.zoo	read.zoo
+read.delim2.zoo	read.zoo
+read.table.zoo	read.zoo
 read.zoo	read.zoo
 rev.zoo	zoo
 rollapply	rollapply
@@ -266,6 +272,7 @@ split.zoo	aggregate.zoo
 start.zoo	index
 str.zoo	zoo
 subset.zoo	zoo
+Summary.yearmon	yearmon
 summary.yearmon	yearmon
 Summary.yearqtr	yearqtr
 summary.yearqtr	yearqtr

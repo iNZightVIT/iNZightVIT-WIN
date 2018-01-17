@@ -2,6 +2,11 @@ bgtest	bgtest
 bondyield	bondyield
 bptest	bptest
 ChickEgg	ChickEgg
+coefci	coeftest
+coefci.default	coeftest
+coefci.glm	coeftest
+coefci.mlm	coeftest
+coefci.survreg	coeftest
 coeftest	coeftest
 coeftest.breakpointsfull	coeftest
 coeftest.default	coeftest

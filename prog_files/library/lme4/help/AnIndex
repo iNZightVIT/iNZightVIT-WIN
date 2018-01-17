@@ -17,8 +17,10 @@ as.function.merMod	merMod-class
 bootMer	bootMer
 cake	cake
 cbpp	cbpp
+checkConv	checkConv
 coef.merMod	merMod-class
 confint.merMod	confint.merMod
+confint.thpr	confint.merMod
 convergence	convergence
 cov2sdcor	vcconv
 Cv_to_Sv	vcconv
@@ -139,6 +141,7 @@ plot.merMod	plot.merMod
 predict.merMod	predict.merMod
 print.merMod	merMod-class
 print.summary.merMod	merMod-class
+print.VarCorr.merMod	VarCorr
 profile-methods	profile-methods
 profile.merMod	profile-methods
 pvalues	pvalues
@@ -177,7 +180,7 @@ update.merMod	merMod-class
 updateGlmerDevfun	modular
 VarCorr	VarCorr
 VarCorr.merMod	VarCorr
-varianceProf	varianceProf
+varianceProf	profile-methods
 vcconv	vcconv
 vcov.merMod	merMod-class
 vcov.summary.merMod	merMod-class
@@ -187,3 +190,4 @@ VerbAgg	VerbAgg
 Vv_to_Cv	vcconv
 weights.merMod	merMod-class
 xyplot.thpr	plots.thpr
+||	expandDoubleVerts

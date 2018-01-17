@@ -2,6 +2,7 @@ useDynLib("quantreg")
 import(Matrix)
 importFrom('SparseM', t, chol, backsolve, as.matrix.csr)
 importFrom('MatrixModels', model.Matrix)
+importFrom('stats', approxfun)
 importClassesFrom('MatrixModels', dsparseModelMatrix)
 importClassesFrom('SparseM', matrix.csr)
 
@@ -13,10 +14,10 @@ importFrom("grDevices", "dev.interactive", "devAskNewPage", "gray",
 importFrom("graphics", "abline", "contour", "lines", "matlines",
      "matplot", "par", "persp", "plot", "points", "polygon", "title")
 importFrom("methods", "as", "hasArg", "new")
-importFrom("utils", "flush.console")
+importFrom("utils", "flush.console", "modifyList")
 importFrom("stats", ".checkMFClasses", ".getXlevels", "AIC", "approx",
      "as.formula", "as.ts", "coef", "coefficients", "cycle",
-     "model.matrix", "model.response",
+     "model.matrix", "model.response", "rmultinom",
      "delete.response", "dnorm", "end", "fitted", "formula",
      "frequency", "getInitial", "hat", "is.empty.model",
      "is.stepfun", "knots", "lag", "lm", "lm.fit", "lm.wfit",

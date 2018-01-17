@@ -1,5 +1,44 @@
 \name{NEWS} 
 \title{News for Package 'sp'}
+\section{Changes in version 1.2-5 (2017-06-16)}{
+ \itemize{
+  \item address error in spplot, leading to display of "Error using packet 1: mixture of missing and non missing values for cex"
+  \item address warning from Tomas Kalibera's static code checking
+ }
+}
+\section{Changes in version 1.2-4 (2016-12-21)}{
+  \itemize{
+    \item fix bug in duplicating objects in C; see \url{https://github.com/edzer/sp/commit/8f8a66090e47cf0f6bbf5549376c0bc07b6c29df}
+	\item fix all long/lat-based great circle distance functions; see \url{https://github.com/edzer/sp/commit/d8374ff7efc6735cba9a054748c602bed0672f23} and \url{https://stat.ethz.ch/pipermail/r-sig-geo/2016-December/025201.html}
+	\item clarified cellcentre.offset documentation, see \url{https://github.com/edzer/sp/issues/18}
+  }
+}
+\section{Changes in version 1.2-3 (2016-04-06)}{
+  \itemize{
+	\item update sp gallery, see \url{https://edzer.github.io/sp/}
+	\item move \code{methods} from Imports: to Depends:
+    \item improve base plot methods for \code{SpatialGridDataFrame} and \code{SpatialPixelsDataFrame} objects, see \url{http://r-spatial.org/r/2016/03/08/plotting-spatial-grids.html} for examples
+	\item improve the graticule \code{labels} methods, see \code{?gridlines}
+	\item fix hole assignment for triangles, reported in \url{https://stat.ethz.ch/pipermail/r-sig-geo/2016-March/024214.html}
+    \item \code{as.SpatialPolygons.GridTopology} drops rownames of coordinates generated, but keeps coordinate (column) names from the \code{cellcentre.offset} slot of the grid
+    \item improve examples in \code{over} vignette.
+  }
+}
+\section{Changes in version 1.2-2 (2016-02-05)}{
+  \itemize{
+	\item method `row.names` for `SpatialPoints` makes unique row names, or drops them.
+	\item add a \code{labels} method for \code{gridlines}, drawing labels under varying angle (see \code{gridlines} example)
+  	\item add coercion (``as'' methods) from \code{deldir} to \code{SpatialLines} and \code{SpatialPolygons}
+	\item migrate sp code base to github
+	\item correct \code{[} subsetting when \code{i} is all \code{FALSE}; report by Francois Rousseau.
+	\item add \code{geometry<-} method for \code{Spatial}, wrapping \code{addAttrToGeom}
+	\item  addressing \code{rbind} and docs issues raised by Kent Johnson on r-sig-geo, 5 Dec 2015
+	\item get `row.names` of coords correctly if object is a \code{SpatialPoints}
+    \item add non-default coercion \code{SpatialPolygonsDataFrame} to \code{SpatialPolygons}
+    \item add comment to \code{SpatialPolygons} coerced from \code{SpatialGrid} or \code{SpatialPixels}
+	\item \code{coordinates} method for \code{SpatiaLines} now retains rownames
+  }
+}
 
 \section{Changes in version 1.2-1 (2015-10-17)}{
   \itemize{

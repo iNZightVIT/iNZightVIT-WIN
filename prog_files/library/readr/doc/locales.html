@@ -4,15 +4,13 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="author" content="Hadley Wickham" />
 
-<meta name="date" content="2016-08-03" />
 
 <title>Locales</title>
 
@@ -69,8 +67,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 <h1 class="title toc-ignore">Locales</h1>
-<h4 class="author"><em>Hadley Wickham</em></h4>
-<h4 class="date"><em>2016-08-03</em></h4>
 
 
 
@@ -170,7 +166,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Note that these are only used as defaults. If individual times have timezones and you’re using “%Z” (as name, e.g. “America/Chicago”) or “%z” (as offset from UTC, e.g. “+0800”), they’ll override the defaults. There’s currently no good way to parse times that use US abbreviations.</p>
 <p>Note that once you have the date in R, changing the time zone just changes its printed representation - it still represents the same instants of time. If you’ve loaded non-UTC data, and want to display it as UTC, try this snippet of code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">is_datetime &lt;-<span class="st"> </span><span class="kw">sapply</span>(df, inherits, <span class="st">&quot;POSIXct&quot;</span>)
-df[is_datetime] &lt;-<span class="st"> </span><span class="kw">lapply</span>(df[is_datetime], function(x) {
+df[is_datetime] &lt;-<span class="st"> </span><span class="kw">lapply</span>(df[is_datetime], <span class="cf">function</span>(x) {
   <span class="kw">attr</span>(x, <span class="st">&quot;tzone&quot;</span>) &lt;-<span class="st"> &quot;UTC&quot;</span>
   x
 })</code></pre></div>
@@ -230,12 +226,16 @@ y
 <span class="co">#&gt; [1] &quot;Émigré cause célèbre déjà vu.\n&quot;</span></code></pre></div>
 <p>If you don’t know what encoding the file uses, try <code>guess_encoding()</code>. It’s not 100% perfect (as it’s fundamentally a heuristic), but should at least get you pointed in the right direction:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">guess_encoding</span>(x)
+<span class="co">#&gt; # A tibble: 3 × 2</span>
 <span class="co">#&gt;       encoding confidence</span>
+<span class="co">#&gt;          &lt;chr&gt;      &lt;dbl&gt;</span>
 <span class="co">#&gt; 1        UTF-8       1.00</span>
 <span class="co">#&gt; 2 windows-1250       0.34</span>
 <span class="co">#&gt; 3 windows-1252       0.26</span>
 <span class="kw">guess_encoding</span>(y)
+<span class="co">#&gt; # A tibble: 2 × 2</span>
 <span class="co">#&gt;     encoding confidence</span>
+<span class="co">#&gt;        &lt;chr&gt;      &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 ISO-8859-2        0.4</span>
 <span class="co">#&gt; 2 ISO-8859-1        0.3</span>
 
@@ -272,7 +272,7 @@ y
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
