@@ -30,7 +30,6 @@ makeDatatypeChar.list	makeDatatypeChar
 makeLocale	makeLocale
 newdevice	newdevice
 numToCat	numToCat
-order.overwrite	order.overwrite
 readMetadata	readMetadata
 rename.levels	rename.levels
 reorder.levels	reorder.levels

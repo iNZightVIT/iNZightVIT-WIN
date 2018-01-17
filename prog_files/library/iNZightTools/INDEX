@@ -42,7 +42,6 @@ makeLocale              Creates a locale that cane be used with
                         functions from readr package.
 newdevice               Open a New Graphics Device
 numToCat                Convert to Categorical
-order.overwrite         Order vectors
 readMetadata            iNZight Metadata Reader
 rename.levels           Renames the levels of a factor.
 reorder.levels          This function changes the order of levels in
