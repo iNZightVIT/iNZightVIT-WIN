@@ -1,5 +1,5 @@
 478b5d9f6c7d31a55ff4a26eab66578f *CITATION
-c88145bed62752807bfafd8884084b7b *DESCRIPTION
+035ebee9741b438d9f30ece54d8c7f44 *DESCRIPTION
 253b6b22f3d4999d209c57a6421b170f *INDEX
 4641e94ec96f98fabc56ff9cc48be14b *LICENSE
 d609622d881beac65c083c78c0b3a172 *Meta/Rd.rds
@@ -8,7 +8,7 @@ d609622d881beac65c083c78c0b3a172 *Meta/Rd.rds
 2996d6fcf44b89a098a4968548a5156e *Meta/hsearch.rds
 07ab5297a36f85118517561dc212975a *Meta/links.rds
 ee2df3de5a85b3caaa85dba03322321a *Meta/nsInfo.rds
-8d623ecab2899d3ae9c22f6dd7e0ce3a *Meta/package.rds
+4c50bd1e145f6454268d85788bf4e566 *Meta/package.rds
 62b5a3a09eb3d7562b0d20e7f3808df2 *Meta/vignette.rds
 72a2b956dfe5844fedf26fc59a5e1059 *NAMESPACE
 9f5871a4fe5678136222b4c1cac9bd8f *NEWS.md
@@ -27,9 +27,9 @@ fd4fffee04dfb833e03497c4701be1b4 *doc/ggplot2-specs.R
 a20f2046a1dd5e08fcd89676b3a9e3cd *doc/index.html
 ea62c93e482649a4604009e09db000b0 *help/AnIndex
 74c18f19059ed0d069b8ae4b6e3423eb *help/aliases.rds
-e20775ba6ce85e6c367aff5bed5c0bfb *help/ggplot2.rdb
-1206ccd4453ad599e37467000f741c4d *help/ggplot2.rdx
+d318368935473103c22bda0d84a514d9 *help/ggplot2.rdb
+ca1ee52f17021b4af6737104b03d7f1e *help/ggplot2.rdx
 ba25f6f853fe1a301293418f3df51f07 *help/macros/aesthetics.Rd
-5ef57d4d144fc46b81616b387b3ea59d *help/paths.rds
+1c9dc8bdc9db76ce302101188e0ba8f3 *help/paths.rds
 2dd0e34dc187399ceeaeb2d58c77c140 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
