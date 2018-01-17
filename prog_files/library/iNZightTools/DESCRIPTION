@@ -4,7 +4,7 @@ Title: Tools for iNZight
 Version: 1.5
 Date: 2018-01-18
 Imports: utils, stats, methods, survey, grDevices, foreign, readr,
-        readxl, magrittr, tibble
+        readxl, magrittr, tibble, dplyr, forcats, tidyr, stringr
 Suggests: Acinonyx, cairoDevice, testthat
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
@@ -18,4 +18,4 @@ Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.4.0; ; 2018-01-17 19:52:22 UTC; unix
+Built: R 3.4.0; ; 2018-01-17 19:58:02 UTC; unix
