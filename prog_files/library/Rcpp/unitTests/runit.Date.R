@@ -1,7 +1,7 @@
-#!/usr/bin/r -t
+#!/usr/bin/env r
 # -*- mode: R; tab-width: 4; -*-
 #
-# Copyright (C) 2010 - 2013   Dirk Eddelbuettel and Romain Francois
+# Copyright (C) 2010 - 2016   Dirk Eddelbuettel and Romain Francois
 #
 # This file is part of Rcpp.
 #
@@ -163,9 +163,105 @@ if (.runThisTest) {
         fun <- DatetimeVector_ctor
         now <- Sys.time()
         checkEquals(fun(now + (0:4)*60), now+(0:4)*60, msg = "Datetime.ctor.sequence")
-        vec <- c(now, NA, NaN, Inf, now+2.345)
-        posixtNA <- as.POSIXct(NA,  origin="1970-01-01")
-        checkEquals(fun(vec), c(now, rep(posixtNA, 3), now+2.345), msg = "Datetime.ctor.set")
+        if (Rcpp:::capabilities()[["new date(time) vectors"]]) {
+            vec <- c(now, NA, NaN, now+2.345)
+            posixtNA <- as.POSIXct(NA,  origin="1970-01-01")
+            checkEquals(fun(vec), c(now, rep(posixtNA, 2), now+2.345), msg = "Datetime.ctor.NA.NaN.set")
+            vec <- c(now, -Inf, Inf, now+2.345)
+            checkEquals(sum(is.finite(fun(vec))), 2, msg = "Datetime.ctor.Inf.finite.set")
+            checkEquals(sum(is.infinite(fun(vec))), 2, msg = "Datetime.ctor.Inf.notfinite.set")
+            vec <- c(now, NA, NaN, Inf, now+2.345)
+            posixtNA <- as.POSIXct(NA, origin="1970-01-01")
+            posixtInf <- as.POSIXct(Inf, origin="1970-01-01")
+            checkEquals(fun(vec), c(now, rep(posixtNA, 2), posixtInf, now+2.345),
+                        msg = "Datetime.ctor.NA.NaN.Inf.set")
+        } else {
+            vec <- c(now, NA, NaN, Inf, now+2.345)
+            posixtNA <- as.POSIXct(NA, origin="1970-01-01")
+            checkEquals(fun(vec), c(now, rep(posixtNA, 3), now+2.345), msg = "Datetime.ctor.NA.NaN.Inf.set")
+        }
     }
 
+    test.DatetimeVector.assignment <- function() {
+        now <- Sys.time()
+        v1 <- c(now, now + 1, now + 2)
+        v2 <- c(now + 3, now + 4, now + 5)
+        checkEquals(v2, DatetimeVector_assignment(v1, v2))
+    }
+
+    test.DateVector.assignment <- function() {
+        now <- Sys.Date()
+        v1 <- c(now, now + 1, now + 2)
+        v2 <- c(now + 3, now + 4, now + 5)
+        checkEquals(v2, DateVector_assignment(v1, v2))
+    }
+
+
+    ## formatting
+    test.Date.formating <- function() {
+        oldTZ <- Sys.getenv("TZ")
+        Sys.setenv(TZ="America/Chicago")
+        d <- as.Date("2011-12-13")
+
+        checkEquals(Date_format(d, "%Y-%m-%d"),
+                    format(d),
+                    msg="Date.formating.default")
+        checkEquals(Date_format(d, "%Y/%m/%d"),
+                    format(d, "%Y/%m/%d"),
+                    msg="Date.formating.given.format")
+        checkEquals(Date_ostream(d),
+                    format(d),
+                    msg="Date.formating.ostream")
+
+        Sys.setenv(TZ=oldTZ)
+    }
+
+    test.Datetime.formating <- function() {
+        olddigits <- getOption("digits.secs")
+        options("digits.secs"=6)
+
+        d <- as.POSIXct("2016-12-13 14:15:16.123456")
+        checkEquals(Datetime_format(d,"%Y-%m-%d %H:%M:%S"),
+                    format(d, "%Y-%m-%d %H:%M:%OS"),
+                    msg="Datetime.formating.default")
+        checkEquals(Datetime_format(d, "%Y/%m/%d %H:%M:%S"),
+                    format(d, "%Y/%m/%d %H:%M:%OS"),
+                    msg="Datetime.formating.given.format")
+        checkEquals(Datetime_ostream(d),
+                    format(d, "%Y-%m-%d %H:%M:%OS"),
+                    msg="Datetime.formating.ostream")
+
+        options("digits.secs"=olddigits)
+    }
+
+
+    test.mktime_gmtime <- function() {
+        d <- as.Date("2015-12-31")
+        checkEquals(d, gmtime_mktime(d), msg="Date.mktime_gmtime.2015")
+
+        d <- as.Date("1965-12-31")
+        checkEquals(d, gmtime_mktime(d), msg="Date.mktime_gmtime.1965")
+    }
+
+    test.mktime <- function() {
+        d <- as.Date("2015-12-31")
+        checkEquals(test_mktime(d), as.numeric(as.POSIXct(d)), msg="Date.test_mktime.2015")
+
+        d <- as.Date("1970-01-01")
+        checkEquals(test_mktime(d), as.numeric(as.POSIXct(d)), msg="Date.test_mktime.1970")
+
+        d <- as.Date("1954-07-04")
+        checkEquals(test_mktime(d), as.numeric(as.POSIXct(d)), msg="Date.test_mktime.1954")
+    }
+
+    test.gmtime <- function() {
+        oldTZ <- Sys.getenv("TZ")
+        Sys.setenv(TZ="UTC")
+        checkEquals(test_gmtime(1441065600), as.Date("2015-09-01"), msg="Date.test_gmtime.2015")
+
+        checkEquals(test_gmtime(0),          as.Date("1970-01-01"), msg="Date.test_gmtime.1970")
+
+        checkEquals(test_gmtime(-489024000), as.Date("1954-07-04"), msg="Date.test_gmtime.1954")
+        Sys.setenv(TZ=oldTZ)
+    }
 }

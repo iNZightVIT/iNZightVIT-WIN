@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.3 (2015-12-10).
+<!-- This manual is for R, version 3.4.3 (2017-11-30).
 
-Copyright (C) 2000-2015 R Core Team
+Copyright (C) 2000-2016 R Core Team
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -241,9 +241,9 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 
 <p>This is a guide to importing and exporting data to and from R.
 </p>
-<p>This manual is for R, version 3.2.3 (2015-12-10).
+<p>This manual is for R, version 3.4.3 (2017-11-30).
 </p>
-<p>Copyright &copy; 2000&ndash;2015 R Core Team
+<p>Copyright &copy; 2000&ndash;2016 R Core Team
 </p>
 <blockquote>
 <p>Permission is granted to make and distribute verbatim copies of this
@@ -314,8 +314,7 @@ principal authors of the packages mentioned are
 <tr><td><a href="https://CRAN.R-project.org/package=dataframes2xls"><strong>dataframes2xls</strong></a></td><td>Guido van Steen</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=foreign"><strong>foreign</strong></a></td><td>Thomas Lumley, Saikat DebRoy, Douglas Bates, Duncan Murdoch and Roger Bivand</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=gdata"><strong>gdata</strong></a></td><td>Gregory R. Warnes</td></tr>
-<tr><td><a href="https://CRAN.R-project.org/package=hdf5"><strong>hdf5</strong></a></td><td>Marcus Daniels</td></tr>
-<tr><td><a href="https://CRAN.R-project.org/package=ncdf"><strong>ncdf</strong></a>, <a href="https://CRAN.R-project.org/package=ncdf4"><strong>ncdf4</strong></a></td><td>David Pierce</td></tr>
+<tr><td><a href="https://CRAN.R-project.org/package=ncdf4"><strong>ncdf4</strong></a></td><td>David Pierce</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=rJava"><strong>rJava</strong></a></td><td>Simon Urbanek</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=RJDBC"><strong>RJDBC</strong></a></td><td>Simon Urbanek</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=RMySQL"><strong>RMySQL</strong></a></td><td>David James and Saikat DebRoy</td></tr>
@@ -329,7 +328,6 @@ principal authors of the packages mentioned are
 <tr><td><strong>SJava</strong></td><td>John Chambers and Duncan Temple Lang</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=WriteXLS"><strong>WriteXLS</strong></a></td><td>Marc Schwartz</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=XLConnect"><strong>XLConnect</strong></a></td><td>Mirai Solutions GmbH</td></tr>
-<tr><td><a href="https://CRAN.R-project.org/package=xlsReadWrite"><strong>xlsReadWrite</strong></a></td><td>Hans-Peter Suter</td></tr>
 <tr><td><a href="https://CRAN.R-project.org/package=XML"><strong>XML</strong></a></td><td>Duncan Temple Lang</td></tr>
 </table>
 </blockquote>
@@ -372,13 +370,13 @@ here.
 <p>There are packages to allow functionality developed in languages such as
 <code>Java</code>, <code>perl</code> and <code>python</code> to be directly integrated
 with R code, making the use of facilities in these languages even
-more appropriate.  (See the <a href="https://CRAN.R-project.org/package=rJava"><strong>rJava</strong></a> package from <acronym>CRAN</acronym> and
-the <strong>SJava</strong>, <strong>RSPerl</strong> and <strong>RSPython</strong> packages from the
-Omegahat project, <a href="http://www.omegahat.org">http://www.omegahat.org</a>.)
+more appropriate.  (See the <a href="https://CRAN.R-project.org/package=rJava"><strong>rJava</strong></a> package from <acronym>CRAN</acronym>
+and the <strong>SJava</strong>, <strong>RSPerl</strong> and <strong>RSPython</strong> packages from the
+Omegahat project, <a href="http://www.omegahat.net">http://www.omegahat.net</a>.)
 </p>
 
 <a name="index-Unix-tools"></a>
-<a name="index-AWK"></a>
+<a name="index-awk"></a>
 <a name="index-perl"></a>
 <p>It is also worth remembering that R like S comes from the Unix
 tradition of small re-usable tools, and it can be rewarding to use tools
@@ -387,6 +385,10 @@ after export.  The case study in Becker, Chambers &amp; Wilks (1988, Chapter
 9) is an example of this, where Unix tools were used to check and
 manipulate the data before input to S. The traditional Unix tools
 are now much more widely available, including for Windows.
+</p>
+<p>This manual was first written in 2000, and the number of scope of R
+packages has increased a hundredfold since.  For specialist data formats
+it is worth searching to see if a suitable package already exists.
 </p>
 <table summary="" class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Imports" accesskey="1">Imports</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -407,11 +409,6 @@ Next: <a href="#Export-to-text-files" accesskey="n" rel="next">Export to text fi
 <h3 class="section">1.1 Imports</h3>
 <a name="index-scan"></a>
 
-<table summary="" class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Encodings" accesskey="1">Encodings</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
-</td></tr>
-</table>
-
 <p>The easiest form of data to import into R is a simple text file, and
 this will often be acceptable for problems of small or medium scale.
 The primary function to import from a text file is <code>scan</code>, and this
@@ -428,8 +425,7 @@ on their computers for that purpose).  However, this is not always
 possible, and <a href="#Importing-from-other-statistical-systems">Importing from other statistical systems</a> discusses
 what facilities are available to access such files directly from R.
 For Excel spreadsheets, the available methods are summarized in
-<a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a>.  For ODS spreadsheets from Open
-Office, see the Omegahat package<a name="DOCF1" href="#FOOT1"><sup>1</sup></a> <strong>ROpenOffice</strong>.
+<a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a>.  
 </p>
 <p>In a few cases, data have been stored in a binary form for compactness
 and speed of access.  One application of this that we have seen several
@@ -444,6 +440,11 @@ extraction operation can be done directly from an R package:
 See <a href="#Relational-databases">Relational databases</a>.  Importing data via network connections is
 discussed in <a href="#Network-interfaces">Network interfaces</a>.
 </p>
+<table summary="" class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Encodings" accesskey="1">Encodings</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
 <hr>
 <a name="Encodings"></a>
 <div class="header">
@@ -469,9 +470,9 @@ intro.dat: UTF-8 Unicode text
 intro.dat: UTF-8 Unicode (with BOM) text
 </pre></div>
 
-<p>Modern Unix-alike systems, including OS X, are likely to produce
+<p>Modern Unix-alike systems, including macOS, are likely to produce
 UTF-8 files.  Windows may produce what it calls &lsquo;Unicode&rsquo; files
-(<code>UCS-2LE</code> or just possibly <code>UTF-16LE</code><a name="DOCF2" href="#FOOT2"><sup>2</sup></a>).  Otherwise most files will be in a
+(<code>UCS-2LE</code> or just possibly <code>UTF-16LE</code><a name="DOCF1" href="#FOOT1"><sup>1</sup></a>).  Otherwise most files will be in a
 8-bit encoding unless from a Chinese/Japanese/Korean locale (which have
 a wide range of encodings in common use).  It is not possible to
 automatically detect with certainty which 8-bit encoding (although
@@ -506,9 +507,8 @@ Next: <a href="#XML" accesskey="n" rel="next">XML</a>, Previous: <a href="#Impor
 
 <p>Exporting results from R is usually a less contentious task, but
 there are still a number of pitfalls.  There will be a target
-application in mind, and normally a text file will be the most
-convenient interchange vehicle.  (If a binary file is required, see
-<a href="#Binary-files">Binary files</a>.)
+application in mind, and often a text file will be the most convenient
+interchange vehicle.  (If a binary file is required, see <a href="#Binary-files">Binary files</a>.)
 </p>
 <a name="index-cat"></a>
 <p>Function <code>cat</code> underlies the functions for exporting data.  It
@@ -589,9 +589,10 @@ changed by argument <code>na</code>.  Note that <code>NaN</code>s are treated as
 <a name="index-Quoting-strings"></a>
 
 <p>By default strings are quoted (including the row and column names).
-Argument <code>quote</code> controls if  character and factor variables are
-quoted: some programs, for example <strong>Mondrian</strong>, do not accept quoted
-strings (which are the default).
+Argument <code>quote</code> controls if character and factor variables are
+quoted: some programs, for example <strong>Mondrian</strong>
+(<a href="https://en.wikipedia.org/wiki/Mondrian_(software)">https://en.wikipedia.org/wiki/Mondrian_(software)</a>), do not accept
+quoted strings.
 </p>
 <p>Some care is needed if the strings contain embedded quotes.  Three
 useful forms are
@@ -622,11 +623,11 @@ and <code>write.table</code> has a <code>fileEncoding</code> argument to make th
 easier.
 </p>
 <p>The hard part is to know what file encoding to use.  For use on Windows,
-it is best to use what Windows calls &lsquo;Unicode&rsquo;<a name="DOCF3" href="#FOOT3"><sup>3</sup></a>, that is <code>&quot;UTF-16LE&quot;</code>.  Using UTF-8 is a good way
+it is best to use what Windows calls &lsquo;Unicode&rsquo;<a name="DOCF2" href="#FOOT2"><sup>2</sup></a>, that is <code>&quot;UTF-16LE&quot;</code>.  Using UTF-8 is a good way
 to make portable files that will not easily be confused with any other
-encoding, but even OS X applications (where UTF-8 is the system
+encoding, but even macOS applications (where UTF-8 is the system
 encoding) may not recognize them, and Windows applications are most
-unlikely to.  Apparently Excel:mac 2004/8 expects <code>.csv</code> files in
+unlikely to.  Apparently Excel:mac 2004/8 expected <code>.csv</code> files in
 <code>&quot;macroman&quot;</code> encoding (the encoding used in much earlier versions
 of Mac OS).
 </p>
@@ -685,16 +686,15 @@ graphical displays, mathematics and so on.
 <p>although it does not require it.
 </p>
 <p>The <a href="https://CRAN.R-project.org/package=XML"><strong>XML</strong></a> package provides general facilities for reading and
-writing <acronym>XML</acronym> documents within R.  A description of the
-facilities of the <a href="https://CRAN.R-project.org/package=XML"><strong>XML</strong></a> package is outside the scope of this
-document: see the package&rsquo;s Web page at
-<a href="http://www.omegahat.org/RSXML">http://www.omegahat.org/RSXML</a> for details and examples.  Package
-<a href="https://CRAN.R-project.org/package=StatDataML"><strong>StatDataML</strong></a> on <acronym>CRAN</acronym> is one example building on
-<a href="https://CRAN.R-project.org/package=XML"><strong>XML</strong></a>.
+writing <acronym>XML</acronym> documents within R. 
+Package <a href="https://CRAN.R-project.org/package=StatDataML"><strong>StatDataML</strong></a> on <acronym>CRAN</acronym> is one example building
+on <a href="https://CRAN.R-project.org/package=XML"><strong>XML</strong></a>.  Another interface to the <strong>libxml2</strong> C library is
+provided by package <a href="https://CRAN.R-project.org/package=xml2"><strong>xml2</strong></a>.
 </p>
-<p>NB: <a href="https://CRAN.R-project.org/package=XML"><strong>XML</strong></a> is available as a binary package for Windows, normally
-from the &lsquo;CRAN extras&rsquo; repository (which is selected by default on
-Windows).
+<a name="index-yaml"></a>
+<p><acronym>yaml</acronym> is another system for structuring text data, with
+emphasis on human-readability: it is supported by package
+<a href="https://CRAN.R-project.org/package=yaml"><strong>yaml</strong></a>.
 </p>
 <hr>
 <a name="Spreadsheet_002dlike-data"></a>
@@ -856,7 +856,7 @@ indicate missing cases in a regular layout.
 columns as character vectors and then tries to select a suitable class
 for each variable in the data frame.  It tries in turn <code>logical</code>,
 <code>integer</code>, <code>numeric</code> and <code>complex</code>, moving on if any
-entry is not missing and cannot be converted.<a name="DOCF4" href="#FOOT4"><sup>4</sup></a>
+entry is not missing and cannot be converted.<a name="DOCF3" href="#FOOT3"><sup>3</sup></a>
 If all of these fail, the variable is converted to a factor.
 </p>
 <p>Arguments <code>colClasses</code> and <code>as.is</code> provide greater control.
@@ -927,10 +927,7 @@ not accept them.  So faced with a file which <code>file</code> reports as
 
 <p>(This would most likely work without specifying an encoding in a UTF-8 locale.)
 </p>
-<p>Another problem with this (real-life) example is that whereas
-<code>file-5.03</code> reported the BOM, <code>file-4.17</code> found on OS
-10.5 (Leopard) did not.
-</p></li></ol>
+</li></ol>
 
 <a name="index-read_002ecsv"></a>
 <a name="index-read_002ecsv2"></a>
@@ -1366,11 +1363,10 @@ to handle these.
 <a name="index-read_002edta"></a>
 <a name="index-write_002edta"></a>
 <p>Stata <samp>.dta</samp> files are a binary file format. Files from versions 5
-up to 11 of Stata can be read and written by functions <code>read.dta</code>
+up to 12 of Stata can be read and written by functions <code>read.dta</code>
 and <code>write.dta</code>.  Stata variables with value labels are optionally
-converted to (and from) R factors.  Stata version 12 by default
-writes &lsquo;format-115 datasets&rsquo;: <code>read.dta</code> currently may not be able
-to read those.
+converted to (and from) R factors. For  Stata versions 13 and later
+see <acronym>CRAN</acronym> packages <a href="https://CRAN.R-project.org/package=readstata13"><strong>readstata13</strong></a> and <a href="https://CRAN.R-project.org/package=haven"><strong>haven</strong></a>.
 </p>
 
 <a name="index-Systat"></a>
@@ -1473,7 +1469,7 @@ from a database for separate analysis.
 <p>Increasingly OSes are themselves making use of DBMSs for these reasons,
 so it is nowadays likely that one will be already installed on your
 (non-Windows) OS.  <a href="https://en.wikipedia.org/wiki/Akonadi">Akonadi</a>
-is used by KDE4 to store personal information.  Several OS X
+is used by KDE4 to store personal information.  Several macOS
 applications, including Mail and Address Book, use SQLite.
 </p>
 <hr>
@@ -1490,7 +1486,7 @@ Next: <a href="#R-interface-packages" accesskey="n" rel="next">R interface packa
 <a href="http://www.ibm.com/db2">IBM&rsquo;s DB2</a>;
 <a href="https://www.microsoft.com/SQL/default.mspx">Microsoft <acronym>SQL</acronym>
 Server</a> on Windows) and academic and small-system databases (such as
-MySQL<a name="DOCF5" href="#FOOT5"><sup>5</sup></a>, PostgreSQL, Microsoft
+MySQL<a name="DOCF4" href="#FOOT4"><sup>4</sup></a>, PostgreSQL, Microsoft
 Access, &hellip;), the former marked out by much greater emphasis on data
 security features.  The line is blurring, with MySQL and PostgreSQL
 having more and more high-end features, and free &lsquo;express&rsquo; versions
@@ -1503,7 +1499,7 @@ non-relational databases and even text files (possibly compressed).
 Open Database Connectivity (<acronym>ODBC</acronym>) is a standard to use all of
 these data sources.  It originated on Windows (see
 <a href="https://msdn.microsoft.com/en-us/library/ms710252%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ms710252%28v=vs.85%29.aspx</a>)
-but is also implemented on Linux/Unix/OS X.
+but is also implemented on Linux/Unix/macOS.
 </p>
 <p>All of the packages described later in this chapter provide clients to
 client/server databases.  The database can reside on the same machine or
@@ -1671,22 +1667,20 @@ data frame or in pieces (usually as groups of rows).
 proposal for a unified &lsquo;front-end&rsquo; package <a href="https://CRAN.R-project.org/package=DBI"><strong>DBI</strong></a>
 (<a href="https://developer.r-project.org/db">https://developer.r-project.org/db</a>) in conjunction with a
 &lsquo;back-end&rsquo;, the most developed of which is <a href="https://CRAN.R-project.org/package=RMySQL"><strong>RMySQL</strong></a>.  Also on
-<acronym>CRAN</acronym> are the back-ends <a href="https://CRAN.R-project.org/package=ROracle"><strong>ROracle</strong></a>, <a href="https://CRAN.R-project.org/package=RPostgreSQL"><strong>RPostgreSQL</strong></a> and
-<a href="https://CRAN.R-project.org/package=RSQLite"><strong>RSQLite</strong></a> (which works with the bundled DBMS <code>SQLite</code>,
-<a href="https://www.sqlite.org">https://www.sqlite.org</a>),  <a href="https://CRAN.R-project.org/package=RJDBC"><strong>RJDBC</strong></a> (which uses Java and can
-connect to any DBMS that has a JDBC driver) and <a href="https://CRAN.R-project.org/package=RpgSQL"><strong>RpgSQL</strong></a> (a
-specialist interface to PostgreSQL built on top of <a href="https://CRAN.R-project.org/package=RJDBC"><strong>RJDBC</strong></a>).
+<acronym>CRAN</acronym> are the back-ends <a href="https://CRAN.R-project.org/package=ROracle"><strong>ROracle</strong></a>,
+<a href="https://CRAN.R-project.org/package=RPostgreSQL"><strong>RPostgreSQL</strong></a> and <a href="https://CRAN.R-project.org/package=RSQLite"><strong>RSQLite</strong></a> (which works with the
+bundled DBMS <code>SQLite</code>, <a href="https://www.sqlite.org">https://www.sqlite.org</a>) and
+<a href="https://CRAN.R-project.org/package=RJDBC"><strong>RJDBC</strong></a> (which uses Java and can connect to any DBMS that has a
+JDBC driver).
 </p>
-<p>The BioConductor project has updated <strong>RdbiPgSQL</strong> (formerly on
-<acronym>CRAN</acronym> ca 2000), a first-generation interface to PostgreSQL.
-</p>
+
 <p><strong>PL/R</strong> (<a href="http://www.joeconway.com/plr/"><code>http://www.joeconway.com/plr/</code></a>) is a project to embed R into
 PostgreSQL.
 </p>
 <p>Package <a href="https://CRAN.R-project.org/package=RMongo"><strong>RMongo</strong></a> provides an R interface to a Java client for
-&lsquo;MongoDB&rsquo; (<a href="https://en.wikipedia.org/wiki/MongoDB">https://en.wikipedia.org/wiki/MongoDB</a>) databases, which
-are queried using JavaScript rather than SQL.  Package <a href="https://CRAN.R-project.org/package=rmongodb"><strong>rmongodb</strong></a> is
-another client using <strong>mongodb</strong>&rsquo;s C driver.
+&lsquo;MongoDB&rsquo; (<a href="https://en.wikipedia.org/wiki/MongoDB">https://en.wikipedia.org/wiki/MongoDB</a>) databases,
+which are queried using JavaScript rather than SQL.  Package
+<a href="https://CRAN.R-project.org/package=mongolite"><strong>mongolite</strong></a> is another client using <strong>mongodb</strong>&rsquo;s C driver.
 </p>
 
 <table summary="" class="menu" border="0" cellspacing="0">
@@ -1715,7 +1709,7 @@ versions had a substantially different interface.  The current version
 requires the <a href="https://CRAN.R-project.org/package=DBI"><strong>DBI</strong></a> package, and this description will apply with
 minor changes to all the other back-ends to <a href="https://CRAN.R-project.org/package=DBI"><strong>DBI</strong></a>.
 </p>
-<p>MySQL exists on Unix/Linux/OS X and Windows: there is a &lsquo;Community
+<p>MySQL exists on Unix/Linux/macOS and Windows: there is a &lsquo;Community
 Edition&rsquo; released under GPL but commercial licenses are also available.
 MySQL was originally a &lsquo;light and lean&rsquo; database.  (It preserves the
 case of names where the operating file system is case-sensitive, so not
@@ -1808,7 +1802,7 @@ Previous: <a href="#DBI" accesskey="p" rel="prev">DBI</a>, Up: <a href="#R-inter
 <p>Package <a href="https://CRAN.R-project.org/package=RODBC"><strong>RODBC</strong></a> on <acronym>CRAN</acronym> provides an interface to
 database sources supporting an <acronym>ODBC</acronym> interface.  This is very
 widely available, and allows the same R code to access different
-database systems.  <a href="https://CRAN.R-project.org/package=RODBC"><strong>RODBC</strong></a> runs on Unix/Linux, Windows and OS X,
+database systems.  <a href="https://CRAN.R-project.org/package=RODBC"><strong>RODBC</strong></a> runs on Unix/Linux, Windows and macOS,
 and almost all database systems provide support for <acronym>ODBC</acronym>.  We
 have tested Microsoft SQL Server, Access, MySQL, PostgreSQL, Oracle and
 IBM DB2 on Windows and MySQL, MariaDB, Oracle, PostgreSQL and SQLite on
@@ -1820,11 +1814,10 @@ running on a Unix server from a Windows client, and <em>vice versa</em>.
 <p>On Windows ODBC support is part of the OS.  On Unix/Linux you will need
 an <acronym>ODBC</acronym> Driver Manager such as unixODBC
 (<a href="http://www.unixODBC.org">http://www.unixODBC.org</a>) or iOBDC (<a href="http://www.iODBC.org">http://www.iODBC.org</a>:
-this is pre-installed in OS X) and an installed driver for your
+this is pre-installed in macOS) and an installed driver for your
 database system.
 </p>
 <a name="index-Excel"></a>
-<a name="index-_002exls"></a>
 <a name="index-Dbase"></a>
 <a name="index-_002edbf"></a>
 <p>Windows provides drivers not just for DBMSs but also for Excel
@@ -1838,10 +1831,10 @@ search for &lsquo;Office ODBC&rsquo;, which will lead to
 latter has a version for 64-bit Windows, and that will also read earlier
 versions).
 </p>
-<p>On OS X the Actual Technologies
-(<a href="https://www.actualtech.com/product_access.php">https://www.actualtech.com/product_access.php</a>) drivers
-provide ODBC interfaces to Access databases (including Access 2007/2010)
-and to Excel spreadsheets (not including Excel 2007/2010).
+<p>On macOS the Actual Technologies
+(<a href="https://www.actualtech.com/product_access.php">https://www.actualtech.com/product_access.php</a>) drivers provide
+ODBC interfaces to Access databases and to Excel spreadsheets (not
+including Excel 2007/2010).
 </p>
 <a name="index-odbcConnect"></a>
 <a name="index-odbcDriverConnect"></a>
@@ -1931,7 +1924,7 @@ Alaska           10.0     263       48 44.5
 </pre></div>
 
 <a name="index-Excel-1"></a>
-<a name="index-_002exls-1"></a>
+<a name="index-_002exls"></a>
 <a name="index-odbcConnectExcel"></a>
 <p>As a simple example of using <acronym>ODBC</acronym> under Windows with a Excel
 spreadsheet, we can read from a spreadsheet by
@@ -2005,9 +1998,9 @@ Next: <a href="#dBase-files-_0028DBF_0029" accesskey="n" rel="next">dBase files 
 <a name="index-netCDF"></a>
 <a name="index-network-Common-Data-Form"></a>
 
-<p>Packages <a href="https://CRAN.R-project.org/package=hdf5"><strong>hdf5</strong></a>, <a href="https://CRAN.R-project.org/package=h5r"><strong>h5r</strong></a>, Bioconductor&rsquo;s <strong>rhdf5</strong>,
-<a href="https://CRAN.R-project.org/package=RNetCDF"><strong>RNetCDF</strong></a>, <a href="https://CRAN.R-project.org/package=ncdf"><strong>ncdf</strong></a> and <a href="https://CRAN.R-project.org/package=ncdf4"><strong>ncdf4</strong></a> on <acronym>CRAN</acronym> provide
-interfaces to <acronym>NASA</acronym>&rsquo;s HDF5 (Hierarchical Data Format, see
+<p>Packages <a href="https://CRAN.R-project.org/package=h5"><strong>h5</strong></a>, Bioconductor&rsquo;s <strong>rhdf5</strong>, <a href="https://CRAN.R-project.org/package=RNetCDF"><strong>RNetCDF</strong></a> and
+<a href="https://CRAN.R-project.org/package=ncdf4"><strong>ncdf4</strong></a> on <acronym>CRAN</acronym> provide interfaces to <acronym>NASA</acronym>&rsquo;s
+HDF5 (Hierarchical Data Format, see
 <a href="https://www.hdfgroup.org/HDF5/">https://www.hdfgroup.org/HDF5/</a>) and to UCAR&rsquo;s netCDF data files
 (network Common Data Form, see
 <a href="http://www.unidata.ucar.edu/software/netcdf/">http://www.unidata.ucar.edu/software/netcdf/</a>).
@@ -2020,8 +2013,8 @@ matrices.
 </p>
 <p>NetCDF&rsquo;s version 4 format (confusingly, implemented in netCDF 4.1.1 and
 later, but not in 4.0.1) includes the use of various HDF5 formats.  This
-is handled by package <a href="https://CRAN.R-project.org/package=ncdf4"><strong>ncdf4</strong></a> whereas <a href="https://CRAN.R-project.org/package=RNetCDF"><strong>RNetCDF</strong></a> and
-<a href="https://CRAN.R-project.org/package=ncdf"><strong>ncdf</strong></a> handle version 3 files.
+is handled by package <a href="https://CRAN.R-project.org/package=ncdf4"><strong>ncdf4</strong></a> whereas <a href="https://CRAN.R-project.org/package=RNetCDF"><strong>RNetCDF</strong></a> handles
+version 3 files.
 </p>
 <p>The availability of software to support these formats is somewhat
 limited by platform, especially on Windows.
@@ -2092,8 +2085,8 @@ formats after which they are named.  See also packages <a href="https://CRAN.R-p
 and <a href="https://CRAN.R-project.org/package=Momocs"><strong>Momocs</strong></a>, and Bioconductor package <strong>EBImage</strong>.
 </p>
 <p>TIFF is more a meta-format, a wrapper within which a very large variety
-of image formats can be embedded.  Packages <a href="https://CRAN.R-project.org/package=rtiff"><strong>rtiff</strong></a> (orphaned)
-and <a href="https://CRAN.R-project.org/package=tiff"><strong>tiff</strong></a> can read some of the sub-formats (depending on the
+of image formats can be embedded.  Packages <a href="https://CRAN.R-project.org/package=rtiff"><strong>rtiff</strong></a> and
+<a href="https://CRAN.R-project.org/package=tiff"><strong>tiff</strong></a> can read some of the sub-formats (depending on the
 external <code>libtiff</code> software against which they are compiled).
 There some facilities for specialized sub-formats, for example in
 Bioconductor package <strong>beadarray</strong>.
@@ -2104,7 +2097,7 @@ facilities of its own to read raster files and links to many others.
 Which formats it supports is determined when GDAL is compiled: use
 <code>gdalDrivers()</code> to see what these are for the build you are using.
 It can be useful for uncommon formats such as JPEG 2000 (which is a
-different format from JPEG, and not currently supported in the OS X
+different format from JPEG, and not currently supported in the macOS
 nor Windows binary versions of <a href="https://CRAN.R-project.org/package=rgdal"><strong>rgdal</strong></a>).
 </p>
 
@@ -2220,10 +2213,10 @@ available for R input from that connection.
 </p>
 <a name="index-URL-connections"></a>
 <a name="index-url"></a>
-<p><acronym>URL</acronym>s of types &lsquo;<samp>http://</samp>&rsquo;, &lsquo;<samp>ftp://</samp>&rsquo; and &lsquo;<samp>file://</samp>&rsquo;
-can be read from using the function <code>url</code>.  For convenience,
-<code>file</code> will also accept these as the file specification and call
-<code>url</code>.  On most platforms &lsquo;<samp>https://</samp>&rsquo; are also accepted.
+<p><acronym>URL</acronym>s of types &lsquo;<samp>http://</samp>&rsquo;, &lsquo;<samp>https://</samp>&rsquo;, &lsquo;<samp>ftp://</samp>&rsquo;
+and &lsquo;<samp>file://</samp>&rsquo; can be read from using the function <code>url</code>.  For
+convenience, <code>file</code> will also accept these as the file
+specification and call <code>url</code>.
 </p>
 <a name="index-Sockets"></a>
 <a name="index-socketConnection"></a>
@@ -2335,9 +2328,9 @@ scan(pipe(&quot;sed -e s/,$// data&quot;), sep=&quot;,&quot;)
 </pre></div>
 
 <a name="index-URL-connections-1"></a>
-<p>For convenience, if the <code>file</code> argument specifies a FTP or HTTP
-<acronym>URL</acronym>, the <acronym>URL</acronym> is opened for reading via <code>url</code>.
-Specifying files via &lsquo;<samp>file://foo.bar</samp>&rsquo; is also allowed.
+<p>For convenience, if the <code>file</code> argument specifies a FTP, HTTP or
+HTTPS <acronym>URL</acronym>, the <acronym>URL</acronym> is opened for reading via
+<code>url</code>.  Specifying files via &lsquo;<samp>file://foo.bar</samp>&rsquo; is also allowed.
 </p>
 <table summary="" class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Pushback" accesskey="1">Pushback</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2583,12 +2576,12 @@ Previous: <a href="#Reading-from-sockets" accesskey="p" rel="prev">Reading from 
 <a name="Using-download_002efile-1"></a>
 <h3 class="section">8.2 Using <code>download.file</code></h3>
 
-<p>Function <code>download.file</code> is provided to read a file from a
-Web resource via FTP or HTTP and write it to a file.  Often this can be
-avoided, as functions such as <code>read.table</code> and <code>scan</code> can read
-directly from a URL, either by explicitly using <code>url</code> to open a
-connection, or implicitly using it by giving a URL as the <code>file</code>
-argument.
+<p>Function <code>download.file</code> is provided to read a file from a Web
+resource via FTP or HTTP (including HTTPS) and write it to a file.
+Often this can be avoided, as functions such as <code>read.table</code> and
+<code>scan</code> can read directly from a URL, either by explicitly using
+<code>url</code> to open a connection, or implicitly using it by giving a URL
+as the <code>file</code> argument.
 </p>
 
 <hr>
@@ -2599,6 +2592,9 @@ Next: <a href="#References" accesskey="n" rel="next">References</a>, Previous: <
 </div>
 <a name="Reading-Excel-spreadsheets-1"></a>
 <h2 class="chapter">9 Reading Excel spreadsheets</h2>
+
+<a name="index-_002exls-1"></a>
+<a name="index-_002exlsx"></a>
 
 <p>The most common R data import/export question seems to be &lsquo;how do I read
 an Excel spreadsheet&rsquo;.  This chapter collects together advice and
@@ -2642,7 +2638,7 @@ depending on your ODBC drivers: by calling <code>odbcConnect</code> directly
 versions back to Excel 3.0 can be read).  The version
 <code>odbcConnectExcel2007</code> will read the Excel 2007 formats as well as
 earlier ones (provided the drivers are installed, including with 64-bit
-Windows R: see <a href="#RODBC">RODBC</a>).  OS X users can also use <a href="https://CRAN.R-project.org/package=RODBC"><strong>RODBC</strong></a> if
+Windows R: see <a href="#RODBC">RODBC</a>).  macOS users can also use <a href="https://CRAN.R-project.org/package=RODBC"><strong>RODBC</strong></a> if
 they have a suitable driver (e.g. that from Actual Technologies).
 </p>
 <a name="index-read_002exls"></a>
@@ -2653,30 +2649,24 @@ provides a basic wrapper in its <code>read.xls</code> function.  With suitable
 <code>Perl</code> modules installed this function can also read Excel 2007
 spreadsheets.
 </p>
-<a name="index-xlsReadWrite"></a>
-<p>32-bit Windows package <a href="https://CRAN.R-project.org/package=xlsReadWrite"><strong>xlsReadWrite</strong></a> from
-<a href="http://www.swissr.org/">http://www.swissr.org/</a> and CRAN has a function <code>read.xls</code> to
-read <samp>.xls</samp> files (based on a third-party non-Open-Source Delphi
-component).
-</p>
 <a name="index-dataframes2xls"></a>
 <a name="index-WriteXLS"></a>
 <p>Packages <a href="https://CRAN.R-project.org/package=dataframes2xls"><strong>dataframes2xls</strong></a> and <a href="https://CRAN.R-project.org/package=WriteXLS"><strong>WriteXLS</strong></a> each contain a function
 to <em>write</em> one or more data frames to an <samp>.xls</samp> file, using
-Python and Perl respectively.  Another version of <code>write.xls</code> in
-available in package <a href="https://CRAN.R-project.org/package=xlsReadWrite"><strong>xlsReadWrite</strong></a>.
+Python and Perl respectively.
 </p>
 <a name="index-xlsx"></a>
-<a name="index-RExcelXML"></a>
-<p>Two packages which can read and and manipulate Excel 2007/10
-spreadsheets but not earlier formats are <a href="https://CRAN.R-project.org/package=xlsx"><strong>xlsx</strong></a> (which requires
-Java) and the Omegahat package <strong>RExcelXML</strong>.
+<p>Packages <a href="https://CRAN.R-project.org/package=xlsx"><strong>xlsx</strong></a> can read and and manipulate Excel 2007 and later
+spreadsheets: it requires Java.
 </p>
 <a name="index-XLConnect"></a>
 <p>Package <a href="https://CRAN.R-project.org/package=XLConnect"><strong>XLConnect</strong></a> can read, write and manipulate both Excel
-97&ndash;2003 and Excel 2007/10 spreadsheets, requiring Java.
+97&ndash;2003 and Excel 2007/10 spreadsheets, using Java.
 </p>
-
+<a name="index-readxl"></a>
+<p>Package <a href="https://CRAN.R-project.org/package=readxl"><strong>readxl</strong></a> can read both Excel 97&ndash;2003 and Excel 2007/10
+spreadsheets, using an included C library.
+</p>
 <hr>
 <a name="References"></a>
 <div class="header">
@@ -2708,8 +2698,8 @@ with C++.</em> Addison-Wesley.
 Addison-Wesley.
 Also available at <a href="http://momjian.us/main/writings/pgsql/aw_pgsql_book/">http://momjian.us/main/writings/pgsql/aw_pgsql_book/</a>.
 </p>
-<p>B. D. Ripley (2001) Connections. \<em>R News</em>, <strong>1/1</strong>, 16&ndash;7.
-  \<a href="https://www.r-project.org/doc/Rnews/Rnews_2001-1.pdf">https://www.r-project.org/doc/Rnews/Rnews_2001-1.pdf</a>
+<p>B. D. Ripley (2001) Connections. <em>R News</em>, <strong>1/1</strong>, 16&ndash;7.
+  <a href="https://www.r-project.org/doc/Rnews/Rnews_2001-1.pdf">https://www.r-project.org/doc/Rnews/Rnews_2001-1.pdf</a>
 </p>
 
 <p>T. M. Therneau and P. M. Grambsch (2000) <em>Modeling Survival
@@ -2771,7 +2761,8 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><th><a name="Function-and-variable-index_vr_symbol-1">.</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_002edbf"><code>.dbf</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#RODBC">RODBC</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_002exls"><code>.xls</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#RODBC">RODBC</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_002exls-1"><code>.xls</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#RODBC">RODBC</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_002exls-1"><code>.xls</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_002exlsx"><code>.xlsx</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Function-and-variable-index_vr_letter-B">B</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-bzfile"><code>bzfile</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Types-of-connections">Types of connections</a></td></tr>
@@ -2867,8 +2858,8 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-readClipboard"><code>readClipboard</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-readLines"><code>readLines</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Using-scan-directly">Using scan directly</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-readLines-1"><code>readLines</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Input-from-connections">Input from connections</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-readxl"><code>readxl</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-reshape"><code>reshape</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Re_002dshaping-data">Re-shaping data</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-RExcelXML"><code>RExcelXML</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Function-and-variable-index_vr_letter-S">S</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-scan"><code>scan</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Imports">Imports</a></td></tr>
@@ -2919,7 +2910,6 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Function-and-variable-index_vr_letter-X">X</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-XLConnect"><code>XLConnect</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-xlsReadWrite"><code>xlsReadWrite</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-xlsx"><code>xlsx</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Reading-Excel-spreadsheets">Reading Excel spreadsheets</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
@@ -3009,12 +2999,14 @@ Previous: <a href="#Function-and-variable-index" accesskey="p" rel="prev">Functi
  &nbsp; 
 <a class="summary-letter" href="#Concept-index_cp_letter-X"><b>X</b></a>
  &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-Y"><b>Y</b></a>
+ &nbsp; 
 </td></tr></table>
 <table summary="" class="index-cp" border="0">
 <tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Concept-index_cp_letter-A">A</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-AWK">AWK</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Introduction">Introduction</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-awk">awk</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Introduction">Introduction</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Concept-index_cp_letter-B">B</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Binary-files">Binary files</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Binary-files">Binary files</a></td></tr>
@@ -3116,6 +3108,9 @@ Previous: <a href="#Function-and-variable-index" accesskey="p" rel="prev">Functi
 <tr><th><a name="Concept-index_cp_letter-X">X</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-XML">XML</a>:</td><td>&nbsp;</td><td valign="top"><a href="#XML">XML</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Concept-index_cp_letter-Y">Y</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-yaml">yaml</a>:</td><td>&nbsp;</td><td valign="top"><a href="#XML">XML</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
 </table>
 <table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_letter-A"><b>A</b></a>
  &nbsp; 
@@ -3155,6 +3150,8 @@ Previous: <a href="#Function-and-variable-index" accesskey="p" rel="prev">Functi
  &nbsp; 
 <a class="summary-letter" href="#Concept-index_cp_letter-X"><b>X</b></a>
  &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-Y"><b>Y</b></a>
+ &nbsp; 
 </td></tr></table>
 
 
@@ -3163,23 +3160,19 @@ Previous: <a href="#Function-and-variable-index" accesskey="p" rel="prev">Functi
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <h3><a name="FOOT1" href="#DOCF1">(1)</a></h3>
-<p>Currently not available from
-that repository but as a source package for download from
-<a href="http://www.omegahat.org/ROpenOffice/">http://www.omegahat.org/ROpenOffice/</a>.</p>
-<h3><a name="FOOT2" href="#DOCF2">(2)</a></h3>
 <p>the
 distinction is subtle,
 <a href="https://en.wikipedia.org/wiki/UTF-16/UCS-2">https://en.wikipedia.org/wiki/UTF-16/UCS-2</a>, and the use of
 surrogate pairs is very rare.</p>
-<h3><a name="FOOT3" href="#DOCF3">(3)</a></h3>
+<h3><a name="FOOT2" href="#DOCF2">(2)</a></h3>
 <p>Even then,
 Windows applications may expect a Byte Order Mark which the
 implementation of <code>iconv</code> used by R may or may not add depending
 on the platform.</p>
-<h3><a name="FOOT4" href="#DOCF4">(4)</a></h3>
+<h3><a name="FOOT3" href="#DOCF3">(3)</a></h3>
 <p>This is normally
 fast as looking at the first entry rules out most of the possibilities.</p>
-<h3><a name="FOOT5" href="#DOCF5">(5)</a></h3>
+<h3><a name="FOOT4" href="#DOCF4">(4)</a></h3>
 <p>and forks, notably MariaDB.</p>
 </div>
 <hr>

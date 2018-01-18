@@ -1,6 +1,6 @@
 /* -*- C -*-
  *  Mathlib : A C Library of Special Functions
- *  Copyright (C) 1998-2015  The R Core Team
+ *  Copyright (C) 1998-2016  The R Core Team
  *  Copyright (C) 2004       The R Foundation
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -31,17 +31,28 @@
 #ifndef RMATH_H
 #define RMATH_H
 
-/* Note that on some systems we need to include math.h before the
-   defines below. */
-#ifndef NO_C_HEADERS
-# define __STDC_WANT_IEC_60559_TYPES_EXT__ 1
+/* needed for cospi etc */
+#ifndef __STDC_WANT_IEC_60559_FUNCS_EXT__
+# define __STDC_WANT_IEC_60559_FUNCS_EXT__ 1
+#endif
+#if defined(__cplusplus) && !defined(DO_NOT_USE_CXX_HEADERS)
+# include <cmath>
+// See comment in R.h
+# ifdef __SUNPRO_CC
+using namespace std;
+# endif
+#else
 # include <math.h>
+#endif
+
+#ifdef NO_C_HEADERS
+# warning "use of NO_C_HEADERS is defunct and will be ignored"
 #endif
 
 /*-- Mathlib as part of R --  define this for standalone : */
 /* #undef MATHLIB_STANDALONE */
 
-#define R_VERSION_STRING "3.2.3"
+#define R_VERSION_STRING "3.4.3"
 
 #ifndef HAVE_EXPM1
 # define HAVE_EXPM1 1
@@ -259,9 +270,11 @@ double  Rlog1p(double);
 #define lgammafn	Rf_lgammafn
 #define lgammafn_sign	Rf_lgammafn_sign
 #define lgamma1p	Rf_lgamma1p
+#define log1pexp       	Rf_log1pexp
 #define log1pmx		Rf_log1pmx
 #define logspace_add	Rf_logspace_add
 #define logspace_sub	Rf_logspace_sub
+#define logspace_sum	Rf_logspace_sum
 #define pbeta		Rf_pbeta
 #define pbeta_raw	Rf_pbeta_raw
 #define pbinom		Rf_pbinom
@@ -398,7 +411,7 @@ double  log1pexp(double); // <-- ../nmath/plogis.c
 double  lgamma1p(double);
 double  logspace_add(double, double);
 double  logspace_sub(double, double);
-double  logspace_sum(double *, int);
+double  logspace_sum(const double *, int);
 
 	/* Beta Distribution */
 
@@ -610,15 +623,17 @@ double  lgamma1p(double);/* accurate log(gamma(x+1)), small x (0 < x < 0.5) */
 
 /* More accurate cos(pi*x), sin(pi*x), tan(pi*x)
 
-   In future these declarations could clash with system headers if
-   someone had already included math.h with
-   __STDC_WANT_IEC_60559_TYPES_EXT__ defined.
+   These declarations might clash with system headers if someone had
+   already included math.h with __STDC_WANT_IEC_60559_FUNCS_EXT__
+   defined (and we try, above).
    We can add a check for that via the value of
-   __STDC_IEC_60559_FUNCS__ (>= 201ymmL, exact value not yet known).
+   __STDC_IEC_60559_FUNCS__ (>= 201506L).
 */
+#if !(defined(__STDC_IEC_60559_FUNCS__) && __STDC_IEC_60559_FUNCS__ >= 201506L)
 double cospi(double);
 double sinpi(double);
 double tanpi(double);
+#endif
 
 /* Compute the log of a sum or difference from logs of terms, i.e.,
  *
@@ -645,7 +660,7 @@ double  logspace_sub(double logx, double logy);
 /* second is defined by nmath.h */
 
 /* If isnan is a macro, as C99 specifies, the C++
-   math header will undefine it. This happens on OS X */
+   math header will undefine it. This happens on macOS */
 # ifdef __cplusplus
   int R_isnancpp(double); /* in mlutils.c */
 #  define ISNAN(x)     R_isnancpp(x)

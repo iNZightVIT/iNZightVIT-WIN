@@ -1,20 +1,22 @@
 #### For both 'Extract' ("[") and 'Replace' ("[<-") Method testing
 ####    aka    subsetting     and  subassignment
 
+if(interactive()) {
+    options(error = recover, warn = 1)
+} else if(FALSE) { ## MM @ testing *manually* only
+    options(error = recover, Matrix.verbose = TRUE, warn = 1)
+} else {
+    options(                 Matrix.verbose = TRUE, warn = 1)
+}
+## Matrix.verbose = TRUE (*before* loading 'Matrix' pkg)
+## ==> will also show method dispath ambiguity messages: getOption("ambiguousMethodSelection")
+
 #### suppressPackageStartupMessages(...)  as we have an *.Rout.save to Rdiff against
 stopifnot(suppressPackageStartupMessages(require(Matrix)))
 
 source(system.file("test-tools.R", package = "Matrix"), keep.source = FALSE)
 ##-> identical3() etc
 cat("doExtras:",doExtras,"\n")
-
-if(interactive()) {
-    options(error = recover, warn = 1)
-} else if(FALSE) { ## MM @ testing *manually* only
-    options(error = recover, Matrix.verbose = TRUE, warn = 1)
-} else {
-    options(Matrix.verbose = TRUE, warn = 1)
-}
 
 
 ### Dense Matrices
@@ -72,6 +74,16 @@ stopifnot(identical(mn["rc", "D"], mn[3,4]), mn[3,4] == 24,
 	  )
 showProc.time()
 
+## Bug found thanks to Timothy Mak, Feb 3, 2017:
+## sparseMatrix logical indexing with (partial) NA:
+a.m <- as(mn,"matrix")
+assert.EQ(as(ms,"matrix"), a.m) # incl. dimnames
+iN4 <- c(NA, TRUE, FALSE, TRUE)
+assert.EQ(as(mn[,iN4],"matrix"), a.m[,iN4]) # (incl. dimnames)
+##assert.EQ(as.matrix(ms[,iN4]), a.m[,iN4]) # ms[, <with_NA>]  fails still :
+try(ms[,iN4])
+try(ms[,iN4] <- 100) ## <- segfaulted in Matrix <= 1.2-8  (!)
+
 ## R-forge Matrix bug #2556: Subsetting a sparse matrix did remove  names(dimnames(.)) :
 m44 <- matrix(1:16, 4, 4, dimnames=list(row=c('a','b','c','d'), col=c('x','y','z','w')))
 ## Dense matrix: ------------------------------------------
@@ -115,7 +127,7 @@ m[1:2, 4] <- 200
 m[, 1] <- -1
 m[1:3,]
 
-m. <- as.matrix(m)
+m. <- .asmatrix(m)
 
 ## m[ cbind(i,j) ] indexing:
 iN <- ij <- cbind(1:6, 2:3)
@@ -134,8 +146,8 @@ nsel <-(20 >= m) | (m >= 150)
 stopifnot(is(sel, "lMatrix"), is(ssel, "lsparseMatrix"),
 	  identical3(as.mat(sel.), as.mat(sel), as.mat(ssel)),
 	  identical3(!sel, !ssel, nsel), # !<sparse> is typically dense
-	  identical3(m[ sel],  m[ ssel], as.matrix(m)[as.matrix( ssel)]),
-	  identical3(m[!sel],  m[!ssel], as.matrix(m)[as.matrix(!ssel)])
+	  identical3(m[ sel],  m[ ssel], .asmatrix(m)[.asmatrix( ssel)]),
+	  identical3(m[!sel],  m[!ssel], .asmatrix(m)[.asmatrix(!ssel)])
 	  )
 showProc.time()
 
@@ -308,10 +320,10 @@ if(doExtras) {### {was ./AAA_index.R, MM-only}
     show(N1 <- t(N <- mkN1(N0)))    # transpose {for display reasons}
     C1 <- t(C <- mkN1(as(N0,"CsparseMatrix")))
     stopifnot(all(C == N))
-    assert.EQ.mat(C, mkN1(as.matrix(N0)))
+    assert.EQ.mat(C, mkN1(.asmatrix(N0)))
 
     C. <- C1
-    show(N <- N1) ; n <- as.matrix(N); str(N)
+    show(N <- N1) ; n <- .asmatrix(N); str(N)
     sort(i <- c(6,8,19,11,21,20,10,7,12,9,5,18,17,22,13))## == c(5:13, 17:22))
     sort(j <- c(3,8,6,15,10,4,14,13,16,2,11,17,7,5))## == c(2:8, 10:11, 13:17)
     val <- v.l <- 5*c(0,6,0,7,0,0,8:9, 0,0)
@@ -482,16 +494,16 @@ diag(B.) <- 10 * diag(B.)
 diag(B.[,-1]) <- 5* diag(B.[,-1])
 diag(B.[-1,]) <- 4* diag(B.[-1,]) ; B.
 C <- B.; C[,2] <- C[,2];  C[1,] <- C[1,]; C[2:3,2:1] <- C[2:3,2:1]
-stopifnot(identical(unname(as.matrix(A)),
+stopifnot(identical(unname(.asmatrix(A)),
 		    local({a <- matrix(0,4,3); a[c(1,2,1), 2] <-  1 ; a})),
-	  identical(unname(as.matrix(B)),
+	  identical(unname(.asmatrix(B)),
 		    local({a <- matrix(0,4,3); a[c(1,2,1), 2] <- 1:3; a})),
 	  identical(C, drop0(B.)))
 ## <sparse>[<logicalSparse>] <- v  failed in the past
 T <- as(C,"TsparseMatrix"); C. <- C
 T[T>0] <- 21
 C[C>0] <- 21
-a. <- local({a <- as.matrix(C.); a[a>0] <- 21; a})
+a. <- local({a <- .asmatrix(C.); a[a>0] <- 21; a})
 assert.EQ.mat(C, a.)
 stopifnot(identical(C, as(T, "CsparseMatrix")))
 
@@ -768,7 +780,7 @@ mt
 mc[1,4] <- -99 ; stopifnot(mc[1,4] == -99)
 mc[1,4] <-  00 ; stopifnot(mc[1,4] ==  00)
 mc[1,4] <- -99 ; stopifnot(mc[1,4] == -99)
-mc[1:2,4:3] <- 4:1; stopifnot(as.matrix(mc[1:2,4:3]) == 4:1)
+mc[1:2,4:3] <- 4:1; stopifnot(.asmatrix(mc[1:2,4:3]) == 4:1)
 
 mc[-1, 3] <- -2:1 # 0 should not be entered; 'value' recycled
 mt[-1, 3] <- -2:1
@@ -841,13 +853,13 @@ H[i,j] <- 0
 (H. <- round(as(H, "sparseMatrix"), 3)[ , 2:7])
 Hc. <- Hc
 Hc.[i,j] <- 0 ## now "works", but setting "non-structural" 0s
-stopifnot(as.matrix(Hc.[i,j]) == 0)
+stopifnot(.asmatrix(Hc.[i,j]) == 0)
 Hc.[, 1:6]
 
 ## an example that failed for a long time
 sy3 <- new("dsyMatrix", Dim = as.integer(c(2, 2)), x = c(14, -1, 2, -7))
 checkMatrix(dm <- kronecker(Diagonal(2), sy3))# now sparse with new kronecker
-dm <- Matrix(as.matrix(dm))# -> "dsyMatrix"
+dm <- Matrix(.asmatrix(dm))# -> "dsyMatrix"
 (s2 <- as(dm, "sparseMatrix"))
 checkMatrix(st <- as(s2, "TsparseMatrix"))
 stopifnot(is(s2, "symmetricMatrix"),
@@ -1073,10 +1085,44 @@ assert.EQ.mat(x1, x)
 
 i <- 4:7
 x1 <- x0; x1[cbind(i, i+10)] <- i^2
-x2 <- x0; x2[cbind(i, i+10)] <- as.matrix(i^2)
+x2 <- x0; x2[cbind(i, i+10)] <- .asmatrix(i^2)
 ## failed: nargs() = 4 ... please report
 
 stopifnot(isValid(x1, "dgTMatrix"), identical(x1, x2))
+
+
+iv <- c(rep(0,100), 3, 0,0,7,0,0,0)
+sv0  <- sv  <- as(iv, "sparseVector")
+sv.0 <- sv. <- as(as.integer(iv), "sparseVector")
+stopifnot(canCoerce("integer", "sparseVector"))
+sv2 <- as(sv, "isparseVector")
+stopifnot(validObject(sv), validObject(sv2), identical(sv., sv2),
+          sv == sv.)
+n0 <- sv. != 0
+## --> ../R/sparseVector.R : replSPvec()
+if(interactive())  debug(Matrix:::replSPvec)
+##
+sv [n0] <- sv [n0]
+sv.[n0] <- sv.[n0] # gave error
+stopifnot(identical(sv , sv0),
+          identical(sv., sv.0))
+sv [3:7] <- 0
+sv.[3:7] <- 0L
+stopifnot(identical(sv , sv0), identical(sv., sv.0))
+sv [2:4] <- 2:4
+sv.[2:4] <- 2:4
+stopifnot(which(sv != 0) == (which(sv. != 0) -> in0),
+          in0 == c(2:4, 101L, 104L))
+sv [2:6] <- 0L
+sv.[2:6] <- 0L
+stopifnot(identical(sv , sv0), identical(sv., sv.0))
+
+## the next six *all* gave an error -- but should be no-op's:
+for(vv in list(sv, sv.0))
+    for(ind in list(0, FALSE, logical(length(vv))))
+        vv[ind] <- NA
+stopifnot(identical(sv , sv0), identical(sv., sv.0))
+
 
 
 showProc.time()

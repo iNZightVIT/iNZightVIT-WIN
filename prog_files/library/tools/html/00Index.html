@@ -5,13 +5,13 @@
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 <h1> Tools for Package Development
-<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;tools&rsquo; version 3.2.3</h2>
+</div><h2>Documentation for package &lsquo;tools&rsquo; version 3.4.3</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -32,6 +32,7 @@
 <a href="#I">I</a>
 <a href="#L">L</a>
 <a href="#M">M</a>
+<a href="#N">N</a>
 <a href="#P">P</a>
 <a href="#Q">Q</a>
 <a href="#R">R</a>
@@ -110,6 +111,8 @@
 <td>Check Source Packages and Their Reverse Dependencies</td></tr>
 <tr><td style="width: 25%;"><a href="check_packages_in_dir.html">check_packages_in_dir_changes</a></td>
 <td>Check Source Packages and Their Reverse Dependencies</td></tr>
+<tr><td style="width: 25%;"><a href="check_packages_in_dir.html">check_packages_in_dir_details</a></td>
+<td>Check Source Packages and Their Reverse Dependencies</td></tr>
 <tr><td style="width: 25%;"><a href="codoc.html">codoc</a></td>
 <td>Check Code/Documentation Consistency</td></tr>
 <tr><td style="width: 25%;"><a href="codoc.html">codocClasses</a></td>
@@ -118,6 +121,16 @@
 <td>Check Code/Documentation Consistency</td></tr>
 <tr><td style="width: 25%;"><a href="compactPDF.html">compactPDF</a></td>
 <td>Compact PDF Files</td></tr>
+<tr><td style="width: 25%;"><a href="CRANtools.html">CRAN_check_details</a></td>
+<td>CRAN Package Repository Tools</td></tr>
+<tr><td style="width: 25%;"><a href="CRANtools.html">CRAN_check_issues</a></td>
+<td>CRAN Package Repository Tools</td></tr>
+<tr><td style="width: 25%;"><a href="CRANtools.html">CRAN_check_results</a></td>
+<td>CRAN Package Repository Tools</td></tr>
+<tr><td style="width: 25%;"><a href="CRANtools.html">CRAN_memtest_notes</a></td>
+<td>CRAN Package Repository Tools</td></tr>
+<tr><td style="width: 25%;"><a href="CRANtools.html">CRAN_package_db</a></td>
+<td>CRAN Package Repository Tools</td></tr>
 </table>
 
 <h2><a name="D">-- D --</a></h2>
@@ -160,8 +173,8 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="bibstyle.html">getBibstyle</a></td>
 <td>Select or define a bibliography style.</td></tr>
-<tr><td style="width: 25%;"><a href="getDepList.html">getDepList</a></td>
-<td>Functions to Retrieve Dependency Information</td></tr>
+<tr><td style="width: 25%;"><a href="tools-deprecated.html">getDepList</a></td>
+<td>Deprecated Objects in Package 'tools'</td></tr>
 <tr><td style="width: 25%;"><a href="getVignetteInfo.html">getVignetteInfo</a></td>
 <td>Get information on installed vignettes.</td></tr>
 <tr><td style="width: 25%;"><a href="find_gs_cmd.html">GSC</a></td>
@@ -180,13 +193,15 @@
 <h2><a name="I">-- I --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="installFoundDepends.html">installFoundDepends</a></td>
-<td>A function to install unresolved dependencies</td></tr>
+<tr><td style="width: 25%;"><a href="tools-deprecated.html">installFoundDepends</a></td>
+<td>Deprecated Objects in Package 'tools'</td></tr>
 </table>
 
 <h2><a name="L">-- L --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="QC.html">langElts</a></td>
+<td>QC Checks for R Code and/or Documentation</td></tr>
 <tr><td style="width: 25%;"><a href="parseLatex.html">latexToUtf8</a></td>
 <td>These experimental functions work with a subset of LaTeX code.</td></tr>
 <tr><td style="width: 25%;"><a href="fileutils.html">list_files_with_exts</a></td>
@@ -202,25 +217,38 @@
 <h2><a name="M">-- M --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="makevars.html">makevars_site</a></td>
+<td>User and Site Compilation Variables</td></tr>
+<tr><td style="width: 25%;"><a href="makevars.html">makevars_user</a></td>
+<td>User and Site Compilation Variables</td></tr>
 <tr><td style="width: 25%;"><a href="make_translations_pkg.html">make_translations_pkg</a></td>
 <td>Package the Current Translations in the R sources</td></tr>
 <tr><td style="width: 25%;"><a href="md5sum.html">md5sum</a></td>
 <td>Compute MD5 Checksums</td></tr>
 </table>
 
+<h2><a name="N">-- N --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="QC.html">nonS3methods</a></td>
+<td>QC Checks for R Code and/or Documentation</td></tr>
+</table>
+
 <h2><a name="P">-- P --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="package.dependencies.html">package.dependencies</a></td>
-<td>Check Package Dependencies</td></tr>
+<tr><td style="width: 25%;"><a href="tools-deprecated.html">package.dependencies</a></td>
+<td>Deprecated Objects in Package 'tools'</td></tr>
 <tr><td style="width: 25%;"><a href="package_dependencies.html">package_dependencies</a></td>
 <td>Computations on the Dependency Hierarchy of Packages</td></tr>
+<tr><td style="width: 25%;"><a href="package_native_routine_registration_skeleton.html">package_native_routine_registration_skeleton</a></td>
+<td>Write Skeleton for Adding Native Routine Registration to a Package</td></tr>
 <tr><td style="width: 25%;"><a href="parseLatex.html">parseLatex</a></td>
 <td>These experimental functions work with a subset of LaTeX code.</td></tr>
 <tr><td style="width: 25%;"><a href="parse_Rd.html">parse_Rd</a></td>
 <td>Parse an Rd file</td></tr>
-<tr><td style="width: 25%;"><a href="getDepList.html">pkgDepends</a></td>
-<td>Functions to Retrieve Dependency Information</td></tr>
+<tr><td style="width: 25%;"><a href="tools-deprecated.html">pkgDepends</a></td>
+<td>Deprecated Objects in Package 'tools'</td></tr>
 <tr><td style="width: 25%;"><a href="buildVignettes.html">pkgVignettes</a></td>
 <td>List and Build Package Vignettes</td></tr>
 <tr><td style="width: 25%;"><a href="QC.html">print.checkDocFiles</a></td>
@@ -263,6 +291,8 @@
 <h2><a name="R">-- R --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="Rcmd.html">Rcmd</a></td>
+<td>R CMD Interface</td></tr>
 <tr><td style="width: 25%;"><a href="Rd2HTML.html">Rd2ex</a></td>
 <td>Rd Converters</td></tr>
 <tr><td style="width: 25%;"><a href="Rd2HTML.html">Rd2HTML</a></td>
@@ -328,6 +358,8 @@
 <td>Check Source Packages and Their Reverse Dependencies</td></tr>
 <tr><td style="width: 25%;"><a href="check_packages_in_dir.html">summarize_check_packages_in_dir_timings</a></td>
 <td>Check Source Packages and Their Reverse Dependencies</td></tr>
+<tr><td style="width: 25%;"><a href="CRANtools.html">summarize_CRAN_check_status</a></td>
+<td>CRAN Package Repository Tools</td></tr>
 <tr><td style="width: 25%;"><a href="SweaveTeXFilter.html">SweaveTeXFilter</a></td>
 <td>Strip R code out of Sweave file</td></tr>
 </table>

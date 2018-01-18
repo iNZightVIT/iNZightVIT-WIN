@@ -13,16 +13,11 @@ options(help_type="html") ##, warn = -1)
 # set a site library
 # .Library.site <- file.path(chartr("\\", "/", R.home()), "site-library")
 
-# set a CRAN mirror
-# local({r <- getOption("repos")
-#       r["CRAN"] <- "http://my.local.cran"
-#       options(repos=r)})
-
 
 # setting CRAN mirror to UoA
 local({
   r <- getOption("repos")
-  r["CRAN"] <- "http://cran.stat.auckland.ac.nz"
+  r["CRAN"] <- "https://cloud.r-project.org"
   options(repos = r)
 })
 
@@ -32,13 +27,6 @@ local({
 # we set the R_HOME along with the libPath.
 Sys.setenv("R_HOME" = file.path(getwd(), "prog_files"))
 .libPaths(file.path(getwd(), "prog_files", "library"))
-
-pkgs <- c("hextri")
-if (any(!pkgs %in% utils::installed.packages()[, "Package"])) {
-    cat("\nInstalling additional packages ...\n\n")
-    utils::install.packages(pkgs)
-}
-
 
 grDevices::dev.new(width = 5, height = 2)
 grid::grid.newpage()

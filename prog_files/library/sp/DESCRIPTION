@@ -1,6 +1,5 @@
 Package: sp
-Version: 1.2-1
-Date: 2015-09-29
+Version: 1.2-6
 Title: Classes and Methods for Spatial Data
 Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"),
 				email = "edzer.pebesma@uni-muenster.de"),
@@ -13,17 +12,18 @@ Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"),
 			person("Don", "MacQueen", role = "ctb"),
 			person("Jim", "Lemon", role = "ctb"),
 			person("Josh", "O'Brien", role = "ctb"))
-Depends: R (>= 3.0.0)
-Imports: utils, stats, graphics, grDevices, methods, lattice, grid
-Suggests: RColorBrewer, rgdal (>= 0.8-7), rgeos (>= 0.3-13), gstat
+Depends: R (>= 3.0.0), methods
+Imports: utils, stats, graphics, grDevices, lattice, grid
+Suggests: RColorBrewer, rgdal (>= 0.8-7), rgeos (>= 0.3-13), gstat,
+        maptools, deldir
 Description: Classes and methods for spatial
   data; the classes document where the spatial location information
   resides, for 2D or 3D data. Utility functions are provided, e.g. for
   plotting data as maps, spatial selection, as well as methods for
   retrieving coordinates, for subsetting, print, summary, etc.
 License: GPL (>= 2)
-URL: https://r-forge.r-project.org/projects/rspatial/
-        http://rspatial.r-forge.r-project.org/
+URL: https://github.com/edzer/sp/ https://edzer.github.io/sp/
+BugReports: https://github.com/edzer/sp/issues
 Collate: bpy.colors.R AAA.R Class-CRS.R CRS-methods.R Class-Spatial.R
         Spatial-methods.R projected.R Class-SpatialPoints.R
         SpatialPoints-methods.R Class-SpatialPointsDataFrame.R
@@ -45,7 +45,7 @@ Collate: bpy.colors.R AAA.R Class-CRS.R CRS-methods.R Class-Spatial.R
         compassRose.R surfaceArea.R spOptions.R subset.R disaggregate.R
         sp_spat1.R merge.R aggregate.R
 NeedsCompilation: yes
-Packaged: 2015-10-17 19:20:35 UTC; edzer
+Packaged: 2018-01-05 09:54:49 UTC; edzer
 Author: Edzer Pebesma [aut, cre],
   Roger Bivand [aut],
   Barry Rowlingson [ctb],
@@ -57,6 +57,6 @@ Author: Edzer Pebesma [aut, cre],
   Josh O'Brien [ctb]
 Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 Repository: CRAN
-Date/Publication: 2015-10-18 10:32:59
-Built: R 3.2.3; x86_64-w64-mingw32; 2016-01-28 01:36:30 UTC; windows
+Date/Publication: 2018-01-05 12:54:42 UTC
+Built: R 3.4.3; x86_64-w64-mingw32; 2018-01-13 19:32:27 UTC; windows
 Archs: i386, x64

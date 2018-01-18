@@ -1274,3 +1274,145 @@ estimate.
 experimental.  It is a pure R rewriting of the original algorithm that
 iterates on a fixed grid.  
 
+5.20
+
+1.  Added FAW to the rq.Rd see also list at the suggestion of Terry Therneau.
+
+5.21
+
+1.  Allowed ... to be passed in plot.summary.crqs.
+
+2.  Fixed namespace bug in dynrq, and added an Edgeworth wacky AR(1) example
+to dynrq.Rd.
+
+3.  Fixed rqss bug about length of residual vector
+
+
+5.23
+
+1.  Added a "cluster" option for summary.rq() when using the bootstrap option
+this option implements the wild gradient bootstrap method of Hagemann (2016).
+See boot.rq for further details.  [Needs further testing.]
+
+2.  Added a sfn method for rq models, and in the process modified somewhat
+the return object for both rq.fit.sfn and rq.fit.sfnc so that it is compatible
+with other rq.fit objects.
+
+5.24
+
+1.  Reverted to the old fortran versions of srqfn.f and srqfnc.f, ie removed
+Martin Maechler's C versions, in preparation for some new sparse forms of the
+bootstrapping functions.  Made a couple of slight changes in the return object 
+for these functions.
+
+2.  Fixed a sign error in the cluster option pointed out in an email of
+Andreas on May 9 2016.  
+
+3.  Added jackknife option to boot.rq for the proposal of Portnoy.
+
+4.  Adapted boot.rq and friends so that when there are multiple taus
+summary.rqs reuses the same randomization  for each of the taus to facilitate
+joint inference with the bootstrap realizations.
+
+5.25
+
+1.  When method = "sfn"  store model$x in sparse form.  Then when
+bootstrapping use method = "sfn" rather than the usual "br" method.
+
+2.  When using the "cluster" option for bootstrap allow "sfn" as above.
+
+3.  When na.action = "omit"  and length(fit$na.action) > 0, then omit
+these values from the strata indicator "cluster".  This would seem to
+help bring together the survey package and quantreg as desired by
+email correspondance with donald706.
+
+5.26
+
+1.  Fixed long line per Kurt's suggestion.
+
+2.  Added some comments about method "sfn" in the man page for rq.
+
+5.27
+
+1.  removed lines that cat'd taus from rqprocess in the khmal.R
+
+2.  fixed environment problem in nlrq, according to suggestion of 
+Vaidotas Zemlys-Balevicius email August 9 2016.
+
+5.28 
+
+1.  Cleaned up the fortran source a bit in accordance with Kurt's mandate
+of late August 2016.  There are still some offensive items mainly in crq.f
+that should be dealt with, but I wasn't able to dig into this at the moment.
+
+5.29
+
+1.  I'd botched the fixup of rq0.f which was only revealed by a test from
+the package Qtools as discovered by CRAN checking and reported by Duncan
+Murdoch.
+
+5.30  
+
+1.  Removed Y argument in crq GRAD subroutine, which seems to be superflous.
+
+5.31  
+
+1.  Added bag of little bootstraps option to summary.rq.  Needs further
+testing.
+
+5.32  
+
+1.  Modified the BLB code to use boot.rq.wxy so that the inner loop was all
+in fortran, would be nicer if this loop were done with "fn" rather than "br".
+See the note in boot.rq above boot.rq.spwy.
+
+2.  modified the crq.pdf file to fix a mento in the description of the Peng
+Huang algorithm. 
+
+5.33
+
+1.  Added option to return density estimates from predict.rqs
+
+2.  modified rq.fit.fnb to include a rhs input argument.
+
+3.  modified boot.crq to properly deal with only one tau requests
+and also changed the default for printing progress report to n - 100,000.
+Both suggested by Steve Portnoy.
+
+4.  modified boot.rq so it returns cov(B$B) not cov(B)  as reported
+by Marco Geraci
+
+5.  Fixed bug in anova.rqlist to correct error when "fn" method was used
+and no $y component was returned.  Reported by Tom LaBone.
+
+6.  Fixed bug in summary.rqss -- control parameters weren't getting 
+passed to chol call properly.  (Reparted by Geoffrey Shideler (NOAA).)
+
+7.  Added init.c to register .Fortran calls and removed the package =
+"quantreg"  argument.
+
+5.34
+
+1.  Fix a bug in rqss to allow control parameters to be passed to rqss.fit 
+when the method is "lasso"  (pointed out by Heracles Apergis.)
+
+2.  changed nrow(R) to NROW(R) in rq.fit.hogg thanks to Paul Newell for bug
+report.
+
+3.  fixed axis label typo in demo engel2.
+
+4.  Added Panel.R demo to illustrate fixed effect panel estimation, a la
+Galvao job market talk.
+
+5.  Some changes to crq.fit.por as suggested by SLP:
+
+    line 1: add an input variable mw (the error messages suggest changing mw if
+    there are  problems with resolving degeneracies or trying to pivot too far,
+    and so it  should be possible to do this without getting into the deep part of
+    the code)
+    
+    lines 3 and 5: test that x is a matrix and add column names if they are
+    missing
+    
+    line 39: define mw so that the fortran constraint is satisfied 
+    

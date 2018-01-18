@@ -5,13 +5,13 @@
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 <h1> Companion to Applied Regression
-<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;car&rsquo; version 2.1-1</h2>
+</div><h2>Documentation for package &lsquo;car&rsquo; version 2.1-6</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -57,6 +57,8 @@
 <h2><a name="A">-- A --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="densityPlot.html">adaptiveKernel</a></td>
+<td>Nonparametric Density Estimates</td></tr>
 <tr><td style="width: 25%;"><a href="Adler.html">Adler</a></td>
 <td>Experimenter Expectations</td></tr>
 <tr><td style="width: 25%;"><a href="AMSsurvey.html">AMSsurvey</a></td>
@@ -97,6 +99,8 @@
 <td>Anova Tables for Various Statistical Models</td></tr>
 <tr><td style="width: 25%;"><a href="Anscombe.html">Anscombe</a></td>
 <td>U. S. State Public-School Expenditures</td></tr>
+<tr><td style="width: 25%;"><a href="Anova.html">as.data.frame.univaov</a></td>
+<td>Anova Tables for Various Statistical Models</td></tr>
 <tr><td style="width: 25%;"><a href="car-deprecated.html">av.plot</a></td>
 <td>Deprecated Functions in car Package</td></tr>
 <tr><td style="width: 25%;"><a href="car-deprecated.html">av.plots</a></td>
@@ -117,15 +121,17 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="bcPower.html">basicPower</a></td>
-<td>Box-Cox, Yeo-Johnson and Basic Power Transformations</td></tr>
+<td>Box-Cox, Box-Cox with Negatives Allowed, Yeo-Johnson and Basic Power Transformations</td></tr>
 <tr><td style="width: 25%;"><a href="TransformationAxes.html">basicPowerAxis</a></td>
 <td>Axes for Transformed Variables</td></tr>
 <tr><td style="width: 25%;"><a href="Baumann.html">Baumann</a></td>
 <td>Methods of Teaching Reading Comprehension</td></tr>
 <tr><td style="width: 25%;"><a href="car-deprecated.html">bc</a></td>
 <td>Deprecated Functions in car Package</td></tr>
+<tr><td style="width: 25%;"><a href="bcPower.html">bcnPower</a></td>
+<td>Box-Cox, Box-Cox with Negatives Allowed, Yeo-Johnson and Basic Power Transformations</td></tr>
 <tr><td style="width: 25%;"><a href="bcPower.html">bcPower</a></td>
-<td>Box-Cox, Yeo-Johnson and Basic Power Transformations</td></tr>
+<td>Box-Cox, Box-Cox with Negatives Allowed, Yeo-Johnson and Basic Power Transformations</td></tr>
 <tr><td style="width: 25%;"><a href="TransformationAxes.html">bcPowerAxis</a></td>
 <td>Axes for Transformed Variables</td></tr>
 <tr><td style="width: 25%;"><a href="Bfox.html">Bfox</a></td>
@@ -151,22 +157,30 @@
 <tr><td style="width: 25%;"><a href="car-deprecated.html">box.tidwell</a></td>
 <td>Deprecated Functions in car Package</td></tr>
 <tr><td style="width: 25%;"><a href="boxCox.html">boxCox</a></td>
-<td>Box-Cox Transformations for Linear Models</td></tr>
+<td>Graph the profile log-likelihood for Box-Cox transformations in 1D or in 2D with the bcnPower family.</td></tr>
+<tr><td style="width: 25%;"><a href="boxCox.html">boxCox.bcnPowerTransform</a></td>
+<td>Graph the profile log-likelihood for Box-Cox transformations in 1D or in 2D with the bcnPower family.</td></tr>
 <tr><td style="width: 25%;"><a href="boxCox.html">boxCox.default</a></td>
-<td>Box-Cox Transformations for Linear Models</td></tr>
+<td>Graph the profile log-likelihood for Box-Cox transformations in 1D or in 2D with the bcnPower family.</td></tr>
 <tr><td style="width: 25%;"><a href="boxCox.html">boxCox.formula</a></td>
-<td>Box-Cox Transformations for Linear Models</td></tr>
+<td>Graph the profile log-likelihood for Box-Cox transformations in 1D or in 2D with the bcnPower family.</td></tr>
 <tr><td style="width: 25%;"><a href="boxCox.html">boxCox.lm</a></td>
-<td>Box-Cox Transformations for Linear Models</td></tr>
-<tr><td style="width: 25%;"><a href="boxCox.html">boxCox.skewpowerTransform</a></td>
-<td>Box-Cox Transformations for Linear Models</td></tr>
+<td>Graph the profile log-likelihood for Box-Cox transformations in 1D or in 2D with the bcnPower family.</td></tr>
+<tr><td style="width: 25%;"><a href="boxCox.html">boxCox2d</a></td>
+<td>Graph the profile log-likelihood for Box-Cox transformations in 1D or in 2D with the bcnPower family.</td></tr>
 <tr><td style="width: 25%;"><a href="boxCoxVariable.html">boxCoxVariable</a></td>
 <td>Constructed Variable for Box-Cox Transformation</td></tr>
 <tr><td style="width: 25%;"><a href="Boxplot.html">Boxplot</a></td>
 <td>Boxplots With Point Identification</td></tr>
+<tr><td style="width: 25%;"><a href="Boxplot.html">Boxplot.data.frame</a></td>
+<td>Boxplots With Point Identification</td></tr>
 <tr><td style="width: 25%;"><a href="Boxplot.html">Boxplot.default</a></td>
 <td>Boxplots With Point Identification</td></tr>
 <tr><td style="width: 25%;"><a href="Boxplot.html">Boxplot.formula</a></td>
+<td>Boxplots With Point Identification</td></tr>
+<tr><td style="width: 25%;"><a href="Boxplot.html">Boxplot.list</a></td>
+<td>Boxplots With Point Identification</td></tr>
+<tr><td style="width: 25%;"><a href="Boxplot.html">Boxplot.matrix</a></td>
 <td>Boxplots With Point Identification</td></tr>
 <tr><td style="width: 25%;"><a href="boxTidwell.html">boxTidwell</a></td>
 <td>Box-Tidwell Transformations</td></tr>
@@ -220,9 +234,7 @@
 <tr><td style="width: 25%;"><a href="Ellipses.html">confidenceEllipse.lm</a></td>
 <td>Ellipses, Data Ellipses, and Confidence Ellipses</td></tr>
 <tr><td style="width: 25%;"><a href="hist.boot.html">confint.boot</a></td>
-<td>Generic functions to provide support for 'boot' objects</td></tr>
-<tr><td style="width: 25%;"><a href="skewPower.html">contour.skewpowerTransform</a></td>
-<td>Skew Power Transformations</td></tr>
+<td>Methods Functions to Support 'boot' Objects</td></tr>
 <tr><td style="width: 25%;"><a href="Contrasts.html">contr.Helmert</a></td>
 <td>Functions to Construct Contrasts</td></tr>
 <tr><td style="width: 25%;"><a href="Contrasts.html">contr.Sum</a></td>
@@ -321,12 +333,6 @@
 <td>Ellipses, Data Ellipses, and Confidence Ellipses</td></tr>
 <tr><td style="width: 25%;"><a href="Ericksen.html">Ericksen</a></td>
 <td>The 1980 U.S. Census Undercount</td></tr>
-<tr><td style="width: 25%;"><a href="powerTransform.html">estimateTransform</a></td>
-<td>Finding Univariate or Multivariate Power Transformations</td></tr>
-<tr><td style="width: 25%;"><a href="powerTransform.html">estimateTransform.default</a></td>
-<td>Finding Univariate or Multivariate Power Transformations</td></tr>
-<tr><td style="width: 25%;"><a href="powerTransform.html">estimateTransform.skewPower</a></td>
-<td>Finding Univariate or Multivariate Power Transformations</td></tr>
 </table>
 
 <h2><a name="F">-- F --</a></h2>
@@ -367,7 +373,7 @@
 <tr><td style="width: 25%;"><a href="Highway1.html">Highway1</a></td>
 <td>Highway Accidents</td></tr>
 <tr><td style="width: 25%;"><a href="hist.boot.html">hist.boot</a></td>
-<td>Generic functions to provide support for 'boot' objects</td></tr>
+<td>Methods Functions to Support 'boot' Objects</td></tr>
 </table>
 
 <h2><a name="I">-- I --</a></h2>
@@ -571,6 +577,8 @@
 <td>Finding Univariate or Multivariate Power Transformations</td></tr>
 <tr><td style="width: 25%;"><a href="powerTransform.html">powerTransform.lm</a></td>
 <td>Finding Univariate or Multivariate Power Transformations</td></tr>
+<tr><td style="width: 25%;"><a href="powerTransform.html">powerTransform.lmerMod</a></td>
+<td>Finding Univariate or Multivariate Power Transformations</td></tr>
 <tr><td style="width: 25%;"><a href="Prestige.html">Prestige</a></td>
 <td>Prestige of Canadian Occupations</td></tr>
 <tr><td style="width: 25%;"><a href="Anova.html">print.Anova.mlm</a></td>
@@ -586,6 +594,8 @@
 <tr><td style="width: 25%;"><a href="spreadLevelPlot.html">print.spreadLevelPlot</a></td>
 <td>Spread-Level Plots</td></tr>
 <tr><td style="width: 25%;"><a href="Anova.html">print.summary.Anova.mlm</a></td>
+<td>Anova Tables for Various Statistical Models</td></tr>
+<tr><td style="width: 25%;"><a href="Anova.html">print.univaov</a></td>
 <td>Anova Tables for Various Statistical Models</td></tr>
 <tr><td style="width: 25%;"><a href="linearHypothesis.html">printHypothesis</a></td>
 <td>Test Linear Hypothesis</td></tr>
@@ -688,8 +698,6 @@
 <td>Return the scale estimate for a regression model</td></tr>
 <tr><td style="width: 25%;"><a href="sigmaHat.html">sigmaHat.lm</a></td>
 <td>Return the scale estimate for a regression model</td></tr>
-<tr><td style="width: 25%;"><a href="skewPower.html">skewPower</a></td>
-<td>Skew Power Transformations</td></tr>
 <tr><td style="width: 25%;"><a href="SLID.html">SLID</a></td>
 <td>Survey of Labour and Income Dynamics</td></tr>
 <tr><td style="width: 25%;"><a href="spreadLevelPlot.html">slp</a></td>
@@ -727,7 +735,7 @@
 <tr><td style="width: 25%;"><a href="Anova.html">summary.Anova.mlm</a></td>
 <td>Anova Tables for Various Statistical Models</td></tr>
 <tr><td style="width: 25%;"><a href="hist.boot.html">summary.boot</a></td>
-<td>Generic functions to provide support for 'boot' objects</td></tr>
+<td>Methods Functions to Support 'boot' Objects</td></tr>
 <tr><td style="width: 25%;"><a href="symbox.html">symbox</a></td>
 <td>Boxplots for transformations to symmetry</td></tr>
 <tr><td style="width: 25%;"><a href="symbox.html">symbox.default</a></td>
@@ -740,6 +748,10 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="testTransform.html">testTransform</a></td>
+<td>Likelihood-Ratio Tests for Univariate or Multivariate Power Transformations to Normality</td></tr>
+<tr><td style="width: 25%;"><a href="testTransform.html">testTransform.bcnPowerTransformlmer</a></td>
+<td>Likelihood-Ratio Tests for Univariate or Multivariate Power Transformations to Normality</td></tr>
+<tr><td style="width: 25%;"><a href="testTransform.html">testTransform.lmerModpowerTransform</a></td>
 <td>Likelihood-Ratio Tests for Univariate or Multivariate Power Transformations to Normality</td></tr>
 <tr><td style="width: 25%;"><a href="testTransform.html">testTransform.powerTransform</a></td>
 <td>Likelihood-Ratio Tests for Univariate or Multivariate Power Transformations to Normality</td></tr>
@@ -761,6 +773,8 @@
 <h2><a name="V">-- V --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="hist.boot.html">vcov.boot</a></td>
+<td>Methods Functions to Support 'boot' Objects</td></tr>
 <tr><td style="width: 25%;"><a href="vif.html">vif</a></td>
 <td>Variance Inflation Factors</td></tr>
 <tr><td style="width: 25%;"><a href="vif.html">vif.default</a></td>
@@ -792,7 +806,7 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="bcPower.html">yjPower</a></td>
-<td>Box-Cox, Yeo-Johnson and Basic Power Transformations</td></tr>
+<td>Box-Cox, Box-Cox with Negatives Allowed, Yeo-Johnson and Basic Power Transformations</td></tr>
 <tr><td style="width: 25%;"><a href="TransformationAxes.html">yjPowerAxis</a></td>
 <td>Axes for Transformed Variables</td></tr>
 </table>

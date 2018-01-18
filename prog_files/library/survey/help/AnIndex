@@ -25,6 +25,7 @@ brrweights	brrweights
 cal.linear	make.calfun
 cal.logit	make.calfun
 cal.raking	make.calfun
+cal.sinh	make.calfun
 calibrate	calibrate
 calibrate.survey.design2	calibrate
 calibrate.svyrep.design	calibrate
@@ -163,6 +164,7 @@ print.svyratio_separate	svyratio
 print.svyrep.design	svrepdesign
 print.svysmooth	svysmooth
 print.twophase	twophase
+psrsq	psrsq
 quantile.svykm	svykm
 rake	rake
 regTermTest	regTermTest
@@ -244,6 +246,7 @@ svyolr.svyrep.design	svyolr
 svyplot	svyplot
 svyplot.default	svyplot
 svyprcomp	svyprcomp
+svypredmeans	svypredmeans
 svyquantile	svyquantile
 svyquantile.survey.design	svyquantile
 svyquantile.svyrep.design	svyquantile
@@ -258,6 +261,8 @@ svyrecvar.phase1	twophase
 svysmooth	svysmooth
 svysmooth.default	svysmooth
 svystandardize	svystandardize
+svysurvreg	svysurvreg
+svysurvreg.survey.design	svysurvreg
 svytable	svychisq
 svytable.survey.design	svychisq
 svytable.svyrep.design	svychisq
@@ -296,6 +301,7 @@ withReplicates	withReplicates
 withReplicates.svrepstat	withReplicates
 withReplicates.svrepvar	withReplicates
 withReplicates.svyrep.design	withReplicates
+yrbs	yrbs
 [.nonresponse	nonresponse
 [.repweights_compressed	compressWeights
 [.survey.design	subset.survey.design

@@ -15,6 +15,10 @@ n
 ## this:
 m <- Matrix::Matrix(cbind(1,0,diag(x=2:4)))
 m
+mt <- m + table(gl(3,5), gl(5,3))# failed in Matrix <= 1.2.9
+mt
+stopifnot(is(mt, "sparseMatrix"))
+
 ##--------------------------------------------------------------------
 
 library(Matrix)
@@ -22,19 +26,25 @@ library(Matrix)
 source(system.file("test-tools.R", package = "Matrix"))# identical3() etc
 
 if(interactive()) {
-    options(error = recover, warn = 1)
-} else options(Matrix.verbose = TRUE, warn = 1)# to show Matrix.msg()s
+    options(error = recover, Matrix.verbose = TRUE, warn = 1)
+} else options(              Matrix.verbose = TRUE, warn = 1)
+                                        #   ^^^^^^ to show Matrix.msg()s
 
 ### Matrix() ''smartness''
-(d4 <- Matrix(diag(4)))
+(d4 <- d40 <- Matrix(diag(4)))
 (z4 <- Matrix(0*diag(4)))
 (o4 <- Matrix(1+diag(4)))
 (tr <- Matrix(cbind(1,0:1)))
 (M4 <- Matrix(m4 <- cbind(0,rbind(6*diag(3),0))))
 dM4 <- Matrix(M4, sparse = FALSE)
 d4. <- diag(4); dimnames(d4.) <- dns <- rep(list(LETTERS[1:4]), 2)
-stopifnot(identical(dimnames(d4 <- Matrix(d4.)), dns),
-          identical3(d4, as(d4., "Matrix"), as(d4., "diagonalMatrix")))
+d4di<- as(d4., "diagonalMatrix")
+d4d <- as(d4., "denseMatrix")
+stopifnot(identical(d4di@x, numeric()), # was "named" unnecessarily
+          identical(dimnames(d4 <- Matrix(d4.)), dns), identical(unname(d4), d40),
+          identical3(d4, as(d4., "Matrix"), as(d4., "diagonalMatrix")),
+          is(d4d, "denseMatrix"))
+
 class(mN <-  Matrix(NA, 3,4)) # NA *is* logical
 validObject(Matrix(NA))
 bd4 <- bdiag(M4,dM4,M4)
@@ -71,12 +81,14 @@ stopifnot(n == diff(sort(im$y.limits)))
 ## ylimits were too small (by 1 on each side)
 
 assertError( Matrix(factor(letters)) )
-mlp <- matrix(.leap.seconds)## 24 x 1 numeric matrix
+n.lsec <- length(.leap.seconds)# 27 (2017-07)
+mlp <- matrix(.leap.seconds)## 27 x 1 numeric matrix
 Mlp <- Matrix(.leap.seconds)
+stopifnot(identical(dim(Mlp), c(n.lsec, 1L)))
 assert.EQ.mat(Mlp, mlp)
+.Leap.seconds <- as.POSIXlt(.leap.seconds)
 if(FALSE) { ## TODO -- once R itself does better ...
-    .Leap.seconds <- as.POSIXlt(.leap.seconds)
-    mLp <- matrix(.Leap.seconds)##  24 x 1  list each of length 24 -- yuck!!!
+    mLp <- matrix(.Leap.seconds)##  11 x 1 list of (Numeric,Int.,Char.) each of length 27 -- yuck!!!
     MLp <- Matrix(.Leap.seconds)## --> error (for now)
 }
 
@@ -103,20 +115,14 @@ M <- Diagonal(4); M[1,2] <- 2 ; M
 cM <- crossprod(M) # >> as_cholmod_l_triplet(): could not reallocate for internal diagU2N()
 stopifnot(identical(cM, tcrossprod(t(M))))
 
-if(doExtras) { ## formerly in MM-only's ./AAA_latest.R
-    ## 2010-11-29 --- prompted by BDR:
-    mlp <- matrix(.leap.seconds)## 24 x 1 numeric matrix
-    Mlp <- Matrix(.leap.seconds)
-    assert.EQ.mat(Mlp, mlp)
+S.na <- spMatrix(3, 4, c(1,2,3), c(2,3,3), c(NA,1,0))
+(S.na <- S.na - 2 * S.na)
+(L <- S.na != 0)
 
-    S.na <- spMatrix(3, 4, c(1,2,3), c(2,3,3), c(NA,1,0))
-    show(S.na <- S.na - 2 * S.na)
-    show(L <- S.na != 0)
+(Ln0 <- S.na != rep(0, prod(dim(L))))
+.Lm0 <- S.na != Matrix(0, 3, 4)
+stopifnot(Q.eq(L, Ln0), identical(Ln0, .Lm0));  rm(Ln0, .Lm0)
 
-    M0 <- Matrix(0, 3, 4)
-    show(Ln0 <- S.na != rep(0, prod(dim(L))))
-    stopifnot(Q.eq(L, Ln0), identical(Ln0, M0 != S.na))
-}## (doExtras) only
 
 ### Unit-diagonal and unitriangular  {methods need diagU2N() or similar}
 I <- Diagonal(3)
@@ -235,15 +241,48 @@ stopifnot(identical(x*D, (Dx <- D*x)),
 	  identical(Dx, local({d <- D; d@x <- d@x * x; d})))
 
 Lrg <- new("dgTMatrix", Dim = c(n,n))
+l0 <- as(as(Lrg, "lMatrix"), "lgCMatrix")
+d0 <- as(l0, "dgCMatrix")
+
+if(FALSE) { #_____________________ FIXME: Should use cholmod_l_*() everywhere (?)____
+## problem in  Csparse_to_dense :
+dl0 <- as(l0, "denseMatrix")
+dd0 <- as(d0, "denseMatrix")
+## currently, both give --- Error in asMethod(object) :
+##   Cholmod error 'problem too large' at file ../Core/cholmod_dense.c, line 105
+##--> And there it is 'Int_max' ==> ../src/CHOLMOD/Include/cholmod_internal.h
+## defines 'Int_max'  and does that depending of "mode", and
+## MM thinks we should use the "DLONG" mode now -- for 64-bit integers!
+##  ==> Then Int_max := SuiteSparse_long_max := LONG_MAX
+## (the latter from ../src/SuiteSparse_config/SuiteSparse_config.h )
+## ==> use cholmod_l_<foo> instead of cholmod_<foo> in *many places*
+##
+## check they are ok
+stopifnot(identical(dim(dl0), c(n,n)), identical(dim(dd0), c(n,n)),
+          !any(dl0), all(dd0 == 0))
+rm(dl0, dd0)# too large to keep in memory and pass to checkMatrix()
+}
+
 diag(Lrg[2:9,1:8]) <- 1:8
 ## ==:  Lrg[2:9,1:8] <- `diag<-`(Lrg[2:9,1:8], 1:8)
-e1 <- try(Lrg == Lrg) # error message almost ok
-e2 <- try(!Lrg) # error message was "bad", now perfect
+e1 <- try(Lrg == Lrg) # ==> Cholmod error 'problem too large' at file ../Core/cholmod_dense.c, line 105
+## (error message almost ok)
+
+(memGB <- Sys.memGB("MemFree")) # from test-tools-1.R
+##                                             __vv__
+system.time( # ~10 sec.
+    e2 <- if(doExtras && is.finite(memGB) && memGB > 30) { # need around 18 GB
+              try(!Lrg) # now *works* on 64-bit machines with enough RAM
+              ## and immediately errors if LONG_VECTORs are not annvailable
+    })
+str(e2) # error, NULL or "worked" (=> 50000 x 50000 lgeMatrix)
 ina <- is.na(Lrg)# "all FALSE"
 stopifnot(grep("too large", e1) == 1,
-          grep("too large", e2) == 1,
+	  if(inherits(e2, "try-error")) grep("too large", e2) == 1
+	  else is.null(e2) || length(e2@x) == n^2,
           !any(ina))# <- gave warning previously
 stopifnot(suppressWarnings(any(Lrg)))# (double -> logical  warning)
+rm(e2)# too large...
 
 ## with dimnames:
 v <- c(a=1, b=2:3)
@@ -273,6 +312,8 @@ chkSS <- function(m) {
 	    identical(dS <- dimnames(fS), dimnames(fS0)),
 	    identical(dS[1], dS[2]))
 }
+cat(sprintf("chkSS() {valid %s} for a list of matrices:\n",
+            paste(paste0(names(symFUNs), "()"), collapse=", ")))
 for(m in list(Matrix(1:4, 2,2), Matrix(c(0, rep(1:0, 3),0:1), 3,3))) {
     cat("\n---\nm:\n"); show(m)
     chkSS(m)
@@ -493,9 +534,9 @@ stopifnot(identical3(cu[cu > 1],  tu [tu > 1], mu [mu > 1]),
 	  identical(ttu , tril(ttu)),
 	  identical(t(tu), tril(t(tu)))
           )
-assert.EQ.mat(triu(cu),   as.matrix(triu(as.matrix(cu))))
+assert.EQ.mat(triu(cu),   .asmatrix(triu(.asmatrix(cu))))
 for(k in -1:1)
-    assert.EQ.mat(tril(cu,k), as.matrix(tril(as.matrix(cu),k)))
+    assert.EQ.mat(tril(cu,k), .asmatrix(tril(.asmatrix(cu),k)))
 
 (dtr <- Matrix(local({m <- diag(2); m[1,2] <- 3;m})))
 identical(dtr, triu(dtr))
@@ -624,7 +665,7 @@ assert.EQ.mat(kr,
 kt2 <- kronecker(t1c, cu)
 stopifnot(identical(Matrix:::uniq(kt1), Matrix:::uniq(kt2)))
 ## but kt1 and kt2, both "dgT" are different since entries are not ordered!
-ktf <- kronecker(as.matrix(t1), as.matrix(tu))
+ktf <- kronecker(.asmatrix(t1), .asmatrix(tu))
 if(FALSE) # FIXME? our kronecker treats "0 * NA" as "0" for structural-0
 assert.EQ.mat(kt2, ktf, tol= 0)
 (cs1 <- colSums(kt1))
@@ -688,7 +729,7 @@ stopifnot(identical(N, as(L.,"nMatrix")),
 	  identical(kronecker(	  c(1,0), M),
 		    kronecker(cbind(1:0), M)))
 assert.EQ.mat(kronecker(M,	      c(1,0,0)),
-	      kronecker(as.matrix(M), c(1,0,0)))
+	      kronecker(.asmatrix(M), c(1,0,0)))
 
 ## coercion from "dpo" or "dsy"
 xx <- as(xpx, "dsyMatrix")

@@ -47,8 +47,11 @@ bbox,Polygons-method	bbox
 bbox,Spatial-method	bbox
 bpy.colors	bpy.colors
 bubble	bubble
+cbind.Spatial	Spatial-class
 cbind.SpatialGridDataFrame	SpatialGridDataFrame-class
 char2dms	char2dms
+coerce,deldir,SpatialLines-method	SpatialLines-class
+coerce,deldir,SpatialPolygons-method	SpatialPolygons-class
 coerce,DMS,character-method	char2dms
 coerce,DMS,numeric-method	char2dms
 coerce,DMS-method	DMS-class
@@ -87,6 +90,7 @@ coerce,SpatialPixels,data.frame-method	SpatialPixels-class
 coerce,SpatialPixels,GridTopology-method	GridTopology-class
 coerce,SpatialPixels,SpatialGrid-method	SpatialPixels-class
 coerce,SpatialPixels,SpatialPolygons-method	as.SpatialPolygons.GridTopology
+coerce,SpatialPixelsDataFrame,array-method	SpatialPixelsDataFrame-class
 coerce,SpatialPixelsDataFrame,data.frame-method	SpatialPixelsDataFrame-class
 coerce,SpatialPixelsDataFrame,matrix-method	SpatialPixelsDataFrame-class
 coerce,SpatialPixelsDataFrame,SpatialGridDataFrame-method	SpatialPixelsDataFrame-class
@@ -105,6 +109,7 @@ coerce,SpatialPolygons,SpatialLines-method	SpatialPolygons-class
 coerce,SpatialPolygons,SpatialPolygonsDataFrame-method	SpatialPolygons-class
 coerce,SpatialPolygonsDataFrame,data.frame-method	SpatialPolygonsDataFrame-class
 coerce,SpatialPolygonsDataFrame,SpatialLinesDataFrame-method	SpatialPolygonsDataFrame-class
+coerce,SpatialPolygonsDataFrame,SpatialPolygons-method	SpatialPolygonsDataFrame-class
 compassRose	compassRose
 contour.SpatialGridDataFrame	image
 contour.SpatialPixelsDataFrame	image
@@ -146,8 +151,6 @@ coordnames<-	coordnames-methods
 coordnames<-,GridTopology,character-method	coordnames-methods
 coordnames<-,Line,character-method	coordnames-methods
 coordnames<-,Lines,character-method	coordnames-methods
-coordnames<-,Polygon,character-method	coordnames-methods
-coordnames<-,Polygons,character-method	coordnames-methods
 coordnames<-,SpatialGrid,character-method	coordnames-methods
 coordnames<-,SpatialLines,character-method	coordnames-methods
 coordnames<-,SpatialMultiPoints,character-method	coordnames-methods
@@ -195,6 +198,8 @@ geometry,SpatialPixelsDataFrame-method	geometry-methods
 geometry,SpatialPointsDataFrame-method	geometry-methods
 geometry,SpatialPolygonsDataFrame-method	geometry-methods
 geometry-methods	geometry-methods
+geometry<-	geometry-methods
+geometry<-,data.frame,Spatial-method	geometry-methods
 getGridIndex	SpatialGrid
 getGridTopology	SpatialGrid
 getLinesIDSlot	sp-deprecated
@@ -259,6 +264,8 @@ image2Grid	image
 imageScale	image
 is.projected	is.projected
 is.projected,Spatial-method	is.projected
+labels	gridlines
+labels.SpatialLines	gridlines
 layout.north.arrow	spplot
 layout.scale.bar	spplot
 Line	Line
@@ -308,8 +315,6 @@ over,SpatialPolygons,SpatialPoints-method	over
 over,SpatialPolygons,SpatialPointsDataFrame-method	over
 over-methods	over
 overDF_for_rgeos	over
-overlay	sp-deprecated
-overlay-methods	sp-deprecated
 owin-class	Spatial-class
 panel.ggmap	spplot
 panel.gridplot	panel
@@ -319,9 +324,11 @@ panel.RgoogleMaps	spplot
 panel.spplot	panel
 plot,Spatial,missing-method	Spatial-class
 plot,SpatialGrid,missing-method	SpatialGrid-class
+plot,SpatialGridDataFrame,missing-method	SpatialGridDataFrame-class
 plot,SpatialLines,missing-method	SpatialLines-class
 plot,SpatialMultiPoints,missing-method	SpatialMultiPoints-class
 plot,SpatialPixels,missing-method	SpatialPixels-class
+plot,SpatialPixelsDataFrame,missing-method	SpatialPixelsDataFrame-class
 plot,SpatialPoints,missing-method	SpatialPoints-class
 plot,SpatialPolygons,missing-method	SpatialPolygons-class
 plot.SpatialGrid	SpatialGrid
@@ -363,6 +370,7 @@ psp-class	Spatial-class
 rbind.SpatialLines	SpatialLines-class
 rbind.SpatialLinesDataFrame	SpatialLinesDataFrame-class
 rbind.SpatialMultiPoints	SpatialMultiPoints-class
+rbind.SpatialMultiPointsDataFrame	SpatialMultiPointsDataFrame-class
 rbind.SpatialPixels	SpatialPixels-class
 rbind.SpatialPixelsDataFrame	SpatialPixelsDataFrame-class
 rbind.SpatialPoints	SpatialPoints-class
@@ -516,6 +524,8 @@ surfaceArea,SpatialGridDataFrame-method	surfaceArea
 surfaceArea,SpatialPixelsDataFrame-method	surfaceArea
 surfaceArea.matrix	surfaceArea
 tail.Spatial	Spatial-class
+text	gridlines
+text.SpatialPointsDataFrame	gridlines
 write.asciigrid	asciigrid
 zerodist	zerodist
 zerodist2	zerodist

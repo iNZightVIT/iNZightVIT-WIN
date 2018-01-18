@@ -18,6 +18,7 @@ bootMer                 Model-based (Semi-)Parametric Bootstrap for
                         Mixed Models
 cake                    Breakage Angle of Chocolate Cakes
 cbpp                    Contagious bovine pleuropneumonia
+checkConv               Extended Convergence Checking
 confint.merMod          Compute Confidence Intervals for Parameters of
                         a [ng]lmer Fit
 convergence             Assessing Convergence for Fitted Models
@@ -39,7 +40,7 @@ glmFamily               Generator object for the 'glmFamily' class
 glmFamily-class         Class '"glmFamily"' - a reference class for
                         'family'
 glmer                   Fitting Generalized Linear Mixed-Effects Models
-glmer.nb                Fitting GLMM's for Negative Binomial
+glmer.nb                Fitting Negative Binomial GLMMs
 glmerLaplaceHandle      Handle for 'glmerLaplace'
 golden-class            Class '"golden"' and Generator for Golden
                         Search Optimizer Class
@@ -80,7 +81,7 @@ nloptwrap               Wrappers for additional optimizers
 nobars                  Omit terms separated by vertical bars in a
                         formula
 plot.lmList4            plots for lmList4 objects
-plot.merMod             diagnostic plots for merMod fits
+plot.merMod             Diagnostic Plots for 'merMod' Fits
 predict.merMod          Predictions from a model at new data values
 profile-methods         Profile method for merMod objects
 pvalues                 Getting p-values for fitted models
@@ -97,7 +98,6 @@ simulate.merMod         Simulate Responses From 'merMod' Object
 sleepstudy              Reaction times in a sleep deprivation study
 subbars                 "Sub[stitute] Bars"
 troubleshooting         Troubleshooting
-varianceProf            Transform Profile to the variance scale
 vcconv                  Convert between representations of
                         (co-)variance structures
 xyplot.thpr             Mixed-Effects Profile Plots (Regular / Density

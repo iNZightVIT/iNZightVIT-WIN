@@ -3,6 +3,14 @@
 
 ### ------- Part III --  "Matrix" (classes) specific ----------------------
 
+## lower.tri() and upper.tri()  -- masking  base definitions
+##	R/src/library/base/R/lower.tri.R
+##	R/src/library/base/R/upper.tri.R
+## but we do __not__ want to coerce to "base R" 'matrix' via as.matrix():
+##
+lower.tri <- function(x, diag = FALSE) if(diag) row(x) >= col(x) else row(x) > col(x)
+upper.tri <- function(x, diag = FALSE) if(diag) row(x) <= col(x) else row(x) < col(x)
+
 lsM <- function(...) {
     for(n in ls(..., envir=parent.frame()))
         if(is((. <- get(n)),"Matrix"))
@@ -191,8 +199,7 @@ rspMat <- function(n, m = n, density = 1/4, nnz = round(density * n*m),
     if (giveCsparse) as(x, "CsparseMatrix") else x
 }
 
-
-## originally, from \examples{..}  in ../man/sparseMatrix.Rd :
+## __DEPRECATED__ !!
 rSparseMatrix <- function(nrow, ncol, nnz,
 			  rand.x = function(n) round(rnorm(nnz), 2), ...)
 {

@@ -160,7 +160,7 @@ symmpart                Symmetric Part and Skew(symmetric) Part of a
 triangularMatrix-class
                         Virtual Class of Triangular Matrices in Package
                         Matrix
-uniqTsparse             Unique TsparseMatrix Representations
+uniqTsparse             Unique (Sorted) TsparseMatrix Representations
 unpack                  Representation of Packed and Unpacked (Dense)
                         Matrices
 updown                  Up- and Down-Dating a Cholesky Decomposition

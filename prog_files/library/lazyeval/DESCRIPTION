@@ -1,5 +1,5 @@
 Package: lazyeval
-Version: 0.2.0
+Version: 0.2.1
 Title: Lazy (Non-Standard) Evaluation
 Description: An alternative approach to non-standard evaluation using
     formulas. Provides a full implementation of LISP style 'quasiquotation',
@@ -13,13 +13,13 @@ LazyData: true
 Depends: R (>= 3.1.0)
 Suggests: knitr, rmarkdown (>= 0.2.65), testthat, covr
 VignetteBuilder: knitr
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2016-06-10 21:38:52 UTC; hadley
+Packaged: 2017-10-18 22:37:44 UTC; lionel
 Author: Hadley Wickham [aut, cre],
   RStudio [cph]
 Maintainer: Hadley Wickham <hadley@rstudio.com>
 Repository: CRAN
-Date/Publication: 2016-06-12 19:03:08
-Built: R 3.2.5; x86_64-w64-mingw32; 2017-03-08 16:21:57 UTC; windows
+Date/Publication: 2017-10-29 22:59:36 UTC
+Built: R 3.4.3; x86_64-w64-mingw32; 2018-01-13 18:19:04 UTC; windows
 Archs: i386, x64

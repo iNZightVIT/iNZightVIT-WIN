@@ -33,7 +33,7 @@ namespace Rcpp{
             if (f->minor < f->n)
                 throw std::runtime_error("CHOLMOD factorization was unsuccessful");
 
-//FIXME: Should extend this selection according to T
+            //FIXME: Should extend this selection according to T
             S4 ans(std::string(f->is_super ? "dCHMsuper" : "dCHMsimpl"));
             IntegerVector  dd(2);
             dd[0] = dd[1] = f->n;
@@ -202,7 +202,7 @@ namespace Rcpp{
             SEXP object;
         };
 
-
+        // Provides only Map::VectorX<t> export
         template<typename T>
         class Exporter<Eigen::Map<Eigen::Matrix<T, Eigen::Dynamic, 1> > > {
             typedef typename Eigen::Map<Eigen::Matrix<T, Eigen::Dynamic, 1> > OUT ;
@@ -216,6 +216,21 @@ namespace Rcpp{
             }
             OUT get() {return OUT(vec.begin(), vec.size());}
         } ;
+
+        // Provides only Map::RowVectorX<t> export
+        template<typename T>
+        class Exporter<Eigen::Map<Eigen::Matrix<T, 1, Eigen::Dynamic> > > {
+            typedef typename Eigen::Map<Eigen::Matrix<T, 1, Eigen::Dynamic> > OUT ;
+            const static int RTYPE = ::Rcpp::traits::r_sexptype_traits<T>::rtype ;
+            Rcpp::Vector<RTYPE> vec ;
+
+        public:
+            Exporter(SEXP x) : vec(x) {
+                if (TYPEOF(x) != RTYPE)
+                    throw std::invalid_argument("Wrong R type for mapped rowvector");
+            }
+            OUT get() {return OUT(vec.begin(), vec.size());}
+        };
 
         template<typename T>
         class Exporter< Eigen::Map<Eigen::Array<T, Eigen::Dynamic, 1> > > {
@@ -315,6 +330,26 @@ namespace Rcpp{
                 MatrixExporterForEigen< Eigen::Array<T, Eigen::Dynamic, Eigen::Dynamic>, T >(x){}
         };
 
+        // Starting from Eigen 3.3 MappedSparseMatrix was deprecated.
+        // The new type is Map<SparseMatrix>.
+        template<typename T>
+        class Exporter<Eigen::Map<Eigen::SparseMatrix<T> > > {
+        public:
+            const static int RTYPE = ::Rcpp::traits::r_sexptype_traits<T>::rtype ;
+            Exporter(SEXP x) : d_x(x), d_dims(d_x.slot("Dim")), d_i(d_x.slot("i")), d_p(d_x.slot("p")), xx( d_x.slot("x") ) {
+                if (!d_x.is("dgCMatrix"))
+                    throw std::invalid_argument("Need S4 class dgCMatrix for a mapped sparse matrix");
+            }
+            Eigen::Map<Eigen::SparseMatrix<T> > get() {
+                return Eigen::Map<Eigen::SparseMatrix<T> >(d_dims[0], d_dims[1], d_p[d_dims[1]],
+                                                           d_p.begin(), d_i.begin(), xx.begin() );
+            }
+        protected:
+            S4            d_x;
+            IntegerVector d_dims, d_i, d_p;
+            Vector<RTYPE> xx ;
+        };
+        // Deprecated
         template<typename T>
         class Exporter<Eigen::MappedSparseMatrix<T> > {
         public:
@@ -333,6 +368,26 @@ namespace Rcpp{
             Vector<RTYPE> xx ;
         };
 
+        // Starting from Eigen 3.3 MappedSparseMatrix was deprecated.
+        // The new type is Map<SparseMatrix>.
+        template<typename T>
+        class Exporter<Eigen::Map<Eigen::SparseMatrix<T, Eigen::RowMajor> > > {
+        public:
+            const static int RTYPE = ::Rcpp::traits::r_sexptype_traits<T>::rtype ;
+            Exporter(SEXP x) : d_x(x), d_dims(d_x.slot("Dim")), d_j(d_x.slot("j")), d_p(d_x.slot("p")), xx( d_x.slot("x") ) {
+                if (!d_x.is("dgRMatrix"))
+                    throw std::invalid_argument("Need S4 class dgRMatrix for a mapped sparse matrix");
+            }
+            Eigen::Map<Eigen::SparseMatrix<T, Eigen::RowMajor> > get() {
+                return Eigen::Map<Eigen::SparseMatrix<T, Eigen::RowMajor> >(d_dims[0], d_dims[1], d_p[d_dims[1]],
+                                                                            d_p.begin(), d_j.begin(), xx.begin() );
+            }
+        protected:
+            S4            d_x;
+            IntegerVector d_dims, d_j, d_p;
+            Vector<RTYPE> xx ;
+        };
+        // Deprecated
         template<typename T>
         class Exporter<Eigen::MappedSparseMatrix<T, Eigen::RowMajor> > {
         public:

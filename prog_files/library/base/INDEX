@@ -34,6 +34,7 @@ Foreign                 Foreign Function Interface
 ISOdatetime             Date-time Conversion Functions from Numeric
                         Representations
 InternalMethods         Internal Generic Functions
+La_library              LAPACK Library
 La_version              LAPACK Version
 Logic                   Logical Operators
 Memory                  Memory Available for Data Storage
@@ -125,6 +126,8 @@ charToRaw               Convert to or from Raw Vectors
 character               Character Vectors
 charmatch               Partial String Matching
 chartr                  Character Translation and Casefolding
+chkDots                 Warn About Extraneous Arguments in the "..." of
+                        Its Caller
 chol                    The Choleski Decomposition
 chol2inv                Inverse from Choleski (or QR) Decomposition
 class                   Object Classes
@@ -132,7 +135,7 @@ col                     Column Indexes
 colSums                 Form Row and Column Sums and Means
 commandArgs             Extract Command Line Arguments
 comment                 Query or Set a '"comment"' Attribute
-complex                 Complex Vectors
+complex                 Complex Numbers and Basic Functionality
 conditions              Condition Handling and Recovery
 conflicts               Search for Masked Objects on the Search Path
 connections             Functions to Manipulate Connections (Files,
@@ -156,7 +159,7 @@ det                     Calculate the Determinant of a Matrix
 detach                  Detach Objects from the Search Path
 diag                    Matrix Diagonals
 diff                    Lagged Differences
-difftime                Time Intervals
+difftime                Time Intervals / Differences
 dim                     Dimensions of an Object
 dimnames                Dimnames of an Object
 dir.create              Manipulaton of Directories and File Permissions
@@ -165,7 +168,7 @@ dontCheck               Identity Function to Suppress Checking
 double                  Double-Precision Vectors
 dput                    Write an Object to a File or Recreate it
 drop                    Drop Redundant Extent Information
-droplevels              droplevels
+droplevels              Drop Unused Levels from Factors
 dump                    Text Representations of R Objects
 duplicated              Determine Duplicate Elements
 dyn.load                Foreign Function Interface
@@ -177,7 +180,7 @@ environment variables   Environment Variables
 eval                    Evaluate an (Unevaluated) Expression
 exists                  Is an Object Defined?
 expand.grid             Create a Data Frame from All Combinations of
-                        Factors
+                        Factor Variables
 expression              Unevaluated Expressions
 extSoftVersion          Report Versions of Third-Party Software
 factor                  Factors
@@ -219,6 +222,7 @@ gl                      Generate Factor Levels
 grep                    Pattern Matching and Replacement
 grepRaw                 Pattern Matching for Raw Vectors
 groupGeneric            S3 Group Generic Functions
+grouping                Grouping Permutation
 gzcon                   (De)compress I/O Through Connections
 hexmode                 Display Numbers in Hexadecimal
 iconv                   Convert Character Vector between Encodings
@@ -240,6 +244,7 @@ is.single               Is an Object of Single Precision Type?
 is.unsorted             Test if an Object is Not Sorted
 isS4                    Test for an S4 object
 isSymmetric             Test if a Matrix or other Object is Symmetric
+                        (Hermitian)
 jitter                  'Jitter' (Add Noise) to Numbers
 kappa                   Compute or Estimate the Condition Number of a
                         Matrix
@@ -376,14 +381,18 @@ slice.index             Slice Indexes in an Array
 socketSelect            Wait on Socket Connections
 solve                   Solve a System of Equations
 sort                    Sorting or Ordering Vectors
-source                  Read R Code from a File or a Connection
+source                  Read R Code from a File, a Connection or
+                        Expressions
 split                   Divide into Groups and Reassemble
 sprintf                 Use C-style String Formatting Commands
-srcfile                 References to source files
+srcfile                 References to Source Files and Code
+standardGeneric         Formal Method System - Dispatching S4 Methods
+startsWith              Does String Start or End With Another String?
 stop                    Stop Function Execution
 stopifnot               Ensure the Truth of R Expressions
 strptime                Date-time Conversion Functions to and from
                         Character
+strrep                  Repeat the Elements of a Character Vector
 strsplit                Split the Elements of a Character Vector
 strtoi                  Convert Strings to Integers
 strtrim                 Trim Character Strings to Specified Display
@@ -417,7 +426,7 @@ toString                Convert an R Object to a Character String
 topenv                  Top Level Environment
 trace                   Interactive Tracing and Debugging of Calls to a
                         Function or Method
-traceback               Print Call Stacks
+traceback               Get and Print Call Stacks
 tracemem                Trace Copying of Objects
 transform               Transform an Object, for Example a Data Frame
 trimws                  Remove Leading/Trailing Whitespace
@@ -430,6 +439,7 @@ unlist                  Flatten Lists
 unname                  Remove 'names' or 'dimnames'
 utf8ToInt               Convert Integer Vectors to or from
                         UTF-8-encoded Character Vectors
+validUTF8               Check if a Character Vector is Validly Encoded
 vector                  Vectors
 warning                 Warning Messages
 warnings                Print Warning Messages
@@ -438,7 +448,7 @@ which                   Which indices are TRUE?
 which.min               Where is the Min() or Max() or first TRUE or
                         FALSE ?
 with                    Evaluate an Expression in a Data Environment
-withVisible             Return both a value and its visibility
+withVisible             Return both a Value and its Visibility
 write                   Write Data to a File
 writeLines              Write Lines to a Connection
 xtfrm                   Auxiliary Function for Sorting and Ranking

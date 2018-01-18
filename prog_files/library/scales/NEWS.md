@@ -1,3 +1,25 @@
+# scales 0.5.0
+
+* New function `regular_minor_breaks()` calculates minor breaks as a property
+  of the transformation (@karawoo).
+
+* Adds `viridis_pal()` for creating palettes with color maps from the
+  viridisLite package (@karawoo).
+
+* Switched from reference classes to R6 (#96).
+
+* `rescale()` and `rescale_mid()` are now S3 generics, and work with `numeric`,
+  `Date`, `POSIXct`, `POSIXlt` and `bit64::integer64` objects (@zeehio, #74).
+
+# scales 0.4.1
+
+* `extended_breaks()` no longer fails on pathological inputs
+
+* New `hms_trans()` for transforming hms time vectors.
+
+* `train_discrete()` gets a new `na.rm` argument which controls whether
+  `NA`s are preserved or dropped.
+
 # scales 0.4.0
 
 * Switched from `NEWS` to `NEWS.md`

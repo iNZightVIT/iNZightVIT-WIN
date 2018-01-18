@@ -2,10 +2,14 @@
  *  R : A Computer Language for Statistical Data Analysis
  *  Copyright (C) 2001-12  The R Core Team.
  *
- *  This program is free software; you can redistribute it and/or modify
+ *  This header file is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation; either version 2.1 of the License, or
  *  (at your option) any later version.
+ *
+ *  This file is part of R. R is distributed under the terms of the
+ *  GNU General Public License, either Version 2, June 1991 or Version 3,
+ *  June 2007. See doc/COPYRIGHTS for details of the copyright status of R.
  *
  *  This program is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -51,7 +55,27 @@
 	LOOP_WITH_INTERRUPT_CHECK(R_ITERATE_CORE, ncheck, n, i, loop_body); \
     } while (0)
 
-#define MOD_ITERATE_CORE(n, n1, n2, i, i1, i2, loop_body) do {	\
+
+#define MOD_ITERATE1_CORE(n, n1, i, i1, loop_body) do {	\
+	for (; i < n;							\
+	     i1 = (++i1 == n1) ? 0 : i1,				\
+		 ++i) {							\
+	    loop_body							\
+		}							\
+    } while (0)
+
+#define MOD_ITERATE1(n, n1, i, i1, loop_body) do {	\
+	i = i1 = 0;					\
+	MOD_ITERATE1_CORE(n, n1, i, i1, loop_body);	\
+    } while (0)
+
+#define MOD_ITERATE1_CHECK(ncheck, n, n1, i, i1, loop_body) do {	\
+	i = i1 = 0;							\
+	LOOP_WITH_INTERRUPT_CHECK(MOD_ITERATE1_CORE, ncheck, n,		\
+				  n1, i, i1, loop_body);		\
+    } while (0)
+
+#define MOD_ITERATE2_CORE(n, n1, n2, i, i1, i2, loop_body) do {	\
 	for (; i < n;							\
 	     i1 = (++i1 == n1) ? 0 : i1,				\
 		 i2 = (++i2 == n2) ? 0 : i2,				\
@@ -60,16 +84,20 @@
 		}							\
     } while (0)
 
-#define MOD_ITERATE(n, n1, n2, i, i1, i2, loop_body) do {	\
+#define MOD_ITERATE2(n, n1, n2, i, i1, i2, loop_body) do {	\
 	i = i1 = i2 = 0;					\
-	MOD_ITERATE_CORE(n, n1, n2, i, i1, i2, loop_body);	\
+	MOD_ITERATE2_CORE(n, n1, n2, i, i1, i2, loop_body);	\
     } while (0)
 
-#define MOD_ITERATE_CHECK(ncheck, n, n1, n2, i, i1, i2, loop_body) do {	\
+#define MOD_ITERATE2_CHECK(ncheck, n, n1, n2, i, i1, i2, loop_body) do {	\
 	i = i1 = i2 = 0;						\
-	LOOP_WITH_INTERRUPT_CHECK(MOD_ITERATE_CORE, ncheck, n,		\
+	LOOP_WITH_INTERRUPT_CHECK(MOD_ITERATE2_CORE, ncheck, n,		\
 				  n1, n2, i, i1, i2, loop_body);	\
     } while (0)
+
+#define MOD_ITERATE MOD_ITERATE2
+#define MOD_ITERATE_CORE MOD_ITERATE2_CORE
+#define MOD_ITERATE_CHECK MOD_ITERATE2_CHECK
 
 #define MOD_ITERATE3_CORE(n, n1, n2, n3, i, i1, i2, i3, loop_body) do {	\
 	for (; i < n;							\

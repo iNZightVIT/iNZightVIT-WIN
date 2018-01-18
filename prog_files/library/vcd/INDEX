@@ -54,6 +54,8 @@ independence_table      Independence Table
 labeling_border         Labeling Functions for Strucplots
 labeling_list           Labeling Functions for Strucplots
 legends                 Legend Functions for Strucplots
+lodds                   Calculate Generalized Log Odds for Frequency
+                        Tables
 loddsratio              Calculate Generalized Log Odds Ratios for
                         Frequency Tables
 mar_table               Table with Marginal Sums

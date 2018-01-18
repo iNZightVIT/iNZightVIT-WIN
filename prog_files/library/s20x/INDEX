@@ -1,7 +1,7 @@
 airpass.df              International Airline Passengers
 apples.df               Apples Data
 arousal.df              Changes in Pupil Size with Emotional Arousal
-autocor.plot            Autocorrelation Plot
+autocorPlot             Autocorrelation Plot
 beer.df                 US Beer Production
 body.df                 Body Image and Ethnicity
 books.df                Books Data
@@ -36,6 +36,7 @@ levene.test             Levene test for the ANOVA Assumption
 mazda.df                Year and Price of Mazda Cars
 mening.df               Monthly Notifications of Meningococcal Disease
 mergers.df              Merger Days
+modcheck                Model checking plots
 mozart.df               Length of Mozart's Movements
 multipleComp            Multiple Comparisons
 nail.df                 Nail Polish Data
@@ -53,6 +54,8 @@ residPlot               Fitted values versus residuals plot
 rowdistr                Row distributions from a cross-tabulation of
                         two variables
 rr                      Read Data
+s0x                     s20x: Functions for University of Auckland
+                        Course STATS 201/208 Data Analysis
 seeds.df                Seeds Data
 sheep.df                Sheep Data
 skewness                Skewness Statistic

@@ -1,3 +1,140 @@
+## tibble 1.4.1 (2017-12-24)
+
+### New formatting
+
+The new pillar package is now responsible for formatting tibbles. Pillar will try to display as many columns as possible, if necessary truncating or shortening the output. Colored output highlights important information and guides the eye. The vignette in the tibble package describes how to adapt custom data types for optimal display in a tibble.
+
+### New features
+
+- Make `add_case()` an alias for `add_row()` (#324, @LaDilettante).
+- `as_tibble()` gains `rownames` argument (#288, #289).
+- `as_tibble.matrix()` repairs column names.
+- Tibbles now support character subsetting (#312).
+- ``` `[.tbl_df`() ``` supports `drop = TRUE` and omits the warning if `j` is passed. The calls `df[i, j, drop = TRUE]` and `df[i, drop = TRUE]` are now compatible with data frames again (#307, #311).
+
+### Bug fixes
+
+- Improved compatibility with remote data sources for `glimpse()` (#328).
+- Logical indexes are supported, a warning is raised if the length does not match the number of rows or 1 (#318).
+- Fixed width for word wrapping of the extra information (#301).
+- Prevent `add_column()` from dropping classes and attributes by removing the use of `cbind()`. Additionally this ensures that `add_column()` can be used with grouped data frames (#303, @DavisVaughan).
+- `add_column()` to an empty zero-row tibble with a variable of nonzero length now produces a correct error message (#319).
+
+### Internal changes
+
+- Reexporting `has_name()` from rlang, instead of forwarding, to avoid warning when importing both rlang and tibble.
+- Compatible with R 3.1 (#323).
+- Remove Rcpp dependency (#313, @patperry).
+
+
+# tibble 1.3.4 (2017-08-21)
+
+## Bug fixes
+
+- Values of length 1 in a `tibble()` call are recycled prior to evaluating subsequent arguments, improving consistency with `mutate()` (#213).
+- Recycling of values of length 1 in a `tibble()` call maintains their class (#284).
+- `add_row()` now always preserves the column data types of the input data frame the same way as `rbind()` does (#296).
+- `lst()` now again handles duplicate names, the value defined last is used in case of a clash.
+- Adding columns to zero-row data frames now also works when mixing lengths 1 and 0 in the new columns (#167).
+- The `validate` argument is now also supported in `as_tibble.tbl_df()`, with default to `FALSE` (#278).  It must be passed as named argument, as in `as_tibble(validate = TRUE)`.
+
+## Formatting
+
+- `format_v()` now always surrounds lists with `[]` brackets, even if their length is one. This affects `glimpse()` output for list columns (#106).
+- Factor levels are escaped when printing (#277).
+- Non-syntactic names are now also escaped in `glimpse()` (#280).
+- `tibble()` gives a consistent error message in the case of duplicate column names (#291).
+
+
+# tibble 1.3.3 (2017-05-27)
+
+## Bug fixes
+
+- Added `format()` and `print()` methods for both `tbl` and `tbl_df` classes, to protect against malformed tibbles that inherit from `"tbl_df"` but not `"tbl"`, as created e.g. by `ungroup()` in dplyr 0.5.0 and earlier (#256, #263).
+- The column width for non-syntactic columns is computed correctly again (#258).
+- Printing a tibble doesn't apply quote escaping to list columns.
+- Fix error in `tidy_names(syntactic = TRUE, quiet = FALSE)` if not all names are fixed (#260, @imanuelcostigan).
+- Remove unused import declaration for assertthat.
+
+
+# tibble 1.3.1 (2017-05-16)
+
+## Bug fixes
+
+- Subsetting zero columns no longer returns wrong number of rows (#241, @echasnovski).
+
+
+## Interface changes
+
+- New `set_tidy_names()` and `tidy_names()`, a simpler version of `repair_names()` which works unchanged for now (#217).
+- New `rowid_to_column()` that adds a `rowid` column as first column and removes row names (#243, @barnettjacob).
+- The `all.equal.tbl_df()` method has been removed, calling `all.equal()` now forwards to `base::all.equal.data.frame()`. To compare tibbles ignoring row and column order, please use `dplyr::all_equal()` (#247).
+
+
+## Formatting
+
+- Printing now uses `x` again instead of the Unicode multiplication sign, to avoid encoding issues (#216).
+- String values are now quoted when printing if they contain non-printable characters or quotes (#253).
+- The `print()`, `format()`, and `tbl_sum()` methods are now implemented for class `"tbl"` and not for `"tbl_df"`. This allows subclasses to use tibble's formatting facilities. The formatting of the header can be tweaked by implementing `tbl_sum()` for the subclass, which is expected to return a named character vector. The `print.tbl_df()` method is still implemented for compatibility with downstream packages, but only calls `NextMethod()`.
+- Own printing routine, not relying on `print.data.frame()` anymore. Now providing `format.tbl_df()` and full support for Unicode characters in names and data, also for `glimpse()` (#235).
+
+
+## Misc
+
+- Improve formatting of error messages (#223).
+- Using `rlang` instead of `lazyeval` (#225, @lionel-), and `rlang` functions (#244).
+- `tribble()` now handles values that have a class (#237, @NikNakk).
+- Minor efficiency gains by replacing `any(is.na())` with `anyNA()` (#229, @csgillespie).
+- The `microbenchmark` package is now used conditionally (#245).
+- `pkgdown` website.
+
+
+# tibble 1.3.0 (2017-01-10)
+
+## Bug fixes
+
+- Time series matrices (objects of class `mts` and `ts`) are now supported in `as_tibble()` (#184).
+- The `all_equal()` function (called by `all.equal.tbl_df()`) now forwards to `dplyr` and fails with a helpful message if not installed. Data frames with list columns cannot be compared anymore, and differences in the declared class (`data.frame` vs. `tbl_df`) are ignored. The `all.equal.tbl_df()` method gives a warning and forwards to `NextMethod()` if `dplyr` is not installed; call `all.equal(as.data.frame(...), ...)` to avoid the warning. This ensures consistent behavior of this function, regardless if `dplyr` is loaded or not (#198).
+
+## Interface changes
+
+- Now requiring R 3.1.0 instead of R 3.1.3 (#189).
+- Add `as.tibble()` as an alias to `as_tibble()` (#160, @LaDilettante).
+- New `frame_matrix()`, similar to `frame_data()` but for matrices (#140, #168, @LaDilettante).
+- New `deframe()` as reverse operation to `enframe()` (#146, #214).
+- Removed unused dependency on `assertthat`.
+
+## Features
+
+### General
+
+- Keep column classes when adding row to empty tibble (#171, #177, @LaDilettante).
+- Singular and plural variants for error messages that mention a list of objects (#116, #138, @LaDilettante).
+- `add_column()` can add columns of length 1 (#162, #164, @LaDilettante).
+
+### Input validation
+
+- An attempt to read or update a missing column now throws a clearer warning (#199).
+- An attempt to call `add_row()` for a grouped data frame results in a helpful error message (#179).
+
+### Printing
+
+- Render Unicode multiplication sign as `x` if it cannot be represented in the current locale (#192, @ncarchedi).
+- Backtick `NA` names in printing (#206, #207, @jennybc).
+- `glimpse()` now uses `type_sum()` also for S3 objects (#185, #186, @holstius).
+- The `max.print` option is ignored when printing a tibble (#194, #195, @t-kalinowski).
+
+## Documentation
+
+- Fix typo in `obj_sum` documentation (#193, @etiennebr).
+- Reword documentation for `tribble()` (#191, @kwstat).
+- Now explicitly stating minimum Rcpp version 0.12.3.
+
+## Internal
+
+- Using registration of native routines.
+
+
 # tibble 1.2 (2016-08-26)
 
 ## Bug fixes
@@ -86,7 +223,7 @@ Follow-up release.
 - Subsetting with empty index (e.g., `x[]`) also removes row names.
 
 
-# Documentation
+## Documentation
 
 - Document behavior of `as_tibble.tbl_df()` for subclasses (#60).
 - Document and test that subsetting removes row names.
@@ -105,8 +242,7 @@ Follow-up release.
 - Use new `expect_output_file()` from `testthat`.
 
 
-Version 1.0 (2016-03-21)
-===
+# Version 1.0 (2016-03-21)
 
 - Initial CRAN release
 

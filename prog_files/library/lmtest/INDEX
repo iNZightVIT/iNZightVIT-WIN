@@ -4,7 +4,7 @@ USDistLag               US Macroeconomic Data
 bgtest                  Breusch-Godfrey Test
 bondyield               Bond Yield
 bptest                  Breusch-Pagan Test
-coeftest                Testing Estimated Coefficients
+coeftest                Inference for Estimated Coefficients
 coxtest                 Cox Test for Comparing Non-Nested Models
 currencysubstitution    Currency Substitution
 dwtest                  Durbin-Watson Test

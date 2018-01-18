@@ -1,11 +1,15 @@
 agreementplot	agreementplot
 agreementplot.default	agreementplot
 agreementplot.formula	agreementplot
+aperm.lodds	lodds
 aperm.loddsratio	loddsratio
 aperm.structable	structable
 Arthritis	Arthritis
+as.array.lodds	lodds
 as.array.loddsratio	loddsratio
+as.data.frame.lodds	lodds
 as.data.frame.loddsratio	loddsratio
+as.matrix.lodds	lodds
 as.matrix.loddsratio	loddsratio
 as.matrix.structable	structable
 as.table.structable	structable
@@ -26,9 +30,11 @@ cd_plot	cd_plot
 cd_plot.default	cd_plot
 cd_plot.formula	cd_plot
 CoalMiners	CoalMiners
+coef.lodds	lodds
 coef.loddsratio	loddsratio
 coindep_test	coindep_test
 confint.Kappa	Kappa
+confint.lodds	lodds
 confint.loddsratio	loddsratio
 cotabplot	cotabplot
 cotabplot.default	cotabplot
@@ -42,8 +48,10 @@ cotab_mosaic	cotab_panel
 cotab_sieve	cotab_panel
 co_table	co_table
 DanishWelfare	DanishWelfare
+dim.lodds	lodds
 dim.loddsratio	loddsratio
 dim.structable	structable
+dimnames.lodds	lodds
 dimnames.loddsratio	loddsratio
 dimnames.structable	structable
 distplot	distplot
@@ -88,6 +96,10 @@ legend_fixed	legends
 legend_resbased	legends
 length.structable	structable
 Lifeboats	Lifeboats
+lines.loddsratio	plot.loddsratio
+lodds	lodds
+lodds.default	lodds
+lodds.formula	lodds
 loddsratio	loddsratio
 loddsratio.default	loddsratio
 loddsratio.formula	loddsratio
@@ -99,6 +111,7 @@ mosaic.loglm	plot.loglm
 mplot	mplot
 MSPatients	MSPatients
 NonResponse	NonResponse
+odds	lodds
 oddsratio	loddsratio
 Ord_estimate	Ord_plot
 Ord_plot	Ord_plot
@@ -121,6 +134,7 @@ PreSex	PreSex
 print.assocstats	assocstats
 print.goodfit	goodfit
 print.Kappa	Kappa
+print.lodds	lodds
 print.loddsratio	loddsratio
 print.summary.assocstats	assocstats
 print.summary.Kappa	Kappa
@@ -169,6 +183,7 @@ Suicide	Suicide
 summary.assocstats	assocstats
 summary.goodfit	goodfit
 summary.Kappa	Kappa
+t.lodds	lodds
 t.loddsratio	loddsratio
 t.structable	structable
 table2d_summary	table2d_summary
@@ -178,6 +193,7 @@ tile.default	tile
 tile.formula	tile
 Trucks	Trucks
 UKSoccer	UKSoccer
+vcov.lodds	lodds
 vcov.loddsratio	loddsratio
 VisualAcuity	VisualAcuity
 VonBort	VonBort

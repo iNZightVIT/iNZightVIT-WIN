@@ -1,18 +1,105 @@
+Changes in Version 1.8-1
+
+  o New .DollarNames method (contributed by Josh Ulrich) to enable tab
+    completion when using zoo_object$...
+
+  o New default method for zoo::as.Date() that simply dispatches to
+    base::as.Date().
+
+  o rollapply(x, k, FUN, align = "right") lead to an error if length(x) < k.
+    This has been corrected to match the behavior of the other align types.
+
+  o rollmean(), rollsum(), rollmedian(), and rollmax() no longer throw an
+    error if the series is shorter than the window size. Instead rollapply()
+    is called which either returns an empty series (if "fill" is not specified)
+    or a padded series (if "fill" is specified, e.g., to NA).
+
+  o read.zoo() now also handles "tbl" objects by coercing them to proper
+    "data.frame"s first. Also gained a read = read.table argument to simplify
+    convenience interfaces read.csv.zoo() etc.
+
+  o The fortify() method gained a "names" argument so that the column names
+    of the (melted) series can be modified.
+
+
+Changes in Version 1.8-0
+
+  o zoo() and zooreg() gained a calendar = getOption("zoo.calendar", TRUE)
+    argument so that, by default, yearqtr and yearmon are used as the time
+    index for regular zoo series with frequency 4 and 12, respectively. With
+    calendar = FALSE the behavior from previous versions with plain
+    unclassed time indexes can be obtained. Set options(zoo.calendar = FALSE)
+    to always retain the old behavior.
+
+  o na.locf() is made faster by using a diff()-based solution rather than
+    cumsum() (suggested by Ruben Arslan). Also, the workhorse function
+    na.locf0() underlying the default na.locf() method is now exported
+    in the user interface as it is faster (but also supports less options).
+
+  o Better support of vector-valued 'split' arguments in read.zoo().
+
+  o Special-cased rollmax(..., k = 1) to return the input coredata().
+  
+  o as.character() for "yearqtr" objects did not process NA elements correctly.
+
+
+Changes in Version 1.7-14
+
+  o Several convenience interfaces to read.zoo() have been added:
+    read.table.zoo(), read.csv.zoo(), read.csv2.zoo(), read.delim.zoo(),
+    read.delim2.zoo(). All of these first call the corresponding read.*()
+    function to read the data from a text file (with the respective default
+    settings) and subsequently call read.zoo() to turn the data into
+    a zoo series.
+
+  o na.approx.default() did not properly process the "maxgap" argument
+    if y did not contain any NAs but NAs were only created implicitly
+    by xout being different from x (pointed out by Stefan Metzger).
+    A suitable fix has been added that merges x and xout first.
+
+  o aggregate.zoo() and rollapply.zoo() gained the argument coredata=TRUE
+    which can control whether only the coredata is passed to each subset
+    (previous behavior) or the full zoo series.
+
+  o The "its" package has been archived on CRAN and hence removed from
+    the list of zoo's suggested packages. However, various methods for
+    objects of class "its" continue to be available in zoo in case someone
+    still uses the legacy code.
+
+
+Changes in Version 1.7-13
+
+  o The window() method erroneously dropped the dimension in case of
+    1-column zoo series. Fixed now.
+
+  o Bug fix in NA handling of rollmax() pointed out by Cory Fletcher.
+    
+  o A few as.yearmon/as.yearqtr methods were not registered in
+    the NAMESPACE but are now.
+    
+  o If there are less then two non-NAs in na.approx() then approx()
+    cannot be applied. Instead of throwing an error (as up to version
+    1.7-12) simply no NAs are replaced now.
+
+  o Bug fix for lag(z, k = k, na.pad = TRUE) which ignored na.pad = TRUE
+    if 'k' was a vector of lags.
+
+
 Changes in Version 1.7-12
 
-  o read.zoo with a data.frame argument now defaults to FUN = identity
+  o read.zoo() with a data.frame argument now defaults to FUN = identity
     if the index.column is not character or factor.  See ?read.zoo for
     additional details.
 
+  o read.zoo() heuristic improved so that POSIXct rather than Date is
+    detected in cases like: read.zoo(text = "2010-01-01 12:05:03 88.1",
+    index = 1:2).
+    
   o Added a dim<- method that checks whether the new dimension value
     appears to be ok and then calls the default.
 
   o The index<- and time<- methods now enforce that the new time index
     is actually correctly ordered (suggested by Joshua Ulrich).
-    
-  o read.zoo() heuristic improved so that POSIXct rather than Date is
-    detected in cases like: read.zoo(text = "2010-01-01 12:05:03 88.1",
-    index = 1:2).
     
   o The fortify() method now has a col.names argument that allows to set
     (some of) the column names of the resulting data.frame.

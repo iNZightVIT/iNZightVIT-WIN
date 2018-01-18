@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.3 (2015-12-10).
+<!-- This manual is for R, version 3.4.3 (2017-11-30).
 
-Copyright (C) 2000-2015 R Core Team
+Copyright (C) 2000-2016 R Core Team
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -342,9 +342,9 @@ Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a> &nbsp; [
 parsing, object oriented programming, computing on the language, and so
 forth.
 </p>
-<p>This manual is for R, version 3.2.3 (2015-12-10).
+<p>This manual is for R, version 3.4.3 (2017-11-30).
 </p>
-<p>Copyright &copy; 2000&ndash;2015 R Core Team
+<p>Copyright &copy; 2000&ndash;2016 R Core Team
 </p>
 <blockquote>
 <p>Permission is granted to make and distribute verbatim copies of this
@@ -1780,10 +1780,8 @@ Next: <a href="#repeat" accesskey="n" rel="next">repeat</a>, Previous: <a href="
 <p>R has three statements that provide explicit
 looping.<a name="DOCF3" href="#FOOT3"><sup>3</sup></a>  They are <code>for</code>, <code>while</code> and
 <code>repeat</code>.  The two built-in constructs, <code>next</code> and
-<code>break</code>, provide additional control over the evaluation.  Each of
-the three statements returns the value of the last statement that was
-evaluated.  It is possible, although uncommon, to assign the result of
-one of these statements to a symbol.  R provides other functions for
+<code>break</code>, provide additional control over the evaluation. 
+R provides other functions for
 implicit looping such as <code>tapply</code>, <code>apply</code>, and <code>lapply</code>.
 In addition many operations, especially arithmetic ones, are vectorized
 so you may not need to use a loop.
@@ -2067,12 +2065,11 @@ string <code>&quot;NA&quot;</code>.  Programmers who need to specify an explicit
 <code>NA</code> should use &lsquo;<samp>as.character(NA)</samp>&rsquo; rather than <code>&quot;NA&quot;</code>, or
 set elements to <code>NA</code> using <code>is.na&lt;-</code>.
 </p>
-<p>As from R 2.5.0 there are constants <code>NA_integer_</code>,
-<code>NA_real_</code>, <code>NA_complex_</code> and <code>NA_character_</code> which will
-generate (in the parser) an <code>NA</code> value of the appropriate type,
-and will be used in deparsing when it is not otherwise possible to
-identify the type of an <code>NA</code> (and the <code>control</code> options ask
-for this to be done).
+<p>There are constants <code>NA_integer_</code>, <code>NA_real_</code>,
+<code>NA_complex_</code> and <code>NA_character_</code> which will generate (in the
+parser) an <code>NA</code> value of the appropriate type, and will be used in
+deparsing when it is not otherwise possible to identify the type of an
+<code>NA</code> (and the <code>control</code> options ask for this to be done).
 </p>
 <p>There is no <code>NA</code> value for raw vectors.
 </p>
@@ -2130,9 +2127,8 @@ that component, and so on. The result is still a single element.
 <p>The form using <code>$</code> applies to recursive objects such as lists and
 pairlists.  It allows only a literal character string or a symbol as the
 index.  That is, the index is not computable: for cases where you need
-to evaluate an expression to find the index, use <code>x[[expr]]</code>.  When
-<code>$</code> is applied to a non-recursive object the result used to be
-always <code>NULL</code>: as from R 2.6.0 this is an error.
+to evaluate an expression to find the index, use <code>x[[expr]]</code>.
+Applying <code>$</code> to a non-recursive object is an error.
 </p>
 <table summary="" class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Indexing-by-vectors" accesskey="1">Indexing by vectors</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2333,7 +2329,7 @@ matching.
 </p>
 <p>The most important example of a class method for <code>[</code> is that used
 for data frames.  It is not described in detail here (see the help
-page for <code>[.data.frame</code>, but in broad terms, if two indices are
+page for <code>[.data.frame</code>), but in broad terms, if two indices are
 supplied (even if one is empty) it creates matrix-like indexing for a
 structure that is basically a list of vectors of the same length.  If a
 single index is supplied, it is interpreted as indexing the list of
@@ -5157,10 +5153,10 @@ eight hex digits.
 <p>A single quote may also be embedded directly in a double-quote delimited
 string and vice versa.
 </p>
-<p>As from R 2.8.0, a &lsquo;nul&rsquo; (<code>\0</code>) is not allowed in a character
-string, so using <code>\0</code> in a string constant terminates the constant
-(usually with a warning): further characters up to the closing quote are
-scanned but ignored.
+<p>A &lsquo;nul&rsquo; (<code>\0</code>) is not allowed in a character string, so using
+<code>\0</code> in a string constant terminates the constant (usually with a
+warning): further characters up to the closing quote are scanned but
+ignored.
 </p>
 <hr>
 <a name="Identifiers"></a>

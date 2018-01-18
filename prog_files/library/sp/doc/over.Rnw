@@ -27,6 +27,7 @@ University of Muenster, Weseler Strasse 253, 48151 M\"{u}nster, Germany.
 \date{\today}
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 \maketitle
 
@@ -123,7 +124,7 @@ A[!is.na(over(A,B)),]
 We will now illustrate this with toy data created by
 <<keep.source=TRUE>>=
 library(sp)
-x = c(0.5, 0.5, 1.2, 1.5)
+x = c(0.5, 0.5, 1.0, 1.5)
 y = c(1.5, 0.5, 0.5, 0.5)
 xy = cbind(x,y)
 dimnames(xy)[[1]] = c("a", "b", "c", "d")
@@ -134,8 +135,8 @@ ypol = c(0,0,1,1,0)
 pol = SpatialPolygons(list(
 	Polygons(list(Polygon(cbind(xpol-1.05,ypol))), ID="x1"),
 	Polygons(list(Polygon(cbind(xpol,ypol))), ID="x2"),
-	Polygons(list(Polygon(cbind(xpol,ypol-1.05))), ID="x3"),
-	Polygons(list(Polygon(cbind(xpol+1.05,ypol))), ID="x4"),
+	Polygons(list(Polygon(cbind(xpol,ypol - 1.0))), ID="x3"),
+	Polygons(list(Polygon(cbind(xpol + 1.0, ypol))), ID="x4"),
 	Polygons(list(Polygon(cbind(xpol+.4, ypol+.1))), ID="x5")
 	))
 @
@@ -143,9 +144,12 @@ and shown in figure \ref{fig:toy}.
 
 \begin{figure}[htb]
 <<fig=TRUE,echo=FALSE>>=
-plot(pol, xlim = c(-1.1, 2.1), ylim = c(-1.1, 1.6), border=2:6, axes=TRUE)
+library(RColorBrewer)
+pal = brewer.pal(5, "Set2")
+plot(pol, xlim = c(-1.1, 2.1), ylim = c(-1.1, 1.6), border=pal, axes=TRUE,
+	col = paste0(pal, "4D"))
 points(pts, col='red')
-text(c(-1,0.1,0.1,1.1,0.45), c(0,0,-1.05,0,0.1), 
+text(c(-1,0.1,0.1,1.9,0.45), c(0.05,0.05,-.95,0.05,0.15), 
 	c("x1", "x2", "x3", "x4", "x5"))
 text(coordinates(pts), pos=1, row.names(pts))
 @
@@ -157,12 +161,18 @@ Now, the polygons \code{pol} in which points \code{pts} lie are
 <<>>=
 over(pts, pol)
 @
-As points \code{b} and \code{c} fall in two overlapping polygons, we can
-retrieve the complete information as a list:
+As points \code{b} and \code{c} touch two overlapping polygons,
+the output from the previous command does not provide all information
+about the overlaps, only returning the \emph{last} polygon which touched
+them (polygon 5 in both cases).
+The complete information can be retrieved as a list:
 <<>>=
 over(pts, pol, returnList = TRUE)
 @
-and the appropriate points falling in any of the polygons are selected by
+This shows that \code{over} returns true if geometries in one element touch
+geometries in another: they do not have to fully overlap
+(see section \ref{dim} to constrain the selection criteria).
+The points falling in or touching any of the polygons are selected by:
 <<>>=
 pts[pol]
 @
@@ -174,6 +184,19 @@ over(pol, pts)
 over(pol, pts, returnList = TRUE)
 row.names(pol[pts])
 @
+
+\code{over} can also be used to query polygons in a single object overlay each other:
+
+<<>>=
+over(pol, pol, returnList = TRUE)
+@
+
+\noindent
+The output tells us that \code{x1} does not intersect with any polygons other than itself, within the \code{pol} object. \code{x2} intersects with itself and \code{x3}, \code{x4} and \code{x5}, and so on.
+Note that the \emph{types} of overlap queried by \code{over} include any intersecting points or edges under the \href{https://en.wikipedia.org/wiki/DE-9IM}{DE-9IM} standard.  More generic types of spatial overlap can be queried using functions from the rgeos package, as illustrated by the help page launched with \code{?rgeos::gRelate}.
+
+Constraining polygon-polygon intersections to e.g. {\em overlap} using \code{over} is explained in section \ref{dim}.
+
 
 \section{Using \code{over} to extract attributes}
 \label{attr}
@@ -429,7 +452,7 @@ gridded(meuse.grid) = ~x+y
 off = gridparameters(meuse.grid)$cellcentre.offset + 20
 gt = GridTopology(off, c(400,400), c(8,11))
 SG = SpatialGrid(gt)
-agg = aggregate(meuse.grid[3], SG)
+agg = aggregate(meuse.grid[3], SG, mean)
 @
 Figure \ref{fig:agg} shows the result of this aggregation
 (\code{agg}, in colors) and the points (+) of the original grid
@@ -451,7 +474,7 @@ x 400 m grid}
 An example of the aggregated values of \code{meuse.grid} along
 (or under) the line shown in Figure \ref{fig:lines} are
 <<>>=
-sl.agg = aggregate(meuse.grid[,1:3], sl)
+sl.agg = aggregate(meuse.grid[,1:3], sl, mean)
 class(sl.agg)
 as.data.frame(sl.agg)
 @
@@ -475,7 +498,7 @@ p$ag1 = aggregate(p, p, mean)[[1]]
 p$ag1a = aggregate(p, p, mean, minDimension = 0)[[1]]
 p$ag2 = aggregate(p, p, mean, minDimension = 1)[[1]]
 p$ag3 = aggregate(p, p, mean, minDimension = 2)[[1]]
-p$ag4 = aggregate(p, p, mean, areaWeighted=TRUE)[[1]]
+p$ag4 = aggregate(p, p, areaWeighted=TRUE)[[1]]
 @
 
 \begin{figure}[ht]
@@ -518,7 +541,7 @@ round(c(
   aggMinDim0 = aggregate(p, sq, mean, minDimension = 0)[[1]],
   aggMinDim1 = aggregate(p, sq, mean, minDimension = 1)[[1]],
   aggMinDim2 = aggregate(p, sq, mean, minDimension = 2)[[1]],
-  areaWeighted = aggregate(p, sq, mean, areaWeighted=TRUE)[[1]]), 3)
+  areaWeighted = aggregate(p, sq, areaWeighted=TRUE)[[1]]), 3)
 @
 
 
@@ -537,7 +560,7 @@ and soil process modelling. Geoderma 89, 1-2,
 \item
 Pebesma, E., 2012.  Spatio-temporal overlay and
 aggregation.  Package vignette for package spacetime,
-\url{http://cran.r-project.org/web/packages/spacetime/vignettes/sto.pdf}
+\url{https://cran.r-project.org/web/packages/spacetime/vignettes/sto.pdf}
 
 \end{itemize}
 
