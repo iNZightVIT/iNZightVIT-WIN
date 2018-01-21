@@ -12,6 +12,7 @@ convertToMetadata	convertToMetadata
 convertToMetadata.data.frame	convertToMetadata
 convertToMetadata.list	convertToMetadata
 createNewVar	createNewVar
+deleteVars	deleteVars
 extractFromFrame	extractFromFrame
 extractFromFrame.iNZclass.character	extractFromFrame
 extractFromFrame.iNZclass.factor	extractFromFrame

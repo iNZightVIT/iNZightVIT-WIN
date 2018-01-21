@@ -14,6 +14,7 @@ convertToCat         Convert numeric variables to categorical
 convertToMetadata    Takes an object (list or a dataframe) and
                      returns its metadata.
 createNewVar         Create new variables
+deleteVars           Delete variables
 extractFromFrame     Extracts more information from the
                      dataframe (obj).
 filterLevels         Filter data by levels of a categorical
