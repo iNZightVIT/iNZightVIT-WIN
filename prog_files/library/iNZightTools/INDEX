@@ -13,6 +13,9 @@ convertSpssDetails   Converts the data type of columns
 convertToCat         Convert numeric variables to categorical
 convertToMetadata    Takes an object (list or a dataframe) and
                      returns its metadata.
+countMissing         helper function for counting the missing
+                     values - used for aggregateData()
+                     function
 createNewVar         Create new variables
 deleteVars           Delete variables
 extractFromFrame     Extracts more information from the

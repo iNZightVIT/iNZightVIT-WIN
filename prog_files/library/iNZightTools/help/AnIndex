@@ -1,4 +1,5 @@
 iNZightTools-package	iNZightTools
+%>%	pipe
 aggregateData	aggregateData
 changeColumnTypes	changeColumnTypes
 changeToDatatype	changeToDatatype
@@ -11,6 +12,7 @@ convertToCat	convertToCat
 convertToMetadata	convertToMetadata
 convertToMetadata.data.frame	convertToMetadata
 convertToMetadata.list	convertToMetadata
+countMissing	countMissing
 createNewVar	createNewVar
 deleteVars	deleteVars
 extractFromFrame	extractFromFrame
@@ -46,4 +48,5 @@ search.name	search.name
 sortVars	sortVars
 stackVars	stackVars
 standardizeVars	standardizeVars
+str_c	stringConcatenation
 transformVar	transformVar

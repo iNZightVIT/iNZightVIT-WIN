@@ -6,7 +6,7 @@ Date: 2018-01-18
 Imports: utils, stats, methods, survey, grDevices, foreign,
        readr, readxl, magrittr, tibble, dplyr, forcats, tidyr,
        stringr
-Suggests: Acinonyx, cairoDevice, testthat
+Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"),
@@ -19,4 +19,4 @@ Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.4.0; ; 2018-01-21 00:55:00 UTC; unix
+Built: R 3.4.0; ; 2018-01-21 06:48:42 UTC; unix
