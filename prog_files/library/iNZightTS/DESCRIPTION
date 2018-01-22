@@ -1,8 +1,8 @@
 Package: iNZightTS
 Type: Package
 Title: Time Series for iNZight
-Version: 1.3-1
-Date: 2017-10-20
+Version: 1.4
+Date: 2018-01-18
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
              person("Junjie", "Zeng",    role = "aut"),
@@ -11,7 +11,8 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("Marco", "Kuper",    role = "aut"),
              person("Dongning", "Zhang", role = "ctb"))
 Depends: R (>= 2.13)
-Imports: grid, grDevices, graphics, stats, utils
+Imports: grid, gridExtra, grDevices, graphics, stats, utils, ggplot2,
+        tidyr, dplyr, forcats, magrittr
 Description: Time Series functionality for iNZight, allowing users to draw, decompose, and forcast with ease.
 License: GPL-2 | file LICENSE
 RoxygenNote: 6.0.1
@@ -22,4 +23,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   Dongning Zhang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.2.2; ; 2017-12-08 00:54:21 UTC; unix
+Built: R 3.2.2; ; 2018-01-22 22:01:00 UTC; unix
