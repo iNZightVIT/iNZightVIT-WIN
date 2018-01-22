@@ -1,10 +1,11 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 2.2.0-3
-Date: 2017-10-20
+Version: 2.3
+Date: 2018-01-23
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
+             person("Daniel", "Barnett", role = "aut"),
              person("Eric", "Lim", role = "aut"),
              person("Junjie", "Zeng", role = c('aut')),
              person("Dineika", "Chandrananda", role = "aut"),
@@ -19,10 +20,11 @@ Description: A suite of add-on modules for the iNZight GUI, including model
     fitting module, multiple response, time series, and some advanced plotting.
 RoxygenNote: 6.0.1
 Author: Tom Elliott [aut, cre],
+  Daniel Barnett [aut],
   Eric Lim [aut],
   Junjie Zeng [aut],
   Dineika Chandrananda [aut],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2017-12-08 00:54:31 UTC; unix
+Built: R 3.2.2; ; 2018-01-22 22:01:06 UTC; unix

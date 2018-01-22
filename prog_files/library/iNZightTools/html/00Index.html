@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;iNZightTools&rsquo; version 1.4-1</h2>
+</div><h2>Documentation for package &lsquo;iNZightTools&rsquo; version 1.5</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -22,24 +22,36 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="iNZightTools.html">iNZightTools-package</a></td>
 <td>Tools for data processing with iNZight</td></tr>
-<tr><td style="width: 25%;"><a href="aggregate.data.html">aggregate.data</a></td>
-<td>aggregates the data over selected factor columns</td></tr>
+<tr><td style="width: 25%;"><a href="aggregateData.html">aggregateData</a></td>
+<td>Aggregate data by categorical variables</td></tr>
 <tr><td style="width: 25%;"><a href="changeColumnTypes.html">changeColumnTypes</a></td>
 <td>Changes the datatype of columns of dataframe to the specified datatypes.</td></tr>
 <tr><td style="width: 25%;"><a href="changeToDatatype.html">changeToDatatype</a></td>
 <td>Changes the datatype of a column of a dataframe to the specified datatype.</td></tr>
 <tr><td style="width: 25%;"><a href="code.html">code</a></td>
 <td>Get Data's Code</td></tr>
+<tr><td style="width: 25%;"><a href="collapseLevels.html">collapseLevels</a></td>
+<td>Collapse data by values of a categorical variable</td></tr>
 <tr><td style="width: 25%;"><a href="combine.levels.html">combine.levels</a></td>
 <td>Combine the levels of factor variables.</td></tr>
+<tr><td style="width: 25%;"><a href="combineCatVars.html">combineCatVars</a></td>
+<td>Combine categorical variables into one</td></tr>
 <tr><td style="width: 25%;"><a href="convertSpssDetails.html">convertSpssDetails</a></td>
 <td>Converts the data type of columns specified from numeric to date.</td></tr>
+<tr><td style="width: 25%;"><a href="convertToCat.html">convertToCat</a></td>
+<td>Convert numeric variables to categorical</td></tr>
 <tr><td style="width: 25%;"><a href="convertToMetadata.html">convertToMetadata</a></td>
 <td>Takes an object (list or a dataframe) and returns its metadata.</td></tr>
 <tr><td style="width: 25%;"><a href="convertToMetadata.html">convertToMetadata.data.frame</a></td>
 <td>Takes an object (list or a dataframe) and returns its metadata.</td></tr>
 <tr><td style="width: 25%;"><a href="convertToMetadata.html">convertToMetadata.list</a></td>
 <td>Takes an object (list or a dataframe) and returns its metadata.</td></tr>
+<tr><td style="width: 25%;"><a href="countMissing.html">countMissing</a></td>
+<td>helper function for counting the missing values - used for aggregateData() function</td></tr>
+<tr><td style="width: 25%;"><a href="createNewVar.html">createNewVar</a></td>
+<td>Create new variables</td></tr>
+<tr><td style="width: 25%;"><a href="deleteVars.html">deleteVars</a></td>
+<td>Delete variables</td></tr>
 <tr><td style="width: 25%;"><a href="extractFromFrame.html">extractFromFrame</a></td>
 <td>Extracts more information from the dataframe (obj).</td></tr>
 <tr><td style="width: 25%;"><a href="extractFromFrame.html">extractFromFrame.iNZclass.character</a></td>
@@ -48,18 +60,20 @@
 <td>Extracts more information from the dataframe (obj).</td></tr>
 <tr><td style="width: 25%;"><a href="extractFromFrame.html">extractFromFrame.iNZclass.numeric</a></td>
 <td>Extracts more information from the dataframe (obj).</td></tr>
+<tr><td style="width: 25%;"><a href="filterLevels.html">filterLevels</a></td>
+<td>Filter data by levels of a categorical variables</td></tr>
+<tr><td style="width: 25%;"><a href="filterNumeric.html">filterNumeric</a></td>
+<td>Filter data by levels of a numeric variables</td></tr>
+<tr><td style="width: 25%;"><a href="filterRandom.html">filterRandom</a></td>
+<td>Random sampling without replacement</td></tr>
+<tr><td style="width: 25%;"><a href="filterRows.html">filterRows</a></td>
+<td>Filter data by row numbers</td></tr>
 <tr><td style="width: 25%;"><a href="fitDesign.html">fitDesign</a></td>
 <td>Fit Survey Design</td></tr>
 <tr><td style="width: 25%;"><a href="fitModel.html">fitModel</a></td>
 <td>Fit a Model</td></tr>
-<tr><td style="width: 25%;"><a href="get.collapsed.column.html">get.collapsed.column</a></td>
-<td>Collapses selected levels in factor vector</td></tr>
-<tr><td style="width: 25%;"><a href="get.combinations.html">get.combinations</a></td>
-<td>Takes a data.frame as generated from the 'get.missing.categorical' function and converts it into a data.frame of all unique rows and there counts in the original data.</td></tr>
 <tr><td style="width: 25%;"><a href="get.form.class.interval.html">get.form.class.interval</a></td>
 <td>Form class intervals from a column specified by column name or column index from the a data.frame.</td></tr>
-<tr><td style="width: 25%;"><a href="get.missing.categorical.html">get.missing.categorical</a></td>
-<td>Converts specified columns into binary factor variables which get added to the input data.frame.</td></tr>
 <tr><td style="width: 25%;"><a href="iNZexport.html">iNZexport</a></td>
 <td>iNZight Metadata Writer</td></tr>
 <tr><td style="width: 25%;"><a href="iNZightTools.html">iNZightTools</a></td>
@@ -80,27 +94,31 @@
 <td>Converts the column datatypes to a single word or string which can be passed to readr::read_csv as an argument.</td></tr>
 <tr><td style="width: 25%;"><a href="makeLocale.html">makeLocale</a></td>
 <td>Creates a locale that cane be used with functions from readr package.</td></tr>
+<tr><td style="width: 25%;"><a href="missingToCat.html">missingToCat</a></td>
+<td>Convert missing values to categorical variables</td></tr>
 <tr><td style="width: 25%;"><a href="newdevice.html">newdevice</a></td>
 <td>Open a New Graphics Device</td></tr>
-<tr><td style="width: 25%;"><a href="numToCat.html">numToCat</a></td>
-<td>Convert to Categorical</td></tr>
-<tr><td style="width: 25%;"><a href="order.overwrite.html">order.overwrite</a></td>
-<td>Order vectors</td></tr>
+<tr><td style="width: 25%;"><a href="rankVars.html">rankVars</a></td>
+<td>Rank the data of a numeric variables</td></tr>
 <tr><td style="width: 25%;"><a href="readMetadata.html">readMetadata</a></td>
 <td>iNZight Metadata Reader</td></tr>
-<tr><td style="width: 25%;"><a href="rename.levels.html">rename.levels</a></td>
-<td>Renames the levels of a factor.</td></tr>
-<tr><td style="width: 25%;"><a href="reorder.levels.html">reorder.levels</a></td>
-<td>This function changes the order of levels in the data.</td></tr>
+<tr><td style="width: 25%;"><a href="renameLevels.html">renameLevels</a></td>
+<td>Rename the levels of a categorical variable</td></tr>
+<tr><td style="width: 25%;"><a href="renameVars.html">renameVars</a></td>
+<td>Rename column names</td></tr>
+<tr><td style="width: 25%;"><a href="reorderLevels.html">reorderLevels</a></td>
+<td>Reorder a categorical</td></tr>
 <tr><td style="width: 25%;"><a href="sample.data.html">sample.data</a></td>
 <td>Takes a sample of rows from a data.frame</td></tr>
 <tr><td style="width: 25%;"><a href="search.name.html">search.name</a></td>
 <td>Searches a list recursivly for a name and returns the value associated with the name</td></tr>
-<tr><td style="width: 25%;"><a href="sort.data.html">sort.data</a></td>
-<td>Sorts the df data frame after the input variables</td></tr>
-<tr><td style="width: 25%;"><a href="stack.variables.perform.html">stack.variables.perform</a></td>
-<td>Stacks the selected columns onto the data.</td></tr>
-<tr><td style="width: 25%;"><a href="transform.html">transform</a></td>
-<td>Transform Numeric Variable</td></tr>
+<tr><td style="width: 25%;"><a href="sortVars.html">sortVars</a></td>
+<td>Sort data by variables</td></tr>
+<tr><td style="width: 25%;"><a href="stackVars.html">stackVars</a></td>
+<td>Stack variables</td></tr>
+<tr><td style="width: 25%;"><a href="standardizeVars.html">standardizeVars</a></td>
+<td>Transform data of a numeric variable</td></tr>
+<tr><td style="width: 25%;"><a href="transformVar.html">transformVar</a></td>
+<td>Transform data of a numeric variable</td></tr>
 </table>
 </body></html>
