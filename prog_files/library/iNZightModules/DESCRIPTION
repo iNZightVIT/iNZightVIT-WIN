@@ -2,7 +2,7 @@ Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
 Version: 2.3
-Date: 2018-01-18
+Date: 2018-01-23
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Daniel", "Barnett", role = "aut"),
@@ -12,9 +12,8 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("Simon", "Potter", role = "aut"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 2.13)
-Imports: gWidgets2, gWidgets2RGtk2, iNZightPlots,
-       iNZightRegression, iNZightTools, iNZightMR, iNZightTS,
-       gpairs, methods, survey
+Imports: gWidgets2, gWidgets2RGtk2, iNZightPlots, iNZightRegression,
+        iNZightTools, iNZightMR, iNZightTS, gpairs, methods, survey
 Suggests: iNZightMaps, rgl, mgcv
 License: GPL-3 | file LICENSE
 Description: A suite of add-on modules for the iNZight GUI, including model
@@ -28,4 +27,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.4.0; ; 2018-01-21 06:48:45 UTC; unix
+Built: R 3.4.0; ; 2018-01-23 00:28:02 UTC; unix

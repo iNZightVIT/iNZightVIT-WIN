@@ -2,7 +2,7 @@ Package: iNZight
 Type: Package
 Title: iNZight GUI for Data Exploration and Visualisation
 Version: 3.2
-Date: 2018-01-18
+Date: 2018-01-23
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
              person("Dineika", "Chandrananda", role = "ctb"),
@@ -12,13 +12,12 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("David", "Banks", role = "ctb"))
 Description: An interactive GUI for easy visual exploration of datasets.
 License: GPL-3 | file LICENSE
-Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2,
-       cairoDevice
-Imports: utils, grDevices, methods, grid, gdata,
-       gWidgets2RGtk2, iNZightPlots, iNZightTools, reshape2,
-       plyr, survey, colorspace, magrittr
-Suggests: RODBC, iNZightMR, iNZightModules, png, viridis,
-       RColorBrewer, FutureLearnData
+Depends: R (>= 3.0), objectProperties, RGtk2, gWidgets2, cairoDevice
+Imports: utils, grDevices, methods, grid, gdata, gWidgets2RGtk2,
+        iNZightPlots, iNZightTools, reshape2, plyr, survey, colorspace,
+        magrittr
+Suggests: RODBC, iNZightMR, iNZightModules, png, viridis, RColorBrewer,
+        FutureLearnData
 LazyData: true
 RoxygenNote: 6.0.1
 Author: Tom Elliott [aut, cre],
@@ -27,4 +26,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.4.0; ; 2018-01-21 06:48:48 UTC; unix
+Built: R 3.4.0; ; 2018-01-23 00:28:07 UTC; unix
