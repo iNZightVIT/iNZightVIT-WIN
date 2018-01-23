@@ -143,6 +143,7 @@ h <- new_handle()
 handle_setform(h,
   foo = "blabla",
   bar = charToRaw("boeboe"),
+  iris = form_data(serialize(iris, NULL), "application/rda"),
   description = form_file(system.file("DESCRIPTION")),
   logo = form_file(file.path(Sys.getenv("R_DOC_DIR"), "html/logo.jpg"), "image/jpeg")
 )
@@ -151,8 +152,8 @@ req <- curl_fetch_memory("http://httpbin.org/post", handle = h)
 ## ---------------------------------------------------------------------------------------------------------------------
 library(magrittr)
 
-new_handle() %>% 
-  handle_setopt(copypostfields = "moo=moomooo") %>% 
+new_handle() %>%
+  handle_setopt(copypostfields = "moo=moomooo") %>%
   handle_setheaders("Content-Type" = "text/moo", "Cache-Control" = "no-cache", "User-Agent" = "A cow") %>%
   curl_fetch_memory(url = "http://httpbin.org/post") %$% content %>% rawToChar %>% cat
 

@@ -2,8 +2,10 @@ mgcv-package	mgcv-package
 adaptive.smooth	smooth.construct.ad.smooth.spec
 AIC.gam	logLik.gam
 anova.gam	anova.gam
+b.spline	smooth.construct.bs.smooth.spec
 bam	bam
 bam.update	bam.update
+bandchol	bandchol
 betar	Beta
 bug.reports.mgcv	bug.reports.mgcv
 choose.k	choose.k
@@ -14,6 +16,7 @@ columb.polys	columb
 concurvity	concurvity
 corMatrix.pdIdnot	pdIdnot
 cox.ph	coxph
+cox.pht	coxpht
 cSplineDes	cSplineDes
 cubic.regression.spline	smooth.construct.cr.smooth.spec
 cyclic.cubic.spline	smooth.construct.cr.smooth.spec
@@ -52,12 +55,16 @@ gam.side	gam.side
 gam.vcomp	gam.vcomp
 gam2derivative	gam2objective
 gam2objective	gam2objective
+gamlss.etamu	gamlss.etamu
+gamlss.gH	gamlss.gH
 gamm	gamm
 gamObject	gamObject
 gamSim	gamSim
 gaulss	gaulss
 get.var	get.var
+gevlss	gevlss
 gp.smooth	smooth.construct.gp.smooth.spec
+identifiability	identifiability
 in.out	in.out
 influence.gam	influence.gam
 initial.sp	initial.sp
@@ -75,6 +82,7 @@ mgcv	mgcv-package
 mgcv.FAQ	mgcv-FAQ
 mgcv.package	mgcv-package
 mgcv.parallel	mgcv-parallel
+missing.data	missing.data
 model.matrix.gam	model.matrix.gam
 mono.con	mono.con
 mrf	smooth.construct.mrf.smooth.spec
@@ -90,6 +98,7 @@ notLog	notExp
 notLog2	notExp2
 null.space.dimension	null.space.dimension
 ocat	ocat
+one.se.rule	one.se.rule
 ordered.categorical	ocat
 p.spline	smooth.construct.ps.smooth.spec
 pcls	pcls
@@ -109,6 +118,7 @@ polys.plot	polys.plot
 predict.bam	predict.bam
 predict.gam	predict.gam
 Predict.matrix	Predict.matrix
+Predict.matrix.Bspline.smooth	smooth.construct.bs.smooth.spec
 Predict.matrix.cr.smooth	Predict.matrix.cr.smooth
 Predict.matrix.cs.smooth	Predict.matrix.cr.smooth
 Predict.matrix.cyclic.smooth	Predict.matrix.cr.smooth
@@ -140,12 +150,15 @@ Rrank	Rrank
 rTweedie	rTweedie
 s	s
 scat	scat
+sdiag	sdiag
+sdiag<-	sdiag
 signal.regression	linear.functional.terms
 sim2jam	jagam
 single.index	single.index
 slanczos	slanczos
 smooth.construct	smooth.construct
 smooth.construct.ad.smooth.spec	smooth.construct.ad.smooth.spec
+smooth.construct.bs.smooth.spec	smooth.construct.bs.smooth.spec
 smooth.construct.cc.smooth.spec	smooth.construct.cr.smooth.spec
 smooth.construct.cp.smooth.spec	smooth.construct.ps.smooth.spec
 smooth.construct.cr.smooth.spec	smooth.construct.cr.smooth.spec
@@ -166,6 +179,7 @@ smooth.construct.tp.smooth.spec	smooth.construct.tp.smooth.spec
 smooth.construct.ts.smooth.spec	smooth.construct.tp.smooth.spec
 smooth.construct2	smooth.construct
 smooth.terms	smooth.terms
+smooth2random	smooth2random
 smoothCon	smoothCon
 soap	smooth.construct.so.smooth.spec
 solve.pdIdnot	pdIdnot
@@ -185,6 +199,8 @@ tensor.prod.model.matrix	tensor.prod.model.matrix
 tensor.prod.penalties	tensor.prod.model.matrix
 ti	te
 tprs	smooth.construct.tp.smooth.spec
+trichol	trichol
+trind.generator	trind.generator
 tw	Tweedie
 Tweedie	Tweedie
 uniquecombs	uniquecombs

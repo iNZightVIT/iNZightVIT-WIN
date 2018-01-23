@@ -2,9 +2,9 @@ Package: RcppEigen
 Type: Package
 Title: 'Rcpp' Integration for the 'Eigen' Templated Linear Algebra
         Library
-Version: 0.3.2.7.0
-Date: 2016-01-19
-Author: Douglas Bates, Dirk Eddelbuettel and Romain Francois;
+Version: 0.3.2.9.1
+Date: 2017-03-14
+Author: Douglas Bates, Dirk Eddelbuettel, Romain Francois, and Yixuan Qiu;
  the authors of Eigen for the included version of Eigen
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Copyright: See the file COPYRIGHTS for various Eigen copyright details
@@ -17,7 +17,7 @@ Description: R and 'Eigen' integration using 'Rcpp'.
  implementations based on 'Lapack' and level-3 'BLAS'.
  .
     The 'RcppEigen' package includes the header files from the 'Eigen' C++
- template library (currently version 3.2.7). Thus users do not need to
+ template library (currently version 3.2.9). Thus users do not need to
  install 'Eigen' itself in order to use 'RcppEigen'.
  .
     Since version 3.1.1, 'Eigen' is licensed under the Mozilla Public License
@@ -30,10 +30,11 @@ LazyLoad: yes
 LinkingTo: Rcpp
 Imports: Matrix (>= 1.1-0), Rcpp (>= 0.11.0), stats, utils
 Suggests: inline, RUnit, pkgKitten
-URL: http://eigen.tuxfamily.org
+URL: http://dirk.eddelbuettel.com/code/rcpp.eigen.html
+BugReports: https://github.com/RcppCore/RcppEigen/issues
 NeedsCompilation: yes
-Packaged: 2016-01-20 15:57:41.091115 UTC; edd
+Packaged: 2017-03-14 19:32:41.661278 UTC; edd
 Repository: CRAN
-Date/Publication: 2016-01-20 23:56:09
-Built: R 3.2.3; x86_64-w64-mingw32; 2016-01-28 02:59:23 UTC; windows
+Date/Publication: 2017-03-15 08:00:12
+Built: R 3.2.5; x86_64-w64-mingw32; 2017-04-20 07:42:21 UTC; windows
 Archs: i386, x64

@@ -1,0 +1,4 @@
+as_glue                 Coerce object to glue
+collapse                Collapse a character vector
+glue                    Format and interpolate a string
+trim                    Trim a character vector

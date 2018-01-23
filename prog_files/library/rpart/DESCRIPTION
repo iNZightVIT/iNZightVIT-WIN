@@ -27,6 +27,6 @@ Author: Terry Therneau [aut],
   Brian Ripley [aut, trl, cre] (author of initial R port)
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
 Repository: CRAN
-Date/Publication: 2015-06-29 17:14:54
-Built: R 3.2.3; x86_64-w64-mingw32; 2015-12-10 13:13:05 UTC; windows
+Date/Publication: 2015-06-29 17:15:41
+Built: R 3.2.5; x86_64-w64-mingw32; 2017-04-20 06:33:27 UTC; windows
 Archs: i386, x64

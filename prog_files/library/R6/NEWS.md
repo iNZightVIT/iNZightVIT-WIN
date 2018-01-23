@@ -1,3 +1,18 @@
+R6 2.2.2
+========
+
+* Fixed [#108](https://github.com/wch/R6/issues/108): When an object with a `super` object and an active binding in the `super` object was cloned, the new object's `super` object did not get the active binding -- it was a normal function.
+
+* Fixed [#119](https://github.com/wch/R6/issues/119): When a class had two levels of inheritance, an instance of that class's `super` object could contain methods that had an incorrect enclosing environment.
+
+
+R6 2.2.1
+========
+
+* Vignettes now only try use the microbenchmark package if it is present. This is so that the package builds properly on platforms where microbenchmark is not present, like Solaris.
+
+* Fixed ending position for `trim()`.
+
 R6 2.2.0
 ========
 
@@ -12,7 +27,7 @@ R6 2.1.3
 
 * The `plot` S3 method for R6 objects will call `$plot` on the object if present. (#77)
 
-* Fixed priting of members that are R6 objects. (#88)
+* Fixed printing of members that are R6 objects. (#88)
 
 * Fixed deep cloning for non-portable classes. (#85)
 

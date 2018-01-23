@@ -1311,6 +1311,7 @@ isparseVector-class	sparseVector-class
 isSymmetric,denseMatrix-method	isSymmetric-methods
 isSymmetric,dgCMatrix-method	dgCMatrix-class
 isSymmetric,diagonalMatrix-method	isSymmetric-methods
+isSymmetric,indMatrix-method	indMatrix-class
 isSymmetric,sparseMatrix-method	isSymmetric-methods
 isSymmetric,symmetricMatrix-method	isSymmetric-methods
 isSymmetric,triangularMatrix-method	isSymmetric-methods
@@ -1564,6 +1565,7 @@ Ops,Matrix,logical-method	Matrix-class
 Ops,Matrix,Matrix-method	Matrix-class
 Ops,Matrix,matrix-method	Matrix-class
 Ops,matrix,Matrix-method	Matrix-class
+Ops,Matrix,NULL-method	Matrix-class
 Ops,Matrix,sparseVector-method	sparseVector-class
 Ops,ndenseMatrix,ndenseMatrix-method	ndenseMatrix-class
 Ops,nMatrix,dMatrix-method	dMatrix-class
@@ -1572,6 +1574,7 @@ Ops,nMatrix,numeric-method	nMatrix-class
 Ops,nsparseMatrix,dsparseMatrix-method	nsparseMatrix-classes
 Ops,nsparseMatrix,lsparseMatrix-method	nsparseMatrix-classes
 Ops,nsparseMatrix,sparseMatrix-method	nsparseMatrix-classes
+Ops,NULL,Matrix-method	Matrix-class
 Ops,numeric,abIndex-method	abIndex-class
 Ops,numeric,ddiMatrix-method	diagonalMatrix-class
 Ops,numeric,dpoMatrix-method	dpoMatrix-class
@@ -1600,6 +1603,8 @@ pCholesky-class	Cholesky-class
 pMatrix-class	pMatrix-class
 print,diagonalMatrix-method	diagonalMatrix-class
 print,sparseMatrix-method	sparseMatrix-class
+print.Matrix	Matrix-class
+print.sparseMatrix	sparseMatrix-class
 printSpMatrix	printSpMatrix
 printSpMatrix2	printSpMatrix
 prod,ddiMatrix-method	diagonalMatrix-class
@@ -1690,6 +1695,8 @@ rcond,ndenseMatrix,character-method	rcond
 rcond,sparseMatrix,character-method	rcond
 readHB	externalFormats
 readMM	externalFormats
+rep,Matrix-method	Matrix-class
+rep,sparseMatrix-method	sparseMatrix-class
 rep,sparseVector-method	sparseVector-class
 rep2abI	rep2abI
 replValue-class	replValue-class
@@ -2200,8 +2207,8 @@ zsparseVector-class	sparseVector-class
 [<-,sparseMatrix,ANY,missing,sparseMatrix-method	Subassign-methods
 [<-,sparseMatrix,missing,ANY,sparseMatrix-method	Subassign-methods
 [<-,sparseMatrix,missing,missing,ANY-method	Subassign-methods
-[<-,sparseVector,index,missing,replValue-method	sparseVector-class
-[<-,sparseVector,sparseVector,missing,replValue-method	sparseVector-class
+[<-,sparseVector,index,missing,replValueSp-method	sparseVector-class
+[<-,sparseVector,sparseVector,missing,replValueSp-method	sparseVector-class
 [<-,TsparseMatrix,index,index,replValue-method	Subassign-methods
 [<-,TsparseMatrix,index,index,sparseVector-method	Subassign-methods
 [<-,TsparseMatrix,index,missing,replValue-method	Subassign-methods

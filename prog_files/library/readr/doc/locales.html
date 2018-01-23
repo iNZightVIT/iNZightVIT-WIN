@@ -10,9 +10,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="author" content="Hadley Wickham" />
 
-<meta name="date" content="2016-08-03" />
 
 <title>Locales</title>
 
@@ -69,8 +67,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 <h1 class="title toc-ignore">Locales</h1>
-<h4 class="author"><em>Hadley Wickham</em></h4>
-<h4 class="date"><em>2016-08-03</em></h4>
 
 
 
@@ -230,12 +226,16 @@ y
 <span class="co">#&gt; [1] &quot;Émigré cause célèbre déjà vu.\n&quot;</span></code></pre></div>
 <p>If you don’t know what encoding the file uses, try <code>guess_encoding()</code>. It’s not 100% perfect (as it’s fundamentally a heuristic), but should at least get you pointed in the right direction:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">guess_encoding</span>(x)
+<span class="co">#&gt; # A tibble: 3 × 2</span>
 <span class="co">#&gt;       encoding confidence</span>
+<span class="co">#&gt;          &lt;chr&gt;      &lt;dbl&gt;</span>
 <span class="co">#&gt; 1        UTF-8       1.00</span>
 <span class="co">#&gt; 2 windows-1250       0.34</span>
 <span class="co">#&gt; 3 windows-1252       0.26</span>
 <span class="kw">guess_encoding</span>(y)
+<span class="co">#&gt; # A tibble: 2 × 2</span>
 <span class="co">#&gt;     encoding confidence</span>
+<span class="co">#&gt;        &lt;chr&gt;      &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 ISO-8859-2        0.4</span>
 <span class="co">#&gt; 2 ISO-8859-1        0.3</span>
 

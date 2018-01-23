@@ -1,6 +1,6 @@
 Package: lattice
-Version: 0.20-33
-Date: 2015-07-07
+Version: 0.20-35
+Date: 2017-03-23
 Priority: recommended
 Title: Trellis Graphics for R
 Author: Deepayan Sarkar <deepayan.sarkar@r-project.org>
@@ -11,17 +11,17 @@ Description: A powerful and elegant high-level data visualization
   and is also flexible enough to handle most nonstandard requirements.
   See ?Lattice for an introduction.
 Depends: R (>= 3.0.0)
-Suggests: KernSmooth, MASS
+Suggests: KernSmooth, MASS, latticeExtra
 Imports: grid, grDevices, graphics, stats, utils
 Enhances: chron
 LazyLoad: yes
 LazyData: yes
 License: GPL (>= 2)
 URL: http://lattice.r-forge.r-project.org/
-BugReports: http://r-forge.r-project.org/projects/lattice/
+BugReports: https://github.com/deepayan/lattice/issues
 NeedsCompilation: yes
-Packaged: 2015-07-13 09:04:45 UTC; deepayan
+Packaged: 2017-03-25 11:25:40 UTC; deepayan
 Repository: CRAN
-Date/Publication: 2015-07-14 15:58:29
-Built: R 3.2.3; x86_64-w64-mingw32; 2015-12-10 13:08:15 UTC; windows
+Date/Publication: 2017-03-25 18:05:47 UTC
+Built: R 3.2.5; x86_64-w64-mingw32; 2017-04-20 06:33:02 UTC; windows
 Archs: i386, x64

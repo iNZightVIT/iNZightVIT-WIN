@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;sp&rsquo; version 1.2-1</h2>
+</div><h2>Documentation for package &lsquo;sp&rsquo; version 1.2-4</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -86,7 +86,7 @@
 <tr><td style="width: 25%;"><a href="DMS-class.html">as.double.DMS</a></td>
 <td>Class "DMS" for degree, minute, decimal second values</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">as.image.SpatialGridDataFrame</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="DMS-class.html">as.numeric.DMS</a></td>
 <td>Class "DMS" for degree, minute, decimal second values</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialLines.html">as.SpatialLines.SLDF</a></td>
@@ -121,6 +121,8 @@
 <h2><a name="C">-- C --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="Spatial-class.html">cbind.Spatial</a></td>
+<td>Class "Spatial"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialGridDataFrame-class.html">cbind.SpatialGridDataFrame</a></td>
 <td>Class "SpatialGridDataFrame"</td></tr>
 <tr><td style="width: 25%;"><a href="char2dms.html">char2dms</a></td>
@@ -160,9 +162,9 @@
 <tr><td style="width: 25%;"><a href="compassRose.html">compassRose</a></td>
 <td>Display a compass rose.</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">contour.SpatialGridDataFrame</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">contour.SpatialPixelsDataFrame</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="coordinates.html">coordinates</a></td>
 <td>set spatial coordinates to create a Spatial object, or retrieve spatial coordinates from a Spatial object</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialMultiPointsDataFrame-class.html">coordinates-method</a></td>
@@ -263,6 +265,10 @@
 <tr><td style="width: 25%;"><a href="geometry-methods.html">geometry-method</a></td>
 <td>Methods for retrieving the geometry from a composite (geometry + attributes) object</td></tr>
 <tr><td style="width: 25%;"><a href="geometry-methods.html">geometry-methods</a></td>
+<td>Methods for retrieving the geometry from a composite (geometry + attributes) object</td></tr>
+<tr><td style="width: 25%;"><a href="geometry-methods.html">geometry&lt;-</a></td>
+<td>Methods for retrieving the geometry from a composite (geometry + attributes) object</td></tr>
+<tr><td style="width: 25%;"><a href="geometry-methods.html">geometry&lt;--method</a></td>
 <td>Methods for retrieving the geometry from a composite (geometry + attributes) object</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialGrid.html">getGridIndex</a></td>
 <td>define spatial grid</td></tr>
@@ -369,15 +375,15 @@
 <tr><td style="width: 25%;"><a href="Spatial-class.html">im-class</a></td>
 <td>Class "Spatial"</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">image.SpatialGridDataFrame</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">image.SpatialPixels</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">image.SpatialPixelsDataFrame</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">image2Grid</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="image.html">imageScale</a></td>
-<td>image gridded spatial data, or convert to format for image</td></tr>
+<td>Image or contour method for gridded spatial data; convert to and from image data structure</td></tr>
 <tr><td style="width: 25%;"><a href="is.projected.html">is.projected</a></td>
 <td>Sets or retrieves projection attributes on classes extending SpatialData</td></tr>
 <tr><td style="width: 25%;"><a href="is.projected.html">is.projected-method</a></td>
@@ -387,6 +393,10 @@
 <h2><a name="L">-- L --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="gridlines.html">labels</a></td>
+<td>Create N-S and E-W grid lines over a geographic region</td></tr>
+<tr><td style="width: 25%;"><a href="gridlines.html">labels.SpatialLines</a></td>
+<td>Create N-S and E-W grid lines over a geographic region</td></tr>
 <tr><td style="width: 25%;"><a href="spplot.html">layout.north.arrow</a></td>
 <td>Plot methods for spatial data with attributes</td></tr>
 <tr><td style="width: 25%;"><a href="spplot.html">layout.scale.bar</a></td>
@@ -445,10 +455,6 @@
 <td>consistent spatial overlay for points, grids and polygons</td></tr>
 <tr><td style="width: 25%;"><a href="over.html">overDF_for_rgeos</a></td>
 <td>consistent spatial overlay for points, grids and polygons</td></tr>
-<tr><td style="width: 25%;"><a href="sp-deprecated.html">overlay</a></td>
-<td>Deprecated functions in sp</td></tr>
-<tr><td style="width: 25%;"><a href="sp-deprecated.html">overlay-methods</a></td>
-<td>Deprecated functions in sp</td></tr>
 <tr><td style="width: 25%;"><a href="Spatial-class.html">owin-class</a></td>
 <td>Class "Spatial"</td></tr>
 </table>
@@ -472,12 +478,16 @@
 <td>Class "Spatial"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialGrid-class.html">plot-method</a></td>
 <td>Class "SpatialGrid"</td></tr>
+<tr><td style="width: 25%;"><a href="SpatialGridDataFrame-class.html">plot-method</a></td>
+<td>Class "SpatialGridDataFrame"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialLines-class.html">plot-method</a></td>
 <td>a class for spatial lines</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialMultiPoints-class.html">plot-method</a></td>
 <td>Class "SpatialMultiPoints"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialPixels-class.html">plot-method</a></td>
 <td>Class "SpatialPixels"</td></tr>
+<tr><td style="width: 25%;"><a href="SpatialPixelsDataFrame-class.html">plot-method</a></td>
+<td>Class "SpatialPixelsDataFrame"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialPoints-class.html">plot-method</a></td>
 <td>Class "SpatialPoints"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialPolygons-class.html">plot-method</a></td>
@@ -561,6 +571,8 @@
 <td>a class for spatial lines with attributes</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialMultiPoints-class.html">rbind.SpatialMultiPoints</a></td>
 <td>Class "SpatialMultiPoints"</td></tr>
+<tr><td style="width: 25%;"><a href="SpatialMultiPointsDataFrame-class.html">rbind.SpatialMultiPointsDataFrame</a></td>
+<td>Class "SpatialMultiPointsDataFrame"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialPixels-class.html">rbind.SpatialPixels</a></td>
 <td>Class "SpatialPixels"</td></tr>
 <tr><td style="width: 25%;"><a href="SpatialPixelsDataFrame-class.html">rbind.SpatialPixelsDataFrame</a></td>
@@ -807,6 +819,10 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="Spatial-class.html">tail.Spatial</a></td>
 <td>Class "Spatial"</td></tr>
+<tr><td style="width: 25%;"><a href="gridlines.html">text</a></td>
+<td>Create N-S and E-W grid lines over a geographic region</td></tr>
+<tr><td style="width: 25%;"><a href="gridlines.html">text.SpatialPointsDataFrame</a></td>
+<td>Create N-S and E-W grid lines over a geographic region</td></tr>
 </table>
 
 <h2><a name="W">-- W --</a></h2>

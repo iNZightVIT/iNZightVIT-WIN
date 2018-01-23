@@ -39,7 +39,7 @@ glmFamily               Generator object for the 'glmFamily' class
 glmFamily-class         Class '"glmFamily"' - a reference class for
                         'family'
 glmer                   Fitting Generalized Linear Mixed-Effects Models
-glmer.nb                Fitting GLMM's for Negative Binomial
+glmer.nb                Fitting Negative Binomial GLMMs
 glmerLaplaceHandle      Handle for 'glmerLaplace'
 golden-class            Class '"golden"' and Generator for Golden
                         Search Optimizer Class

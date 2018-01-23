@@ -1,4 +1,4 @@
-#!/usr/bin/r -t
+#!/usr/bin/env r
 #       hey emacs, please make this use  -*- tab-width: 4 -*-
 #
 # Copyright (C) 2009 - 2014  Dirk Eddelbuettel and Romain Francois
@@ -43,14 +43,44 @@ if (.runThisTest) {
         e <- new.env( )
         e$a <- 1:10
         e$b <- "foo"
-
-        checkEquals( runit_get( e, "a" ), e$a, msg = "Environment::get()" )
-        checkEquals( runit_get( e, "foobar" ), NULL, msg = "Environment::get()" )
+        
+        # Access with string
+        checkEquals( runit_get( e, "a" ), e$a, msg = "Environment::get(string)" )
+        checkEquals( runit_get( e, "foobar" ), NULL, msg = "Environment::get(string)" )
         checkEquals( runit_get( asNamespace("Rcpp"), "CxxFlags"), Rcpp:::CxxFlags,
-                    msg = "Environment(namespace)::get() " )
+                     msg = "Environment(namespace)::get(string) " )
+        
+        # Access with Symbol constructed on call from string
+        checkEquals( runit_get_symbol( e, "a" ), e$a, msg = "Environment::get(Symbol)" )
+        checkEquals( runit_get_symbol( e, "foobar" ), NULL, msg = "Environment::get(Symbol)" )
+        checkEquals( runit_get_symbol( asNamespace("Rcpp"), "CxxFlags"), Rcpp:::CxxFlags,
+                     msg = "Environment(namespace)::get(Symbol) " )
+        
+    }    
 
-    }
-
+    test.environment.find <- function(){
+        e <- new.env( )
+        e$a <- 1:10
+        e$b <- "foo"
+        bar <- "me"
+        
+        # Access with string
+        checkEquals( runit_find( e, "a" ), e$a, msg = "Environment::find(string)" )
+        checkException( runit_find( e, "foobar" ), NULL, msg = "Environment::find(string) not found" )
+        checkEquals( runit_find( e, "bar"), bar, msg = "Environment::find(string) inheritance" )
+        checkEquals( runit_find( asNamespace("Rcpp"), "CxxFlags"), Rcpp:::CxxFlags,
+                     msg = "Environment(namespace)::find(string)" )
+        
+        # Access with Symbol constructed on call from string
+        checkEquals( runit_find_symbol( e, "a" ), e$a, msg = "Environment::find(Symbol)" )
+        checkException( runit_find_symbol( e, "foobar" ), NULL, msg = "Environment::find(Symbol) not found" )
+        checkEquals( runit_find_symbol( e, "bar"), bar, msg = "Environment::find(Symbol) inheritance" )
+        checkEquals( runit_find_symbol( asNamespace("Rcpp"), "CxxFlags"), Rcpp:::CxxFlags,
+                     msg = "Environment(namespace)::find(Symbol)" )
+        
+    }    
+    
+        
     test.environment.exists <- function(){
         e <- new.env( )
         e$a <- 1:10
@@ -264,9 +294,9 @@ if (.runThisTest) {
         checkEquals( runit_Rcpp(), asNamespace("Rcpp") , msg = "cached Rcpp namespace" )
     }
 
-    test.environment.child <- function(){
-        checkEquals( parent.env(runit_child()), globalenv(), msg = "child environment" )
-    }
+    #test.environment.child <- function(){
+    #    checkEquals( parent.env(runit_child()), globalenv(), msg = "child environment" )
+    #}
 
     test.environment.new_env <- function() {
         env <- new.env()

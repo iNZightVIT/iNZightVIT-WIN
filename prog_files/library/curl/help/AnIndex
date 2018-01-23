@@ -1,5 +1,6 @@
 curl	curl
 curl_download	curl_download
+curl_echo	curl_echo
 curl_escape	curl_escape
 curl_fetch_disk	curl_fetch
 curl_fetch_memory	curl_fetch
@@ -9,7 +10,8 @@ curl_options	curl_options
 curl_symbols	curl_options
 curl_unescape	curl_escape
 curl_version	curl_options
-form_file	form_file
+form_data	multipart
+form_file	multipart
 handle	handle
 handle_cookies	handle_cookies
 handle_data	handle
@@ -22,6 +24,7 @@ ie_get_proxy_for_url	ie_proxy
 ie_proxy	ie_proxy
 ie_proxy_info	ie_proxy
 multi	multi
+multipart	multipart
 multi_add	multi
 multi_cancel	multi
 multi_list	multi

@@ -139,6 +139,7 @@ plot.merMod	plot.merMod
 predict.merMod	predict.merMod
 print.merMod	merMod-class
 print.summary.merMod	merMod-class
+print.VarCorr.merMod	VarCorr
 profile-methods	profile-methods
 profile.merMod	profile-methods
 pvalues	pvalues
@@ -187,3 +188,4 @@ VerbAgg	VerbAgg
 Vv_to_Cv	vcconv
 weights.merMod	merMod-class
 xyplot.thpr	plots.thpr
+||	expandDoubleVerts

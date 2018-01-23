@@ -1,18 +1,85 @@
                    stringi package NEWS and CHANGELOG
 ===============================================================================
 
-## Known bugs in ICU
+## 1.1.5 (2017-04-07) **CRAN**
 
-* [REGEX] #147: regex look-behind assertions may fail to find a multibyte
-Unicode search pattern [scheduled for ICU4C 56.1, see
-http://bugs.icu-project.org/trac/ticket/11554]
+* [GENERAL] `stringi` now requires ICU4C >= 52.
+
+* [BUGFIX] Fixed errors pointed out by `clang-UBSAN` in `stri_brkiter.h`.
+
+-------------------------------------------------------------------------------
+
+## 1.1.4 (2017-04-06) **devel**
+
+* [GENERAL] `stringi` now requires R >= 2.14.
+
+* [BUILD TIME] #238, #220: Try "standard" ICU4C build flags if a call
+to `pkg-config` fails.
+
+* [BUILD TIME] #258: Use `CXX11` instead of `CXX1X` on R >= 3.4.
+
+* [BUILD TIME, BUGFIX] #254: `dir.exists()` is R >= 3.2.
+
+-------------------------------------------------------------------------------
+
+## 1.1.3 (2017-03-21) **CRAN**
+
+* [REMOVE DEPRECATED] `stri_install_check()` and `stri_install_icudt()`
+marked as deprecated in `stringi` 0.5-5 are no longer being exported.
+
+* [BUGFIX] #227: Incorrect behavior of `stri_sub()` and `stri_sub<-()`
+if the empty string was the result.
+
+* [BUILD TIME] #231: The `./configure` (*NIX only) script now reads the
+following environment variables: `STRINGI_CFLAGS`, `STRINGI_CPPFLAGS`,
+`STRINGI_CXXFLAGS`, `STRINGI_LDFLAGS`, `STRINGI_LIBS`, `STRINGI_DISABLE_CXX11`,
+`STRINGI_DISABLE_ICU_BUNDLE`, `STRINGI_DISABLE_PKG_CONFIG`, `PKG_CONFIG`,
+see `INSTALL` for more information.
+
+* [BUILD TIME] #253: call to `R_useDynamicSymbols` added.
+
+* [BUILD TIME] #230: icudt is now being downloaded by
+`./configure` (*NIX only) *before* building.
+
+* [BUILD TIME] #242: `_COUNT/_LIMIT` enum constants have been deprecated
+as of ICU 58.2, stringi code has been upgraded accordingly.
+
+-------------------------------------------------------------------------------
+
+## 1.1.2 (2016-09-30) **CRAN**
+
+* [BUGFIX] round(), snprintf() is not C++98
+
+-------------------------------------------------------------------------------
+
+## 1.1.1 (2016-05-25) **CRAN**
+
+* [BUGFIX] #214: allow a regex pattern like `.*`  to match an empty string.
+
+* [BUGFIX] #210: `stri_replace_all_fixed(c("1", "NULL"), "NULL", NA)`
+now results in `c("1", NA)`.
+
+* [NEW FEATURE] #199: `stri_sub<-` now allows for ignoring `NA` locations
+(a new `omit_na` argument added).
+
+* [NEW FEATURE] #207: `stri_sub<-` now allows for substring insertions
+(via `length=0`).
+
+* [NEW FUNCTION] #124: `stri_subset<-` functions added.
+
+* [NEW FEATURE] #216: `stri_detect`, `stri_subset`, `stri_subset<-` gained
+a `negate` argument.
+
+* [NEW FUNCTION] #175: `stri_join_list` concatenates all strings
+in a list of character vectors. Useful with, e.g., `stri_extract_all_regex`,
+`stri_extract_all_words` etc.
 
 -------------------------------------------------------------------------------
 
 ## 1.0-1 (2015-10-22) **CRAN**
 
-* [GENERAL] #88: C++ API is now available for use in, e.g., Rcpp packages, see
-https://github.com/Rexamine/ExampleRcppStringi for an exemple.
+* [GENERAL] #88: C API is now available for use in, e.g., Rcpp packages, see
+https://github.com/gagolews/ExampleRcppStringi for an example.
 
 * [BUGFIX] #183: Floating point exception raised in `stri_sub()` and
 `stri_sub<-()` when `to` or `length` was a zero-length numeric vector.
@@ -46,8 +113,8 @@ C++ compiler if a C++11 one is not properly configured.
 `AC_SUBST` and `AC_CONFIG_FILES` so that the build process is now
 more similar across different platforms.
 
-* [NEW FEATURE] `stri_info()` now also gives information on which ICU4C is
-used (system or bundle).
+* [NEW FEATURE] `stri_info()` now also gives information about which version
+of ICU4C is in use (system or bundle).
 
 -------------------------------------------------------------------------------
 

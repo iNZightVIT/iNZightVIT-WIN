@@ -1,7 +1,9 @@
+s0x-package	s0x
 airpass.df	airpass.df
 apples.df	apples.df
 arousal.df	arousal.df
-autocor.plot	autocor.plot
+autocor.plot	autocorPlot
+autocorPlot	autocorPlot
 beer.df	beer.df
 body.df	body.df
 books.df	books.df
@@ -25,8 +27,6 @@ eovcheck	eovcheck
 eovcheck.formula	eovcheck
 eovcheck.lm	eovcheck
 estimateContrasts	estimateContrasts
-estimateContrasts1	estimateContrasts
-estimateContrasts2	estimateContrasts
 fire.df	fire.df
 freq1way	freq1way
 fruitfly.df	fruitfly.df
@@ -43,6 +43,8 @@ levene.test	levene.test
 mazda.df	mazda.df
 mening.df	mening.df
 mergers.df	mergers.df
+modcheck	modcheck
+modcheck.lm	modcheck
 mozart.df	mozart.df
 multipleComp	multipleComp
 nail.df	nail.df
@@ -63,6 +65,7 @@ rain.df	rain.df
 residPlot	residPlot
 rowdistr	rowdistr
 rr	rr
+s0x	s0x
 seeds.df	seeds.df
 sheep.df	sheep.df
 skewness	skewness

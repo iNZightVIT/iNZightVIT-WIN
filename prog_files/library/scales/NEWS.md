@@ -1,3 +1,12 @@
+# scales 0.4.1
+
+* `extended_breaks()` no longer fails on pathological inputs
+
+* New `hms_trans()` for transforming hms time vectors.
+
+* `train_discrete()` gets a new `na.rm` argument which controls whether
+  `NA`s are preserved or dropped.
+
 # scales 0.4.0
 
 * Switched from `NEWS` to `NEWS.md`

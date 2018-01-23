@@ -46,11 +46,17 @@ SEXP SP_PREFIX(Polygon_c)(const SEXP coords, const SEXP n, const SEXP ihole) {
         INTEGER_POINTER(dim1)[1] = 2;
         setAttrib(ccopy, R_DimSymbol, dim1);
     } else {
-    	PROTECT(ccopy = duplicate(coords)); pc++;
+		if (NAMED(coords)) {
+			PROTECT(ccopy = duplicate(coords)); 
+			pc++;
+		} else 
+			ccopy = coords; 
 	}
-	/* from here one, ccopy is duplicate of coords that is closed */
 
-    SP_PREFIX(spRFindCG_c)(n, ccopy, &xc, &yc, &area);
+	/* from here one, ccopy is closed, and can be modified */
+
+    /* SP_PREFIX(spRFindCG_c)(n, ccopy, &xc, &yc, &area); */
+    SP_PREFIX(spRFindCG_c)(getAttrib(ccopy, R_DimSymbol), ccopy, &xc, &yc, &area);
     if (fabs(area) < DOUBLE_EPS) {
         if (!R_FINITE(xc) || !R_FINITE(yc)) {
             if (nn == 1) {
@@ -111,7 +117,6 @@ SEXP SP_PREFIX(Polygon_c)(const SEXP coords, const SEXP n, const SEXP ihole) {
            NUMERIC_POINTER(ccopy)[ii+nn] = y[i];
        }
     }
-    
 
     SET_SLOT(SPans, install("coords"), ccopy);
 
@@ -180,8 +185,18 @@ SEXP SP_PREFIX(Polygons_c)(const SEXP pls, const SEXP ID) {
     int *po, *holes;
     SEXP valid;
 
-    PROTECT(pls1 = duplicate(pls)); pc++;
-    PROTECT(ID1 = duplicate(ID)); pc++;
+	if (NAMED(pls)) {
+		PROTECT(pls1 = duplicate(pls)); 
+		pc++;
+	} else 
+		pls1 = pls; 
+    // PROTECT(pls1 = NAMED(pls) ? duplicate(pls) : pls); pc++;
+	if (NAMED(ID)) {
+		PROTECT(ID1 = duplicate(ID)); 
+		pc++;
+	} else 
+		ID1 = ID; 
+    // PROTECT(ID1 = NAMED(ID) ? duplicate(ID) : ID); pc++;
 
     nps = length(pls1);
     fuzz = R_pow(DOUBLE_EPS, (2.0/3.0));
@@ -307,14 +322,17 @@ SEXP SP_PREFIX(SpatialPolygons_c)(const SEXP pls, const SEXP pO,
     int pc=0;
 
     PROTECT(ans = NEW_OBJECT(MAKE_CLASS("SpatialPolygons"))); pc++;
-    SET_SLOT(ans, install("polygons"), duplicate(pls));
-    SET_SLOT(ans, install("proj4string"), duplicate(p4s));
+    // SET_SLOT(ans, install("polygons"), NAMED(pls) ? duplicate(pls) : pls);
+    SET_SLOT(ans, install("polygons"), pls);
+    // SET_SLOT(ans, install("proj4string"), NAMED(p4s) ? duplicate(p4s) : p4s);
+    SET_SLOT(ans, install("proj4string"), p4s);
 
     if (pO == R_NilValue) {
         SET_SLOT(ans, install("plotOrder"),
 			SP_PREFIX(SpatialPolygons_plotOrder_c)(pls));
     } else
-        SET_SLOT(ans, install("plotOrder"), duplicate(pO));
+        // SET_SLOT(ans, install("plotOrder"), NAMED(pO) ? duplicate(pO) : pO);
+        SET_SLOT(ans, install("plotOrder"), pO);
 
     PROTECT(bbox = SP_PREFIX(bboxCalcR_c(pls))); pc++;
     SET_SLOT(ans, install("bbox"), bbox);
@@ -331,7 +349,12 @@ SEXP SP_PREFIX(SpatialPolygons_plotOrder_c)(const SEXP pls) {
     int *po;
     double *areas;
 
-    PROTECT(pls1 = duplicate(pls)); pc++;
+    // PROTECT(pls1 = NAMED(pls) ? duplicate(pls) : pls); pc++;
+	if (NAMED(pls)) {
+		PROTECT(pls1 = duplicate(pls));
+		pc++;
+	} else
+		pls1 = pls;
 
     ng = length(pls1);
     areas = (double *) R_alloc((size_t) ng, sizeof(double));
@@ -392,7 +415,12 @@ SEXP SP_PREFIX(SpatialPolygons_getIDs_c)(const SEXP obj) {
     int i, n;
     SEXP pls, IDs, obj1;
 
-    PROTECT(obj1 = duplicate(obj)); pc++;
+    // PROTECT(obj1 = NAMED(obj) ? duplicate(obj) : obj); pc++;
+	if (NAMED(obj)) {
+		PROTECT(obj1 = duplicate(obj));
+		pc++;
+	} else
+		obj1 = obj;
 
     PROTECT(pls = GET_SLOT(obj, install("polygons"))); pc++;
     n = length(pls);
@@ -413,7 +441,12 @@ SEXP SP_PREFIX(bboxCalcR_c)(const SEXP pls) {
     int i, j, k, n, npls, npl, pc=0;
     double x, y;
 
-    PROTECT(pls1 = duplicate(pls)); pc++;
+    // PROTECT(pls1 = NAMED(pls) ? duplicate(pls) : pls); pc++;
+	if (NAMED(pls)) {
+		PROTECT(pls1 = duplicate(pls));
+		pc++;
+	} else
+		pls1 = pls;
 
     npls = length(pls1);
 	if (npls == 0) { /* EJP: this makes a zero-length object at least pass further sanity checks */
@@ -525,7 +558,12 @@ SEXP SP_PREFIX(comment2comm)(const SEXP obj) {
     char s[15], *buf;
     int *c, *nss, *co, *coo;
 
-    PROTECT(obj1 = duplicate(obj)); pc++;
+    // PROTECT(obj1 = NAMED(obj) ? duplicate(obj) : obj); pc++;
+	if (NAMED(obj)) {
+		PROTECT(obj1 = duplicate(obj));
+		pc++;
+	} else
+		obj1 = obj;
 
     PROTECT(comment = getAttrib(obj1, install("comment"))); pc++;
     if (comment == R_NilValue) {

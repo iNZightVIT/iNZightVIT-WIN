@@ -4,6 +4,42 @@
 \title{lme4 News}
 \encoding{UTF-8}
 
+\section{CHANGES IN VERSION 1.1-12 (2016-04-15)}{
+  This release is primarily a bump for compatibility with the new
+  Windows toolchain. Some small documentation and test changes.
+  \subsection{USER-VISIBLE CHANGES}{
+    \itemize{
+      \item reduced default print precision of fixed-effect correlation
+      matrix in \code{summary.merMod} (related to GH #300)
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fixed bug \emph{de novo} Gamma-response simulations
+    }
+  }
+}
+\section{CHANGES IN VERSION 1.1-11 (2016-02-11)}{
+  \subsection{USER-VISIBLE CHANGES}{
+    \itemize{
+      \item change \code{VarCorr} method signature (for compatibility
+      with upstream \code{nlme} changes)
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item several \code{glmer.nb} bugs fixed (generally not
+      changing results, but causing warnings and errors e.g.
+      during bootstrapping)
+      \item fixes to some \code{lmList} bugs (Github #320)
+      \item minor documentation, vignette updates
+      \item minor fix to \code{plot.merMod} with \code{id} specified
+      \item \code{bootMer} now handles separate offset term properly
+      (Github #250)
+    }
+  }
+}
+
 \section{CHANGES IN VERSION 1.1-10 (2015-10-05)}{
   This release is primarily a version bump for the release of
   the paper in J. Stat. Software.

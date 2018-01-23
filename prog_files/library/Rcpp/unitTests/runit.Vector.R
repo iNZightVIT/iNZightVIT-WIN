@@ -1,4 +1,4 @@
-#!/usr/bin/r -t
+#!/usr/bin/env r
 #       hey emacs, please make this use  -*- tab-width: 4 -*-
 #
 # Copyright (C) 2010 - 2015  Dirk Eddelbuettel and Romain Francois
@@ -672,6 +672,32 @@ if (.runThisTest) {
         checkIdentical( sort_logical(lgcl), sort(lgcl, na.last=TRUE) )
     }
     
+    test.sort_desc <- function() {
+        num <- setNames(c(1, -1, 4, NA, 5, NaN), letters[1:5])
+        checkIdentical(
+            sort_numeric_desc(num), 
+            sort(num, decreasing = TRUE, na.last = FALSE)
+        )
+        
+        int <- as.integer(num)
+        checkIdentical(
+            sort_integer_desc(int), 
+            sort(int, decreasing = TRUE, na.last = FALSE) 
+        )
+        
+        char <- setNames(sample(letters, 5), LETTERS[1:5])
+        checkIdentical(
+            sort_character_desc(char), 
+            sort(char, decreasing = TRUE, na.last = FALSE) 
+        )
+        
+        lgcl <- as.logical(int)
+        checkIdentical(
+            sort_logical_desc(lgcl), 
+            sort(lgcl, decreasing = TRUE, na.last = FALSE) 
+        )
+    }
+    
     test.List.assign.SEXP <- function() {
         l <- list(1, 2, 3)
         other <- list_sexp_assign(l)
@@ -719,6 +745,15 @@ if (.runThisTest) {
         v <- c("a", "b", "c", "d")
         s <- vec_print_character(v)
         checkEquals(s, '"a" "b" "c" "d"')
+    }
+
+    test.IntegerVector.subset.under.gc <- function() {
+        x <- 1:1E6
+        y <- 1:1E6
+        gctorture(TRUE)
+        z <- vec_subset(x, y)
+        gctorture(FALSE)
+        checkEquals(x[y], z)
     }
 }
 

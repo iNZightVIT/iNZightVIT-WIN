@@ -71,6 +71,7 @@ flipHorizontal          rearrange data in SpatialPointsDataFrame or
                         (levelplot/xyplot wrapper)
 geometry-methods        Methods for retrieving the geometry from a
                         composite (geometry + attributes) object
+getSpPPolygonsIDSlots   Deprecated functions in sp
 gridIndex2nb            create neighbourhood (nb) object from grid
                         geometry
 gridded-methods         specify spatial data as being gridded, or find
@@ -78,8 +79,8 @@ gridded-methods         specify spatial data as being gridded, or find
 gridlines               Create N-S and E-W grid lines over a geographic
                         region
 image.SpatialGridDataFrame
-                        image gridded spatial data, or convert to
-                        format for image
+                        Image or contour method for gridded spatial
+                        data; convert to and from image data structure
 is.projected            Sets or retrieves projection attributes on
                         classes extending SpatialData
 loadMeuse               deprecated function to load the Meuse data set
@@ -94,7 +95,6 @@ meuse.grid_ll           Prediction Grid for Meuse Data Set,
 meuse.riv               River Meuse outline
 over-methods            consistent spatial overlay for points, grids
                         and polygons
-overlay                 Deprecated functions in sp
 panel.spplot            panel and panel utility functions for spplot
 point.in.polygon        do point(s) fall in a given polygon?
 polygons                sets spatial coordinates to create spatial

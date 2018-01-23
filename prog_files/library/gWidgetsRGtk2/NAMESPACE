@@ -1,4 +1,7 @@
 import(methods)
+import(utils)
+import(grDevices)
+import(graphics)
 import(RGtk2)
 import(gWidgets)
 import(cairoDevice)

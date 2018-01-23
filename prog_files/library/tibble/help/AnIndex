@@ -3,6 +3,7 @@ add_column	add_column
 add_row	add_row
 all.equal.tbl_df	all_equal
 all_equal	all_equal
+as.tibble	as_tibble
 as_data_frame	as_tibble
 as_tibble	as_tibble
 as_tibble.data.frame	as_tibble
@@ -15,9 +16,11 @@ as_tibble.tbl_df	as_tibble
 column_to_rownames	rownames
 data_frame	tibble
 data_frame_	tibble
+deframe	enframe
 enframe	enframe
 formatting	formatting
 frame_data	tribble
+frame_matrix	frame_matrix
 glimpse	glimpse
 has_name	has_name
 has_rownames	rownames

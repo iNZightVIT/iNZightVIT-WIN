@@ -1,5 +1,6 @@
 car-package	car-package
 .carEnv	car-internal
+adaptiveKernel	densityPlot
 Adler	Adler
 AMSsurvey	AMSsurvey
 Angell	Angell
@@ -20,6 +21,7 @@ Anova.polr	Anova
 Anova.rlm	Anova
 Anova.svyglm	Anova
 Anscombe	Anscombe
+as.data.frame.univaov	Anova
 av.plot	car-deprecated
 av.plots	car-deprecated
 avp	avPlots
@@ -31,6 +33,7 @@ basicPower	bcPower
 basicPowerAxis	TransformationAxes
 Baumann	Baumann
 bc	car-deprecated
+bcnPower	bcPower
 bcPower	bcPower
 bcPowerAxis	TransformationAxes
 Bfox	Bfox
@@ -49,14 +52,18 @@ box.cox.powers	car-deprecated
 box.cox.var	car-deprecated
 box.tidwell	car-deprecated
 boxCox	boxCox
+boxCox.bcnPowerTransform	boxCox
 boxCox.default	boxCox
 boxCox.formula	boxCox
 boxCox.lm	boxCox
-boxCox.skewpowerTransform	boxCox
+boxCox2d	boxCox
 boxCoxVariable	boxCoxVariable
 Boxplot	Boxplot
+Boxplot.data.frame	Boxplot
 Boxplot.default	Boxplot
 Boxplot.formula	Boxplot
+Boxplot.list	Boxplot
+Boxplot.matrix	Boxplot
 boxTidwell	boxTidwell
 boxTidwell.default	boxTidwell
 boxTidwell.formula	boxTidwell
@@ -81,7 +88,6 @@ confidenceEllipse.default	Ellipses
 confidenceEllipse.glm	Ellipses
 confidenceEllipse.lm	Ellipses
 confint.boot	hist.boot
-contour.skewpowerTransform	skewPower
 contr.Helmert	Contrasts
 contr.Sum	Contrasts
 contr.Treatment	Contrasts
@@ -126,9 +132,6 @@ durbinWatsonTest.lm	durbinWatsonTest
 dwt	durbinWatsonTest
 ellipse	Ellipses
 Ericksen	Ericksen
-estimateTransform	powerTransform
-estimateTransform.default	powerTransform
-estimateTransform.skewPower	powerTransform
 Florida	Florida
 Freedman	Freedman
 Friendly	Friendly
@@ -229,6 +232,7 @@ powerTransform	powerTransform
 powerTransform.default	powerTransform
 powerTransform.formula	powerTransform
 powerTransform.lm	powerTransform
+powerTransform.lmerMod	powerTransform
 Prestige	Prestige
 print.Anova.mlm	Anova
 print.boxTidwell	boxTidwell
@@ -237,6 +241,7 @@ print.linearHypothesis.mlm	linearHypothesis
 print.outlierTest	outlierTest
 print.spreadLevelPlot	spreadLevelPlot
 print.summary.Anova.mlm	Anova
+print.univaov	Anova
 printHypothesis	linearHypothesis
 probabilityAxis	TransformationAxes
 qq.plot	car-deprecated
@@ -280,7 +285,6 @@ sigmaHat	sigmaHat
 sigmaHat.default	sigmaHat
 sigmaHat.glm	sigmaHat
 sigmaHat.lm	sigmaHat
-skewPower	skewPower
 SLID	SLID
 slp	spreadLevelPlot
 Soils	Soils
@@ -304,11 +308,14 @@ symbox	symbox
 symbox.default	symbox
 symbox.formula	symbox
 testTransform	testTransform
+testTransform.bcnPowerTransformlmer	testTransform
+testTransform.lmerModpowerTransform	testTransform
 testTransform.powerTransform	testTransform
 Transact	Transact
 tukeyNonaddTest	residualPlots
 UN	UN
 USPop	USPop
+vcov.boot	hist.boot
 vif	vif
 vif.default	vif
 Vocab	Vocab

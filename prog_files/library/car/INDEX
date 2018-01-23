@@ -62,9 +62,11 @@ Wong                    Post-Coma Recovery of IQ
 Wool                    Wool data
 avPlots                 Added-Variable Plots
 basicPowerAxis          Axes for Transformed Variables
-bcPower                 Box-Cox, Yeo-Johnson and Basic Power
-                        Transformations
-boxCox                  Box-Cox Transformations for Linear Models
+bcPower                 Box-Cox, Box-Cox with Negatives Allowed,
+                        Yeo-Johnson and Basic Power Transformations
+boxCox                  Graph the profile log-likelihood for Box-Cox
+                        transformations in 1D or in 2D with the
+                        bcnPower family.
 boxCoxVariable          Constructed Variable for Box-Cox Transformation
 boxTidwell              Box-Tidwell Transformations
 car-deprecated          Deprecated Functions in car Package
@@ -86,8 +88,7 @@ ellipse                 Ellipses, Data Ellipses, and Confidence
                         Ellipses
 hccm                    Heteroscedasticity-Corrected Covariance
                         Matrices
-hist.boot               Generic functions to provide support for 'boot'
-                        objects
+hist.boot               Methods Functions to Support 'boot' Objects
 infIndexPlot            Influence Index Plot
 influencePlot           Regression Influence Plot
 invResPlot              Inverse Response Plots to Transform the
@@ -120,7 +121,6 @@ showLabels              Utility Functions to Identify and Mark Extreme
                         Points in a 2D Plot.
 sigmaHat                Return the scale estimate for a regression
                         model
-skewPower               Skew Power Transformations
 some                    Sample a Few Elements of an Object
 spreadLevelPlot         Spread-Level Plots
 subsets                 Plot Output from regsubsets Function in leaps

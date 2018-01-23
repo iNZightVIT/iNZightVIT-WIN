@@ -7,6 +7,20 @@
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/bh/issues/#1}{##1}}
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/bh/pull/#1}{##1}}
 
+\section{Changes in version 1.65.0-1 (2017-08-24)}{
+  \itemize{
+    \item Upgraded to \boost 1.64 and then 1.65 installed directly from
+    upstream source with several minor tweaks (as before)
+    \item Fourth tweak corrects a misplaced curly brace (see the
+    Boost ublas GitHub repo and its issue #40)
+    \item Added Boost \boostPkg{align}) (as requested in \ghit{32})
+    \item Added Boost \boostPkg{sort}) (as requested in \ghit{35})
+    \item Added Boost \boostPkg{multiprecision} by fixing a script typo
+    (as requested in \ghit{42})
+    \item Updated Travis CI support via newer \code{run.sh}
+  }
+}
+
 \section{Changes in version 1.62.0-1 (2016-11-15)}{
   \itemize{
     \item Upgraded to \boost 1.62 installed directly from upstream source

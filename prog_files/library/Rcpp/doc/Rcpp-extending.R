@@ -11,11 +11,14 @@ require(Rcpp)
 
 
 ###################################################
-### code chunk number 3: Rcpp-extending.Rnw:92-108
+### code chunk number 3: Rcpp-extending.Rnw:92-112
 ###################################################
 code <- '
-// we get a list from R
-List input(input_) ;
+#include <Rcpp.h>
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List fx(List input){ // we get a list from R
 
 // pull std::vector<double> from R list
 // this is achieved through an implicit call to Rcpp::as
@@ -26,30 +29,28 @@ std::vector<double> x = input["x"] ;
 return List::create(
     _["front"] = x.front(),
     _["back"]  = x.back()
-    ) ;
+    );
+}
 '
 writeLines( code, "code.cpp" )
 
 
 ###################################################
-### code chunk number 4: Rcpp-extending.Rnw:110-111
+### code chunk number 4: Rcpp-extending.Rnw:114-115
 ###################################################
 external_highlight( "code.cpp", type = "LATEX", doc = FALSE )
 
 
 ###################################################
-### code chunk number 5: Rcpp-extending.Rnw:114-120
+### code chunk number 5: Rcpp-extending.Rnw:118-121
 ###################################################
-fx <- cxxfunction( signature( input_ = "list"),
-	paste( readLines( "code.cpp" ), collapse = "\n" ),
-	plugin = "Rcpp"
-	)
+Rcpp::sourceCpp(file= "code.cpp")
 input <- list( x = seq(1, 10, by = 0.5) )
 fx( input )
 
 
 ###################################################
-### code chunk number 13: Rcpp-extending.Rnw:326-327
+### code chunk number 15: Rcpp-extending.Rnw:357-358
 ###################################################
 unlink( "code.cpp" )
 

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Kirill Müller, Hadley Wickham" />
 
-<meta name="date" content="2016-08-26" />
+<meta name="date" content="2017-03-31" />
 
 <title>Formatting of column data</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Formatting of column data</h1>
 <h4 class="author"><em>Kirill Müller, Hadley Wickham</em></h4>
-<h4 class="date"><em>2016-08-26</em></h4>
+<h4 class="date"><em>2017-03-31</em></h4>
 
 
 
@@ -127,26 +127,26 @@ type_sum.foo &lt;-<span class="st"> </span>function(x, ...) {
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.POSIXlt</span>(<span class="kw">Sys.time</span>() +<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">60</span>, <span class="dv">3600</span>)) 
 <span class="kw">str</span>(<span class="kw">unclass</span>(x))
 <span class="co">#&gt; List of 11</span>
-<span class="co">#&gt;  $ sec   : num [1:3] 39.8 39.8 39.8</span>
-<span class="co">#&gt;  $ min   : int [1:3] 42 43 42</span>
-<span class="co">#&gt;  $ hour  : int [1:3] 13 13 14</span>
-<span class="co">#&gt;  $ mday  : int [1:3] 26 26 26</span>
-<span class="co">#&gt;  $ mon   : int [1:3] 7 7 7</span>
-<span class="co">#&gt;  $ year  : int [1:3] 116 116 116</span>
+<span class="co">#&gt;  $ sec   : num [1:3] 51.8 51.8 51.8</span>
+<span class="co">#&gt;  $ min   : int [1:3] 45 46 45</span>
+<span class="co">#&gt;  $ hour  : int [1:3] 16 16 17</span>
+<span class="co">#&gt;  $ mday  : int [1:3] 31 31 31</span>
+<span class="co">#&gt;  $ mon   : int [1:3] 2 2 2</span>
+<span class="co">#&gt;  $ year  : int [1:3] 117 117 117</span>
 <span class="co">#&gt;  $ wday  : int [1:3] 5 5 5</span>
-<span class="co">#&gt;  $ yday  : int [1:3] 238 238 238</span>
+<span class="co">#&gt;  $ yday  : int [1:3] 89 89 89</span>
 <span class="co">#&gt;  $ isdst : int [1:3] 1 1 1</span>
 <span class="co">#&gt;  $ zone  : chr [1:3] &quot;CEST&quot; &quot;CEST&quot; &quot;CEST&quot;</span>
 <span class="co">#&gt;  $ gmtoff: int [1:3] 7200 7200 7200</span>
 <span class="co">#&gt;  - attr(*, &quot;tzone&quot;)= chr [1:3] &quot;&quot; &quot;CET&quot; &quot;CEST&quot;</span></code></pre></div>
 <p>But it pretends to be a vector with 3 elements:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x
-<span class="co">#&gt; [1] &quot;2016-08-26 13:42:39 CEST&quot; &quot;2016-08-26 13:43:39 CEST&quot;</span>
-<span class="co">#&gt; [3] &quot;2016-08-26 14:42:39 CEST&quot;</span>
+<span class="co">#&gt; [1] &quot;2017-03-31 16:45:51 CEST&quot; &quot;2017-03-31 16:46:51 CEST&quot;</span>
+<span class="co">#&gt; [3] &quot;2017-03-31 17:45:51 CEST&quot;</span>
 <span class="kw">length</span>(x)
 <span class="co">#&gt; [1] 3</span>
 <span class="kw">str</span>(x)
-<span class="co">#&gt;  POSIXlt[1:3], format: &quot;2016-08-26 13:42:39&quot; &quot;2016-08-26 13:43:39&quot; ...</span></code></pre></div>
+<span class="co">#&gt;  POSIXlt[1:3], format: &quot;2017-03-31 16:45:51&quot; &quot;2017-03-31 16:46:51&quot; ...</span></code></pre></div>
 <p>So we need to define a method that returns a character vector the same length as <code>x</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#' @export</span>
 obj_sum.POSIXlt &lt;-<span class="st"> </span>function(x) {
