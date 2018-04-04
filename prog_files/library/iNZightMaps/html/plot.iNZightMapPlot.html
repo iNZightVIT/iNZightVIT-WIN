@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot an iNZightMapPlot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot.iNZightMapPlot {iNZightMaps}"><tr><td>plot.iNZightMapPlot {iNZightMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot an iNZightMapPlot</h2>
+
+<h3>Description</h3>
+
+<p>Plot an iNZightMapPlot
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'iNZightMapPlot'
+plot(obj, colour.var = NULL, size.var = NULL,
+  alpha.var = NULL, fill.const = NULL, colour.const = NULL,
+  size.const = 1, alpha.const = 1, facet = NULL, multiple.vars = FALSE,
+  main = NULL, xlab = "Longitude", ylab = "Latitude",
+  axis.labels = TRUE, datum.lines = TRUE, darkTheme = NULL,
+  projection = "Default", palette = NULL, label.title = "",
+  aggregate = FALSE, current.seq = NULL, sparkline.type = "Absolute",
+  scale.limits = NULL, ci.plot = FALSE, regions.to.plot = NULL,
+  keep.other.regions = TRUE, label.var = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>iNZightMapPlot object</p>
+</td></tr>
+<tr valign="top"><td><code>colour.var</code></td>
+<td>
+<p>Variable to colour the regions or points by</p>
+</td></tr>
+<tr valign="top"><td><code>size.var</code></td>
+<td>
+<p>If plotting a map of points, a variable to scale the points by</p>
+</td></tr>
+<tr valign="top"><td><code>size.const</code></td>
+<td>
+<p>Size of plotted points (ignored if plotting regions or <code>size.var</code> is also passed)</p>
+</td></tr>
+<tr valign="top"><td><code>alpha.const</code></td>
+<td>
+<p>Alpha value of the underlying region map when plotting points</p>
+</td></tr>
+<tr valign="top"><td><code>multiple.vars</code></td>
+<td>
+<p>Are multiple variables being plotted?</p>
+</td></tr>
+<tr valign="top"><td><code>main</code></td>
+<td>
+<p>Main title for the plot</p>
+</td></tr>
+<tr valign="top"><td><code>xlab</code></td>
+<td>
+<p>x-axis label</p>
+</td></tr>
+<tr valign="top"><td><code>ylab</code></td>
+<td>
+<p>y-axis label</p>
+</td></tr>
+<tr valign="top"><td><code>axis.labels</code></td>
+<td>
+<p>Should the x- and y-axis labels be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>datum.lines</code></td>
+<td>
+<p>Should the datum lines be plotte</p>
+</td></tr>
+<tr valign="top"><td><code>darkTheme</code></td>
+<td>
+<p>Enable dark background</p>
+</td></tr>
+<tr valign="top"><td><code>projection</code></td>
+<td>
+<p>Either <code>"Default"</code> or a proj4string</p>
+</td></tr>
+<tr valign="top"><td><code>palette</code></td>
+<td>
+<p>Palette to use</p>
+</td></tr>
+<tr valign="top"><td><code>aggregate</code></td>
+<td>
+<p>Is the plot an aggregate</p>
+</td></tr>
+<tr valign="top"><td><code>current.seq</code></td>
+<td>
+<p>Current value of the sequence variable or aggregation</p>
+</td></tr>
+<tr valign="top"><td><code>sparkline.type</code></td>
+<td>
+<p>Either <code>"Absolute"</code> or <code>"Relative"</code></p>
+</td></tr>
+<tr valign="top"><td><code>scale.limits</code></td>
+<td>
+<p>Limits for the legend scale</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightMaps</em> version 2.0-0 <a href="00Index.html">Index</a>]</div>
+</body></html>

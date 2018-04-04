@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: latlon.xy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for latlon.xy {iNZightMaps}"><tr><td>latlon.xy {iNZightMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>latlon.xy</h2>
+
+<h3>Description</h3>
+
+<p>Transform the latitude and longitude into xy
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+latlon.xy(latlon, map)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>latlon</code></td>
+<td>
+<p>the data set that use for plotting, the first cloumn needs to be latitude and the second column needs to be longitude.</p>
+</td></tr>
+<tr valign="top"><td><code>map</code></td>
+<td>
+<p>a map object from RgoogleMaps package.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>wrap function for <a href="../../RgoogleMaps/html/LatLon2XY.html">LatLon2XY</a> from 'RgoogleMaps' package
+</p>
+
+
+<h3>Value</h3>
+
+<p>a list that contain the tramsformed x and y.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Jason Wen
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+golbal.objects = list()
+r.latlon = cbind(runif(100,-90,90),runif(100,-90,90))
+r.bbox = runif(4,-90,90)
+getNewMap(r.bbox[1:2],r.bbox[3:4],2,zoom = 3)
+latlon.xy(r.latlon,global.objects$maps$map)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightMaps</em> version 2.0-0 <a href="00Index.html">Index</a>]</div>
+</body></html>

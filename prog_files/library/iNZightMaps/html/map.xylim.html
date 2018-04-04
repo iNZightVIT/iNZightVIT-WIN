@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: get the limit of x-axis and y-axis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for map.xylim {iNZightMaps}"><tr><td>map.xylim {iNZightMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>get the limit of x-axis and y-axis</h2>
+
+<h3>Description</h3>
+
+<p>return the limit of x-axis and y-axis of the plot.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+map.xylim(latR, lonR, SCALE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>latR</code></td>
+<td>
+<p>a numeric vector of length 2</p>
+</td></tr>
+<tr valign="top"><td><code>lonR</code></td>
+<td>
+<p>a numeric vector of length 2</p>
+</td></tr>
+<tr valign="top"><td><code>SCALE</code></td>
+<td>
+<p>a numeric value</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>the limit is not the same as latitude/longitude, it is the limit of the plot window
+</p>
+
+
+<h3>Value</h3>
+
+<p>return a numeric of length 4 that contain the limit of x-axis and y-axis
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Jason Wen
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+r.center = runif(4,min = 0,max = 90)
+r.center = runif(4,min = -90,max = 90)
+SCALE = 2
+map.xylim(r.center[1:2],r.center[3:4],SCALE)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightMaps</em> version 2.0-0 <a href="00Index.html">Index</a>]</div>
+</body></html>

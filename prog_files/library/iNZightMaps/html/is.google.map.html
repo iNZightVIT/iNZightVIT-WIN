@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Is Google Map?</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for is.google.map {iNZightMaps}"><tr><td>is.google.map {iNZightMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Is Google Map?</h2>
+
+<h3>Description</h3>
+
+<p>The coordinates should be within on the same range of Google Map's. i.e. longitude = [-180,180], latitude = [-90,90]
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+is.google.map(lat, lon)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>lat</code></td>
+<td>
+<p>a numeric vector</p>
+</td></tr>
+<tr valign="top"><td><code>lon</code></td>
+<td>
+<p>a numeric vector</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>return an logical value that tells wheater the coordinates are all within the same range of google map's or not.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Jason Wen
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+lat = runif(100,min = -180,max = 180)
+lon = runif(100,min = -180,max = 180)
+is.google.map(lat,lon)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightMaps</em> version 2.0-0 <a href="00Index.html">Index</a>]</div>
+</body></html>

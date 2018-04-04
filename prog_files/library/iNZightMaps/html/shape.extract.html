@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: extract and create a shape object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for shape.extract {iNZightMaps}"><tr><td>shape.extract {iNZightMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>extract and create a shape object</h2>
+
+<h3>Description</h3>
+
+<p>extract the information from a SpatialPolygonsDataFrame object.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+shape.extract(shp, column.index = 2)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>shp</code></td>
+<td>
+<p>a SpatialPolygonsDataFrame object, see <a href="../../maptools/html/readShapeSpatial.html">readShapeSpatial</a>.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>the function will also returns a global object which called global.objects.
+</p>
+
+
+<h3>Value</h3>
+
+<p>a shape object.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Jason Wen
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+location = 'C:/Users/yeamin/Desktop/something/MED Final 20140226_region.shp'
+shape.extract(location)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightMaps</em> version 2.0-0 <a href="00Index.html">Index</a>]</div>
+</body></html>
