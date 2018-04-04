@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a data mask</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for as_data_mask {rlang}"><tr><td>as_data_mask {rlang}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a data mask</h2>
+
+<h3>Description</h3>
+
+<p>A data mask is an environment (or possibly multiple environments
+forming an ancestry) containing user-supplied objects. Objects in
+the mask have precedence over objects in the environment (i.e. they
+mask those objects). Many R functions evaluate quoted expressions
+in a data mask so these expressions can refer to objects within the
+user data.
+</p>
+<p>These functions let you construct a tidy eval data mask manually.
+They are meant for developers of tidy eval interfaces rather than
+for end users. Most of the time you can just call <code><a href="eval_tidy.html">eval_tidy()</a></code>
+with user data and the data mask will be constructed automatically.
+There are three main use cases for manual creation of data masks:
+</p>
+
+<ul>
+<li><p> When <code><a href="eval_tidy.html">eval_tidy()</a></code> is called with the same data in a tight loop.
+Tidy eval data masks are a bit expensive to build so it is best
+to construct it once and reuse it the other times for optimal
+performance.
+</p>
+</li>
+<li><p> When several expressions should be evaluated in the same
+environment because a quoted expression might create new objects
+that can be referred in other quoted expressions evaluated at a
+later time.
+</p>
+</li>
+<li><p> When your data mask requires special features. For instance the
+data frame columns in dplyr data masks are implemented with
+<a href="../../base/html/delayedAssign.html">active bindings</a>.
+</p>
+</li></ul>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+as_data_mask(data, parent = base_env())
+
+as_data_pronoun(data)
+
+new_data_mask(bottom, top = bottom, parent = base_env())
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A data frame or named vector of masking data.</p>
+</td></tr>
+<tr valign="top"><td><code>parent</code></td>
+<td>
+<p>The parent environment of the data mask.</p>
+</td></tr>
+<tr valign="top"><td><code>bottom</code></td>
+<td>
+<p>The environment containing masking objects if the
+data mask is one environment deep. The bottom environment if the
+data mask comprises multiple environment.</p>
+</td></tr>
+<tr valign="top"><td><code>top</code></td>
+<td>
+<p>The last environment of the data mask. If the data mask
+is only one environment deep, <code>top</code> should be the same as
+<code>bottom</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A data mask that you can supply to <code><a href="eval_tidy.html">eval_tidy()</a></code>.
+</p>
+
+
+<h3>Building your own data mask</h3>
+
+<p>Creating a data mask for <code><a href="../../base/html/eval.html">base::eval()</a></code> is a simple matter of
+creating an environment containing masking objects that has the
+user context as parent. <code>eval()</code> automates this task when you
+supply data as second argument. However a tidy eval data mask also
+needs to enable support of <a href="quotation.html">quosures</a> and <a href="tidyeval-data.html">data
+pronouns</a>. These functions allow manual construction
+of tidy eval data masks:
+</p>
+
+<ul>
+<li> <p><code>as_data_mask()</code> transforms a data frame, named vector or
+environment to a data mask. If an environment, its ancestry is
+ignored. It automatically installs a data pronoun.
+</p>
+</li>
+<li> <p><code>new_data_mask()</code> is a bare bones data mask constructor for
+environments. You can supply a bottom and a top environment in
+case your data mask comprises multiple environments.
+</p>
+<p>Unlike <code>as_data_mask()</code> it does not install the <code>.data</code> pronoun
+so you need to provide one yourself. You can provide a pronoun
+constructed with <code>as_data_pronoun()</code> or your own pronoun class.
+</p>
+</li></ul>
+
+
+<ul>
+<li> <p><code>as_data_pronoun()</code> constructs a tidy eval data pronoun that
+gives more useful error messages than regular data frames or
+lists, i.e. when an object does not exist or if an user tries to
+overwrite an object.
+</p>
+</li></ul>
+
+<p>To use a a data mask, just supply it to <code><a href="eval_tidy.html">eval_tidy()</a></code> as <code>data</code>
+argument. You can repeat this as many times as needed. Note that
+any objects created there (perhaps because of a call to <code>&lt;-</code>) will
+persist in subsequent evaluations:
+</p>
+
+
+<h3>Life cycle</h3>
+
+<p>All these functions are now stable.
+</p>
+<p>In early versions of rlang data masks were called overscopes. We
+think data mask is a more natural name in R. It makes reference to
+masking in the search path which occurs through the same mechanism
+(in technical terms, lexical scoping with hierarchically nested
+environments). We say that that objects from user data mask objects
+in the current environment.
+</p>
+<p>Following this change in terminology, <code>as_data_mask()</code> and
+<code>new_overscope()</code> were soft-deprecated in rlang 0.2.0 in favour of
+<code>as_data_mask()</code> and <code>new_data_mask()</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Evaluating in a tidy evaluation environment enables all tidy
+# features:
+mask &lt;- as_data_mask(mtcars)
+eval_tidy(quo(letters), mask)
+
+# You can install new pronouns in the mask:
+mask$.pronoun &lt;- as_data_pronoun(list(foo = "bar", baz = "bam"))
+eval_tidy(quo(.pronoun$foo), mask)
+
+# In some cases the data mask can leak to the user, for example if
+# a function or formula is created in the data mask environment:
+cyl &lt;- "user variable from the context"
+fn &lt;- eval_tidy(quote(function() cyl), mask)
+fn()
+
+# If new objects are created in the mask, they persist in the
+# subsequent calls:
+eval_tidy(quote(new &lt;- cyl + am), mask)
+eval_tidy(quote(new * 2), mask)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rlang</em> version 0.2.0.9001 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bind lazy or active bindings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for env_bind_exprs {rlang}"><tr><td>env_bind_exprs {rlang}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bind lazy or active bindings</h2>
+
+<h3>Description</h3>
+
+<p>Bind lazy or active bindings
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+env_bind_exprs(.env, ..., .eval_env = caller_env())
+
+env_bind_fns(.env, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>.env</code></td>
+<td>
+<p>An environment or an object bundling an environment,
+e.g. a formula, <a href="quotation.html">quosure</a> or <a href="is_function.html">closure</a>.
+This argument is passed to <code><a href="get_env.html">get_env()</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Pairs of names and expressions, values or functions.
+These dots support <a href="tidy-dots.html">tidy dots</a> features.</p>
+</td></tr>
+<tr valign="top"><td><code>.eval_env</code></td>
+<td>
+<p>The environment where the expressions will be
+evaluated when the symbols are forced.</p>
+</td></tr>
+</table>
+
+
+<h3>Life cycle</h3>
+
+<p>These functions are experimental. Expect API changes.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# env_bind_exprs() assigns expressions lazily:
+env &lt;- env()
+env_bind_exprs(env, name = cat("forced!\n"))
+env$name
+env$name
+
+# You can unquote expressions. Note that quosures are not
+# supported, only raw expressions:
+expr &lt;- quote(message("forced!"))
+env_bind_exprs(env, name = !! expr)
+env$name
+
+# You can create active bindings with env_bind_fns()
+# Let's create some bindings in the lexical enclosure of `fn`:
+counter &lt;- 0
+
+# And now a function that increments the counter and returns a
+# string with the count:
+fn &lt;- function() {
+  counter &lt;&lt;- counter + 1
+  paste("my counter:", counter)
+}
+
+# Now we create an active binding in a child of the current
+# environment:
+env &lt;- env()
+env_bind_fns(env, symbol = fn)
+
+# `fn` is executed each time `symbol` is evaluated or retrieved:
+env$symbol
+env$symbol
+eval_bare(quote(symbol), env)
+eval_bare(quote(symbol), env)
+
+# All arguments are passed to as_function() so you can use the
+# formula shortcut:
+env_bind_fns(env, foo = ~runif(1))
+env$foo
+env$foo
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rlang</em> version 0.2.0.9001 <a href="00Index.html">Index</a>]</div>
+</body></html>

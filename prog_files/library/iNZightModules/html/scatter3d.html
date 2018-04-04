@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot three variable in a 3D interactive graphics window</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for scatter3d {iNZightModules}"><tr><td>scatter3d {iNZightModules}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot three variable in a 3D interactive graphics window</h2>
+
+<h3>Description</h3>
+
+<p>Description ...
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+scatter3d(x, y, z, xlab = deparse(substitute(x)),
+  ylab = deparse(substitute(y)), axis.scales = TRUE,
+  zlab = deparse(substitute(z)), revolutions = 0, bg.col = c("white",
+  "black"), axis.col = if (bg.col == "white") c("darkmagenta", "black",
+  "darkcyan") else c("darkmagenta", "white", "darkcyan"),
+  surface.col = c("blue", "green", "orange", "magenta", "cyan", "red",
+  "yellow", "gray"), neg.res.col = "red", pos.res.col = "green",
+  square.col = if (bg.col == "white") "black" else "gray",
+  point.col = "yellow", text.col = axis.col, grid.col = if (bg.col ==
+  "white") "black" else "gray", fogtype = c("exp2", "linear", "exp", "none"),
+  residuals = (length(fit) == 1), surface = TRUE, fill = TRUE,
+  grid = TRUE, grid.lines = 26, df.smooth = NULL, df.additive = NULL,
+  sphere.size = 1, threshold = 0.01, speed = 1, fov = 60,
+  fit = "linear", groups = NULL, parallel = TRUE, ellipsoid = FALSE,
+  level = 0.5, model.summary = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>z</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>xlab</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>ylab</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>axis.scales</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>zlab</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>revolutions</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>bg.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>axis.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>surface.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>neg.res.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>pos.res.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>square.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>point.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>text.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>grid.col</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>fogtype</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>residuals</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>surface</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>fill</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>grid</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>grid.lines</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>df.smooth</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>df.additive</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>sphere.size</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>threshold</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>speed</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>fov</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>fit</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>groups</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>parallel</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>ellipsoid</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>level</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+<tr valign="top"><td><code>model.summary</code></td>
+<td>
+<p>a parameter</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Details ...
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightModules</em> version 2.3-1 <a href="00Index.html">Index</a>]</div>
+</body></html>

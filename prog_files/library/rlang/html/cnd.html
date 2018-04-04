@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a condition object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cnd {rlang}"><tr><td>cnd {rlang}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a condition object</h2>
+
+<h3>Description</h3>
+
+<p>These constructors make it easy to create subclassed conditions.
+Conditions are objects that power the error system in R. They can
+also be used for passing messages to pre-established handlers.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cnd(.type = NULL, ..., .msg = NULL)
+
+error_cnd(.type = NULL, ..., .msg = NULL)
+
+warning_cnd(.type = NULL, ..., .msg = NULL)
+
+message_cnd(.type = NULL, ..., .msg = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>.type</code></td>
+<td>
+<p>The condition subclass.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Named data fields stored inside the condition
+object. These dots are evaluated with <a href="tidy-dots.html">explicit
+splicing</a>.</p>
+</td></tr>
+<tr valign="top"><td><code>.msg</code></td>
+<td>
+<p>A default message to inform the user about the
+condition when it is signalled.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>cnd()</code> creates objects inheriting from <code>condition</code>. Conditions
+created with <code>error_cnd()</code>, <code>warning_cnd()</code> and <code>message_cnd()</code>
+inherit from <code>error</code>, <code>warning</code> or <code>message</code>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="cnd_signal.html">cnd_signal()</a></code>, <code><a href="with_handlers.html">with_handlers()</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Create a condition inheriting from the s3 type "foo":
+cnd &lt;- cnd("foo")
+
+# Signal the condition to potential handlers. This has no effect if no
+# handler is registered to deal with conditions of type "foo":
+cnd_signal(cnd)
+
+# If a relevant handler is on the current evaluation stack, it will be
+# called by cnd_signal():
+with_handlers(cnd_signal(cnd), foo = exiting(function(c) "caught!"))
+
+# Handlers can be thrown or executed inplace. See with_handlers()
+# documentation for more on this.
+
+
+# Note that merely signalling a condition inheriting of "error" is
+# not sufficient to stop a program:
+cnd_signal(error_cnd("my_error"))
+
+# you need to use stop() to signal a critical condition that should
+# terminate the program if not handled:
+# stop(error_cnd("my_error"))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rlang</em> version 0.2.0.9001 <a href="00Index.html">Index</a>]</div>
+</body></html>

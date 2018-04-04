@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Format quosures for printing or labelling</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for quo_label {rlang}"><tr><td>quo_label {rlang}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Format quosures for printing or labelling</h2>
+
+<h3>Description</h3>
+
+
+<ul>
+<li> <p><code>quo_text()</code> and <code>quo_label()</code> are equivalent to <code><a href="expr_label.html">expr_text()</a></code>,
+<code><a href="expr_label.html">expr_label()</a></code>, etc, but they first squash all quosures with
+<code><a href="quo_squash.html">quo_squash()</a></code> so they print more nicely.
+</p>
+</li>
+<li> <p><code>quo_name()</code> squashes a quosure and transforms it into a simple
+string. It is suitable to give an unnamed quosure a default name,
+for instance a column name in a data frame.
+</p>
+</li></ul>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+quo_label(quo)
+
+quo_text(quo, width = 60L, nlines = Inf)
+
+quo_name(quo)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>quo</code></td>
+<td>
+<p>A quosure or expression.</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>Width of each line.</p>
+</td></tr>
+<tr valign="top"><td><code>nlines</code></td>
+<td>
+<p>Maximum number of lines to extract.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="expr_label.html">expr_label()</a></code>, <code><a href="f_text.html">f_label()</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Quosures can contain nested quosures:
+quo &lt;- quo(foo(!! quo(bar)))
+quo
+
+# quo_squash() unwraps all quosures and returns a raw expression:
+quo_squash(quo)
+
+# This is used by quo_text() and quo_label():
+quo_text(quo)
+
+# Compare to the unwrapped expression:
+expr_text(quo)
+
+# quo_name() is helpful when you need really short labels:
+quo_name(quo(sym))
+quo_name(quo(!! sym))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rlang</em> version 0.2.0.9001 <a href="00Index.html">Index</a>]</div>
+</body></html>
