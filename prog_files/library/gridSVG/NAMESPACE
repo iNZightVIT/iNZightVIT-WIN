@@ -1,0 +1,268 @@
+
+importFrom("grDevices", "col2rgb", "dev.cur", "dev.flush", "dev.hold",
+           "dev.set", "devAskNewPage", "pdf", "png")
+importFrom("graphics", "par")
+importFrom("utils", "getS3method", "getTxtProgressBar", "head",
+           "localeToCharset", "packageDescription",
+           "setTxtProgressBar", "tail", "txtProgressBar")
+importFrom("jsonlite", "fromJSON", "toJSON", "base64_enc")
+
+import("methods", "grid", "XML")
+
+export("svgOpen",
+       "svgClose",
+       "svgStartGroup",
+       "svgEndGroup",
+       "svgRaster",
+       "svgRect",
+       "svgLines",
+       "svgPolygon",
+       "svgPath",
+       "svgText",
+       "svgCircle",
+       "svgScript",
+       "svgAnimate",
+       "svgStartLink",
+       "svgEndLink",
+       "svgStyle",
+       "svgStartElement",
+       "svgEndElement"
+       )
+
+export("animValue",
+       "animUnit",
+       "as.animValue",
+       "as.animUnit")
+
+export("grid.hyperlink",
+       "setSVGFonts",
+       "getSVGFonts",
+       "hyperlinkGrob",
+       "grid.animate",
+       "animateGrob",
+       "grid.comment",
+       "commentGrob",
+       "grid.garnish",
+       "garnishGrob",
+       "grid.script",
+       "scriptGrob",
+       "grid.element",
+       "elementGrob",
+       "grid.textNode",
+       "textNodeGrob",
+       "gridToSVG",
+       "grid.export",
+       "gridSVG.newpage",
+       "gridsvg",
+       "dev.off"
+       )
+
+export("getSVGoption",
+       "getSVGoptions",
+       "setSVGoptions")
+
+export("gridSVGMappings",
+       "getSVGMappings",
+       "readMappingsJS")
+
+export("gridSVGCoords",
+       "readCoordsJS",
+       "viewportCreate",
+       "viewportConvertX",
+       "viewportConvertY",
+       "viewportConvertPos",
+       "viewportConvertWidth",
+       "viewportConvertHeight",
+       "viewportConvertDim")
+
+# So other PACKAGES can write translation methods for new grobs
+export("grobToDev")
+export("primToDev")
+export("animate")
+export("garnish")
+
+S3method("grobToDev", "grob")
+S3method("grobToDev", "gTree")
+S3method("grobToDev", "recordedGrob")
+# S3method("grobToDev", "linked.grob")
+S3method("grobToDev", "script.grob")
+
+# gtable fixes
+S3method("grobToDev", "gtable")
+S3method("grobToDev", "gTableChild")
+S3method("grobToDev", "gTableParent")
+
+S3method("primToDev", "grob")
+S3method("primToDev", "gTree")
+S3method("primToDev", "clip")
+S3method("primToDev", "move.to")
+S3method("primToDev", "line.to")
+S3method("primToDev", "lines")
+S3method("primToDev", "rastergrob")
+S3method("primToDev", "rect")
+S3method("primToDev", "segments")
+S3method("primToDev", "polygon")
+S3method("primToDev", "pathgrob")
+S3method("primToDev", "text")
+S3method("primToDev", "circle")
+S3method("primToDev", "points")
+S3method("primToDev", "xspline")
+
+S3method("primToDev", "linked.grob")
+S3method("primToDev", "animated.grob")
+S3method("primToDev", "comment.grob")
+S3method("primToDev", "garnished.grob")
+S3method("primToDev", "element.grob")
+S3method("primToDev", "textnode.grob")
+S3method("primToDev", "clipPath")
+S3method("primToDev", "mask")
+
+S3method("primToDev", "patternFilled.grob")
+S3method("primToDev", "gradientFilled.grob")
+S3method("primToDev", "pathClipped.grob")
+S3method("primToDev", "masked.grob")
+S3method("primToDev", "filtered.grob")
+
+export("listSVGDefinitions")
+
+S3method("labelsUsed", "patternFillDef")
+S3method("labelsUsed", "patternFillRefDef")
+S3method("labelsUsed", "filterDef")
+S3method("labelsUsed", "gradientDef")
+S3method("labelsUsed", "maskDef")
+S3method("labelsUsed", "clipPathDef")
+S3method("labelsUsed", "grob")
+S3method("labelsUsed", "gTree")
+
+# Context popping
+export("popContext")
+S3method("primToDev", "popContext")
+
+# Clipping
+export("grid.clipPath",
+       "clipPathGrob",
+       "clipPath",
+       "registerClipPath",
+       "pushClipPath",
+       "popClipPath")
+
+# Masking
+export("grid.mask",
+       "maskGrob",
+       "registerMask",
+       "pushMask",
+       "popMask",
+       "mask")
+
+# Gradients
+export("linearGradient",
+       "radialGradient",
+       "registerGradientFill",
+       "grid.gradientFill",
+       "gradientFillGrob")
+S3method("print", "gradient")
+S3method("forceGrob", "gradientFilled.grob")
+S3method("forceGrob", "animated.grob")
+S3method("forceGrob", "linked.grob")
+S3method("forceGrob", "filtered.grob")
+S3method("forceGrob", "patternFilled.grob")
+S3method("forceGrob", "garnished.grob")
+
+# Patterns
+export("pattern",
+       "registerPatternFill",
+       "registerPatternFillRef",
+       "grid.patternFill",
+       "patternFillGrob")
+
+# Filters
+export("grid.filter",
+       "filterGrob",
+       "filterEffect",
+       "addFilterEffect",
+       "registerFilter",
+       "fe",
+       "feDistantLight",
+       "fePointLight",
+       "feSpotLight",
+       "feBlend",
+       "feColorMatrix",
+       "feComponentTransfer",
+       "addComponentFunction",
+       "transferFunction",
+       "feComposite",
+       "feConvolveMatrix",
+       "feDiffuseLighting",
+       "feDisplacementMap",
+       "feFlood",
+       "feGaussianBlur",
+       "feImage",
+       "feMerge",
+       "feMergeNode",
+       "addMergeNode",
+       "feMorphology",
+       "feOffset",
+       "feSpecularLighting",
+       "feTile",
+       "feTurbulence")
+
+S3method("flatten", "filter")
+S3method("flatten", "filter.effect")
+S3method("flatten", "fe.point.light")
+S3method("flatten", "fe.spot.light")
+S3method("flatten", "fe.diffuse.lighting")
+S3method("flatten", "fe.morphology")
+S3method("flatten", "fe.offset")
+S3method("flatten", "fe.specular.lighting")
+S3method("filterSVG", "fe.distant.light")
+S3method("filterSVG", "fe.point.light")
+S3method("filterSVG", "fe.spot.light")
+S3method("filterSVG", "fe.blend")
+S3method("filterSVG", "fe.color.matrix")
+S3method("filterSVG", "fe.component.transfer")
+S3method("filterSVG", "transfer.function")
+S3method("filterSVG", "fe.composite")
+S3method("filterSVG", "fe.convolve.matrix")
+S3method("filterSVG", "fe.diffuse.lighting")
+S3method("filterSVG", "fe.displacement.map")
+S3method("filterSVG", "fe.flood")
+S3method("filterSVG", "fe.gaussian.blur")
+S3method("filterSVG", "fe.image")
+S3method("filterSVG", "fe.merge")
+S3method("filterSVG", "fe.merge.node")
+S3method("filterSVG", "fe.morphology")
+S3method("filterSVG", "fe.offset")
+S3method("filterSVG", "fe.specular.lighting")
+S3method("filterSVG", "fe.tile")
+S3method("filterSVG", "fe.turbulence")
+
+S3method("link", "grob")
+S3method("link", "gTree")
+S3method("linkShow", "grob")
+S3method("linkShow", "gTree")
+
+S3method("animate", "grob")
+S3method("animate", "gTree")
+
+S3method("garnish", "grob")
+S3method("garnish", "gTree")
+
+S3method("as.animUnit", "animUnit")
+S3method("as.animUnit", "numeric")
+S3method("as.animUnit", "unit")
+S3method("as.animUnit", "matrix")
+S3method("as.animUnit", "list")
+S3method("as.animValue", "animValue")
+S3method("as.animValue", "numeric")
+S3method("as.animValue", "character")
+S3method("as.animValue", "matrix")
+S3method("as.animValue", "list")
+
+S3method("print", "animValue")
+S3method("print", "animUnit")
+
+S3method("toMML", "numeric")
+S3method("toMML", "character")
+S3method("toMML", "name")
+S3method("toMML", "(")
+S3method("toMML", "call")

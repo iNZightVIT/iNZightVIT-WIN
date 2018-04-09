@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: ExportHTML</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for exportHTML {iNZightPlots}"><tr><td>exportHTML {iNZightPlots}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>ExportHTML</h2>
+
+<h3>Description</h3>
+
+<p><code>exportHTML</code> is designed to export the iNZight plot as a dynamic, interactive HTML page.
+Currently only handles single panel plots. Coloured hex plots are currently not available yet.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+exportHTML(x, file, data, extra.vars, ...)
+
+## S3 method for class 'function'
+exportHTML(x, file = "index.html", data = NULL,
+  extra.vars = NULL, width = dev.size()[1], height = dev.size()[2], ...)
+
+## S3 method for class 'ggplot'
+exportHTML(x, file = "index.html", data = NULL,
+  extra.vars = NULL, mapObj, ...)
+
+## S3 method for class 'inzplotoutput'
+exportHTML(x, file = "index.html", data = NULL,
+  extra.vars = NULL, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>An iNZight plot object that captures iNZight environment</p>
+</td></tr>
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>Name of temporary HTML file generated
+Additional parameters for scatterplots and dotplots only:</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>dataset/dataframe that you wish to investigate and export more variables from</p>
+</td></tr>
+<tr valign="top"><td><code>extra.vars</code></td>
+<td>
+<p>extra variables specified by the user to be exported</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>extra arguments</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>the desired width of the SVG plot</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p>the desired height of the SVG plot</p>
+</td></tr>
+<tr valign="top"><td><code>mapObj</code></td>
+<td>
+<p>iNZightMap object (from iNZightMaps)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Opens up an HTML file of <code>x</code> with filename <code>file</code> in the browser (best performance on Chrome/Firefox)
+</p>
+
+
+<h3>Methods (by class)</h3>
+
+
+<ul>
+<li> <p><code>function</code>: method for an iNZightPlot-generating function
+</p>
+</li>
+<li> <p><code>ggplot</code>: method for iNZightMaps output (via new module)
+</p>
+</li>
+<li> <p><code>inzplotoutput</code>: method for output from iNZightPlot
+</p>
+</li></ul>
+
+
+<h3>Author(s)</h3>
+
+<p>Yu Han Soh
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+x &lt;- iNZightPlot(Petal.Width, Petal.Length, data = iris, colby = Species)
+exportHTML(x, "index.html")
+
+#to export more variables for scatterplots:
+ exportHTML(x, "index.html", data = iris, extra.vars = c("Sepal.Length", "Sepal.Width"))
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightPlots</em> version 2.7.5 <a href="00Index.html">Index</a>]</div>
+</body></html>

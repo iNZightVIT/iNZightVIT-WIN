@@ -32,8 +32,7 @@ knit2html               Convert markdown to HTML using knit() and
                         markdownToHTML()
 knit2pandoc             Convert various input files to various output
                         files using 'knit()' and Pandoc
-knit2pdf                Convert Rnw or Rrst files to PDF using knit()
-                        and texi2pdf() or rst2pdf()
+knit2pdf                Convert Rnw or Rrst files to PDF
 knit2wp                 Knit an R Markdown document and post it to
                         WordPress
 knit_child              Knit a child document

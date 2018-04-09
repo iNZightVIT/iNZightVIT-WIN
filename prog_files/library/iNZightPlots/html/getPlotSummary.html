@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: iNZight Plot Summary and Inference</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for getPlotSummary {iNZightPlots}"><tr><td>getPlotSummary {iNZightPlots}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>iNZight Plot Summary and Inference</h2>
+
+<h3>Description</h3>
+
+<p>Generate summary or inference information for an iNZight plot
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+getPlotSummary(x, y = NULL, g1 = NULL, g1.level = NULL, g2 = NULL,
+  g2.level = NULL, varnames = list(), colby = NULL, sizeby = NULL,
+  data = NULL, design = NULL, freq = NULL, missing.info = TRUE,
+  inzpars = inzpar(), summary.type = "summary", hypothesis.value = 0,
+  hypothesis.alt = c("two.sided", "less", "greater"),
+  hypothesis.var.equal = FALSE, hypothesis.test = c("default", "t.test",
+  "anova"), hypothesis = list(value = hypothesis.value, alternative =
+  match.arg(hypothesis.alt), var.equal = hypothesis.var.equal, test =
+  match.arg(hypothesis.test)), ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>a vector (numeric or factor), or the name of a column in the supplied
+<code>data</code> or <code>design</code> object</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>a vector (numeric or factor), or the name of a column in the supplied
+<code>data</code> or <code>design</code> object</p>
+</td></tr>
+<tr valign="top"><td><code>g1</code></td>
+<td>
+<p>a vector (numeric or factor), or the name of a column in the supplied
+<code>data</code> or <code>design</code> object. This variable acts as a subsetting variable.</p>
+</td></tr>
+<tr valign="top"><td><code>g1.level</code></td>
+<td>
+<p>the name (or numeric position) of the level of <code>g1</code> that will be
+used instead of the entire data set</p>
+</td></tr>
+<tr valign="top"><td><code>g2</code></td>
+<td>
+<p>a vector (numeric or factor), or the name of a column in the supplied
+<code>data</code> or <code>design</code> object. This variable acts as a subsetting variable, similar to
+<code>g1</code></p>
+</td></tr>
+<tr valign="top"><td><code>g2.level</code></td>
+<td>
+<p>same as <code>g1.level</code>, however takes the additional value <code>"_MULTI"</code>,
+which produces a matrix of <code>g1</code> by <code>g2</code></p>
+</td></tr>
+<tr valign="top"><td><code>varnames</code></td>
+<td>
+<p>a list of variable names, with the list named using the appropriate arguments
+(i.e., <code>list(x = "height", g1 = "gender")</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>colby</code></td>
+<td>
+<p>the name of a variable (numeric or factor) to colour points by. In the
+case of a numeric variable, a continuous colour scale is used, otherwise each level of
+the factor is assigned a colour</p>
+</td></tr>
+<tr valign="top"><td><code>sizeby</code></td>
+<td>
+<p>the name of a (numeric) variable, which controls the size of points</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>the name of a data set</p>
+</td></tr>
+<tr valign="top"><td><code>design</code></td>
+<td>
+<p>the name of a survey object, obtained from the <code>survey</code> package</p>
+</td></tr>
+<tr valign="top"><td><code>freq</code></td>
+<td>
+<p>the name of a frequency variable if the data are frequencies</p>
+</td></tr>
+<tr valign="top"><td><code>missing.info</code></td>
+<td>
+<p>logical, if <code>TRUE</code>, information regarding missingness is
+displayed in the plot</p>
+</td></tr>
+<tr valign="top"><td><code>inzpars</code></td>
+<td>
+<p>allows specification of iNZight plotting parameters over multiple plots</p>
+</td></tr>
+<tr valign="top"><td><code>summary.type</code></td>
+<td>
+<p>one of <code>"summary"</code> or <code>"inference"</code></p>
+</td></tr>
+<tr valign="top"><td><code>hypothesis.value</code></td>
+<td>
+<p>H0 value for hypothesis test</p>
+</td></tr>
+<tr valign="top"><td><code>hypothesis.alt</code></td>
+<td>
+<p>alternative hypothesis (!=, &lt;, &gt;)</p>
+</td></tr>
+<tr valign="top"><td><code>hypothesis.var.equal</code></td>
+<td>
+<p>use equal variance assumption for t-test?</p>
+</td></tr>
+<tr valign="top"><td><code>hypothesis.test</code></td>
+<td>
+<p>in some cases (currently just two-samples) can perform multiple tests (t-test or ANOVA)</p>
+</td></tr>
+<tr valign="top"><td><code>hypothesis</code></td>
+<td>
+<p>either NULL for no test, or missing (in which case above arguments are used)</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments, see <code>inzpar</code></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Works much the same as <code>iNZightPlot</code>
+</p>
+
+
+<h3>Value</h3>
+
+<p>an <code>inzight.plotsummary</code> object with a print method
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>tell029
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>iNZightPlots</em> version 2.7.5 <a href="00Index.html">Index</a>]</div>
+</body></html>
