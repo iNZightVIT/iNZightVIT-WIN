@@ -1,4 +1,4 @@
-9228219bd7baf78325a3d813f1bac755 *DESCRIPTION
+df988f5911467a7e376b9cf5c7af04fc *DESCRIPTION
 df99703ef0967d62faf8110b521063c1 *INDEX
 9c25e1cdc3b5122842a6a70fab49a522 *LICENSE
 573e408cf8c231b31348f2c8d4d8a9ec *Meta/Rd.rds
@@ -6,12 +6,12 @@ df99703ef0967d62faf8110b521063c1 *INDEX
 4ee596bd9b3772232a04ed910bb8f422 *Meta/hsearch.rds
 c8299ae00d341452036dd1064da789ba *Meta/links.rds
 d74a6a5ee1c994f35c3de2a7394b9f00 *Meta/nsInfo.rds
-edfaa9ee5eaae24d7e31c94edb6dac97 *Meta/package.rds
+1d2d9762c6013ae7f27f47eee4492738 *Meta/package.rds
 b73dda499b2ab46e29fe8ee9375ef558 *NAMESPACE
 8268742fd2c961a8f71833303c68cafe *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/iNZightModules
-3a708682cf440aad03ad041295c67291 *R/iNZightModules.rdb
-36e18861a3a7a98a4296fa26ac8e9cd8 *R/iNZightModules.rdx
+eabd2384daa4ae5fbfca34d99be813bb *R/iNZightModules.rdb
+76fdbb636660e846c92f5dfab997c869 *R/iNZightModules.rdx
 83061de7615e51ba495fa32bba566f5a *help/AnIndex
 4a52a7faebb3eae3c86e2e3f7058b08d *help/aliases.rds
 6b99c19575a79a681b680ec6e3a395f2 *help/iNZightModules.rdb
