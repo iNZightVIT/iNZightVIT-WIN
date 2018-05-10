@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create sf object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sf {sf}"><tr><td>sf {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create sf object</h2>
+
+<h3>Description</h3>
+
+<p>Create sf, which extends data.frame-like objects with a simple feature list column
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_sf(..., agr = NA_agr_, row.names,
+  stringsAsFactors = default.stringsAsFactors(), crs, precision,
+  sf_column_name = NULL, check_ring_dir = FALSE, sfc_last = TRUE)
+
+## S3 method for class 'sf'
+x[i, j, ..., drop = FALSE, op = st_intersects]
+
+## S3 method for class 'sf'
+print(x, ..., n = getOption("sf_max_print", default = 10))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>column elements to be binded into an <code>sf</code> object or a single <code>list</code> or <code>data.frame</code> with such columns; at least one of these columns shall be a geometry list-column of class <code>sfc</code> or be a list-column that can be converted into an <code>sfc</code> by <a href="st_as_sfc.html">st_as_sfc</a>.</p>
+</td></tr>
+<tr valign="top"><td><code>agr</code></td>
+<td>
+<p>character vector; see details below.</p>
+</td></tr>
+<tr valign="top"><td><code>row.names</code></td>
+<td>
+<p>row.names for the created <code>sf</code> object</p>
+</td></tr>
+<tr valign="top"><td><code>stringsAsFactors</code></td>
+<td>
+<p>logical; logical: should character vectors be converted to factors?  The &lsquo;factory-fresh&rsquo; default is <code>TRUE</code>, but this can be changed by setting <code>options(stringsAsFactors = FALSE)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>crs</code></td>
+<td>
+<p>coordinate reference system: integer with the EPSG code, or character with proj4string</p>
+</td></tr>
+<tr valign="top"><td><code>precision</code></td>
+<td>
+<p>numeric; see <a href="st_as_binary.html">st_as_binary</a></p>
+</td></tr>
+<tr valign="top"><td><code>sf_column_name</code></td>
+<td>
+<p>character; name of the active list-column with simple feature geometries; in case
+there is more than one and <code>sf_column_name</code> is <code>NULL</code>, the first one is taken.</p>
+</td></tr>
+<tr valign="top"><td><code>check_ring_dir</code></td>
+<td>
+<p>see <a href="st_read.html">st_read</a></p>
+</td></tr>
+<tr valign="top"><td><code>sfc_last</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, <code>sfc</code> columns are always put last, otherwise column order is left unmodified.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class <code>sf</code></p>
+</td></tr>
+<tr valign="top"><td><code>i</code></td>
+<td>
+<p>record selection, see <a href="../../base/html/Extract.data.frame.html">[.data.frame</a></p>
+</td></tr>
+<tr valign="top"><td><code>j</code></td>
+<td>
+<p>variable selection, see <a href="../../base/html/Extract.data.frame.html">[.data.frame</a></p>
+</td></tr>
+<tr valign="top"><td><code>drop</code></td>
+<td>
+<p>logical, default <code>FALSE</code>; if <code>TRUE</code> drop the geometry column and return a <code>data.frame</code>, else make the geometry sticky and return a <code>sf</code> object.</p>
+</td></tr>
+<tr valign="top"><td><code>op</code></td>
+<td>
+<p>function; geometrical binary predicate function to apply when <code>i</code> is a simple feature object</p>
+</td></tr>
+<tr valign="top"><td><code>n</code></td>
+<td>
+<p>maximum number of features to print; can be set globally by <code>options(sf_max_print=...)</code></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>agr</code>, attribute-geometry-relationship, specifies for each non-geometry attribute column how it relates to the geometry, and can have one of following values: &quot;constant&quot;, &quot;aggregate&quot;, &quot;identity&quot;. &quot;constant&quot; is used for attributes that are constant throughout the geometry (e.g. land use), &quot;aggregate&quot; where the attribute is an aggregate value over the geometry (e.g. population density or population count), &quot;identity&quot; when the attributes uniquely identifies the geometry of particular &quot;thing&quot;, such as a building ID or a city name. The default value, <code>NA_agr_</code>, implies we don't know.
+</p>
+<p>When confronted with a data.frame-like object, 'st_sf' will try to find a geometry column of class 'sfc', and otherwise try to convert list-columns when available into a geometry column, using <a href="st_as_sfc.html">st_as_sfc</a>.
+</p>
+<p><code>[.sf</code> will return a <code>data.frame</code> or vector if the geometry column (of class <code>sfc</code>) is dropped (<code>drop=TRUE</code>), an <code>sfc</code> object if only the geometry column is selected, and otherwise return an <code>sf</code> object; see also <a href="../../base/html/Extract.data.frame.html">[.data.frame</a>; for <code>[.sf</code> <code>...</code> arguments are passed to <code>op</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+g = st_sfc(st_point(1:2))
+st_sf(a=3,g)
+st_sf(g, a=3)
+st_sf(a=3, st_sfc(st_point(1:2))) # better to name it!
+# create empty structure with preallocated empty geometries:
+nrows &lt;- 10
+geometry = st_sfc(lapply(1:nrows, function(x) st_geometrycollection()))
+df &lt;- st_sf(id = 1:nrows, geometry = geometry)
+g = st_sfc(st_point(1:2), st_point(3:4))
+s = st_sf(a=3:4, g)
+s[1,]
+class(s[1,])
+s[,1]
+class(s[,1])
+s[,2]
+class(s[,2])
+g = st_sf(a=2:3, g)
+pol = st_sfc(st_polygon(list(cbind(c(0,3,3,0,0),c(0,0,3,3,0)))))
+h = st_sf(r = 5, pol)
+g[h,]
+h[g,]
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -158,9 +158,9 @@ $(document).ready(function () {
 <pre class="r"><code>library(sf)
 fname &lt;- system.file(&quot;shape/nc.shp&quot;, package=&quot;sf&quot;)
 fname
-## [1] &quot;/tmp/RtmpVxVufX/Rinst4bda791a6c3a/sf/shape/nc.shp&quot;
+## [1] &quot;/tmp/Rtmpbi8wY9/Rinst507541bbc78/sf/shape/nc.shp&quot;
 nc &lt;- st_read(fname)
-## Reading layer `nc' from data source `/tmp/RtmpVxVufX/Rinst4bda791a6c3a/sf/shape/nc.shp' using driver `ESRI Shapefile'
+## Reading layer `nc' from data source `/tmp/Rtmpbi8wY9/Rinst507541bbc78/sf/shape/nc.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 100 features and 14 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -204,7 +204,7 @@ Available layers:
 <p>Alternatively, a user can set the global option <code>stringsAsFactors</code>, and this will have the same effect:</p>
 <pre class="r"><code>options(stringsAsFactors = FALSE)
 st_read(fname)
-## Reading layer `nc' from data source `/tmp/RtmpVxVufX/Rinst4bda791a6c3a/sf/shape/nc.shp' using driver `ESRI Shapefile'
+## Reading layer `nc' from data source `/tmp/Rtmpbi8wY9/Rinst507541bbc78/sf/shape/nc.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 100 features and 14 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -392,16 +392,16 @@ st_read(fname)
 </div>
 <div id="reading-and-writing-directly-to-and-from-spatial-databases" class="section level2">
 <h2>Reading and writing directly to and from spatial databases</h2>
-<p>Package <code>sf</code> has experimental support for directly reading and writing from and to spatial databases using the <code>DBI</code> interface. So far, testing has mainly be done with <code>PostGIS</code>, other databases might work but may also need more work. An example of reading is:</p>
+<p>Package <code>sf</code> supports reading and writing from and to spatial databases using the <code>DBI</code> interface. So far, testing has mainly be done with <code>PostGIS</code>, other databases might work but may also need more work. An example of reading is:</p>
 <pre class="r"><code>library(RPostgreSQL) 
 conn = dbConnect(PostgreSQL(), dbname = &quot;postgis&quot;) 
-meuse = st_read_db(conn, &quot;meuse&quot;)
-meuse_1_3 = st_read_db(conn, query = &quot;select * from meuse limit 3;&quot;) 
+meuse = st_read(conn, &quot;meuse&quot;)
+meuse_1_3 = st_read(conn, query = &quot;select * from meuse limit 3;&quot;) 
 dbDisconnect(conn) </code></pre>
 <p>We see here that in the second example a query is given. This query may contain spatial predicates, which could be a way to work through massive spatial datasets in R without having to read them completely in memory.</p>
 <p>Similarly, tables can be written:</p>
 <pre class="r"><code>conn = dbConnect(PostgreSQL(), dbname = &quot;postgis&quot;)
-st_write_db(conn, meuse, drop = TRUE)
+st_write(conn, meuse, drop = TRUE)
 dbDisconnect(conn)</code></pre>
 <p>Here, the default table (layer) name is taken from the object name (<code>meuse</code>). Argument <code>drop</code> informs to drop (remove) the table before writing; logical argument <code>binary</code> determines whether to use well-known binary or well-known text when writing the geometry (where well-known binary is faster and lossless).</p>
 </div>

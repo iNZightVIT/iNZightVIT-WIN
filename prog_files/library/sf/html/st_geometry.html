@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Get, set, or replace geometry from an sf object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for st_geometry {sf}"><tr><td>st_geometry {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Get, set, or replace geometry from an sf object</h2>
+
+<h3>Description</h3>
+
+<p>Get, set, or replace geometry from an sf object
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'sfc'
+st_geometry(obj, ...)
+
+st_geometry(obj, ...)
+
+## S3 method for class 'sf'
+st_geometry(obj, ...)
+
+## S3 method for class 'sfc'
+st_geometry(obj, ...)
+
+## S3 method for class 'sfg'
+st_geometry(obj, ...)
+
+st_geometry(x) &lt;- value
+
+st_set_geometry(x, value)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>object of class <code>sf</code> or <code>sfc</code></p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>ignored</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class <code>data.frame</code></p>
+</td></tr>
+<tr valign="top"><td><code>value</code></td>
+<td>
+<p>object of class <code>sfc</code>, or <code>character</code></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>when applied to a <code>data.frame</code> and when <code>value</code> is an object of class <code>sfc</code>, <code>st_set_geometry</code> and <code>st_geometry&lt;-</code> will first check for the existence of an attribute <code>sf_column</code> and overwrite that, or else look for list-columns of class <code>sfc</code> and overwrite the first of that, or else write the geometry list-column to a column named <code>geometry</code>.  In case <code>value</code> is character and <code>x</code> is of class <code>sf</code>, the &quot;active&quot; geometry column is set to <code>x[[value]]</code>.
+</p>
+<p>the replacement function applied to <code>sf</code> objects will overwrite the geometry list-column, if <code>value</code> is <code>NULL</code>, it will remove it and coerce <code>x</code> to a <code>data.frame</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>st_geometry returns an object of class <a href="sfc.html">sfc</a>, a list-column with geometries
+</p>
+<p><code>st_geometry</code> returns an object of class <a href="sfc.html">sfc</a>. Assigning geometry to a <code>data.frame</code> creates an <a href="sf.html">sf</a> object, assigning it to an <a href="sf.html">sf</a> object replaces the geometry list-column.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+df = data.frame(a = 1:2)
+sfc = st_sfc(st_point(c(3,4)), st_point(c(10,11)))
+st_geometry(sfc)
+st_geometry(df) &lt;- sfc
+class(df)
+st_geometry(df)
+st_geometry(df) &lt;- sfc # replaces
+st_geometry(df) &lt;- NULL # remove geometry, coerce to data.frame
+sf &lt;- st_set_geometry(df, sfc) # set geometry, return sf
+st_set_geometry(sf, NULL) # remove geometry, coerce to data.frame
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

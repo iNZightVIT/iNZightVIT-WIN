@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create simple feature geometry list column</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sfc {sf}"><tr><td>sfc {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create simple feature geometry list column</h2>
+
+<h3>Description</h3>
+
+<p>Create simple feature geometry list column, set class, and add coordinate reference system and precision
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_sfc(..., crs = NA_crs_, precision = 0, check_ring_dir = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>zero or more simple feature geometries (objects of class <code>sfg</code>), or a single list of such objects; <code>NULL</code> values will get replaced by empty geometries.</p>
+</td></tr>
+<tr valign="top"><td><code>crs</code></td>
+<td>
+<p>coordinate reference system: integer with the EPSG code, or character with proj4string</p>
+</td></tr>
+<tr valign="top"><td><code>precision</code></td>
+<td>
+<p>numeric; see <a href="st_as_binary.html">st_as_binary</a></p>
+</td></tr>
+<tr valign="top"><td><code>check_ring_dir</code></td>
+<td>
+<p>see <a href="st_read.html">st_read</a></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>A simple feature geometry list-column is a list of class
+<code>c("stc_TYPE", "sfc")</code> which most often contains objects of identical type;
+in case of a mix of types or an empty set, <code>TYPE</code> is set to the
+superclass <code>GEOMETRY</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>an object of class <code>sfc</code>, which is a classed list-column with simple feature geometries.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+pt1 = st_point(c(0,1))
+pt2 = st_point(c(1,1))
+(sfc = st_sfc(pt1, pt2))
+d = st_sf(data.frame(a=1:2, geom=sfc))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

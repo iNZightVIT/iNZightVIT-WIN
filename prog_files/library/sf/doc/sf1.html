@@ -143,7 +143,7 @@ $(document).ready(function () {
 <li><a href="#driver-specific-options">Driver-specific options</a></li>
 <li><a href="#crud">Create, read, update and delete</a></li>
 <li><a href="#benchmarks">Benchmarks</a></li>
-<li><a href="#directly-reading-and-writing-to-spatial-databases">Directly reading and writing to spatial databases</a></li>
+<li><a href="#connection-to-spatial-databases">Connection to spatial databases</a></li>
 </ul></li>
 <li><a href="#crs">Coordinate reference systems and transformations</a></li>
 <li><a href="#conversion-including-to-and-from-sp">Conversion, including to and from sp</a></li>
@@ -311,7 +311,7 @@ $(document).ready(function () {
 <pre class="r"><code>library(sf)
 ## Linking to GEOS 3.5.1, GDAL 2.2.1, proj.4 4.9.3
 nc &lt;- st_read(system.file(&quot;shape/nc.shp&quot;, package=&quot;sf&quot;))
-## Reading layer `nc' from data source `/tmp/RtmpVxVufX/Rinst4bda791a6c3a/sf/shape/nc.shp' using driver `ESRI Shapefile'
+## Reading layer `nc' from data source `/tmp/Rtmpbi8wY9/Rinst507541bbc78/sf/shape/nc.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 100 features and 14 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -342,21 +342,22 @@ nc &lt;- st_read(system.file(&quot;shape/nc.shp&quot;, package=&quot;sf&quot;))
 <pre class="r"><code>methods(class = &quot;sf&quot;)
 ##  [1] $&lt;-                   [                     [[&lt;-                 
 ##  [4] aggregate             as.data.frame         cbind                
-##  [7] coerce                identify              initialize           
-## [10] merge                 plot                  print                
-## [13] rbind                 show                  slotsFromS3          
-## [16] st_agr                st_agr&lt;-              st_as_sf             
-## [19] st_bbox               st_boundary           st_buffer            
-## [22] st_cast               st_centroid           st_collection_extract
-## [25] st_convex_hull        st_coordinates        st_crs               
-## [28] st_crs&lt;-              st_difference         st_geometry          
-## [31] st_geometry&lt;-         st_intersection       st_is                
-## [34] st_line_merge         st_node               st_point_on_surface  
-## [37] st_polygonize         st_precision          st_segmentize        
-## [40] st_set_precision      st_simplify           st_snap              
-## [43] st_sym_difference     st_transform          st_triangulate       
-## [46] st_union              st_voronoi            st_wrap_dateline     
-## [49] st_write              st_zm                
+##  [7] coerce                dbDataType            dbWriteTable         
+## [10] identify              initialize            merge                
+## [13] plot                  print                 rbind                
+## [16] show                  slotsFromS3           st_agr               
+## [19] st_agr&lt;-              st_as_sf              st_bbox              
+## [22] st_boundary           st_buffer             st_cast              
+## [25] st_centroid           st_collection_extract st_convex_hull       
+## [28] st_coordinates        st_crs                st_crs&lt;-             
+## [31] st_difference         st_geometry           st_geometry&lt;-        
+## [34] st_intersection       st_is                 st_line_merge        
+## [37] st_node               st_point_on_surface   st_polygonize        
+## [40] st_precision          st_segmentize         st_set_precision     
+## [43] st_simplify           st_snap               st_sym_difference    
+## [46] st_transform          st_triangulate        st_union             
+## [49] st_voronoi            st_wrap_dateline      st_write             
+## [52] st_zm                
 ## see '?methods' for accessing help and source code</code></pre>
 <p>It is also possible to create <code>data.frame</code> objects with geometry list-columns that are not of class <code>sf</code>, e.g. by</p>
 <pre class="r"><code>nc.no_sf &lt;- as.data.frame(nc)
@@ -575,7 +576,7 @@ st_as_sfc(structure(list(st_as_binary(x)), class = &quot;WKB&quot;))[[1]]
 <p>As we’ve seen above, reading spatial data from an external file can be done by</p>
 <pre class="r"><code>filename &lt;- system.file(&quot;shape/nc.shp&quot;, package=&quot;sf&quot;)
 nc &lt;- st_read(filename)
-## Reading layer `nc' from data source `/tmp/RtmpVxVufX/Rinst4bda791a6c3a/sf/shape/nc.shp' using driver `ESRI Shapefile'
+## Reading layer `nc' from data source `/tmp/Rtmpbi8wY9/Rinst507541bbc78/sf/shape/nc.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 100 features and 14 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -593,7 +594,7 @@ nc &lt;- st_read(filename)
 <p>If we repeat this, we get an error message that the file already exists, and we can overwrite by</p>
 <pre class="r"><code>st_write(nc, &quot;nc.shp&quot;, delete_layer = TRUE)
 ## Deleting layer `nc' using driver `ESRI Shapefile'
-## Writing layer `nc' to data source `/tmp/RtmpVxVufX/Rbuild4bda2e7989ca/sf/vignettes/nc.shp' using driver `ESRI Shapefile'
+## Writing layer `nc' to data source `/tmp/Rtmpbi8wY9/Rbuild507536a019a7/sf/vignettes/nc.shp' using driver `ESRI Shapefile'
 ## features:       100
 ## fields:         14
 ## geometry type:  Multi Polygon</code></pre>
@@ -686,9 +687,9 @@ microbenchmark::microbenchmark(shp_read_sp(), shp_read_sf(),
    26.20221    10 a    </code></pre>
 <p>This shows that <code>sf::st_read()</code> is substantially faster than <code>rgdal::readOGR()</code>: by a factor of 14-18 for the Shapefile and KML files, and more than a factor of 4 for the KMZ file used in this benchmark, respectively.</p>
 </div>
-<div id="directly-reading-and-writing-to-spatial-databases" class="section level3">
-<h3>Directly reading and writing to spatial databases</h3>
-<p>Two further functions, <code>st_read_db</code> and <code>st_write_db</code> attempt to read and write from spatial databases, directly reading WKB or WKT without using GDAL. The advantage over <code>st_read</code> may be that instead of a complete table, the result of a (spatial) query may be fetched, limiting the amount of data that is read into R, and potentially benefiting from the spatial index of the database. Although intended to use the DBI interface, current use and testing of these functions are limited to PostGIS.</p>
+<div id="connection-to-spatial-databases" class="section level3">
+<h3>Connection to spatial databases</h3>
+<p>Read and write functions, <code>st_read()</code> and <code>st_write()</code>, can handle connections to spatial databases to read WKB or WKT directly without using GDAL. Although intended to use the DBI interface, current use and testing of these functions are limited to PostGIS.</p>
 </div>
 </div>
 <div id="crs" class="section level2">
@@ -863,7 +864,7 @@ units::set_units(a, ha) # result in hectares
         CNTY_ID = &quot;identity&quot;, NAME = &quot;identity&quot;, FIPS = &quot;identity&quot;, FIPSNO = &quot;identity&quot;,
         CRESS_ID = &quot;identity&quot;, BIR74 = &quot;aggregate&quot;, SID74 = &quot;aggregate&quot;, NWBIR74 = &quot;aggregate&quot;,
         BIR79 = &quot;aggregate&quot;, SID79 = &quot;aggregate&quot;, NWBIR79 = &quot;aggregate&quot;))
-## Reading layer `nc' from data source `/tmp/RtmpVxVufX/Rinst4bda791a6c3a/sf/shape/nc.shp' using driver `ESRI Shapefile'
+## Reading layer `nc' from data source `/tmp/Rtmpbi8wY9/Rinst507541bbc78/sf/shape/nc.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 100 features and 14 fields
 ## Attribute-geometry relationship: 0 constant, 8 aggregate, 6 identity
 ## geometry type:  MULTIPOLYGON

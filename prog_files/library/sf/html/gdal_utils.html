@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Native interface to gdal utils</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gdal_utils {sf}"><tr><td>gdal_utils {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Native interface to gdal utils</h2>
+
+<h3>Description</h3>
+
+<p>Native interface to gdal utils
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+gdal_utils(util = "info", source, destination, options = character(0),
+  quiet = FALSE, processing = character(0), colorfilename = character(0))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>util</code></td>
+<td>
+<p>character; one of <code>info</code>, <code>warp</code>, <code>rasterize</code>, <code>translate</code>, <code>vectortranslate</code>, <code>buildvrt</code>, <code>demprocessing</code>, <code>nearblack</code>, <code>grid</code></p>
+</td></tr>
+<tr valign="top"><td><code>source</code></td>
+<td>
+<p>character; name of input layer(s); for <code>warp</code> or <code>buidvrt</code> this can be more than one</p>
+</td></tr>
+<tr valign="top"><td><code>destination</code></td>
+<td>
+<p>character; name of output layer</p>
+</td></tr>
+<tr valign="top"><td><code>options</code></td>
+<td>
+<p>character; raster layer read options</p>
+</td></tr>
+<tr valign="top"><td><code>quiet</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, suppress printing of output for <code>info</code></p>
+</td></tr>
+<tr valign="top"><td><code>processing</code></td>
+<td>
+<p>character; processing options for <code>demprocessing</code></p>
+</td></tr>
+<tr valign="top"><td><code>colorfilename</code></td>
+<td>
+<p>character; name of color file for <code>demprocessing</code> (mandatory if <code>processing="color-relief"</code>)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p><code>info</code> returns a character vector with the raster metadata; all other utils return (invisibly) a logical indicating success (i.e., <code>TRUE</code>); in case of failure, an error is raised.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

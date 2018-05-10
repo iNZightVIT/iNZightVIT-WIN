@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bind rows (features) of sf objects</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bind {sf}"><tr><td>bind {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bind rows (features) of sf objects</h2>
+
+<h3>Description</h3>
+
+<p>Bind rows (features) of sf objects
+</p>
+<p>Bind columns (variables) of sf objects
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'sf'
+rbind(..., deparse.level = 1)
+
+## S3 method for class 'sf'
+cbind(..., deparse.level = 1, sf_column_name = NULL)
+
+st_bind_cols(...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>objects to bind; note that for the rbind and cbind methods, all objects have to be of class <code>sf</code>; see <a href="../../methods/html/dotsMethods.html">dotsMethods</a></p>
+</td></tr>
+<tr valign="top"><td><code>deparse.level</code></td>
+<td>
+<p>integer; see <a href="../../base/html/rbind.html">rbind</a></p>
+</td></tr>
+<tr valign="top"><td><code>sf_column_name</code></td>
+<td>
+<p>character; specifies active geometry; passed on to <a href="sf.html">st_sf</a></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>both <code>rbind</code> and <code>cbind</code> have non-standard method dispatch (see <a href="../../base/html/cbind.html">cbind</a>): the <code>rbind</code> or <code>cbind</code> method for <code>sf</code> objects is only called when all arguments to be binded are of class <code>sf</code>.
+</p>
+<p>If you need to <code>cbind</code> e.g. a <code>data.frame</code> to an <code>sf</code>, use <a href="../../base/html/data.frame.html">data.frame</a> directly and use <a href="sf.html">st_sf</a> on its result, or use <a href="../../dplyr/html/bind_cols.html">bind_cols</a>; see examples.
+</p>
+<p><code>st_bind_cols</code> is deprecated; use <code>cbind</code> instead.
+</p>
+
+
+<h3>Value</h3>
+
+<p><code>cbind</code> called with multiple <code>sf</code> objects warns about multiple geometry columns present when the geometry column to use is not specified by using argument <code>sf_column_name</code>; see also <a href="sf.html">st_sf</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+crs = st_crs(3857)
+a = st_sf(a=1, geom = st_sfc(st_point(0:1)), crs = crs)
+b = st_sf(a=1, geom = st_sfc(st_linestring(matrix(1:4,2))), crs = crs)
+c = st_sf(a=4, geom = st_sfc(st_multilinestring(list(matrix(1:4,2)))), crs = crs)
+rbind(a,b,c)
+rbind(a,b) 
+rbind(a,b)
+rbind(b,c)
+cbind(a,b,c) # warns
+if (require(dplyr))
+  dplyr::bind_cols(a,b)
+c = st_sf(a=4, geomc = st_sfc(st_multilinestring(list(matrix(1:4,2)))), crs = crs)
+cbind(a,b,c, sf_column_name = "geomc")
+df = data.frame(x=3)
+st_sf(data.frame(c, df))
+dplyr::bind_cols(c, df)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

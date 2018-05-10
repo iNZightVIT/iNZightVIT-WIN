@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Given an object with geometries of type 'GEOMETRY' or...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for st_collection_extract {sf}"><tr><td>st_collection_extract {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Given an object with geometries of type <code>GEOMETRY</code> or <code>GEOMETRYCOLLECTION</code>,
+return an object consisting only of elements of the specified type.</h2>
+
+<h3>Description</h3>
+
+<p>Similar to ST_CollectionExtract in PostGIS. If there are no sub-geometries
+of the specified type, an empty geometry is returned.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_collection_extract(x, type = c("POLYGON", "POINT", "LINESTRING"),
+  warn = FALSE)
+
+## S3 method for class 'sfg'
+st_collection_extract(x, type = c("POLYGON", "POINT",
+  "LINESTRING"), warn = FALSE)
+
+## S3 method for class 'sfc'
+st_collection_extract(x, type = c("POLYGON", "POINT",
+  "LINESTRING"), warn = FALSE)
+
+## S3 method for class 'sf'
+st_collection_extract(x, type = c("POLYGON", "POINT",
+  "LINESTRING"), warn = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>an object of class <code>sf</code>, <code>sfc</code> or <code>sfg</code> that has
+mixed geometry (<code>GEOMETRY</code> or <code>GEOMETRYCOLLECTION</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>character; one of &quot;POLYGON&quot;, &quot;POINT&quot;, &quot;LINESTRING&quot;</p>
+</td></tr>
+<tr valign="top"><td><code>warn</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, warn if attributes are assigned to
+sub-geometries when casting (see <code><a href="st_cast.html">st_cast</a></code>)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>An object having the same class as <code>x</code>, with geometries
+consisting only of elements of the specified type.
+For <code>sfg</code> objects, an <code>sfg</code> object is returned if there is only
+one geometry of the specified type, otherwise the geometries are combined
+into an <code>sfc</code> object of the relevant type. If any subgeometries in the
+input are MULTI, then all of the subgeometries in the output will be MULTI.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+pt &lt;- st_point(c(1, 0))
+ls &lt;- st_linestring(matrix(c(4, 3, 0, 0), ncol = 2))
+poly1 &lt;- st_polygon(list(matrix(c(5.5, 7, 7, 6, 5.5, 0, 0, -0.5, -0.5, 0), ncol = 2)))
+poly2 &lt;- st_polygon(list(matrix(c(6.6, 8, 8, 7, 6.6, 1, 1, 1.5, 1.5, 1), ncol = 2)))
+multipoly &lt;- st_multipolygon(list(poly1, poly2))
+
+i &lt;- st_geometrycollection(list(pt, ls, poly1, poly2))
+j &lt;- st_geometrycollection(list(pt, ls, poly1, poly2, multipoly))
+
+st_collection_extract(i, "POLYGON")
+st_collection_extract(i, "POINT")
+st_collection_extract(i, "LINESTRING")
+
+## A GEOMETRYCOLLECTION
+aa &lt;- rbind(st_sf(a=1, geom = st_sfc(i)),
+			st_sf(a=2, geom = st_sfc(j)))
+
+## With sf objects
+st_collection_extract(aa, "POLYGON")
+st_collection_extract(aa, "LINESTRING")
+st_collection_extract(aa, "POINT")
+
+## With sfc objects
+st_collection_extract(st_geometry(aa), "POLYGON")
+st_collection_extract(st_geometry(aa), "LINESTRING")
+st_collection_extract(st_geometry(aa), "POINT")
+
+## A GEOMETRY of single types
+bb &lt;- rbind(
+	st_sf(a = 1, geom = st_sfc(pt)),
+	st_sf(a = 2, geom = st_sfc(ls)),
+	st_sf(a = 3, geom = st_sfc(poly1)),
+	st_sf(a = 4, geom = st_sfc(multipoly))
+)
+
+st_collection_extract(bb, "POLYGON")
+
+## A GEOMETRY of mixed single types and GEOMETRYCOLLECTIONS
+cc &lt;- rbind(aa, bb)
+
+st_collection_extract(cc, "POLYGON")
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

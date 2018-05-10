@@ -1,11 +1,14 @@
+Ops                     S3 Ops Group Generic Functions for simple
+                        feature geometries
 aggregate.sf            aggregate an 'sf' object
-as                      Methods to coerce simple feature geometries to
-                        corresponding 'Spatial*' objects
+as                      Methods to coerce simple features to 'Spatial*'
+                        and 'Spatial*DataFrame' objects
 bgMap                   This is data included in sf
 bind                    Bind rows (features) of sf objects
+dbDataType,PostgreSQLConnection,sf-method
+                        Determine database type for R vector
 db_drivers              Drivers for which update should be 'TRUE' by
                         default
-dplyr                   Dplyr verb methods for sf objects
 extension_map           Map extension to driver
 gdal                    functions to interact with gdal not meant to be
                         called directly by users (but e.g. by
@@ -25,13 +28,12 @@ internal                Internal functions
 is_driver_available     Check if driver is available
 is_driver_can           Check if a driver can perform an action
 merge.sf                merge method for sf and data.frame object
-ops                     S3 Ops Group Generic Functions (multiply and
-                        add/subtract) for affine transformation
 plot                    Plot sf object
 prefix_map              Map prefix to driver
 rawToHex                Convert raw vector(s) into hexadecimal
                         character string(s)
 sf                      Create sf object
+sf-deprecated           Deprecated functions in 'sf'
 sf_extSoftVersion       Provide the external dependencies versions of
                         the libraries linked to sf
 sf_project              directly transform a set of coordinates
@@ -59,6 +61,7 @@ st_collection_extract   Given an object with geometries of type
                         object consisting only of elements of the
                         specified type.
 st_coordinates          retrieve coordinates in matrix form
+st_crop                 crop an sf object to a specific rectangle
 st_crs                  Retrieve coordinate reference system from
                         object
 st_drivers              Get GDAL drivers
@@ -94,3 +97,4 @@ stars                   functions only exported to be used internally
                         by stars
 summary.sfc             Summarize simple feature column
 tibble                  Summarize simple feature type for tibble
+tidyverse               Tidyverse methods for sf objects

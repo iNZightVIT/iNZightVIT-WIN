@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Drop or add Z and/or M dimensions from feature geometries</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for st_zm {sf}"><tr><td>st_zm {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Drop or add Z and/or M dimensions from feature geometries</h2>
+
+<h3>Description</h3>
+
+<p>Drop Z and/or M dimensions from feature geometries, resetting classes appropriately
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_zm(x, ..., drop = TRUE, what = "ZM")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class <code>sfg</code>, <code>sfc</code> or <code>sf</code></p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>ignored</p>
+</td></tr>
+<tr valign="top"><td><code>drop</code></td>
+<td>
+<p>logical; drop, or (FALSE) add?</p>
+</td></tr>
+<tr valign="top"><td><code>what</code></td>
+<td>
+<p>character which dimensions to drop or add</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Only combinations <code>drop=TRUE</code>, <code>what = "ZM"</code>, and <code>drop=FALSE</code>, <code>what="Z"</code> are supported so far. In case <code>add=TRUE</code>, <code>x</code> should have <code>XY</code> geometry, and zero values are added for <code>Z</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+st_zm(st_linestring(matrix(1:32,8)))
+x = st_sfc(st_linestring(matrix(1:32,8)), st_linestring(matrix(1:8,2)))
+st_zm(x)
+a = st_sf(a = 1:2, geom=x)
+st_zm(a)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -60,13 +60,13 @@ st_write(nc, dsn = "nc1.shp", layer = "nc.shp", driver = "ESRI Shapefile")
 ## ----eval=FALSE----------------------------------------------------------
 #  library(RPostgreSQL)
 #  conn = dbConnect(PostgreSQL(), dbname = "postgis")
-#  meuse = st_read_db(conn, "meuse")
-#  meuse_1_3 = st_read_db(conn, query = "select * from meuse limit 3;")
+#  meuse = st_read(conn, "meuse")
+#  meuse_1_3 = st_read(conn, query = "select * from meuse limit 3;")
 #  dbDisconnect(conn)
 
 ## ----eval=FALSE----------------------------------------------------------
 #  conn = dbConnect(PostgreSQL(), dbname = "postgis")
-#  st_write_db(conn, meuse, drop = TRUE)
+#  st_write(conn, meuse, drop = TRUE)
 #  dbDisconnect(conn)
 
 ## ------------------------------------------------------------------------

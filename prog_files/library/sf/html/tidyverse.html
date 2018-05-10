@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tidyverse methods for sf objects</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tidyverse {sf}"><tr><td>tidyverse {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Tidyverse methods for sf objects</h2>
+
+<h3>Description</h3>
+
+<p>Tidyverse methods for sf objects. Geometries are sticky, use <a href="../../base/html/as.data.frame.html">as.data.frame</a> to let <code>dplyr</code>'s own methods drop them.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+filter.sf(.data, ..., .dots)
+
+arrange.sf(.data, ..., .dots)
+
+group_by.sf(.data, ..., add = FALSE)
+
+ungroup.sf(x, ...)
+
+mutate.sf(.data, ..., .dots)
+
+transmute.sf(.data, ..., .dots)
+
+select.sf(.data, ...)
+
+rename.sf(.data, ...)
+
+slice.sf(.data, ..., .dots)
+
+summarise.sf(.data, ..., .dots, do_union = TRUE)
+
+distinct.sf(.data, ..., .keep_all = FALSE)
+
+gather.sf(data, key, value, ..., na.rm = FALSE, convert = FALSE,
+  factor_key = FALSE)
+
+spread.sf(data, key, value, fill = NA, convert = FALSE, drop = TRUE,
+  sep = NULL)
+
+sample_n.sf(tbl, size, replace = FALSE, weight = NULL,
+  .env = parent.frame())
+
+sample_frac.sf(tbl, size = 1, replace = FALSE, weight = NULL,
+  .env = parent.frame())
+
+nest.sf(data, ..., .key = "data")
+
+separate.sf(data, col, into, sep = "[^[:alnum:]]+", remove = TRUE,
+  convert = FALSE, extra = "warn", fill = "warn", ...)
+
+unite.sf(data, col, ..., sep = "_", remove = TRUE)
+
+unnest.sf(data, ..., .preserve = NULL)
+
+inner_join.sf(x, y, by = NULL, copy = FALSE, suffix = c(".x", ".y"), ...)
+
+left_join.sf(x, y, by = NULL, copy = FALSE, suffix = c(".x", ".y"), ...)
+
+right_join.sf(x, y, by = NULL, copy = FALSE, suffix = c(".x", ".y"), ...)
+
+full_join.sf(x, y, by = NULL, copy = FALSE, suffix = c(".x", ".y"), ...)
+
+semi_join.sf(x, y, by = NULL, copy = FALSE, ...)
+
+anti_join.sf(x, y, by = NULL, copy = FALSE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>.data</code></td>
+<td>
+<p>data object of class <a href="sf.html">sf</a></p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>other arguments</p>
+</td></tr>
+<tr valign="top"><td><code>.dots</code></td>
+<td>
+<p>see corresponding function in package <code>dplyr</code></p>
+</td></tr>
+<tr valign="top"><td><code>add</code></td>
+<td>
+<p>see corresponding function in dplyr</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>tbls to join</p>
+</td></tr>
+<tr valign="top"><td><code>do_union</code></td>
+<td>
+<p>logical; should geometries be unioned by using <a href="geos_combine.html">st_union</a>, or simply be combined using <a href="geos_combine.html">st_combine</a>? Using <a href="geos_combine.html">st_union</a> resolves internal boundaries, but in case of unioning points may also change the order of the points; see Details.</p>
+</td></tr>
+<tr valign="top"><td><code>.keep_all</code></td>
+<td>
+<p>see corresponding function in dplyr</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>key</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>value</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>na.rm</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>convert</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>factor_key</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>fill</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>drop</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>sep</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>tbl</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>size</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>replace</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>weight</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>.env</code></td>
+<td>
+<p>see original function docs</p>
+</td></tr>
+<tr valign="top"><td><code>.key</code></td>
+<td>
+<p>see <a href="../../tidyr/html/nest.html">nest</a></p>
+</td></tr>
+<tr valign="top"><td><code>col</code></td>
+<td>
+<p>see <a href="../../tidyr/html/separate.html">separate</a></p>
+</td></tr>
+<tr valign="top"><td><code>into</code></td>
+<td>
+<p>see <a href="../../tidyr/html/separate.html">separate</a></p>
+</td></tr>
+<tr valign="top"><td><code>remove</code></td>
+<td>
+<p>see <a href="../../tidyr/html/separate.html">separate</a></p>
+</td></tr>
+<tr valign="top"><td><code>extra</code></td>
+<td>
+<p>see <a href="../../tidyr/html/separate.html">separate</a></p>
+</td></tr>
+<tr valign="top"><td><code>.preserve</code></td>
+<td>
+<p>see <a href="../../tidyr/html/unnest.html">unnest</a></p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>tbls to join</p>
+</td></tr>
+<tr valign="top"><td><code>by</code></td>
+<td>
+<p>a character vector of variables to join by.  If <code>NULL</code>, the
+default, <code>*_join()</code> will do a natural join, using all variables with
+common names across the two tables. A message lists the variables so
+that you can check they're right (to suppress the message, simply
+explicitly list the variables that you want to join).
+</p>
+<p>To join by different variables on x and y use a named vector.
+For example, <code>by = c("a" = "b")</code> will match <code>x.a</code> to
+<code>y.b</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>copy</code></td>
+<td>
+<p>If <code>x</code> and <code>y</code> are not from the same data source,
+and <code>copy</code> is <code>TRUE</code>, then <code>y</code> will be copied into the
+same src as <code>x</code>.  This allows you to join tables across srcs, but
+it is a potentially expensive operation so you must opt into it.</p>
+</td></tr>
+<tr valign="top"><td><code>suffix</code></td>
+<td>
+<p>If there are non-joined duplicate variables in <code>x</code> and
+<code>y</code>, these suffixes will be added to the output to disambiguate them.
+Should be a character vector of length 2.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>select</code> keeps the geometry regardless whether it is selected or not; to deselect it, first pipe through <code>as.data.frame</code> to let dplyr's own <code>select</code> drop it.
+</p>
+<p>In case <code>do_union</code> is <code>FALSE</code>, <code>summarise</code> will simply combine geometries using <a href="st.html">c.sfg</a>. When polygons sharing a boundary are combined, this leads to geometries that are invalid; see <a href="https://github.com/r-spatial/sf/issues/681">https://github.com/r-spatial/sf/issues/681</a>.
+</p>
+<p><code>distinct.sf</code> gives distinct records for which all attributes and geometries are distinct; <a href="geos_binary_pred.html">st_equals</a> is used to find out which geometries are distinct.
+</p>
+<p><code>nest.sf</code> assumes that a simple feature geometry list-column was among the columns that were nested.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(dplyr)
+nc = st_read(system.file("shape/nc.shp", package="sf"))
+nc %&gt;% filter(AREA &gt; .1) %&gt;% plot()
+# plot 10 smallest counties in grey:
+st_geometry(nc) %&gt;% plot()
+nc %&gt;% select(AREA) %&gt;% arrange(AREA) %&gt;% slice(1:10) %&gt;% plot(add = TRUE, col = 'grey')
+title("the ten counties with smallest area")
+nc$area_cl = cut(nc$AREA, c(0, .1, .12, .15, .25))
+nc %&gt;% group_by(area_cl) %&gt;% class()
+nc2 &lt;- nc %&gt;% mutate(area10 = AREA/10)
+nc %&gt;% transmute(AREA = AREA/10, geometry = geometry) %&gt;% class()
+nc %&gt;% transmute(AREA = AREA/10) %&gt;% class()
+nc %&gt;% select(SID74, SID79) %&gt;% names()
+nc %&gt;% select(SID74, SID79, geometry) %&gt;% names()
+nc %&gt;% select(SID74, SID79) %&gt;% class()
+nc %&gt;% select(SID74, SID79, geometry) %&gt;% class()
+nc2 &lt;- nc %&gt;% rename(area = AREA)
+nc %&gt;% slice(1:2)
+nc$area_cl = cut(nc$AREA, c(0, .1, .12, .15, .25))
+nc.g &lt;- nc %&gt;% group_by(area_cl)
+nc.g %&gt;% summarise(mean(AREA))
+nc.g %&gt;% summarise(mean(AREA)) %&gt;% plot(col = grey(3:6 / 7))
+nc %&gt;% as.data.frame %&gt;% summarise(mean(AREA))
+nc[c(1:100, 1:10), ] %&gt;% distinct() %&gt;% nrow()
+library(tidyr)
+nc %&gt;% select(SID74, SID79) %&gt;% gather(VAR, SID, -geometry) %&gt;% summary()
+library(tidyr)
+nc$row = 1:100 # needed for spread to work
+nc %&gt;% select(SID74, SID79, geometry, row) %&gt;%
+	gather(VAR, SID, -geometry, -row) %&gt;%
+	spread(VAR, SID) %&gt;% head()
+storms.sf = st_as_sf(storms, coords = c("long", "lat"), crs = 4326)
+x &lt;- storms.sf %&gt;% group_by(name, year) %&gt;% nest
+trs = lapply(x$data, function(tr) st_cast(st_combine(tr), "LINESTRING")[[1]]) %&gt;% st_sfc(crs = 4326)
+trs.sf = st_sf(x[,1:2], trs)
+plot(trs.sf["year"], axes = TRUE)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

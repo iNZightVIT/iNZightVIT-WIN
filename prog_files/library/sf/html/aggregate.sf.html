@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: aggregate an 'sf' object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for aggregate.sf {sf}"><tr><td>aggregate.sf {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>aggregate an <code>sf</code> object</h2>
+
+<h3>Description</h3>
+
+<p>aggregate an <code>sf</code> object, possibly union-ing geometries
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'sf'
+aggregate(x, by, FUN, ..., do_union = TRUE, simplify = TRUE,
+  join = st_intersects)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class <a href="sf.html">sf</a></p>
+</td></tr>
+<tr valign="top"><td><code>by</code></td>
+<td>
+<p>either a list of grouping vectors with length equal to <code>nrow(x)</code> (see <a href="../../stats/html/aggregate.html">aggregate</a>), or an object of class <code>sf</code> or <code>sfc</code> with geometries that are used to generate groupings, using the binary predicate specified by the argument <code>join</code></p>
+</td></tr>
+<tr valign="top"><td><code>FUN</code></td>
+<td>
+<p>function passed on to <a href="../../stats/html/aggregate.html">aggregate</a>, in case <code>ids</code> was specified and attributes need to be grouped</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>arguments passed on to <code>FUN</code></p>
+</td></tr>
+<tr valign="top"><td><code>do_union</code></td>
+<td>
+<p>logical; should grouped geometries be unioned using <a href="geos_combine.html">st_union</a>? See details.</p>
+</td></tr>
+<tr valign="top"><td><code>simplify</code></td>
+<td>
+<p>logical; see <a href="../../stats/html/aggregate.html">aggregate</a></p>
+</td></tr>
+<tr valign="top"><td><code>join</code></td>
+<td>
+<p>logical spatial predicate function to use if <code>by</code> is a simple features object or geometry; see <a href="st_join.html">st_join</a></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>In case <code>do_union</code> is <code>FALSE</code>, <code>aggregate</code> will simply combine geometries using <a href="st.html">c.sfg</a>. When polygons sharing a boundary are combined, this leads to geometries that are invalid; see <a href="https://github.com/r-spatial/sf/issues/681">https://github.com/r-spatial/sf/issues/681</a>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>an <code>sf</code> object with aggregated attributes and geometries; additional grouping variables having the names of <code>names(ids)</code> or are named <code>Group.i</code> for <code>ids[[i]]</code>; see <a href="../../stats/html/aggregate.html">aggregate</a>.
+</p>
+
+
+<h3>Note</h3>
+
+<p>Does not work using the formula notation involving <code>~</code> defined in <a href="../../stats/html/aggregate.html">aggregate</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+m1 = cbind(c(0, 0, 1, 0), c(0, 1, 1, 0))
+m2 = cbind(c(0, 1, 1, 0), c(0, 0, 1, 0))
+pol = st_sfc(st_polygon(list(m1)), st_polygon(list(m2)))
+set.seed(1985)
+d = data.frame(matrix(runif(15), ncol = 3))
+p = st_as_sf(x = d, coords = 1:2)
+plot(pol)
+plot(p, add = TRUE)
+(p_ag1 = aggregate(p, pol, mean))
+plot(p_ag1) # geometry same as pol
+# works when x overlaps multiple objects in 'by':
+p_buff = st_buffer(p, 0.2)
+plot(p_buff, add = TRUE)
+(p_ag2 = aggregate(p_buff, pol, mean)) # increased mean of second
+# with non-matching features
+m3 = cbind(c(0, 0, -0.1, 0), c(0, 0.1, 0.1, 0))
+pol = st_sfc(st_polygon(list(m3)), st_polygon(list(m1)), st_polygon(list(m2)))
+(p_ag3 = aggregate(p, pol, mean))
+plot(p_ag3)
+# In case we need to pass an argument to the join function:
+(p_ag4 = aggregate(p, pol, mean, 
+     join = function(x, y) st_is_within_distance(x, y, dist = 0.3)))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

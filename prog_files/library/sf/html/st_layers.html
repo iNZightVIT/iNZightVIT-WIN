@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: List layers in a datasource</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for st_layers {sf}"><tr><td>st_layers {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>List layers in a datasource</h2>
+
+<h3>Description</h3>
+
+<p>List layers in a datasource
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_layers(dsn, options = character(0), do_count = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dsn</code></td>
+<td>
+<p>data source name (interpretation varies by driver - for some drivers, <code>dsn</code> is a file name, but may also be a
+folder, or contain the name and access credentials of a database)</p>
+</td></tr>
+<tr valign="top"><td><code>options</code></td>
+<td>
+<p>character; driver dependent dataset open options, multiple options supported.</p>
+</td></tr>
+<tr valign="top"><td><code>do_count</code></td>
+<td>
+<p>logical; if TRUE, count the features by reading them, even if their count is not reported by the driver</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

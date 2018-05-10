@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Deprecated functions in 'sf'</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sf-deprecated {sf}"><tr><td>sf-deprecated {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Deprecated functions in <code>sf</code></h2>
+
+<h3>Description</h3>
+
+<p>These functions are provided for compatibility with older version of <code>sf</code>.
+They may eventually be completely removed.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_read_db(conn = NULL, table = NULL, query = NULL, geom_column = NULL,
+  EWKB = TRUE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>conn</code></td>
+<td>
+<p>open database connection</p>
+</td></tr>
+<tr valign="top"><td><code>table</code></td>
+<td>
+<p>table name</p>
+</td></tr>
+<tr valign="top"><td><code>query</code></td>
+<td>
+<p>SQL query to select records; see details</p>
+</td></tr>
+<tr valign="top"><td><code>geom_column</code></td>
+<td>
+<p>character or integer: indicator of name or position of the geometry column; if not provided, the last column of type character is chosen</p>
+</td></tr>
+<tr valign="top"><td><code>EWKB</code></td>
+<td>
+<p>logical; is the WKB is of type EWKB? if missing, defaults to <code>TRUE</code></p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>parameter(s) passed on to <a href="st_as_sf.html">st_as_sf</a></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+<code>st_read_db</code> </td><td style="text-align: left;"> now a synonym for <code><a href="st_read.html">st_read</a></code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>st_write_db</code> </td><td style="text-align: left;"> now a synonym for <code><a href="st_write.html">st_write</a></code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+</td>
+</tr>
+
+</table>
+
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: test equality between the geometry type and a class or set of...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for st_is {sf}"><tr><td>st_is {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>test equality between the geometry type and a class or set of classes</h2>
+
+<h3>Description</h3>
+
+<p>test equality between the geometry type and a class or set of classes
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_is(x, type)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class <code>sf</code>, <code>sfc</code> or <code>sfg</code></p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>character; class, or set of classes, to test against</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+st_is(st_point(0:1), "POINT")
+sfc = st_sfc(st_point(0:1), st_linestring(matrix(1:6,,2)))
+st_is(sfc, "POINT")
+st_is(sfc, "POLYGON")
+st_is(sfc, "LINESTRING")
+st_is(st_sf(a = 1:2, sfc), "LINESTRING")
+st_is(sfc, c("POINT", "LINESTRING"))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

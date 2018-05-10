@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create viewport from sf, sfc or sfg object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for st_viewport {sf}"><tr><td>st_viewport {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create viewport from sf, sfc or sfg object</h2>
+
+<h3>Description</h3>
+
+<p>Create viewport from sf, sfc or sfg object
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+st_viewport(x, ..., bbox = st_bbox(x), asp)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class sf, sfc or sfg object</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>parameters passed on to <a href="../../grid/html/viewport.html">viewport</a></p>
+</td></tr>
+<tr valign="top"><td><code>bbox</code></td>
+<td>
+<p>the bounding box used for aspect ratio</p>
+</td></tr>
+<tr valign="top"><td><code>asp</code></td>
+<td>
+<p>numeric; target aspect ratio (y/x), see Details</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>parameters <code>width</code>, <code>height</code>, <code>xscale</code> and <code>yscale</code> are set such that aspect ratio is honoured and plot size is maximized in the current viewport; others can be passed as <code>...</code>
+</p>
+<p>If <code>asp</code> is missing, it is taken as 1, except when <code>isTRUE(st_is_longlat(x))</code>, in which case it is set to <code>1.0 /cos(y)</code>, with <code>y</code> the middle of the latitude bounding box.
+</p>
+
+
+<h3>Value</h3>
+
+<p>The output of the call to <a href="../../grid/html/viewport.html">viewport</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(grid)
+nc = st_read(system.file("shape/nc.shp", package="sf"))
+grid.newpage()
+pushViewport(viewport(width = 0.8, height = 0.8))
+pushViewport(st_viewport(nc))
+invisible(lapply(st_geometry(nc), function(x) grid.draw(st_as_grob(x, gp = gpar(fill = 'red')))))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>

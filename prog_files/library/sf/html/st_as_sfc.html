@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert foreign geometry object to an sfc object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for st_as_sfc {sf}"><tr><td>st_as_sfc {sf}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert foreign geometry object to an sfc object</h2>
+
+<h3>Description</h3>
+
+<p>Convert foreign geometry object to an sfc object
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'list'
+st_as_sfc(x, ..., crs = NA_crs_)
+
+## S3 method for class 'blob'
+st_as_sfc(x, ...)
+
+## S3 method for class 'bbox'
+st_as_sfc(x, ...)
+
+## S3 method for class 'WKB'
+st_as_sfc(x, ..., EWKB = FALSE, spatialite = FALSE,
+  pureR = FALSE, crs = NA_crs_)
+
+## S3 method for class 'raw'
+st_as_sfc(x, ...)
+
+## S3 method for class 'character'
+st_as_sfc(x, crs = NA_integer_, ..., GeoJSON = FALSE)
+
+## S3 method for class 'factor'
+st_as_sfc(x, ...)
+
+st_as_sfc(x, ...)
+
+## S3 method for class 'SpatialPoints'
+st_as_sfc(x, ..., precision = 0)
+
+## S3 method for class 'SpatialPixels'
+st_as_sfc(x, ..., precision = 0)
+
+## S3 method for class 'SpatialMultiPoints'
+st_as_sfc(x, ..., precision = 0)
+
+## S3 method for class 'SpatialLines'
+st_as_sfc(x, ..., precision = 0, forceMulti = FALSE)
+
+## S3 method for class 'SpatialPolygons'
+st_as_sfc(x, ..., precision = 0,
+  forceMulti = FALSE)
+
+## S3 method for class 'map'
+st_as_sfc(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object to convert</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>further arguments</p>
+</td></tr>
+<tr valign="top"><td><code>crs</code></td>
+<td>
+<p>integer or character; coordinate reference system for the</p>
+</td></tr>
+<tr valign="top"><td><code>EWKB</code></td>
+<td>
+<p>logical; if TRUE, parse as EWKB (extended WKB; PostGIS: ST_AsEWKB), otherwise as ISO WKB (PostGIS: ST_AsBinary)</p>
+</td></tr>
+<tr valign="top"><td><code>spatialite</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, WKB is assumed to be in the spatialite dialect, see <a href="https://www.gaia-gis.it/gaia-sins/BLOB-Geometry.html">https://www.gaia-gis.it/gaia-sins/BLOB-Geometry.html</a>; this is only supported in native endian-ness (i.e., files written on system with the same endian-ness as that on which it is being read).</p>
+</td></tr>
+<tr valign="top"><td><code>pureR</code></td>
+<td>
+<p>logical; if TRUE, use only R code, if FALSE, use compiled (C++) code; use TRUE when the endian-ness of the binary differs from the host machine (<code>.Platform$endian</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>GeoJSON</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, try to read geometries from GeoJSON text strings
+geometry, see <code><a href="st_crs.html">st_crs()</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>precision</code></td>
+<td>
+<p>precision value; see <a href="st_as_binary.html">st_as_binary</a></p>
+</td></tr>
+<tr valign="top"><td><code>forceMulti</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, force coercion into <code>MULTIPOLYGON</code> or <code>MULTILINE</code> objects, else autodetect</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>When converting from WKB, the object <code>x</code> is either a character vector such as typically obtained from PostGIS (either with leading &quot;0x&quot; or without), or a list with raw vectors representing the features in binary (raw) form.
+</p>
+<p>If <code>x</code> is a character vector, it should be a vector containing
+<a href="http://www.opengeospatial.org/standards/wkt-crs">well-known-text</a>, or
+<a href="http://postgis.refractions.net/docs/using_postgis_dbmanagement.html#EWKB_EWKT">Postgis EWKT</a> or
+GeoJSON representations of a single geometry for each vector element.
+</p>
+<p>If <code>x</code> is a <code>factor</code>, it is converted to <code>character</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+wkb = structure(list("01010000204071000000000000801A064100000000AC5C1441"), class = "WKB")
+st_as_sfc(wkb, EWKB = TRUE)
+wkb = structure(list("0x01010000204071000000000000801A064100000000AC5C1441"), class = "WKB")
+st_as_sfc(wkb, EWKB = TRUE)
+st_as_sfc(st_as_binary(st_sfc(st_point(0:1)))[[1]], crs = 4326)
+st_as_sfc("SRID=3978;LINESTRING(1663106 -105415,1664320 -104617)")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sf</em> version 0.6-2 <a href="00Index.html">Index</a>]</div>
+</body></html>
