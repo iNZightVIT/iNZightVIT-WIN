@@ -133,7 +133,6 @@ $(document).ready(function () {
 <li><a href="#although-coordinates-are-longitudelatitude-xxx-assumes-that-they-are-planar"><em>although coordinates are longitude/latitude, xxx assumes that they are planar</em></a></li>
 <li><a href="#st_centroid-does-not-give-correct-centroids-for-longitudelatitude-data"><em>st_centroid does not give correct centroids for longitude/latitude data</em></a></li>
 <li><a href="#dist-is-assumed-to-be-in-decimal-degrees-arc_degrees."><em>dist is assumed to be in decimal degrees (arc_degrees).</em></a></li>
-<li><a href="#both-operands-of-the-expression-should-be-units-objects-or-_error-operator-is-invalid-for-atomic-vectors"><em>both operands of the expression should be “units” objects</em> or _Error: $ operator is invalid for atomic vectors&quot;</a></li>
 </ul></li>
 </ul>
 </div>
@@ -150,7 +149,7 @@ $(document).ready(function () {
 <p><code>sf</code> objects can have more than one geometry list-column, but always only one geometry column is considered <em>active</em>, and returned by <code>st_geometry</code>. When there are multiple geometry columns, the default <code>print</code> methods reports which one is active:</p>
 <pre class="r"><code>library(sf)
 demo(nc, ask = FALSE, echo = FALSE)
-## Reading layer `nc.gpkg' from data source `/tmp/Rtmpbi8wY9/Rinst507541bbc78/sf/gpkg/nc.gpkg' using driver `GPKG'
+## Reading layer `nc.gpkg' from data source `/tmp/Rtmpaq4C0b/Rinst79437936646a/sf/gpkg/nc.gpkg' using driver `GPKG'
 ## Simple feature collection with 100 features and 14 fields
 ## Attribute-geometry relationship: 0 constant, 8 aggregate, 6 identity
 ## geometry type:  MULTIPOLYGON
@@ -232,10 +231,6 @@ buf = st_buffer(polygon, 1)
 buf = st_buffer(polygon, units::set_units(1, degree))
 ## Warning in st_buffer.sfc(polygon, units::set_units(1, degree)): st_buffer
 ## does not correctly buffer longitude/latitude data</code></pre>
-</div>
-<div id="both-operands-of-the-expression-should-be-units-objects-or-_error-operator-is-invalid-for-atomic-vectors" class="section level2">
-<h2><em>both operands of the expression should be “units” objects</em> or _Error: $ operator is invalid for atomic vectors&quot;</h2>
-<p>This message appears if you loaded package <code>spatstat</code> <em>after</em> you loaded <code>sf</code>. For units objects created by package <code>units</code>, methods from <code>spatstat</code> are chosen which also implements a <code>units</code> class. The solution is to revert the order of loading packages: first <code>spatstat</code>, then <code>units</code>. Otherwise, spatstat version 1.53-2.012 should <a href="https://github.com/spatstat/spatstat/issues/63">resolve this</a>.</p>
 </div>
 </div>
 

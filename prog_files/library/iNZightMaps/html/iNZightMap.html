@@ -16,13 +16,12 @@
 <h3>Usage</h3>
 
 <pre>
-iNZightMap(lat, lon, data, name = deparse(substitute(data)), time = NULL,
-  upto = NULL)
+iNZightMap(lat, lon, data, name = deparse(substitute(data)))
 
 ## S3 method for class 'inzightmap'
 plot(x, opacity, type = c("roadmap", "mobile",
-  "satellite", "terrain", "hybrid", "mapmaker-roadmap", "mapmaker-hybrid"),
-  upto = NULL, ..., env = parent.frame())
+  "satellite", "terrain", "hybrid", "mapmaker-roadmap", "mapmaker-hybrid"), ...,
+  env = parent.frame())
 </pre>
 
 
@@ -90,16 +89,6 @@ the fixed zoom levels provided by Google's Static Maps API.
 
 <p>Tom Elliott
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data(nzquakes)
-mapobj &lt;- iNZightMap(lat = ~Latitude, lon = ~Longitude, data = nzquakes)
-plot(mapobj, opacity = ~Depth, colby = Felt, sizeby = Magnitude, type = "terrain")
-
-</pre>
 
 <hr /><div style="text-align: center;">[Package <em>iNZightMaps</em> version 2.0-0 <a href="00Index.html">Index</a>]</div>
 </body></html>

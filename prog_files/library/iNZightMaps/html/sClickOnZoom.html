@@ -41,28 +41,5 @@ sClickOnZoom(ratio = 1/2, resize = FALSE)
 <p>Jason
 </p>
 
-
-<h3>Examples</h3>
-
-<pre>
-los = 'C:/Users/yeamin/Documents/GitHub/iNZightMaps/data/world.rds'
-data = read.csv('C:/Users/yeamin/Desktop/Gapminder-2008.csv',skip = 1)
-obj &lt;- iNZightShapeMap(los, data.region = 'Country', data = data)
-var = c('BodyMassIndex_F','ChildrenPerWoman','Populationtotal','Populationdensity')
-bar.obj = bar.coor(obj = obj,var = var, data = data, xmax = 1, ymax = 5)
-plot(obj, variable = ~Imports,
-                 region = ~Country,
-                 data = data,
-                 col.fun = 'hue',
-                 col = 'orange',
-                 transform = 'linear',
-                 na.fill = '#C0C0C0',
-                 col.offset = 0,
-                 full.map = F,
-                 extend.ratio = 1,
-                 name = 'v')
-sClickOnZoom()
-</pre>
-
 <hr /><div style="text-align: center;">[Package <em>iNZightMaps</em> version 2.0-0 <a href="00Index.html">Index</a>]</div>
 </body></html>

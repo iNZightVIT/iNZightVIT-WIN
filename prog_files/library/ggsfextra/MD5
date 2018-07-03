@@ -1,4 +1,4 @@
-8313d0f44793c7e8552dc0fee9bec53d *DESCRIPTION
+c970a4521713c2590b16c4b78a78cb71 *DESCRIPTION
 eec63e9e364b0be4253aae0efab0c09d *INDEX
 3c34afdc3adf82d2448f12715a255122 *LICENSE
 561b1e75cdc7eed4039384afdbc7cb69 *Meta/Rd.rds
@@ -6,11 +6,11 @@ eec63e9e364b0be4253aae0efab0c09d *INDEX
 a23d21f97301db6f9f23433e8929c939 *Meta/hsearch.rds
 2d23a3c0c8e228012d5e490897d88207 *Meta/links.rds
 60a42c315c4b6ae9ad19f6039883d5ae *Meta/nsInfo.rds
-3cac48b9211ed8b22854f2a850f1b601 *Meta/package.rds
+dc51fabe0674f4fb5875a6d8dcf067b5 *Meta/package.rds
 5ec6914a2a7914b2cb1cb6a111b35b79 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/ggsfextra
-8f5449cbf142f30edd93ef446c8de287 *R/ggsfextra.rdb
-1abe6c9c9b2b50b899f521fe0cff4acf *R/ggsfextra.rdx
+0abf49f3b5e0d435f612cdd233f236d3 *R/ggsfextra.rdb
+05b1a8dd471960660ac2bb2f04366c50 *R/ggsfextra.rdx
 bee607f617bf49ed69811217b2a88bfb *help/AnIndex
 adb5437527c8f33cc829cd34169cb82a *help/aliases.rds
 eb5fbc4cf1d81a62d678033cd149e6c3 *help/ggsfextra.rdb

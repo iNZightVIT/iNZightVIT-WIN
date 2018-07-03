@@ -50,14 +50,14 @@ rnorm(3)
 ## ----bootstrap_in_r------------------------------------------------------
 # Function declaration
 bootstrap_r <- function(ds, B = 1000) {
-  
+
   # Preallocate storage for statistics
   boot_stat <- matrix(NA, nrow = B, ncol = 2)
-  
+
   # Number of observations
   n <- length(ds)
-  
-  # Perform bootstrap 
+
+  # Perform bootstrap
   for(i in seq_len(B)) {
      # Sample initial data
      gen_data <- ds[ sample(n, n, replace=TRUE) ]
@@ -65,7 +65,7 @@ bootstrap_r <- function(ds, B = 1000) {
      boot_stat[i,] <- c(mean(gen_data),
                         sd(gen_data))
   }
-  
+
   # Return bootstrap result
   return(boot_stat)
 }
@@ -94,7 +94,7 @@ make_boot_graph(result_r[,2], 10, "SD", c(0, 1.85))
 dev.off()
 
 ## ----bootstrap_cpp-------------------------------------------------------
-# Use the same seed use in R and C++ 
+# Use the same seed use in R and C++
 set.seed(883)
 # Perform bootstrap with C++ function
 result_cpp <- bootstrap_cpp(initdata)

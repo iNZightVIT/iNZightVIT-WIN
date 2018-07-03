@@ -25,14 +25,14 @@ plot(nc)
 plot(nc["AREA"])
 
 ## ------------------------------------------------------------------------
-plot(nc["AREA"], key.pos = 1)
+plot(nc["AREA"], key.pos = 4)
 
 ## ------------------------------------------------------------------------
-plot(nc["AREA"], key.pos = 1, axes = TRUE, key.size = lcm(1.3))
+plot(nc["AREA"], key.pos = 1, axes = TRUE, key.width = lcm(1.3), key.length = 1.0)
 
 ## ------------------------------------------------------------------------
 nc$f = cut(nc$AREA, 10)
-plot(nc["f"], axes = TRUE, pal = sf.colors(10), key.size = lcm(4.5))
+plot(nc["f"], axes = TRUE, key.pos = 4, pal = sf.colors(10), key.width = lcm(4.5))
 
 ## ------------------------------------------------------------------------
 plot(nc["AREA"], breaks = c(0,.05,.1,.15,.2,.25))

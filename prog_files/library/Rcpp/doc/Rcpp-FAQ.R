@@ -149,7 +149,7 @@
 #  gsl_rng_free(r);
 #  return Rcpp::wrap(v);'
 #  
-#  plug <- Rcpp:::Rcpp.plugin.maker(
+#  plug <- Rcpp::Rcpp.plugin.maker(
 #      include.before = "#include <gsl/gsl_rng.h>",
 #      libs = paste(
 #  "-L/usr/local/lib/R/site-library/Rcpp/lib -lRcpp",
