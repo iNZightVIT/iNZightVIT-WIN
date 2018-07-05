@@ -1,4 +1,4 @@
-20937313bd69aece103cc7a820aece6d *DESCRIPTION
+b14024aedec58f951cedccabf912beff *DESCRIPTION
 196d90e8f766c994963b8da7b93683cf *INDEX
 9c25e1cdc3b5122842a6a70fab49a522 *LICENSE
 b3815a6fb250ba5df950c6d7615a8b2a *Meta/Rd.rds
@@ -7,12 +7,12 @@ b3815a6fb250ba5df950c6d7615a8b2a *Meta/Rd.rds
 6f0bbae73a706c0e47aa8b80daf302d1 *Meta/hsearch.rds
 295cee41699962aaa39939631feea9a8 *Meta/links.rds
 44b95609cb2c3428b9ea59140033fc2e *Meta/nsInfo.rds
-de41323421b7b065a2f52771c23e9ad1 *Meta/package.rds
+a43482bf19ffcbfda0cb7cfe4f8861e5 *Meta/package.rds
 8c15f25309d5b930e9b0ef96de1fecb9 *NAMESPACE
 d5aa8c46c78adc0a88fecdfdd035024e *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/iNZightMaps
-a7e87d057dec7cdbc4a38dae3e7ef03b *R/iNZightMaps.rdb
-0bb11871056908bbe6ea65c7242c07b2 *R/iNZightMaps.rdx
+9fe9987b28d937ba51c815dc5e09e6d3 *R/iNZightMaps.rdb
+1f5dadb457b4f6b4347bba06b5e47fbf *R/iNZightMaps.rdx
 8b60828fac5465bd3e05e3e9680a9967 *R/sysdata.rdb
 8c7a40451aa8297acae3172dc11677c7 *R/sysdata.rdx
 1f5db6a078b5412ba946fcfc543e6f69 *data/nzquakes.rda
