@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: GetMap bbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for GetMap.bbox {RgoogleMaps}"><tr><td>GetMap.bbox {RgoogleMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>GetMap bbox</h2>
+
+<h3>Description</h3>
+
+<p>Wrapper function for <a href="GetMap.html">GetMap</a>. Query the Google server for a static map tile, defined primarily by its lat/lon range and/or center and/or zoom. 
+Multiple additional arguments allow the user to customize the map tile.</p>
+
+
+<h3>Usage</h3>
+
+<pre>GetMap.bbox(lonR, latR, center, size = c(640, 640), destfile = "MyTile.png", 
+    MINIMUMSIZE = FALSE, RETURNIMAGE = TRUE, GRAYSCALE = FALSE, 
+    NEWMAP = TRUE, zoom, verbose = 0, SCALE = 1, ...)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>lonR</code></td>
+<td>
+<p>longitude range</p>
+</td></tr>
+<tr valign="top"><td><code>latR</code></td>
+<td>
+<p>latitude range</p>
+</td></tr>
+<tr valign="top"><td><code>center</code></td>
+<td>
+<p>optional center</p>
+</td></tr>
+<tr valign="top"><td><code>size</code></td>
+<td>
+<p>desired size of the map tile image. defaults to maximum size returned by the Gogle server, which is 640x640 pixels</p>
+</td></tr>
+<tr valign="top"><td><code>destfile</code></td>
+<td>
+<p>File to load the map image from or save to, depending on <code>NEWMAP</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>MINIMUMSIZE</code></td>
+<td>
+<p>reduce the size of the map to its minimum size that still fits the lat/lon ranges ?</p>
+</td></tr>
+<tr valign="top"><td><code>RETURNIMAGE</code></td>
+<td>
+<p>return image yes/no default: TRUE</p>
+</td></tr>
+<tr valign="top"><td><code>GRAYSCALE</code></td>
+<td>
+<p>Boolean toggle; if TRUE the colored map tile is rendered into a black &amp; white image, see <a href="RGB2GRAY.html">RGB2GRAY</a></p>
+</td></tr>
+<tr valign="top"><td><code>NEWMAP</code></td>
+<td>
+<p>if TRUE, query the Google server and save to <code>destfile</code>, if FALSE load from destfile.</p>
+</td></tr>
+<tr valign="top"><td><code>zoom</code></td>
+<td>
+<p>Google maps zoom level. optional</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>level of verbosity</p>
+</td></tr>
+<tr valign="top"><td><code>SCALE</code></td>
+<td>
+<p>use the API's scale parameter to return higher-resolution map images. The scale value is multiplied with the size to determine the actual output size of the image in pixels, without changing the coverage area of the map</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>extra arguments to <a href="GetMap.html">GetMap</a></p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>map tile</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Markus Loecher</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+ mymarkers &lt;- cbind.data.frame(lat = c(38.898648,38.889112, 38.880940), 
+          lon = c(-77.037692, -77.050273, -77.03660), size =  c('tiny','tiny','tiny'), 
+          col = c('blue', 'green', 'red'), char = c('','',''));
+
+##get the bounding box:
+  bb &lt;- qbbox(lat = mymarkers[,"lat"], lon = mymarkers[,"lon"]);
+  
+##download the map:
+  MyMap &lt;- GetMap.bbox(bb$lonR, bb$latR, destfile = "DC.png", GRAYSCALE =TRUE,
+                markers = mymarkers);
+ ##The function qbbox() basically computes a bounding box for the given lat,lon 
+   #points with a few additional options such as quantile boxes, additional buffers, etc.  
+  bb &lt;- qbbox(c(40.702147,40.711614,40.718217),c(-74.015794,-74.012318,-73.998284), 
+            TYPE = "all", margin = list(m=rep(5,4), TYPE = c("perc", "abs")[1]));
+ ##download the map:           
+MyMap &lt;- GetMap.bbox(bb$lonR, bb$latR,destfile = "MyTile3.png", maptype = "satellite") 
+
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RgoogleMaps</em> version 1.2.0.7 <a href="00Index.html">Index</a>]</div>
+</body></html>

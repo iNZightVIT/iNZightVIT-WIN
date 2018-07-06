@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Upstate New York Leukemia Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for NYleukemia {RgoogleMaps}"><tr><td>NYleukemia {RgoogleMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Upstate New York Leukemia Data</h2>
+
+<h3>Description</h3>
+
+<p>Census tract level (<code>n=281</code>) leukemia data for the 8 counties in upstate New York from 1978-1982, paired with population data from the 1980 census.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(NYleukemia)</pre>
+
+
+<h3>Format</h3>
+
+<p>List with 5 items:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<code>geo</code> </td><td style="text-align: left;"> table of the FIPS code, longitude, and latitude of the geographic centroid of each census tract </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>data</code> </td><td style="text-align: left;"> table of the FIPS code, number of cases, and population of each census tract </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>spatial.polygon</code> </td><td style="text-align: left;"> object of class SpatialPolygons (See <a href="../../sp/html/SpatialPolygons-class.html">SpatialPolygons-class</a>) containing a map of the study region </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>surrounded</code> </td><td style="text-align: left;"> row IDs of the 4 census tracts that are completely surrounded by the <code>surrounding</code> census tracts </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>surrounding</code> </td><td style="text-align: left;"> row IDs of the 4 census tracts that completely surround the <code>surrounded</code> census tracts </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Source</h3>
+
+<p>http://www.sph.emory.edu/~lwaller/ch4index.htm</p>
+
+
+<h3>References</h3>
+
+<p>Turnbull, B. W. et al (1990)
+Monitoring for clusters of disease: application to leukemia incidence in upstate New York <em>American Journal of Epidemiology</em>, <b>132</b>, 136&ndash;143
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(NYleukemia)
+  population &lt;- NYleukemia$data$population
+  cases &lt;- NYleukemia$data$cases
+  mapNY &lt;- GetMap(center=c(lon=-76.00365, lat=42.67456), destfile = "NYstate.png",
+  maptype = "mobile", zoom=9)
+  ColorMap(100*cases/population, mapNY, NYleukemia$spatial.polygon, add = FALSE,
+  alpha = 0.35, log = TRUE, location = "topleft")
+ 
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RgoogleMaps</em> version 1.2.0.7 <a href="00Index.html">Index</a>]</div>
+</body></html>

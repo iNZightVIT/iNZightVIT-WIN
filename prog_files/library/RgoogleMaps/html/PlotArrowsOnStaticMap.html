@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: plots arrows or segments on map</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for PlotArrowsOnStaticMap {RgoogleMaps}"><tr><td>PlotArrowsOnStaticMap {RgoogleMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>plots arrows or segments on map </h2>
+
+<h3>Description</h3>
+
+<p>This function plots/overlays arrows or segments on a map.</p>
+
+
+<h3>Usage</h3>
+
+<pre>PlotArrowsOnStaticMap(MyMap, lat0, lon0, lat1 = lat0, lon1 = lon0, 
+    TrueProj = TRUE, FUN = arrows, add = FALSE, verbose = 0, 
+    ...)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>MyMap</code></td>
+<td>
+<p>map image returned from e.g. <code>GetMap()</code></p>
+</td></tr>
+<tr valign="top"><td><code>lat0</code></td>
+<td>
+<p>latitude valuesof points FROM which to draw.</p>
+</td></tr>
+<tr valign="top"><td><code>lon0</code></td>
+<td>
+<p>longitude values of points FROM which to draw.</p>
+</td></tr>
+<tr valign="top"><td><code>lat1</code></td>
+<td>
+<p>latitude valuesof points TO which to draw.</p>
+</td></tr>
+<tr valign="top"><td><code>lon1</code></td>
+<td>
+<p>longitude values of points TO which to draw.</p>
+</td></tr>
+<tr valign="top"><td><code>TrueProj</code></td>
+<td>
+<p>set to FALSE if you are willing to accept some degree of inaccuracy in the mapping. In that case, the coordinates of the image are in lat/lon and the user can simply overly points/lines/axis without worrying about projections</p>
+</td></tr>
+<tr valign="top"><td><code>FUN</code></td>
+<td>
+<p>, plotting function to use for overlay; typical choices would be <a href="../../graphics/html/arrows.html">arrows</a> and <a href="../../graphics/html/segments.html">segments</a></p>
+</td></tr>
+<tr valign="top"><td><code>add</code></td>
+<td>
+<p>start a new plot or add to an existing</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>level of verbosity</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>further arguments to be passed to <code>FUN</code></p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>return value of <code>FUN</code></p>
+
+
+<h3>Author(s)</h3>
+
+<p>Markus Loecher</p>
+
+
+<h3>See Also</h3>
+
+<p><a href="PlotOnStaticMap.html">PlotOnStaticMap</a> <a href="../../graphics/html/arrows.html">arrows</a></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+    MyMap &lt;- GetMap(center=c(lat=40.7,lon=-74), zoom=11)
+PlotArrowsOnStaticMap(MyMap, lat0=40.69, lon0=-73.9, lat1=40.71, lon1=-74.1, col = 'red')   
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RgoogleMaps</em> version 1.2.0.7 <a href="00Index.html">Index</a>]</div>
+</body></html>

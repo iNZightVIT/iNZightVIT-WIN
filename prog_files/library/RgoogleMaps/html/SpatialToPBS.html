@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: converts spatial objects as defined in package sp to simpler...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SpatialToPBS {RgoogleMaps}"><tr><td>SpatialToPBS {RgoogleMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>converts spatial objects as defined in package sp to simpler PBSmapping type dataframes </h2>
+
+<h3>Description</h3>
+
+<p>The PlotPolysOnStaticMap() function currently does not take sp objects directly but instead needs
+PBSmapping type data.frames. This function converts sp objects into such.                         </p>
+
+
+<h3>Usage</h3>
+
+<pre>SpatialToPBS(xy, verbose = 0)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>xy</code></td>
+<td>
+<p>spatial object, such as SpatialPoints, SpatialPolygons, etc..</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>level of verbosity</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>list with elements xy = converted object, bb = bounding box, fun = plot function</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Markus Loecher</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  if (interactive()) {
+  data("NYleukemia", envir = environment())
+  population &lt;- NYleukemia$data$population
+  cases &lt;- NYleukemia$data$cases
+  mapNY &lt;- GetMap(center=c(lat=42.67456,lon=-76.00365), 
+                  destfile = file.path(tempdir(),"NYstate.png"), 
+                  maptype = "mobile", zoom=9)
+  #mapNY=ReadMapTile("NYstate.png")
+  clrStuff=ColorMap(100*cases/population, alpha = 0.35, log = TRUE)
+  NYpolys = SpatialToPBS(NYleukemia$spatial.polygon)
+  PlotPolysOnStaticMap(mapNY, NYpolys$xy, col = clrStuff$colcode, add = FALSE)
+  legend("topleft", legend = clrStuff$legend, fill = clrStuff$fill, 
+         bg = rgb(0.1,0.1,0.1,0.3))
+}
+  
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RgoogleMaps</em> version 1.2.0.7 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -2,14 +2,10 @@ AddAlpha                add alpha level to color that lacks one
 ColorMap                Plot Levels of a Variable in a Colour-Coded Map
 DF2SpatialPointsDataFrame
                         change data.frame to SpatialPointsDataFrame
-GetBingMap              download a static map from the Microsoft map
-                        tile server
 GetMap                  download a static map from the Google server
-GetMap.bbox             GetMap bbox
-GetMapTiles             download map tiles from specified map tile
-                        servers such as openstreetmap or Google
-GetOsmMap               Query the Open Street Map server for map tiles
+GetMap.OSM              Query the Open Street Map server for map tiles
                         instead of Google Maps
+GetMap.bbox             GetMap bbox
 IdentifyPoints          identify points by clicking on map
 LatLon2XY               computes the coordinate transformation from
                         lat/lon to map tile coordinates
@@ -20,7 +16,6 @@ MaxZoom                 computes the maximum zoom level which will
                         contain the given lat/lon range
 NYleukemia              Upstate New York Leukemia Data
 PlotArrowsOnStaticMap   plots arrows or segments on map
-PlotOnMapTiles          plots on map tiles by "stitching" them together
 PlotOnStaticMap         overlays plot on background image of map tile
 PlotPolysOnStaticMap    plots polygons on map
 RGB2GRAY                translates an RGB image matrix to gray scale
@@ -38,11 +33,9 @@ bubbleMap               Create a bubble plot of spatial data on Google
 columbus                Columbus OH spatial analysis data set
 degreeAxis              axis with degrees
 getGeoCode              geocoding utility
-incidents               San Francisco crime data
 mypolygon               simple wrapper function to plot colored
                         polygons
 pennLC                  Pennsylvania Lung Cancer
-plotmap                 easy to use wrapper function
 qbbox                   computes bounding box
 updateusr               Updates the 'usr' coordinates in the current
                         plot.

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: computes the centered coordinate transformation from lat/lon...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for LatLon2XY.centered {RgoogleMaps}"><tr><td>LatLon2XY.centered {RgoogleMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>computes the centered coordinate transformation from lat/lon to map tile coordinates </h2>
+
+<h3>Description</h3>
+
+<p>The function LatLon2XY.centered(MyMap, lat,lon,zoom) computes the coordinate transformation from lat/lon to map tile coordinates given a map object.</p>
+
+
+<h3>Usage</h3>
+
+<pre>LatLon2XY.centered(MyMap, lat, lon, zoom)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>MyMap</code></td>
+<td>
+<p>map object</p>
+</td></tr>
+<tr valign="top"><td><code>lat</code></td>
+<td>
+<p>latitude values to transform</p>
+</td></tr>
+<tr valign="top"><td><code>lon</code></td>
+<td>
+<p>longitude values to transform</p>
+</td></tr>
+<tr valign="top"><td><code>zoom</code></td>
+<td>
+<p>optional zoom level. If missing, taken from <code>MyMap</code></p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>properly scaled and centered (with respect to the center of <code>MyMap</code> ) coordinates  
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>newX </code></td>
+<td>
+<p> transformed longitude</p>
+</td></tr>
+<tr valign="top"><td><code>newY </code></td>
+<td>
+<p>transformed latitude</p>
+</td></tr></table>
+
+
+<h3>Author(s)</h3>
+
+<p>Markus Loecher</p>
+
+
+<h3>See Also</h3>
+
+<p><a href="LatLon2XY.html">LatLon2XY</a> <a href="Tile2R.html">Tile2R</a> </p>
+
+<hr /><div style="text-align: center;">[Package <em>RgoogleMaps</em> version 1.2.0.7 <a href="00Index.html">Index</a>]</div>
+</body></html>

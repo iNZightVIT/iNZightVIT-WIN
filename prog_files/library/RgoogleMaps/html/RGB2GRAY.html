@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: translates an RGB image matrix to gray scale</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for RGB2GRAY {RgoogleMaps}"><tr><td>RGB2GRAY {RgoogleMaps}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>translates an RGB image matrix to gray scale</h2>
+
+<h3>Description</h3>
+
+<p>This function translates the rgb values of the array myTile into a scalar matrix with just one gray value per pixel.</p>
+
+
+<h3>Usage</h3>
+
+<pre>RGB2GRAY(myTile)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>myTile</code></td>
+<td>
+<p>rgb image matrix, usually array with 3 dimensions</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Gray scale intensity defined as  0.30R + 0.59G + 0.11B</p>
+
+
+<h3>Value</h3>
+
+<p>image tile</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Markus Loecher</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+if (interactive()){
+  BrooklynLatLon = getGeoCode("Brooklyn")
+  mapBrooklyn &lt;- GetMap(center=BrooklynLatLon, destfile = file.path(tempdir(), "Brooklyn.png"), 
+                 zoom=11, size = c(240,240))
+  mapBrooklynBW$myTile = RGB2GRAY(mapBrooklyn$myTile)
+  PlotOnStaticMap(mapBrooklynBW)
+}
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RgoogleMaps</em> version 1.2.0.7 <a href="00Index.html">Index</a>]</div>
+</body></html>
