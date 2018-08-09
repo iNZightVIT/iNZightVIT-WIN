@@ -15,9 +15,7 @@ Description: Simple plotting function(s) for exploratory data analysis with
     flexible plotting options to allow users to customise plots.
 License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2018-05-25 00:04:49 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Yu Han Soh [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.0; ; 2018-05-25 00:04:49 UTC; unix
+Built: R 3.5.0; ; 2018-08-09 21:58:37 UTC; unix

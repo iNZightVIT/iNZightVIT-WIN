@@ -1,24 +1,28 @@
 Package: iNZightMaps
 Type: Package
 Title: iNZightMaps
-Version: 1.1-3
-Date: 2017-04-10
-Authors@R: c(person("Eric", "Lim", role = c("aut"),
+Version: 2.0-0
+Date: 2018-01-18
+Authors@R: c(person("Daniel", "Barnett", role = c("aut"),
+                    email = "dbar344@aucklanduni.ac.nz"),
+             person("Tom", "Elliott", role = c("cre", "aut"),
+	            email = "tom.elliott@auckland.ac.nz"),
+             person("Eric", "Lim", role = c("aut"),
                     email = "jlim062@aucklanduni.ac.nz"),
              person("Jason", "Wen", role = "aut",
-	            email = "jwen246@aucklanduni.ac.nz"),
-             person("Tom", "Elliott", role = c("cre", "aut"),
-	            email = "tom.elliott@auckland.ac.nz"))
-Depends: R (>= 3.0)
-Imports: RgoogleMaps, maptools, grid, RColorBrewer, countrycode,
+	            email = "jwen246@aucklanduni.ac.nz"))
+Depends: R (>= 3.0), sf
+Imports: sf, ggplot2 (>= 2.2.1.9000), dplyr, ggrepel, ggsfextra,
+        gridExtra, grid, rlang, scales, magrittr, curl, XML, rgeos,
+        RgoogleMaps, maptools, grid, RColorBrewer, countrycode,
         iNZightPlots
+Additional_repositories: http://r.docker.stat.auckland.ac.nz/R
 Description: Simple plotting functions for geographical data.
 License: GPL-3 | file LICENSE
-RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2018-05-23 02:49:29 UTC; tell029
-Author: Eric Lim [aut],
-  Jason Wen [aut],
-  Tom Elliott [cre, aut]
+RoxygenNote: 6.0.1.9000
+Author: Daniel Barnett [aut],
+  Tom Elliott [cre, aut],
+  Eric Lim [aut],
+  Jason Wen [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.0; ; 2018-05-23 02:49:29 UTC; unix
+Built: R 3.5.0; ; 2018-08-09 21:59:31 UTC; unix
