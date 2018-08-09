@@ -1,0 +1,10 @@
+convert.to.factor       Convert to Factor
+create                  Method for creating plots for iNZight
+exploreAllPlots         Explore all Univariate Plots
+exploreAllSummaries     Explore all Univariate Summaries
+exportHTML              ExportHTML
+exportSVG               Export iNZightPlots as an SVG
+getPlotSummary          iNZight Plot Summary and Inference
+iNZightPlot             iNZight Plot
+inzpar                  iNZight Plotting Parameters
+print.inzHTML           Print method for 'inzHTML' object

@@ -1,0 +1,17 @@
+                        Multiple Response Data Analysis
+barplotMR               MR Barplot
+between                 Compute Between se's
+byMRO                   By MRO Constructor
+calcmissing             Calculate missing observation summary
+census.at.school.5000   Census at School 5000
+iNZightMR               Create iNZightMR multiple response object (MRO)
+moecalc                 Margin of Error Calculation
+mroPara                 Compute Para MRO for an object
+plotcombn               Missing Value plot
+seBinprops              Independent Binomial Proportions
+seCovs                  Compute standard error for covariance matrix
+seIndepSes              Independent Standard errors given
+seMNprops               Compuate SE for Multinomial proportions
+seMRprops               Multiple binary response
+substrsplit             Extract Common Name from variables
+switcher                Switcher generic

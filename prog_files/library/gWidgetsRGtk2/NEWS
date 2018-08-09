@@ -1,0 +1,391 @@
+Dear Emacs, please make this -*-Text-*- mode!
+
+     	    NEWS for gWidgetsRGtk2
+
+Changes for version 0.0-83
+--------------------------
+
+* add Rbuildignore
+
+
+Changes for version 0.0-82
+--------------------------
+
+* add character value for filter argument of gfile
+* fix font<- for size. (Thanks Yuhie)
+* gtree `update` function is improved
+
+Changes for version 0.0-81
+--------------------------
+
+* removed testing code to pass CRAN check on windows. Odd error, but
+  likely from older gWidgets being used 
+
+Changes for version 0.0-80
+--------------------------
+* attempt to fix drag and drop 
+
+Changes for version 0.0-79
+--------------------------
+* fix to ggraphics.R for allocations
+
+Changes for version 0.0-78
+--------------------------
+* changes to gvarbrowser
+
+Changes for version 0.0-77
+--------------------------
+ 
+* change in dnd, icons to avoid using "Namespce" functions
+
+* put back tag code into gtext
+
+* fix to gdf and do.subset=TRUE. (Thanks Stephanie)
+
+* fix to font.attr argument of insert method for gtext. (Had commented
+  out for speed, but forgot to fix ...) THanks Yvonnick.
+
+Changes for version 0.0-76
+--------------------------
+* requires gWidgets 0.0-46
+
+* added generics for $, [[ and [[<- to work with underlying toolkit object
+
+* use info bar for galert when parent is a gwindow.
+
+* bug fix for gdf and sorting (Thanks Stephanie)
+
+* do.buttons argument for gbasicdialog. Passed as hidden argument, or
+  formal one with newer gWidgets
+
+
+Changes for version 0.0-75
+--------------------------
+
+* bug fix for Observer class to allow proto methods
+
+* reworked fonts for gtext so that tags are not preloaded. That was
+  much too slow.
+
+* new editable generic, but no methods yet
+
+* focus method for gwindow to raise window
+
+Changes for version 0.0-74
+--------------------------
+
+* bug fixes svalue<-gtable and block_handlers
+
+Changes for version 0.0-73
+--------------------------
+
+* fix gstatusbar. OVerride default label, as it truncated the bottom
+  of the message with a recent GTK. However, removed support for
+  popping stack of messages. Likely not an issue, but can be put back
+  if requested.
+
+* fix to gradio to avoid premature garbage collection leading to crash
+  under tctorture. There may still be an issue with gbutton. (If so,
+  pass in a parent container to the constructor.) 
+
+* Reworked gradio and gcheckboxgroup to use a backend reference
+  class. Cleans up the code considerably.
+
+Changes for version 0.0-72
+--------------------------
+
+* removed example code -- for some reason CRAN was choking on it. 
+
+Changes for version 0.0-71
+--------------------------
+
+* bug fix to get traitr vignette to work cleanly
+ 
+
+Changes for version 0.0-70
+--------------------------
+* fix to gcombobox's [<- method
+
+Changes for version 0.0-69
+--------------------------
+* overload from= argument for gslider to specify arbitrary sortable vector
+* bug fix for handlers when label, images not enabled
+* added use.togglebutton for gcheckbox
+* another fix to gvarbrowser (Thanks Tom, wxffxw)
+* use RGtk2Extras now (name change) (Thanks TOm)
+* fix to gradio's [<- method
+* change to 3rd mouse popup and gtable (THanks Wincent)
+* fix to gvarbrowser (Thanks Stephanie)
+
+Changes for version 0.0-68
+--------------------------
+
+* fix to font<- and colors. Thanks to S. Bonett for the feedback.
+* added [ method for glayout. (oops, thanks but forgot who, sorry)
+* added svalue<- method to gtree, changed svalue(obj, index=XXX) behaviour
+* fix bug with insert method for gtext and scrolling to end.
+
+Changes for version 0.0-67
+--------------------------
+* fix to addHandlerClicked for gtree
+* added rubber-band selection to ggraphics (also
+addHandlerChanged). 
+* right click menu option for ggraphics
+
+Changes for version 0.0-66 (uploaded 6-28-10)
+--------------------------
+* visible<- method for gedit. If FALSE will do password entry characters 
+* bug fix to gtree (Thanks Dieter)
+* add multiple=TRUE argument to gfile
+
+Changes for version 0.0-65
+--------------------------
+* implemented new option use.table for gcheckboxgroup. Places widgets
+into table so one can scroll.
+
+* fixed bug in gcommandline that was breaking ggenericwidget
+
+* fix to glabel when editable=TRUE
+
+Changes for version 0.0-64
+--------------------------
+
+* Bug fix to ggrid code to make assignment work with visible.
+	
+* change to font.attr argument to gtext. Requires upgrade to gWidgets
+  (0.0-39) Now sets attributes for the
+  buffer, not just initial text. The add method and font<- method can
+  be used to adjust properties of pieces of text. Added behaviour for
+  font<- when no text is selected it changes text of entire buffer
+
+Changes for version 0.0-63
+--------------------------
+
+* bug fixes to ggrid to make gtable work better.
+
+Changes for version 0.0-62
+--------------------------- 
+
+* bug fixes for gdfnotebook. (Thanks Rune)
+
+* fix to make dnd work as expected with gedit.
+
+* bug fixes for gtoolbar, gmenu when icons were involved. Issue arose
+with newer GTK versions. (Thanks Rune)
+
+Changes for version 0.0-61
+--------------------------- 
+
+* namespace mistake
+
+Changes for version 0.0-60
+---------------------------
+
+* bug fix to gmenu which was preventing pmg from loading
+
+* in gvarbrowser added means for user to specify knownTypes. This variable
+  holds specification of similar classes.
+
+Changes for version 0.0-59
+---------------------------
+
+* Fix to gfile for filtering and intialfilename
+
+* implementing gdfedit front end to RGtk2DfEdit package of Tom Taverner
+
+
+Changes for version 0.0-58
+---------------------------
+* fix so that svalue<- for gtable only calls handler once.
+
+* bug fix with addHandlerChanged and pageno with gnotebook
+
+* add hidden argument "diy" to gdf to suppress adding keymotion
+  handlers or popup on column header clicking. 
+
+Changes for version 0.0-57
+---------------------------
+
+* font<- method for gbutton fixed
+
+* fix to svalue<- for gcombobox to handle index=FALSE properly
+
+Changes for version 0.0-56
+---------------------------
+* another fix to svalue for ggrid. Wasn't working with 
+   svalue(obj, index=FALSE) <- values (setting by value). Must match
+   through %in% (so best that chosencol is a character.
+
+Changes for version 0.0-55
+---------------------------
+
+* fix bug with svalue<- for gtable, wasn't clearing selection
+
+
+Changes for version 0.0-54
+--------------------------
+ 
+* add CTRL-1 for 3rd mouse binding, so that single-button mac users can be happy
+
+Changes for version 0.0-53
+--------------------------
+
+* fix to gfilebrowse (thanks to Hana)
+
+* added [<- method for spinbutton, gslider
+
+
+Changes for version 0.0-53
+--------------------------
+* Fix to gbutton constructor with gaction objects for action argument (Thanks Lisa)
+
+* fix to error message in gtable (Thanks Ronggui)
+
+
+Changes for version 0.0-52
+--------------------------
+* changed modal dialogs.
+
+Changes for version 0.0-51
+--------------------------
+
+* changed polling for gvarbrowser, can also change with inteval=secs*1000
+
+Changes for version 0.0-50
+--------------------------
+
+* fix to gvarbrowser -- last one didn't quite work. (Thanks again Albert)
+
+Changes for version 0.0-49
+--------------------------
+
+* fix to gvarbrowser to handle POSIX objects as expected (thanks Albert)
+
+
+Changes for version 0.0-48
+--------------------------
+
+* added gbasicdialog for compliance with toolkits  that need to have
+  parent container specified
+
+* implemented svalue<- for gaction
+
+Changes for version 0.0-47
+--------------------------
+
+* added gaction implementation. This can be used for gbutton, gmenu,
+  gtoolbar. The svalue<- method does not work
+
+* added ability in gWidgetsRGtk2 to put widgets into toolbars
+
+Changes for version 0.0-46
+--------------------------
+
+* fix to gframe for expand=FALSE
+
+* fix to gframe, gexpandgroup for spacing argument
+
+* added width argument for gcombobox via ... This needs to be
+  incorporated into generic in gWidgets are
+
+* fix to visible<-
+
+* fix typo in addhandlerkeystroke for gtext
+
+Changes for version 0.0-44
+--------------------------
+
+* fix handler code in gcheckboxgroup (Giles)
+
+
+Changes for version 0.0-41
+--------------------------
+* fix to .add in ggroup to take RGtk2 default alignment
+
+* fix to gedit -- if no [<- call, then no completion is created.
+
+Changes for version 0.0-40
+--------------------------
+
+* attempts to speed things up.
+
+
+Changes for version 0.0-39
+--------------------------
+
+* fix to EventBox(es) so that under windows the coloring is consistent.	
+
+Changes for version 0.0-38
+--------------------------
+
+* fixed bug with markup argument in gframe, yalign property 
+
+* fixed bug with width argument in gedit
+
+
+Changes for version 0.0-37
+--------------------------
+
+* fix to gtree. Bug with single column offspring.
+
+
+Changes for version 0.0-35
+--------------------------
+
+* changes to NAMESPACE to get pass check cleanly
+
+* fixed issue with S4 methods and oldClasses by avoiding the whole thing
+
+Changes for version 0.0-34
+--------------------------
+
+* fixes to gcheckboxgroup: a bug fix with [<- and ability to change
+  length of items using obj[]<- construct.
+
+Changes for version 0.0-33
+--------------------------
+
+* changes to docs, DESCRIPTION to pass R CMD check.
+
+
+Changes for version 0.0-32
+--------------------------
+
+* minor bug fix for gedit also glabel(editable=TRUE)
+
+
+Changes for version 0.0-30
+--------------------------
+
+* Fixed bug with gradio and selected
+
+* added tests directory to run tests from gWidgets package
+
+
+Changes for version 0.0-30
+--------------------------
+
+* Changed definition of basic widgets to use ANY instead of a class
+  union that container either guiWidget, gWidgetRGtk2 or
+  RGtkObject. The new is feature of 2.7.0 was messing this up. Should
+  fix this.
+
+* new function as.gWidgetsRGtk2 for coercing an RGtkObject object into
+  a gWidgetsRGtk2 object 
+
+* added anchor argument to ggroup
+
+* fixed glayout so that visible assignment is not needed. The widget
+  now resizes dynamically when asked. Added expand argument, and
+  anchor argument.
+
+* fixed handler for gradio.
+
+* added handlers blockHandler, unblockHandler. These may be useful
+  when updating a widget's values causes a handler to be called
+
+* gwindow. Add menubars, toolbars, and statusbars directly to the top
+  level gwindow object
+
+* gtext: added addHandlerKeystroke. The value h$keystroke contains the
+  key

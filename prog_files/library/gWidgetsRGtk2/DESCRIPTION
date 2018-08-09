@@ -1,0 +1,17 @@
+Package: gWidgetsRGtk2
+Version: 0.0-86
+Title: Toolkit Implementation of gWidgets for RGtk2
+Author: Michael Lawrence, John Verzani
+Maintainer: John Verzani <jverzani@gmail.com>
+Depends: methods, grDevices, utils, graphics, RGtk2, gWidgets,
+        cairoDevice
+Enhances: RGtk2Extras
+Description: Port of the gWidgets API to the RGtk2 toolkit.
+License: GPL (>= 2)
+LazyLoad: yes
+Packaged: 2018-01-29 17:10:41 UTC; parallels
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2018-03-01 17:38:49 UTC
+RoxygenNote: 6.0.1
+Built: R 3.4.4; ; 2018-08-07 20:02:02 UTC; windows

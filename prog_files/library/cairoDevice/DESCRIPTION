@@ -1,0 +1,23 @@
+Package: cairoDevice
+Version: 2.25
+Title: Embeddable Cairo Graphics Device Driver
+Author: Michael Lawrence
+Depends: R (>= 2.12.0)
+Imports: grDevices
+SystemRequirements: cairo (>= 1.0)
+Maintainer: Michael Lawrence <michafla@gene.com>
+Description: This device uses Cairo and GTK to draw to the screen,
+        file (png, svg, pdf, and ps) or memory (arbitrary GdkDrawable
+        or Cairo context). The screen device may be embedded into RGtk2
+        interfaces and supports all interactive features of other graphics
+        devices, including getGraphicsEvent().
+Acknowledgements: Lyndon Drake (based on gtkDevice), Brian Ripley
+        (updates for R 2.7), Mikhail Kondrin (Adobe->UTF8 translation),
+        Duncan Murdoch (updates for R 2.12)
+License: GPL
+NeedsCompilation: yes
+Packaged: 2018-06-11 14:32:38 UTC; larman
+Repository: CRAN
+Date/Publication: 2018-06-12 13:33:44 UTC
+Built: R 3.4.4; x86_64-w64-mingw32; 2018-06-15 17:31:06 UTC; windows
+Archs: i386, x64

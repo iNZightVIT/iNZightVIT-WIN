@@ -1,0 +1,23 @@
+Package: iNZightTools
+Type: Package
+Title: Tools for iNZight
+Version: 1.5.3
+Date: 2018-03-12
+Imports: utils, stats, methods, survey, grDevices, foreign, readr,
+        readxl, magrittr, tibble, dplyr, forcats, tidyr, stringr
+Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData
+Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
+                    email = "inzight_support@stat.auckland.ac.nz"),
+             person("Christoph", "Knopf", role = "aut"),
+             person("Akshay", "Gupta", role = "ctb"))
+Description: Compatibility functions used for multiple packages and
+    distributions of iNZight, including Lite.
+License: GPL-3 | file LICENSE
+RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-05-25 00:05:04 UTC; tell029
+Author: Tom Elliott [aut, cre],
+  Christoph Knopf [aut],
+  Akshay Gupta [ctb]
+Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
+Built: R 3.4.0; ; 2018-05-25 00:05:04 UTC; unix
