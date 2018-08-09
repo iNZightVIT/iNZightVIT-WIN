@@ -15,10 +15,8 @@ Description: Core functions for iNZight Model Fitting module, and can also be
     used as a standalone package called directly from R.
 License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2018-05-18 01:41:27 UTC; tell029
 Author: Simon Potter [aut],
   David Banks [aut],
   Tom Elliott [cre, aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.4.0; ; 2018-05-18 01:41:28 UTC; unix
+Built: R 3.2.2; ; 2018-08-09 21:25:14 UTC; unix
