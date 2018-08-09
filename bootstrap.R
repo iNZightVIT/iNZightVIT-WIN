@@ -1,3 +1,5 @@
+ca <- commandArgs(trailingOnly = TRUE)
+
 cat (" * cleaning old files\n")
 if (dir.exists("prog_files")) unlink("prog_files", TRUE, TRUE)
 
@@ -40,10 +42,16 @@ ap <- available.packages(repos = repos)
 srclib <- .libPaths()[1]
 inzpkgs <- c('iNZight', 'iNZightPlots', 'iNZightModules', 'iNZightTools',
              'iNZightRegression', 'iNZightMR', 'iNZightTS', 'vit')
+if (length(ca) > 0)
+    inzpkgs <- c(inzpkgs, ca)
 
 extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap, 
                                               fields = c('Depends', 'Imports', 'Suggests', 'LinkingTo'))
-extrapkgs <- extrapkgs[!extrapkgs %in% c("Acinonyx", 'iNZightMaps')]
+if (!'iNZightMaps' %in% inzpkgs)
+    extrapkgs <- extrapkgs[extrapkgs != "iNZightMaps"]
+extrapkgs <- extrapkgs[extrapkgs != "Acinonyx"]
+
+## Installing additional packages specified on command line ...
 deps <- c(extrapkgs, packrat:::recursivePackageDependencies(unique(c(inzpkgs, extrapkgs)), srclib, ap))
 
 missing <- deps[!deps %in% names(pkgversions)]
@@ -68,8 +76,6 @@ x <- apply(pkgs, 1, function(pkg) {
 ## and stick gtk into place 
 cat(" * copying GTK library\n")
 x <- file.copy(file.path("assets", "gtk"), file.path("prog_files", "library", "RGtk2"), recursive = TRUE)
-
-
 
 ## and then install the latest versions of things ...
 cat(" * Done!\n\nNow go to `dev` and install the development iNZight packages\nif this isn't the master release\n")

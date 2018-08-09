@@ -33,5 +33,5 @@ X-CRAN-Comment: Orphaned on 2017-06-19: all updates have been by the
         CRAN team for some years.
 Repository: CRAN
 Date/Publication: 2018-08-01 08:57:22 UTC
-Built: R 3.4.4; x86_64-w64-mingw32; 2018-08-02 07:26:08 UTC; windows
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-08-03 17:00:45 UTC; windows
 Archs: i386, x64

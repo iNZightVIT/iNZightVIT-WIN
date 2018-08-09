@@ -14,11 +14,13 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
 Depends: R (>= 2.13)
 Imports: gWidgets2, gWidgets2RGtk2, iNZightPlots, iNZightRegression,
         iNZightTools, iNZightMR, iNZightTS, gpairs, methods, survey
-Suggests: iNZightMaps, rgl, mgcv, sf
+Suggests: iNZightMaps, rgl, mgcv
 License: GPL-3 | file LICENSE
 Description: A suite of add-on modules for the iNZight GUI, including model
     fitting module, multiple response, time series, and some advanced plotting.
 RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-05-18 01:42:41 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Daniel Barnett [aut],
   Eric Lim [aut],
@@ -27,4 +29,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.2.2; ; 2018-08-09 21:25:19 UTC; unix
+Built: R 3.5.0; ; 2018-05-18 01:42:41 UTC; unix

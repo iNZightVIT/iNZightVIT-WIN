@@ -16,5 +16,5 @@ NeedsCompilation: yes
 Packaged: 2018-08-02 02:42:43 UTC; Lion
 Repository: CRAN
 Date/Publication: 2018-08-02 17:40:02 UTC
-Built: R 3.4.4; x86_64-w64-mingw32; 2018-08-07 19:56:07 UTC; windows
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-08-03 16:59:55 UTC; windows
 Archs: i386, x64

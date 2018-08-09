@@ -1,0 +1,35 @@
+ClickOnZoom             Zoom in/out
+Get.map.size            Get the size of the map in pixels
+bar.coor                create bar object
+col.fun                 Color Specification
+create.inz.mapplot      title
+create.inz.shapemapplot
+                        draw a shape file ...
+data.trans              data transformation
+drawing.features        drawing features
+getNewMap               Get an new map object
+iNZightMap              Create an iNZight Map Object
+iNZightShapeMap         Create an iNZight Shape Map Object
+innerLim                inner limit
+is.google.map           Is Google Map?
+latlon.xy               latlon.xy
+lim.inside              identify the which set of latitude and
+                        longitude are within the limit.
+lon.rescale             transform the latitude
+map.xylim               get the limit of x-axis and y-axis
+name.match              Calaudate the bbox of a country
+needNewMap              Need New Map
+nzquakes                Earthquakes in New Zealand
+order.match             re-order the region name in shape file
+outerLim                outer limit
+plot.inzightshapemap    Create an iNZight Shape Map Object
+plot.inzmap             Plot an iNZight Map
+plot.inzshapemap        Plot an iNZight Shape Map
+re.scale                rearrange the limit
+region.bbox             Calaudate the bbox of a country
+rezoom                  change the zoom within the center point
+sClickOnZoom            Zoom in/out
+shape.extract           extract and create a shape object
+srezoom                 change the zoom within the center point
+subByLim                subset by limit
+win.ratio               win.ratio

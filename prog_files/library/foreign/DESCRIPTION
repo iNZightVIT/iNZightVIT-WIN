@@ -49,5 +49,5 @@ Author: R Core Team [aut, cph, cre],
 Maintainer: R Core Team <R-core@R-project.org>
 Repository: CRAN
 Date/Publication: 2018-07-20 09:17:09 UTC
-Built: R 3.4.4; x86_64-w64-mingw32; 2018-07-22 20:52:12 UTC; windows
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-07-21 10:00:27 UTC; windows
 Archs: i386, x64

@@ -33,5 +33,5 @@ NeedsCompilation: yes
 Packaged: 2018-06-25 14:51:36 UTC; gwarnes
 Repository: CRAN
 Date/Publication: 2018-06-26 14:37:57 UTC
-Built: R 3.4.4; x86_64-w64-mingw32; 2018-06-26 18:49:39 UTC; windows
+Built: R 3.5.0; x86_64-w64-mingw32; 2018-06-27 22:59:37 UTC; windows
 Archs: i386, x64

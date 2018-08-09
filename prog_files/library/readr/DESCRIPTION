@@ -35,5 +35,5 @@ Author: Hadley Wickham [aut],
 Maintainer: Jim Hester <james.hester@rstudio.com>
 Repository: CRAN
 Date/Publication: 2017-05-16 19:03:57 UTC
-Built: R 3.4.4; x86_64-w64-mingw32; 2018-08-07 22:46:11 UTC; windows
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-08-03 22:06:29 UTC; windows
 Archs: i386, x64

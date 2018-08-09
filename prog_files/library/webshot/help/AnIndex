@@ -1,8 +1,0 @@
-%>%	reexports
-appshot	appshot
-install_phantomjs	install_phantomjs
-reexports	reexports
-resize	resize
-rmdshot	rmdshot
-shrink	shrink
-webshot	webshot
