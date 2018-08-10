@@ -26,6 +26,7 @@ lim.inside              identify the which set of latitude and
                         longitude are within the limit.
 lon.rescale             transform the latitude
 map.xylim               get the limit of x-axis and y-axis
+matchVariables          Match two vectors
 name.match              Calaudate the bbox of a country
 needNewMap              Need New Map
 nzquakes                Earthquakes in New Zealand

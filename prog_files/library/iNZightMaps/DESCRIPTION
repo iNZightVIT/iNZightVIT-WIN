@@ -11,11 +11,11 @@ Authors@R: c(person("Daniel", "Barnett", role = c("aut"),
                     email = "jlim062@aucklanduni.ac.nz"),
              person("Jason", "Wen", role = "aut",
 	            email = "jwen246@aucklanduni.ac.nz"))
-Depends: R (>= 3.0), sf
-Imports: sf, ggplot2 (>= 2.2.1.9000), dplyr, ggrepel, ggsfextra,
-        gridExtra, grid, rlang, scales, magrittr, curl, XML, rgeos,
-        RgoogleMaps, maptools, grid, RColorBrewer, countrycode,
-        iNZightPlots
+Depends: R (>= 3.2)
+Imports: ggplot2, dplyr, ggrepel, gridExtra, grid, rlang, scales,
+        magrittr, curl, XML, RgoogleMaps, maptools, RColorBrewer,
+        countrycode, iNZightPlots
+Suggests: sf, rgeos, ggsfextra
 Additional_repositories: http://r.docker.stat.auckland.ac.nz/R
 Description: Simple plotting functions for geographical data.
 License: GPL-3 | file LICENSE
@@ -25,4 +25,4 @@ Author: Daniel Barnett [aut],
   Eric Lim [aut],
   Jason Wen [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.0; ; 2018-08-09 23:13:13 UTC; unix
+Built: R 3.5.0; ; 2018-08-10 04:37:27 UTC; unix

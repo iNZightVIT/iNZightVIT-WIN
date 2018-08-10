@@ -20,6 +20,7 @@ latlon.xy	latlon.xy
 lim.inside	lim.inside
 lon.rescale	lon.rescale
 map.xylim	map.xylim
+matchVariables	matchVariables
 name.match	name.match
 needNewMap	needNewMap
 nzquakes	nzquakes
