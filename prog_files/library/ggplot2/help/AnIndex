@@ -31,7 +31,6 @@ autoplot	autoplot
 AxisSecondary	ggplot2-ggproto
 benchplot	benchplot
 borders	borders
-calc	calc
 calc_element	calc_element
 color	aes_colour_fill_alpha
 colour	aes_colour_fill_alpha
@@ -226,10 +225,15 @@ ggsf	ggsf
 ggtitle	labs
 gg_dep	gg_dep
 group	aes_group_order
+guide-exts	guide-exts
 guides	guides
 guide_colorbar	guide_colourbar
 guide_colourbar	guide_colourbar
+guide_gengrob	guide-exts
+guide_geom	guide-exts
 guide_legend	guide_legend
+guide_merge	guide-exts
+guide_train	guide-exts
 hmisc	hmisc
 is.Coord	is.Coord
 is.facet	is.facet
@@ -251,6 +255,7 @@ layer	layer
 layer_data	ggplot_build
 layer_grob	ggplot_build
 layer_scales	ggplot_build
+Layout	ggplot2-ggproto
 limits	limits
 lims	lims
 linetype	aes_linetype_size_shape
@@ -350,6 +355,9 @@ scale_colour_manual	scale_manual
 scale_colour_ordinal	scale_viridis
 scale_colour_viridis_c	scale_viridis
 scale_colour_viridis_d	scale_viridis
+scale_continuous_identity	scale_identity
+scale_discrete_identity	scale_identity
+scale_discrete_manual	scale_manual
 scale_fill_brewer	scale_brewer
 scale_fill_continuous	scale_colour_continuous
 scale_fill_date	scale_gradient
@@ -411,6 +419,7 @@ shape	aes_linetype_size_shape
 should_stop	should_stop
 size	aes_linetype_size_shape
 Stat	ggplot2-ggproto
+stat	stat
 StatBin	ggplot2-ggproto
 StatBin2d	ggplot2-ggproto
 StatBindot	ggplot2-ggproto

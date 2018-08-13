@@ -19,7 +19,6 @@ autolayer               Create a ggplot layer appropriate to a
 autoplot                Create a complete ggplot appropriate to a
                         particular data type
 borders                 Create a layer of map borders
-calc                    Calculated aesthetics
 coord_cartesian         Cartesian coordinates
 coord_fixed             Cartesian coordinates with fixed "aspect ratio"
 coord_flip              Cartesian coordinates with x and y flipped
@@ -121,6 +120,7 @@ scale_x_date            Position scales for date/time data
 scale_x_discrete        Position scales for discrete data
 seals                   Vector field of seal movements
 sec_axis                Specify a secondary axis
+stat                    Calculated aesthetics
 stat_ecdf               Compute empirical cumulative distribution
 stat_ellipse            Compute normal confidence ellipses
 stat_function           Compute function for each x value
