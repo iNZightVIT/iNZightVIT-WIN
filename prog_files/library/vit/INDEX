@@ -1,58 +1,53 @@
-CIcounter            confidence coverage method for
-                     DISPLAY_RESULT
-appendPath           appends a vpPath to include the number n
-                     on the bottommost viewport. If the bottom
-                     most viewport ends in a number, it
-                     replaces that number with n.
-boxplotGrob          Construct a boxplot grob
-calcCITWald          the various confidence coverage methods
-                     for CALC_STAT note that the percentile
-                     bootstrap methods do not perform very
-                     well. Here's the speed of
-                     makeStatDistribution when using different
-                     version of them on an original data of
-                     size 80
-ci1000               confidence coverage method for
-                     HANDLE_1000: how to display the results
-                     of 1000 bootstrap samples
-coldatatextGrob      Construct a datatext grob
-confintGrob          Construct a ci grob
-datatextGrob         Construct a datatext grob
-dropCI               confidence coverage method for
-                     ANIMATE_STAT
-dropPoints1d         Animates a sample of points dropping down
-                     from the collection of points in the data
-                     window. The ANIMATE_SAMPLE method for
-                     numeric, one dimensional data.
-ghostsGrob           a grob used to display previous boxplots
-                     as ghost boxplots
-grid.boxplot         Draw a boxplot grob
-grid.coldatatext     Draw a datatext grob
-grid.confint         Draw a ci grob
-grid.datatext        Draw a datatext grob
-grid.ghosts          Draw a ghosts grob
-grid.hist            Draw a histogram grob
-histGrob             Construct a histogram grob
-iNZightVIT           Visual Inference Tools and iNZight Home
-plotBoxplot          helper function for plotting numeric data
-plotHist             helper function for plotting numeric data
-plotPoints           helper function for plotting numeric data
-plotPointsAndBoxplot
-                     Used for displaying numeric data. Plots a
-                     group of points with a boxplot in the
-                     specified viewport. The points will be
-                     stacked on top of each other in an
-                     intelligent manner when necessary.
-showVPs              helper function for programming use
-stackPoints          Calculates y values for a vector of
-                     overlapping x values. Y values are
-                     designed to prevent overlapping by
-                     creating the appearance of stacked data.
-                     A helper function for numeric 1d Data.
-                     Also used for 2d data where one dimension
-                     is numeric, and one is categorical.
-updateVit            Updating the 'VIT' system.
-vit-package          Visual Inference Tools
-vitBugReport         Writing a Bug Report for 'VIT'
-vpNumber             returns the number at the end of the
-                     viewport name
+CIcounter               confidence coverage method for DISPLAY_RESULT
+appendPath              appends a vpPath to include the number n on the
+                        bottommost viewport. If the bottom most
+                        viewport ends in a number, it replaces that
+                        number with n.
+boxplotGrob             Construct a boxplot grob
+calcCITWald             the various confidence coverage methods for
+                        CALC_STAT note that the percentile bootstrap
+                        methods do not perform very well. Here's the
+                        speed of makeStatDistribution when using
+                        different version of them on an original data
+                        of size 80
+ci1000                  confidence coverage method for HANDLE_1000: how
+                        to display the results of 1000 bootstrap
+                        samples
+coldatatextGrob         Construct a datatext grob
+confintGrob             Construct a ci grob
+datatextGrob            Construct a datatext grob
+dropCI                  confidence coverage method for ANIMATE_STAT
+dropPoints1d            Animates a sample of points dropping down from
+                        the collection of points in the data window.
+                        The ANIMATE_SAMPLE method for numeric, one
+                        dimensional data.
+ghostsGrob              a grob used to display previous boxplots as
+                        ghost boxplots
+grid.boxplot            Draw a boxplot grob
+grid.coldatatext        Draw a datatext grob
+grid.confint            Draw a ci grob
+grid.datatext           Draw a datatext grob
+grid.ghosts             Draw a ghosts grob
+grid.hist               Draw a histogram grob
+histGrob                Construct a histogram grob
+iNZightVIT              Visual Inference Tools and iNZight Home
+plotBoxplot             helper function for plotting numeric data
+plotHist                helper function for plotting numeric data
+plotPoints              helper function for plotting numeric data
+plotPointsAndBoxplot    Used for displaying numeric data. Plots a group
+                        of points with a boxplot in the specified
+                        viewport. The points will be stacked on top of
+                        each other in an intelligent manner when
+                        necessary.
+showVPs                 helper function for programming use
+stackPoints             Calculates y values for a vector of overlapping
+                        x values. Y values are designed to prevent
+                        overlapping by creating the appearance of
+                        stacked data. A helper function for numeric 1d
+                        Data. Also used for 2d data where one dimension
+                        is numeric, and one is categorical.
+updateVit               Updating the 'VIT' system.
+vit-package             Visual Inference Tools
+vitBugReport            Writing a Bug Report for 'VIT'
+vpNumber                returns the number at the end of the viewport
+                        name
