@@ -1,0 +1,53 @@
+ClickOnZoom             Zoom in/out
+Get.map.size            Get the size of the map in pixels
+bar.coor                create bar object
+col.fun                 Color Specification
+create.inz.mapplot      title
+create.inz.shapemapplot
+                        draw a shape file ...
+data.trans              Transform the data into the range of [0,1].
+decodeMapDir            Convert map filepaths to "tidy" filepaths
+download.shapefiles     Download shapefiles from remote repository
+drawing.features        drawing features
+findBestMatch           Find 'best-matching' pair of variables from map
+                        and data
+getMinMax               Get the range of a set of variables while
+                        ignoring categorical variables
+getNewMap               Get an new map object
+iNZightMap              Create an iNZight Map Object
+iNZightMapAggregation   Aggregate an iNZightMapPlot with Multiple
+                        Observations
+iNZightMapCountryISO    Get list of country ISO codes
+iNZightMapPlot          Create iNZightMapPlot object
+iNZightMapProjections   Get available map projections
+iNZightMapRegions       Extract region names from iNZightMapPlot object
+iNZightMapVars          Extract column names from an iNZightMapPlot
+                        object
+iNZightShapeMap         Create an iNZight Shape Map Object
+innerLim                inner limit
+is.google.map           Is Google Map?
+latlon.xy               latlon.xy
+lim.inside              identify the which set of latitude and
+                        longitude are within the limit.
+lon.rescale             Transform the longitude
+map.xylim               get the limit of x-axis and y-axis
+matchVariables          Match two vectors
+name.match              Match names between map and data
+needNewMap              Need New Map
+nzquakes                Earthquakes in New Zealand
+order.match             re-order the region name in shape file
+outerLim                outer limit
+plot.iNZightMapPlot     Plot an iNZightMapPlot
+plot.inzightshapemap    Create an iNZight Shape Map Object
+plot.inzmap             Plot an iNZight Map
+plot.inzshapemap        Plot an iNZight Shape Map
+re.scale                rearrange the limit
+read.mapmetadata        Read shapefile metadata from file
+region.bbox             Calaudate the bbox of a country
+retrieveMap             Retrieve a map for use in iNZightMapPlot
+rezoom                  change the zoom within the center point
+sClickOnZoom            Zoom in/out
+shape.extract           extract and create a shape object
+srezoom                 change the zoom within the center point
+subByLim                subset by limit
+win.ratio               win.ratio
