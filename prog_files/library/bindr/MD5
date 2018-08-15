@@ -1,4 +1,4 @@
-4f454601519107159c07dae9baec1ad4 *DESCRIPTION
+50aa49677f9bd83818aa5426f621ac82 *DESCRIPTION
 89754a5a35c3b2b05752518b1aa5f561 *INDEX
 d3d2f503f5c96ac395a270e7c295ec0b *LICENSE
 5f115efe2bba8c950929bca99bf07da3 *Meta/Rd.rds
@@ -6,7 +6,7 @@ d3d2f503f5c96ac395a270e7c295ec0b *LICENSE
 a0e64d7d4bc7b30b4f686b7a7a08c081 *Meta/hsearch.rds
 46414d963875da41e1c60af1f784ce1b *Meta/links.rds
 9394c5177b8bfb4086d5d3ecd81634c0 *Meta/nsInfo.rds
-f2310bab16a0bcb2e0d4f846fd9a0184 *Meta/package.rds
+3627c461f4500b257cb5d338d247dc58 *Meta/package.rds
 bfedbdf528857533acbe57424d0ec1ca *NAMESPACE
 274d33525c49eb357007b7591aaf56fe *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/bindr
@@ -14,8 +14,8 @@ bc151a78d1f848895d0fe263c2a09158 *R/bindr.rdb
 c1ab197d5c195ccfb31915eab169cfa7 *R/bindr.rdx
 da2ae391868a52badf891f1bb20e7397 *help/AnIndex
 a51add00d000cc61925792289c9a3403 *help/aliases.rds
-e6be1b9723137e5f5610f3a93deb7917 *help/bindr.rdb
-bc42529b9cb52a49af6a606d0d372b9f *help/bindr.rdx
-72dd2a458d73ef14b2e49b94180baf75 *help/paths.rds
+c4c20c065f621af70c394105f46689a9 *help/bindr.rdb
+b7f901f7c54d4b5f19d07fdb50859bf0 *help/bindr.rdx
+77a17268d3d764e2341dd8201bf0955c *help/paths.rds
 41cdf28025d4ba0b4d62bba525d5cc5b *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

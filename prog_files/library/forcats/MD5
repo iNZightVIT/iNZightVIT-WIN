@@ -1,4 +1,4 @@
-d2afbd52d32636f15f27144cad3a2f96 *DESCRIPTION
+9d1ce9fe52fdd9cb6ff98b3f4d071b60 *DESCRIPTION
 be0cda331a7e2e4600ffd92555cb0513 *INDEX
 8e7cf37b1a9ac4fcebac01329336d993 *Meta/Rd.rds
 4408f4b16fc4629a00ac9f802f31abc9 *Meta/data.rds
@@ -6,7 +6,7 @@ be0cda331a7e2e4600ffd92555cb0513 *INDEX
 2b5720187284b60eccdc67b36e9793e6 *Meta/hsearch.rds
 490be5c371489684d2d2ab441dcbf2b1 *Meta/links.rds
 88670339cec35bfe5e07c995b02d6424 *Meta/nsInfo.rds
-6f7f5324d75b3ac0b4f26d4669fd137e *Meta/package.rds
+bc39cc3b273b07b9900c8e6d3b89e408 *Meta/package.rds
 41ef6f9b7d02ae3774bce06f9ba2b9a5 *NAMESPACE
 1993bf506b738553ce1aa6a76ce9b938 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/forcats
@@ -18,8 +18,8 @@ f377de1f33df172cd65a6fbf93d1be55 *data/Rdata.rdb
 4ef2733709424c4031cd36aaa1d9f910 *help/AnIndex
 9d8dc0e2ca26bea9cd2c6ae61075544c *help/aliases.rds
 3c765eeb84bb9fc1e5f64fe7cf9e69fe *help/figures/logo.png
-5b6494e3aa305925937be57f071e7631 *help/forcats.rdb
-ac9a6e6cce2c7fec80e268a3ff8ff516 *help/forcats.rdx
-aa23102d14ddd316c7ed2c2d95f0828c *help/paths.rds
+4a6b5f582d6adde6a14435ae4cb43a02 *help/forcats.rdb
+d1f72018799484dd3d906f18f9657fc0 *help/forcats.rdx
+8f72f6321a238a9b1d0db7e52bef5741 *help/paths.rds
 de1782ca9dd8cec4042d045322846b84 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

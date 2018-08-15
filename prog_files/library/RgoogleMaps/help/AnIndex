@@ -8,14 +8,11 @@ columbus	columbus
 coords	columbus
 degreeAxis	degreeAxis
 DF2SpatialPointsDataFrame	DF2SpatialPointsDataFrame
-GetBingMap	GetBingMap
 getGeoCode	getGeoCode
 GetMap	GetMap
 GetMap.bbox	GetMap.bbox
-GetMapTiles	GetMapTiles
-GetOsmMap	GetOsmMap
+GetMap.OSM	GetMap.OSM
 IdentifyPoints	IdentifyPoints
-incidents	incidents
 LatLon2XY	LatLon2XY
 LatLon2XY.centered	LatLon2XY.centered
 MapBackground	MapBackground
@@ -24,8 +21,6 @@ mypolygon	mypolygon
 NYleukemia	NYleukemia
 pennLC	pennLC
 PlotArrowsOnStaticMap	PlotArrowsOnStaticMap
-plotmap	plotmap
-PlotOnMapTiles	PlotOnMapTiles
 PlotOnStaticMap	PlotOnStaticMap
 PlotPolysOnStaticMap	PlotPolysOnStaticMap
 polys	columbus

@@ -1,6 +1,6 @@
 b6991f4124dcc3bef51e7340d91beb64 *CITATION
 3e8ebae349953a3b7a665eecce562802 *COPYRIGHTS
-ffda250120455066d4f297d459b535d0 *DESCRIPTION
+104203da172895492eec9e6a7838c789 *DESCRIPTION
 18736a487072843ee334ba7d22855aa1 *INDEX
 3226154665ea10343587dca1b953ccc3 *Meta/Rd.rds
 30cb0a8d126734510644b2f9651967b2 *Meta/data.rds
@@ -8,7 +8,7 @@ ffda250120455066d4f297d459b535d0 *DESCRIPTION
 d060a4da412f19b0c0a189c5f9000a61 *Meta/hsearch.rds
 5d194fd943fbb6da561d37da3e8638f3 *Meta/links.rds
 d4f5337d6c33003a5a88621f58373783 *Meta/nsInfo.rds
-7cbefa821bfffc723b9b7f0864699558 *Meta/package.rds
+98a638de1b99dbe603e79a0a7d04987c *Meta/package.rds
 8cf2274cb33e210fac7e78b87ddcfdcc *Meta/vignette.rds
 f458cec8721bf68125c976da0ca34186 *NAMESPACE
 34516049e8d56f58b9e9a7ac4e0b4dff *NEWS.Rd
@@ -48,12 +48,12 @@ b64fd9f2b41dd6fa0f3339cb064f913f *doc/validate.Rnw
 810f7b02025929201f5ab5727cb6d9d1 *doc/validate.pdf
 ea222fa6980b304f189d1bfa9fecfabd *help/AnIndex
 3cf008d73aba170d76a78ccffb56b997 *help/aliases.rds
-df716b100f0a030fd7ea1dbfbaac1578 *help/paths.rds
-fc1c51651f5b3e5eefb76619f9006732 *help/survival.rdb
-0676046a76762dd4e4fb79f37519d337 *help/survival.rdx
+6e13c66a18fc2b437ec0cafa36156b6f *help/paths.rds
+7c9bbe7c421206afff0a9af6adf2249c *help/survival.rdb
+ca280181337120db6b09c067203f08aa *help/survival.rdx
 372b3c633a4c0f68cfc016e011e6e34b *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-661aad0ad2901c8e482d28ef476df22e *libs/i386/survival.dll
+697b2f4bf4b310958fad3611639c68fb *libs/i386/survival.dll
 1e5f03fb647f53b1eae0bbbb89c6a069 *libs/i386/symbols.rds
-3c12afcc4af16ad30f30c81b663b32d1 *libs/x64/survival.dll
+ef4b3bfa803d4e6acd748ea0cfcb409a *libs/x64/survival.dll
 1ca1cbfeb19194d949502d61ba0a0786 *libs/x64/symbols.rds

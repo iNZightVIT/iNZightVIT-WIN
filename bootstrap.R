@@ -34,9 +34,9 @@ cat(" * compiling list of required packages\n")
 pkglib <- file.path("prog_files", "library")
 pkgversions <- installed.packages(pkglib)[, 'Version']
 
-repos <- c('http://r.docker.stat.auckland.ac.nz/R', 'https://cran.stat.auckland.ac.nz')
-if (!requireNamespace('packrat')) install.packages('packrat', repos = repos[2])
-if (!requireNamespace('devtools')) install.packages('devtools', repos = repos[2])
+repos <- c('https://r.docker.stat.auckland.ac.nz', 'https://cran.stat.auckland.ac.nz')
+if (!requireNamespace('packrat', quietly = TRUE)) install.packages('packrat', repos = repos[2])
+if (!requireNamespace('devtools', quietly = TRUE)) install.packages('devtools', repos = repos[2])
 
 ap <- available.packages(repos = repos)
 srclib <- .libPaths()[1]
