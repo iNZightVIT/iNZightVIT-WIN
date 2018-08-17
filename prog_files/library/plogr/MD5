@@ -1,4 +1,4 @@
-13aa1d199e83befb1ee2e9a9cdf87e9c *DESCRIPTION
+eba06bafcd3d6815ba7a7f2b967dd4af *DESCRIPTION
 55bd2816da8dc47189fa1b142d103dbc *INDEX
 79a530ad02c67c61317228e9b1ffadfc *LICENSE
 b492f78afb9c11c84c4ce15938272d65 *Meta/Rd.rds
@@ -6,7 +6,7 @@ b492f78afb9c11c84c4ce15938272d65 *Meta/Rd.rds
 488215d24f15a86898314297575f805b *Meta/hsearch.rds
 9d495e87f41f5a0120096116ad01b7de *Meta/links.rds
 391aea956dd6f828a5b9e5926fa2eb3a *Meta/nsInfo.rds
-219e745cb47c6777e8e5288ec24025de *Meta/package.rds
+21a21360504327b6dc9beb328eaab1d9 *Meta/package.rds
 dc21c19f0d6968ee25d441b2cf46017d *NAMESPACE
 7386ca54661ad9cc415bdf292967c784 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/plogr
@@ -14,9 +14,9 @@ ebf0fc819595d631b8bf280c4b049940 *R/plogr
 2f5267c84911b2c033b4d7f6aa48d850 *R/plogr.rdx
 93bdb9a49433421343ad7f0dd7331740 *help/AnIndex
 da8deee51fdfcfed1727e93d30da8dd7 *help/aliases.rds
-77d8b331b040ca18d9918bd7b68cd7f9 *help/paths.rds
-ef37c2827ba88f5300fa0b88b029cd34 *help/plogr.rdb
-83dc0cf929160bc323e315fb772eba85 *help/plogr.rdx
+a7192e03dcf7469dc422535e043f7ef4 *help/paths.rds
+3c31acab2c23f97bf02b297219a027b6 *help/plogr.rdb
+8302b678e60983cda2186f1e9d1255c8 *help/plogr.rdx
 7228eb186c4c99c622dfdb2a553d57a9 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 93068ec6c9320f5672c2a7dd0944830f *include/plog/Appenders/ColorConsoleAppender.h

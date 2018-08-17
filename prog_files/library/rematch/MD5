@@ -1,4 +1,4 @@
-57c4447d249b06e3b2c1742eb3958d58 *DESCRIPTION
+22d3cd481054c4339ff3848b972bc4bc *DESCRIPTION
 2c2b707ada855625f2681ed6faf1b3ac *INDEX
 ddfa93fe5d0827d872d34b7eef574617 *LICENSE
 73a1a5749360ee86759c2b67b18bf1d3 *Meta/Rd.rds
@@ -6,7 +6,7 @@ ddfa93fe5d0827d872d34b7eef574617 *LICENSE
 172fda7d9bd069b7b1233634c02ba76a *Meta/hsearch.rds
 8024478d13250c26bae486beaaedab55 *Meta/links.rds
 466e50687b9a68aea0b80255a88f502c *Meta/nsInfo.rds
-d0e2c2f34c6dba6a481360836dfa1db7 *Meta/package.rds
+caa6c6d7a96b58bcaf668b426471afd1 *Meta/package.rds
 66d6c0cadabbb19765b6d2b06a501098 *NAMESPACE
 7e4ca3f7d415ec56887db89e15f8543a *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/rematch
@@ -16,8 +16,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/rematch
 30e86bc337e361e92ad4ef0661f98535 *README.md
 474455a411fa51806c29fc0ae200d52d *help/AnIndex
 36b12255d51122aba5d0592e2d13f0cb *help/aliases.rds
-97095a2a55309d0c0f080d494ba483e4 *help/paths.rds
-de37b52b1a5d3ea4e597113966954ce2 *help/rematch.rdb
-91367f65b8e3e2329720ca97ec9836bf *help/rematch.rdx
+409068501e365c82db67e175e3a417b4 *help/paths.rds
+04e9aff0875257929536377dec914f85 *help/rematch.rdb
+9281ad06003e708358f281c04bb938da *help/rematch.rdx
 5df7b882d102121429541cf9e5337650 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

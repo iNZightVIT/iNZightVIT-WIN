@@ -3,8 +3,11 @@ fansi	fansi
 fansi_lines	fansi_lines
 has_ctl	has_ctl
 has_sgr	has_ctl
+html_code_block	html_code_block
+html_esc	html_esc
 nchar_ctl	nchar_ctl
 nzchar_ctl	nchar_ctl
+set_knit_hooks	set_knit_hooks
 sgr_to_html	sgr_to_html
 strip_ctl	strip_ctl
 strip_sgr	strip_ctl

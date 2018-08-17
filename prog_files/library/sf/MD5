@@ -1,4 +1,4 @@
-468259fcf0ebb90de878a64731cfbf6c *DESCRIPTION
+4318fcd19c2512de14b38287c03b90f2 *DESCRIPTION
 1edb4ddb20dc6f35183a533b7798ca3b *INDEX
 2162eda403216e2057a46c1dfd3c7575 *LICENSE
 b0d8fe6dda0e4c362807b1f6833becfa *Meta/Rd.rds
@@ -8,7 +8,7 @@ b0d8fe6dda0e4c362807b1f6833becfa *Meta/Rd.rds
 7459b7314a2d4d9064003ba05216ef67 *Meta/hsearch.rds
 510b663bda5586e78dc94ceb10ca0cdd *Meta/links.rds
 e1baa859660bee9abd8bcc38a85e28c4 *Meta/nsInfo.rds
-2160bb9a1dd3aa4ad55823d1ce0e324a *Meta/package.rds
+803aca9e60a6d8742b658a1c6539330c *Meta/package.rds
 b37f45f58a392e954a0d655127e4f66f *Meta/vignette.rds
 1cef0c9a4f9558bd3da42dba3727f47b *NAMESPACE
 7a1dd808eec4e75e8affb8df5985655e *NEWS.md
@@ -145,16 +145,16 @@ ab47722d2f2846cb6aaee259c6f54d74 *gml/fmi_test.gml
 7feb91dd9455230d9ce68f6fcfd2f783 *gpkg/tl.gpkg
 83093b7faa08cf3ef16cd86dc04ccf96 *help/AnIndex
 d16cb88d6add746505b57ac7a9f5d7ae *help/aliases.rds
-c094768a0b7385c790c0d9b70e47d9c8 *help/paths.rds
-a13b37c70766b0ca11844c2f79ad32bc *help/sf.rdb
-16f247296afb1a4db11c24d866c0bbe2 *help/sf.rdx
+cd7734931a2e538e23798b5c12355ad7 *help/paths.rds
+4195a617f155a6ad177d3efa8e170288 *help/sf.rdb
+2225c20c16088d8082b0cbcde296123b *help/sf.rdx
 54e91f58b0e06217328dc26fb83efb56 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 353accf8dcc464f3631d31ea138f4dac *include/sf.h
 72344a9f60f2ea72289794b63f966e20 *include/sf_RcppExports.h
-52341841223b71ed877ad0e0db89d1cd *libs/i386/sf.dll
+ee4ab144149cd74bb46f828bac1f9cb4 *libs/i386/sf.dll
 826741aaa296a9d63863382ac61c53ad *libs/i386/symbols.rds
-d2f4088c85747eb823aa3fc854f3754c *libs/x64/sf.dll
+85cb344ff595f2dc64653c82e3f2b6b9 *libs/x64/sf.dll
 034abbb5569cb10971d9069c6c1c1ed2 *libs/x64/symbols.rds
 623d2bc1460f59b5fb753d754a1109df *nc/cropped.nc
 30456e29e563a8e0c205ecba331a92c0 *osm/overpass.osm

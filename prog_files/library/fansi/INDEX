@@ -2,7 +2,12 @@ fansi                   Details About Manipulation of Strings
                         Containing Control Sequences
 fansi_lines             Colorize Character Vectors
 has_ctl                 Checks for Presence of Control Sequences
+html_code_block         Format Character Vector for Display as Code in
+                        HTML
+html_esc                Escape Characters With Special HTML Meaning
 nchar_ctl               ANSI Control Sequence Aware Version of nchar
+set_knit_hooks          Set an Output Hook to Display ANSI CSI SGR in
+                        Rmarkdown
 sgr_to_html             Convert ANSI CSI SGR Escape Sequence to HTML
                         Equivalents
 strip_ctl               Strip ANSI Control Sequences
