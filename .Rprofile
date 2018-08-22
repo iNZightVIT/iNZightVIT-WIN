@@ -44,9 +44,9 @@ message("(Dept of Statistics, Uni. of Auckland)")
 message("")
 message("Please wait while iNZight loads...")
 
-if (packageVersion('readr') < numeric_version('1.2.0')) {
-  install.packages('readr', repos = 'https://r.docker.stat.auckland.ac.nz')
-}
+# if (packageVersion('readr') < numeric_version('1.2.0')) {
+#   install.packages('readr', repos = 'https://r.docker.stat.auckland.ac.nz')
+# }
 
 suppressMessages(suppressWarnings({
   library(iNZight)

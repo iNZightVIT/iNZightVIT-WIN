@@ -1,6 +1,7 @@
 readr-package	readr-package
 callback	callback
 ChunkCallback	callback
+clipboard	clipboard
 cols	cols
 cols_condense	spec
 cols_only	cols
@@ -87,6 +88,7 @@ type_convert	type_convert
 write_csv	write_delim
 write_delim	write_delim
 write_excel_csv	write_delim
+write_excel_csv2	write_delim
 write_file	read_file
 write_lines	read_lines
 write_rds	read_rds
