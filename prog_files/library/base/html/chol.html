@@ -75,7 +75,7 @@ or, alternatively, <code>t(Q) %*% Q</code> equals <code>x[pivot,
 </p>
 <p>The value of <code>tol</code> is passed to LAPACK, with negative values
 selecting the default tolerance of (usually) <code>nrow(x) *
-  .Machine$double.neg.eps * max(diag(x)</code>.  The algorithm terminates once
+  .Machine$double.neg.eps * max(diag(x))</code>.  The algorithm terminates once
 the pivot is less than <code>tol</code>.
 </p>
 <p>Unsuccessful results from the underlying LAPACK code will result in an
@@ -169,5 +169,5 @@ try(chol(m))  # fails
 crossprod(Q)  # not equal to m
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

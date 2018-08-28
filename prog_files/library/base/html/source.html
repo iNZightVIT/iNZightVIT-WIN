@@ -222,7 +222,7 @@ actual <code>encoding</code> is specified (rather than the default or
 in the result will be translated to the current encoding and marked as
 such (see <code><a href="Encoding.html">Encoding</a></code>).
 </p>
-<p>If <code>file</code> is a connection (including one specified by <code>""</code>,
+<p>If <code>file</code> is a connection (including one specified by <code>""</code>),
 it is not possible to re-encode the input inside <code>source</code>, and so
 the <code>encoding</code> argument is just used to mark character strings in the
 parsed input in Latin-1 and UTF-8 locales: see <code><a href="parse.html">parse</a></code>.
@@ -256,7 +256,7 @@ directives.
 <pre>
 someCond &lt;- 7 &gt; 6
 ## want an if-clause to behave "as top level" wrt auto-printing :
-## (all should look "as if on top level", e.g. non-assignments should print:
+## (all should look "as if on top level", e.g. non-assignments should print:)
 if(someCond) withAutoprint({
    x &lt;- 1:12
    x-1
@@ -285,5 +285,5 @@ withAutoprint({ formals(sourceDir); body(sourceDir) },
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

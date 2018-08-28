@@ -619,7 +619,7 @@ stack and cause the GUI to crash.  (<a href="https://bugs.R-project.org/bugzilla
 
 <ul>
 <li><p> Building badly-written vignettes which used the default
-device (<code>pdf(file = "Rplots.pdf")</code> could leave the device
+device (<code>pdf(file = "Rplots.pdf")</code>) could leave the device
 open and hence the file &lsquo;<span class="file">Rplots.pdf</span>&rsquo; could not be removed on
 Windows: all devices are now closed.
 </p>

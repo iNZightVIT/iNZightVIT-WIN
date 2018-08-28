@@ -16,8 +16,7 @@ call_inspect            Inspect a call
 call_modify             Modify the arguments of a call
 call_name               Extract function name of a call
 call_standardise        Standardise a call
-caller_env              Get the current or caller environment
-caller_frame            Get properties of the current or caller frame
+caller_env              Get the environment of the caller frame
 catch_cnd               Catch a condition
 cnd                     Create a condition object
 cnd_signal              Signal a condition
@@ -27,9 +26,6 @@ dots_values             Evaluate dots with preliminary splicing
 empty_env               Get the empty environment
 env                     Create a new environment
 env_bind                Bind symbols to objects in an environment
-env_binding_are_active
-                        What kind of environment binding?
-env_binding_lock        Lock or unlock environment bindings
 env_bury                Mask bindings by defining symbols deeper in a
                         scope
 env_clone               Clone an environment
@@ -38,11 +34,8 @@ env_get                 Get an object in an environment
 env_has                 Does an environment have or see bindings?
 env_inherits            Does environment inherit from another
                         environment?
-env_lock                Lock an environment
-env_name                Label of an environment
 env_names               Names of symbols bound in an environment
 env_parent              Get parent environments
-env_print               Pretty-print an environment
 env_unbind              Remove bindings from an environment
 eval_bare               Evaluate an expression in an environment
 eval_tidy               Evaluate an expression with quosures and
@@ -70,7 +63,7 @@ is_callable             Is an object callable?
 is_condition            Is object a condition?
 is_copyable             Is an object copyable?
 is_empty                Is object an empty vector or NULL?
-is_environment          Is object an environment?
+is_env                  Is object an environment?
 is_expression           Is an object an expression?
 is_formula              Is object a formula?
 is_frame                Is object a frame?
@@ -93,7 +86,6 @@ new-vector-along        Create vectors matching the length of a given
                         vector
 new_formula             Create a formula
 new_function            Create a function
-new_quosures            Create a list of quosures
 op-get-attr             Infix attribute accessor
 op-na-default           Replace missing values
 op-null-default         Default value for 'NULL'

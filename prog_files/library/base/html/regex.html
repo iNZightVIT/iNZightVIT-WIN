@@ -22,7 +22,7 @@
 strings.  Two types of regular expressions are used in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>,
 <em>extended</em> regular expressions (the default) and
 <em>Perl-like</em> regular expressions used by <code>perl = TRUE</code>.
-There is a also <code>fixed = TRUE</code> which can be considered to use a
+There is also <code>fixed = TRUE</code> which can be considered to use a
 <em>literal</em> regular expression.
 </p>
 <p>Other functions which use regular expressions (often via the use of
@@ -42,7 +42,7 @@ standard only requires up to 256 <em>bytes</em>.
 <h3>Extended Regular Expressions</h3>
 
 <p>This section covers the regular expressions allowed in the default
-mode of <code>grep</code>, <code>grep</code>, <code>regexpr</code>, <code>gregexpr</code>,
+mode of <code>grep</code>, <code>grepl</code>, <code>regexpr</code>, <code>gregexpr</code>,
 <code>sub</code>, <code>gsub</code>, <code>regexec</code> and <code>strsplit</code>.  They use
 an implementation of the POSIX 1003.2 standard: that allows some scope
 for interpretation and the interpretations here are those currently
@@ -222,7 +222,7 @@ with just a few differences.
 </p>
 <p>For complete details please consult the man pages for PCRE (and not
 PCRE2), especially <code>man pcrepattern</code> and <code>man
-  pcreapi</code>), on your system or from the sources at
+  pcreapi</code>, on your system or from the sources at
 <a href="http://www.pcre.org">http://www.pcre.org</a>.  (The version in use can be found by
 calling <code><a href="extSoftVersion.html">extSoftVersion</a></code>.  It need not be the version
 described in the system's man page.  As PCRE has been feature-frozen
@@ -358,15 +358,15 @@ standard, and the <code>pcrepattern</code> man page from PCRE 8.36.
 <code><a href="ls.html">ls</a></code> and <code><a href="strsplit.html">strsplit</a></code>.
 </p>
 <p>The TRE documentation at
-<a href="http://laurikari.net/tre/documentation/regex-syntax/">http://laurikari.net/tre/documentation/regex-syntax/</a>).
+<a href="http://laurikari.net/tre/documentation/regex-syntax/">http://laurikari.net/tre/documentation/regex-syntax/</a>.
 </p>
 <p>The POSIX 1003.2 standard at
-<a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html">http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html</a>
+<a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html">http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html</a>.
 </p>
 <p>The <code>pcrepattern</code> <code>man</code> page (found as part of
 <a href="http://www.pcre.org/original/pcre.txt">http://www.pcre.org/original/pcre.txt</a>), and details of Perl's own
 implementation at <a href="http://perldoc.perl.org/perlre.html">http://perldoc.perl.org/perlre.html</a>.
 </p>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

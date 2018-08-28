@@ -69,8 +69,8 @@ tdpois &lt;- function(dat,event="z",et="futime",t="day",status="status1",
   dap[1:(start-1),]
 } ## tdpois
 
-## The following takes too long for CRAN checking
-## (but typically takes a minute or less).
+## The following typically takes a minute or less...
+
 
 ## Convert pbcseq to equivalent Poisson form...
 pbcseq$status1 &lt;- as.numeric(pbcseq$status==2) ## death indicator
@@ -107,5 +107,5 @@ rug(pbcseq$day[pbcseq$id==25]) ## measurement times
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-22 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-24 <a href="00Index.html">Index</a>]</div>
 </body></html>

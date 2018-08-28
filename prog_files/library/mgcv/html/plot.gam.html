@@ -20,7 +20,7 @@ as well.</p>
 <pre>
 ## S3 method for class 'gam'
 plot(x,residuals=FALSE,rug=NULL,se=TRUE,pages=0,select=NULL,scale=-1,
-         n=100,n2=40,pers=FALSE,theta=30,phi=30,jit=FALSE,xlab=NULL,
+         n=100,n2=40,n3=3,pers=FALSE,theta=30,phi=30,jit=FALSE,xlab=NULL,
          ylab=NULL,main=NULL,ylim=NULL,xlim=NULL,too.far=0.1,
          all.terms=FALSE,shade=FALSE,shade.col="gray80",shift=0,
          trans=I,seWithMean=FALSE,unconditional=FALSE,by.resids=FALSE,
@@ -89,6 +89,10 @@ degrees of freedom for the smooth. Default value 100.</p>
 <td>
 <p>Square root of number of points used to grid estimates of 2-d
 functions for contouring.</p>
+</td></tr>
+<tr valign="top"><td><code>n3</code></td>
+<td>
+<p>Square root of number of panels to use when displaying 3 or 4 dimensional functions.</p>
 </td></tr>
 <tr valign="top"><td><code>pers</code></td>
 <td>
@@ -167,7 +171,8 @@ of a single smooth. </p>
 <td>
 <p>if <code>TRUE</code> the component smooths are shown with confidence 
 intervals that include the uncertainty about the overall mean. If <code>FALSE</code> then the 
-uncertainty relates purely to the centred smooth itself. Marra and Wood (2012) suggests 
+uncertainty relates purely to the centred smooth itself. If <code>seWithMean=2</code> then the
+intervals include the uncertainty in the mean of the fixed effects (but not in the mean of any uncentred smooths or random effects).  Marra and Wood (2012) suggests 
 that <code>TRUE</code> results in better coverage performance,
 and this is also suggested by simulation.</p>
 </td></tr>
@@ -223,9 +228,10 @@ separation of the contours of the different plots, but this is not
 always easy to achieve. Note that these plots can not be modified to the same extent as the other plot. 
 </p>
 <p>For 2-d smooths <code>scheme==1</code> produces a perspective plot, while <code>scheme==2</code> produces a heatmap, 
-with overlaid contours. 
+with overlaid contours and <code>scheme==3</code> a greyscale heatmap.
 </p>
-<p>Smooths of more than 2 variables are not plotted, but see <code><a href="vis.gam.html">vis.gam</a></code>.
+<p>Smooths of 3 and 4 variables are displayed as tiled heatmaps with overlaid contours. In the 3 variable case the third variable is discretized and a contour plot of the first 2 variables is produced for each discrete value. The panels in the lower and upper rows are labelled with the corresponding third variable value. The lowest value is bottom left, and highest at top right. For 4 variables, two of the variables are coarsely discretized and a square array of image plots is produced for each combination of the discrete values. The first two arguments of the smooth are the ones used for the image/contour plots, unless a tensor product term has 2D marginals, in which case the first 2D marginal is image/contour plotted. <code>n3</code> controls the number of panels.
+See also <code><a href="vis.gam.html">vis.gam</a></code>. 
 </p>
 <p>Fine control of plots for parametric terms can be obtained by calling
 <code><a href="../../stats/html/termplot.html">termplot</a></code> directly, taking care to use its <code>terms</code> argument.
@@ -233,7 +239,7 @@ with overlaid contours.
 <p>Note that, if <code>seWithMean=TRUE</code>, the confidence bands include the uncertainty about the overall mean. In other words 
 although each smooth is shown centred, the confidence bands are obtained as if every other term in the model was 
 constrained to have average 0, (average taken over the covariate values), except for the smooth concerned. This seems to correspond more closely to how most users interpret componentwise intervals in practice, and also results in intervals with
-close to nominal (frequentist) coverage probabilities by an extension of Nychka's (1988) results presented in Marra and Wood (2012).
+close to nominal (frequentist) coverage probabilities by an extension of Nychka's (1988) results presented in Marra and Wood (2012). There are two possible variants of this approach. In the default variant the extra uncertainty is in the mean of all other terms in the model (fixed and random, including uncentred smooths). Alternatively, if <code>seWithMean=2</code> then only the uncertainty in parametric fixed effects is included in the extra uncertainty (this latter option actually tends to lead to wider intervals when the model contains random effects).
 </p>
 <p>Several smooth plots methods using <code><a href="../../graphics/html/image.html">image</a></code> will accept an <code>hcolors</code> argument, which can be anything documented in <code><a href="../../grDevices/html/palettes.html">heat.colors</a></code> (in which case something like <code>hcolors=rainbow(50)</code> is appropriate), or the <code><a href="../../grDevices/html/gray.html">grey</a></code> function (in which case somthing like <code>hcolors=grey(0:50/50)</code> is needed). Another option is <code>contour.col</code> which will set the contour colour for some plots. These options are useful for producing grey scale pictures instead of colour.
 </p>
@@ -354,7 +360,17 @@ op &lt;- par(mfrow=c(2,2))
 plot(b1,all.terms=TRUE,scheme=c(2,1))
 par(op)
 
+## 3 and 4 D smooths can also be plotted
+dat &lt;- gamSim(1,n=400)
+b1 &lt;- gam(y~te(x0,x1,x2,d=c(1,2),k=c(5,15))+s(x3),data=dat)
+
+## Now plot. Use cex.lab and cex.axis to control axis label size,
+## n3 to control number of panels, n2 to control panel grid size,
+## scheme=1 to get greyscale...
+
+plot(b1,pages=1) 
+
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-22 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-24 <a href="00Index.html">Index</a>]</div>
 </body></html>

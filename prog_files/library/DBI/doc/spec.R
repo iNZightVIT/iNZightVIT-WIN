@@ -138,11 +138,13 @@ topics <- c(
   "dbListTables",
   "dbExistsTable",
   "dbRemoveTable",
+  "dbListFields",
   "dbIsValid",
   "dbHasCompleted",
   "dbGetStatement",
   "dbGetRowCount",
   "dbGetRowsAffected",
+  "dbColumnInfo",
   "transactions",
   "dbWithTransaction"
 )

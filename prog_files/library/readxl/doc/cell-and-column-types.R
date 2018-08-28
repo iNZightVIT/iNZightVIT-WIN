@@ -34,6 +34,11 @@ deaths <- read_excel(readxl_example("deaths.xlsx"))
 print(deaths, n = Inf)
 
 ## ------------------------------------------------------------------------
+(nms <- names(read_excel(readxl_example("datasets.xlsx"), n_max = 0)))
+(ct <- ifelse(grepl("^Petal", nms), "text", "guess"))
+read_excel(readxl_example("datasets.xlsx"), col_types = ct)
+
+## ------------------------------------------------------------------------
 df <- read_excel(readxl_example("type-me.xlsx"), sheet = "logical_coercion",
                  col_types = c("logical", "text"))
 print(df, n = Inf)

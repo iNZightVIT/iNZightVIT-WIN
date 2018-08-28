@@ -8,14 +8,10 @@ deparse_unit            deparse unit to string in product power form
 drop_units              drop units
 hist.units              histogram for unit objects
 install_conversion_constant
-                        Install a function for conversion between
-                        user-defined units.
-install_conversion_function
-                        Install a function for conversion between
+                        Install a conversion constant or offset between
                         user-defined units.
 install_symbolic_unit   Define new symbolic units
 make_unit               Deprecated functions
-matmult                 matrix multiplication
 plot.units              create axis label with appropriate labels
 seq.units               seq method for units objects
 set_units               set_units

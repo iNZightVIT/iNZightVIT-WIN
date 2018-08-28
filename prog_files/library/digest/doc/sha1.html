@@ -12,7 +12,7 @@
 
 <meta name="author" content="Thierry Onkelinx and Dirk Eddelbuettel" />
 
-<meta name="date" content="2018-01-14" />
+<meta name="date" content="2018-01-28" />
 
 <title>Calculating SHA1 hashes with digest() and sha1()</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Calculating SHA1 hashes with digest() and sha1()</h1>
 <h4 class="author"><em>Thierry Onkelinx and Dirk Eddelbuettel</em></h4>
-<h4 class="date"><em>2018-01-14</em></h4>
+<h4 class="date"><em>2018-01-28</em></h4>
 
 
 
@@ -355,19 +355,19 @@ lm_terms &lt;-<span class="st"> </span>lm_SR<span class="op">$</span>terms
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(lm_terms) <span class="co"># not handled by sha1()</span></code></pre></div>
 <pre><code>## [1] &quot;terms&quot;   &quot;formula&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># define a method for formula</span>
-sha1.formula &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>){
-    <span class="kw">sha1</span>(<span class="kw">as.character</span>(x), <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall)
+sha1.formula &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>, ..., <span class="dt">algo =</span> <span class="st">&quot;sha1&quot;</span>){
+    <span class="kw">sha1</span>(<span class="kw">as.character</span>(x), <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall, <span class="dt">algo =</span> algo)
 }
 <span class="kw">sha1</span>(lm_terms)</code></pre></div>
 <pre><code>## [1] &quot;2737d209720aa7d1c0555050ad06ebe89f3850cd&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sha1</span>(lm_model)</code></pre></div>
 <pre><code>## [1] &quot;b1b32bb6d983e1c515706c33ffef6120d811fe52&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># define a method for lm</span>
-sha1.lm &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>){
+sha1.lm &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>, ..., <span class="dt">algo =</span> <span class="st">&quot;sha1&quot;</span>){
     lm_model &lt;-<span class="st"> </span>x<span class="op">$</span>model
     lm_terms &lt;-<span class="st"> </span>x<span class="op">$</span>terms
     combined &lt;-<span class="st"> </span><span class="kw">list</span>(lm_model, lm_terms)
-    <span class="kw">sha1</span>(combined, <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall)
+    <span class="kw">sha1</span>(combined, <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall, ..., <span class="dt">algo =</span> algo)
 }
 <span class="kw">sha1</span>(lm_SR)</code></pre></div>
 <pre><code>## [1] &quot;2b03ad0002dc6c3676555b60f3f59781e1f42eb0&quot;</code></pre>

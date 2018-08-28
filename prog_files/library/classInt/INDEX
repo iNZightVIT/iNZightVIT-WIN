@@ -5,5 +5,3 @@ findCols                extract classes from classInterval object
 getBclustClassIntervals
                         Change breaks in a "classIntervals" object
 jenks.tests             Indices for assessing class intervals
-jenks71                 Illinois 1959 county gross farm product value
-                        per acre

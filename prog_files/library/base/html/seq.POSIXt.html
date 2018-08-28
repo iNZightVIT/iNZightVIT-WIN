@@ -73,9 +73,9 @@ and a space, or followed by <code>"s"</code>.
 
 <p>The difference between <code>"day"</code> and <code>"DSTday"</code> is that the
 former ignores changes to/from daylight savings time and the latter takes
-the same clock time each day.  (<code>"week"</code> ignores DST (it is a
-period of 144 hours), but <code>"7 DSTdays"</code>) can be used as an
-alternative.  <code>"month"</code> and <code>"year"</code> allow for DST.)
+the same clock time each day.  <code>"week"</code> ignores DST (it is a
+period of 144 hours), but <code>"7 DSTdays"</code> can be used as an
+alternative.  <code>"month"</code> and <code>"year"</code> allow for DST.
 </p>
 <p>The <a href="timezones.html">time zone</a> of the result is taken from <code>from</code>: remember
 that GMT means UTC (and not the time zone of Greenwich, England) and so
@@ -114,5 +114,5 @@ seq(c(ISOdate(2000,3,20)), by = "DSTday", length.out = 10)
 seq(c(ISOdate(2000,3,20)), by = "7 DSTdays", length.out = 4)
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

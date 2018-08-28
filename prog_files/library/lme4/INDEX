@@ -49,7 +49,8 @@ grouseticks             Data on red grouse ticks from Elston et al.
 hatvalues.merMod        Diagonal elements of the hat matrix
 isNested                Is f1 nested within f2?
 isREML                  Check characteristics of models
-lmList                  Fit List of lm Objects with a Common Model
+lmList                  Fit List of lm or glm Objects with a Common
+                        Model
 lmList4-class           Class "lmList4" of 'lm' Objects on Common Model
 lmResp                  Generator objects for the response classes
 lmResp-class            Reference Classes for Response Modules,
@@ -70,8 +71,6 @@ mkReTrms                Make Random Effect Terms: Create Z, Lambda,
 mkRespMod               Create an lmerResp, glmResp or nlsResp instance
 mkVarCorr               Make Variance and Correlation Matrices from
                         'theta'
-mkdevfun                Create Deviance Evaluation Function from
-                        Predictor and Response Module
 modular                 Modular Functions for Mixed Model Fits
 ngrps                   Number of Levels of a Factor or a "merMod"
                         Model
@@ -80,7 +79,6 @@ nlmer                   Fitting Nonlinear Mixed-Effects Models
 nloptwrap               Wrappers for additional optimizers
 nobars                  Omit terms separated by vertical bars in a
                         formula
-plot.lmList4            plots for lmList4 objects
 plot.merMod             Diagnostic Plots for 'merMod' Fits
 predict.merMod          Predictions from a model at new data values
 profile-methods         Profile method for merMod objects

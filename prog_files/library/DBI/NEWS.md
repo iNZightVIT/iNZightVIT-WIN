@@ -1,3 +1,33 @@
+# DBI 1.0.0 (2018-05-02)
+
+## New generics
+
+- New `dbAppendTable()` that by default calls `sqlAppendTableTemplate()` and then `dbExecute()` with a `param` argument, without support for `row.names` argument (#74).
+- New `dbCreateTable()` that by default calls `sqlCreateTable()` and then `dbExecute()`, without support for `row.names` argument (#74).
+- New `dbCanConnect()` generic with default implementation (#87).
+- New `dbIsReadOnly()` generic with default implementation (#190, @anhqle).
+
+## Changes
+
+- `sqlAppendTable()` now accepts lists for the `values` argument, to support lists of `SQL` objects in R 3.1.
+- Add default implementation for `dbListFields(DBIConnection, Id)`, this relies on `dbQuoteIdentifier(DBIConnection, Id)` (#75).
+
+## Documentation updates
+
+- The DBI specification vignette is rendered correctly from the installed package (#234).
+- Update docs on how to cope with stored procedures (#242, @aryoda).
+- Add "Additional arguments" sections and more examples for `dbGetQuery()`, `dbSendQuery()`, `dbExecute()` and `dbSendStatement()`.
+- The `dbColumnInfo()` method is now fully specified (#75).
+- The `dbListFields()` method is now fully specified (#75).
+- The dynamic list of methods in help pages doesn't contain methods in DBI anymore.
+
+## Bug fixes
+
+- Pass missing `value` argument to secondary `dbWriteTable()` call (#737, @jimhester).
+- The `Id` class now uses `<Id>` and not `<Table>` when printing.
+- The default `dbUnquoteIdentifier()` implementation now complies to the spec.
+
+
 # DBI 0.8 (2018-02-24)
 
 Breaking changes
@@ -75,7 +105,8 @@ Internal
     - Removed `valueClass = "logical"` for those generics where the return value is meaningless, to allow backends to return invisibly (#135).
     - Avoiding using braces in the definitions of generics if possible, so that standard generics can be detected (#146).
     - Added default implementation for `dbReadTable()`.
-    - All standard generics are required to have an ellipsis (with test), for future extensibility.    - Improved default implementation of `dbQuoteString()` and `dbQuoteIdentifier()` (#77).
+    - All standard generics are required to have an ellipsis (with test), for future extensibility.
+    - Improved default implementation of `dbQuoteString()` and `dbQuoteIdentifier()` (#77).
     - Removed `tryCatch()` call in `dbGetQuery()` (#113).
 
 - Documentation improvements

@@ -87,12 +87,13 @@ initial.sp              Starting values for multiple smoothing
 interpret.gam           Interpret a GAM formula
 jagam                   Just Another Gibbs Additive Modeller: JAGS
                         support for mgcv.
+k.check                 Checking smooth basis dimension
 ldTweedie               Log Tweedie density evaluation
 ldetS                   Getting log generalized determinant of penalty
                         matrices
 linear.functional.terms
                         Linear functionals of a smooth in GAMs
-logLik.gam              Log likelihood for a fitted GAM, for AIC
+logLik.gam              AIC and Log likelihood for a fitted GAM
 ls.size                 Size of list elements
 magic                   Stable Multiple Smoothing Parameter Estimation
                         by GCV or UBRE

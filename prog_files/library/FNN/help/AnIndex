@@ -13,7 +13,6 @@ knn.index	knn.index
 knn.reg	knn.reg
 knnx.dist	knn.dist
 knnx.index	knn.index
-mdmutinfo	mutual_information
 mutinfo	mutual_information
 ownn	ownn
 print.knnReg	print.knnRegCV

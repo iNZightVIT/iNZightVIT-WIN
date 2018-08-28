@@ -15,6 +15,7 @@ smiths                  Some data about the Smith family.
 spread                  Spread a key-value pair across multiple
                         columns.
 table1                  Example tabular representations
+uncount                 "Uncount" a data frame
 unite                   Unite multiple columns into one.
 unnest                  Unnest a list column.
 who                     World Health Organization TB data

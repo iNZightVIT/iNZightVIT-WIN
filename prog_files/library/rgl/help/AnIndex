@@ -14,6 +14,7 @@ as.mesh3d.deldir	persp3d.deldir
 asEuclidean	matrices
 asHomogeneous	matrices
 aspect3d	aspect3d
+asRow	asRow
 axes3d	axes3d
 axis3d	axes3d
 bbox3d	bbox
@@ -54,6 +55,7 @@ figHeight	figWidth
 figWidth	figWidth
 gc3d	subscene3d
 getr3dDefaults	par3d
+getWidgetId	asRow
 GramSchmidt	GramSchmidt
 grid3d	grid3d
 highlevel	rglIds
@@ -97,10 +99,6 @@ pipe	import
 planes3d	planes
 play3d	play3d
 playwidget	playwidget
-playwidget.default	playwidget
-playwidget.rglPlayer	playwidget
-playwidget.rglWebGL	playwidget
-playwidget.shiny.tag.list	playwidget
 playwidgetOutput	shiny
 plot3d	plot3d
 plot3d.default	plot3d

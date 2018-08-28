@@ -3,12 +3,65 @@
 \newcommand{\ghpr}{\href{https://github.com/RcppCore/Rcpp/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/RcppCore/Rcpp/issues/#1}{##1}}
 
+\section{Changes in Rcpp version 0.12.18 (2018-07-21)}{
+  \itemize{
+    \item Changes in Rcpp API:
+    \itemize{
+      \item The \code{StringProxy::operator==} is now \code{const}
+      correct (Romain in \ghpr{855} fixing \ghit{854}).
+      \item The \code{Environment::new_child()} is now \code{const}
+      (Romain in \ghpr{858} fixing \ghit{854}).
+      \item Next \code{eval} codes now properly unwind (Lionel in the large
+      and careful \ghpr{859} fixing \ghit{807}).
+      \item In debugging mode, more type information is shown on
+      \code{abort()} (Jack Waseyin \ghpr{860} and \ghpr{882} fixing
+      \ghit{857}).
+      \item A new class was added which allow suspension of the RNG
+      synchronisation to address an issue seen in \CRANpkg{RcppDE}
+      (Kevin in \ghpr{862}).
+      \item Evaluation calls now happen in the \code{base} environment
+      (which may fix an issue seen between \CRANpkg{conflicted} and some
+      BioConductor packages) (Kevn \ghpr{863} fixing \ghit{861}).
+      \item Call stack display on error can now be controlled more
+      finely (Romain in \ghpr{868}).
+      \item The new \code{Rcpp_fast_eval} is used instead of
+      \code{Rcpp_eval} though this still requires setting
+      \code{RCPP_USE_UNWIND_PROTECT} before including \code{Rcpp.h} (Qiang
+      Kou in \ghpr{867} closing \ghit{866}).
+      \item The \code{Rcpp::unwindProtect()} function extracts the
+      unwinding from the \code{Rcpp_fast_eval()} function and makes it
+      more generally available. (Lionel in \ghpr{873} and \ghpr{877}).
+      \item The \code{tm_gmtoff} part is skipped on AIX too
+      (\ghpr{876}).
+    }
+    \item Changes in Rcpp Attributes:
+    \itemize{
+      \item The \code{sourceCpp()} function now evaluates R code in the
+      correct local environment in which a function was compiled (Filip
+      Schouwenaars in \ghpr{852} and \ghpr{869} fixing \ghit{851}).
+      \item Filenames are now sorted in a case-insenstive way so that
+      the \code{RcppExports} files are more stable across locales (Jack
+      Wasey in \ghpr{878}).
+    }
+    \item Changes in Rcpp Sugar:
+    \itemize{
+      \item The sugar functions \code{min} and \code{max} now recognise
+      empty vectors (Dirk in \ghpr{884} fixing \ghit{883}).
+    }
+  }
+}
+
+
 \section{Changes in Rcpp version 0.12.17 (2018-05-09)}{
   \itemize{
     \item Changes in Rcpp API:
     \itemize{
       \item The random number \code{Generator} class no longer inhreits from
       \code{RNGScope} (Kevin in \ghpr{837} fixing \ghit{836}).
+	  \item A new class, \code{SuspendRNGSynchronizationScope}, can be created
+	  and used to ensure that calls to Rcpp functions do not attempt to call
+	  \code{::GetRNGstate()} or \code{::PutRNGstate()} for the duration of
+	  some code block.
       \item A spurious parenthesis was removed to please gcc8 (Dirk
       fixing \ghit{841})
       \item The optional \code{Timer} class header now undefines
@@ -71,7 +124,7 @@
       (Kevin in \ghpr{784}).
       \item Use public R APIs for \code{new_env} (Kevin in \ghpr{785}).
       \item Evaluation of R code is now safer when compiled against R
-      3.5 (you also need to explicitly define \code{RCPP_PROTECTED_EVAL}
+      3.5 (you also need to explicitly define \code{RCPP_USE_UNWIND_PROTECT}
       before including \code{Rcpp.h}). Longjumps of all kinds (condition
       catching, returns, restarts, debugger exit) are appropriately
       detected and handled, e.g. the C++ stack unwinds correctly

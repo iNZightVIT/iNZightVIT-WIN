@@ -1,6 +1,6 @@
 Package: stringi
-Version: 1.1.6
-Date: 2017-11-10
+Version: 1.1.7
+Date: 2018-03-06
 Title: Character String Processing Facilities
 Description: Allows for fast, correct, consistent, portable,
     as well as convenient character string/text processing in every locale
@@ -27,9 +27,9 @@ Author: Marek Gagolewski [aut, cre], Bartek Tartanus [ctb],
 Maintainer: Marek Gagolewski <gagolews@rexamine.com>
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2017-11-10 13:42:04 UTC; gagolews
+Packaged: 2018-03-06 11:21:46 UTC; gagolews
 License_is_FOSS: yes
 Repository: CRAN
-Date/Publication: 2017-11-17 13:13:14 UTC
-Built: R 3.4.2; x86_64-w64-mingw32; 2017-11-19 08:25:39 UTC; windows
+Date/Publication: 2018-03-12 19:38:49 UTC
+Built: R 3.5.0; x86_64-w64-mingw32; 2018-04-21 03:17:53 UTC; windows
 Archs: i386, x64

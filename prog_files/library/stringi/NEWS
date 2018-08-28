@@ -1,6 +1,14 @@
                    stringi package NEWS and CHANGELOG
 ===============================================================================
 
+## 1.1.7 (2018-03-06) **CRAN**
+
+* [BUGFIX] Fixed ICU55 code leading to some "significant warnings"
+(`icu55/i18n/winnmfmt.cpp`) and "suppressing important diagnostics"
+(`src/icu55/i18n/decNumber.c`).
+
+-------------------------------------------------------------------------------
+
 ## 1.1.6 (2017-11-10) **CRAN**
 
 * [WINDOWS SPECIFIC] #270: Strings marked with `latin1` encoding

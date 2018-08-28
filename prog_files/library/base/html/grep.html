@@ -151,7 +151,7 @@ invalid inputs and spurious matches in multibyte locales, but for
 <code>regexpr</code> it changes the interpretation of the output.
 It inhibits the conversion of inputs with marked encodings, and is
 forced if any input is found which is marked as <code>"bytes"</code>
-see <code><a href="Encoding.html">Encoding</a></code>).
+(see <code><a href="Encoding.html">Encoding</a></code>).
 </p>
 <p>Caseless matching does not make much sense for bytes in a multibyte
 locale, and you should expect it only to work for ASCII characters if
@@ -172,7 +172,7 @@ property support&rsquo;: an external library might not be.
 
 <p><code>grep(value = FALSE)</code> returns a vector of the indices
 of the elements of <code>x</code> that yielded a match (or not, for
-<code>invert = TRUE</code>.  This will be an integer vector unless the input
+<code>invert = TRUE</code>).  This will be an integer vector unless the input
 is a <em>long vector</em>, when it will be a double vector.
 </p>
 <p><code>grep(value = TRUE)</code> returns a character vector containing the
@@ -432,5 +432,5 @@ lapply(regmatches(s, gregexpr(pattern, s)),
        function(e) regmatches(e, regexec(pattern, e)))
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

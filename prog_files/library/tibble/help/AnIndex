@@ -25,8 +25,8 @@ frame_matrix	frame_matrix
 glimpse	glimpse
 has_name	reexports
 has_rownames	rownames
-is.tibble	is.tibble
-is_tibble	is.tibble
+is.tibble	is_tibble
+is_tibble	is_tibble
 is_vector_s3	reexports
 knit_print.trunc_mat	knit_print.trunc_mat
 lst	tibble
@@ -44,6 +44,7 @@ rownames_to_column	rownames
 set_tidy_names	tidy_names
 tbl_sum	tbl_sum
 tibble	tibble
+tibble-options	tibble-options
 tibble_	tibble
 tidy_names	tidy_names
 tribble	tribble

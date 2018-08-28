@@ -19,7 +19,7 @@ the name of the current time zone.
 <pre>
 Sys.timezone(location = TRUE)
 
-OlsonNames()
+OlsonNames(tzdir = NULL)
 </pre>
 
 
@@ -28,9 +28,12 @@ OlsonNames()
 <table summary="R argblock">
 <tr valign="top"><td><code>location</code></td>
 <td>
-<p>logical: should an attempt be made to find the
-location name as used in the Olson/IANA database?
-(See &lsquo;Time zone names&rsquo; below.)</p>
+<p>logical: defunct: ignored, with a warning for false values.</p>
+</td></tr>
+<tr valign="top"><td><code>tzdir</code></td>
+<td>
+<p>The time-zone database to be used: the default is to try
+known locations until one is found.</p>
 </td></tr>
 </table>
 
@@ -39,33 +42,40 @@ location name as used in the Olson/IANA database?
 
 <p>Time zones are a system-specific topic, but these days almost all <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
 platforms use similar underlying code, used by Linux, macOS, Solaris,
-AIX, FreeBSD, Sun Java &gt;= 1.4 and Tcl &gt;= 8.5, and installed with <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> on
-Windows.  Unfortunately there are many system-specific errors in the
-implementations.  It is possible to use <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s own version of the code
-on Unix-alikes as well as on Windows: this is the default for macOS and
-recommended for Solaris.
+AIX and FreeBSD, and installed with <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> on Windows.  (Unfortunately
+there are many system-specific errors in the implementations.)  It is
+possible to use the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> sources' version of the code on Unix-alikes as
+well as on Windows: this is the default for macOS and recommended for
+Solaris.
 </p>
-<p>It should be possible to set the time zone via the environment
+<p>It should be possible to set the current time zone via the environment
 variable <span class="env">TZ</span>: see the section on &lsquo;Time zone names&rsquo; for
 suitable values.  <code>Sys.timezone()</code> will return the value of
-<span class="env">TZ</span> if set (and on some OSes it is always set), otherwise it will
-try to retrieve a value which if set for <span class="env">TZ</span> would give the
-current time zone.  This is not in general possible, and
-<code>Sys.timezone(FALSE)</code> on Windows will retrieve the abbreviation
-used for the current time.
+<span class="env">TZ</span> if set initially (and on some OSes it is always set),
+otherwise it will try to retrieve from the OS a value which if set for
+<span class="env">TZ</span> would give the initial time zone. (&lsquo;Initially&rsquo; means
+before any time-zone functions are used: if <span class="env">TZ</span> is being set to
+override the OS setting or if the &lsquo;try&rsquo; does not get this
+right, it should be set before the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> process is started or (probably
+early enough) in file <code><a href="Startup.html">.Rprofile</a></code>).
 </p>
-<p>If <span class="env">TZ</span> is set but empty or invalid, most platforms default to
-<span class="samp">UTC</span>, the time zone colloquially known as <span class="samp">GMT</span> (see
-<a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">https://en.wikipedia.org/wiki/Coordinated_Universal_Time</a>).  (Some
-but not all platforms will give a warning for invalid time zones.)
+
+
+<p>If <span class="env">TZ</span> is set but invalid, most platforms default to <span class="samp">UTC</span>,
+the time zone colloquially known as <span class="samp">GMT</span> (see
+<a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">https://en.wikipedia.org/wiki/Coordinated_Universal_Time</a>).
+(Some but not all platforms will give a warning for invalid values.)
+If it is unset or empty the <em>system</em> time zone is used (the one
+returned by <code>Sys.timezone</code>).
 </p>
 <p>Time zones did not come into use until the second half of the
 nineteenth century and were not widely adopted until the twentieth,
 and <em>daylight saving time</em> (DST, also known as <em>summer
 time</em>) was first introduced in the early twentieth century, most
-widely in 1916. Over the last 100 years places have changed their
+widely in 1916.  Over the last 100 years places have changed their
 affiliation between major time zones, have opted out of (or in to) DST
-in various years or adopted DST rule changes late or not at all.
+in various years or adopted DST rule changes late or not at all.  (The
+UK experimented with DST throughout 1971, only.)
 </p>
 <p>A quite common system implementation of <code>POSIXct</code> is as signed
 32-bit integers and so only goes back to the end of 1901: on such
@@ -78,18 +88,30 @@ representations are becoming common; unfortunately on some 64-bit OSes
 available for the range 1901&ndash;2038, and incompletely for the end
 years.
 </p>
+<p>As from <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.5.0, when a time zone location is first found in a
+session, its value is cached in object <code>.sys.timezone</code> in the
+base environment.
+</p>
 
 
 <h3>Value</h3>
 
 <p><code>Sys.timezone</code> returns an OS-specific character string, possibly
 <code>NA</code> or an empty string (which on some OSes means <span class="samp">UTC</span>).
-For the default <code>location = TRUE</code> this will be a location such as
-<code>"Europe/London"</code> if one can be ascertained.  For <code>location
-  = FALSE</code> this may be an abbreviation such as <code>"EST"</code> or
-<code>"CEST"</code> on Windows.
+This will be a location such as <code>"Europe/London"</code> if one can be
+ascertained.
 </p>
-<p><code>OlsonNames</code> returns a character vector.
+<p>A time zone region may be known by several names: for example
+<span class="samp">"Europe/London"</span> is also known as <span class="samp">GB</span>, <span class="samp">GB-Eire</span>,
+<span class="samp">Europe/Belfast</span>, <span class="samp">Europe/Guernsey</span>,
+<span class="samp">Europe/Isle_of_Man</span> and <span class="samp">Europe/Jersey</span>.  A few regions
+are also known by a summary of their time zone,
+e.g. <span class="samp">PST8PDT</span> is an alias for
+<span class="samp">America/Los_Angeles</span>.
+</p>
+<p><code>OlsonNames</code> returns a character vector, see the examples for
+typical cases.  It may have an attribute <code>"Version"</code>, something
+like <span class="samp">"2017c"</span>.
 </p>
 
 
@@ -110,19 +132,20 @@ user-friendly ways to specify time zones.
 compiled by Arthur David Olson and now managed by IANA, in which the
 preferred way to refer to a time zone is by a location (typically of a
 city), e.g., <code>Europe/London</code>, <code>America/Los_Angeles</code>,
-<code>Pacific/Easter</code>.  Some traditional designations are also allowed
-such as <code>EST5EDT</code> or <code>GB</code>.  (Beware that some of these
-designations may not be what you expect: in particular <code>EST</code> is a
-time zone used in Canada <em>without</em> daylight saving time, and not
-<code>EST5EDT</code> nor (Australian) Eastern Standard Time.)  The
-designation can also be an optional colon prepended to the path to a
-file giving complied zone information (and the examples above are all
-files in a system-specific location).  See
-<a href="http://www.twinsun.com/tz/tz-link.htm">http://www.twinsun.com/tz/tz-link.htm</a> for more details and
-references.  By convention, regions with a unique time-zone history
-since 1970 have specific names in the database, but those with
-different earlier histories may not.  Each time zone has one or two
-(the second for DST) <em>abbreviations</em> used when formatting times.
+<code>Pacific/Easter</code> within a &lsquo;time zone region&rsquo;.  Some
+traditional designations are also allowed such as <code>EST5EDT</code> or
+<code>GB</code>.  (Beware that some of these designations may not be what
+you expect: in particular <code>EST</code> is a time zone used in Canada
+<em>without</em> daylight saving time, and not <code>EST5EDT</code> nor
+(Australian) Eastern Standard Time.)  The designation can also be an
+optional colon prepended to the path to a file giving complied zone
+information (and the examples above are all files in a system-specific
+location).  See <a href="http://www.twinsun.com/tz/tz-link.htm">http://www.twinsun.com/tz/tz-link.htm</a> for more
+details and references.  By convention, regions with a unique
+time-zone history since 1970 have specific names in the database, but
+those with different earlier histories may not.  Each time zone has
+one or two (the second for DST) <em>abbreviations</em> used when
+formatting times.
 </p>
 <p>The abbreviations used have changed over the years: for example France
 used <span class="samp">PMT</span> (&lsquo;Paris Mean Time&rsquo;) from 1891 to 1911 then
@@ -131,14 +154,19 @@ all time zones the abbreviations have been stable since 1970.)  The
 POSIX standard allows only one or two abbreviations per time zone, so
 you may see the current abbreviation(s) used for older times.
 </p>
+<p>For some time zones abbreviations are like <span class="samp">-03</span> and
+<span class="samp">+0845</span>: this is done when there is no official abbreviation.
+(Negative values are behind (West of) UTC, as for the <code>"%z"</code>
+format for <code><a href="strptime.html">strftime</a></code>.)
+</p>
 <p>The function <code>OlsonNames</code> returns the time-zone names known to
-the Olson/IANA database on the current system. The system-specific
-location in the file system varies, e.g. &lsquo;<span class="file">/usr/share/zoneinfo</span>&rsquo;
-(Linux, macOS, FreeBSD), &lsquo;<span class="file">/usr/share/lib/zoneinfo</span>&rsquo; (Solaris, AIX),
-....  It is likely that there is a file named something like
-&lsquo;<span class="file">zone.tab</span>&rsquo; under that directory listing the locations known as
-time-zone names (but not for example <code>EST5EDT</code>): this is read by
-<code>OlsonNames</code>.  See also
+the currently selected Olson/IANA database.  The system-specific
+location in the file system varies,
+e.g. &lsquo;<span class="file">/usr/share/zoneinfo</span>&rsquo; (Linux, macOS, FreeBSD),
+&lsquo;<span class="file">/usr/share/lib/zoneinfo</span>&rsquo; (Solaris, AIX), ....  It is likely
+that there is a file named something like &lsquo;<span class="file">zone.tab</span>&rsquo; under that
+directory listing the locations known as time-zone names (but not for
+example <code>EST5EDT</code>).  See also
 <a href="https://en.wikipedia.org/wiki/Zone.tab">https://en.wikipedia.org/wiki/Zone.tab</a>.
 </p>
 <p>Where <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> was configured with option <span class="option">--with-internal-tzcode</span>
@@ -146,8 +174,15 @@ time-zone names (but not for example <code>EST5EDT</code>): this is read by
 <code>file.path(R.home("share"), "zoneinfo")</code> is used by default: file
 &lsquo;<span class="file">VERSION</span>&rsquo; in that directory states the version.  Environment
 variable <span class="env">TZDIR</span> can be used to point to a different
-&lsquo;<span class="file">zoneinfo</span>&rsquo; directory: this is also supported by the native
-services on some OSes, e.g. Linux).
+&lsquo;<span class="file">zoneinfo</span>&rsquo; database: this is also supported by the native
+services on some OSes, e.g. Linux using <code>glibc</code> except in
+secure modes.
+
+</p>
+<p>Time zones given by name (<em>via</em> environment variable <span class="env">TZ</span>, in
+<code>tz</code> arguments to functions such as <code><a href="as.POSIXlt.html">as.POSIXlt</a></code> and
+perhaps the system time zone) are loaded from the currently selected
+&lsquo;<span class="file">zoneinfo</span>&rsquo; database.
 </p>
 <p>An attempt is made (once only per session) to map Windows' idea of the
 current time zone to a location, following a version of
@@ -156,11 +191,12 @@ with additional values deduced from the Windows Registry and documentation.
 It can be overridden by setting the <span class="env">TZ</span> environment variable
 before any date-times are used in the session.
 </p>
-<p>Most platforms support time zones of the form <span class="samp">GMT+n</span> and
-<span class="samp">GMT-n</span>, which assume at a fixed offset from UTC (hence no DST).
-Contrary to some expectations (but consistent with names such as
-<span class="samp">PST8PDT</span>), negative offsets are times ahead of (east of) UTC,
-positive offsets are times behind (west of) UTC.
+<p>Most platforms support time zones of the form <span class="samp">Etc/GMT+n</span> and
+<span class="samp">Etc/GMT-n</span> (possibly also without prefix <span class="samp">Etc/</span>), which
+assume a fixed offset from UTC (hence no DST).  Contrary to some
+expectations (but consistent with names such as <span class="samp">PST8PDT</span>),
+negative offsets are times ahead of (east of) UTC, positive offsets
+are times behind (west of) UTC.
 </p>
 <p>Immediately prior to the advent of legislated time zones, most people
 used time based on their longitude (or that of a nearby town), known
@@ -172,7 +208,10 @@ mainland France) and switched to <span class="samp">GMT+0</span> in 1911.
 </p>
 
 <p>Some systems (notably Linux) have a <code>tzselect</code> command which
-allows the interactive selection of a supported time zone name.
+allows the interactive selection of a supported time zone name.  On
+systems using <code>systemd</code> (notably Linux), the OS command
+<code>timedatectl list-timezones</code> will list all available time zone
+names.
 </p>
 
 
@@ -227,6 +266,9 @@ have the courtesy not to blame <span style="font-family: Courier New, Courier; c
 <p><a href="https://en.wikipedia.org/wiki/Time_zone">https://en.wikipedia.org/wiki/Time_zone</a> and
 <a href="http://www.twinsun.com/tz/tz-link.htm">http://www.twinsun.com/tz/tz-link.htm</a> for extensive sets of links.
 </p>
+<p><a href="https://data.iana.org/time-zones/theory.html">https://data.iana.org/time-zones/theory.html</a> for the
+&lsquo;rules&rsquo; of the Olson/IANA database.
+</p>
 
 
 <h3>Examples</h3>
@@ -234,8 +276,16 @@ have the courtesy not to blame <span style="font-family: Courier New, Courier; c
 <pre>
 Sys.timezone()
 
-str(OlsonNames()) ## a few hundred names
+str(OlsonNames()) ## typically close to 600 hundred names,
+## typically some acronyms/aliases such as "UTC", "NZ", "MET", "Eire", ..., but
+## mostly pairs (and triplets) such as "Pacific/Auckland"
+table(sl &lt;- grepl("/", OlsonNames()))
+OlsonNames()[ !sl ] # the simple ones
+head(Osl &lt;- strsplit(OlsonNames()[sl], "/"))
+(tOS1 &lt;- table(vapply(Osl, `[[`, "", 1))) # Continents, countries, ...
+table(lengths(Osl))# most are pairs, some triplets
+str(Osl[lengths(Osl) &gt;= 3])# "America" South and North ...
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

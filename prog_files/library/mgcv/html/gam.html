@@ -119,7 +119,7 @@ parameter estimation criterion (given by <code>method</code>). <code>"perf"</cod
 for the more stable direct approach. <code>"outer"</code> can use several alternative optimizers, specified in the 
 second element of <code>optimizer</code>: <code>"newton"</code> (default), <code>"bfgs"</code>, <code>"optim"</code>, <code>"nlm"</code> 
 and <code>"nlm.fd"</code> (the latter is based entirely on finite differenced derivatives and is very slow). <code>"efs"</code>
-for the extended Fellner Schall method - only currently available for general families.</p>
+for the extended Fellner Schall method of Wood and Fasiolo (2017).</p>
 </td></tr>
 <tr valign="top"><td><code>scale</code></td>
 <td>
@@ -133,7 +133,7 @@ Note that (RE)ML methods can only work with scale parameter 1 for the Poisson an
 <p> If this is <code>TRUE</code> then <code>gam</code> can add an extra penalty to each term so 
 that it can be penalized to zero.  This means that the smoothing parameter estimation that is 
 part of fitting can completely remove terms from the model. If the corresponding 
-smoothing parameter is estimated as zero then the extra penalty has no effect.
+smoothing parameter is estimated as zero then the extra penalty has no effect. Use <code>gamma</code> to increase level of penalization.
 </p>
 </td></tr>
 <tr valign="top"><td><code>knots</code></td>
@@ -172,9 +172,7 @@ defined on the response scale.</p>
 </td></tr>
 <tr valign="top"><td><code>gamma</code></td>
 <td>
-<p>It is sometimes useful to inflate the model degrees of 
-freedom in the GCV or UBRE/AIC score by a constant multiplier. This allows 
-such a multiplier to be supplied. </p>
+<p>Increase this beyond 1 to produce smoother models. <code>gamma</code> multiplies the effective degrees of freedom in the GCV or UBRE/AIC. coden/gamma can be viewed as an effective sample size in the GCV score, and this also enables it to be used with REML/ML. Ignored with P-RE/ML or the <code>efs</code> optimizer. </p>
 </td></tr> 
 <tr valign="top"><td><code>fit</code></td>
 <td>
@@ -398,6 +396,10 @@ generalized additive mixed models. Biometrics 62(4):1025-1036
 </p>
 <p>Wood S.N. (2017) Generalized Additive Models: An Introduction with R (2nd edition). Chapman
 and Hall/CRC Press.
+</p>
+<p>Wood, S.N. and M. Fasiolo (2017) A generalized Fellner-Schall method for smoothing
+parameter optimization with application to Tweedie location, scale and shape models.
+Biometrics 73 (4), 1071-1081
 </p>
 <p>Wood S.N., F. Scheipl and J.J. Faraway (2012) Straightforward intermediate rank tensor product smoothing
 in mixed models. Statistical Computing.
@@ -648,5 +650,5 @@ detach(eg)
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-22 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-24 <a href="00Index.html">Index</a>]</div>
 </body></html>

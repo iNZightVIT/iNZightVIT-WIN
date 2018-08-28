@@ -19,7 +19,7 @@ regression terms. This method can be used with <code><a href="gam.html">gam</a><
 <code><a href="smooth.construct.re.smooth.spec.html">smooth.construct.re.smooth.spec</a></code>, for full details. The basic idea is that, e.g., <code>s(x,z,g,bs="re")</code> generates an i.i.d. Gaussian 
 random effect with model matrix given by <code>model.matrix(~x:z:g-1)</code> &mdash; in principle such terms can take any number of arguments. This simple 
 approach is sufficient for implementing a wide range of commonly used random effect structures. For example if <code>g</code> is a factor then 
-<code>s(g,bs="re")</code> produces a random coefficient for each level of <code>g</code>, with the radndom coefficients all modelled as i.i.d. normal. If <code>g</code> is a factor and <code>x</code> is numeric, then <code>s(x,g,bs="re")</code> produces an i.i.d. normal random slope relating the response to <code>x</code> for each level of <code>g</code>. If <code>h</code> is another factor then <code>s(h,g,bs="re")</code> produces the usual i.i.d. normal <code>g</code> - <code>h</code> interaction. Note that a rather useful approximate test for zero random effect is also implemented for tsuch terms based on Wood (2013). If the precision
+<code>s(g,bs="re")</code> produces a random coefficient for each level of <code>g</code>, with the random coefficients all modelled as i.i.d. normal. If <code>g</code> is a factor and <code>x</code> is numeric, then <code>s(x,g,bs="re")</code> produces an i.i.d. normal random slope relating the response to <code>x</code> for each level of <code>g</code>. If <code>h</code> is another factor then <code>s(h,g,bs="re")</code> produces the usual i.i.d. normal <code>g</code> - <code>h</code> interaction. Note that a rather useful approximate test for zero random effect is also implemented for tsuch terms based on Wood (2013). If the precision
 matrix is known to within a multiplicative constant, then this can be supplied via the <code>xt</code> argument of <code>s</code>. See <a href="smooth.construct.re.smooth.spec.html">smooth.construct.re.smooth.spec</a> for details and example. 
 </p>
 <p>Alternatively, but less straightforwardly, the <code>paraPen</code> argument to <code><a href="gam.html">gam</a></code> can be used: 
@@ -88,10 +88,10 @@ plot(b)
 ## simulate example...
 dat &lt;- gamSim(1,n=400,scale=2) ## simulate 4 term additive truth
 
-fac &lt;- as.factor(sample(1:20,400,replace=TRUE))
-dat$X &lt;- model.matrix(~fac-1)
+fac &lt;- sample(1:20,400,replace=TRUE)
 b &lt;- rnorm(20)*.5
-dat$y &lt;- dat$y + dat$X%*%b
+dat$y &lt;- dat$y + b[fac]
+dat$fac &lt;- as.factor(fac)
 
 rm1 &lt;- gam(y ~ s(fac,bs="re")+s(x0)+s(x1)+s(x2)+s(x3),data=dat,method="ML")
 gam.vcomp(rm1)
@@ -101,5 +101,5 @@ fv1 &lt;- predict(rm1) ## predictions setting r.e. to predicted values
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-22 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-24 <a href="00Index.html">Index</a>]</div>
 </body></html>

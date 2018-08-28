@@ -16,6 +16,7 @@ checkboxInput           Checkbox Input Control
 clickOpts               Create an object representing click options
 column                  Create a column within a UI definition
 conditionalPanel        Conditional Panel
+createRenderFunction    Implement render functions
 createWebDependency     Create a web dependency
 dateInput               Create date input
 dateRangeInput          Create date range input

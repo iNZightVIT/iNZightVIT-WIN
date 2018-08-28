@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;DBI&rsquo; version 0.8</h2>
+</div><h2>Documentation for package &lsquo;DBI&rsquo; version 1.0.0</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -23,12 +23,16 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="DBI-package.html">DBI-package</a></td>
 <td>DBI: R Database Interface</td></tr>
+<tr><td style="width: 25%;"><a href="dbAppendTable.html">dbAppendTable</a></td>
+<td>Insert rows into a table</td></tr>
 <tr><td style="width: 25%;"><a href="transactions.html">dbBegin</a></td>
 <td>Begin/commit/rollback SQL transactions</td></tr>
 <tr><td style="width: 25%;"><a href="dbBind.html">dbBind</a></td>
 <td>Bind values to a parameterized/prepared statement</td></tr>
 <tr><td style="width: 25%;"><a href="dbWithTransaction.html">dbBreak</a></td>
 <td>Self-contained SQL transactions</td></tr>
+<tr><td style="width: 25%;"><a href="dbCanConnect.html">dbCanConnect</a></td>
+<td>Check if a connection to a DBMS can be established</td></tr>
 <tr><td style="width: 25%;"><a href="dbClearResult.html">dbClearResult</a></td>
 <td>Clear a result set</td></tr>
 <tr><td style="width: 25%;"><a href="dbColumnInfo.html">dbColumnInfo</a></td>
@@ -37,6 +41,8 @@
 <td>Begin/commit/rollback SQL transactions</td></tr>
 <tr><td style="width: 25%;"><a href="dbConnect.html">dbConnect</a></td>
 <td>Create a connection to a DBMS</td></tr>
+<tr><td style="width: 25%;"><a href="dbCreateTable.html">dbCreateTable</a></td>
+<td>Create a table in the database</td></tr>
 <tr><td style="width: 25%;"><a href="dbDataType.html">dbDataType</a></td>
 <td>Determine the SQL data type of an object</td></tr>
 <tr><td style="width: 25%;"><a href="dbDisconnect.html">dbDisconnect</a></td>
@@ -73,6 +79,8 @@
 <td>DBIObject class</td></tr>
 <tr><td style="width: 25%;"><a href="DBIResult-class.html">DBIResult-class</a></td>
 <td>DBIResult class</td></tr>
+<tr><td style="width: 25%;"><a href="dbIsReadOnly.html">dbIsReadOnly</a></td>
+<td>Is this DBMS object read only?</td></tr>
 <tr><td style="width: 25%;"><a href="dbIsValid.html">dbIsValid</a></td>
 <td>Is this DBMS object still valid?</td></tr>
 <tr><td style="width: 25%;"><a href="dbListConnections.html">dbListConnections</a></td>
@@ -130,13 +138,13 @@
 <tr><td style="width: 25%;"><a href="SQL.html">SQL-class</a></td>
 <td>SQL quoting</td></tr>
 <tr><td style="width: 25%;"><a href="sqlAppendTable.html">sqlAppendTable</a></td>
-<td>Insert rows into a table</td></tr>
+<td>Compose query to insert rows into a table</td></tr>
 <tr><td style="width: 25%;"><a href="sqlAppendTable.html">sqlAppendTableTemplate</a></td>
-<td>Insert rows into a table</td></tr>
+<td>Compose query to insert rows into a table</td></tr>
 <tr><td style="width: 25%;"><a href="rownames.html">sqlColumnToRownames</a></td>
 <td>Convert row names back and forth between columns</td></tr>
 <tr><td style="width: 25%;"><a href="sqlCreateTable.html">sqlCreateTable</a></td>
-<td>Create a simple table</td></tr>
+<td>Compose query to create a simple table</td></tr>
 <tr><td style="width: 25%;"><a href="sqlData.html">sqlData</a></td>
 <td>Convert a data frame into form suitable for upload to an SQL database</td></tr>
 <tr><td style="width: 25%;"><a href="sqlInterpolate.html">sqlInterpolate</a></td>

@@ -33,6 +33,7 @@ column	column
 conditionalPanel	conditionalPanel
 conditionStackTrace	stacktrace
 conditionStackTrace<-	stacktrace
+createRenderFunction	createRenderFunction
 createWebDependency	createWebDependency
 dataTableOutput	tableOutput
 dateInput	dateInput

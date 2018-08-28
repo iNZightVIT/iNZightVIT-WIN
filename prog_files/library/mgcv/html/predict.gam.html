@@ -26,7 +26,7 @@ for quantities derived from the model (e.g. derivatives of smooths), and for loo
 ## S3 method for class 'gam'
 predict(object,newdata,type="link",se.fit=FALSE,terms=NULL,
         exclude=NULL,block.size=NULL,newdata.guaranteed=FALSE,
-        na.action=na.pass,unconditional=FALSE,...)
+        na.action=na.pass,unconditional=FALSE,iterms.type=NULL,...)
 </pre>
 
 
@@ -109,6 +109,10 @@ determined from <code>object$na.action</code>.</p>
 <p>if <code>TRUE</code> then the smoothing parameter uncertainty corrected covariance
 matrix is used, when available, otherwise the covariance matrix conditional on the estimated 
 smoothing parameters is used. </p>
+</td></tr>
+<tr valign="top"><td><code>iterms.type</code></td>
+<td>
+<p>if <code>type="iterms"</code> then standard errors can either include the uncertainty in the overall mean (default, withfixed and random effects included) or the uncertainty in the mean of the non-smooth fixed effects only (<code>iterms.type=2</code>).</p>
 </td></tr>
 <tr valign="top"><td><code>...</code></td>
 <td>
@@ -333,5 +337,5 @@ for (i in 1:4) {  ## plot derivatives and corresponding CIs
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-22 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-24 <a href="00Index.html">Index</a>]</div>
 </body></html>

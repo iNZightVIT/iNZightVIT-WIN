@@ -90,7 +90,7 @@ non-integer, and also <i>n = 0</i> which is relevant for
 non-centrality <i>&lambda; &gt; 0</i>,
 see Johnson <em>et al</em> (1995, chapter 29).
 In that (noncentral, zero df) case, the distribution is a mixture of a
-point mass at <i>x = 0</i> (of size <code>pchisq(0, df=0, ncp=ncp)</code> and
+point mass at <i>x = 0</i> (of size <code>pchisq(0, df=0, ncp=ncp)</code>) and
 a continuous part, and <code>dchisq()</code> is <em>not</em> a density with
 respect to that mixture measure but rather the limit of the density
 for <i>df -&gt; 0</i>.
@@ -218,5 +218,5 @@ stopifnot(all.equal(p00, exp(-lam/2)),
           all.equal(p.0, exp(-lam/2)))
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>stats</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>stats</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

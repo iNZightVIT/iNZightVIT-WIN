@@ -1,5 +1,5 @@
 Package: mgcv
-Version: 1.8-22
+Version: 1.8-24
 Author: Simon Wood <simon.wood@r-project.org>
 Maintainer: Simon Wood <simon.wood@r-project.org>
 Title: Mixed GAM Computation Vehicle with Automatic Smoothness
@@ -18,8 +18,8 @@ LazyLoad: yes
 ByteCompile: yes
 License: GPL (>= 2)
 NeedsCompilation: yes
-Packaged: 2017-09-18 10:38:41 UTC; sw283
+Packaged: 2018-06-18 13:08:20 UTC; sw283
 Repository: CRAN
-Date/Publication: 2017-09-24 15:25:07 UTC
-Built: R 3.4.3; x86_64-w64-mingw32; 2017-12-06 09:33:14 UTC; windows
+Date/Publication: 2018-06-23 16:07:01 UTC
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-07-02 09:18:01 UTC; windows
 Archs: i386, x64

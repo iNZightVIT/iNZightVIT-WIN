@@ -1,83 +1,16 @@
 
-# rlang 0.2.0.9000
+# rlang 0.2.1
 
-* `env()` now treats a single unnamed argument as the parent of the
-  new environment. Consequently, `child_env()` is now superfluous and
-  is now in questioning life cycle.
+This is a maintenance release that fixes several tidy evaluation
+issues.
 
-* New `current_env()` and `current_fn()` functions to retrieve the
-  current environment or the function being evaluated. They are
-  equivalent to `base::environment()` and `base::sys.function()`
-  called without argument.
+* Functions with tidy dots support now allow splicing atomic vectors.
 
-* `env_get()` and `env_get_list()` gain a `default` argument to
-  provide a default value for non-existing bindings.
+* Quosures no longer capture the current `srcref`.
 
-* `env_poke()` now returns the old value invisibly rather than the
-  input environment.
-
-* The new function `env_name()` returns the name of an environment.
-  It always adds the "namespace:" prefix to namespace names. It
-  returns "global" instead of ".GlobalEnv" or "R_GlobalEnv", "empty"
-  instead of "R_EmptyEnv". The companion `env_label()` is like
-  `env_name()` but returns the memory address for anonymous
-  environments.
-
-* `env_parents()` now returns a named list. The names are taken with
-  `env_name()`.
-
-* `env_parents()` and `env_tail()` now stop at the global environment
-  by default. This can be changed with the `last` argument. The empty
-  environment is always a stopping condition so you can take the
-  parents or the tail of an environment on the search path without
-  changing the default.
-
-* New predicates `env_binding_are_active()` and
-  `env_binding_are_promise()` detect the kind of bindings in an
-  environment.
-
-* `env_binding_lock()` and `env_binding_unlock()` allows to lock and
-  unlock multiple bindings. The predicate `env_binding_are_locked()`
-  tests if bindings are locked.
-
-* `env_lock()` and `env_is_locked()` lock an environment or test if
-  an environment is locked.
-
-* `env_print()` pretty-prints environments. It shows the contents (up
-  to 20 elements) and the properties of the environment.
-
-* `flatten_if()` and `squash_if()` now handle primitive functions like
-  `base::is.list()` as predicates.
-
-* New functions `new_quosures()` and `as_quosures()` to create or
-  coerce to a list of quosures. This is a small S3 class that ensures
-  two invariants on subsetting and concatenation: that each element is
-  a quosure and that the list is always named even if only with a
-  vector of empty strings.
-
-* `is_symbol()` now accepts a character vector of names to mach the
-  symbol against.
-
-* `parse_quos()` now adds the `quosures` class to its output.
-
-* `parse_exprs()` and `parse_quos()` now support character vectors.
-  Note that the output may be longer than the input as each string may
-  yield multiple expressions (such as `"foo; bar"`).
-
-
-## Breaking changes
-
-* Taking the `env_parent()` of the empty environment is now an error.
-
-* The `sentinel` argument of `env_last()` has been deprecated and
-  renamed to `last`.
-
-
-## Upcoming breaking changes
-
-* Using `get_env()` without supplying an environment is now
-  soft-deprecated. Please use `current_env()` to retrieve the current
-  environment.
+* Formulas are now evaluated in the correct environment by
+  `eval_tidy()`. This fixes issues in dplyr and other tidy-evaluation
+  interfaces.
 
 
 # rlang 0.2.0

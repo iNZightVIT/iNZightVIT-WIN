@@ -1,4 +1,5 @@
 .svycheck	as.svydesign2
+AIC.svycoxph	svycoxph
 AIC.svyglm	anova.svyglm
 anova.svyglm	anova.svyglm
 anova.svyloglin	svyloglin
@@ -30,6 +31,7 @@ calibrate	calibrate
 calibrate.survey.design2	calibrate
 calibrate.svyrep.design	calibrate
 calibrate.twophase	calibrate
+cal_names	calibrate
 close.DBIsvydesign	open.DBIsvydesign
 close.ODBCsvydesign	open.DBIsvydesign
 coef.svrepstat	surveysummary
@@ -49,6 +51,7 @@ confint.svyglm	confint.svyglm
 confint.svykm	svykm
 confint.svyratio	svyratio
 confint.svystat	surveysummary
+confint.svyttest	svyttest
 crowd	crowd
 cv	surveysummary
 cv.default	surveysummary
@@ -89,6 +92,7 @@ election_pps	election
 estWeights	estweights
 estWeights.data.frame	estweights
 estWeights.twophase	estweights
+extractAIC.svycoxph	svycoxph
 fpc	fpc
 ftable.svrepstat	ftable.svystat
 ftable.svyby	ftable.svystat

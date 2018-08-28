@@ -1,3 +1,32 @@
+# readxl 1.1.0
+
+* `read_excel()` and `excel_sheets()` associate a larger set of file extensions with xlsx and are better able to guess the format of a file with a nonstandard or missing extension. This is about deciding whether to treat a file as xls or xlsx. (#342, #411, #457)
+
+  - `excel_format()` is the newly-exported format-guessing function.
+  - `format_from_ext()` is a low-level helper, also exported, that only consults file extension. In addition to the obvious interpretation of `.xls` and `.xlsx`, the extensions `.xlsm`, `.xltx`, and `.xltm` are now associated with xlsx.
+  - `format_from_signature()` is a low-level helper, also exported, that consults the file's signature (a.k.a. magic number). It's handy for files that lack an extension.
+
+* Embedded libxls has been updated to address security vulnerabilitities identified in late 2017 (#441, #442).
+
+  - [CVE-2017-12110](https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0462), [CVE-2017-2896](https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0403), and [CVE-2017-2897](https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0404) were demonstrated to affect readxl v1.0.0. These have been addressed in libxls and the embedded version of libxls incorporates those fixes.
+  - Although [CVE-2017-12111](https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0463) and [CVE-2017-2919](https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0426) mention readxl, the notices clarify that these CVEs do not actually affect readxl. Both have been fixed in libxls for quite a while: CVE-2017-12111 since 2014 and CVE-2017-2919 since 2012.
+
+* xlsx structured as a "minimal conformant SpreadsheetML package" can be read. Most obvious feature of such sheets is the lack of an `xl/` directory in the unzipped form. (xlsx, #435, #437)
+
+* Reading xls sheet with exactly 65,536 rows no longer enters an infinite loop. (xls, #373, #416, #432 @vkapartzianis)
+
+* Doubles, including datetimes, coerced to character from xls now have much higher precision, comparable to the xlsx behaviour. (xls, #430, #431)
+
+* Integer-y numbers larger than 2^31 are coerced properly to string (xls, #346)
+
+* Shared strings are only compared to NA strings after lookup, never on the basis of their index. (xlsx, #401)
+
+* Better checks and messaging around nonexistent files. (#392)
+
+* Add `$(C_VISIBILITY)` to compiler flags to hide internal symbols from the dll. (#385 @jeroen)
+
+* Numeric data in a logical column now coerces properly to logical. (xlsx, #385 @nacnudus)
+
 # readxl 1.0.0
 
 ## Sheet geometry

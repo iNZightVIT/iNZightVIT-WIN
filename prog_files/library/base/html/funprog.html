@@ -161,7 +161,7 @@ cfrac(c(2, 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8))
 
 ## Iterative function application:
 Funcall &lt;- function(f, ...) f(...)
-## Compute log(exp(acos(cos(0))
+## Compute log(exp(acos(cos(0))))
 Reduce(Funcall, list(log, exp, acos, cos), 0, right = TRUE)
 ## n-fold iterate of a function, functional style:
 Iterate &lt;- function(f, n = 1)
@@ -189,5 +189,5 @@ length(Filter(function(f)
 Filter(Negate(is.function),  sapply(ls(baseenv()), get, baseenv()))
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

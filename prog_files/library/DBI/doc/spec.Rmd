@@ -1,7 +1,6 @@
 ---
 title: "DBI specification"
 author: "Kirill Müller"
-date: "`r Sys.Date()`"
 output:
   rmarkdown::html_document:
     smart: FALSE
@@ -169,11 +168,13 @@ topics <- c(
   "dbListTables",
   "dbExistsTable",
   "dbRemoveTable",
+  "dbListFields",
   "dbIsValid",
   "dbHasCompleted",
   "dbGetStatement",
   "dbGetRowCount",
   "dbGetRowsAffected",
+  "dbColumnInfo",
   "transactions",
   "dbWithTransaction"
 )

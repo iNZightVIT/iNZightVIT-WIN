@@ -90,6 +90,17 @@ For libarchive's <code>bsdtar</code>, <span class="option">--format=ustar</span>
 portable than the default.
 </p>
 
+<p>One issue which can cause an external command to fail is a command
+line too long for the system shell: as from <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.5.0 this is worked
+around if the external command is detected to be GNU <code>tar</code> or
+libarchive <code>tar</code> (aka <code>bsdtar</code>).
+</p>
+<p>Note that <code>files = '.'</code> will usually not work with an external
+<code>tar</code> as that would expand the list of files after
+<code>tarfile</code> is created.  (It does work with the default internal
+method.)
+</p>
+
 
 <h3>Value</h3>
 
@@ -199,5 +210,5 @@ for the way the POSIX utility <code>pax</code> handles <code>tar</code> formats.
 <p><code><a href="untar.html">untar</a></code>.
 </p>
 
-<hr /><div style="text-align: center;">[Package <em>utils</em> version 3.4.3 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>utils</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

@@ -8,6 +8,7 @@ ageControl              Set attributes of vertices based on their age.
 ageSetter               Set WebGL scene properties based on the age of
                         components of objects.
 arrow3d                 Draw an arrow in a scene.
+asRow                   Convenience functions for rgl HTML layouts
 aspect3d                Set the aspect ratios of the current plot
 axes3d                  Draw boxes, axes and other text outside the
                         data

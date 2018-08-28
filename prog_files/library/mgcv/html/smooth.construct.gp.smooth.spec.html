@@ -69,7 +69,7 @@ Can be <code>NULL</code></p>
 </p>
 </li></ol>
 
-<p>See Fahrmeir et al. (2013) section 8.1.6, for example.  
+<p>See Fahrmeir et al. (2013) section 8.1.6, for example. Note that setting <code>r</code> to too small a value will lead to unpleasant results, as most points become all but independent (especially for the spherical model. Note: Wood 2017, Figure 5.20 right is based on a buggy implementation). 
 </p>
 <p>The default basis dimension for this class is <code>k=M+k.def</code> where <code>M</code> is the null space dimension (dimension of unpenalized function space) and <code>k.def</code> is 10 for dimension 1, 30 for dimension 2 and 100 for higher dimensions. 
 This is essentially arbitrary, and should be checked, but as with all penalized regression smoothers, results are statistically 
@@ -145,7 +145,7 @@ out duplicate locations).</p>
 </p>
 <p>Kammann, E. E. and M.P. Wand (2003) Geoadditive Models. Applied Statistics 52(1):1-18.
 </p>
-<p>Wood, S.N. (2003) Thin plate regression splines. J.R.Statist.Soc.B 65(1):95-114
+<p>Wood, S.N. (2017) Generalized Additive Models: an introduction with R (2nd ed). CRC/Taylor and Francis
 </p>
 
 
@@ -174,5 +174,5 @@ detach(eg)
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-22 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>mgcv</em> version 1.8-24 <a href="00Index.html">Index</a>]</div>
 </body></html>

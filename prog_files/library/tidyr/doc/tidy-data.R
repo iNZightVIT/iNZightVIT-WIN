@@ -98,8 +98,8 @@ rank <- billboard3 %>%
 rank
 
 ## ---- eval = FALSE-------------------------------------------------------
-#  library(plyr)
+#  library(purrr)
 #  paths <- dir("data", pattern = "\\.csv$", full.names = TRUE)
 #  names(paths) <- basename(paths)
-#  ldply(paths, read.csv, stringsAsFactors = FALSE)
+#  map_dfr(paths, read.csv, stringsAsFactors = FALSE, .id = "filename")
 

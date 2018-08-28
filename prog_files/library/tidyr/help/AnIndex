@@ -37,6 +37,7 @@ table4a	table1
 table4b	table1
 table5	table1
 tidyr	tidyr-package
+uncount	uncount
 unite	unite
 unite_	deprecated-se
 unnest	unnest

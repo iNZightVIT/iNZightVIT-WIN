@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.2.0.9001</h2>
+</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.2.1</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -86,8 +86,6 @@
 <td>Coerce to a character vector and attempt encoding conversion</td></tr>
 <tr><td style="width: 25%;"><a href="as_quosure.html">as_quosure</a></td>
 <td>Coerce object to quosure</td></tr>
-<tr><td style="width: 25%;"><a href="new_quosures.html">as_quosures</a></td>
-<td>Create a list of quosures</td></tr>
 <tr><td style="width: 25%;"><a href="vector-coercion.html">as_string</a></td>
 <td>Coerce an object to a base type</td></tr>
 <tr><td style="width: 25%;"><a href="as_utf8_character.html">as_utf8_character</a></td>
@@ -113,11 +111,11 @@
 <tr><td style="width: 25%;"><a href="call2.html">call2</a></td>
 <td>Create a call</td></tr>
 <tr><td style="width: 25%;"><a href="caller_env.html">caller_env</a></td>
-<td>Get the current or caller environment</td></tr>
-<tr><td style="width: 25%;"><a href="caller_frame.html">caller_fn</a></td>
-<td>Get properties of the current or caller frame</td></tr>
-<tr><td style="width: 25%;"><a href="caller_frame.html">caller_frame</a></td>
-<td>Get properties of the current or caller frame</td></tr>
+<td>Get the environment of the caller frame</td></tr>
+<tr><td style="width: 25%;"><a href="caller_env.html">caller_fn</a></td>
+<td>Get the environment of the caller frame</td></tr>
+<tr><td style="width: 25%;"><a href="caller_env.html">caller_frame</a></td>
+<td>Get the environment of the caller frame</td></tr>
 <tr><td style="width: 25%;"><a href="call_args.html">call_args</a></td>
 <td>Extract arguments from a call</td></tr>
 <tr><td style="width: 25%;"><a href="call_args.html">call_args_names</a></td>
@@ -150,10 +148,6 @@
 <td>Signal a condition</td></tr>
 <tr><td style="width: 25%;"><a href="vector-construction.html">cpl</a></td>
 <td>Create vectors</td></tr>
-<tr><td style="width: 25%;"><a href="caller_env.html">current_env</a></td>
-<td>Get the current or caller environment</td></tr>
-<tr><td style="width: 25%;"><a href="caller_frame.html">current_fn</a></td>
-<td>Get properties of the current or caller frame</td></tr>
 </table>
 
 <h2><a name="D">-- D --</a></h2>
@@ -190,16 +184,6 @@
 <td>Create a new environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_bind.html">env_bind</a></td>
 <td>Bind symbols to objects in an environment</td></tr>
-<tr><td style="width: 25%;"><a href="env_binding_are_active.html">env_binding_are_active</a></td>
-<td>What kind of environment binding?</td></tr>
-<tr><td style="width: 25%;"><a href="env_binding_lock.html">env_binding_are_locked</a></td>
-<td>Lock or unlock environment bindings</td></tr>
-<tr><td style="width: 25%;"><a href="env_binding_are_active.html">env_binding_are_promise</a></td>
-<td>What kind of environment binding?</td></tr>
-<tr><td style="width: 25%;"><a href="env_binding_lock.html">env_binding_lock</a></td>
-<td>Lock or unlock environment bindings</td></tr>
-<tr><td style="width: 25%;"><a href="env_binding_lock.html">env_binding_unlock</a></td>
-<td>Lock or unlock environment bindings</td></tr>
 <tr><td style="width: 25%;"><a href="env_bury.html">env_bury</a></td>
 <td>Mask bindings by defining symbols deeper in a scope</td></tr>
 <tr><td style="width: 25%;"><a href="env_clone.html">env_clone</a></td>
@@ -214,14 +198,6 @@
 <td>Does an environment have or see bindings?</td></tr>
 <tr><td style="width: 25%;"><a href="env_inherits.html">env_inherits</a></td>
 <td>Does environment inherit from another environment?</td></tr>
-<tr><td style="width: 25%;"><a href="env_lock.html">env_is_locked</a></td>
-<td>Lock an environment</td></tr>
-<tr><td style="width: 25%;"><a href="env_name.html">env_label</a></td>
-<td>Label of an environment</td></tr>
-<tr><td style="width: 25%;"><a href="env_lock.html">env_lock</a></td>
-<td>Lock an environment</td></tr>
-<tr><td style="width: 25%;"><a href="env_name.html">env_name</a></td>
-<td>Label of an environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_names.html">env_names</a></td>
 <td>Names of symbols bound in an environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_parent.html">env_parent</a></td>
@@ -230,8 +206,6 @@
 <td>Get parent environments</td></tr>
 <tr><td style="width: 25%;"><a href="get_env.html">env_poke_parent</a></td>
 <td>Get or set the environment of an object</td></tr>
-<tr><td style="width: 25%;"><a href="env_print.html">env_print</a></td>
-<td>Pretty-print an environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_parent.html">env_tail</a></td>
 <td>Get parent environments</td></tr>
 <tr><td style="width: 25%;"><a href="env_unbind.html">env_unbind</a></td>
@@ -368,7 +342,7 @@
 <td>Bare type predicates</td></tr>
 <tr><td style="width: 25%;"><a href="bare-type-predicates.html">is_bare_double</a></td>
 <td>Bare type predicates</td></tr>
-<tr><td style="width: 25%;"><a href="is_environment.html">is_bare_environment</a></td>
+<tr><td style="width: 25%;"><a href="is_env.html">is_bare_env</a></td>
 <td>Is object an environment?</td></tr>
 <tr><td style="width: 25%;"><a href="is_formula.html">is_bare_formula</a></td>
 <td>Is object a formula?</td></tr>
@@ -418,7 +392,7 @@
 <td>Type predicates</td></tr>
 <tr><td style="width: 25%;"><a href="is_empty.html">is_empty</a></td>
 <td>Is object an empty vector or NULL?</td></tr>
-<tr><td style="width: 25%;"><a href="is_environment.html">is_environment</a></td>
+<tr><td style="width: 25%;"><a href="is_env.html">is_env</a></td>
 <td>Is object an environment?</td></tr>
 <tr><td style="width: 25%;"><a href="is_stack.html">is_eval_stack</a></td>
 <td>Is object a stack?</td></tr>
@@ -464,8 +438,8 @@
 <td>Is object a function?</td></tr>
 <tr><td style="width: 25%;"><a href="quosure.html">is_quosure</a></td>
 <td>Quosure getters, setters and testers</td></tr>
-<tr><td style="width: 25%;"><a href="new_quosures.html">is_quosures</a></td>
-<td>Create a list of quosures</td></tr>
+<tr><td style="width: 25%;"><a href="quosure.html">is_quosures</a></td>
+<td>Quosure getters, setters and testers</td></tr>
 <tr><td style="width: 25%;"><a href="type-predicates.html">is_raw</a></td>
 <td>Type predicates</td></tr>
 <tr><td style="width: 25%;"><a href="is_reference.html">is_reference</a></td>
@@ -593,8 +567,6 @@
 <td>Create vectors matching the length of a given vector</td></tr>
 <tr><td style="width: 25%;"><a href="as_quosure.html">new_quosure</a></td>
 <td>Coerce object to quosure</td></tr>
-<tr><td style="width: 25%;"><a href="new_quosures.html">new_quosures</a></td>
-<td>Create a list of quosures</td></tr>
 <tr><td style="width: 25%;"><a href="new-vector.html">new_raw</a></td>
 <td>Create vectors matching a given length</td></tr>
 <tr><td style="width: 25%;"><a href="new-vector-along.html">new_raw_along</a></td>

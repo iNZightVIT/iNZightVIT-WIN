@@ -5,7 +5,6 @@ findCols	findCols
 getBclustClassIntervals	getBclustClassIntervals
 getHclustClassIntervals	getBclustClassIntervals
 jenks.tests	jenks.tests
-jenks71	jenks71
 nPartitions	classIntervals
 plot.classIntervals	classIntervals
 print.classIntervals	classIntervals
