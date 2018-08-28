@@ -4,6 +4,126 @@
 \title{lme4 News}
 \encoding{UTF-8}
 
+\section{CHANGES IN VERSION 1.1-17 (2018-04-03)}{
+  \itemize{
+    This is a maintenance release only (fixes CRAN problems with
+    cross-platform tests and examples)
+  }
+}
+\section{CHANGES IN VERSION 1.1-16 (2018-03-28)}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item \code{lmList} no longer ignores the \code{subset} argument
+      (John Fox)
+      \item fixed several minor issues with predicting when (1) grouping
+      variables have different levels from original model (e.g. missing
+      levels/factor levels not explicitly specified in \code{newdata}) or (2)
+      \code{re.form} is a subset of the original RE formula and some
+      (unused) grouping variables are omitted from \code{newdata} (GH
+      #452, #457)
+    }
+  }
+  \subsection{USER-VISIBLE CHANGES}{
+    \itemize{
+      \item \code{lmList} tries harder to collect errors and pass them
+      on as warnings
+      \item documented \code{as.function} method (given a \code{merMod}
+      object, returns a function that computes the deviance/REML criterion for
+      specified parameters)
+      \item \code{print} method for \code{summary.merMod} objects
+      no longer collapses small values of the t-statistic to zero
+    }
+  }
+}
+    
+\section{CHANGES IN VERSION 1.1-15 (2017-12-21)}{
+  \subsection{BUG FIXES}{
+     \itemize{
+	\item \code{model.frame(., fixed.only=TRUE)} now handles models with
+	"non-syntactic" (e.g. space-containing/backtick-delimited)
+        variables in the formula.
+
+	\item \code{confint(<merMod>)} now works again for the default
+	method \code{"profile"}.
+      }
+    }
+    \subsection{USER-VISIBLE CHANGES}{
+      \itemize{
+	\item exported \code{dotplot.ranef.mer}
+      }
+    }
+}
+
+\section{CHANGES IN VERSION 1.1-14 (2017-09-27)}{
+  Primarily an R-devel/CRAN-compatibility release.
+
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item added \code{transf} argument to \code{dotplot.ranef.mer}
+      to allow back-transformation (Ferenci Tamás, GH #134)
+      \item added \code{as.data.frame.ranef.mer} convenience method
+      \item user can specify initial value for overdispersion parameter
+      in \code{glmer.nb} (Timothy Lau, GH #423)
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix bug where NAs in fitting data were carried over into
+      predictions on new data (!) (lmwang9527, GH #420)
+      \item fix bug with long terms in models with || notation
+      \item \code{nlmer} now respects user-specified lower/upper bounds
+      (GH #432)
+      \item \code{confint.thpr} (confint method applied to an
+      already-computed profile now respects "theta_"/"beta_"
+      specifications to return all random-effect or all fixed-effect
+      confidence intervals, respectively.
+    }
+  }
+  \subsection{DOCUMENTATION IMPROVEMENTS}{
+    \itemize{
+      \item document need to export packages and objects to workers
+      when using \code{bootMer} with snow
+    }
+  }
+  \subsection{USER-VISIBLE CHANGES}{
+    \itemize{
+      \item improved warning message when using
+      \code{lmerControl()} with \code{glmer} (GH #415)
+      \item avoid deparsing big data frames when checking data (GH
+      #410)
+      \item pass \code{verbose} options to nloptr optimizers when
+      using \code{nloptwrap} (previously ignored, with a warning)
+      \item the \code{fl} (factor list) component of \code{mkReTrms}
+      objects is now returned as a list rather than a data frame
+    }
+  }
+}
+
+
+\section{CHANGES IN VERSION 1.1-13 (2017-04-18) }{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item added \code{prof.scale} argument to \code{profile.merMod},
+      documented caveats about using \code{varianceProf}/\code{logProf}
+      transformation methods for correlation parameters
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item suppressed spurious contrast-dropping warning (GH #414)
+      \item fixed bug in \code{confint.lmList4} (GH #26)
+      \item fixed bug when \code{FUN} returned an unnamed
+      vector in \code{confint(.,FUN=FUN,method="boot")}
+      \item fixed small bug relating to \code{nAGQ0initStep=FALSE}
+    }
+  }
+  \subsection{CRAN-COMPATIBILITY UPDATES}{
+        \itemize{
+	  \item fixed time stamps on compiled versions of vignettes
+	}
+      }
+}
+
 \section{CHANGES IN VERSION 1.1-12 (2016-04-15)}{
   This release is primarily a bump for compatibility with the new
   Windows toolchain. Some small documentation and test changes.
@@ -15,7 +135,7 @@
   }
   \subsection{BUG FIXES}{
     \itemize{
-      \item fixed bug \emph{de novo} Gamma-response simulations
+      \item fixed bug in \emph{de novo} Gamma-response simulations
     }
   }
 }
@@ -47,7 +167,7 @@
     \itemize{
       \item updated CITATION file.
     }
-  }    
+  }
   \subsection{NEW FEATURES}{
     \itemize{
       \item We export set of about a dozen printing utility functions

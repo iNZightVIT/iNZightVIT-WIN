@@ -1,112 +1,151 @@
 #ifndef dplyr_GroupedHybridCall_H
 #define dplyr_GroupedHybridCall_H
 
+#include <boost/scoped_ptr.hpp>
+#include <boost/shared_ptr.hpp>
+#include <boost/weak_ptr.hpp>
+
+#include <tools/Call.h>
+#include <tools/utils.h>
+
+#include <dplyr/Result/Result.h>
+
+#include <bindrcpp.h>
+
 namespace dplyr {
 
-    template <typename Subsets>
-    class GroupedHybridCall {
-    public:
-        GroupedHybridCall( const Call& call_, const SlicingIndex& indices_, Subsets& subsets_, const Environment& env_ ) :
-            call( clone(call_) ), indices(indices_), subsets(subsets_), env(env_)
-        {
-            while( simplified() ){}
-        }
+SEXP dplyr_object(const char* name);
 
-        SEXP eval(){
-            if( TYPEOF(call) == LANGSXP ){
-                substitute(call) ;
-                return Rcpp_eval( call, env ) ;
-            } else if(TYPEOF(call) == SYMSXP) {
-                if(subsets.count(call)){
-                    return subsets.get(call, indices) ;
-                }
-                return env.find( CHAR(PRINTNAME(call)) ) ;
-            }
-            return call ;
-        }
 
-    private:
+class IHybridCallback {
+public:
+  virtual ~IHybridCallback();
 
-        void substitute( SEXP obj){
-            if( ! Rf_isNull(obj) ){
-                SEXP head = CAR(obj) ;
-                switch( TYPEOF( head ) ){
-                case LISTSXP:
-                    substitute( CDR(head) ) ;
-                    break ;
+public:
+  virtual SEXP get_subset(const SymbolString& name) const = 0;
+};
 
-                case LANGSXP:
-                    {
-                        SEXP symb = CAR(head) ;
-                        if( symb == R_DollarSymbol || symb == Rf_install("@") || symb == Rf_install("::") || symb == Rf_install(":::") ){
+// The GroupedHybridEnv class provides the overscope/data mask upon request,
+// which forwards accesses to variables to IHybridCallback::get_subset()
+// for an IHybridCallback object provided externally via a shared_ptr<>.
+class GroupedHybridEnv {
+  // Objects of class HybridCallbackWeakProxy are owned by an XPtr that is
+  // buried in a closure maintained by bindr. We have no control of their
+  // lifetime. They are connected to an IHybridCallback via a weak_ptr<>
+  // constructed from a shared_ptr<>), to which all calls to get_subset()
+  // are forwarded. If the underlying object has been destroyed (which can
+  // happen if the data mask leaks and survives the dplyr verb,
+  // sometimes unintentionally), the weak pointer cannot be locked, and
+  // get_subset() returns NULL with a warning (#3318).
+  class HybridCallbackWeakProxy : public IHybridCallback {
+  public:
+    HybridCallbackWeakProxy(boost::shared_ptr<const IHybridCallback> real_);
 
-                            if( TYPEOF(CADR(head)) == LANGSXP ){
-                                substitute( CDR(head) ) ;
-                            }
+  public:
+    SEXP get_subset(const SymbolString& name) const;
 
-                            // deal with foo$bar( bla = boom )
-                            if( TYPEOF(CADDR(head)) == LANGSXP ){
-                                substitute( CDDR(head) ) ;
-                            }
+    virtual ~HybridCallbackWeakProxy();
 
-                            break ;
-                        }
+  private:
+    boost::weak_ptr<const IHybridCallback> real;
+  };
 
-                        substitute( CDR(head) ) ;
-                        break ;
-                    }
-                case SYMSXP:
-                    if( TYPEOF(obj) != LANGSXP ){
-                       if( subsets.count(head) ){
-                           SETCAR(obj, subsets.get(head, indices) ) ;
-                       }
-                    }
-                    break ;
-                }
-                substitute( CDR(obj) ) ;
-            }
-        }
+public:
+  GroupedHybridEnv(const CharacterVector& names_, const Environment& env_, boost::shared_ptr<const IHybridCallback> callback_);
+  ~GroupedHybridEnv();
 
-        bool simplified(){
-            // initial
-            if( TYPEOF(call) == LANGSXP ){
-                boost::scoped_ptr<Result> res( get_handler(call, subsets, env) );
-                if( res ){
-                    // replace the call by the result of process
-                    call = res->process(indices) ;
+public:
+  const Environment& get_overscope() const;
 
-                    // no need to go any further, we simplified the top level
-                    return true ;
-                }
-                return replace( CDR(call) ) ;
-            }
-            return false ;
-        }
+private:
+  void provide_overscope() const;
 
-        bool replace( SEXP p ){
-            SEXP obj = CAR(p) ;
-            if( TYPEOF(obj) == LANGSXP ){
-                boost::scoped_ptr<Result> res( get_handler(obj, subsets, env) );
-                if(res){
-                    SETCAR(p, res->process(indices) ) ;
-                    return true ;
-                }
+  static SEXP hybrid_get_callback(const String& name, List payload);
 
-                if( replace( CDR(obj) ) ) return true ;
-            }
+private:
+  const CharacterVector names;
+  const Environment env;
+  boost::shared_ptr<const IHybridCallback> callback;
 
-            if( TYPEOF(p) == LISTSXP ){
-                return replace( CDR(p) ) ;
-            }
+  mutable Environment overscope;
+  mutable Environment mask_active;
+  mutable Environment mask_bottom;
+  mutable bool has_overscope;
+};
 
-            return false ;
-        }
+// This class replaces calls to hybrid handlers by literals representing the result.
+class GroupedHybridCall {
+public:
+  GroupedHybridCall(const Call& call_, const ILazySubsets& subsets_, const Environment& env_);
 
-        Call call ;
-        const SlicingIndex& indices ;
-        Subsets& subsets ;
-        const Environment& env ;
-    } ;
+public:
+  Call simplify(const SlicingIndex& indices) const;
 
-}
+private:
+  bool simplified(Call& call) const;
+  bool replace(SEXP p) const;
+
+  const SlicingIndex& get_indices() const;
+  void set_indices(const SlicingIndex& indices_) const;
+  void clear_indices() const;
+
+private:
+  // Initialization
+  const Call original_call;
+  const ILazySubsets& subsets;
+  const Environment env;
+
+private:
+  // State
+  mutable const SlicingIndex* indices;
+};
+
+// The GroupedHybridEval class evaluates expressions for each group.
+// It implements IHybridCallback to handle requests for the value of
+// a variable.
+class GroupedHybridEval : public IHybridCallback {
+  // Objects of HybridCallbackProxy are owned by GroupedHybridEval and
+  // held with a shared_ptr<> to support weak references. They simply
+  // forward to the enclosing GroupedHybridEval via the IHybridCallback
+  // interface.
+  class HybridCallbackProxy : public IHybridCallback {
+  public:
+    HybridCallbackProxy(const IHybridCallback* real_);
+    virtual ~HybridCallbackProxy();
+
+  public:
+    SEXP get_subset(const SymbolString& name) const;
+
+  private:
+    const IHybridCallback* real;
+  };
+
+public:
+  GroupedHybridEval(const Call& call_, const ILazySubsets& subsets_, const Environment& env_);
+
+  const SlicingIndex& get_indices() const;
+
+public: // IHybridCallback
+  SEXP get_subset(const SymbolString& name) const;
+
+public:
+  SEXP eval(const SlicingIndex& indices_);
+
+private:
+  void set_indices(const SlicingIndex& indices_);
+  void clear_indices();
+  SEXP eval_with_indices();
+
+private:
+  const SlicingIndex* indices;
+  const ILazySubsets& subsets;
+  Environment env;
+  boost::shared_ptr<IHybridCallback> proxy;
+  const GroupedHybridEnv hybrid_env;
+  const GroupedHybridCall hybrid_call;
+};
+
+
+} // namespace dplyr
+
 #endif

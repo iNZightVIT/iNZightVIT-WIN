@@ -1,16 +1,16 @@
 add_column              Add columns to a data frame
 add_row                 Add rows to a data frame
-all_equal               Flexible equality comparison for data frames.
-as_tibble               Coerce lists and matrices to data frames.
+as_tibble               Coerce lists and matrices to data frames
 enframe                 Converting atomic vectors to data frames, and
                         vice versa
 frame_matrix            Row-wise matrix creation
-glimpse                 Get a glimpse of your data.
-has_name                Convenience function to check presence of a
-                        named element
-is.tibble               Test if the object is a tibble.
-repair_names            Repair object names.
+glimpse                 Get a glimpse of your data
+is_tibble               Test if the object is a tibble
+new_tibble              Constructor
 rownames                Tools for working with row names
-tibble                  Build a data frame or list.
+set_tidy_names          Repair object names
+tbl_sum                 Provide a succinct summary of an object
+tibble                  Build a data frame or list
+tibble-options          Package options
 tibble-package          tibble: Simple Data Frames
 tribble                 Row-wise tibble creation

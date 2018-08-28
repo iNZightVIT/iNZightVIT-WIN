@@ -2,6 +2,35 @@
 \title{NEWS file for the gridSVG package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.5-1}{
+  \itemize{
+    \item Generation of SVG from \code{grid.export()} is now much faster
+    (when you are drawing many rectangles, points, circles, or lines).
+  }
+}
+\section{Changes in version 1.5-1}{
+  \itemize{
+    \item Fix to ensure that \code{r} attribute in radial gradients
+    is non-negative.
+    
+    \item Fix for strict attribute checking now includes presentation
+    attributes.
+    
+    \item Fix for \pkg{gtable} support when grob in table cell has
+    viewport with non-centering alignment (e.g., a \pkg{ggplot2}
+    plot with more than one legend).  Reported by Tauno Metsalu.
+
+    \item Switched JSON library from \pkg{RJSONIO} to \pkg{jsonlite}.
+    \pkg{gridSVG} no longer needs to compile C code as it can import
+    a base64 encoding method from \pkg{jsonlite}.
+
+    \item Bug fix to handle exporting par(lty="blank"), e.g., from
+    boxplot() (converted with \pkg{gridGraphics}).  Thanks to Volker
+    Sorge.
+
+    \item Bug fix to handle pch=NA.  Thanks to Volker Sorge.
+  }
+}
 \section{Changes in version 1.5-0}{
   \itemize{
     \item Added \code{strict} argument for \code{grid.export()}
@@ -10,7 +39,8 @@
 
     \item Added \code{rootAttrs} argument for \code{grid.export()}
     and \code{gridsvg()} to allow control over attributes of
-    top-level \code{<svg>} element.
+    top-level \code{<svg>} element.  Suggestion and original patch
+    from Thell Fowler.
   }
 }
 \section{Changes in version 1.4-4}{

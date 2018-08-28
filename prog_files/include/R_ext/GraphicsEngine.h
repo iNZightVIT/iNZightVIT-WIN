@@ -2,10 +2,14 @@
  *  R : A Computer Language for Statistical Data Analysis
  *  Copyright (C) 2001-11 The R Core Team.
  *
- *  This program is free software; you can redistribute it and/or modify
+ *  This header file is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation; either version 2.1 of the License, or
  *  (at your option) any later version.
+ *
+ *  This file is part of R. R is distributed under the terms of the
+ *  GNU General Public License, either Version 2, June 1991 or Version 3,
+ *  June 2007. See doc/COPYRIGHTS for details of the copyright status of R.
  *
  *  This program is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -57,9 +61,18 @@ extern "C" {
  *             haveCapture, haveLocator.  (R 2.14.0)
  * Version 10: For R 3.0.0.  Typedef and use 'rcolor',
  *             Remove name2col (R_GE_str2col does the job).
+ * Version 11: For R 3.3.0.
+ *             Official support for saving/restoring display lists
+ *             across R sessions (via recordPlot() and replayPlot())
+ *             - added grid DL to snapshots (used to be NULL)
+ *             - added this version number to snapshots (as attribute)
+ *             - added R version number to snapshots (as attribute)
+ *             - added pkgName to graphics system state info (as attribute)
+ * Version 12: For R 3.4.0
+ *             Added canGenIdle, doIdle() and doesIdle() to devices.
  */
 
-#define R_GE_version 10
+#define R_GE_version 12
 
 int R_GE_getVersion(void);
 

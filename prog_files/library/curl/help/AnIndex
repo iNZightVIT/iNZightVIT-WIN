@@ -27,6 +27,7 @@ multi	multi
 multipart	multipart
 multi_add	multi
 multi_cancel	multi
+multi_fdset	multi
 multi_list	multi
 multi_run	multi
 multi_set	multi
@@ -35,3 +36,4 @@ new_pool	multi
 nslookup	nslookup
 parse_date	parse_date
 parse_headers	parse_headers
+parse_headers_list	parse_headers

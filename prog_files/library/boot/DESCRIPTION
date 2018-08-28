@@ -24,5 +24,5 @@ Packaged: 2017-07-30 08:28:30 UTC; ripley
 Author: Angelo Canty [aut],
   Brian Ripley [aut, trl, cre] (author of parallel support)
 Repository: CRAN
-Date/Publication: 2017-07-30 10:08:23 UTC
-Built: R 3.2.3; ; 2018-01-23 03:04:10 UTC; windows
+Date/Publication: 2017-08-06 10:22:29 UTC
+Built: R 3.5.1; ; 2018-07-02 09:17:15 UTC; windows

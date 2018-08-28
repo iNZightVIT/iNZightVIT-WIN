@@ -1,6 +1,6 @@
 Package: s20x
-Version: 3.1-26
-Date: 2017-12-07
+Version: 3.1-27
+Date: 2018-06-22
 Title: Functions for University of Auckland Course STATS 201/208 Data
         Analysis
 Author: Andrew Balemi, Dineika Chandra, James Curran, Brant Deppa, Mike Forster,
@@ -14,7 +14,7 @@ Imports: stats, graphics
 License: GPL-2 | file LICENSE
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2017-12-07 01:31:33 UTC; jcur002
+Packaged: 2018-06-22 04:49:48 UTC; jcur002
 Repository: CRAN
-Date/Publication: 2017-12-08 00:15:45 UTC
-Built: R 3.2.3; ; 2018-01-23 03:02:14 UTC; windows
+Date/Publication: 2018-06-22 05:04:32 UTC
+Built: R 3.5.0; ; 2018-06-22 07:38:51 UTC; windows

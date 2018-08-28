@@ -18,6 +18,7 @@ bootMer                 Model-based (Semi-)Parametric Bootstrap for
                         Mixed Models
 cake                    Breakage Angle of Chocolate Cakes
 cbpp                    Contagious bovine pleuropneumonia
+checkConv               Extended Convergence Checking
 confint.merMod          Compute Confidence Intervals for Parameters of
                         a [ng]lmer Fit
 convergence             Assessing Convergence for Fitted Models
@@ -48,7 +49,8 @@ grouseticks             Data on red grouse ticks from Elston et al.
 hatvalues.merMod        Diagonal elements of the hat matrix
 isNested                Is f1 nested within f2?
 isREML                  Check characteristics of models
-lmList                  Fit List of lm Objects with a Common Model
+lmList                  Fit List of lm or glm Objects with a Common
+                        Model
 lmList4-class           Class "lmList4" of 'lm' Objects on Common Model
 lmResp                  Generator objects for the response classes
 lmResp-class            Reference Classes for Response Modules,
@@ -69,8 +71,6 @@ mkReTrms                Make Random Effect Terms: Create Z, Lambda,
 mkRespMod               Create an lmerResp, glmResp or nlsResp instance
 mkVarCorr               Make Variance and Correlation Matrices from
                         'theta'
-mkdevfun                Create Deviance Evaluation Function from
-                        Predictor and Response Module
 modular                 Modular Functions for Mixed Model Fits
 ngrps                   Number of Levels of a Factor or a "merMod"
                         Model
@@ -79,8 +79,7 @@ nlmer                   Fitting Nonlinear Mixed-Effects Models
 nloptwrap               Wrappers for additional optimizers
 nobars                  Omit terms separated by vertical bars in a
                         formula
-plot.lmList4            plots for lmList4 objects
-plot.merMod             diagnostic plots for merMod fits
+plot.merMod             Diagnostic Plots for 'merMod' Fits
 predict.merMod          Predictions from a model at new data values
 profile-methods         Profile method for merMod objects
 pvalues                 Getting p-values for fitted models
@@ -97,7 +96,6 @@ simulate.merMod         Simulate Responses From 'merMod' Object
 sleepstudy              Reaction times in a sleep deprivation study
 subbars                 "Sub[stitute] Bars"
 troubleshooting         Troubleshooting
-varianceProf            Transform Profile to the variance scale
 vcconv                  Convert between representations of
                         (co-)variance structures
 xyplot.thpr             Mixed-Effects Profile Plots (Regular / Density

@@ -3,7 +3,7 @@
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 !define VERSIONMAJOR 3
-!define VERSIONMINOR 2
+!define VERSIONMINOR 3
 !define VERSIONBUILD 0
 
 RequestExecutionLevel user
@@ -41,7 +41,7 @@ Section "install"
 		createDirectory "$INSTDIR\Saved Data"
 	${Else}
 		IfFileExists $DOCUMENTS\${APPNAME} next 0
-		MessageBox MB_YESNO|MB_ICONQUESTION|MB_USERICON "Do you want to create an iNZightVIT folder in My Documents for saved plots and data?" /SD IDNO IDYES true IDNO next
+		MessageBox MB_YESNO|MB_ICONQUESTION|MB_USERICON "Do you want to create an iNZightVIT folder in My Documents for saved plots and data?" IDYES true IDNO next
 		true:
 			createDirectory "$DOCUMENTS\${APPNAME}"
 			createDirectory "$DOCUMENTS\${APPNAME}\Saved Plots"

@@ -26,6 +26,7 @@ fct_unify	fct_unify
 fct_unique	fct_unique
 forcats	forcats-package
 gss_cat	gss_cat
+last2	fct_reorder
 lvls	lvls
 lvls_expand	lvls
 lvls_reorder	lvls

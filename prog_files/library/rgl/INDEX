@@ -8,6 +8,7 @@ ageControl              Set attributes of vertices based on their age.
 ageSetter               Set WebGL scene properties based on the age of
                         components of objects.
 arrow3d                 Draw an arrow in a scene.
+asRow                   Convenience functions for rgl HTML layouts
 aspect3d                Set the aspect ratios of the current plot
 axes3d                  Draw boxes, axes and other text outside the
                         data
@@ -70,6 +71,8 @@ rgl.surface             add height-field surface shape
 rgl.useNULL             Report default use of null device.
 rgl.user2window         Convert between rgl user and window coordinates
 rgl.viewpoint           Set up viewpoint
+rglMouse                Generate HTML code to select mouse mode.
+rglShared               Create shared data from an rgl object.
 rglToLattice            Convert rgl userMatrix to lattice or base
                         angles
 rglwidget               An htmlwidget to hold an rgl scene.
@@ -101,7 +104,6 @@ turn3d                  Create a solid of rotation from a
                         two-dimensional curve.
 vertexControl           Set attributes of vertices.
 writeASY                Write Asymptote code for an rgl scene
-writeOBJ                Write Wavefront OBJ format files; read simple
-                        ones
+writeOBJ                Read and write Wavefront OBJ format files
 writePLY                Write Stanford PLY format files
 writeWebGL              Write scene to HTML.

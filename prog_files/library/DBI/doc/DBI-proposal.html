@@ -154,8 +154,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </dl>
 <p>These methods may be implemented using the appropriate <code>getInfo</code> method above.</p>
 <p>In the next few sections we describe in detail each of these classes and their methods.</p>
-<div id="class-dbmanager" class="section level3">
-<h3>Class <code id="sec:dbManager">dbManager</code></h3>
+<div id="sec:dbManager" class="section level3">
+<h3>Class <code>dbManager</code></h3>
 <p>This class identifies the relational database management system. It needs to be extended by individual back-ends (Oracle, PostgreSQL, etc.) The <code>dbManager</code> class defines the following methods:</p>
 <dl>
 <dt><code>load</code></dt>
@@ -169,8 +169,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </dd>
 </dl>
 </div>
-<div id="class-dbconnection" class="section level3">
-<h3>Class <code id="sec:dbConnection">dbConnection</code></h3>
+<div id="sec:dbConnection" class="section level3">
+<h3>Class <code>dbConnection</code></h3>
 <p>This virtual class captures a connection to a RDBMS, and it provides access to dynamic SQL, result sets, RDBMS session management (transactions), etc. Note that the <code>dbManager</code> may or may not allow multiple simultaneous connections. The methods it defines include:</p>
 <dl>
 <dt><code>dbConnect</code></dt>
@@ -199,8 +199,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </dd>
 </dl>
 </div>
-<div id="class-dbresult" class="section level3">
-<h3>Class <code id="sec:dbResult">dbResult</code></h3>
+<div id="sec:dbResult" class="section level3">
+<h3>Class <code>dbResult</code></h3>
 <p>This virtual class describes the result of an SQL statement (any statement) and the state of the operation. Non-query statements (e.g., <code>CREATE</code>, <code>UPDATE</code>, <code>DELETE</code>) set the “completed” state to 1, while <code>SELECT</code> statements to 0. Error conditions set this slot to a negative number. The <code>dbResult</code> class defines the following methods:</p>
 <dl>
 <dt><code>getStatement</code></dt>
@@ -220,8 +220,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </dd>
 </dl>
 </div>
-<div id="class-dbresultset" class="section level3">
-<h3>Class <code id="sec:dbResultSet">dbResultSet</code></h3>
+<div id="sec:dbResultSet" class="section level3">
+<h3>Class <code>dbResultSet</code></h3>
 <p>This virtual class extends <code>dbResult</code>, and it describes additional information from the result of a <code>SELECT</code> statement and the state of the operation. The <code>completed</code> state is set to 0 so long as there are pending rows to fetch. The <code>dbResultSet</code> class defines the following additional methods:</p>
 <dl>
 <dt><code>getRowCount</code></dt>
@@ -350,15 +350,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">setClass</span>(<span class="st">&quot;dbManager&quot;</span>, VIRTUAL)
 
 <span class="kw">setGeneric</span>(<span class="st">&quot;load&quot;</span>, 
-   <span class="dt">def =</span> function(dbMgr,...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(dbMgr,...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;load&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;unload&quot;</span>, 
-   <span class="dt">def =</span> function(dbMgr,...)
+   <span class="dt">def =</span> <span class="cf">function</span>(dbMgr,...)
    <span class="kw">standardGeneric</span>(<span class="st">&quot;unload&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getVersion&quot;</span>, 
-   <span class="dt">def =</span> function(dbMgr,...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(dbMgr,...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getVersion&quot;</span>)
    )
 
@@ -368,40 +368,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">setClass</span>(<span class="st">&quot;dbConnection&quot;</span>, VIRTUAL)
 
 <span class="kw">setGeneric</span>(<span class="st">&quot;dbConnection&quot;</span>, 
-   <span class="dt">def =</span> function(dbMgr, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(dbMgr, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;dbConnection&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;dbConnect&quot;</span>, 
-   <span class="dt">def =</span> function(dbMgr, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(dbMgr, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;dbConnect&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;dbExecStatement&quot;</span>, 
-   <span class="dt">def =</span> function(con, statement, ...)
+   <span class="dt">def =</span> <span class="cf">function</span>(con, statement, ...)
    <span class="kw">standardGeneric</span>(<span class="st">&quot;dbExecStatement&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;dbExec&quot;</span>, 
-   <span class="dt">def =</span> function(con, statement, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(con, statement, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;dbExec&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getResultSet&quot;</span>, 
-   <span class="dt">def =</span> function(con, ..) 
+   <span class="dt">def =</span> <span class="cf">function</span>(con, ..) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getResultSet&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;commit&quot;</span>, 
-   <span class="dt">def =</span> function(con, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(con, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;commit&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;rollback&quot;</span>, 
-   <span class="dt">def =</span> function(con, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(con, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;rollback&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;callProc&quot;</span>, 
-   <span class="dt">def =</span> function(con, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(con, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;callProc&quot;</span>)
    )
 <span class="kw">setMethod</span>(<span class="st">&quot;close&quot;</span>, 
    <span class="dt">signature =</span> <span class="kw">list</span>(<span class="dt">con=</span><span class="st">&quot;dbConnection&quot;</span>, <span class="dt">type=</span><span class="st">&quot;missing&quot;</span>),
-   <span class="dt">def =</span> function(con, type) <span class="ot">NULL</span>
+   <span class="dt">def =</span> <span class="cf">function</span>(con, type) <span class="ot">NULL</span>
    )
 
 ## Class: dbResult
@@ -414,7 +414,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="kw">setMethod</span>(<span class="st">&quot;close&quot;</span>, 
    <span class="dt">signature =</span> <span class="kw">list</span>(<span class="dt">con=</span><span class="st">&quot;dbResult&quot;</span>, <span class="dt">type=</span><span class="st">&quot;missing&quot;</span>),
-   <span class="dt">def =</span> function(con, type) <span class="ot">NULL</span>
+   <span class="dt">def =</span> <span class="cf">function</span>(con, type) <span class="ot">NULL</span>
    )
 
 ## Class: dbResultSet
@@ -424,73 +424,73 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">setClass</span>(<span class="st">&quot;dbResultSet&quot;</span>, <span class="st">&quot;dbResult&quot;</span>)
 
 <span class="kw">setGeneric</span>(<span class="st">&quot;fetch&quot;</span>, 
-   <span class="dt">def =</span> function(resultSet,n,...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(resultSet,n,...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;fetch&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;hasCompleted&quot;</span>,
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;hasCompleted&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getException&quot;</span>,
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getException&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getDBconnection&quot;</span>,
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getDBconnection&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;setDataMappings&quot;</span>, 
-   <span class="dt">def =</span> function(resultSet, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(resultSet, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;setDataMappings&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getFields&quot;</span>,
-   <span class="dt">def =</span> function(object, table, dbname,  ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, table, dbname,  ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getFields&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getStatement&quot;</span>, 
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getStatement&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getRowsAffected&quot;</span>,
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getRowsAffected&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getRowCount&quot;</span>,
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getRowCount&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getNullOk&quot;</span>,
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getNullOk&quot;</span>)
    )
 
 ## Meta-data: 
 <span class="kw">setGeneric</span>(<span class="st">&quot;getInfo&quot;</span>, 
-   <span class="dt">def =</span> function(object, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getInfo&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;describe&quot;</span>, 
-   <span class="dt">def =</span> function(object, <span class="dt">verbose=</span>F, ...)
+   <span class="dt">def =</span> <span class="cf">function</span>(object, <span class="dt">verbose=</span>F, ...)
    <span class="kw">standardGeneric</span>(<span class="st">&quot;describe&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getCurrentDatabase&quot;</span>,
-   <span class="dt">def =</span> function(object, ...)
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...)
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getCurrentDatabase&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getDatabases&quot;</span>, 
-   <span class="dt">def =</span> function(object, ...)
+   <span class="dt">def =</span> <span class="cf">function</span>(object, ...)
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getDatabases&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getTables&quot;</span>, 
-   <span class="dt">def =</span> function(object, dbname, ...)
+   <span class="dt">def =</span> <span class="cf">function</span>(object, dbname, ...)
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getTables&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getTableFields&quot;</span>, 
-   <span class="dt">def =</span> function(object, table, dbname, ...)
+   <span class="dt">def =</span> <span class="cf">function</span>(object, table, dbname, ...)
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getTableFields&quot;</span>)
    )
 <span class="kw">setGeneric</span>(<span class="st">&quot;getTableIndices&quot;</span>, 
-   <span class="dt">def =</span> function(object, table, dbname, ...) 
+   <span class="dt">def =</span> <span class="cf">function</span>(object, table, dbname, ...) 
    <span class="kw">standardGeneric</span>(<span class="st">&quot;getTableIndices&quot;</span>)
    )</code></pre></div>
 <div id="refs" class="references">

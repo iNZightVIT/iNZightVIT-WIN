@@ -4,6 +4,7 @@ $.person	person
 .DollarNames.default	rcompgen
 .DollarNames.environment	rcompgen
 .DollarNames.list	rcompgen
+.romans	roman
 .S3methods	methods
 ?	Question
 ??	help.search
@@ -21,6 +22,8 @@ as.personList.default	person
 as.personList.person	person
 as.relistable	relist
 as.roman	roman
+asDateBuilt	packageDescription
+askYesNo	askYesNo
 aspell	aspell
 aspell-utils	aspell-utils
 aspell_package_C_files	aspell-utils
@@ -72,6 +75,7 @@ de	dataentry
 de.ncols	dataentry
 de.restore	dataentry
 de.setup	dataentry
+debugcall	debugcall
 debugger	debugger
 demo	demo
 DLL.version	DLL.version
@@ -94,6 +98,8 @@ findLineNum	findLineNum
 fix	fix
 fixInNamespace	getFromNamespace
 flush.console	flush.console
+format.bibentry	bibentry
+format.citation	bibentry
 format.object_size	object.size
 format.person	person
 formatOL	format
@@ -118,6 +124,7 @@ getWindowTitle	setWindowTitle
 getWinProgressBar	winProgressBar
 glob2rx	glob2rx
 globalVariables	globalVariables
+hasName	hasName
 head	head
 head.data.frame	head
 head.default	head
@@ -137,6 +144,8 @@ INSTALL	INSTALL
 install.packages	install.packages
 installed.packages	installed.packages
 is.relistable	relist
+isS3method	isS3method
+isS3stdGeneric	isS3stdGen
 limitedLabels	recover
 loadhistory	savehistory
 loadRconsole	Rconsole
@@ -160,6 +169,7 @@ object.size	object.size
 old.packages	update.packages
 package.contents	utils-defunct
 package.skeleton	package.skeleton
+packageDate	packageDescription
 packageDescription	packageDescription
 packageName	packageName
 packageStatus	packageStatus
@@ -172,12 +182,14 @@ print.bibentry	bibentry
 print.Bibtex	toLatex
 print.browseVignettes	browseVignettes
 print.changedFiles	changedFiles
+print.citation	bibentry
 print.fileSnapshot	changedFiles
 print.getAnywhere	getAnywhere
 print.hsearch	help.search
 print.Latex	toLatex
 print.ls_str	ls_str
 print.MethodsFunction	methods
+print.news_db	news
 print.object_size	object.size
 print.packageDescription	packageDescription
 print.packageIQR	data
@@ -240,13 +252,13 @@ RweaveLatexOptions	SweaveUtils
 RweaveLatexSetup	RweaveLatex
 RweaveLatexWritedoc	SweaveUtils
 RweaveTryStop	SweaveUtils
+R_AVAILABLE_PACKAGES_CACHE_CONTROL_MAX_AGE	available.packages
 R_INSTALL_TAR	INSTALL
-R_WIN_INTERNET2	setInternet2
 savehistory	savehistory
 select.list	select.list
 sessionInfo	sessionInfo
 setBreakpoint	findLineNum
-setInternet2	setInternet2
+setInternet2	utils-defunct
 setRepositories	setRepositories
 setStatusBar	setWindowTitle
 setTxtProgressBar	txtProgressBar
@@ -254,6 +266,7 @@ setWindowTitle	setWindowTitle
 setWinProgressBar	winProgressBar
 SHLIB	SHLIB
 shortPathName	shortPathName
+sort.bibentry	bibentry
 stack	stack
 stack.data.frame	stack
 stack.default	stack
@@ -261,6 +274,7 @@ Stangle	Sweave
 str	str
 str.data.frame	str
 str.default	str
+strcapture	strcapture
 strOptions	str
 summary.packageStatus	packageStatus
 summaryRprof	summaryRprof
@@ -286,6 +300,10 @@ toLatex	toLatex
 toLatex.sessionInfo	sessionInfo
 txtProgressBar	txtProgressBar
 type.convert	type.convert
+type.convert.data.frame	type.convert
+type.convert.default	type.convert
+type.convert.list	type.convert
+undebugcall	debugcall
 unlist.relistable	relist
 unstack	stack
 unstack.data.frame	stack
@@ -306,6 +324,7 @@ vi	edit
 View	View
 vignette	vignette
 vignettes	vignette
+warnErrList	warnErrList
 win.version	winextras
 winDialog	winDialog
 winDialogString	winDialog

@@ -51,6 +51,7 @@ confint.svyglm	confint.svyglm
 confint.svykm	svykm
 confint.svyratio	svyratio
 confint.svystat	surveysummary
+confint.svyttest	svyttest
 crowd	crowd
 cv	surveysummary
 cv.default	surveysummary

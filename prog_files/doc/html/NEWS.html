@@ -7,7 +7,3902 @@
 
 <h2>R News</h2>
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.3</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.5.0 patched</h3>
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>file("stdin")</code> is no longer considered seekable.
+</p>
+</li>
+<li> <p><code>dput()</code> and <code>dump()</code> are no longer truncating
+when <code>options(deparse.max.lines = *)</code> is set.
+</p>
+</li>
+<li><p> Calls with an S3 class are no longer evaluated when printed,
+fixing part of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17398">PR#17398</a>, thanks to a patch from Lionel Henry.
+</p>
+</li>
+<li><p> Allow <code>file</code> argument of <code>Rscript</code> to include space
+even when it is first on the command line.
+</p>
+</li>
+<li> <p><code>callNextMethod()</code> uses the generic from the
+environment of the calling method. Reported by Hervé Pagès with
+well documented examples.
+</p>
+</li>
+<li><p> Compressed file connections are marked as blocking.
+</p>
+</li>
+<li> <p><code>optim(*, lower = c(-Inf, -Inf))</code> no longer warns (and
+switches the method), thanks to a suggestion by John Nash.
+</p>
+</li>
+<li> <p><code>predict(fm, newdata)</code> is now correct also for models
+where the formula has terms such as <code>splines::ns(..)</code> or
+<code>stats::poly(..)</code>, fixing <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17414">PR#17414</a>, based on a patch from
+Duncan Murdoch.
+</p>
+</li>
+<li> <p><code>simulate.lm(glm(*, gaussian(link = &lt;non-default&gt;)))</code>
+has been corrected, fixing <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17415">PR#17415</a> thanks to Alex Courtiol.
+</p>
+</li>
+<li> <p><code>unlist(x)</code> no longer fails in some cases of nested
+empty lists.  Reported by Steven Nydick.
+</p>
+</li>
+<li> <p><code>qr.coef(qr(&lt;all 0, w/ colnames&gt;))</code> now works.
+Reported by Kun Ren.
+</p>
+</li>
+<li><p> The radix sort is robust to vectors with &gt;1 billion elements
+(but long vectors are still unsupported). Thanks to Matt Dowle for
+the fix.
+</p>
+</li>
+<li><p> Terminal connections (e.g., stdin) are no longer
+buffered. Fixes <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17432">PR#17432</a>.
+</p>
+</li>
+<li> <p><code>deparse(x)</code>, <code>dput(x)</code> and <code>dump()</code> now
+respect <code>c()</code>'s argument names <code>recursive</code> and
+<code>use.names</code>, e.g., for <code>x &lt;- setNames(0, "recursive")</code>,
+thanks to Suharto Anggono's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17427">PR#17427</a>.
+</p>
+</li>
+<li><p> Unbuffered connections now work with encoding conversion.
+Reported by Stephen Berman.
+</p>
+</li>
+<li> <p>&lsquo;<span class="file">.Renviron</span>&rsquo; on Windows with <code>Rgui</code> is again by
+default searched for in user documents directory when invoked
+<em>via</em> the launcher icon.  Reported by Jeroen Ooms.
+</p>
+</li>
+<li> <p><code>printCoefmat()</code> now also works with explicit <code>right=TRUE</code>.
+</p>
+</li>
+<li> <p><code>print.noquote()</code> now also works with explicit <code>quote=FALSE</code>.
+</p>
+</li>
+<li><p> The default method for <code>pairs(.., horInd=*, verInd=*)</code>
+now gets the correct order, thanks to reports by Chris Andrews and
+Gerrit Eichner.  Additionally, when <code>horInd</code> or <code>verInd</code>
+contain only a subset of variables, all the axes are labeled
+correctly now.
+</p>
+</li>
+<li> <p><code>agrep("..|..", .., fixed=FALSE)</code> now matches when it
+should, thanks to a reminder by Andreas Kolter.
+</p>
+</li>
+<li> <p><code>str(ch)</code> now works for more invalid multibyte strings.
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.5.0</h3>
+
+
+
+<h4>SIGNIFICANT USER-VISIBLE CHANGES</h4>
+
+
+<ul>
+<li><p> All packages are by default byte-compiled on installation.
+This makes the installed packages larger (usually marginally so)
+and may affect the format of messages and tracebacks (which often
+exclude <code>.Call</code> and similar).
+</p>
+</li></ul>
+
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li> <p><code>factor()</code> now uses <code>order()</code> to sort its levels,
+rather than <code>sort.list()</code>.  This allows <code>factor()</code> to
+support custom vector-like objects if methods for the appropriate
+generics are defined.  It has the side effect of making
+<code>factor()</code> succeed on empty or length-one non-atomic
+vector(-like) types (e.g., <code>"list"</code>), where it failed before.
+</p>
+</li>
+<li> <p><code>diag()</code> gets an optional <code>names</code> argument: this
+may require updates to packages defining S4 methods for it.
+</p>
+</li>
+<li> <p><code>chooseCRANmirror()</code> and <code>chooseBioCmirror()</code> no
+longer have a <code>useHTTPS</code> argument, not needed now all <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
+builds support <span class="samp">https://</span> downloads.
+</p>
+</li>
+<li><p> New <code>summary()</code> method for <code>warnings()</code> with a
+(somewhat experimental) <code>print()</code> method.
+</p>
+</li>
+<li><p> (<span class="pkg">methods</span> package.) <code>.self</code> is now automatically
+registered as a global variable when registering a reference class
+method.
+</p>
+</li>
+<li> <p><code>tempdir(check = TRUE)</code> recreates the <code>tempdir()</code>
+directory if it is no longer valid (e.g. because some
+other process has cleaned up the &lsquo;<span class="file">/tmp</span>&rsquo; directory).
+</p>
+</li>
+<li><p> New <code>askYesNo()</code> function and <code>"askYesNo"</code> option
+to ask the user binary response questions in a customizable but
+consistent way.  (Suggestion of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17242">PR#17242</a>.)
+</p>
+</li>
+<li><p> New low level utilities <code>...elt(n)</code> and <code>...length()</code>
+for working with <code>...</code> parts inside a function.
+</p>
+</li>
+<li> <p><code>isTRUE()</code> is more tolerant and now true
+in  </p>
+<pre>   x &lt;- rlnorm(99)
+   isTRUE(median(x) == quantile(x)["50%"])</pre>
+<p>New function <code>isFALSE()</code> defined analogously to <code>isTRUE()</code>.
+</p>
+</li>
+<li><p> The default symbol table size has been increased from 4119
+to 49157; this may improve the performance of symbol resolution
+when many packages are loaded.  (Suggested by Jim Hester.)
+</p>
+</li>
+<li> <p><code>line()</code> gets a new option <code>iter = 1</code>.
+</p>
+</li>
+<li><p> Reading from connections in text mode is buffered,
+significantly improving the performance of <code>readLines()</code>, as
+well as <code>scan()</code> and <code>read.table()</code>, at least when
+specifying <code>colClasses</code>.
+</p>
+</li>
+<li> <p><code>order()</code> is smarter about picking a default sort
+<code>method</code> when its arguments are objects.
+</p>
+</li>
+<li> <p><code>available.packages()</code> has two new arguments which
+control if the values from the per-session repository cache are
+used (default true, as before) and if so how old cached values can
+be to be used (default one hour).
+</p>
+<p>These arguments can be passed from <code>install.packages()</code>,
+<code>update.packages()</code> and functions calling that: to enable
+this <code>available.packages()</code>, <code>packageStatus()</code> and
+<code>download.file()</code> gain a <code>...</code> argument.
+</p>
+</li>
+<li> <p><code>packageStatus()</code>'s <code>upgrade()</code> method no longer
+ignores its <code>...</code> argument but passes it to
+<code>install.packages()</code>.
+</p>
+</li>
+<li> <p><code>installed.packages()</code> gains a <code>...</code> argument to
+allow arguments (including <code>noCache</code>) to be passed from
+<code>new.packages()</code>, <code>old.packages()</code>,
+<code>update.packages()</code> and <code>packageStatus()</code>.
+</p>
+</li>
+<li> <p><code>factor(x, levels, labels)</code> now allows duplicated
+<code>labels</code> (not duplicated <code>levels</code>!).  Hence you can map
+different values of <code>x</code> to the same level directly.
+</p>
+</li>
+<li><p> Attempting to use <code>names&lt;-()</code> on an S4 derivative of a
+basic type no longer emits a warning.
+</p>
+</li>
+<li><p> The <code>list</code> method of <code>within()</code> gains an option
+<code>keepAttrs = FALSE</code> for some speed-up.
+</p>
+</li>
+<li> <p><code>system()</code> and <code>system2()</code> now allow the
+specification of a maximum elapsed time (&lsquo;timeout&rsquo;).
+</p>
+</li>
+<li> <p><code>debug()</code> supports debugging of methods on any object
+of S4 class <code>"genericFunction"</code>, including group generics.
+</p>
+</li>
+<li><p> Attempting to increase the length of a variable containing
+<code>NULL</code> using <code>length()&lt;-</code> still has no effect on the
+target variable, but now triggers a warning.
+</p>
+</li>
+<li> <p><code>type.convert()</code> becomes a generic function, with
+additional methods that operate recursively over list and
+<code>data.frame</code> objects. Courtesy of Arni Magnusson
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17269">PR#17269</a>).
+</p>
+</li>
+<li> <p><code>lower.tri(x)</code> and <code>upper.tri(x)</code> only needing
+<code>dim(x)</code> now work via new functions <code>.row()</code> and
+<code>.col()</code>, so no longer call <code>as.matrix()</code> by default in
+order to work efficiently for all kind of matrix-like objects.
+</p>
+</li>
+<li> <p><code>print()</code> methods for <code>"xgettext"</code> and
+<code>"xngettext"</code> now use <code>encodeString()</code> which keeps,
+e.g. <code>"\n"</code>, visible.  (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17298">PR#17298</a>.)
+</p>
+</li>
+<li> <p><code>package.skeleton()</code> gains an optional <code>encoding</code>
+argument.
+</p>
+</li>
+<li> <p><code>approx()</code>, <code>spline()</code>, <code>splinefun()</code> and
+<code>approxfun()</code> also work for long vectors.
+</p>
+
+</li>
+<li> <p><code>deparse()</code> and <code>dump()</code> are more useful for S4
+objects, <code>dput()</code> now using the same internal C code instead
+of its previous imperfect workaround R code.  S4 objects now
+typically deparse perfectly, i.e., can be recreated identically
+from deparsed code.
+</p>
+<p><code>dput()</code>, <code>deparse()</code> and <code>dump()</code> now print the
+<code>names()</code> information only once, using the more readable
+<code>(tag = value)</code> syntax, notably for <code>list()</code>s, i.e.,
+including data frames.
+</p>
+<p>These functions gain a new control option <code>"niceNames"</code> (see
+<code>.deparseOpts()</code>), which when set (as by default) also uses
+the <code>(tag = value)</code> syntax for atomic vectors.  On the other
+hand, without deparse options <code>"showAttributes"</code> and
+<code>"niceNames"</code>, names are no longer shown also for lists.
+<code>as.character(list(  c (one = 1)))</code> now includes the name, as
+<code>as.character(list(list(one = 1)))</code> has always done.
+</p>
+<p><code>m:n</code> now also deparses nicely when <i>m &gt; n</i>.
+</p>
+<p>The <code>"quoteExpressions"</code> option, also part of <code>"all"</code>,
+no longer <code>quote()</code>s formulas as that may not re-parse
+identically.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17378">PR#17378</a>)
+</p>
+</li>
+<li><p> If the option <code>setWidthOnResize</code> is set and <code>TRUE</code>,
+<span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> run in a terminal using a recent <code>readline</code> library will
+set the <code>width</code> option when the terminal is
+resized.  Suggested by Ralf Goertz.
+</p>
+</li>
+<li><p> If multiple <code>on.exit()</code> expressions are set using
+<code>add = TRUE</code> then all expressions will now be run even if one
+signals an error.
+</p>
+</li>
+<li> <p><code>mclapply()</code> gets an option <code>affinity.list</code> which
+allows more efficient execution with heterogeneous processors,
+thanks to Helena Kotthaus.
+</p>
+</li>
+<li><p> The <code>character</code> methods for <code>as.Date()</code> and
+<code>as.POSIXlt()</code> are more flexible <em>via</em> new arguments
+<code>tryFormats</code> and <code>optional</code>: see their help pages.
+</p>
+</li>
+<li> <p><code>on.exit()</code> gains an optional argument <code>after</code>
+with default <code>TRUE</code>. Using <code>after = FALSE</code> with
+<code>add = TRUE</code> adds an exit expression before any
+existing ones. This way the expressions are run in a first-in
+last-out fashion. (From Lionel Henry.)
+</p>
+</li>
+<li><p> On Windows, <code>file.rename()</code> internally retries the
+operation in case of error to attempt to recover from possible
+anti-virus interference.
+</p>
+</li>
+<li><p> Command line completion on <span class="samp">::</span> now also includes
+lazy-loaded data.
+</p>
+</li>
+<li><p> If the <span class="env">TZ</span> environment variable is set when date-time
+functions are first used, it is recorded as the session default
+and so will be used rather than the default deduced from the OS
+if <span class="env">TZ</span> is subsequently unset.
+</p>
+</li>
+<li><p> There is now a <code>[</code> method for class <code>"DLLInfoList"</code>.
+</p>
+</li>
+<li> <p><code>glm()</code> and <code>glm.fit</code> get the same
+<code>singular.ok = TRUE</code> argument that <code>lm()</code> has had
+forever.  As a consequence, in <code>glm(*, method = &lt;your_own&gt;)</code>,
+user specified methods need to accept a <code>singular.ok</code>
+argument as well.
+</p>
+</li>
+<li> <p><code>aspell()</code> gains a filter for Markdown (&lsquo;<span class="file">.md</span>&rsquo; and
+&lsquo;<span class="file">.Rmd</span>&rsquo;) files.
+</p>
+</li>
+<li> <p><code>intToUtf8(multiple = FALSE)</code> gains an argument to
+allow surrogate pairs to be interpreted.
+</p>
+</li>
+<li><p> The maximum number of DLLs that can be loaded into R
+e.g. <em>via</em> <code>dyn.load()</code> has been increased up to 614
+when the OS limit on the number of open files allows.
+</p>
+</li>
+<li> <p><code>Sys.timezone()</code> on a Unix-alike caches the value at
+first use in a session: <em>inter alia</em> this means that setting
+<span class="env">TZ</span> later in the session affects only the <em>current</em> time
+zone and not the <em>system</em> one.
+</p>
+<p><code>Sys.timezone()</code> is now used to find the system timezone to
+pass to the code used when <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> is configured with
+<span class="option">--with-internal-tzcode</span>.
+</p>
+</li>
+<li><p> When <code>tar()</code> is used with an external command which is
+detected to be GNU <code>tar</code> or libarchive <code>tar</code> (aka
+<code>bsdtar</code>), a different command-line is generated to
+circumvent line-length limits in the shell.
+</p>
+</li>
+<li> <p><code>system(*, intern = FALSE)</code>, <code>system2()</code> (when not
+capturing output), <code>file.edit()</code> and <code>file.show()</code> now
+issue a warning when the external command cannot be executed.
+</p>
+</li>
+<li><p> The &ldquo;default&rdquo; (<code>"lm"</code> etc) methods of
+<code>vcov()</code> have gained new optional argument <code>complete =
+      TRUE</code> which makes the <code>vcov()</code> methods more consistent with
+the <code>coef()</code> methods in the case of singular designs.  The
+former (back-compatible) behavior is given by <code>vcov(*,
+	complete = FALSE)</code>.
+</p>
+</li>
+<li> <p><code>coef()</code> methods (for <code>lm</code> etc) also gain a
+<code>complete = TRUE</code> optional argument for consistency with
+<code>vcov()</code>. <br />
+For <code>"aov"</code>, both <code>coef()</code> and <code>vcov()</code> methods
+remain back-compatibly consistent, using the <em>other</em> default,
+<code>complete = FALSE</code>.
+</p>
+</li>
+<li> <p><code>attach(*, pos = 1)</code> is now an error instead of a
+warning.
+</p>
+</li>
+<li><p> New function <code>getDefaultCluster()</code> in package
+<span class="pkg">parallel</span> to get the default cluster set via
+<code>setDefaultCluster()</code>.
+</p>
+</li>
+<li> <p><code>str(x)</code> for atomic objects <code>x</code> now treats both
+cases of <code>is.vector(x)</code> similarly, and hence much less often
+prints <code>"atomic"</code>.  This is a slight non-back-compatible
+change producing typically both more informative and shorter
+output.
+</p>
+</li>
+<li> <p><code>write.dcf()</code> gets optional argument <code>useBytes</code>.
+</p>
+</li>
+<li><p> New, partly experimental <code>packageDate()</code> which tries to
+get a valid <code>"Date"</code> object from a package &lsquo;<span class="file">DESCRIPTION</span>&rsquo;
+file, thanks to suggestions in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17324">PR#17324</a>.
+</p>
+</li>
+<li> <p><code>tools::resaveRdaFiles()</code> gains a <code>version</code>
+argument, for use when packages should remain compatible with
+earlier versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.
+</p>
+</li>
+<li> <p><code>ar.yw(x)</code> and hence by default <code>ar(x)</code> now work
+when <code>x</code> has <code>NA</code>s, mostly thanks to a patch by Pavel
+Krivitsky in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17366">PR#17366</a>.   The <code>ar.yw.default()</code>'s AIC
+computations have become more efficient by using
+<code>determinant()</code>.
+</p>
+</li>
+<li><p> New <code>warnErrList()</code> utility (from package <span class="pkg">nlme</span>,
+improved).
+</p>
+</li>
+<li><p> By default the (arbitrary) signs of the loadings from
+<code>princomp()</code> are chosen so the first element is non-negative.
+</p>
+</li>
+<li><p> If <span class="option">--default-packages</span> is not used, then
+<code>Rscript</code> now checks the environment variable
+<span class="env">R_SCRIPT_DEFAULT_PACKAGES</span>. If this is set, then it takes
+precedence over <span class="env">R_DEFAULT_PACKAGES</span>. If default packages are
+not specified on the command line or by one of these environment
+variables, then <code>Rscript</code> now uses the same default
+packages as <code>R</code>. For now, the previous behavior of not
+including <span class="pkg">methods</span> can be restored by setting the environment
+variable <span class="env">R_SCRIPT_LEGACY</span> to <span class="samp">yes</span>.
+</p>
+</li>
+<li><p> When a package is found more than once, the warning from
+<code>find.package(*, verbose=TRUE)</code> lists all library locations.
+</p>
+</li>
+<li><p> POSIXt objects can now also be rounded or truncated to month
+or year.
+</p>
+</li>
+<li> <p><code>stopifnot()</code> can be used alternatively via new argument
+<code>exprs</code> which is nicer and useful when testing several
+expressions in one call.
+</p>
+</li>
+<li><p> The environment variable <span class="env">R_MAX_VSIZE</span> can now be used
+to specify the maximal vector heap size. On macOS, unless specified
+by this environment variable, the maximal vector heap size is set to
+the maximum of 16GB and the available physical memory. This is to
+avoid having the <code>R</code> process killed when macOS over-commits
+memory.
+</p>
+</li>
+<li> <p><code>sum(x)</code> and <code>sum(x1,x2,..,x&lt;N&gt;)</code> with many or
+long logical or integer vectors no longer overflows (and returns
+<code>NA</code> with a warning), but returns <code>double</code> numbers in
+such cases.
+</p>
+</li>
+<li><p> Single components of <code>"POSIXlt"</code> objects can now be
+extracted and replaced via <code>[</code> indexing with 2 indices.
+</p>
+</li>
+<li><p> S3 method lookup now searches the namespace registry after
+the top level environment of the calling environment.
+</p>
+</li>
+<li><p> Arithmetic sequences created by <code>1:n</code>,
+<code>seq_along</code>, and the like now use compact internal
+representations via the <code>ALTREP</code> framework.  Coercing integer
+and numeric vectors to character also now uses the <code>ALTREP</code>
+framework to defer the actual conversion until first use.
+</p>
+</li>
+<li><p> Finalizers are now run with interrupts suspended.
+</p>
+</li>
+<li> <p><code>merge()</code> gains new option <code>no.dups</code> and by
+default suffixes the second of two duplicated column names,
+thanks to a proposal by Scott Ritchie (and Gabe Becker).
+</p>
+</li>
+<li> <p><code>scale.default(x, center, scale)</code> now also allows
+<code>center</code> or <code>scale</code> to be &ldquo;numeric-alike&rdquo;, i.e.,
+such that <code>as.numeric(.)</code> coerces them correctly.  This also
+eliminates a wrong error message in such cases.
+</p>
+</li>
+<li> <p><code>par*apply</code> and <code>par*applyLB</code> gain an optional
+argument <code>chunk.size</code> which allows to specify the granularity of
+scheduling.
+</p>
+</li>
+<li><p> Some <code>as.data.frame()</code> methods, notably the
+<code>matrix</code> one, are now more careful in not accepting
+duplicated or <code>NA</code> row names, and by default produce unique
+non-NA row names.  This is based on new function
+<code>.rowNamesDF(x, make.names = *) &lt;- rNms</code> where the logical
+argument <code>make.names</code> allows to specify <em>how</em> invalid
+row names <code>rNms</code> are handled.  <code>.rowNamesDF()</code> is a
+&ldquo;workaround&rdquo; compatible default.
+</p>
+</li>
+<li><p> R has new serialization format (version 3) which supports
+custom serialization of <code>ALTREP</code> framework objects.  These
+objects can still be serialized in format 2, but less efficiently.
+Serialization format 3 also records the current native encoding of
+unflagged strings and converts them when de-serialized in R
+running under different native encoding.  Format 3 comes with new
+serialization magic numbers (RDA3, RDB3, RDX3).  Format 3 can be
+selected by <code>version = 3</code> in <code>save()</code>,
+<code>serialize()</code> and <code>saveRDS()</code>, but format 2 remains the
+default for all serialization and saving of the workspace.
+Serialized data in format 3 cannot be read by versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> prior
+to version 3.5.0.
+</p>
+</li>
+<li><p> The <code>"Date"</code> and &ldquo;date-time&rdquo; classes
+<code>"POSIXlt"</code> and <code>"POSIXct"</code> now have a working
+<code>length&lt;-()</code> method, as wished in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17387">PR#17387</a>.
+</p>
+</li>
+<li> <p><code>optim(*, control = list(warn.1d.NelderMead = FALSE))</code>
+allows to turn off the warning when applying the default
+<code>"Nelder-Mead"</code> method to 1-dimensional problems.
+</p>
+</li>
+<li> <p><code>matplot(.., panel.first = .)</code> etc now work, as
+<code>log</code> becomes explicit argument and <code>...</code> is passed to
+<code>plot()</code> unevaluated, as suggested by Sebastian Meyer in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17386">PR#17386</a>.
+</p>
+</li>
+<li><p> Interrupts can be suspended while evaluating an expression
+using <code>suspendInterrupts</code>.  Subexpression can be evaluated
+with interrupts enabled using <code>allowInterrupts</code>.  These
+functions can be used to make sure cleanup handlers cannot be
+interrupted.
+</p>
+</li>
+<li> <p><span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.5.0 includes a framework that allows packages to
+provide alternate representations of basic <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> objects
+(<code>ALTREP</code>).  The framework is still experimental and may
+undergo changes in future <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> releases as more experience is
+gained. For now, documentation is provided in
+<a href="https://svn.r-project.org/R/branches/ALTREP/ALTREP.html">https://svn.r-project.org/R/branches/ALTREP/ALTREP.html</a>.
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li> <p><code>install.packages()</code> for source packages now has the
+possibility to set a &lsquo;timeout&rsquo; (elapsed-time limit).  For
+serial installs this uses the <code>timeout</code> argument of
+<code>system2()</code>: for parallel installs it requires the
+<code>timeout</code> utility command from GNU <span class="pkg">coreutils</span>.
+</p>
+</li>
+<li><p> It is now possible to set &lsquo;timeouts&rsquo; (elapsed-time
+limits) for most parts of <code>R CMD check</code> <em>via</em>
+environment variables documented in the &lsquo;R Internals&rsquo;
+manual.
+</p>
+</li>
+<li><p> The &lsquo;BioC extra&rsquo; repository which was dropped from
+Bioconductor 3.6 and later has been removed from
+<code>setRepositories()</code>.  This changes the mapping for 6&ndash;8 used
+by <code>setRepositories(ind=)</code>.
+</p>
+</li>
+<li> <p><code>R CMD check</code> now also applies the settings of
+environment variables <span class="env">_R_CHECK_SUGGESTS_ONLY_</span> and
+<span class="env">_R_CHECK_DEPENDS_ONLY_</span> to the re-building of vignettes.
+</p>
+</li>
+<li> <p><code>R CMD check</code> with environment variable
+<span class="env">_R_CHECK_DEPENDS_ONLY_</span> set to a true value makes
+test-suite-management packages available and (for the time being)
+works around a common omission of <a href="https://CRAN.R-project.org/package=rmarkdown"><span class="pkg">rmarkdown</span></a> from the
+<span class="samp">VignetteBuilder</span> field.
+</p>
+</li></ul>
+
+
+
+
+<h4>INSTALLATION on a UNIX-ALIKE</h4>
+
+
+<ul>
+<li><p> Support for a system Java on macOS has been
+removed &mdash; install a fairly recent Oracle Java (see &lsquo;R
+Installation and Administration&rsquo; §C.3.2).
+</p>
+</li>
+<li> <p><code>configure</code> works harder to set additional flags in
+<span class="samp">SAFE_FFLAGS</span> only where necessary, and to use flags which
+have little or no effect on performance.
+</p>
+<p>In rare circumstances it may be necessary to override the
+setting of <span class="samp">SAFE_FFLAGS</span>.
+</p>
+</li>
+<li><p> C99 functions <code>expm1</code>, <code>hypot</code>, <code>log1p</code> and
+<code>nearbyint</code> are now required.
+</p>
+</li>
+<li> <p><code>configure</code> sets a <span class="option">-std</span> flag for the C++
+compiler for all supported C++ standards (e.g., <span class="option">-std=gnu++11</span>
+for the C++11 compiler).   Previously this was not done in a few
+cases where the default standard passed the tests made
+(e.g. <code>clang 6.0.0</code> for C++11).
+</p>
+</li></ul>
+
+
+
+
+<h4>C-LEVEL FACILITIES</h4>
+
+
+<ul>
+<li> <p>&lsquo;Writing R Extensions&rsquo; documents macros
+<code>MAYBE_REFERENCED</code>, <code>MAYBE_SHARED</code> and
+<code>MARK_NOT_MUTABLE</code> that should be used by package <code>C</code>
+code instead <code>NAMED</code> or <code>SET_NAMED</code>.
+</p>
+</li>
+<li><p> The object header layout has been changed to support merging
+the <code>ALTREP</code> branch. This requires re-installing packages
+that use compiled code.
+</p>
+</li>
+<li> <p>&lsquo;Writing R Extensions&rsquo; now documents the
+<code>R_tryCatch</code>, <code>R_tryCatchError</code>, and
+<code>R_UnwindProtect</code> functions.
+</p>
+</li>
+<li> <p><code>NAMEDMAX</code> has been raised to 3 to allow protection of
+intermediate results from (usually ill-advised) assignments in
+arguments to <code>BUILTIN</code> functions. Package <code>C</code> code using
+<code>SET_NAMED</code> may need to be revised.
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li> <p><code>Sys.timezone(location = FALSE)</code> is defunct, and is
+ignored (with a warning).
+</p>
+</li>
+<li> <p><code>methods:::bind_activation()</code> is defunct now; it
+typically has been unneeded for years.
+</p>
+<p>The undocumented &lsquo;hidden&rsquo; objects <code>.__H__.cbind</code> and
+<code>.__H__.rbind</code> in package <span class="pkg">base</span> are deprecated (in
+favour of <code>cbind</code> and <code>rbind</code>).
+</p>
+</li>
+<li><p> The declaration of <code>pythag()</code> in &lsquo;<span class="file">Rmath.h</span>&rsquo; has
+been removed &mdash; the entry point has not been provided since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
+2.14.0.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>printCoefmat()</code> now also works without column names.
+</p>
+</li>
+<li><p> The S4 methods on <code>Ops()</code> for the <code>"structure"</code> class no
+longer cause infinite recursion when the structure is not an S4 object.
+</p>
+</li>
+<li> <p><code>nlm(f, ..)</code> for the case where <code>f()</code> has a
+<code>"hessian"</code> attribute now computes
+<i>LL' = H + µI</i> correctly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17249">PR#17249</a>).
+</p>
+</li>
+<li><p> An S4 method that &ldquo;rematches&rdquo; to its generic and
+overrides the default value of a generic formal argument to
+<code>NULL</code> no longer drops the argument from its formals.
+</p>
+</li>
+<li> <p><code>Rscript</code> can now accept more than one argument given on
+the <span class="samp">#!</span> line of a script. Previously, one could only pass a
+single argument on the <span class="samp">#!</span> line in Linux.
+</p>
+</li>
+<li><p> Connections are now written correctly with encoding
+<code>"UTF-16LE"</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16737">PR#16737</a>).
+</p>
+</li>
+<li><p> Evaluation of <code>..0</code> now signals an error.  When
+<code>..1</code> is used and <code>...</code> is empty, the error message is
+more appropriate.
+</p>
+</li>
+<li><p> (Windows mainly.)  Unicode code points which require
+surrogate pairs in UTF-16 are now handled.  All systems should
+properly handle surrogate pairs, even those systems that do not
+need to make use of them.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16098">PR#16098</a>)
+</p>
+</li>
+<li> <p><code>stopifnot(e, e2, ...)</code> now evaluates the
+expressions sequentially and in case of an error or warning shows
+the relevant expression instead of the full <code>stopifnot(..)</code>
+call.
+</p>
+</li>
+<li> <p><code>path.expand()</code> on Windows now accepts paths specified as
+UTF-8-encoded character strings even if not representable in the
+current locale.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17120">PR#17120</a>)
+</p>
+</li>
+<li> <p><code>line(x, y)</code> now correctly computes the medians of the
+left and right group's x-values and in all cases reproduces
+straight lines.
+</p>
+</li>
+<li><p> Extending S4 classes with slots corresponding to special
+attributes like <code>dim</code> and <code>dimnames</code> now works.
+</p>
+</li>
+<li><p> Fix for <code>legend()</code> when <code>fill</code> has multiple values
+the first of which is <code>NA</code> (all colours used to default to
+<code>par(fg)</code>).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17288">PR#17288</a>)
+</p>
+</li>
+<li> <p><code>installed.packages()</code> did not remove the cached value
+for a library tree that had been emptied (but would not use the
+old value, just waste time checking it).
+</p>
+</li>
+<li><p> The documentation for <code>installed.packages(noCache = TRUE)</code>
+incorrectly claimed it would refresh the cache.
+</p>
+</li>
+<li> <p><code>aggregate(&lt;data.frame&gt;)</code> no longer uses spurious names
+in some cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17283">PR#17283</a>)
+</p>
+</li>
+<li> <p><code>object.size()</code> now also works for long vectors.
+</p>
+</li>
+<li> <p><code>packageDescription()</code> tries harder to solve
+re-encoding issues, notably seen in some Windows locales.  This
+fixes the <code>citation()</code> issue in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17291">PR#17291</a>.
+</p>
+</li>
+<li> <p><code>poly(&lt;matrix&gt;, 3)</code> now works, thanks to prompting by
+Marc Schwartz.
+</p>
+</li>
+<li> <p><code>readLines()</code> no longer segfaults on very large files
+with embedded <code>'\0'</code> (aka &lsquo;nul&rsquo;) characters.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17311">PR#17311</a>)
+</p>
+</li>
+<li> <p><code>ns()</code> (package <span class="pkg">splines</span>) now also works for a
+single observation.  <code>interpSpline()</code> gives a more friendly
+error message when the number of points is less than four.
+</p>
+</li>
+<li> <p><code>dist(x, method = "canberra")</code> now uses the correct
+definition; the result may only differ when <code>x</code> contains
+values of differing signs, e.g. not for 0-1 data.
+</p>
+</li>
+<li> <p><code>methods:::cbind()</code> and <code>methods:::rbind()</code> avoid
+deep recursion, thanks to Suharto Anggono via <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17300">PR#17300</a>.
+</p>
+</li>
+<li><p> Arithmetic with zero-column data frames now works more
+consistently; issue raised by Bill Dunlap.
+</p>
+<p>Arithmetic with data frames gives a data frame for <code>^</code> (which
+previously gave a numeric matrix).
+</p>
+</li>
+<li> <p><code>pretty(x, n)</code> for large <code>n</code> or large
+<code>diff(range(x))</code> now works better (though
+it was never meant for large <code>n</code>); internally it uses the
+same rounding fuzz (1e-10) as <code>seq.default()</code> &mdash; as it did up
+to 2010-02-03 when both were 1e-7.
+</p>
+</li>
+<li><p> Internal C-level <code>R_check_class_and_super()</code> and hence
+<code>R_check_class_etc()</code> now also consider non-direct super
+classes and hence return a match in more cases.  This e.g., fixes
+behaviour of derived classes in package <a href="https://CRAN.R-project.org/package=Matrix"><span class="pkg">Matrix</span></a>.
+</p>
+</li>
+<li><p> Reverted unintended change in behavior of <code>return</code>
+calls in <code>on.exit</code> expressions introduced by stack unwinding
+changes in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0.
+</p>
+</li>
+<li><p> Attributes on symbols are now detected and prevented; attempt
+to add an attribute to a symbol results in an error.
+</p>
+</li>
+<li> <p><code>fisher.test(*, workspace = &lt;n&gt;)</code> now may also increase
+the internal stack size which allows larger problem to be solved,
+fixing <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=1662">PR#1662</a>.
+</p>
+</li>
+<li><p> The <span class="pkg">methods</span> package no longer directly copies slots
+(attributes) into a prototype that is of an &ldquo;abnormal&rdquo;
+(reference) type, like a symbol.
+</p>
+</li>
+<li><p> The <span class="pkg">methods</span> package no longer attempts to call
+<code>length&lt;-()</code> on <code>NULL</code> (during the bootstrap process).
+</p>
+</li>
+<li><p> The <span class="pkg">methods</span> package correctly shows methods when there
+are multiple methods with the same signature for the same generic
+(still not fully supported, but at least the user can see them).
+</p>
+</li>
+<li> <p><code>sys.on.exit()</code> is now always evaluated in the right
+frame. (From Lionel Henry.)
+</p>
+</li>
+<li> <p><code>seq.POSIXt(*, by = "&lt;n&gt; DSTdays")</code> now should work
+correctly in all cases and is faster.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17342">PR#17342</a>)
+</p>
+</li>
+<li> <p><code>.C()</code> when returning a logical vector now always maps
+values other than FALSE and NA to TRUE (as documented).
+</p>
+</li>
+<li><p> Subassignment with zero length vectors now coerces as
+documented (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17344">PR#17344</a>).<br />
+Further, <code>x &lt;- numeric(); x[1] &lt;- character()</code> now signals
+an error &lsquo;<code style="white-space: pre;">replacement has length zero</code>&rsquo; (or a
+translation of that) instead of doing nothing.
+</p>
+</li>
+<li><p> (Package <span class="pkg">parallel</span>.)  <code>mclapply()</code>, <code>pvec()</code>
+and <code>mcparallel()</code> (when <code>mccollect()</code> is used to
+collect results) no longer leave zombie processes behind.
+</p>
+</li>
+<li> <p><code>R CMD INSTALL &lt;pkg&gt;</code> now produces the intended error
+message when, e.g., the <code>LazyData</code> field is invalid.
+</p>
+</li>
+<li> <p><code>as.matrix(dd)</code> now works when the data frame <code>dd</code>
+contains a column which is a data frame or matrix, including a
+0-column matrix/d.f. .
+</p>
+</li>
+<li> <p><code>mclapply(X, mc.cores)</code> now follows its documentation
+and calls <code>lapply()</code> in case <code>mc.cores = 1</code> also in the
+case <code>mc.preschedule</code> is false.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17373">PR#17373</a>)
+</p>
+</li>
+<li> <p><code>aggregate(&lt;data.frame&gt;, drop=FALSE)</code> no longer calls
+the function on &lt;empty&gt; parts but sets corresponding results to
+<code>NA</code>.  (Thanks to Suharto Anggono's patches in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17280">PR#17280</a>).
+</p>
+</li>
+<li><p> The <code>duplicated()</code> method for data frames is now based
+on the <code>list</code> method (instead of string coercion).  Consequently
+<code>unique()</code> is better distinguishing data frame rows, fixing
+<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17369">PR#17369</a> and <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17381">PR#17381</a>.  The methods for matrices and arrays
+are changed accordingly.
+</p>
+</li>
+<li><p> Calling <code>names()</code> on an S4 object derived from
+<code>"environment"</code> behaves (by default) like calling
+<code>names()</code> on an ordinary environment.
+</p>
+</li>
+<li> <p><code>read.table()</code> with a non-default separator now
+supports quotes following a non-whitespace character, matching the
+behavior of <code>scan()</code>.
+</p>
+</li>
+<li> <p><code>parLapplyLB</code> and <code>parSapplyLB</code> have been fixed to do
+load balancing (dynamic scheduling).  This also means that results of
+computations depending on random number generators will now really be
+non-reproducible, as documented.
+</p>
+</li>
+<li><p> Indexing a list using dollar and empty string (<code>l$""</code>)
+returns NULL.
+</p>
+</li>
+<li><p> Using <code> \usage{ data(&lt;name&gt;, package="&lt;pkg&gt;") } </code>
+no longer produces <code>R CMD check</code> warnings.
+</p>
+</li>
+<li> <p><code>match.arg()</code> more carefully chooses the environment
+for constructing default <code>choices</code>, fixing <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17401">PR#17401</a> as
+proposed by Duncan Murdoch.
+</p>
+</li>
+<li><p> Deparsing of consecutive <code>!</code> calls is now consistent
+with deparsing unary <code>-</code> and <code>+</code> calls and creates code
+that can be reparsed exactly; thanks to a patch by Lionel Henry in
+<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17397">PR#17397</a>.  (As a side effect, this uses fewer parentheses in
+some other deparsing involving <code>!</code> calls.)
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.4.4</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li> <p><code>Sys.timezone()</code> tries more heuristics on Unix-alikes and so
+is more likely to succeed (especially on Linux).  For the slowest
+method, a warning is given recommending that <span class="env">TZ</span> is set to
+avoid the search.
+</p>
+</li>
+<li><p> The version of LAPACK included in the sources has been
+updated to 3.8.0 (for the routines used by <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>, a very minor bug-fix
+change).
+</p>
+</li>
+<li> <p><code>parallel::detectCores(logical = FALSE)</code> is ignored on
+Linux systems, since the information is not available with
+virtualized OSes.
+</p>
+</li></ul>
+
+
+
+
+<h4>INSTALLATION on a UNIX-ALIKE</h4>
+
+
+<ul>
+<li> <p><code>configure</code> will use <code>pkg-config</code> to find the
+flags to link to <code>jpeg</code> if available (as it should be for the
+recently-released <code>jpeg-9c</code> and <code>libjpeg-turbo</code>).  (This
+amends the code added in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0 as the module name in
+<code>jpeg-9c</code> is not what that tested for.)
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li> <p><code>Sys.timezone(location = FALSE)</code> (which was a stop-gap
+measure for Windows long ago) is deprecated.  It no longer returns
+the value of environment variable <span class="env">TZ</span> (usually a location).
+</p>
+</li>
+<li><p> Legacy support of <code>make</code> macros such as <span class="samp">CXX1X</span>
+is formally deprecated: use the <span class="samp">CXX11</span> forms instead.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>power.prop.test()</code> now warns when it cannot solve the
+problem, typically because of impossible constraints. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17345">PR#17345</a>)
+</p>
+</li>
+<li> <p><code>removeSource()</code> no longer erroneously removes
+<code>NULL</code> in certain cases, thanks to Dénes Tóth.
+</p>
+</li>
+<li> <p><code>nls(`NO [mol/l]` ~ f(t))</code> and <code>nls(y ~ a)</code> now
+work.  (Partly from <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17367">PR#17367</a>)
+</p>
+</li>
+<li> <p><code>R CMD build</code> checks for GNU <code>cp</code> rather
+than assuming Linux has it.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17370">PR#17370</a> says &lsquo;Alpine
+Linux&rsquo; does not.)
+</p>
+</li>
+<li><p> Non-UTF-8 multibyte character handling fixed more
+permanently (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16732">PR#16732</a>).
+</p>
+</li>
+<li> <p><code>sum(&lt;large ints&gt;, &lt;stuff&gt;)</code> is more consistent.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17372">PR#17372</a>)
+</p>
+</li>
+<li> <p><code>rf()</code> and <code>rbeta()</code> now also work correctly when
+<code>ncp</code> is not scalar, notably when (partly) <code>NA</code>.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17375">PR#17375</a>)
+</p>
+</li>
+<li> <p><code>is.na(NULL)</code> no longer warns.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16107">PR#16107</a>)
+</p>
+</li>
+<li> <p><code>R CMD INSTALL</code> now correctly sets C++ compiler flags
+when all source files are in sub-directories of &lsquo;<span class="file">src</span>&rsquo;.
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.4.3</h3>
+
+
+
+<h4>INSTALLATION on a UNIX-ALIKE</h4>
+
+
+<ul>
+<li><p> A workaround has been added for the changes in location of
+time-zone files in macOS 10.13 &lsquo;High Sierra&rsquo; and
+again in 10.13.1, so the default time zone is deduced
+correctly from the system setting when <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> is configured with
+<span class="option">--with-internal-tzcode</span> (the default on macOS).
+</p>
+</li>
+<li> <p><code>R CMD javareconf</code> has been updated to recognize the
+use of a Java 9 SDK on macOS.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>raw(0) &amp; raw(0)</code> and <code>raw(0) | raw(0)</code>
+again return <code>raw(0)</code> (rather than <code>logical(0)</code>).
+</p>
+</li>
+<li> <p><code>intToUtf8()</code> converts integers corresponding to
+surrogate code points to <code>NA</code> rather than invalid UTF-8, as
+well as values larger than the current Unicode maximum of
+<code>0x10FFFF</code>.  (This aligns with the current RFC3629.)
+</p>
+</li>
+<li><p> Fix calling of methods on S4 generics that dispatch on
+<code>...</code> when the call contains <code>...</code>.
+</p>
+</li>
+<li><p> Following Unicode &lsquo;Corrigendum 9&rsquo;, the UTF-8
+representations of U+FFFE and U+FFFF are now regarded as valid by
+<code>utf8ToInt()</code>.
+</p>
+</li>
+<li> <p><code>range(c(TRUE, NA), finite = TRUE)</code> and similar no longer
+return <code>NA</code>. (Reported by Lukas Stadler.)
+</p>
+</li>
+<li><p> The self starting function <code>attr(SSlogis, "initial")</code>
+now also works when the y values have exact minimum zero and is
+slightly changed in general, behaving symmetrically in the y range.
+</p>
+</li>
+<li><p> The printing of named raw vectors is now formatted nicely as
+for other such atomic vectors, thanks to Lukas Stadler.
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.4.2</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> Setting the <code>LC_ALL</code> category in <code>Sys.setlocale()</code>
+invalidates any cached locale-specific day/month names and the
+AM/PM indicator for <code>strptime()</code> (as setting <code>LC_TIME</code>
+has since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.1.0).
+</p>
+</li>
+<li><p> The version of LAPACK included in the sources has been
+updated to 3.7.1, a bug-fix release.
+</p>
+</li>
+<li><p> The default for <code>tools::write_PACKAGES(rds_compress=)</code>
+has been changed to <code>"xz"</code> to match the compression used by
+<acronym><span class="acronym">CRAN</span></acronym>.
+</p>
+</li>
+<li> <p><code>c()</code> and <code>unlist()</code> are now more efficient in
+constructing the <code>names(.)</code> of their return value, thanks to
+a proposal by Suharto Anggono.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17284">PR#17284</a>)
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li> <p><code>R CMD check</code> checks for and <code>R CMD build</code>
+corrects CRLF line endings in shell scripts <code>configure</code>
+and <code>cleanup</code> (even on Windows).
+</p>
+</li></ul>
+
+
+
+
+<h4>INSTALLATION on a UNIX-ALIKE</h4>
+
+
+<ul>
+<li><p> The order of selection of OpenMP flags has been changed:
+Oracle Developer Studio 12.5 accepts <span class="option">-fopenmp</span> and
+<span class="option">-xopenmp</span> but only the latter enables OpenMP so it is now
+tried first.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>within(List, rm(x1, x2))</code> works correctly again,
+including when <code>List[["x2"]]</code> is <code>NULL</code>.
+</p>
+</li>
+<li> <p><code>regexec(pattern, text, *)</code> now applies
+<code>as.character(.)</code> to its first two arguments, as documented.
+</p>
+</li>
+<li> <p><code>write.table()</code> and related functions,
+<code>writeLines()</code>, and perhaps other functions writing text to
+connections did not signal errors when the writes failed,
+e.g. due to a disk being full.  Errors will now be
+signalled if detected during the write, warnings if detected when
+the connection is closed.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17243">PR#17243</a>)
+</p>
+</li>
+<li> <p><code>rt()</code> assumed the <code>ncp</code> parameter was a scalar.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17306">PR#17306</a>)
+</p>
+</li>
+<li> <p><code>menu(choices)</code> with more than 10 choices which easily
+fit into one <code>getOption("width")</code>-line no longer erroneously
+repeats choices.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17312">PR#17312</a>)
+</p>
+</li>
+<li> <p><code>length()&lt;-</code> on a pairlist succeeds.
+(<a href="https://stat.ethz.ch/pipermail/r-devel/2017-July/074680.html">https://stat.ethz.ch/pipermail/r-devel/2017-July/074680.html</a>)
+</p>
+</li>
+<li><p> Language objects such as <code>quote(("\n"))</code> or <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
+functions are correctly printed again, where <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.4.1 accidentally
+duplicated the backslashes.
+</p>
+</li>
+<li><p> Construction of <code>names()</code> for very large objects in
+<code>c()</code> and <code>unlist()</code> now works, thanks to Suharto
+Anggono's patch proposals in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17292">PR#17292</a>.
+</p>
+</li>
+<li><p> Resource leaks (and similar) reported by Steve Grubb fixed.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17314">PR#17314</a>, <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17316">PR#17316</a>, <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17317">PR#17317</a>, <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17318">PR#17318</a>, <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17319">PR#17319</a>, <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17320">PR#17320</a>)
+</p>
+</li>
+<li> <p><code>model.matrix(~1, mf)</code> now gets the row names from
+<code>mf</code> also when they differ from <code>1:nrow(mf)</code>, fixing
+<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=14992">PR#14992</a> thanks to the suggestion by Sebastian Meyer.
+</p>
+</li>
+<li> <p><code>sigma(fm)</code> now takes the correct denominator degrees
+of freedom for a fitted model with <code>NA</code> coefficients.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17313">PR#17313</a>)
+</p>
+</li>
+<li> <p><code>hist(x, "FD")</code> no longer &ldquo;dies&rdquo; with a somewhat
+cryptic error message when <code>x</code> has extreme outliers or
+<code>IQR()</code> zero:  <code>nclass.FD(x)</code> tries harder to find a
+robust bin width <i>h</i> in the latter case, and
+<code>hist.default(*, breaks)</code> now checks and corrects a too large
+<code>breaks</code> number.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17274">PR#17274</a>)
+</p>
+</li>
+<li> <p><code>callNextMethod()</code> works for <code>...</code> methods.
+</p>
+</li>
+<li> <p><code>qr.coef(qd, y)</code> now has correct names also when
+<code>qd</code> is a complex QR or stems from <code>qr(*, LAPACK=TRUE)</code>.
+</p>
+</li>
+<li><p> Setting <code>options(device = *)</code> to an invalid function no
+longer segfaults when plotting is initiated.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15883">PR#15883</a>)
+</p>
+</li>
+<li> <p><code>encodeString(&lt;very large string&gt;)</code> no longer
+segfaults.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15885">PR#15885</a>)
+</p>
+</li>
+<li><p> It is again possible to use <code>configure
+	--enable-maintainer-mode</code> without having installed
+<code>notangle</code> (it was required in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.4.[01]).
+</p>
+</li>
+<li><p> S4 method dispatch on <code>...</code> calls the method by name
+instead of <code>.Method</code> (for consistency with default dispatch),
+and only attempts to pass non-missing arguments from the generic.
+</p>
+</li>
+<li> <p><code>readRDS(textConnection(.))</code> works again.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17325">PR#17325</a>)
+</p>
+</li>
+<li> <p><code>(1:n)[-n]</code> no longer segfaults for <code>n &lt;- 2.2e9</code>
+(on a platform with enough RAM).
+</p>
+</li>
+<li> <p><code>x &lt;- 1:2; tapply(x, list(x, x), function(x) "")[1,2]</code>
+now correctly returns <code>NA</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17333">PR#17333</a>)
+</p>
+</li>
+<li><p> Running of finalizers after explicit GC request moved from
+the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> interface <code>do_gc</code> to the <code>C</code> interface
+<code>R_gc</code>.  This helps with reclaiming inaccessible connections.
+</p>
+</li>
+<li> <p><code>help.search(topic)</code> and <code>??topic</code> matching topics
+in vignettes with multiple file name extensions (e.g.,
+&lsquo;<span class="file">*.md.rsp</span>&rsquo; but not &lsquo;<span class="file">*.Rmd</span>&rsquo;) failed with an error
+when using <code>options(help_type = "html")</code>.
+</p>
+</li>
+<li><p> The X11 device no longer uses the Xlib backing store (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>).
+</p>
+</li>
+<li> <p><code>array(character(), 1)</code> now gives (a 1D array with)
+<code>NA</code> as has been documented for a long time as in the other
+cases of zero-length array initialization and also compatibly with
+<code>matrix(character(), *)</code>.  As mentioned there, this also
+fixes <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17333">PR#17333</a>.
+</p>
+</li>
+<li> <p><code>splineDesign(.., derivs = 4)</code> no longer segfaults.
+</p>
+</li>
+<li> <p><code>fisher.test(*, hybrid=TRUE)</code> now (again) will use the
+hybrid method when Cochran's conditions are met, fixing <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16654">PR#16654</a>.
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.4.1</h3>
+
+
+
+<h4>INSTALLATION on a UNIX-ALIKE</h4>
+
+
+<ul>
+<li><p> The deprecated support for PCRE versions older than 8.20
+has been removed.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>getParseData()</code> gave incorrect column information when
+code contained multi-byte characters.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17254">PR#17254</a>)
+</p>
+</li>
+<li><p> Asking for help using expressions like <code>?stats::cor()</code>
+did not work.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17250">PR#17250</a>)
+</p>
+</li>
+<li> <p><code>readRDS(url(....))</code> now works.
+</p>
+</li>
+<li> <p><code>R CMD Sweave</code> again returns <span class="samp">status = 0</span> on
+successful completion.
+</p>
+</li>
+<li><p> Vignettes listed in &lsquo;<span class="file">.Rbuildignore</span>&rsquo; were not being
+ignored properly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17246">PR#17246</a>)
+</p>
+</li>
+<li> <p><code>file.mtime()</code> no longer returns NA on Windows when the
+file or directory is being used by another process.  This affected
+<code>installed.packages()</code>, which is now protected against this.
+</p>
+</li>
+<li> <p><code>R CMD INSTALL</code> Windows .zip file obeys <code>--lock</code>
+and <code>--pkglock</code> flags.
+</p>
+</li>
+<li><p> (Windows only)  The <code>choose.files()</code> function could
+return incorrect results when called with <code>multi = FALSE</code>.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17270">PR#17270</a>)
+</p>
+</li>
+<li> <p><code>aggregate(&lt;data.frame&gt;, drop = FALSE)</code> now also works in
+case of near-equal numbers in <code>by</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16918">PR#16918</a>)
+</p>
+</li>
+<li> <p><code>fourfoldplot()</code> could encounter integer overflow when
+calculating the odds ratio. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17286">PR#17286</a>)
+</p>
+</li>
+<li> <p><code>parse()</code> no longer gives spurious warnings when
+extracting srcrefs from a file not encoded in the current locale.
+</p>
+<p>This was seen from <code>R CMD check</code> with &lsquo;<span class="file">inst/doc/*.R</span>&rsquo;
+files, and <code>check</code> has some additional protection for such files.
+</p>
+</li>
+<li> <p><code>print.noquote(x)</code> now always returns its argument
+<code>x</code> (invisibly).
+</p>
+</li>
+<li><p> Non-UTF-8 multibyte character sets were not handled properly
+in source references.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16732">PR#16732</a>)
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.4.0</h3>
+
+
+
+<h4>SIGNIFICANT USER-VISIBLE CHANGES</h4>
+
+
+<ul>
+<li><p> (Unix-alike)
+The default methods for <code>download.file()</code> and <code>url()</code>
+now choose <code>"libcurl"</code> except for <span class="samp">file://</span>
+URLs.  There will be small changes in the format and wording of
+messages, including in rare cases if an issue is a warning or an
+error.  For example, when HTTP re-direction occurs, some messages
+refer to the final URL rather than the specified one.
+</p>
+<p>Those who use proxies should check that their settings are
+compatible (see <code>?download.file</code>: the most commonly used
+forms work for both <code>"internal"</code> and <code>"libcurl"</code>).
+</p>
+</li>
+<li> <p><code>table()</code> has been amended to be more internally
+consistent and become back compatible to <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> <i>&lt;=</i> 2.7.2
+again.  Consequently, <code>table(1:2, exclude = NULL)</code> no longer
+contains a zero count for <code>&lt;NA&gt;</code>, but <code>useNA = "always"</code>
+continues to do so.
+</p>
+</li>
+<li> <p><code>summary.default()</code> no longer rounds, but its print
+method does resulting in less extraneous rounding, notably of
+numbers in the ten thousands.
+</p>
+</li>
+<li> <p><code>factor(x, exclude = L)</code> behaves more rationally when
+<code>x</code> or <code>L</code> are character vectors.  Further,
+<code>exclude = &lt;factor&gt;</code> now behaves as documented for long.
+</p>
+</li>
+<li><p> Arithmetic, logic (<code>&amp;</code>, <code>|</code>) and comparison (aka
+&lsquo;relational&rsquo;, e.g., <code>&lt;</code>, <code>==</code>) operations with
+arrays now behave consistently, notably for arrays of length zero.
+</p>
+<p>Arithmetic between length-1 arrays and longer non-arrays had
+silently dropped the array attributes and recycled.  This now
+gives a warning and will signal an error in the future, as it has
+always for logic and comparison operations in these cases (e.g.,
+compare <code>matrix(1,1) + 2:3</code> and <code>matrix(1,1) &lt; 2:3</code>).
+</p>
+</li>
+<li><p> The JIT (&lsquo;Just In Time&rsquo;) byte-code compiler is now
+enabled by default at its level 3. This means functions will be
+compiled on first or second use and top-level loops will be
+compiled and then run.  (Thanks to Tomas Kalibera for extensive
+work to make this possible.)
+</p>
+<p>For now, the compiler will not compile code containing explicit
+calls to <code>browser()</code>: this is to support single stepping from
+the <code>browser()</code> call.
+</p>
+<p>JIT compilation can be disabled for the rest of the session using
+<code>compiler::enableJIT(0)</code> or by setting environment variable
+<span class="env">R_ENABLE_JIT</span> to <code>0</code>.
+</p>
+</li>
+<li> <p><code>xtabs()</code> works more consistently with <code>NA</code>s, also
+in its result no longer setting them to <code>0</code>.  Further, a new
+logical option <code>addNA</code> allows to count <code>NA</code>s where
+appropriate.  Additionally, for the case <code>sparse = TRUE</code>, the
+result's <code>dimnames</code> are identical to the default case's.
+</p>
+</li>
+<li><p> Matrix products now consistently bypass BLAS when the inputs
+have <code>NaN</code>/<code>Inf</code> values. Performance of the check of
+inputs has been improved. Performance when BLAS is used is
+improved for matrix/vector and vector/matrix multiplication (DGEMV
+is now used instead of DGEMM).
+</p>
+<p>One can now choose from alternative matrix product implementations
+<em>via</em> <code>options(matprod = )</code>.  The <code>"internal"</code>
+implementation is not optimized for speed but consistent in
+precision with other summations in R (using <code>long double</code>
+accumulators where available).  <code>"blas"</code> calls BLAS directly
+for best speed, but usually with undefined behavior for inputs
+with <code>NaN</code>/<code>Inf</code>.
+</p>
+</li></ul>
+
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> User errors such as <code>integrate(f, 0:1, 2)</code> are now caught.
+</p>
+</li>
+<li><p> Add <code>signature</code> argument to <code>debug()</code>,
+<code>debugonce()</code>, <code>undebug()</code> and <code>isdebugged()</code> for
+more conveniently debugging S3 and S4 methods.  (Based on a patch by
+Gabe Becker.)
+</p>
+</li>
+<li><p> Add <code>utils::debugcall()</code> and
+<code>utils::undebugcall()</code> for debugging the function that would
+be called by evaluating the given expression. When the call is to
+an S4 generic or standard S3 generic, <code>debugcall()</code> debugs the
+method that would be dispatched. A number of internal utilities
+were added to support this, most notably
+<code>utils::isS3stdGeneric()</code>.  (Based on a patch by Gabe Becker.)
+</p>
+</li>
+<li><p> Add <code>utils::strcapture()</code>. Given a character vector and
+a regular expression containing capture expressions,
+<code>strcapture()</code> will extract the captured tokens into a
+tabular data structure, typically a <code>data.frame</code>.
+</p>
+</li>
+<li> <p><code>str()</code> and <code>strOptions()</code> get a new option
+<code>drop.deparse.attr</code> with improved but <em>changed</em> default
+behaviour for expressions.  For <code>expression</code> objects
+<code>x</code>, <code>str(x)</code> now may remove extraneous white space and
+truncate long lines.
+</p>
+</li>
+<li> <p><code>str(&lt;looooooooong_string&gt;)</code> is no longer very slow;
+inspired by Mikko Korpela's proposal in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16527">PR#16527</a>.
+</p>
+</li>
+<li> <p><code>str(x)</code>'s default method is more &ldquo;accurate&rdquo; and
+hence somewhat more generous in displaying character vectors; this
+will occasionally change <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> outputs (and need changes to some
+&lsquo;<span class="file">*.Rout(.save)</span>&rsquo; files).
+<br /> 
+For a classed integer vector such as <code>x &lt;- xtabs(~ c(1,9,9,9))</code>,
+<code>str(x)</code> now shows both the class and <code>"int"</code>, instead
+of only the latter.
+</p>
+</li>
+<li> <p><code>isSymmetric(m)</code> is much faster for large asymmetric
+matrices <code>m</code> <em>via</em> pre-tests and a new option <code>tol1</code>
+(with which strict back compatibility is possible but not the
+default).
+</p>
+</li>
+<li><p> The result of <code>eigen()</code> now is of class <code>"eigen"</code>
+in the default case when eigenvectors are computed.
+</p>
+</li>
+<li><p> Zero-length date and date-time objects (of classes
+<code>"POSIX[cl]?t"</code>) now <code>print()</code> &ldquo;recognizably&rdquo;.
+</p>
+</li>
+<li> <p><code>xy.coords()</code> and <code>xyz.coords()</code> get a new
+<code>setLab</code> option.
+</p>
+</li>
+<li><p> The <code>method</code> argument of <code>sort.list()</code>,
+<code>order()</code> and <code>sort.int()</code> gains an <code>"auto"</code> option
+(the default) which should behave the same as before when
+<code>method</code> was not supplied.
+</p>
+</li>
+<li> <p><code>stopifnot(E, ..)</code> now reports differences when
+<code>E</code> is a call to <code>all.equal()</code> and that is not true.
+</p>
+</li>
+<li> <p><code>boxplot(&lt;formula&gt;, *)</code> gain optional arguments
+<code>drop</code>, <code>sep</code>, and <code>lex.order</code> to pass to
+<code>split.default()</code> which itself gains an argument
+<code>lex.order</code> to pass to <code>interaction()</code> for more
+flexibility.
+</p>
+</li>
+<li><p> The <code>plot()</code> method for <code>ppr()</code> has enhanced
+default labels (<code>xmin</code> and <code>main</code>).
+</p>
+</li>
+<li> <p><code>sample.int()</code> gains an explicit <code>useHash</code> option
+(with a back compatible default).
+</p>
+</li>
+<li> <p><code>identical()</code> gains an <code>ignore.srcref</code> option
+which drops <code>"srcref"</code> and similar attributes when true (as
+by default).
+</p>
+</li>
+<li> <p><code>diag(x, nrow = n)</code> now preserves <code>typeof(x)</code>, also
+for logical, integer and raw <code>x</code> (and as previously for
+complex and numeric).
+</p>
+</li>
+<li> <p><code>smooth.spline()</code> now allows direct specification of
+<code>lambda</code>, gets a <code>hatvalues()</code> method and keeps
+<code>tol</code> in the result, and optionally parts of the internal
+matrix computations.
+</p>
+</li>
+<li> <p><code>addNA()</code> is faster now, e.g. when applied twice.
+(Part of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16895">PR#16895</a>.)
+</p>
+</li>
+<li><p> New option <code>rstandard(&lt;lm&gt;, type = "predicted")</code>
+provides the &ldquo;PRESS&rdquo;&ndash;related leave-one-out
+cross-validation errors for linear models.
+</p>
+</li>
+<li><p> After seven years of deprecation, duplicated factor levels
+now produce a warning when printed and an error in <code>levels&lt;-</code>
+instead of a warning.
+</p>
+</li>
+<li><p> Invalid factors, e.g., with duplicated levels (invalid but
+constructable) now give a warning when printed, <em>via</em> new
+function <code>.valid.factor()</code>.
+</p>
+</li>
+<li> <p><code>sessionInfo()</code> has been updated for Apple's change in
+OS naming as from &lsquo;10.12&rsquo; (&lsquo;macOS Sierra&rsquo; <em>vs</em>
+&lsquo;OS X El Capitan&rsquo;).
+</p>
+<p>Its <code>toLatex()</code> method now includes the <code>running</code>
+component.
+</p>
+</li>
+<li> <p><code>options(interrupt=)</code> can be used to specify a default
+action for user interrupts.  For now, if this option is not set
+and the <code>error</code> option is set, then an unhandled user
+interrupt invokes the <code>error</code> option.  (This may be dropped in
+the future as <code>interrupt</code> conditions are not <code>error</code>
+conditions.)
+</p>
+</li>
+<li><p> In most cases user interrupt handlers will be called with a
+<code>"resume"</code> restart available.  Handlers can invoke this
+restart to resume computation. At the browser prompt the <code>r</code>
+command will invoke a <code>"resume"</code> restart if one is
+available. Some read operations cannot be resumed properly when
+interrupted and do not provide a <code>"resume"</code> restart.
+</p>
+</li>
+<li><p> Radix sort is now chosen by <code>method = "auto"</code> for
+<code>sort.int()</code> for double vectors (and hence used for
+<code>sort()</code> for unclassed double vectors), excluding
+&lsquo;long&rsquo; vectors.
+</p>
+<p><code>sort.int(method = "radix")</code> no longer rounds double vectors.
+</p>
+</li>
+<li><p> The <code>default</code> and <code>data.frame</code> methods for
+<code>stack()</code> preserve the names of empty elements in the levels
+of the <code>ind</code> column of the return value.  Set the new
+<code>drop</code> argument to <code>TRUE</code> for the previous behavior.
+</p>
+</li>
+<li><p> Speedup in <code>simplify2array()</code> and hence <code>sapply()</code> and
+<code>mapply()</code> (for the case of names and common length &gt; 1),
+thanks to Suharto Anggono's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17118">PR#17118</a>.
+</p>
+</li>
+<li> <p><code>table(x, exclude = NULL)</code> now sets
+<code>useNA = "ifany"</code> (instead of <code>"always"</code>).
+Together with the bug fixes for this case, this recovers more
+consistent behaviour  compatible to older versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.  As
+a consequence, <code>summary()</code> for a logical vector no longer
+reports (zero) counts for <code>NA</code> when there are no <code>NA</code>s.
+</p>
+</li>
+<li> <p><code>dump.frames()</code> gets a new option
+<code>include.GlobalEnv</code> which allows to also dump the global
+environment, thanks to Andreas Kersting's proposal in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17116">PR#17116</a>.
+</p>
+</li>
+<li> <p><code>system.time()</code> now uses <code>message()</code> instead of
+<code>cat()</code> when terminated early, such that
+<code>suppressMessages()</code> has an effect; suggested by Ben Bolker.
+</p>
+</li>
+<li> <p><code>citation()</code> supports &lsquo;<span class="file">inst/CITATION</span>&rsquo; files from
+package source trees, with <code>lib.loc</code> pointing to the
+directory containing the package.
+</p>
+
+
+
+</li>
+<li> <p><code>try()</code> gains a new argument <code>outFile</code> with a
+default that can be modified <em>via</em>
+<code>options(try.outFile = .)</code>, useful notably for <code>Sweave</code>.
+</p>
+</li>
+<li><p> The unexported low-level functions in package <span class="pkg">parallel</span>
+for passing serialized <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> objects to and from forked children now
+support long vectors on 64-bit platforms.  This removes some
+limits on higher-level functions such as <code>mclapply()</code> (but
+returning gigabyte results from forked processes <em>via</em>
+serialization should be avoided if at all possible).
+</p>
+</li>
+<li><p> Connections now <code>print()</code> without error even if
+invalid, e.g. after having been destroyed.
+</p>
+</li>
+<li> <p><code>apropos()</code> and <code>find(simple.words = FALSE)</code> no
+longer match object names starting with <span class="samp">.</span> which are known
+to be internal objects (such as <code>.__S3MethodsTable__.</code>).
+</p>
+</li>
+<li><p> Convenience function <code>hasName()</code> has been added; it
+is intended to replace the common idiom <code>!is.null(x$name)</code>
+without the usually unintended partial name matching.
+</p>
+</li>
+<li> <p><code>strcapture()</code> no longer fixes column names nor coerces
+strings to factors (suggested by Bill Dunlap).
+</p>
+</li>
+<li> <p><code>strcapture()</code> returns <code>NA</code> for non-matching
+values in <code>x</code> (suggested by Bill Dunlap).
+</p>
+</li>
+<li> <p><code>source()</code> gets new optional arguments, notably
+<code>exprs</code>; this is made use of in the new utility function
+<code>withAutoprint()</code>.
+</p>
+</li>
+<li> <p><code>sys.source()</code> gets a new <code>toplevel.env</code> argument.
+This argument is useful for frameworks running package tests;
+contributed by Tomas Kalibera.
+</p>
+</li>
+<li> <p><code>Sys.setFileTime()</code> and
+<code>file.copy(copy.date = TRUE)</code> will set timestamps with
+fractions of seconds on platforms/filesystems which support this.
+</p>
+</li>
+<li><p> (Windows only.) <code>file.info()</code> now returns file
+timestamps including fractions of seconds; it has done so on other
+platforms since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 2.14.0.  (NB: some filesystems do not
+record modification and access timestamps to sub-second
+resolution.)
+</p>
+</li>
+<li><p> The license check enabled by
+<code>options(checkPackageLicense = TRUE)</code> is now done when the
+package's namespace is first loaded.
+</p>
+</li>
+<li> <p><code>ppr()</code> and <code>supsmu()</code> get an optional
+<code>trace</code> argument, and <code>ppr(.., sm.method = ..spline)</code> is
+no longer limited to sample size <i>n &lt;= 2500</i>.
+</p>
+</li>
+<li><p> The <code>POSIXct</code> method for <code>print()</code> gets optional
+<code>tz</code> and <code>usetz</code> arguments, thanks to a report from
+Jennifer S. Lyon.
+</p>
+</li>
+<li><p> New function <code>check_packages_in_dir_details()</code> in
+package <span class="pkg">tools</span> for analyzing package-check log files to
+obtain check details.
+</p>
+</li>
+<li><p> Package <span class="pkg">tools</span> now exports function
+<code>CRAN_package_db()</code> for obtaining information about current
+packages in the <acronym><span class="acronym">CRAN</span></acronym> package repository, and several
+functions for obtaining the check status of these packages.
+</p>
+</li>
+<li><p> The (default) Stangle driver <code>Rtangle</code> allows
+<code>annotate</code> to be a function and gets a new
+<code>drop.evalFALSE</code> option.
+</p>
+</li>
+<li><p> The default method for <code>quantile(x, prob)</code> should now
+be monotone in <code>prob</code>, even in border cases, see <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16672">PR#16672</a>.
+</p>
+</li>
+<li> <p><code>bug.report()</code> now tries to extract an email address
+from a <span class="samp">BugReports</span> field, and if there is none, from a
+<span class="samp">Contacts</span> field.
+</p>
+</li>
+<li><p> The <code>format()</code> and <code>print()</code> methods for
+<code>object.size()</code> results get new options <code>standard</code> and
+<code>digits</code>; notably, <code>standard = "IEC"</code> and
+<code>standard = "SI"</code> allow more standard (but less common)
+abbreviations than the default ones, e.g. for kilobytes.
+(From contributions by Henrik Bengtsson.)
+</p>
+</li>
+<li><p> If a reference class has a validity method,
+<code>validObject</code> will be called automatically from the
+default initialization method for reference classes.
+</p>
+</li>
+<li> <p><code>tapply()</code> gets new option <code>default = NA</code>
+allowing to change the previously hardcoded value.
+</p>
+</li>
+<li> <p><code>read.dcf()</code> now consistently interprets any
+&lsquo;whitespace&rsquo; to be stripped to include newlines.
+</p>
+</li>
+<li><p> The maximum number of DLLs that can be loaded into R
+e.g. <em>via</em> <code>dyn.load()</code> can now be increased by
+setting the environment variable <code>R_MAX_NUM_DLLS</code> before
+starting R.
+</p>
+</li>
+<li><p> Assigning to an element of a vector beyond the current
+length now over-allocates by a small fraction. The new vector is
+marked internally as growable, and the true length of the new
+vector is stored in the <code>truelength</code> field. This makes
+building up a vector result by assigning to the next element
+beyond the current length more efficient, though pre-allocating is
+still preferred.  The implementation is subject to change and not
+intended to be used in packages at this time.
+</p>
+</li>
+<li><p> Loading the <span class="pkg">parallel</span> package namespace no longer sets
+or changes the <code>.Random.seed</code>, even if <span class="env">R_PARALLEL_PORT</span>
+is unset.
+</p>
+<p>NB: This can break reproducibility of output, and did for a
+<acronym><span class="acronym">CRAN</span></acronym> package.
+</p>
+</li>
+<li><p> Methods <code>"wget"</code> and <code>"curl"</code> for
+<code>download.file()</code> now give an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> error rather than a non-zero
+return value when the external command has a non-zero status.
+</p>
+</li>
+<li><p> Encoding name <code>"utf8"</code> is mapped to <code>"UTF-8"</code>.
+Many implementations of <code>iconv</code> accept <code>"utf8"</code>, but not
+GNU <span class="pkg">libiconv</span> (including the late 2016 version 1.15).
+</p>
+</li>
+<li> <p><code>sessionInfo()</code> shows the full paths to the library or
+executable files providing the BLAS/LAPACK implementations
+currently in use (not available on Windows).
+</p>
+</li>
+<li><p> The binning algorithm used by bandwidth selectors
+<code>bw.ucv()</code>, <code>bw.bcv()</code> and <code>bw.SJ()</code> switches to a
+version linear in the input size <code>n</code> for <code>n &gt; nb/2</code>.
+(The calculations are the same, but for larger <code>n/nb</code> it is
+worth doing the binning in advance.)
+</p>
+</li>
+<li><p> There is a new option <code>PCRE_study</code> which controls when
+<code>grep(perl = TRUE)</code> and friends &lsquo;study&rsquo; the compiled
+pattern.  Previously this was done for 11 or more input strings:
+it now defaults to 10 or more (but most examples need many more
+for the difference from studying to be noticeable).
+</p>
+</li>
+<li> <p><code>grep(perl = TRUE)</code> and friends can now make use of
+PCRE's Just-In-Time mechanism, for PCRE <i>&gt;=</i> 8.20 on
+platforms where JIT is supported.  It is used by default whenever
+the <code>pattern</code> is studied (see the previous item).  (Based on
+a patch from Mikko Korpela.)
+</p>
+<p>This is controlled by a new option <code>PCRE_use_JIT</code>.
+</p>
+<p>Note that in general this makes little difference to the speed,
+and may take a little longer: its benefits are most evident on
+strings of thousands of characters.  As a side effect it reduces
+the chances of C stack overflow in the PCRE library on very long
+strings (millions of characters, but see next item).
+</p>
+<p>Warning: segfaults were seen using PCRE with JIT enabled on 64-bit
+Sparc builds.
+</p>
+</li>
+<li><p> There is a new option <code>PCRE_limit_recursion</code> for
+<code>grep(perl = TRUE)</code> and friends to set a recursion limit
+taking into account <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s estimate of the remaining C stack space
+(or 10000 if that is not available).  This reduces the chance of C
+stack overflow, but because it is conservative may report a
+non-match (with a warning) in examples that matched before.  By
+default it is enabled if any input string has 1000 or more bytes.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16757">PR#16757</a>)
+</p>
+</li>
+<li> <p><code>getGraphicsEvent()</code> now works on
+<code>X11(type = "cairo")</code> devices.  Thanks to Frederick Eaton (for
+reviving an earlier patch).
+</p>
+</li>
+<li><p> There is a new argument <code>onIdle</code> for
+<code>getGraphicsEvent()</code>, which allows an R function to be run
+whenever there are no pending graphics events.  This is currently
+only supported on X11 devices.  Thanks to Frederick Eaton.
+</p>
+</li>
+<li><p> The <code>deriv()</code> and similar functions now can compute
+derivatives of <code>log1p()</code>, <code>sinpi()</code> and similar
+one-argument functions, thanks to a contribution by Jerry Lewis.
+</p>
+</li>
+<li> <p><code>median()</code> gains a formal <code>...</code> argument, so
+methods with extra arguments can be provided.
+</p>
+</li>
+<li> <p><code>strwrap()</code> reduces <code>indent</code> if it is more than
+half <code>width</code> rather than giving an error.  (Suggested by Bill
+Dunlap.)
+</p>
+</li>
+<li><p> When the condition <code>code</code> in <code>if(.)</code> or
+<code>while(.)</code> is not of length one, an error instead of a
+warning may be triggered by setting an environment variable, see
+the help page.
+</p>
+</li>
+<li><p> Formatting and printing of bibliography entries
+(<code>bibentry</code>) is more flexible and better documented.  Apart
+from setting <code>options(citation.bibtex.max = 99)</code> you can also
+use <code>print(&lt;citation&gt;, bibtex=TRUE)</code> (or <code>format(..)</code>)
+to get the BibTeX entries in the case of more than one entry.
+This also affects <code>citation()</code>.
+Contributions to enable <code>style = "html+bibtex"</code> are welcome.
+</p>
+</li></ul>
+
+
+
+
+<h4>C-LEVEL FACILITIES</h4>
+
+
+<ul>
+<li><p> Entry points <code>R_MakeExternalPtrFn</code> and
+<code>R_ExternalPtrFn</code> are now declared in header
+&lsquo;<span class="file">Rinternals.h</span>&rsquo; to facilitate creating and retrieving an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
+external pointer from a C function pointer without ISO C warnings
+about the conversion of function pointers.
+</p>
+</li>
+<li><p> There was an exception for the native Solaris C++ compiler
+to the dropping (in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0) of legacy C++ headers from headers
+such as &lsquo;<span class="file">R.h</span>&rsquo; and &lsquo;<span class="file">Rmath.h</span>&rsquo; &mdash; this has now been
+removed.  That compiler has strict C++98 compliance hence does not
+include extensions in its (non-legacy) C++ headers: some
+packages will need to request C++11 or replace non-C++98 calls
+such as <code>lgamma</code>: see §1.6.4 of &lsquo;Writing R Extensions&rsquo;.
+</p>
+<p>Because it is needed by about 70 CRAN packages, headers &lsquo;<span class="file">R.h</span>&rsquo;
+and &lsquo;<span class="file">Rmath.h</span>&rsquo; still declare </p>
+<pre>use namespace std;</pre>
+<p>when included on Solaris.
+</p>
+</li>
+<li><p> When included from C++, the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers now use forms such as
+<code>std::FILE</code> directly rather than including the line </p>
+<pre>using std::FILE;</pre>
+<p>C++ code including these headers might be relying on the latter.
+</p>
+</li>
+<li><p> Headers &lsquo;<span class="file">R_ext/BLAS.h</span>&rsquo; and &lsquo;<span class="file">R_ext/Lapack.h</span>&rsquo; have
+many improved declarations including <code>const</code> for
+double-precision complex routines. <em>Inter alia</em> this avoids
+warnings when passing &lsquo;string literal&rsquo; arguments from C++11
+code.
+</p>
+</li>
+<li><p> Headers for Unix-only facilities &lsquo;<span class="file">R_ext/GetX11Image.h</span>&rsquo;,
+&lsquo;<span class="file">R_ext/QuartzDevice.h</span>&rsquo; and &lsquo;<span class="file">R_ext/eventloop.h</span>&rsquo; are no
+longer installed on Windows.
+</p>
+</li>
+<li><p> No-longer-installed headers &lsquo;<span class="file">GraphicsBase.h</span>&rsquo;,
+&lsquo;<span class="file">RGraphics.h</span>&rsquo;, &lsquo;<span class="file">Rmodules/RX11.h</span>&rsquo; and
+&lsquo;<span class="file">Rmodules/Rlapack.h</span>&rsquo; which had a LGPL license no longer do so.
+</p>
+</li>
+<li> <p><code>HAVE_UINTPTR_T</code> is now defined where appropriate by
+<code>Rconfig.h</code> so that it can be included before
+<code>Rinterface.h</code> when <code>CSTACK_DEFNS</code> is defined and a C
+compiler (not C++) is in use.  <code>Rinterface.h</code> now includes C
+header &lsquo;<span class="file">stdint.h</span>&rsquo; or C++11 header &lsquo;<span class="file">cstdint</span>&rsquo; where
+needed.
+</p>
+</li>
+<li><p> Package <span class="pkg">tools</span> has a new function
+<code>package_native_routine_registration_skeleton()</code> to assist
+adding native-symbol registration to a package.  See its help and
+§5.4.1 of &lsquo;Writing R Extensions&rsquo; for how to use it.  (At
+the time it was added it successfully automated adding
+registration to over 90% of <acronym><span class="acronym">CRAN</span></acronym> packages which lacked
+it.  Many of the failures were newly-detected bugs in the
+packages, e.g. 50 packages called entry points with varying
+numbers of arguments and 65 packages called entry points not in
+the package.)
+
+
+</p>
+</li></ul>
+
+
+
+
+<h4>INSTALLATION on a UNIX-ALIKE</h4>
+
+
+<ul>
+<li> <p><code>readline</code> headers (and not just the library) are
+required unless configuring with <span class="option">--with-readline=no</span>.
+</p>
+</li>
+<li> <p><code>configure</code> now adds a compiler switch for C++11
+code, even if the compiler supports C++11 by default.  (This
+ensures that <code>g++</code> 6.x uses C++11 mode and not its default
+mode of C++14 with &lsquo;GNU extensions&rsquo;.)
+</p>
+<p>The tests for C++11 compliance are now much more comprehensive.
+For gcc &lt; 4.8, the tests from R 3.3.0 are used in order to maintain
+the same behaviour on Linux distributions with long-term support.
+</p>
+</li>
+<li><p> An alternative compiler for C++11 is now specified with
+<span class="samp">CXX11</span>, not <span class="samp">CXX1X</span>. Likewise C++11 flags are specified
+with <span class="samp">CXX11FLAGS</span> and the standard (e.g., <span class="samp">-std=gnu++11</span>)
+is specified with <span class="samp">CXX11STD</span>.
+</p>
+</li>
+<li> <p><code>configure</code> now tests for a C++14-compliant compiler
+by testing some basic features.  This by default tries flags for
+the compiler specified by <span class="samp">CXX11</span>, but an alternative compiler,
+options and standard can be specified by variables <span class="samp">CXX14</span>,
+<span class="samp">CXX14FLAGS</span> and <span class="samp">CXX14STD</span> (e.g., <span class="option">-std=gnu++14</span>).
+</p>
+</li>
+<li><p> There is a new macro <code>CXXSTD</code> to help specify the
+standard for C++ code, e.g. <span class="option">-std=c++98</span>.  This
+makes it easier to work with compilers which default to a later
+standard: for example, with <code>CXX=g++6 CXXSTD=-std=c++98</code>
+<code>configure</code> will select commands for <code>g++</code> 6.x
+which conform to C++11 and C++14 where specified but otherwise use
+C++98.
+</p>
+</li>
+<li><p> Support for the defunct IRIX and OSF/1 OSes and Alpha CPU
+has been removed.
+</p>
+</li>
+<li> <p><code>configure</code> checks that the compiler specified by
+<span class="samp">$CXX $CXXFLAGS</span> is able to compile C++ code.
+</p>
+</li>
+<li> <p><code>configure</code> checks for the required header
+&lsquo;<span class="file">sys/select.h</span>&rsquo; (or &lsquo;<span class="file">sys/time.h</span>&rsquo; on legacy systems) and
+system call <code>select</code> and aborts if they are not found.
+</p>
+</li>
+<li><p> If available, the POSIX 2008 system call <code>utimensat</code>
+will be used by <code>Sys.setFileTime()</code> and
+<code>file.copy(copy.date = TRUE)</code>.  This may result in slightly
+more accurate file times.  (It is available on Linux and FreeBSD
+but not macOS.)
+
+</p>
+</li>
+<li><p> The minimum version requirement for <code>libcurl</code> has been
+reduced to 7.22.0, although at least 7.28.0 is preferred and
+earlier versions are little tested.  (This is to support Debian 7
+&lsquo;Wheezy&rsquo; LTS and Ubuntu &lsquo;Precise&rsquo; 12.04 LTS,
+although the latter is close to end-of-life.)
+
+</p>
+</li>
+<li> <p><code>configure</code> tests for a C++17-compliant compiler.
+The tests are experimental and subject to change in the future.
+</p>
+</li></ul>
+
+
+
+
+<h4>INCLUDED SOFTWARE</h4>
+
+
+<ul>
+<li><p> (Windows only) Tcl/Tk version 8.6.4 is now included in the
+binary builds.  The &lsquo;<span class="file">tcltk*.chm</span>&rsquo; help file is no longer
+included; please consult the online help at
+<a href="http://www.tcl.tk/man/">http://www.tcl.tk/man/</a> instead.
+</p>
+</li>
+<li><p> The version of LAPACK included in the sources has been
+updated to 3.7.0: no new routines have been added to <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.
+</p>
+</li></ul>
+
+
+
+
+<h4>PACKAGE INSTALLATION</h4>
+
+
+<ul>
+<li><p> There is support for compiling C++14 or C++17 code in
+packages on suitable platforms: see &lsquo;Writing R Extensions&rsquo;
+for how to request this.
+</p>
+</li>
+<li><p> The order of flags when <span class="samp">LinkingTo</span> other packages has
+been changed so their include directories come earlier, before
+those specified in <code>CPPFLAGS</code>.  This will only have an effect
+if non-system include directories are included with <span class="option">-I</span>
+flags in <code>CPPFLAGS</code> (and so not the default
+<code>-I/usr/local/include</code> which is treated as a system include
+directory on most platforms).
+
+
+</p>
+</li>
+<li><p> Packages which register native routines for <code>.C</code> or
+<code>.Fortran</code> need to be re-installed for this version (unless
+installed with R-devel SVN revision r72375 or later).
+</p>
+</li>
+<li><p> Make variables with names containing <code>CXX1X</code> are
+deprecated in favour of those using <code>CXX11</code>, but for the time
+being are still made available <em>via</em> file
+&lsquo;<span class="file">etc/Makeconf</span>&rsquo;.  Packages using them should be converted to
+the new forms and made dependent on <span class="samp">R (&gt;= 3.4.0)</span>.
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li><p> Running <code>R CMD check --as-cran</code> with
+<span class="env">_R_CHECK_CRAN_INCOMING_REMOTE_</span> false now skips tests that
+require remote access.  The remaining (local) tests typically
+run quickly compared to the remote tests.
+</p>
+</li>
+<li> <p><code>R CMD build</code> will now give priority to vignettes
+produced from files in the &lsquo;<span class="file">vignettes</span>&rsquo; directory over those
+in the &lsquo;<span class="file">inst/doc</span>&rsquo; directory, with a warning that the latter
+are being ignored.
+</p>
+</li>
+<li> <p><code>R CMD config</code> gains a <span class="option">--all</span> option for
+printing names and values of all basic configure variables.
+</p>
+<p>It now knows about all the variables used for the C++98, C++11 and
+C++14 standards.
+</p>
+</li>
+<li> <p><code>R CMD check</code> now checks that output files in
+&lsquo;<span class="file">inst/doc</span>&rsquo; are newer than the source files in &lsquo;<span class="file">vignettes</span>&rsquo;.
+</p>
+</li>
+<li><p> For consistency with other package subdirectories, files
+named &lsquo;<span class="file">*.r</span>&rsquo; in the &lsquo;<span class="file">tests</span>&rsquo; directory are now recognized
+as tests by <code>R CMD check</code>. (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17143">PR#17143</a>.)
+</p>
+</li>
+<li> <p><code>R CMD build</code> and <code>R CMD check</code> now use the
+<em>union</em> of <span class="env">R_LIBS</span> and <code>.libPaths()</code>.  They may not
+be equivalent, e.g., when the latter is determined by
+<span class="env">R_PROFILE</span>.
+</p>
+</li>
+<li> <p><code>R CMD build</code> now preserves dates when it copies files
+in preparing the tarball.  (Previously on Windows it changed the
+dates on all files; on Unix, it changed some dates when installing
+vignettes.)
+</p>
+</li>
+<li><p> The new option <code>R CMD check --no-stop-on-test-error</code>
+allows running the remaining tests (under &lsquo;<span class="file">tests/</span>&rsquo;) even if
+one gave an error.
+</p>
+</li>
+<li><p> Check customization <em>via</em> environment variables to
+detect side effects of <code>.Call()</code> and <code>.External()</code> calls
+which alter their arguments is described in §8 of the &lsquo;R
+Internals&rsquo; manual.
+</p>
+</li>
+<li> <p><code>R CMD check</code> now checks any <span class="samp">BugReports</span> field
+to be non-empty and a suitable single URL.
+</p>
+</li>
+<li> <p><code>R CMD check --as-cran</code> now NOTEs if the package
+does not register its native routines or does not declare its
+intentions on (native) symbol search.  (This will become a WARNING
+in due course.)
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> (Windows only) Function <code>setInternet2()</code> is defunct.
+</p>
+</li>
+<li><p> Installation support for <code>readline</code> emulations based on
+<code>editline</code> (aka <code>libedit</code>) is deprecated.
+</p>
+</li>
+<li><p> Use of the C/C++ macro <span class="samp">NO_C_HEADERS</span> is defunct and
+silently ignored.
+</p>
+</li>
+<li> <p><code>unix.time()</code>, a traditional synonym for
+<code>system.time()</code>, has been deprecated.
+</p>
+</li>
+<li> <p><code>structure(NULL, ..)</code> is now deprecated as you cannot
+set attributes on <code>NULL</code>.
+</p>
+</li>
+<li><p> Header &lsquo;<span class="file">Rconfig.h</span>&rsquo; no longer defines
+<span class="samp">SUPPORT_OPENMP</span>; instead use <span class="samp">_OPENMP</span> (as documented
+for a long time).
+</p>
+</li>
+<li><p> (C-level Native routine registration.)  The deprecated
+<code>styles</code> member of the <code>R_CMethodDef</code> and
+<code>R_FortranMethodDef</code> structures has been removed.
+Packages using these will need to be re-installed for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.4.0.
+</p>
+</li>
+<li><p> The deprecated support for PCRE versions older than 8.20
+will be removed in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.4.1. (Versions 8.20&ndash;8.31 will still be
+accepted but remain deprecated.)
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> Getting or setting <code>body()</code> or <code>formals()</code> on
+non-functions for now signals a warning and may become an error
+for setting.
+</p>
+</li>
+<li> <p><code>match(x, t)</code>, <code>duplicated(x)</code> and
+<code>unique(x)</code> work as documented for complex numbers with <code>NA</code>s
+or <code>NaN</code>s, where all those containing <code>NA</code> do match,
+whereas in the case of <code>NaN</code>'s both real and imaginary parts
+must match, compatibly with how <code>print()</code> and <code>format()</code>
+work for complex numbers.
+</p>
+</li>
+<li> <p><code>deparse(&lt;complex&gt;, options = "digits17")</code> prints more
+nicely now, mostly thanks to a suggestion by Richie Cotton.
+</p>
+</li>
+<li><p> Rotated symbols in plotmath expressions are now positioned
+correctly on <code>x11(type = "Xlib")</code>. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16948">PR#16948</a>)
+</p>
+</li>
+<li> <p><code>as&lt;-()</code> avoids an infinite loop when a virtual class
+is interposed between a subclass and an actual superclass.
+</p>
+</li>
+<li><p> Fix level propagation in <code>unlist()</code> when the list
+contains zero-length lists or factors.
+</p>
+</li>
+<li><p> Fix S3 dispatch on S4 objects when the <span class="pkg">methods</span> package is
+not attached.
+</p>
+</li>
+<li><p> Internal S4 dispatch sets <code>.Generic</code> in the method
+frame for consistency with <code>standardGeneric()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16929">PR#16929</a>)
+</p>
+</li>
+<li><p> Fix <code>order(x, decreasing = TRUE)</code> when <code>x</code> is an
+integer vector containing <code>MAX_INT</code>.  Ported from a fix Matt
+Dowle made to <a href="https://CRAN.R-project.org/package=data.table"><span class="pkg">data.table</span></a>.
+</p>
+</li>
+<li><p> Fix caching by <code>callNextMethod()</code>, resolves <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16973">PR#16973</a>
+and <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16974">PR#16974</a>.
+</p>
+</li>
+<li> <p><code>grouping()</code> puts NAs last, to be consistent with the
+default behavior of <code>order()</code>.
+</p>
+</li>
+<li><p> Point mass limit cases: <code>qpois(-2, 0)</code> now gives
+<code>NaN</code> with a warning and <code>qgeom(1, 1)</code> is <code>0</code>.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16972">PR#16972</a>)
+</p>
+</li>
+<li> <p><code>table()</code> no longer drops an <code>"NaN"</code> factor level,
+and better obeys <code>exclude = &lt;chr&gt;</code>, thanks to Suharto Anggono's
+patch for <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16936">PR#16936</a>.  Also, in the case of <code>exclude = NULL</code>
+and <code>NA</code>s, these are tabulated correctly (again).
+</p>
+<p>Further, <code>table(1:2, exclude = 1, useNA = "ifany")</code> no longer
+erroneously reports <code>&lt;NA&gt;</code> counts.
+</p>
+<p>Additionally, all cases of empty <code>exclude</code> are equivalent,
+and <code>useNA</code> is not overwritten when specified (as it was by
+<code>exclude = NULL</code>).
+</p>
+</li>
+<li> <p><code>wilcox.test(x, conf.int=TRUE)</code> no longer errors out in
+cases where the confidence interval is not available, such as for
+<code>x = 0:2</code>.
+</p>
+</li>
+<li> <p><code>droplevels(f)</code> now keeps &lt;NA&gt; levels when present.
+</p>
+</li>
+<li><p> In integer arithmetic, <code>NULL</code> is now treated as
+<code>integer(0)</code> whereas it was previously treated as <code>double(0)</code>.
+</p>
+</li>
+<li><p> The radix sort considers <code>NA_real_</code> and <code>NaN</code> to
+be equivalent in rank (like the other sort algorithms).
+</p>
+</li>
+<li><p> When <code>index.return=TRUE</code> is passed to <code>sort.int()</code>,
+the radix sort treats <code>NA</code>s like <code>sort.list()</code> does
+(like the other sort algorithms).
+</p>
+</li>
+<li><p> When in <code>tabulate(bin, nbin)</code> <code>length(bin)</code> is
+larger than the maximal integer, the result is now of type
+<code>double</code> and hence no longer silently overflows to wrong
+values.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17140">PR#17140</a>)
+</p>
+</li>
+<li> <p><code>as.character.factor()</code> respects S4 inheritance when
+checking the type of its argument. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17141">PR#17141</a>)
+</p>
+</li>
+<li><p> The <code>factor</code> method for <code>print()</code> no longer sets
+the class of the factor to <code>NULL</code>, which would violate a
+basic constraint of an S4 object.
+</p>
+</li>
+<li> <p><code>formatC(x, flag = f)</code> allows two new flags, and
+signals an error for invalid flags also in the case of character
+formatting.
+</p>
+</li>
+<li><p> Reading from <code>file("stdin")</code> now also closes the
+connection and hence no longer leaks memory when reading from a
+full pipe, thanks to Gábor Csárdi, see thread starting at
+<a href="https://stat.ethz.ch/pipermail/r-devel/2016-November/073360.html">https://stat.ethz.ch/pipermail/r-devel/2016-November/073360.html</a>.
+</p>
+</li>
+<li><p> Failure to create file in <code>tempdir()</code> for compressed
+<code>pdf()</code> graphics device no longer errors (then later
+segfaults).  There is now a warning instead of error and
+compression is turned off for the device.  Thanks to Alec
+Wysoker (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17191">PR#17191</a>).
+</p>
+</li>
+<li><p> Asking for <code>methods()</code> on <code>"|"</code> returns only S3
+methods. See
+<a href="https://stat.ethz.ch/pipermail/r-devel/2016-December/073476.html">https://stat.ethz.ch/pipermail/r-devel/2016-December/073476.html</a>.
+</p>
+</li>
+<li> <p><code>dev.capture()</code> using Quartz Cocoa device (macOS) returned
+invalid components if the back-end chose to use ARGB instead of RGBA
+image format. (Reported by Noam Ross.)
+</p>
+</li>
+<li> <p><code>seq("2", "5")</code> now works too, equivalently to
+<code>"2":"5"</code> and <code>seq.int()</code>.
+</p>
+</li>
+<li> <p><code>seq.int(to = 1, by = 1)</code> is now correct, other cases are
+integer (instead of <code>double</code>) when <code>seq()</code> is integer
+too, and the &quot;non-finite&quot; error messages are consistent between
+<code>seq.default()</code> and <code>seq.int()</code>, no longer mentioning
+<code>NaN</code> etc.
+</p>
+</li>
+<li> <p><code>rep(x, times)</code> and <code>rep.int(x, times)</code> now work
+when <code>times</code> is larger than the largest value representable
+in an integer vector.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16932">PR#16932</a>)
+</p>
+</li>
+<li> <p><code>download.file(method = "libcurl")</code> does not check for
+URL existence before attempting downloads; this is more robust to
+servers that do not support HEAD or range-based retrieval, but may
+create empty or incomplete files for aborted download requests.
+</p>
+</li>
+<li><p> Bandwidth selectors <code>bw.ucv()</code>, <code>bw.bcv()</code> and
+<code>bw.SJ()</code> now avoid integer overflow for large sample sizes.
+</p>
+</li>
+<li> <p><code>str()</code> no longer shows <code>"list output truncated"</code>,
+in cases that list was not shown at all.  Thanks to Neal Fultz
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17219">PR#17219</a>)
+</p>
+</li>
+<li><p> Fix for <code>cairo_pdf()</code> (and <code>svg()</code> and
+<code>cairo_ps()</code>) when replaying a saved display list that contains
+a mix of <span class="pkg">grid</span> and <span class="pkg">graphics</span> output.
+(Report by Yihui Xie.)
+</p>
+
+
+
+</li>
+<li><p> The <code>str()</code> and <code>as.hclust()</code> methods for
+<code>"dendrogram"</code> now also work for deeply nested dendrograms
+thanks to non-recursive implementations by Bradley Broom.
+</p>
+</li>
+<li> <p><code>sample()</code> now uses two uniforms for added precision
+when the uniform generator is <code>Knuth-TAOCP</code>,
+<code>Knuth-TAOCP-2002</code>, or a user-defined generator and the
+population size is <i>2^25</i> or greater.
+</p>
+</li>
+<li><p> If a vignette in the &lsquo;<span class="file">vignettes</span>&rsquo; directory is listed in
+&lsquo;<span class="file">.Rbuildignore</span>&rsquo;, <code>R CMD build</code> would not include it
+in the tarball, but would include it in the vignette database,
+leading to a check warning.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17246">PR#17246</a>)
+</p>
+</li>
+<li> <p><code>tools::latexToUtf8()</code> infinite looped on certain
+inputs.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17138">PR#17138</a>)
+</p>
+</li>
+<li> <p><code>terms.formula()</code> ignored argument names when determining
+whether two terms were identical.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17235">PR#17235</a>)
+</p>
+</li>
+<li> <p><code>callNextMethod()</code> was broken when called from a method
+that augments the formal arguments of a primitive generic.
+</p>
+</li>
+<li><p> Coercion of an S4 object to a vector during sub-assignment
+into a vector failed to dispatch through the <code>as.vector()</code>
+generic (often leading to a segfault).
+</p>
+</li>
+<li><p> Fix problems in command completion:  Crash (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17222">PR#17222</a>)
+and junk display in Windows, handling special characters in
+filenames on all systems.
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.3.3</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> Changes when redirection of a <span class="samp">http://</span> URL to a
+<span class="samp">https://</span> URL is encountered:
+</p>
+
+<ul>
+<li><p> The internal methods of <code>download.file()</code> and
+<code>url()</code> now report that they cannot follow this (rather
+than failing silently).
+</p>
+</li>
+<li><p> (Unix-alike) <code>download.file(method = "auto")</code> (the
+default) re-tries with <code>method = "libcurl"</code>.
+</p>
+</li>
+<li><p> (Unix-alike) <code>url(method = "default")</code> with an
+explicit <code>open</code> argument re-tries with
+<code>method = "libcurl"</code>.  This covers many of the usages,
+e.g. <code>readLines()</code> with a URL argument.
+</p>
+</li></ul>
+
+</li></ul>
+
+
+
+
+<h4>INSTALLATION on a UNIX-ALIKE</h4>
+
+
+<ul>
+<li><p> The <code>configure</code> check for the <code>zlib</code> version is
+now robust to versions longer than 5 characters, including
+<code>1.2.11</code>.
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li><p> Environmental variable <span class="env">_R_CHECK_TESTS_NLINES_</span> controls
+how <code>R CMD check</code> reports failing tests (see §8 of the
+&lsquo;R Internals&rsquo; manual).
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> (C-level Native routine registration.)  The undocumented
+<code>styles</code> field of the components of <code>R_CMethodDef</code> and
+<code>R_FortranMethodDef</code> is deprecated.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>vapply(x, *)</code> now works with long vectors <code>x</code>.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17174">PR#17174</a>)
+</p>
+</li>
+<li> <p><code>isS3method("is.na.data.frame")</code> and similar are
+correct now.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17171">PR#17171</a>)
+</p>
+</li>
+<li> <p><code>grepRaw(&lt;long&gt;, &lt;short&gt;, fixed = TRUE)</code> now works,
+thanks to a patch by Mikko Korpela.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17132">PR#17132</a>)
+</p>
+</li>
+<li><p> Package installation into a library where the package exists
+<em>via</em> symbolic link now should work wherever
+<code>Sys.readlink()</code> works, resolving <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16725">PR#16725</a>.
+</p>
+</li>
+<li> <p><code>"Cincinnati"</code> was missing an <code>"n"</code> in the
+<code>precip</code> dataset.
+</p>
+</li>
+<li><p> Fix buffer overflow vulnerability in <code>pdf()</code> when
+loading an encoding file.  Reported by Talos (TALOS-2016-0227).
+</p>
+</li>
+<li> <p><code>getDLLRegisteredRoutines()</code> now produces its warning
+correctly when multiple DLLs match, thanks to Matt Dowle's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17184">PR#17184</a>.
+</p>
+</li>
+<li> <p><code>Sys.timezone()</code> now returns non-NA also on platforms
+such as <span class="samp">Ubuntu 14.04.5 LTS</span>, thanks to Mikko Korpela's
+<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17186">PR#17186</a>.
+</p>
+</li>
+<li> <p><code>format(x)</code> for an illegal <code>"POSIXlt"</code> object
+<code>x</code> no longer segfaults.
+</p>
+</li>
+<li> <p><code>methods(f)</code> now also works for <code>f</code> <code>"("</code>
+or <code>"{"</code>.
+</p>
+</li>
+<li><p> (Windows only)  <code>dir.create()</code> did not check the length
+of the path to create, and so could overflow a buffer and crash
+<span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17206">PR#17206</a>)
+</p>
+</li>
+<li><p> On some systems, very small hexadecimal numbers in hex notation
+would underflow to zero.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17199">PR#17199</a>)
+</p>
+</li>
+<li> <p><code>pmin()</code> and <code>pmax()</code> now work again for
+<code>ordered</code> factors and 0-length S3 classed objects, thanks to
+Suharto Anggono's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17195">PR#17195</a> and <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17200">PR#17200</a>.
+</p>
+</li>
+<li> <p><code>bug.report()</code> did not do any validity checking on a
+package's <span class="samp">BugReports</span> field.  It now ignores an empty field,
+removes leading whitespace and only attempts to open
+<span class="samp">http://</span> and <span class="samp">https://</span> URLs, falling back to emailing
+the maintainer.
+</p>
+</li>
+<li><p> Bandwidth selectors <code>bw.ucv()</code> and
+<code>bw.SJ()</code> gave incorrect answers or incorrectly reported an
+error (because of integer overflow) for inputs longer than
+46341.  Similarly for <code>bw.bcv()</code> at length 5793.
+</p>
+<p>Another possible integer overflow is checked and may result in an
+error report (rather than an incorrect result) for much longer
+inputs (millions for a smooth distribution).
+</p>
+</li>
+<li> <p><code>findMethod()</code> failed if the active signature had
+expanded beyond what a particular package used. (Example with
+packages <a href="https://CRAN.R-project.org/package=XR"><span class="pkg">XR</span></a> and <a href="https://CRAN.R-project.org/package=XRJulia"><span class="pkg">XRJulia</span></a> on <acronym><span class="acronym">CRAN</span></acronym>.)
+</p>
+</li>
+<li> <p><code>qbeta()</code> underflowed too early in some very asymmetric
+cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17178">PR#17178</a>)
+</p>
+</li>
+<li> <p><code>R CMD Rd2pdf</code> had problems with packages with
+non-ASCII titles in &lsquo;<span class="file">.Rd</span>&rsquo; files (usually the titles were
+omitted).
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.3.2</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li> <p><code>extSoftVersion()</code> now reports the version (if any) of
+the <code>readline</code> library in use.
+</p>
+</li>
+<li><p> The version of LAPACK included in the sources has been
+updated to 3.6.1, a bug-fix release including a speedup for the
+non-symmetric case of <code>eigen()</code>.
+</p>
+</li>
+<li><p> Use <code>options(deparse.max.lines=)</code> to limit the number
+of lines recorded in <code>.Traceback</code> and other deparsing
+activities.
+</p>
+</li>
+<li> <p><code>format(&lt;AsIs&gt;)</code> looks more regular, also for
+non-character atomic matrices.
+</p>
+</li>
+<li> <p><code>abbreviate()</code> gains an option <code>named = TRUE</code>.
+</p>
+</li>
+<li><p> The online documentation for package <span class="pkg">methods</span> is
+extensively rewritten.  The goals are to simplify
+documentation for basic use, to note old features not
+recommended and to correct out-of-date information.
+</p>
+</li>
+<li><p> Calls to <code>setMethod()</code> no longer print a message when
+creating a generic function in those cases where that is
+natural: S3 generics and primitives.
+</p>
+</li></ul>
+
+
+
+
+<h4>INSTALLATION and INCLUDED SOFTWARE</h4>
+
+
+<ul>
+<li><p> Versions of the <code>readline</code> library &gt;= 6.3 had been
+changed so that terminal window resizes were not signalled to
+<code>readline</code>: code has been added using a explicit signal
+handler to work around that (when <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> is compiled against readline
+&gt;= 6.3).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16604">PR#16604</a>)
+</p>
+</li>
+<li> <p><code>configure</code> works better with Oracle Developer
+Studio 12.5.
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li> <p><code>R CMD check</code> reports more dubious flags in files
+&lsquo;<span class="file">src/Makevars[.in]</span>&rsquo;, including <span class="option">-w</span> and <span class="option">-g</span>.
+</p>
+</li>
+<li> <p><code>R CMD check</code> has been set up to filter important
+warnings from recent versions of <code>gfortran</code> with
+<span class="option">-Wall -pedantic</span>: this now reports non-portable GNU
+extensions such as out-of-order declarations.
+</p>
+</li>
+<li> <p><code>R CMD config</code> works better with paths containing
+spaces, even those of home directories (as reported by Ken Beath).
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> Use of the C/C++ macro <span class="samp">NO_C_HEADERS</span> is deprecated
+(no C headers are included by <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers from C++ as from <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
+3.3.0, so it should no longer be needed).
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> The check for non-portable flags in <code>R CMD check</code>
+could be stymied by &lsquo;<span class="file">src/Makevars</span>&rsquo; files which contained
+targets.
+</p>
+</li>
+<li><p> (Windows only) When using certain desktop themes in Windows
+7 or higher, <kbd>Alt-Tab</kbd> could cause <code>Rterm</code> to stop
+accepting input.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=14406">PR#14406</a>; patch submitted by Jan Gleixner.)
+</p>
+</li>
+<li> <p><code>pretty(d, ..)</code> behaves better for date-time <code>d</code>
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16923">PR#16923</a>).
+</p>
+</li>
+<li><p> When an S4 class name matches multiple classes in the S4
+cache, perform a dynamic search in order to obey namespace
+imports.  This should eliminate annoying messages about multiple
+hits in the class cache.  Also, pass along the package from the
+<code>ClassExtends</code> object when looking up superclasses in the
+cache.
+</p>
+</li>
+<li> <p><code>sample(NA_real_)</code> now works.
+</p>
+</li>
+<li><p> Packages using non-ASCII encodings in their code did not
+install data properly on systems using different encodings.
+</p>
+</li>
+<li> <p><code>merge(df1, df2)</code> now also works for data frames with
+column names <code>"na.last"</code>, <code>"decreasing"</code>, or
+<code>"method"</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17119">PR#17119</a>)
+</p>
+</li>
+<li> <p><code>contour()</code> caused a segfault if the <code>labels</code>
+argument had length zero.  (Reported by Bill Dunlap.)
+</p>
+</li>
+<li> <p><code>unique(warnings())</code> works more correctly, thanks to a
+new <code>duplicated.warnings()</code> method.
+</p>
+</li>
+<li> <p><code>findInterval(x, vec = numeric(), all.inside = TRUE)</code>
+now returns <code>0</code>s as documented.  (Reported by Bill Dunlap.)
+</p>
+</li>
+<li><p> (Windows only) <code>R CMD SHLIB</code> failed when a symbol
+in the resulting library had the same name as a keyword in
+the &lsquo;<span class="file">.def</span>&rsquo; file.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17130">PR#17130</a>)
+</p>
+</li>
+<li> <p><code>pmax()</code> and <code>pmin()</code> now work with (more ?)
+classed objects, such as <code>"Matrix"</code> from the <a href="https://CRAN.R-project.org/package=Matrix"><span class="pkg">Matrix</span></a>
+package, as documented for a long time.
+</p>
+</li>
+<li> <p><code>axis(side, x = D)</code> and hence <code>Axis()</code> and
+<code>plot()</code> now work correctly for <code>"Date"</code> and time
+objects <code>D</code>, even when &ldquo;time goes backward&rdquo;, e.g.,
+with decreasing <code>xlim</code>.  (Reported by William May.)
+</p>
+</li>
+<li> <p><code>str(I(matrix(..)))</code> now looks as always intended.
+</p>
+</li>
+<li> <p><code>plot.ts()</code>, the <code>plot()</code> method for time series,
+now respects <code>cex</code>, <code>lwd</code> and <code>lty</code>.  (Reported by
+Greg Werbin.)
+</p>
+</li>
+<li> <p><code>parallel::mccollect()</code> now returns a named list (as
+documented) when called with <code>wait = FALSE</code>.  (Reported by
+Michel Lang.)
+</p>
+</li>
+<li><p> If a package added a class to a class union in another
+package, loading the first package gave erroneous warnings
+about &ldquo;undefined subclass&rdquo;.
+</p>
+</li>
+<li> <p><code>c()</code>'s argument <code>use.names</code> is documented now, as
+belonging to the (C internal) default method.   In
+&ldquo;parallel&rdquo;, argument <code>recursive</code> is also moved from
+the generic to the default method, such that the formal argument list
+of <span class="pkg">base</span> generic <code>c()</code> is just <code>(...)</code>.
+</p>
+</li>
+<li> <p><code>rbeta(4, NA)</code> and similarly <code>rgamma()</code> and
+<code>rnbinom()</code> now return <code>NaN</code>'s with a warning, as other
+r&lt;dist&gt;(), and as documented.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17155">PR#17155</a>)
+</p>
+</li>
+<li><p> Using <code>options(checkPackageLicense = TRUE)</code> no longer
+requires acceptance of the licence for non-default standard
+packages such as <span class="pkg">compiler</span>.  (Reported by Mikko Korpela.)
+</p>
+</li>
+<li> <p><code>split(&lt;very_long&gt;, *)</code> now works even when the split
+off parts are long. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17139">PR#17139</a>)
+</p>
+</li>
+<li> <p><code>min()</code> and <code>max()</code> now also work correctly when
+the argument list starts with <code>character(0)</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17160">PR#17160</a>)
+</p>
+</li>
+<li><p> Subsetting very large matrices (<code>prod(dim(.)) &gt;= 2^31</code>)
+now works thanks to Michael Schubmehl's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17158">PR#17158</a>.
+</p>
+</li>
+<li> <p><code>bartlett.test()</code> used residual sums of squares
+instead of variances, when the argument was a list of <code>lm</code> objects.
+(Reported by Jens Ledet Jensen).
+</p>
+</li>
+<li> <p><code>plot(&lt;lm&gt;, which = *)</code> now correctly labels the
+contour lines for the standardized residuals for <code>which = 6</code>.
+It also takes the correct <i>p</i> in case of singularities (also
+for <code>which = 5</code>).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17161">PR#17161</a>)
+</p>
+</li>
+<li> <p><code>xtabs(~ exclude)</code> no longer fails from wrong scope,
+thanks to Suharto Anggono's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=17147">PR#17147</a>.
+</p>
+</li>
+<li><p> Reference class calls to <code>methods()</code> did not
+re-analyse previously defined methods, meaning that calls to
+methods defined later would fail. (Reported by Charles Tilford).
+</p>
+</li>
+<li> <p><code>findInterval(x, vec, left.open = TRUE)</code> misbehaved in some
+cases. (Reported by Dmitriy Chernykh.)
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.3.1</h3>
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>R CMD INSTALL</code> and hence <code>install.packages()</code>
+gave an internal error installing a package called
+<span class="pkg">description</span> from a tarball on a case-insensitive file system.
+</p>
+</li>
+<li> <p><code>match(x, t)</code> (and hence <code>x %in% t</code>) failed
+when <code>x</code> was of length one, and either <code>character</code> and <code>x</code>
+and <code>t</code> only differed in their <code>Encoding</code> or when
+<code>x</code> and <code>t</code> where <code>complex</code> with <code>NA</code>s or <code>NaN</code>s.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16885">PR#16885</a>.)
+</p>
+</li>
+<li> <p><code>unloadNamespace(ns)</code> also works again when <code>ns</code> is a
+&lsquo;namespace&rsquo;, as from <code>getNamespace()</code>.
+</p>
+</li>
+<li> <p><code>rgamma(1, Inf)</code> or <code>rgamma(1, 0, 0)</code> no longer give
+<code>NaN</code> but the correct limit.
+</p>
+</li>
+<li> <p><code>length(baseenv())</code> is correct now.
+</p>
+</li>
+<li> <p><code>pretty(d, ..)</code> for date-time <code>d</code> rarely failed
+when <code>"halfmonth"</code> time steps were tried (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16923">PR#16923</a>) and
+on &lsquo;inaccurate&rsquo; platforms such as 32-bit Windows or
+a configuration with <code>--disable-long-double</code>; see comment
+#15 of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16761">PR#16761</a>.
+</p>
+</li>
+<li><p> In <code>text.default(x, y, labels)</code>, the rarely(?) used
+default for <code>labels</code> is now correct also for the case of a
+2-column matrix <code>x</code> and missing <code>y</code>.
+</p>
+</li>
+<li> <p><code>as.factor(c(a = 1L))</code> preserves <code>names()</code> again
+as in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> &lt; 3.1.0.
+</p>
+</li>
+<li> <p><code>strtrim(""[0], 0[0])</code> now works.
+</p>
+</li>
+<li><p> Use of <code>Ctrl-C</code> to terminate a reverse incremental
+search started by <code>Ctrl-R</code> in the <code>readline</code>-based Unix
+terminal interface is now supported when <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> was compiled against
+<code>readline</code> &gt;= 6.0 (<code>Ctrl-G</code> always worked).
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16603">PR#16603</a>)
+</p>
+</li>
+<li> <p><code>diff(&lt;difftime&gt;)</code> now keeps the <code>"units"</code>
+attribute, as subtraction already did, <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16940">PR#16940</a>.
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.3.0</h3>
+
+
+
+<h4>SIGNIFICANT USER-VISIBLE CHANGES</h4>
+
+
+<ul>
+<li> <p><code>nchar(x, *)</code>'s argument <code>keepNA</code> governing how
+the result for <code>NA</code>s in <code>x</code> is determined, gets a new
+default <code>keepNA = NA</code> which returns <code>NA</code> where
+<code>x</code> is <code>NA</code>, except for <code>type = "width"</code> which still
+returns <code>2</code>, the formatting / printing width of <code>NA</code>.
+</p>
+</li>
+<li><p> All builds have support for <span class="samp">https:</span> URLs in the
+default methods for <code>download.file()</code>, <code>url()</code> and code
+making use of them.
+</p>
+<p>Unfortunately that cannot guarantee that any particular
+<span class="samp">https:</span> URL can be accessed.  For example, server and client
+have to successfully negotiate a cryptographic protocol (TLS/SSL,
+...) and the server's identity has to be verifiable <em>via</em>
+the available certificates.  Different access methods may allow
+different protocols or use private certificate bundles: we
+encountered a <span class="samp">https:</span> CRAN mirror which could be accessed by
+one browser but not by another nor by <code>download.file()</code> on
+the same Linux machine.
+</p>
+</li></ul>
+
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> The <code>print</code> method for <code>methods()</code> gains a
+<code>byclass</code> argument.
+</p>
+</li>
+<li><p> New functions <code>validEnc()</code> and <code>validUTF8()</code> to
+give access to the validity checks for inputs used by
+<code>grep()</code> and friends.
+</p>
+</li>
+<li><p> Experimental new functionality for S3 method checking, notably
+<code>isS3method()</code>.
+</p>
+<p>Also, the names of the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> &lsquo;language elements&rsquo; are exported
+as character vector <code>tools::langElts</code>.
+</p>
+</li>
+<li> <p><code>str(x)</code> now displays <code>"Time-Series"</code> also for
+matrix (multivariate) time-series, i.e. when <code>is.ts(x)</code> is true.
+</p>
+</li>
+<li><p> (Windows only)  The GUI menu item to install local packages
+now accepts &lsquo;<span class="file">*.tar.gz</span>&rsquo; files as well as &lsquo;<span class="file">*.zip</span>&rsquo; files
+(but defaults to the latter).
+</p>
+</li>
+<li><p> New programmeR's utility function <code>chkDots()</code>.
+</p>
+</li>
+<li> <p><code>D()</code> now signals an error when given invalid input,
+rather than silently returning <code>NA</code>.  (Request of John Nash.)
+</p>
+</li>
+<li> <p><code>formula</code> objects are slightly more &ldquo;first class&rdquo;:
+e.g., <code>formula()</code> or <code>new("formula", y ~ x)</code> are now
+valid.  Similarly, for <code>"table"</code>, <code>"ordered"</code> and
+<code>"summary.table"</code>.  Packages defining S4 classes with the above
+S3/S4 classes as slots should be reinstalled.
+
+
+</p>
+</li>
+<li><p> New function <code>strrep()</code> for repeating the elements of a
+character vector.
+</p>
+</li>
+<li> <p><code>rapply()</code> preserves attributes on the list when
+<code>how = "replace"</code>.
+</p>
+</li>
+<li><p> New S3 generic function <code>sigma()</code> with methods for
+extracting the estimated standard deviation aka &ldquo;residual
+standard deviation&rdquo; from a fitted model.
+</p>
+</li>
+<li> <p><code>news()</code> now displays <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> and package news files within
+the HTML help system if it is available.  If no news file is found,
+a visible <code>NULL</code> is returned to the console.
+</p>
+</li>
+<li> <p><code>as.raster(x)</code> now also accepts <code>raw</code> arrays
+<code>x</code> assuming values in <code>0:255</code>.
+</p>
+</li>
+<li><p> Subscripting of matrix/array objects of type
+<code>"expression"</code> is now supported.
+</p>
+</li>
+<li> <p><code>type.convert("i")</code> now returns a factor instead of a
+complex value with zero real part and missing imaginary part.
+</p>
+</li>
+<li><p> Graphics devices <code>cairo_pdf()</code> and <code>cairo_ps()</code>
+now allow non-default values of the cairographics &lsquo;fallback
+resolution&rsquo; to be set.
+</p>
+<p>This now defaults to 300 on all platforms: that is the default
+documented by cairographics, but apparently was not used by all
+system installations.
+</p>
+</li>
+<li> <p><code>file()</code> gains an explicit <code>method</code> argument
+rather than implicitly using
+<code>getOption("url.method", "default")</code>.
+</p>
+</li>
+<li><p> Thanks to a patch from Tomas Kalibera, <code>x[x != 0]</code> is
+now typically faster than <code>x[which(x != 0)]</code> (in the case
+where <code>x</code> has no NAs, the two are equivalent).
+</p>
+</li>
+<li> <p><code>read.table()</code> now always uses the names for a named
+<code>colClasses</code> argument (previously names were only used when
+<code>colClasses</code> was too short). (In part, wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16478">PR#16478</a>.)
+</p>
+</li>
+<li><p> (Windows only) <code>download.file()</code> with default
+<code>method = "auto"</code> and a <span class="samp">ftps://</span> URL chooses
+<code>"libcurl"</code> if that is available.
+</p>
+</li>
+<li><p> The out-of-the box Bioconductor mirror has been changed to
+one using <span class="samp">https://</span>: use <code>chooseBioCmirror()</code> to choose
+a <span class="samp">http://</span> mirror if required.
+</p>
+</li>
+<li><p> The data frame and formula methods for <code>aggregate()</code>
+gain a <code>drop</code> argument.
+</p>
+</li>
+<li> <p><code>available.packages()</code> gains a <code>repos</code> argument.
+</p>
+</li>
+<li><p> The undocumented switching of methods for <code>url()</code> on
+<span class="samp">https:</span> and <span class="samp">ftps:</span> URLs is confined to
+<code>method = "default"</code> (and documented).
+</p>
+</li>
+<li> <p><code>smoothScatter()</code> gains a <code>ret.selection</code> argument.
+</p>
+</li>
+<li> <p><code>qr()</code> no longer has a <code>...</code> argument to pass
+additional arguments to methods.
+</p>
+</li>
+<li> <p><code>[</code> has a method for class <code>"table"</code>.
+</p>
+</li>
+<li><p> It is now possible (again) to <code>replayPlot()</code> a
+display list snapshot that was created by <code>recordPlot()</code>
+in a different <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> session.
+</p>
+<p>It is still not a good idea to use snapshots as a persistent
+storage format for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> plots, but it is now not completely silly to
+use a snapshot as a format for transferring an R plot between two
+R sessions.
+</p>
+<p>The underlying changes mean that packages providing graphics
+devices (e.g., <a href="https://CRAN.R-project.org/package=Cairo"><span class="pkg">Cairo</span></a>, <a href="https://CRAN.R-project.org/package=RSvgDevice"><span class="pkg">RSvgDevice</span></a>,
+<a href="https://CRAN.R-project.org/package=cairoDevice"><span class="pkg">cairoDevice</span></a>, <a href="https://CRAN.R-project.org/package=tikzDevice"><span class="pkg">tikzDevice</span></a>) will need to be
+reinstalled.
+</p>
+<p>Code for restoring snapshots was contributed by Jeroen Ooms
+and JJ Allaire.
+</p>
+<p>Some testing code is available at
+<a href="https://github.com/pmur002/R-display-list">https://github.com/pmur002/R-display-list</a>.
+</p>
+</li>
+<li> <p><code>tools::undoc(dir = D)</code> and <code>codoc(dir = D)</code> now
+also work when <code>D</code> is a directory whose <code>normalizePath()</code>ed
+version does not end in the package name, e.g. from a symlink.
+</p>
+</li>
+<li> <p><code>abbreviate()</code> has more support for multi-byte
+character sets &ndash; it no longer removes bytes within characters and
+knows about Latin vowels with accents.  It is still only
+really suitable for (most) European languages, and still warns on
+non-ASCII input.
+</p>
+<p><code>abbreviate(use.classes = FALSE)</code> is now implemented, and
+that is more suitable for non-European languages.
+</p>
+</li>
+<li> <p><code>match(x, table)</code> is faster (sometimes by an order of
+magnitude) when <code>x</code> is of length one and <code>incomparables</code>
+is unchanged, thanks to Peter Haverty (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16491">PR#16491</a>).
+</p>
+</li>
+<li><p> More consistent, partly not back-compatible behavior of
+<code>NA</code> and <code>NaN</code> coercion to complex numbers, operations
+less often resulting in complex <code>NA</code> (<code>NA_complex_</code>).
+</p>
+</li>
+<li> <p><code>lengths()</code> considers methods for <code>length</code> and
+<code>[[</code> on <code>x</code>, so it should work automatically on any
+objects for which appropriate methods on those generics are
+defined.
+</p>
+</li>
+<li><p> The logic for selecting the default screen device on OS X
+has been simplified: it is now <code>quartz()</code> if that is
+available even if environment variable <span class="env">DISPLAY</span> has been set
+by the user.
+</p>
+<p>The choice can easily be overridden <em>via</em> environment
+variable <span class="env">R_INTERACTIVE_DEVICE</span>.
+</p>
+</li>
+<li><p> On Unix-like platforms which support the <code>getline</code> C
+library function, <code>system(*,intern = TRUE)</code> no longer
+truncates (output) lines longer than 8192 characters, thanks to
+Karl Millar. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16544">PR#16544</a>)
+</p>
+</li>
+<li> <p><code>rank()</code> gains a <code>ties.method = "last"</code> option,
+for convenience (and symmetry).
+</p>
+
+
+</li>
+<li> <p><code>regmatches(invert = NA)</code> can now be used to extract
+both non-matched and matched substrings.
+</p>
+</li>
+<li> <p><code>data.frame()</code> gains argument <code>fix.empty.names</code>;
+<code>as.data.frame.list()</code> gets new <code>cut.names</code>,
+<code>col.names</code> and <code>fix.empty.names</code>.
+</p>
+</li>
+<li> <p><code>plot(x ~ x, *)</code> now warns that it is the same as
+<code>plot(x ~ 1, *)</code>.
+</p>
+</li>
+<li> <p><code>recordPlot()</code> has new arguments <code>load</code> and
+<code>attach</code> to allow package names to be stored as part of a
+recorded plot.  <code>replayPlot()</code> has new argument
+<code>reloadPkgs</code> to load/attach any package names that were
+stored as part of a recorded plot.
+</p>
+</li>
+<li><p> S4 dispatch works within calls to <code>.Internal()</code>. This
+means explicit S4 generics are no longer needed for
+<code>unlist()</code> and <code>as.vector()</code>.
+</p>
+</li>
+<li><p> Only font family names starting with <span class="samp">"Hershey"</span> (and
+not <span class="samp">"Her"</span> as before) are given special treatment by the
+graphics engine.
+</p>
+</li>
+<li><p> S4 values are automatically coerced to vector (<em>via</em>
+<code>as.vector</code>) when subassigned into atomic vectors.
+</p>
+</li>
+<li> <p><code>findInterval()</code> gets a <code>left.open</code> option.
+</p>
+</li>
+<li><p> The version of LAPACK included in the sources has been
+updated to 3.6.0, including those &lsquo;deprecated&rsquo; routines
+which were previously included.  <em>Ca</em> 40 double-complex
+routines have been added at the request of a package maintainer.
+</p>
+<p>As before, the details of what is included are in
+&lsquo;<span class="file">src/modules/lapack/README</span>&rsquo; and this now gives information on
+earlier additions.
+</p>
+</li>
+<li> <p><code>tapply()</code> has been made considerably more efficient
+without changing functionality, thanks to proposals from Peter
+Haverty and Suharto Anggono.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16640">PR#16640</a>)
+</p>
+</li>
+<li> <p><code>match.arg(arg)</code> (the one-argument case) is faster; so
+is <code>sort.int()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16640">PR#16640</a>)
+</p>
+</li>
+<li><p> The <code>format</code> method for <code>object_size</code> objects now
+also accepts &ldquo;binary&rdquo; units such as <code>"KiB"</code> and e.g.,
+<code>"Tb"</code>.  (Partly from <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16649">PR#16649</a>.)
+</p>
+</li>
+<li><p> Profiling now records calls of the form <code>foo::bar</code> and
+some similar cases directly rather than as calls to
+<code>&lt;Anonymous&gt;</code>.  Contributed by Winston Chang.
+</p>
+</li>
+<li><p> New string utilities <code>startsWith(x, prefix)</code> and
+<code>endsWith(x, suffix)</code>.  Also provide speedups for some
+<code>grepl("^...",*)</code> uses (related to proposals in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16490">PR#16490</a>).
+</p>
+</li>
+<li><p> Reference class finalizers run at exit, as well as on
+garbage collection.
+</p>
+</li>
+<li><p> Avoid <span class="pkg">parallel</span> dependency on <span class="pkg">stats</span> for port
+choice and random number seeds.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16668">PR#16668</a>)
+</p>
+</li>
+<li><p> The radix sort algorithm and implementation from
+<a href="https://CRAN.R-project.org/package=data.table"><span class="pkg">data.table</span></a> (<code>forder</code>) replaces the previous radix
+(counting) sort and adds a new method for <code>order()</code>.
+Contributed by Matt Dowle and Arun Srinivasan, the new algorithm
+supports logical, integer (even with large values), real, and
+character vectors.  It outperforms all other methods, but there
+are some caveats (see <code>?sort</code>).
+</p>
+</li>
+<li><p> The <code>order()</code> function gains a <code>method</code> argument
+for choosing between <code>"shell"</code> and <code>"radix"</code>.
+</p>
+</li>
+<li><p> New function <code>grouping()</code> returns a permutation that
+stably rearranges data so that identical values are adjacent.  The
+return value includes extra partitioning information on the
+groups.  The implementation came included with the new radix sort.
+</p>
+</li>
+<li> <p><code>rhyper(nn, m, n, k)</code> no longer returns <code>NA</code> when
+one of the three parameters exceeds the maximal integer.
+</p>
+</li>
+<li> <p><code>switch()</code> now warns when no alternatives are provided.
+</p>
+</li>
+<li> <p><code>parallel::detectCores()</code> now has default <code>logical
+	= TRUE</code> on all platforms &ndash; as this was the default on Windows,
+this change only affects Sparc Solaris.
+</p>
+<p>Option <code>logical = FALSE</code> is now supported on Linux and recent
+versions of OS X (for the latter, thanks to a suggestion of Kyaw
+Sint).
+</p>
+</li>
+<li> <p><code>hist()</code> for <code>"Date"</code> or <code>"POSIXt"</code> objects
+would sometimes give misleading labels on the breaks, as they
+were set to the day before the start of the period being
+displayed.  The display format has been changed, and the shift of the
+start day has been made conditional on <code>right = TRUE</code> (the
+default).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16679">PR#16679</a>)
+</p>
+</li>
+<li> <p><span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> now uses a new version of the logo (donated to the R
+Foundation by RStudio).  It is defined in &lsquo;<span class="file">.svg</span>&rsquo; format, so
+will resize without unnecessary degradation when displayed on
+HTML pages&mdash;there is also a vector PDF version.  Thanks to
+Dirk Eddelbuettel for producing the corresponding X11 icon.
+</p>
+</li>
+<li><p> New function <code>.traceback()</code> returns the stack trace
+which <code>traceback()</code> prints.
+</p>
+</li>
+<li> <p><code>lengths()</code> dispatches internally.
+</p>
+</li>
+<li> <p><code>dotchart()</code> gains a <code>pt.cex</code> argument to control
+the size of points separately from the size of plot labels.
+Thanks to Michael Friendly and Milan Bouchet-Valat for ideas
+and patches.
+</p>
+</li>
+<li> <p><code>as.roman(ch)</code> now correctly deals with more diverse
+character vectors <code>ch</code>; also arithmetic with the resulting
+roman numbers works in more cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16779">PR#16779</a>)
+</p>
+</li>
+<li> <p><code>prcomp()</code> gains a new option <code>rank.</code> allowing to
+directly aim for less than <code>min(n,p)</code> PC's.  The
+<code>summary()</code> and its <code>print()</code> method have been amended,
+notably for this case.
+</p>
+</li>
+<li> <p><code>gzcon()</code> gains a new option <code>text</code>, which marks
+the connection as text-oriented (so e.g. <code>pushBack()</code>
+works).  It is still always opened in binary mode.
+</p>
+</li>
+<li><p> The <code>import()</code> namespace directive now accepts an
+argument <code>except</code> which names symbols to exclude from the
+imports. The <code>except</code> expression should evaluate to a
+character vector (after substituting symbols for strings). See
+Writing R Extensions.
+</p>
+</li>
+<li><p> New convenience function <code>Rcmd()</code> in package
+<span class="pkg">tools</span> for invoking <code>R CMD</code> tools from within <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.
+</p>
+</li>
+<li><p> New functions <code>makevars_user()</code> and
+<code>makevars_site()</code> in package <span class="pkg">tools</span> to determine the
+location of the user and site specific &lsquo;<span class="file">Makevars</span>&rsquo; files for
+customizing package compilation.
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li> <p><code>R CMD check</code> has a new option
+<span class="option">--ignore-vignettes</span> for use with non-Sweave vignettes
+whose <span class="samp">VignetteBuilder</span> package is not available.
+</p>
+</li>
+<li> <p><code>R CMD check</code> now by default checks code usage
+(<em>via</em> <a href="https://CRAN.R-project.org/package=codetools"><span class="pkg">codetools</span></a>) with only the base package
+attached.  Functions from default packages other than <span class="pkg">base</span>
+which are used in the package code but not imported are reported
+as undefined globals, with a suggested addition to the
+<code>NAMESPACE</code> file.
+</p>
+</li>
+<li> <p><code>R CMD check --as-cran</code> now also checks DOIs in
+package &lsquo;<span class="file">CITATION</span>&rsquo; and Rd files.
+</p>
+</li>
+<li> <p><code>R CMD Rdconv</code> and <code>R CMD Rd2pdf</code> each have
+a new option <span class="option">--RdMacros=pkglist</span> which allows Rd macros
+to be specified before processing.
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> The previously included versions of <code>zlib</code>,
+<code>bzip2</code>, <code>xz</code> and PCRE have been removed, so suitable
+external (usually system) versions are required (see the
+&lsquo;R Installation and Administration&rsquo; manual).
+</p>
+</li>
+<li><p> The unexported and undocumented Windows-only devices
+<code>cairo_bmp()</code>, <code>cairo_png()</code> and <code>cairo_tiff()</code>
+have been removed.  (These devices should be used as
+e.g. <code>bmp(type = "cairo")</code>.)
+</p>
+</li>
+<li><p> (Windows only)  Function <code>setInternet2()</code> has no effect
+and will be removed in due course.  The choice between methods
+<code>"internal"</code> and <code>"wininet"</code> is now made by the
+<code>method</code> arguments of <code>url()</code> and <code>download.file()</code>
+and their defaults can be set <em>via</em> options.  The
+out-of-the-box default remains <code>"wininet"</code> (as it has been
+since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.2).
+</p>
+</li>
+<li> <p><code>[&lt;-</code> with an S4 value into a list currently embeds the
+S4 object into its own list such that the end result is roughly
+equivalent to using <code>[[&lt;-</code>.  That behavior is deprecated.  In
+the future, the S4 value will be coerced to a list with
+<code>as.list()</code>.
+</p>
+</li>
+<li><p> Package <span class="pkg">tools</span>' functions
+<code>package.dependencies()</code>, <code>pkgDepends()</code>, etc are
+deprecated now, mostly in favor of <code>package_dependencies()</code>
+which is both more flexible and efficient.
+</p>
+</li></ul>
+
+
+
+
+<h4>INSTALLATION and INCLUDED SOFTWARE</h4>
+
+
+<ul>
+<li><p> Support for very old versions of <code>valgrind</code>
+(e.g., 3.3.0) has been removed.
+</p>
+</li>
+<li><p> The included <code>libtool</code> script (generated by
+<code>configure</code>) has been updated to version 2.4.6 (from 2.2.6a).
+</p>
+</li>
+<li> <p><code>libcurl</code> version 7.28.0 or later with support for the
+<code>https</code> protocol is required for installation (except on
+Windows).
+</p>
+</li>
+<li><p> BSD networking is now required (except on Windows) and so
+<code>capabilities("http/ftp")</code> is always true.
+</p>
+</li>
+<li> <p><code>configure</code> uses <code>pkg-config</code> for PNG, TIFF
+and JPEG where this is available.  This should work better with
+multiple installs and with those using static libraries.
+</p>
+</li>
+<li><p> The minimum supported version of OS X is 10.6 (&lsquo;Snow
+Leopard&rsquo;): even that has been unsupported by Apple since 2012.
+</p>
+</li>
+<li><p> The <code>configure</code> default on OS X is
+<span class="option">--disable-R-framework</span>: enable this if you intend to
+install under &lsquo;<span class="file">/Library/Frameworks</span>&rsquo; and use with <code>R.app</code>.
+</p>
+</li>
+<li><p> The minimum preferred version of PCRE has since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.0.0
+been 8.32 (released in Nov 2012).  Versions 8.10 to 8.31 are now
+deprecated (with warnings from <code>configure</code>), but will
+still be accepted until <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.4.0.
+</p>
+</li>
+<li> <p><code>configure</code> looks for C functions <code>__cospi</code>,
+<code>__sinpi</code> and <code>__tanpi</code> and uses these if <code>cospi</code>
+<em>etc</em> are not found.  (OS X is the main instance.)
+</p>
+</li>
+<li><p> (Windows) R is now built using <code>gcc</code>
+4.9.3.  This build will require recompilation of at least those packages
+that include C++ code, and possibly others.  A build of R-devel using
+the older toolchain will be temporarily available for comparison
+purposes.
+</p>
+<p>During the transition, the environment variable
+<span class="env">R_COMPILED_BY</span> has been defined to indicate which toolchain
+was used to compile R (and hence, which should be used to compile
+code in packages).  The <code>COMPILED_BY</code> variable described below
+will be a permanent replacement for this.
+</p>
+</li>
+<li><p> (Windows) A <code>make</code> and <code>R CMD config</code> variable
+named <code>COMPILED_BY</code> has been added.  This indicates
+which toolchain was used to compile R (and hence, which should be
+used to compile code in packages).
+</p>
+</li></ul>
+
+
+
+
+<h4>PACKAGE INSTALLATION</h4>
+
+
+<ul>
+<li><p> The <code>make</code> macro <code>AWK</code> which used to be made
+available to files such as &lsquo;<span class="file">src/Makefile</span>&rsquo; is no longer set.
+</p>
+</li></ul>
+
+
+
+
+<h4>C-LEVEL FACILITIES</h4>
+
+
+<ul>
+<li><p> The API call <code>logspace_sum</code> introduced in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0 is
+now remapped as an entry point to <code>Rf_logspace_sum</code>, and its
+first argument has gained a <code>const</code> qualifier.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16470">PR#16470</a>)
+</p>
+<p>Code using it will need to be reinstalled.
+</p>
+<p>Similarly, entry point <code>log1pexp</code> also defined in
+&lsquo;<span class="file">Rmath.h</span>&rsquo; is remapped there to <code>Rf_log1pexp</code>
+</p>
+</li>
+<li> <p><code>R_GE_version</code> has been increased to <code>11</code>.
+</p>
+</li>
+<li><p> New API call <code>R_orderVector1</code>, a faster
+one-argument version of <code>R_orderVector</code>.
+</p>
+</li>
+<li><p> When <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers such as &lsquo;<span class="file">R.h</span>&rsquo; and &lsquo;<span class="file">Rmath.h</span>&rsquo; are
+called from C++ code in packages they include the C++ versions of
+system headers such as &lsquo;<span class="file">&lt;cmath&gt;</span>&rsquo; rather than the legacy
+headers such as &lsquo;<span class="file">&lt;math.h&gt;</span>&rsquo;.  (Headers &lsquo;<span class="file">Rinternals.h</span>&rsquo; and
+&lsquo;<span class="file">Rinterface.h</span>&rsquo; already did, and inclusion of system headers
+can still be circumvented by defining <code>NO_C_HEADERS</code>,
+including as from this version for those two headers.)
+</p>
+<p>The manual has long said that <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers should <b>not</b> be
+included within an <code>extern "C"</code> block, and almost all the
+packages affected by this change were doing so.
+</p>
+</li>
+<li><p> Including header &lsquo;<span class="file">S.h</span>&rsquo; from C++ code would fail on some
+platforms, and so gives a compilation error on all.
+</p>
+</li>
+<li><p> The deprecated header &lsquo;<span class="file">Rdefines.h</span>&rsquo; is now compatible
+with defining <code>R_NO_REMAP</code>.
+</p>
+</li>
+<li><p> The connections interface now includes a function
+<code>R_GetConnection()</code> which allows packages implementing
+connections to convert R <code>connection</code> objects to
+<code>Rconnection</code> handles. Code which previously
+used the low-level R-internal <code>getConnection()</code> entry point
+should switch.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> C-level <code>asChar(x)</code> is fixed for when <code>x</code> is not a
+vector, and it returns <code>"TRUE"</code>/<code>"FALSE"</code> instead of
+<code>"T"</code>/<code>"F"</code> for logical vectors.
+</p>
+</li>
+<li><p> The first arguments of <code>.colSums()</code> etc (with an
+initial dot) are now named <code>x</code> rather than <code>X</code> (matching
+<code>colSums()</code>): thus error messages are corrected.
+</p>
+</li>
+<li><p> A <code>coef()</code> method for class <code>"maov"</code> has been
+added to allow <code>vcov()</code> to work with multivariate
+results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">PR#16380</a>)
+</p>
+</li>
+<li> <p><code>method = "libcurl"</code> connections signal errors rather
+than retrieving HTTP error pages (where the ISP reports the
+error).
+</p>
+</li>
+<li> <p><code>xpdrows.data.frame()</code> was not checking for unique
+row names; in particular, this affected assignment to non-existing
+rows <em>via</em> numerical indexing. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16570">PR#16570</a>)
+</p>
+</li>
+<li> <p><code>tail.matrix()</code> did not work for zero rows matrices,
+and could produce row &ldquo;labels&rdquo; such as <code>"[1e+05,]"</code>.
+</p>
+</li>
+<li><p> Data frames with a column named <code>"stringsAsFactors"</code>
+now format and print correctly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16580">PR#16580</a>)
+</p>
+</li>
+<li> <p><code>cor()</code> is now guaranteed to return a value with
+absolute value less than or equal to 1. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16638">PR#16638</a>)
+</p>
+</li>
+<li><p> Array subsetting now keeps <code>names(dim(.))</code>.
+</p>
+</li>
+<li><p> Blocking socket connection selection recovers more
+gracefully on signal interrupts.
+</p>
+</li>
+<li><p> The <code>data.frame</code> method of <code>rbind()</code> construction
+<code>row.names</code> works better in borderline integer cases, but
+may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16666">PR#16666</a>)
+</p>
+</li>
+<li><p> (X11 only)  <code>getGraphicsEvent()</code> miscoded buttons and
+missed mouse motion events.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16700">PR#16700</a>)
+</p>
+</li>
+<li> <p><code>methods(round)</code> now also lists <code>round.POSIXt</code>.
+</p>
+</li>
+<li> <p><code>tar()</code> now works with the default <code>files = NULL</code>.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16716">PR#16716</a>)
+</p>
+</li>
+<li><p> Jumps to outer contexts, for example in error recovery, now
+make intermediate jumps to contexts where <code>on.exit()</code> actions
+are established instead of trying to run all <code>on.exit()</code>
+actions before jumping to the final target. This unwinds the stack
+gradually, releases resources held on the stack, and significantly
+reduces the chance of a segfault when running out of C stack
+space. Error handlers established using
+<code>withCallingHandlers()</code> and <code>options("error")</code>
+specifications are ignored when handling a C stack overflow error
+as attempting one of these would trigger a cascade of C stack
+overflow errors.  (These changes resolve <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16753">PR#16753</a>.)
+</p>
+</li>
+<li><p> The spacing could be wrong when printing a complex array.
+(Report and patch by Lukas Stadler.)
+</p>
+</li>
+<li> <p><code>pretty(d, n, min.n, *)</code> for date-time objects <code>d</code>
+works again in border cases with large <code>min.n</code>, returns a
+<code>labels</code> attribute also for small-range dates and in such cases
+its returned length is closer to the desired <code>n</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16761">PR#16761</a>)
+Additionally, it finally does cover the range of <code>d</code>, as it
+always claimed.
+</p>
+</li>
+<li> <p><code>tsp(x) &lt;- NULL</code> did not handle correctly objects
+inheriting from both <code>"ts"</code> and <code>"mts"</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16769">PR#16769</a>)
+</p>
+</li>
+<li> <p><code>install.packages()</code> could give false errors when
+<code>options("pkgType")</code> was <code>"binary"</code>.  (Reported by
+Jose Claudio Faria.)
+</p>
+</li>
+<li><p> A bug fix in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.0.2 fixed problems with <code>locator()</code>
+in X11, but introduced problems in Windows.  Now both should be
+fixed.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15700">PR#15700</a>)
+</p>
+</li>
+<li> <p><code>download.file()</code> with <code>method = "wininet"</code>
+incorrectly warned of download file length difference when
+reported length was unknown. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16805">PR#16805</a>)
+</p>
+</li>
+<li> <p><code>diag(NULL, 1)</code> crashed because of missed type
+checking.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16853">PR#16853</a>)
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.2.5</h3>
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>format.POSIXlt()</code> behaved incorrectly in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.4.
+E.g. the output of
+<code>format(as.POSIXlt(paste0(1940:2000,"-01-01"), tz = "CET"),
+	usetz = TRUE)</code> ended in two <code>"CEST"</code> time formats.
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.2.4</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li> <p><code>install.packages()</code> and related functions now give a
+more informative warning when an attempt is made to install a base
+package.
+</p>
+</li>
+<li> <p><code>summary(x)</code> now prints with less rounding when
+<code>x</code> contains infinite values. (Request of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16620">PR#16620</a>.)
+</p>
+</li>
+<li> <p><code>provideDimnames()</code> gets an optional <code>unique</code> argument.
+</p>
+</li>
+<li> <p><code>shQuote()</code> gains <code>type = "cmd2"</code> for quoting
+in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16636">PR#16636</a>.)
+</p>
+</li>
+<li><p> The <code>data.frame</code> method of <code>rbind()</code> gains an
+optional argument <code>stringsAsFactors</code> (instead of only
+depending on <code>getOption("stringsAsFactors")</code>).
+</p>
+</li>
+<li> <p><code>smooth(x, *)</code> now also works for long vectors.
+</p>
+</li>
+<li> <p><code>tools::texi2dvi()</code> has a workaround for problems with
+the <code>texi2dvi</code> script supplied by <span class="pkg">texinfo 6.1</span>.
+</p>
+<p>It extracts more error messages from the LaTeX logs when in
+emulation mode.
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li> <p><code>R CMD check</code> will leave a log file
+&lsquo;<span class="file">build_vignettes.log</span>&rsquo; from the re-building of vignettes in
+the &lsquo;<span class="file">.Rcheck</span>&rsquo; directory if there is a problem, and always if
+environment variable <span class="env">_R_CHECK_ALWAYS_LOG_VIGNETTE_OUTPUT_</span> is
+set to a true value.
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> Use of <span class="samp">SUPPORT_OPENMP</span> from header &lsquo;<span class="file">Rconfig.h</span>&rsquo; is
+deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</span>.
+</p>
+<p>(This has been the recommendation in the manual for a while now.)
+</p>
+</li>
+<li><p> The <code>make</code> macro <code>AWK</code> which is long unused by
+<span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> itself but recorded in file &lsquo;<span class="file">etc/Makeconf</span>&rsquo; is deprecated
+and will be removed in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0.
+</p>
+</li>
+<li><p> The C header file &lsquo;<span class="file">S.h</span>&rsquo; is no longer documented: its
+use should be replaced by &lsquo;<span class="file">R.h</span>&rsquo;.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>kmeans(x, centers = &lt;1-row&gt;)</code> now works. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16623">PR#16623</a>)
+</p>
+</li>
+<li> <p><code>Vectorize()</code> now checks for clashes in argument names.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16577">PR#16577</a>)
+</p>
+</li>
+<li> <p><code>file.copy(overwrite = FALSE)</code> would signal a successful
+copy when none had taken place.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16576">PR#16576</a>)
+</p>
+</li>
+<li> <p><code>ngettext()</code> now uses the same default domain as
+<code>gettext()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=14605">PR#14605</a>)
+</p>
+</li>
+<li> <p><code>array(.., dimnames = *)</code> now warns about
+non-<code>list</code> dimnames and, from <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0, will signal the same
+error for invalid dimnames as <code>matrix()</code> has always done.
+</p>
+</li>
+<li> <p><code>addmargins()</code> now adds dimnames for the extended
+margins in all cases, as always documented.
+</p>
+</li>
+<li> <p><code>heatmap()</code> evaluated its <code>add.expr</code> argument
+in the wrong environment.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16583">PR#16583</a>)
+</p>
+</li>
+<li> <p><code>require()</code> etc now give the correct entry of
+<code>lib.loc</code> in the warning about an old version of a package
+masking a newer required one.
+</p>
+</li>
+<li><p> The internal deparser did not add parentheses when
+necessary,  e.g. before <code>[]</code> or <code>[[]]</code>.  (Reported by
+Lukas Stadler; additional fixes included as well).
+</p>
+</li>
+<li> <p><code>as.data.frame.vector(*, row.names=*)</code> no longer
+produces &lsquo;corrupted&rsquo; data frames from row names of incorrect
+length, but rather warns about them.  This will become an error.
+</p>
+</li>
+<li> <p><code>url</code> connections with <code>method = "libcurl"</code> are
+destroyed properly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16681">PR#16681</a>)
+</p>
+</li>
+<li> <p><code>withCallingHandler()</code> now (again) handles warnings
+even during S4 generic's argument evaluation.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16111">PR#16111</a>)
+</p>
+</li>
+<li> <p><code>deparse(..., control = "quoteExpressions")</code>
+incorrectly quoted empty expressions.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16686">PR#16686</a>)
+</p>
+</li>
+<li> <p><code>format()</code>ting datetime objects (<code>"POSIX[cl]?t"</code>)
+could segfault or recycle wrongly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16685">PR#16685</a>)
+</p>
+</li>
+<li> <p><code>plot.ts(&lt;matrix&gt;, las = 1)</code> now does use <code>las</code>.
+</p>
+</li>
+<li> <p><code>saveRDS(*, compress = "gzip")</code> now works as
+documented.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16653">PR#16653</a>)
+</p>
+</li>
+<li><p> (Windows only) The <code>Rgui</code> front end did not
+always initialize the console properly, and could cause
+<span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> to crash.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16698">PR#16698</a>)
+</p>
+</li>
+<li> <p><code>dummy.coef.lm()</code> now works in more cases, thanks to a
+proposal by Werner Stahel (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>).  In addition, it now works
+for multivariate linear models (<code>"mlm"</code>, <code>manova</code>)
+thanks to a proposal by Daniel Wollschlaeger.
+</p>
+</li>
+<li><p> The <code>as.hclust()</code> method for <code>"dendrogram"</code>s
+failed often when there were ties in the heights.
+</p>
+</li>
+<li> <p><code>reorder()</code> and <code>midcache.dendrogram()</code> now are
+non-recursive and hence applicable to somewhat deeply nested
+dendrograms, thanks to a proposal by Suharto Anggono in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16424">PR#16424</a>.
+</p>
+</li>
+<li> <p><code>cor.test()</code> now calculates very small p values
+more accurately (affecting the result only in extreme not
+statistically relevant cases).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16704">PR#16704</a>)
+</p>
+</li>
+<li> <p><code>smooth(*, do.ends=TRUE)</code> did not always work correctly
+in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> versions between 3.0.0 and 3.2.3.
+</p>
+</li>
+<li> <p><code>pretty(D)</code> for date-time objects <code>D</code> now also
+works well if <code>range(D)</code> is (much) smaller than a second.  In
+the case of only one unique value in <code>D</code>, the pretty range
+now is more symmetric around that value than previously.
+<br />
+Similarly, <code>pretty(dt)</code> no longer returns a length 5 vector
+with duplicated entries for <code>Date</code> objects <code>dt</code> which
+span only a few days.
+</p>
+</li>
+<li><p> The figures in help pages such as <code>?points</code> were
+accidentally damaged, and did not appear in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.3.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16708">PR#16708</a>)
+</p>
+</li>
+<li> <p><code>available.packages()</code> sometimes deleted the wrong
+file when cleaning up temporary files.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16712">PR#16712</a>)
+</p>
+</li>
+<li><p> The <code>X11()</code> device sometimes froze on Red Hat
+Enterprise Linux 6. It now waits for <code>MapNotify</code> events
+instead of <code>Expose</code> events, thanks to Siteshwar
+Vashisht. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>)
+</p>
+</li>
+<li> <p><code>[dpqr]nbinom(*, size=Inf, mu=.)</code> now works as limit
+case, for &lsquo;dpq&rsquo; as the Poisson.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16727">PR#16727</a>)<br />
+<code>pnbinom()</code> no longer loops infinitely in border cases.
+</p>
+</li>
+<li> <p><code>approxfun(*, method="constant")</code> and hence <code>ecdf()</code>
+which calls the former now correctly &ldquo;predict&rdquo; <code>NaN</code>
+values as <code>NaN</code>.
+</p>
+</li>
+<li> <p><code>summary.data.frame()</code> now displays <code>NA</code>s in
+<code>Date</code> columns in all cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16709">PR#16709</a>)
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.2.3</h3>
 
 
 
@@ -259,7 +4154,7 @@ introduced when fixing <a href="https://bugs.R-project.org/bugzilla3/show_bug.cg
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.2</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.2.2</h3>
 
 
 
@@ -448,7 +4343,7 @@ environment.
 returns class <code>"poly"</code> just like <code>poly()</code> which gets a
 new <code>simple=FALSE</code> option.  They now lead to correct
 <code>predict()</code>ions, e.g., on subsets of the original data.
-
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16239">PR#16239</a>)
 </p>
 </li>
 <li> <p><code>rhyper(nn, &lt;large&gt;)</code> now works correctly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16489">PR#16489</a>)
@@ -476,7 +4371,7 @@ found in the cache more than once.
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.1</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.2.1</h3>
 
 
 
@@ -638,7 +4533,7 @@ a locale change would result in <code>NA</code>.
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.0</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.2.0</h3>
 
 
 
@@ -1411,7 +5306,7 @@ in this case).
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.3</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.1.3</h3>
 
 
 
@@ -1690,7 +5585,7 @@ required in such URLs.
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.2</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.1.2</h3>
 
 
 
@@ -1899,7 +5794,7 @@ containing arguments that were supplied as missing, e.g.
 </li>
 <li> <p><code>as.environment(list())</code> now works, and
 <code>as.list()</code> of such an environment is now the same as
-<code>list()</code>.
+<code>list()</code>. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15926">PR#15926</a>)
 </p>
 </li>
 <li><p> Several <span class="pkg">tcltk</span> functions failed when run in unusual
@@ -1910,9 +5805,9 @@ environments. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=159
 </p>
 </li>
 <li> <p><code>merge(&lt;dendrogram&gt;, ..)</code> now works correctly for two
-&lsquo;independent&rsquo; dendrograms (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15648">PR#15648</a>), and still compatibly via
-<code>adjust = "auto"</code> e.g. for two branches of an existing
-dendrogram.
+&lsquo;independent&rsquo; dendrograms (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15648">PR#15648</a>), and still compatibly
+<em>via</em> <code>adjust = "auto"</code> e.g. for two branches of an
+existing dendrogram.
 </p>
 </li>
 <li><p> The <code>plot</code> method for <code>"hclust"</code> objects gets an
@@ -1946,7 +5841,7 @@ to few breaks when some are very large. (<a href="https://bugs.R-project.org/bug
 </li>
 <li> <p><code>sub()</code> and <code>gsub()</code> did not handle regular
 expressions like <code>"\s{2,}"</code> properly if the text
-contained <code>NA</code> or non-ascii elements in a UTF-8
+contained <code>NA</code> or non-ASCII elements in a UTF-8
 locale.  Part of this was due to a bug in the TRE library.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16009">PR#16009</a>)
 </p>
@@ -1980,7 +5875,8 @@ possible will be supported in future versions of <span style="font-family: Couri
 </li>
 <li><p> Work around a bug in OS X Yosemite where key environment
 variables may be duplicated causing issues in subprocesses. The
-duplicates are now removed on R startup (via Rprofile). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16042">PR#16042</a>)
+duplicates are now removed on <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> startup (<em>via</em>
+Rprofile). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16042">PR#16042</a>)
 </p>
 </li>
 <li><p> Adjust X11 auto-launch detection in DISPLAY on OS X to
@@ -1991,7 +5887,7 @@ recognize latest XQuartz.
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.1</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.1.1</h3>
 
 
 
@@ -2317,7 +6213,7 @@ one in pqR.)
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.0</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.1.0</h3>
 
 
 
@@ -2383,7 +6279,7 @@ otherwise only names, dims and dimnames are.
 </p>
 </li>
 <li> <p><code>colorRamp()</code> and <code>colorRampPalette()</code> now allow
-non-opaque colours and a ramp in opacity via the new argument
+non-opaque colours and a ramp in opacity <em>via</em> the new argument
 <code>alpha = TRUE</code>.  (Suggested by Alberto Krone-Martins, but
 optionally as there are existing uses which expect only RGB values.)
 
@@ -3106,7 +7002,7 @@ graphics before it was set.
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.0.3</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.0.3</h3>
 
 
 
@@ -3482,7 +7378,7 @@ values with the <code>"constant"</code> method. (<a href="https://bugs.R-project
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.0.2</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.0.2</h3>
 
 
 
@@ -3519,8 +7415,8 @@ or factors with 100,000 levels, the latter as in <a href="https://bugs.R-project
 not integer codes (suggested by Bryan Hanson).
 </p>
 </li>
-<li> <p><code>tail(warnings())</code> now works, via the new <code>`[`</code>
-method.
+<li> <p><code>tail(warnings())</code> now works, <em>via</em> the new
+<code>`[`</code> method.
 </p>
 </li>
 <li><p> There is now support for the LaTeX style file &lsquo;<span class="file">zi4.sty</span>&rsquo;
@@ -3569,8 +7465,8 @@ error.  (Request of Reijo Sund.)
 </li>
 <li><p> Methods invoked by <code>NextMethod()</code> had a different
 dynamic parent to the generic. This was causing trouble where S3
-methods invoked via lazy evaluation could lose track of their
-generic.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15267">PR#15267</a>)
+methods invoked <em>via</em> lazy evaluation could lose track of
+their generic.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15267">PR#15267</a>)
 </p>
 </li>
 <li><p> Code for the negative binomial distribution now treats the case
@@ -4076,8 +7972,9 @@ token.
 zero-length strings from the command line arguments. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15406">PR#15406</a>)
 </p>
 </li>
-<li><p> Errors in the encoding specified on the command line via
-<code>--encoding=foo</code> were not handled properly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15405">PR#15405</a>)
+<li><p> Errors in the encoding specified on the command line
+<em>via</em> <code>--encoding=foo</code> were not handled properly.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15405">PR#15405</a>)
 </p>
 </li>
 <li><p> If <code>x</code> is a symbol, <code>is.vector(x, "name")</code> now
@@ -4154,7 +8051,7 @@ was not respected in some locales. (<a href="https://bugs.R-project.org/bugzilla
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.0.1</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.0.1</h3>
 
 
 
@@ -4385,7 +8282,7 @@ instead of failing.
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.0.0</h3>
+<h3><img src="../help/figures/../../html/Rlogo.svg" class="toplogo" alt="[R logo]" /> CHANGES IN R 3.0.0</h3>
 
 
 
@@ -4836,8 +8733,8 @@ during a plot.
 <code>keep.source</code>, which defaults to <code>options("keep.source")</code>.
 </p>
 </li>
-<li><p> Profiling via <code>Rprof()</code> now optionally records information
-at the statement level, not just the function level.
+<li><p> Profiling <em>via</em> <code>Rprof()</code> now optionally records
+information at the statement level, not just the function level.
 </p>
 </li>
 <li><p> The <code>Rprof()</code> function now quotes function names in
@@ -4845,7 +8742,7 @@ in its output file on Windows, to be consistent with the quoting
 in Unix.
 </p>
 </li>
-<li><p> Profiling via <code>Rprof()</code> now optionally records
+<li><p> Profiling <em>via</em> <code>Rprof()</code> now optionally records
 information about time spent in GC.
 </p>
 </li>
@@ -5384,7 +9281,7 @@ directly (with the exception of fixing libraries that break
 affinity settings like OpenBLAS) &ndash; the function is rather
 intended to support affinity control in high-level parallel
 functions.  In the future, <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> may supplement lack of affinity
-control in the OS by its own bookkeeping via <code>mcaffinity()</code>
+control in the OS by its own bookkeeping <em>via</em> <code>mcaffinity()</code>
 related to processes and threads it spawns.
 </p>
 </li>
@@ -5633,7 +9530,7 @@ reentrant, leading to errors in rare circumstances such as a
 garbage collection triggering a recursive call.
 </p>
 </li>
-<li><p> Field assignments in reference class objects via
+<li><p> Field assignments in reference class objects <em>via</em>
 <code>$&lt;-</code> were not being checked
 because the magic incantation to turn methods on for that
 primitive operator had been inadvertently omitted. 

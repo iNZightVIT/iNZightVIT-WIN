@@ -18,9 +18,9 @@ Description:
 License: LGPL-3
 Suggests: testthat (>= 0.8.1)
 LazyLoad: yes
-Packaged: 2014-08-02 18:12:19 UTC; Jelmer
+Packaged: 2017-08-22 10:59:12 UTC; ripley
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2014-08-04 15:35:43
-Built: R 3.2.3; x86_64-w64-mingw32; 2016-01-28 01:36:04 UTC; windows
+Date/Publication: 2017-08-22 13:02:45
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-08-15 01:41:44 UTC; windows
 Archs: i386, x64

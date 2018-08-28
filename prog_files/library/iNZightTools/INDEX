@@ -1,15 +1,9 @@
 aggregateData           Aggregate data by categorical variables
-changeColumnTypes       Changes the datatype of columns of dataframe to
-                        the specified datatypes.
-changeToDatatype        Changes the datatype of a column of a dataframe
-                        to the specified datatype.
 code                    Get Data's Code
 collapseLevels          Collapse data by values of a categorical
                         variable
 combine.levels          Combine the levels of factor variables.
 combineCatVars          Combine categorical variables into one
-convertSpssDetails      Converts the data type of columns specified
-                        from numeric to date.
 convertToCat            Convert numeric variables to categorical
 convertToMetadata       Takes an object (list or a dataframe) and
                         returns its metadata.
@@ -32,28 +26,25 @@ get.form.class.interval
                         data.frame.
 iNZexport               iNZight Metadata Writer
 iNZightTools            Tools for data processing with iNZight
-iNZread                 iNZight Import Data
-isColumnTypesCorrect    Checks if the entered column types are allowed
-                        or not.
 isMetadataAvailable     Reads a file and checks if metadata is
                         available.
-isPreview               Checks if the complete file was read or not.
+is_preview              Is Preview
 makeDatatypeChar        Converts the column datatypes to a single word
                         or string which can be passed to
                         readr::read_csv as an argument.
-makeLocale              Creates a locale that cane be used with
-                        functions from readr package.
 missingToCat            Convert missing values to categorical variables
 newdevice               Open a New Graphics Device
 rankVars                Rank the data of a numeric variables
 readMetadata            iNZight Metadata Reader
+read_meta               Read CSV with iNZight metadata
 renameLevels            Rename the levels of a categorical variable
 renameVars              Rename column names
 reorderLevels           Reorder a categorical
 sample.data             Takes a sample of rows from a data.frame
 search.name             Searches a list recursivly for a name and
                         returns the value associated with the name
+smart_read              iNZight Smart Read
 sortVars                Sort data by variables
 stackVars               Stack variables
-standardizeVars         Transform data of a numeric variable
+standardizeVars         Standardize the data of a numeric variable
 transformVar            Transform data of a numeric variable

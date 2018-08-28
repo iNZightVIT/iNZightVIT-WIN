@@ -26,3 +26,4 @@ sha1.numeric	sha1
 sha1.pairlist	sha1
 sha1.POSIXct	sha1
 sha1.POSIXlt	sha1
+sha1.raw	sha1

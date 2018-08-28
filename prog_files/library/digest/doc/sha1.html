@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,7 +12,7 @@
 
 <meta name="author" content="Thierry Onkelinx and Dirk Eddelbuettel" />
 
-<meta name="date" content="2017-01-26" />
+<meta name="date" content="2018-01-28" />
 
 <title>Calculating SHA1 hashes with digest() and sha1()</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Calculating SHA1 hashes with digest() and sha1()</h1>
 <h4 class="author"><em>Thierry Onkelinx and Dirk Eddelbuettel</em></h4>
-<h4 class="date"><em>2017-01-26</em></h4>
+<h4 class="date"><em>2018-01-28</em></h4>
 
 
 
@@ -86,16 +86,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># FAQ 7.31</span>
 a0 &lt;-<span class="st"> </span><span class="dv">2</span>
 b &lt;-<span class="st"> </span><span class="kw">sqrt</span>(a0)
-a1 &lt;-<span class="st"> </span>b ^<span class="st"> </span><span class="dv">2</span>
+a1 &lt;-<span class="st"> </span>b <span class="op">^</span><span class="st"> </span><span class="dv">2</span>
 <span class="kw">identical</span>(a0, a1)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a0 -<span class="st"> </span>a1</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a0 <span class="op">-</span><span class="st"> </span>a1</code></pre></div>
 <pre><code>## [1] -4.440892e-16</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(a0, a1)
 <span class="co"># hexadecimal representation</span>
 <span class="kw">sprintf</span>(<span class="st">&quot;%a&quot;</span>, a)</code></pre></div>
 <pre><code>## [1] &quot;0x1p+1&quot;               &quot;0x1.0000000000001p+1&quot;</code></pre>
-<p>Although the difference is small, any difference will result in different hash when using the <code>digest()</code> function. However, the<code>sha1()</code> function tackles this problem by using the hexadecimal representation of the numbers and truncates that representation to a certain number of digits prior to calculating the hash function.</p>
+<p>Although the difference is small, any difference will result in different hash when using the <code>digest()</code> function. However, the <code>sha1()</code> function tackles this problem by using the hexadecimal representation of the numbers and truncates that representation to a certain number of digits prior to calculating the hash function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(digest)
 <span class="co"># different hashes with digest</span>
 <span class="kw">sapply</span>(a, digest, <span class="dt">algo =</span> <span class="st">&quot;sha1&quot;</span>)</code></pre></div>
@@ -132,41 +132,41 @@ a1 &lt;-<span class="st"> </span>b ^<span class="st"> </span><span class="dv">2<
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">command</th>
-<th align="left">32-bit</th>
-<th align="left">64-bit</th>
+<th>command</th>
+<th>32-bit</th>
+<th>64-bit</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>print(pi ^ 11, 22)</code></td>
-<td align="left"><code>294204.01797389047</code></td>
-<td align="left"><code>294204.01797389053</code></td>
+<td><code>print(pi ^ 11, 22)</code></td>
+<td><code>294204.01797389047</code></td>
+<td><code>294204.01797389053</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code>sprintf(&quot;%a&quot;, pi ^ 11)</code></td>
-<td align="left"><code>&quot;0x1.1f4f01267bf5fp+18&quot;</code></td>
-<td align="left"><code>&quot;0x1.1f4f01267bf6p+18&quot;</code></td>
+<td><code>sprintf(&quot;%a&quot;, pi ^ 11)</code></td>
+<td><code>&quot;0x1.1f4f01267bf5fp+18&quot;</code></td>
+<td><code>&quot;0x1.1f4f01267bf6p+18&quot;</code></td>
 </tr>
 <tr class="odd">
-<td align="left"><code>digest(pi ^ 11, algo = &quot;sha1&quot;)</code></td>
-<td align="left"><code>&quot;c5efc7f167df1bb402b27cf9b405d7cebfba339a&quot;</code></td>
-<td align="left"><code>&quot;b61f6fea5e2a7952692cefe8bba86a00af3de713&quot;</code></td>
+<td><code>digest(pi ^ 11, algo = &quot;sha1&quot;)</code></td>
+<td><code>&quot;c5efc7f167df1bb402b27cf9b405d7cebfba339a&quot;</code></td>
+<td><code>&quot;b61f6fea5e2a7952692cefe8bba86a00af3de713&quot;</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code>sha1(pi ^ 11, digits = 14)</code></td>
-<td align="left"><code>&quot;5c7740500b8f78ec2354ea6af58ea69634d9b7b1&quot;</code></td>
-<td align="left"><code>&quot;4f3e296b9922a7ddece2183b1478d0685609a359&quot;</code></td>
+<td><code>sha1(pi ^ 11, digits = 14)</code></td>
+<td><code>&quot;5c7740500b8f78ec2354ea6af58ea69634d9b7b1&quot;</code></td>
+<td><code>&quot;4f3e296b9922a7ddece2183b1478d0685609a359&quot;</code></td>
 </tr>
 <tr class="odd">
-<td align="left"><code>sha1(pi ^ 11, digits = 13)</code></td>
-<td align="left"><code>&quot;372289f87396b0877ccb4790cf40bcb5e658cad7&quot;</code></td>
-<td align="left"><code>&quot;372289f87396b0877ccb4790cf40bcb5e658cad7&quot;</code></td>
+<td><code>sha1(pi ^ 11, digits = 13)</code></td>
+<td><code>&quot;372289f87396b0877ccb4790cf40bcb5e658cad7&quot;</code></td>
+<td><code>&quot;372289f87396b0877ccb4790cf40bcb5e658cad7&quot;</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code>sha1(pi ^ 11, digits = 10)</code></td>
-<td align="left"><code>&quot;c05965af43f9566bfb5622f335817f674abfc9e4&quot;</code></td>
-<td align="left"><code>&quot;c05965af43f9566bfb5622f335817f674abfc9e4&quot;</code></td>
+<td><code>sha1(pi ^ 11, digits = 10)</code></td>
+<td><code>&quot;c05965af43f9566bfb5622f335817f674abfc9e4&quot;</code></td>
+<td><code>&quot;c05965af43f9566bfb5622f335817f674abfc9e4&quot;</code></td>
 </tr>
 </tbody>
 </table>
@@ -202,7 +202,7 @@ a1 &lt;-<span class="st"> </span>b ^<span class="st"> </span><span class="dv">2<
 <h3>summary.lm</h3>
 <p>Let’s illustrate this using the summary of a simple linear regression. Suppose that we want a hash that takes into account the coefficients, their standard error and sigma.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># taken from the help file of lm.influence</span>
-lm_SR &lt;-<span class="st"> </span><span class="kw">lm</span>(sr ~<span class="st"> </span>pop15 +<span class="st"> </span>pop75 +<span class="st"> </span>dpi +<span class="st"> </span>ddpi, <span class="dt">data =</span> LifeCycleSavings)
+lm_SR &lt;-<span class="st"> </span><span class="kw">lm</span>(sr <span class="op">~</span><span class="st"> </span>pop15 <span class="op">+</span><span class="st"> </span>pop75 <span class="op">+</span><span class="st"> </span>dpi <span class="op">+</span><span class="st"> </span>ddpi, <span class="dt">data =</span> LifeCycleSavings)
 lm_sum &lt;-<span class="st"> </span><span class="kw">summary</span>(lm_SR)
 <span class="kw">class</span>(lm_sum)</code></pre></div>
 <pre><code>## [1] &quot;summary.lm&quot;</code></pre>
@@ -246,7 +246,7 @@ lm_sum &lt;-<span class="st"> </span><span class="kw">summary</span>(lm_SR)
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># extract the coefficients and their standard error</span>
 coef_sum &lt;-<span class="st"> </span><span class="kw">coef</span>(lm_sum)[, <span class="kw">c</span>(<span class="st">&quot;Estimate&quot;</span>, <span class="st">&quot;Std. Error&quot;</span>)]
 <span class="co"># extract sigma</span>
-sigma &lt;-<span class="st"> </span>lm_sum$sigma
+sigma &lt;-<span class="st"> </span>lm_sum<span class="op">$</span>sigma
 <span class="co"># check the class of each component</span>
 <span class="kw">class</span>(coef_sum)</code></pre></div>
 <pre><code>## [1] &quot;matrix&quot;</code></pre>
@@ -265,17 +265,17 @@ sigma &lt;-<span class="st"> </span>lm_sum$sigma
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># now turn everything into an S3 method</span>
 <span class="co">#   - a function with name &quot;sha1.classname&quot;</span>
 <span class="co">#   - must have the same arguments as sha1()</span>
-sha1.summary.lm &lt;-<span class="st"> </span>function(x, <span class="dt">digits =</span> <span class="dv">4</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>){
+sha1.summary.lm &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">digits =</span> <span class="dv">4</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>){
     coef_sum &lt;-<span class="st"> </span><span class="kw">coef</span>(x)[, <span class="kw">c</span>(<span class="st">&quot;Estimate&quot;</span>, <span class="st">&quot;Std. Error&quot;</span>)]
-    sigma &lt;-<span class="st"> </span>x$sigma
+    sigma &lt;-<span class="st"> </span>x<span class="op">$</span>sigma
     combined &lt;-<span class="st"> </span><span class="kw">list</span>(coef_sum, sigma)
     <span class="kw">sha1</span>(combined, <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall)
 }
 <span class="kw">sha1</span>(lm_sum)</code></pre></div>
 <pre><code>## [1] &quot;fd6b6805780dcf88e11fe05ba4693170e2dfb170&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># try an altered dataset</span>
-LCS2 &lt;-<span class="st"> </span>LifeCycleSavings[<span class="kw">rownames</span>(LifeCycleSavings) !=<span class="st"> &quot;Zambia&quot;</span>, ]
-lm_SR2 &lt;-<span class="st"> </span><span class="kw">lm</span>(sr ~<span class="st"> </span>pop15 +<span class="st"> </span>pop75 +<span class="st"> </span>dpi +<span class="st"> </span>ddpi, <span class="dt">data =</span> LCS2)
+LCS2 &lt;-<span class="st"> </span>LifeCycleSavings[<span class="kw">rownames</span>(LifeCycleSavings) <span class="op">!=</span><span class="st"> &quot;Zambia&quot;</span>, ]
+lm_SR2 &lt;-<span class="st"> </span><span class="kw">lm</span>(sr <span class="op">~</span><span class="st"> </span>pop15 <span class="op">+</span><span class="st"> </span>pop75 <span class="op">+</span><span class="st"> </span>dpi <span class="op">+</span><span class="st"> </span>ddpi, <span class="dt">data =</span> LCS2)
 <span class="kw">sha1</span>(<span class="kw">summary</span>(lm_SR2))</code></pre></div>
 <pre><code>## [1] &quot;0643afd880f6f9c4b2aa935bec91724ba103198e&quot;</code></pre>
 </div>
@@ -347,27 +347,27 @@ lm_SR2 &lt;-<span class="st"> </span><span class="kw">lm</span>(sr ~<span class=
 ##   .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:5] &quot;sr&quot; &quot;pop15&quot; &quot;pop75&quot; &quot;dpi&quot; ...
 ##  - attr(*, &quot;class&quot;)= chr &quot;lm&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># extract the model and the terms</span>
-lm_model &lt;-<span class="st"> </span>lm_SR$model
-lm_terms &lt;-<span class="st"> </span>lm_SR$terms
+lm_model &lt;-<span class="st"> </span>lm_SR<span class="op">$</span>model
+lm_terms &lt;-<span class="st"> </span>lm_SR<span class="op">$</span>terms
 <span class="co"># check their class</span>
 <span class="kw">class</span>(lm_model) <span class="co"># handled by sha1()</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(lm_terms) <span class="co"># not handled by sha1()</span></code></pre></div>
 <pre><code>## [1] &quot;terms&quot;   &quot;formula&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># define a method for formula</span>
-sha1.formula &lt;-<span class="st"> </span>function(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>){
-    <span class="kw">sha1</span>(<span class="kw">as.character</span>(x), <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall)
+sha1.formula &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>, ..., <span class="dt">algo =</span> <span class="st">&quot;sha1&quot;</span>){
+    <span class="kw">sha1</span>(<span class="kw">as.character</span>(x), <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall, <span class="dt">algo =</span> algo)
 }
 <span class="kw">sha1</span>(lm_terms)</code></pre></div>
 <pre><code>## [1] &quot;2737d209720aa7d1c0555050ad06ebe89f3850cd&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sha1</span>(lm_model)</code></pre></div>
 <pre><code>## [1] &quot;b1b32bb6d983e1c515706c33ffef6120d811fe52&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># define a method for lm</span>
-sha1.lm &lt;-<span class="st"> </span>function(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>){
-    lm_model &lt;-<span class="st"> </span>x$model
-    lm_terms &lt;-<span class="st"> </span>x$terms
+sha1.lm &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">digits =</span> <span class="dv">14</span>, <span class="dt">zapsmall =</span> <span class="dv">7</span>, ..., <span class="dt">algo =</span> <span class="st">&quot;sha1&quot;</span>){
+    lm_model &lt;-<span class="st"> </span>x<span class="op">$</span>model
+    lm_terms &lt;-<span class="st"> </span>x<span class="op">$</span>terms
     combined &lt;-<span class="st"> </span><span class="kw">list</span>(lm_model, lm_terms)
-    <span class="kw">sha1</span>(combined, <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall)
+    <span class="kw">sha1</span>(combined, <span class="dt">digits =</span> digits, <span class="dt">zapsmall =</span> zapsmall, ..., <span class="dt">algo =</span> algo)
 }
 <span class="kw">sha1</span>(lm_SR)</code></pre></div>
 <pre><code>## [1] &quot;2b03ad0002dc6c3676555b60f3f59781e1f42eb0&quot;</code></pre>
@@ -426,7 +426,7 @@ sha1.lm &lt;-<span class="st"> </span>function(x, <span class="dt">digits =</spa
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

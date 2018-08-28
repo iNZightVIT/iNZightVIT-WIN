@@ -2048,4 +2048,152 @@ if (.runThisTest) {
 
     }
 
+
+    ## 22 April 2017
+    ## trimws -- vector
+    test.sugar.vtrimws <- function() {
+
+        x <- c(
+            "  a b c", "a b c  ", "  a b c  ",
+            "\t\ta b c", "a b c\t\t", "\t\ta b c\t\t",
+            "\r\ra b c", "a b c\r\r", "\r\ra b c\r\r",
+            "\n\na b c", "a b c\n\n", "\n\na b c\n\n",
+            NA, "", " ", "  \t\r\n  ", "\n \t \r "
+        )
+
+        checkEquals(
+            vtrimws(x), trimws(x),
+            "vtrimws / which = 'both'"
+        )
+
+        checkEquals(
+            vtrimws(x, 'l'), trimws(x, 'l'),
+            "vtrimws / which = 'left'"
+        )
+
+        checkEquals(
+            vtrimws(x, 'r'), trimws(x, 'r'),
+            "vtrimws / which = 'right'"
+        )
+
+        checkException(
+            vtrimws(x, "invalid"),
+            msg = "vtrimws -- bad `which` argument"
+        )
+
+    }
+
+
+    ## trimws -- matrix
+    test.sugar.mtrimws <- function() {
+
+        x <- c(
+            "  a b c", "a b c  ", "  a b c  ",
+            "\t\ta b c", "a b c\t\t", "\t\ta b c\t\t",
+            "\r\ra b c", "a b c\r\r", "\r\ra b c\r\r",
+            "\n\na b c", "a b c\n\n", "\n\na b c\n\n",
+            NA, "", " ", "  \t\r\n  ", "\n \t \r "
+        )
+        x <- matrix(x, nrow = length(x), ncol = 4)
+
+        checkEquals(
+            mtrimws(x), trimws(x),
+            "mtrimws / which = 'both'"
+        )
+
+        checkEquals(
+            mtrimws(x, 'l'), trimws(x, 'l'),
+            "mtrimws / which = 'left'"
+        )
+
+        checkEquals(
+            mtrimws(x, 'r'), trimws(x, 'r'),
+            "mtrimws / which = 'right'"
+        )
+
+        checkException(
+            mtrimws(x, "invalid"),
+            msg = "mtrimws -- bad `which` argument"
+        )
+
+    }
+
+
+    ## trimws -- String
+    test.sugar.strimws <- function() {
+
+        x <- c(
+            "  a b c", "a b c  ", "  a b c  ",
+            "\t\ta b c", "a b c\t\t", "\t\ta b c\t\t",
+            "\r\ra b c", "a b c\r\r", "\r\ra b c\r\r",
+            "\n\na b c", "a b c\n\n", "\n\na b c\n\n",
+            NA, "", " ", "  \t\r\n  ", "\n \t \r "
+        )
+
+        lhs <- vapply(
+            x, strimws, character(1),
+            USE.NAMES = FALSE
+        )
+        rhs <- vapply(
+            x, trimws, character(1),
+            USE.NAMES = FALSE
+        )
+
+        checkEquals(
+            lhs, rhs,
+            "strimws / which = 'both'"
+        )
+
+        lhs <- vapply(
+            x, strimws, character(1),
+            which = 'l', USE.NAMES = FALSE
+        )
+        rhs <- vapply(
+            x, trimws, character(1),
+            which = 'l', USE.NAMES = FALSE
+        )
+
+        checkEquals(
+            lhs, rhs,
+            "strimws / which = 'left'"
+        )
+
+        lhs <- vapply(
+            x, strimws, character(1),
+            which = 'r', USE.NAMES = FALSE
+        )
+        rhs <- vapply(
+            x, trimws, character(1),
+            which = 'r', USE.NAMES = FALSE
+        )
+
+        checkEquals(
+            lhs, rhs,
+            "strimws / which = 'right'"
+        )
+
+        checkException(
+            strimws(x[1], "invalid"),
+            msg = "strimws -- bad `which` argument"
+        )
+
+    }
+
+    ## 21 July 2018
+    ## min/max
+    test.sugar.min.max <- function() {
+        # min(empty) gives NA for integer, Inf for numeric (#844)
+        checkTrue(is.na(intmin(integer(0))),    "min(integer(0))")
+        checkEquals(doublemin(numeric(0)), Inf, "min(numeric(0))")
+
+        # max(empty_ gives NA for integer, Inf for numeric (#844)
+        checkTrue(is.na(intmax(integer(0))),     "max(integer(0))")
+        checkEquals(doublemax(numeric(0)), -Inf, "max(numeric(0))")
+
+        # 'normal' values
+        checkEquals(intmin(c(1:10)),        1L,   "min(integer(...))")
+        checkEquals(doublemin(1.0*c(1:10)), 1.0,  "min(numeric(...))")
+        checkEquals(intmax(c(1:10)),        10L,  "min(integer(...))")
+        checkEquals(doublemax(1.0*c(1:10)), 10.0, "min(numeric(...))")
+    }
 }

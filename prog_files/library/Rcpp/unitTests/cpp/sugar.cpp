@@ -1201,3 +1201,44 @@ LogicalMatrix UpperTri(NumericMatrix x, bool diag = false) {
 LogicalMatrix LowerTri(NumericMatrix x, bool diag = false) {
     return lower_tri(x, diag);
 }
+
+
+// 22 April 2017: trimws
+
+// [[Rcpp::export]]
+CharacterVector vtrimws(CharacterVector x, const char* which = "both") {
+    return trimws(x, which);
+}
+
+// [[Rcpp::export]]
+CharacterMatrix mtrimws(CharacterMatrix x, const char* which = "both") {
+    return trimws(x, which);
+}
+
+// [[Rcpp::export]]
+String strimws(String x, const char* which = "both") {
+    return trimws(x, which);
+}
+
+
+// 21 Jul 2018 min/max tests for int and double
+
+// [[Rcpp::export]]
+int intmin(IntegerVector v) {
+    return min(v);
+}
+
+// [[Rcpp::export]]
+int intmax(IntegerVector v) {
+    return max(v);
+}
+
+// [[Rcpp::export]]
+double doublemin(NumericVector v) {
+    return min(v);
+}
+
+// [[Rcpp::export]]
+double doublemax(NumericVector v) {
+    return max(v);
+}

@@ -92,7 +92,7 @@ con &lt;-<span class="st"> </span><span class="kw">dbConnect</span>(drv, <span c
 
 <span class="kw">dbListTables</span>(con)
 <span class="kw">dbListFields</span>(con, <span class="st">&quot;quakes&quot;</span>)
-if(<span class="kw">dbExistsTable</span>(con, <span class="st">&quot;new_results&quot;</span>))
+<span class="cf">if</span>(<span class="kw">dbExistsTable</span>(con, <span class="st">&quot;new_results&quot;</span>))
    <span class="kw">dbRemoveTable</span>(con, <span class="st">&quot;new_results&quot;</span>)
 <span class="kw">dbWriteTable</span>(con, <span class="st">&quot;new_results&quot;</span>, new.output)
 
@@ -103,7 +103,7 @@ res &lt;-<span class="st"> </span><span class="kw">dbSendQuery</span>(con, <span
             <span class="st">&quot;WHERE g.id = e.id and g.mirrortype = 'inside'&quot;</span>,
             <span class="st">&quot;ORDER BY g.diam&quot;</span>))
 out &lt;-<span class="st"> </span><span class="ot">NULL</span>
-while(!<span class="kw">dbHasCompleted</span>(res)){
+<span class="cf">while</span>(<span class="op">!</span><span class="kw">dbHasCompleted</span>(res)){
    chunk &lt;-<span class="st"> </span><span class="kw">fetch</span>(res, <span class="dt">n =</span> <span class="dv">10000</span>)
    out &lt;-<span class="st"> </span><span class="kw">c</span>(out, <span class="kw">doit</span>(chunk))
 }
@@ -175,12 +175,12 @@ while(!<span class="kw">dbHasCompleted</span>(res)){
 </dd>
 </dl>
 <p>In the next few sub-sections we describe in detail each of these classes and their methods.</p>
-<div id="class-dbiobject" class="section level2">
-<h2>Class <code id="sec:DBIObject">DBIObject</code></h2>
+<div id="sec:DBIObject" class="section level2">
+<h2>Class <code>DBIObject</code></h2>
 <p>This class simply groups all DBI classes, and thus all extend it.</p>
 </div>
-<div id="class-dbidriver" class="section level2">
-<h2>Class <code id="sec:DBIDriver">DBIDriver</code></h2>
+<div id="sec:DBIDriver" class="section level2">
+<h2>Class <code>DBIDriver</code></h2>
 <p>This class identifies the database management system. It needs to be extended by individual back-ends (Oracle, PostgreSQL, etc.)</p>
 <p>The DBI provides the generator <code>dbDriver(driverName)</code> which simply invokes the function <code>driverName</code>, which in turn instantiates the corresponding driver object.</p>
 <p>The <code>DBIDriver</code> class defines the following methods:</p>
@@ -218,8 +218,8 @@ while(!<span class="kw">dbHasCompleted</span>(res)){
 </dd>
 </dl>
 </div>
-<div id="class-dbiconnection" class="section level2">
-<h2>Class <code id="sec:DBIConnection">DBIConnection</code></h2>
+<div id="sec:DBIConnection" class="section level2">
+<h2>Class <code>DBIConnection</code></h2>
 <p>This virtual class encapsulates the connection to a DBMS, and it provides access to dynamic queries, result sets, DBMS session management (transactions), etc.</p>
 <p><em>Note:</em> Individual drivers are free to implement single or multiple simultaneous connections.</p>
 <p>The methods defined by the <code>DBIConnection</code> class include:</p>
@@ -300,11 +300,17 @@ while(!<span class="kw">dbHasCompleted</span>(res)){
 <dt><code>dbCallProc(conn, storedProc, ...)</code>(optional):</dt>
 <dd><p>invokes a stored procedure in the DBMS and returns a <code>DBIResult</code> object.</p>
 <p>[Stored procedures are <em>not</em> part of the ANSI SQL-92 standard and vary substantially from one RDBMS to another.]</p>
+<p><strong>Deprecated since 2014:</strong></p>
+<p>The recommended way of calling a stored procedure is now</p>
+<ul>
+<li><code>dbGetQuery</code> if a result set is returned and</li>
+<li><code>dbExecute</code> for data manipulation and other cases that do not return a result set.</li>
+</ul>
 </dd>
 </dl>
 </div>
-<div id="class-dbiresult" class="section level2">
-<h2>Class <code id="sec:DBIResult">DBIResult</code></h2>
+<div id="sec:DBIResult" class="section level2">
+<h2>Class <code>DBIResult</code></h2>
 <p>This virtual class describes the result and state of execution of a DBMS statement (any statement, query or non-query). The result set <code>res</code> keeps track of whether the statement produces output for R/S, how many rows were affected by the operation, how many rows have been fetched (if statement is a query), whether there are more rows to fetch, etc.</p>
 <p><em>Note: Individual drivers are free to allow single or multiple active results per connection.</em></p>
 <p>[Q: Should we distinguish between results that return no data from those that return data?]</p>

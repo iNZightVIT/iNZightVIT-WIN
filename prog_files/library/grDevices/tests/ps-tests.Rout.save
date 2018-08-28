@@ -1,6 +1,6 @@
 
-R version 3.2.3 RC (2015-12-02 r69719) -- "Wooden Christmas-Tree"
-Copyright (C) 2015 The R Foundation for Statistical Computing
+R version 3.5.0 Patched (2018-04-30 r74685) -- "Joy in Playing"
+Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -95,4 +95,4 @@ null device
 > 
 > proc.time()
    user  system elapsed 
-  0.344   0.021   0.354 
+  0.484   0.051   2.277 

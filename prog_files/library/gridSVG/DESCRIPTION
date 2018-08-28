@@ -1,6 +1,6 @@
 Package: gridSVG
 Title: Export 'grid' Graphics as SVG
-Version: 1.5-0
+Version: 1.6-0
 Authors@R: c(person("Paul", "Murrell", role = c("cre", "aut"),
                     email = "paul@stat.auckland.ac.nz"),
              person("Simon", "Potter", role = "aut",
@@ -10,15 +10,14 @@ Description: Functions to export graphics drawn with package grid to SVG
   are not available in standard R graphics, such as hyperlinks, 
   animation, filters, masks, clipping paths, and gradient and pattern fills.
 Depends: R (>= 3.1)
-Imports: grDevices, graphics, utils, methods, grid, RJSONIO, XML
+Imports: grDevices, graphics, utils, methods, grid, jsonlite, XML
 Suggests: lattice
 License: GPL
-NeedsCompilation: yes
-Packaged: 2015-11-16 00:23:00 UTC; pmur002
+NeedsCompilation: no
+Packaged: 2017-10-29 20:49:39 UTC; paul
 Author: Paul Murrell [cre, aut],
   Simon Potter [aut]
 Maintainer: Paul Murrell <paul@stat.auckland.ac.nz>
 Repository: CRAN
-Date/Publication: 2015-11-16 08:20:10
-Built: R 3.2.5; x86_64-w64-mingw32; 2017-04-20 06:37:26 UTC; windows
-Archs: i386, x64
+Date/Publication: 2017-10-29 22:05:59 UTC
+Built: R 3.5.1; ; 2018-08-15 01:55:38 UTC; windows

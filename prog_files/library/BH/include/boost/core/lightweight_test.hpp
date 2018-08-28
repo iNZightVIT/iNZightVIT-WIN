@@ -97,11 +97,11 @@ inline void throw_failed_impl(char const * excep, char const * file, int line, c
 #elif defined(__clang__) && defined(__has_warning)
 # if __has_warning("-Wsign-compare")
 #  pragma clang diagnostic push
-#  pragma clang diagnostic ignored "-Wsign-compare"
+  //#  pragma clang diagnostic ignored "-Wsign-compare"
 # endif
 #elif defined(__GNUC__) && !(defined(__INTEL_COMPILER) || defined(__ICL) || defined(__ICC) || defined(__ECC)) && (__GNUC__ * 100 + __GNUC_MINOR__) >= 406
 # pragma GCC diagnostic push
-# pragma GCC diagnostic ignored "-Wsign-compare"
+  //# pragma GCC diagnostic ignored "-Wsign-compare"
 #endif
 
 // specialize test output for char pointers to avoid printing as cstring
@@ -115,7 +115,7 @@ inline const void* test_output_impl(signed char* v) { return v; }
 template<class T> inline const void* test_output_impl(T volatile* v) { return const_cast<T*>(v); }
 
 #if !defined( BOOST_NO_CXX11_NULLPTR )
-inline const void* test_output_impl(std::nullptr_t v) { return v; }
+inline const void* test_output_impl(std::nullptr_t) { return nullptr; }
 #endif
 
 template<class T, class U> inline void test_eq_impl( char const * expr1, char const * expr2,

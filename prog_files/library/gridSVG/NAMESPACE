@@ -5,7 +5,9 @@ importFrom("graphics", "par")
 importFrom("utils", "getS3method", "getTxtProgressBar", "head",
            "localeToCharset", "packageDescription",
            "setTxtProgressBar", "tail", "txtProgressBar")
-import("methods", "grid", "RJSONIO", "XML")
+importFrom("jsonlite", "fromJSON", "toJSON", "base64_enc")
+
+import("methods", "grid", "XML")
 
 export("svgOpen",
        "svgClose",
@@ -72,8 +74,6 @@ export("gridSVGCoords",
        "viewportConvertWidth",
        "viewportConvertHeight",
        "viewportConvertDim")
-
-useDynLib("gridSVG")
 
 # So other PACKAGES can write translation methods for new grobs
 export("grobToDev")

@@ -17,8 +17,10 @@ as.function.merMod	merMod-class
 bootMer	bootMer
 cake	cake
 cbpp	cbpp
+checkConv	checkConv
 coef.merMod	merMod-class
 confint.merMod	confint.merMod
+confint.thpr	confint.merMod
 convergence	convergence
 cov2sdcor	vcconv
 Cv_to_Sv	vcconv
@@ -99,7 +101,6 @@ merPredD	merPredD
 merPredD-class	merPredD-class
 methTitle	utilities
 mkDataTemplate	mkSimulationTemplate
-mkdevfun	mkdevfun
 mkGlmerDevfun	modular
 mkLmerDevfun	modular
 mkMerMod	mkMerMod
@@ -133,8 +134,6 @@ optimizeLmer	modular
 Pastes	Pastes
 Penicillin	Penicillin
 plot.lmList	lmList
-plot.lmList4	plot.lmList4
-plot.lmList4.confint	plot.lmList4
 plot.merMod	plot.merMod
 predict.merMod	predict.merMod
 print.merMod	merMod-class
@@ -178,7 +177,7 @@ update.merMod	merMod-class
 updateGlmerDevfun	modular
 VarCorr	VarCorr
 VarCorr.merMod	VarCorr
-varianceProf	varianceProf
+varianceProf	profile-methods
 vcconv	vcconv
 vcov.merMod	merMod-class
 vcov.summary.merMod	merMod-class

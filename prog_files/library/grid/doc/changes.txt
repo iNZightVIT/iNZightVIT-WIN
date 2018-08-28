@@ -1,4 +1,65 @@
 
+Changes from grid_3.4.* to grid_3.5.0:
+-------------------------------------
+
+1.  Fix for current.vpTree() so that it puts you back in the right
+    place in the viewport tree if there are nested viewports with
+    the same name (e.g., pushViewport(vp, vp)).
+
+    Reported by Prem Thomas.
+
+2.  Added 'device' (and 'width' and 'height') arguments to grid.grabExpr()
+
+    Suggestion from Claus Wilke.
+
+
+Changes from grid_3.3.* to grid_3.4.0:
+-------------------------------------
+
+1.  Added format() method for units, so, for example, the number of 
+    digits printed for numeric values can be controlled.
+
+    grid.show.layout() now uses format() for annotating layout
+    widths and heights.
+
+2.  More robust handling of NA values in graphical parameter settings
+    that affect text.  NA values for fontsize, lineheight, cex, and
+    fontfamily are ignored, i.e., inherited from parent drawing context.
+    A mixture of NA and non-NA generates an error.
+
+3.  Improved support for calcStringMetric() function (and
+    stringAscent() and stringDescent() and grobAscent() and
+    grobDescent()) so that text encoding is now handled.
+
+    Reported by Hakon Malmedal and Hadley Wickham.
+
+
+Changes from grid_3.2.* to grid_3.3.0:
+-------------------------------------
+
+1.  Added "pseudonym" units to check made in absolute.size() so that,
+    for example, absolute.size(unit(1, "in")) works properly
+    (reported by Baptiste Auguie).
+
+2.  Registered absolute.units() methods in NAMESPACE, so that, for
+    example, a call to absolute.size(unit(1,"npc") + unit(2,"mm"))
+    works outside of 'grid' (reported by Baptiste Auguie).
+
+3.  Refactored grid.draw() so that grid.draw(NULL) now works 
+    (by doing nothing).  Reported by Hadley Wickham.
+
+4.  Modified grid.ls() so that it returns nothing if there are no
+    active devices (rather than opening a new device).
+  
+5.  Modified grid.grep() so that it returns an empty list (rather than
+    throwing an error) when the 'grid' display list is empty.
+
+6.  Added subassignment methods for unit objects
+    (e.g., x <- unit(1:3, "cm"); x[2] <- unit(.5, "npc"))
+
+    Thanks to Baptiste Auguie for code suggestions.
+
+
 Changes from grid_3.1.* to grid_3.2.0:
 -------------------------------------
 

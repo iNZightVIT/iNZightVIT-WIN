@@ -65,10 +65,11 @@ with squares our eyes are drawn to the horizontal and vertical lines
 of the grid. The following figure adapted from \cite[]{carretal}shows
 this effectively. 
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 <<comphexsq, fig=TRUE, width=7, height=4, echo=FALSE>>=
-library("hexbin")#,lib.loc="/home/nikko/R-devel/hex.devel/tst")
+library("grid")
+library("hexbin")
 x <- rnorm(1000)
 y <- rnorm(1000)
 ##-- Hexagon Bins: --
@@ -133,7 +134,7 @@ fc.sq$y <- sqrt(3)*fc.sq$y                 # stretch y by the sqrt(3)
 nr <- length(fc.sq$x)/2
 @
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 << fig = TRUE,width = 4,height = 8,echo = FALSE >>=
 par(mfrow = c(3,1))
@@ -341,10 +342,10 @@ set NHANES. The data consist of 9575 persons and mesures various
 clinical factors. Here in Figure~\ref{hbox} we show the levels of
 transferin, a measure of iron binding against hemoglobin for all
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 
-<< hbox, fig = TRUE, width = 6, height = 4, echo = FALSE >>=
+<< echo = FALSE >>=
 data(NHANES)
 #grid.newpage()
 mar <- unit(0.1 + c(5,4,4,2),"lines")
@@ -353,6 +354,9 @@ mai <- as.numeric(convertUnit(mar, "inches"))
 #          convertHeight(unit(1,"npc"), "inches"))
 vpin <- c(unit(6,"inches"),unit(4, "inches"))
 shape <- optShape(height = vpin[2], width = vpin[1], mar = mai)
+@
+
+<< hbox, fig = TRUE, width = 6, height = 4, echo = FALSE >>=
 hb <- hexbin(NHANES$Transferin, NHANES$Hemoglobin, shape = shape)
 hbhp <- hboxplot(erode(hb,cdfcut = .05),unzoom = 1.3)
 pushHexport(hbhp,clip = 'on')
@@ -381,7 +385,7 @@ of the ability of blood to bind oxygen, vs the level of hemoglobin.
 Note that in the call to \texttt{hdiffplot} we erode the bins to
 calculate the bivariate medians, and only display the upper 75\% of
 the data.
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 << hdiff, fig = TRUE, width = 6, height = 4, echo = TRUE >>=
 #grid.newpage()
@@ -394,7 +398,7 @@ hbF <- hexbin(NHANES$Transferin[NHANES$Sex == "F"],
 hbM <- hexbin(NHANES$Transferin[NHANES$Sex == "M"],
               NHANES$Hemoglobin[NHANES$Sex == "M"],
               xbnds = xbnds, ybnds = ybnds, shape = shape)
-plot.new()
+#plot.new()
 hdiffplot(erode(hbF,cdfcut = .25),erode(hbM,cdfcut = .25),unzoom = 1.3)
 @
 \caption{A difference plot of transferin vs hemoglobin for males and females.}
@@ -439,7 +443,7 @@ bar of points curving below the line.
 
 << marray1, fig = TRUE, results = hide >>=
 ### Need to redo this part.
-library("marray")
+if (require("marray")) {
 data(swirl, package = "marray") ## use swirl dataset
 
 hb1 <- hexbin(maA(swirl[,1]), maM(swirl[,1]), xbins = 40)
@@ -463,6 +467,9 @@ hb <- plotMAhex(swirl[,1], newpage = FALSE,
 hexVP.abline(hb$plot.vp,h = 0,col = gray(.6))
 hexMA.loess(hb)
 popViewport()
+} else {
+	plot(1)
+}
 @
 
 
@@ -485,12 +492,16 @@ create a custom plotting function using \texttt{hexViewport} and grid.
 Adding to an existing plot requires the use of grid
 functions. For instance, in the following code,
 << addto,fig = TRUE,echo = TRUE >>=
-hplt <- plot(hb1,style = 'centroid',border = gray(.65))
+if (require("marray")) {
+hplt <- plot(hb1, style = 'centroid', border = gray(.65))
 pushHexport(hplt$plot.vp)
 ll.fit <- loess(hb1@ycm ~ hb1@xcm, weights = hb1@count, span = .4)
 pseq <- seq(hb1@xbnds[1]+1, hb1@xbnds[2]-1, length = 100)
 grid.lines(pseq, predict(ll.fit,pseq),
            gp = gpar(col = 2), default.units = "native")
+} else {
+	plot(1)
+}
 @
 we have to use \texttt{grid.lines()}, as opposed to \texttt{lines()}.
 

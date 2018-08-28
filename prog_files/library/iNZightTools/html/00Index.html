@@ -5,13 +5,13 @@
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 <h1> Tools for iNZight
-<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;iNZightTools&rsquo; version 1.5.1</h2>
+</div><h2>Documentation for package &lsquo;iNZightTools&rsquo; version 1.6</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -24,10 +24,6 @@
 <td>Tools for data processing with iNZight</td></tr>
 <tr><td style="width: 25%;"><a href="aggregateData.html">aggregateData</a></td>
 <td>Aggregate data by categorical variables</td></tr>
-<tr><td style="width: 25%;"><a href="changeColumnTypes.html">changeColumnTypes</a></td>
-<td>Changes the datatype of columns of dataframe to the specified datatypes.</td></tr>
-<tr><td style="width: 25%;"><a href="changeToDatatype.html">changeToDatatype</a></td>
-<td>Changes the datatype of a column of a dataframe to the specified datatype.</td></tr>
 <tr><td style="width: 25%;"><a href="code.html">code</a></td>
 <td>Get Data's Code</td></tr>
 <tr><td style="width: 25%;"><a href="collapseLevels.html">collapseLevels</a></td>
@@ -36,8 +32,6 @@
 <td>Combine the levels of factor variables.</td></tr>
 <tr><td style="width: 25%;"><a href="combineCatVars.html">combineCatVars</a></td>
 <td>Combine categorical variables into one</td></tr>
-<tr><td style="width: 25%;"><a href="convertSpssDetails.html">convertSpssDetails</a></td>
-<td>Converts the data type of columns specified from numeric to date.</td></tr>
 <tr><td style="width: 25%;"><a href="convertToCat.html">convertToCat</a></td>
 <td>Convert numeric variables to categorical</td></tr>
 <tr><td style="width: 25%;"><a href="convertToMetadata.html">convertToMetadata</a></td>
@@ -78,22 +72,16 @@
 <td>iNZight Metadata Writer</td></tr>
 <tr><td style="width: 25%;"><a href="iNZightTools.html">iNZightTools</a></td>
 <td>Tools for data processing with iNZight</td></tr>
-<tr><td style="width: 25%;"><a href="iNZread.html">iNZread</a></td>
-<td>iNZight Import Data</td></tr>
-<tr><td style="width: 25%;"><a href="isColumnTypesCorrect.html">isColumnTypesCorrect</a></td>
-<td>Checks if the entered column types are allowed or not.</td></tr>
 <tr><td style="width: 25%;"><a href="isMetadataAvailable.html">isMetadataAvailable</a></td>
 <td>Reads a file and checks if metadata is available.</td></tr>
-<tr><td style="width: 25%;"><a href="isPreview.html">isPreview</a></td>
-<td>Checks if the complete file was read or not.</td></tr>
+<tr><td style="width: 25%;"><a href="is_preview.html">is_preview</a></td>
+<td>Is Preview</td></tr>
 <tr><td style="width: 25%;"><a href="makeDatatypeChar.html">makeDatatypeChar</a></td>
 <td>Converts the column datatypes to a single word or string which can be passed to readr::read_csv as an argument.</td></tr>
 <tr><td style="width: 25%;"><a href="makeDatatypeChar.html">makeDatatypeChar.character</a></td>
 <td>Converts the column datatypes to a single word or string which can be passed to readr::read_csv as an argument.</td></tr>
 <tr><td style="width: 25%;"><a href="makeDatatypeChar.html">makeDatatypeChar.list</a></td>
 <td>Converts the column datatypes to a single word or string which can be passed to readr::read_csv as an argument.</td></tr>
-<tr><td style="width: 25%;"><a href="makeLocale.html">makeLocale</a></td>
-<td>Creates a locale that cane be used with functions from readr package.</td></tr>
 <tr><td style="width: 25%;"><a href="missingToCat.html">missingToCat</a></td>
 <td>Convert missing values to categorical variables</td></tr>
 <tr><td style="width: 25%;"><a href="newdevice.html">newdevice</a></td>
@@ -102,6 +90,8 @@
 <td>Rank the data of a numeric variables</td></tr>
 <tr><td style="width: 25%;"><a href="readMetadata.html">readMetadata</a></td>
 <td>iNZight Metadata Reader</td></tr>
+<tr><td style="width: 25%;"><a href="read_meta.html">read_meta</a></td>
+<td>Read CSV with iNZight metadata</td></tr>
 <tr><td style="width: 25%;"><a href="renameLevels.html">renameLevels</a></td>
 <td>Rename the levels of a categorical variable</td></tr>
 <tr><td style="width: 25%;"><a href="renameVars.html">renameVars</a></td>
@@ -112,12 +102,14 @@
 <td>Takes a sample of rows from a data.frame</td></tr>
 <tr><td style="width: 25%;"><a href="search.name.html">search.name</a></td>
 <td>Searches a list recursivly for a name and returns the value associated with the name</td></tr>
+<tr><td style="width: 25%;"><a href="smart_read.html">smart_read</a></td>
+<td>iNZight Smart Read</td></tr>
 <tr><td style="width: 25%;"><a href="sortVars.html">sortVars</a></td>
 <td>Sort data by variables</td></tr>
 <tr><td style="width: 25%;"><a href="stackVars.html">stackVars</a></td>
 <td>Stack variables</td></tr>
 <tr><td style="width: 25%;"><a href="standardizeVars.html">standardizeVars</a></td>
-<td>Transform data of a numeric variable</td></tr>
+<td>Standardize the data of a numeric variable</td></tr>
 <tr><td style="width: 25%;"><a href="transformVar.html">transformVar</a></td>
 <td>Transform data of a numeric variable</td></tr>
 </table>

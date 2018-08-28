@@ -1,121 +1,78 @@
 #ifndef dplyr_DataFrameSubsetVisitors_H
 #define dplyr_DataFrameSubsetVisitors_H
 
+#include <dplyr/subset_visitor.h>
+
+#include <tools/pointer_vector.h>
+#include <tools/SymbolVector.h>
+
 namespace dplyr {
 
-    class DataFrameSubsetVisitors {
-        private:
+class DataFrameSubsetVisitors {
 
-            const Rcpp::DataFrame& data ;
-            pointer_vector<SubsetVectorVisitor> visitors ;
-            Rcpp::CharacterVector visitor_names ;
-            int nvisitors ;
+private:
 
-        public:
-            typedef SubsetVectorVisitor visitor_type ;
+  const DataFrame& data;
+  pointer_vector<SubsetVectorVisitor> visitors;
+  SymbolVector visitor_names;
 
-            DataFrameSubsetVisitors( const Rcpp::DataFrame& data_) :
-                data(data_),
-                visitors(),
-                visitor_names(data.names()),
-                nvisitors(visitor_names.size())
-            {
+public:
+  typedef SubsetVectorVisitor visitor_type;
 
-                for( int i=0; i<nvisitors; i++){
-                    SubsetVectorVisitor* v = subset_visitor( data[i] ) ;
-                    visitors.push_back(v) ;
-                }
-            }
+  DataFrameSubsetVisitors(const DataFrame& data_);
 
-            DataFrameSubsetVisitors( const Rcpp::DataFrame& data_, const Rcpp::CharacterVector& names ) :
-                data(data_),
-                visitors(),
-                visitor_names(names),
-                nvisitors(visitor_names.size())
-            {
+  DataFrameSubsetVisitors(const DataFrame& data_, const SymbolVector& names);
 
-                std::string name ;
-                int n = names.size() ;
-                for( int i=0; i<n; i++){
-                    name = (String)names[i] ;
-                    SEXP column ;
+  DataFrameSubsetVisitors(const DataFrame& data_, const IntegerVector& indices);
 
-                    try{
-                        column = data[name] ;
-                    } catch( ... ){
-                        stop( "unknown column '%s' ", name ) ;
-                    }
-                    SubsetVectorVisitor* v = subset_visitor( column ) ;
-                    visitors.push_back(v) ;
+  template <typename Container>
+  DataFrame subset(const Container& index, const CharacterVector& classes) const {
+    List out = get_subsets(index);
+    structure(out, output_size(index), classes);
+    return out;
+  }
 
-                }
+  int size() const;
+  SubsetVectorVisitor* get(int k) const;
+  const SymbolString name(int k) const;
+  int nrows() const;
 
-            }
+private:
 
-            template <typename Container>
-            DataFrame subset_impl( const Container& index, const CharacterVector& classes, traits::false_type ) const {
-                List out(nvisitors);
-                for( int k=0; k<nvisitors; k++){
-                    out[k] = get(k)->subset(index) ;
-                }
-                copy_most_attributes( out, data ) ;
-                structure( out, Rf_length(out[0]) , classes) ;
-                return out ;
-            }
-
-            template <typename Container>
-            DataFrame subset_impl( const Container& index, const CharacterVector& classes, traits::true_type ) const {
-                int n = index.size() ;
-                int n_out = std::count( index.begin(), index.end(), TRUE ) ;
-                IntegerVector idx = no_init(n_out) ;
-                for(int i=0, k=0; i<n; i++){
-                    if( index[i] == TRUE ){
-                        idx[k++] = i ;
-                    }
-                }
-                return subset_impl( idx, classes, traits::false_type() ) ;
-            }
-
-            template <typename Container>
-            inline DataFrame subset( const Container& index, const CharacterVector& classes ) const {
-                return subset_impl( index, classes,
-                    typename traits::same_type<Container, LogicalVector>::type()
-                ) ;
-            }
-
-            inline int size() const { return nvisitors ; }
-            inline SubsetVectorVisitor* get(int k) const { return visitors[k] ; }
-
-            Rcpp::String name(int k) const { return visitor_names[k] ; }
-
-            inline int nrows() const { return data.nrows() ; }
-
-        private:
-
-            inline void structure( List& x, int nrows, CharacterVector classes ) const {
-                x.attr( "class" ) = classes ;
-                set_rownames(x, nrows) ;
-                x.names() = visitor_names ;
-                SEXP vars = data.attr( "vars" ) ;
-                if( !Rf_isNull(vars) )
-                    x.attr( "vars" ) = vars ;
-            }
-
-    } ;
-
-    inline DataFrame subset( DataFrame data, LogicalVector test, CharacterVector select, CharacterVector classes ){
-        DataFrameSubsetVisitors visitors( data, select ) ;
-        return visitors.subset(test, classes ) ;
+  template <typename Container>
+  List get_subsets(const Container& index) const {
+    const int nvisitors = visitors.size();
+    List out(nvisitors);
+    for (int k = 0; k < nvisitors; k++) {
+      out[k] = get_subset(index, k);
     }
+    return out;
+  }
 
-    inline DataFrame subset( DataFrame data, LogicalVector test, CharacterVector classes ){
-        DataFrameSubsetVisitors visitors( data ) ;
-        DataFrame res = visitors.subset(test, classes ) ;
-        return res ;
-    }
+  template <typename Container>
+  SEXP get_subset(const Container& index, int k) const {
+    return get(k)->subset(index);
+  }
 
+  void structure(List& x, int nrows, CharacterVector classes) const;
+
+};
+
+template <>
+DataFrame DataFrameSubsetVisitors::subset(const LogicalVector& index, const CharacterVector& classes) const;
+
+template <typename Index>
+DataFrame subset(DataFrame df, const Index& indices, const SymbolVector& columns, const CharacterVector& classes) {
+  return DataFrameSubsetVisitors(df, columns).subset(indices, classes);
+}
+
+template <typename Index>
+DataFrame subset(DataFrame df, const Index& indices, CharacterVector classes) {
+  return DataFrameSubsetVisitors(df).subset(indices, classes);
+}
 
 } // namespace dplyr
 
+#include <dplyr/subset_visitor_impl.h>
 
 #endif

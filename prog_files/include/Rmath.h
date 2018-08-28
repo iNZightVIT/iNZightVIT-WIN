@@ -1,6 +1,6 @@
 /* -*- C -*-
  *  Mathlib : A C Library of Special Functions
- *  Copyright (C) 1998-2015  The R Core Team
+ *  Copyright (C) 1998-2018  The R Core Team
  *  Copyright (C) 2004       The R Foundation
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -31,26 +31,36 @@
 #ifndef RMATH_H
 #define RMATH_H
 
-/* Note that on some systems we need to include math.h before the
-   defines below. */
-#ifndef NO_C_HEADERS
-# define __STDC_WANT_IEC_60559_TYPES_EXT__ 1
+/* needed for cospi etc */
+#ifndef __STDC_WANT_IEC_60559_FUNCS_EXT__
+# define __STDC_WANT_IEC_60559_FUNCS_EXT__ 1
+#endif
+#if defined(__cplusplus) && !defined(DO_NOT_USE_CXX_HEADERS)
+# include <cmath>
+// See comment in R.h
+# ifdef __SUNPRO_CC
+using namespace std;
+# endif
+#else
 # include <math.h>
+#endif
+
+#ifdef NO_C_HEADERS
+# warning "use of NO_C_HEADERS is defunct and will be ignored"
 #endif
 
 /*-- Mathlib as part of R --  define this for standalone : */
 /* #undef MATHLIB_STANDALONE */
 
-#define R_VERSION_STRING "3.2.3"
+#define R_VERSION_STRING "3.5.1"
 
+// Legacy defines -- C99 functions which R >= 3.5.0 reauires
 #ifndef HAVE_EXPM1
 # define HAVE_EXPM1 1
 #endif
-
 #ifndef HAVE_HYPOT
 # define HAVE_HYPOT 1
 #endif
-
 #ifndef HAVE_LOG1P
 # define HAVE_LOG1P 1
 #endif
@@ -59,25 +69,10 @@
 # define HAVE_WORKING_LOG1P 1
 #endif
 
-#if defined(HAVE_LOG1P) && !defined(HAVE_WORKING_LOG1P)
+#if !defined(HAVE_WORKING_LOG1P)
 /* remap to avoid problems with getting the right entry point */
 double  Rlog1p(double);
 #define log1p Rlog1p
-#endif
-
-
-	/* Undo SGI Madness */
-
-#ifdef __sgi
-# ifdef ftrunc
-#  undef ftrunc
-# endif
-# ifdef qexp
-#  undef qexp
-# endif
-# ifdef qgamma
-#  undef qgamma
-# endif
 #endif
 
 
@@ -259,9 +254,11 @@ double  Rlog1p(double);
 #define lgammafn	Rf_lgammafn
 #define lgammafn_sign	Rf_lgammafn_sign
 #define lgamma1p	Rf_lgamma1p
+#define log1pexp       	Rf_log1pexp
 #define log1pmx		Rf_log1pmx
 #define logspace_add	Rf_logspace_add
 #define logspace_sub	Rf_logspace_sub
+#define logspace_sum	Rf_logspace_sum
 #define pbeta		Rf_pbeta
 #define pbeta_raw	Rf_pbeta_raw
 #define pbinom		Rf_pbinom
@@ -289,7 +286,6 @@ double  Rlog1p(double);
 #define pt		Rf_pt
 #define ptukey		Rf_ptukey
 #define punif		Rf_punif
-#define pythag		Rf_pythag
 #define pweibull	Rf_pweibull
 #define pwilcox		Rf_pwilcox
 #define qbeta		Rf_qbeta
@@ -398,7 +394,7 @@ double  log1pexp(double); // <-- ../nmath/plogis.c
 double  lgamma1p(double);
 double  logspace_add(double, double);
 double  logspace_sub(double, double);
-double  logspace_sum(double *, int);
+double  logspace_sum(const double *, int);
 
 	/* Beta Distribution */
 
@@ -585,16 +581,6 @@ double	bessel_y_ex(double, double, double *);
 
 	/* General Support Functions */
 
-#ifndef HAVE_HYPOT
-double 	hypot(double, double);
-#endif
-double 	pythag(double, double);
-#ifndef HAVE_EXPM1
-double  expm1(double); /* = exp(x)-1 {care for small x} */
-#endif
-#ifndef HAVE_LOG1P
-double  log1p(double); /* = log(1+x) {care for small x} */
-#endif
 int	imax2(int, int);
 int	imin2(int, int);
 double	fmax2(double, double);
@@ -610,15 +596,16 @@ double  lgamma1p(double);/* accurate log(gamma(x+1)), small x (0 < x < 0.5) */
 
 /* More accurate cos(pi*x), sin(pi*x), tan(pi*x)
 
-   In future these declarations could clash with system headers if
-   someone had already included math.h with
-   __STDC_WANT_IEC_60559_TYPES_EXT__ defined.
-   We can add a check for that via the value of
-   __STDC_IEC_60559_FUNCS__ (>= 201ymmL, exact value not yet known).
+   These declarations might clash with system headers if someone had
+   already included math.h with __STDC_WANT_IEC_60559_FUNCS_EXT__
+   defined (and we try, above).
+   We check for that via the value of __STDC_IEC_60559_FUNCS__
 */
+#if !(defined(__STDC_IEC_60559_FUNCS__) && __STDC_IEC_60559_FUNCS__ >= 201506L)
 double cospi(double);
 double sinpi(double);
 double tanpi(double);
+#endif
 
 /* Compute the log of a sum or difference from logs of terms, i.e.,
  *
@@ -633,19 +620,11 @@ double  logspace_sub(double logx, double logy);
 
 /* ----------------- Private part of the header file ------------------- */
 
-	/* old-R Compatibility */
-
-#ifdef OLD_RMATH_COMPAT
-# define snorm	norm_rand
-# define sunif	unif_rand
-# define sexp	exp_rand
-#endif
-
 #if defined(MATHLIB_STANDALONE) && !defined(MATHLIB_PRIVATE_H)
 /* second is defined by nmath.h */
 
 /* If isnan is a macro, as C99 specifies, the C++
-   math header will undefine it. This happens on OS X */
+   math header will undefine it. This happens on macOS */
 # ifdef __cplusplus
   int R_isnancpp(double); /* in mlutils.c */
 #  define ISNAN(x)     R_isnancpp(x)

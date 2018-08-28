@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.3 (2015-12-10).
+<!-- This manual is for R, version 3.5.1 (2018-07-02).
 
 Copyright (C) 1990 W. N. Venables
 
@@ -10,7 +10,7 @@ Copyright (C) 1997 R. Gentleman & R. Ihaka
 
 Copyright (C) 1997, 1998 M. Maechler
 
-Copyright (C) 1999-2015 R Core Team
+Copyright (C) 1999-2018 R Core Team
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -369,7 +369,7 @@ p {
   <ul class="no-bullet">
     <li><a name="toc-Invoking-R-from-the-command-line-1" href="#Invoking-R-from-the-command-line">B.1 Invoking R from the command line</a></li>
     <li><a name="toc-Invoking-R-under-Windows-1" href="#Invoking-R-under-Windows">B.2 Invoking R under Windows</a></li>
-    <li><a name="toc-Invoking-R-under-OS-X-1" href="#Invoking-R-under-OS-X">B.3 Invoking R under OS X</a></li>
+    <li><a name="toc-Invoking-R-under-macOS-1" href="#Invoking-R-under-macOS">B.3 Invoking R under macOS</a></li>
     <li><a name="toc-Scripting-with-R-1" href="#Scripting-with-R">B.4 Scripting with R</a></li>
   </ul></li>
   <li><a name="toc-The-command_002dline-editor-1" href="#The-command_002dline-editor">Appendix C The command-line editor</a>
@@ -404,13 +404,13 @@ analysis, classification, clustering, ...).
 <p>This manual provides information on data types, programming elements,
 statistical modelling and graphics.
 </p>
-<p>This manual is for R, version 3.2.3 (2015-12-10).
+<p>This manual is for R, version 3.5.1 (2018-07-02).
 </p>
 <p>Copyright &copy; 1990 W. N. Venables<br>
 Copyright &copy; 1992 W. N. Venables &amp; D. M. Smith<br>
 Copyright &copy; 1997 R. Gentleman &amp; R. Ihaka<br>
 Copyright &copy; 1997, 1998 M. Maechler<br>
-Copyright &copy; 1999&ndash;2015 R Core Team
+Copyright &copy; 1999&ndash;2018 R Core Team
 </p>
 <blockquote>
 <p>Permission is granted to make and distribute verbatim copies of this
@@ -662,7 +662,7 @@ generally to any implementation of the R environment.
 <p>Most users will find it necessary to interact directly with the
 operating system on their computer from time to time.  In this guide, we
 mainly discuss interaction with the operating system on UNIX machines.
-If you are running R under Windows or OS X you will need to make
+If you are running R under Windows or macOS you will need to make
 some small adjustments.
 </p>
 <p>Setting up a workstation to take full advantage of the customizable
@@ -958,7 +958,7 @@ strings, functions, or more general structures built from such
 components.
 </p>
 <p>During an R session, objects are created and stored by name (we
-discuss this process in the next session).  The R command
+discuss this process in the next section).  The R command
 </p>
 <div class="example">
 <pre class="example">&gt; objects()
@@ -1968,17 +1968,16 @@ function <code>var()</code> to calculate the sample variance, such a function
 is a very simple one liner, specified by the assignment:
 </p>
 <div class="example">
-<pre class="example">&gt; stderr &lt;- function(x) sqrt(var(x)/length(x))
+<pre class="example">&gt; stdError &lt;- function(x) sqrt(var(x)/length(x))
 </pre></div>
 
-<p>(Writing functions will be considered later in <a href="#Writing-your-own-functions">Writing your own functions</a>, and in this case was unnecessary as R also has a builtin
-function <code>sd()</code>.)
+<p>(Writing functions will be considered later in <a href="#Writing-your-own-functions">Writing your own functions</a>.  Note that R&rsquo;s a builtin function <code>sd()</code> is something different.)
 <a name="index-sd"></a>
 <a name="index-var-1"></a>
 After this assignment, the standard errors are calculated by
 </p>
 <div class="example">
-<pre class="example">&gt; incster &lt;- tapply(incomes, statef, stderr)
+<pre class="example">&gt; incster &lt;- tapply(incomes, statef, stdError)
 </pre></div>
 
 <p>and the values calculated are then
@@ -2422,13 +2421,12 @@ independently and uniformly at random.
 <div class="example">
 <pre class="example">&gt; d &lt;- outer(0:9, 0:9)
 &gt; fr &lt;- table(outer(d, d, &quot;-&quot;))
-&gt; plot(as.numeric(names(fr)), fr, type=&quot;h&quot;,
-       xlab=&quot;Determinant&quot;, ylab=&quot;Frequency&quot;)
+&gt; plot(fr, xlab=&quot;Determinant&quot;, ylab=&quot;Frequency&quot;)
 </pre></div>
 
-<p>Notice the coercion of the <code>names</code> attribute of the frequency table
-to numeric in order to recover the range of the determinant values.  The
-&ldquo;obvious&rdquo; way of doing this problem with <code>for</code> loops, to be
+<p>Notice that <code>plot()</code> here uses a histogram like plot method, because
+it &ldquo;sees&rdquo; that <code>fr</code> is of class <code>&quot;table&quot;</code>.
+The &ldquo;obvious&rdquo; way of doing this problem with <code>for</code> loops, to be
 discussed in <a href="#Loops-and-conditional-execution">Loops and conditional execution</a>, is so inefficient as
 to be impractical.
 </p>
@@ -3991,7 +3989,7 @@ are possible.
 <var>&hellip;</var>; <var>expr_m</var>}</code>, in which case the value of the group
 is the result of the last expression in the group evaluated.  Since such
 a group is also an expression it may, for example, be itself included in
-parentheses and used a part of an even larger expression, and so on.
+parentheses and used as part of an even larger expression, and so on.
 </p>
 <hr>
 <a name="Control-statements"></a>
@@ -4042,9 +4040,9 @@ if necessary.
 <a name="index-ifelse"></a>
 <p>There is a vectorized version of the <code>if</code>/<code>else</code> construct,
 the <code>ifelse</code> function.  This has the form <code>ifelse(condition, a,
-b)</code> and returns a vector of the length of its longest argument, with
+b)</code> and returns a vector of the same length as <code>condition</code>, with
 elements <code>a[i]</code> if <code>condition[i]</code> is true, otherwise
-<code>b[i]</code>.
+<code>b[i]</code> (where <code>a</code> and <code>b</code> are recycled as necessary).
 </p>
 
 <hr>
@@ -6065,7 +6063,7 @@ is also easy because at startup time R initiates a graphics
 the display of interactive graphics.  Although this is done
 automatically, it may useful to know that the command used is
 <code>X11()</code> under UNIX, <code>windows()</code> under Windows and
-<code>quartz()</code> under OS X.  A new device can always be opened by
+<code>quartz()</code> under macOS.  A new device can always be opened by
 <code>dev.new()</code>.
 </p>
 <p>Once the device driver is running, R plotting commands can be used to
@@ -7126,7 +7124,7 @@ PostScript format.  Some commonly-used device drivers are:
 </p></dd>
 <dt><code>quartz()</code></dt>
 <dd><a name="index-quartz"></a>
-<p>For use on OS X
+<p>For use on macOS
 </p></dd>
 <dt><code>postscript()</code></dt>
 <dd><a name="index-postscript"></a>
@@ -7236,7 +7234,7 @@ meanings are as follows:
 <dd><p>[Windows]
 </p></dd>
 <dt><code>quartz()</code></dt>
-<dd><p>[OS X]
+<dd><p>[macOS]
 </p></dd>
 <dt><code>postscript()</code></dt>
 <dt><code>pdf()</code></dt>
@@ -7354,7 +7352,7 @@ command like
 
 <p>Users connected to the Internet can use the <code>install.packages()</code>
 and <code>update.packages()</code> functions (available through the
-<code>Packages</code> menu in the Windows and OS X GUIs, see <a href="R-admin.html#Installing-packages">Installing
+<code>Packages</code> menu in the Windows and macOS GUIs, see <a href="R-admin.html#Installing-packages">Installing
 packages</a> in <cite>R Installation and Administration</cite>) to install
 and update packages.
 </p>
@@ -7425,8 +7423,8 @@ are designed to complement textbooks.  Some (the <em>recommended</em>
 packages) are distributed with every binary distribution of R.  Most
 are available for download from <acronym>CRAN</acronym>
 (<a href="https://CRAN.R-project.org/">https://CRAN.R-project.org/</a> and its mirrors) and other
-repositories such as Bioconductor (<a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a>)
-and Omegahat (<a href="http://www.omegahat.org/">http://www.omegahat.org/</a>).  The <em>R FAQ</em>
+repositories such as Bioconductor (<a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a>).
+and Omegahat (<a href="http://www.omegahat.net/">http://www.omegahat.net/</a>).  The <em>R FAQ</em>
 contains a list of CRAN packages current at the time of release, but the
 collection of available packages changes very frequently.
 </p>
@@ -7442,12 +7440,11 @@ Previous: <a href="#Contributed-packages-and-CRAN" accesskey="p" rel="prev">Cont
 <a name="index-_003a_003a"></a>
 <a name="index-_003a_003a_003a"></a>
 
-<p>All packages have <em>namespaces</em>, and have since R 2.14.0.
-Namespaces do three things: they allow the package writer to hide
-functions and data that are meant only for internal use, they prevent
-functions from breaking when a user (or other package writer) picks a
-name that clashes with one in the package, and they provide a way to
-refer to an object within a particular package.
+<p>Packages have <em>namespaces</em>, which do three things: they allow the
+package writer to hide functions and data that are meant only for
+internal use, they prevent functions from breaking when a user (or other
+package writer) picks a name that clashes with one in the package, and
+they provide a way to refer to an object within a particular package.
 </p>
 <p>For example, <code>t()</code> is the transpose function in R, but users
 might define their own function named <code>t</code>.  Namespaces prevent
@@ -7513,7 +7510,7 @@ Next: <a href="#Filepaths" accesskey="n" rel="next">Filepaths</a>, Previous: <a 
 pointers to some of the more commonly used ones.
 </p>
 <p>To create an (empty) file or directory, use <code>file.create</code> or
-<code>create.dir</code>.  (These are the analogues of the POSIX utilities
+<code>dir.create</code>.  (These are the analogues of the POSIX utilities
 <code>touch</code> and <code>mkdir</code>.)  For temporary files and
 directories in the R session directory see <code>tempfile</code>.
 </p>
@@ -7544,7 +7541,7 @@ package: <code>tk_choose.files</code> and <code>tk_choose.dir</code>.
 </p>
 <p>Functions <code>file.show</code> and <code>file.edit</code> will display and edit
 one or more files in a way appropriate to the R port, using the
-facilities of a console (such as RGui on Windows or R.app on OS X) if
+facilities of a console (such as RGui on Windows or R.app on macOS) if
 one is in use.
 </p>
 <p>There is some support for <em>links</em> in the filesystem: see functions
@@ -7572,7 +7569,7 @@ other OSes may be less than completely compliant.
 <ul>
 <li> POSIX filesystems are case-sensitive, so <samp>foo.png</samp> and
 <samp>Foo.PNG</samp> are different files.  However, the defaults on Windows
-and OS X are to be case-insensitive, and FAT filesystems (commonly used
+and macOS are to be case-insensitive, and FAT filesystems (commonly used
 on removable storage) are not normally case-sensitive (and all filepaths
 may be mapped to lower case).
 
@@ -7620,7 +7617,7 @@ is sometimes useful for exporting names from R.
 </p>
 <p>File <em>permissions</em> are a related topic.  R has support for the
 POSIX concepts of read/write/execute permission for owner/group/all but
-this may be only partially supported on the filesystem (so for example
+this may be only partially supported on the filesystem, so for example
 on Windows only read-only files (for the account running the R
 session) are recognized.  Access Control Lists (ACLs) are employed on
 several filesystems, but do not have an agreed standard and R has no
@@ -7974,7 +7971,7 @@ Next: <a href="#The-command_002dline-editor" accesskey="n" rel="next">The comman
 <a name="Invoking-R-1"></a>
 <h2 class="appendix">Appendix B Invoking R</h2>
 
-<p>Users of R on Windows or OS X should read the OS-specific section
+<p>Users of R on Windows or macOS should read the OS-specific section
 first, but command-line use is also supported.
 </p>
 <table summary="" class="menu" border="0" cellspacing="0">
@@ -7982,7 +7979,7 @@ first, but command-line use is also supported.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Invoking-R-under-Windows" accesskey="2">Invoking R under Windows</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Invoking-R-under-OS-X" accesskey="3">Invoking R under OS X</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Invoking-R-under-macOS" accesskey="3">Invoking R under macOS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Scripting-with-R" accesskey="4">Scripting with R</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -8374,7 +8371,7 @@ appropriate interpreter (if available) is called to run it.
 <a name="Invoking-R-under-Windows"></a>
 <div class="header">
 <p>
-Next: <a href="#Invoking-R-under-OS-X" accesskey="n" rel="next">Invoking R under OS X</a>, Previous: <a href="#Invoking-R-from-the-command-line" accesskey="p" rel="prev">Invoking R from the command line</a>, Up: <a href="#Invoking-R" accesskey="u" rel="up">Invoking R</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Invoking-R-under-macOS" accesskey="n" rel="next">Invoking R under macOS</a>, Previous: <a href="#Invoking-R-from-the-command-line" accesskey="p" rel="prev">Invoking R from the command line</a>, Up: <a href="#Invoking-R" accesskey="u" rel="up">Invoking R</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Invoking-R-under-Windows-1"></a>
 <h3 class="appendixsec">B.2 Invoking R under Windows</h3>
@@ -8392,8 +8389,8 @@ this is not always defined on Windows.  If the environment variable
 environment variable <code>HOME</code> is defined, that gives the home
 directory.  After those two user-controllable settings, R tries to
 find system defined home directories.  It first tries to use the
-Windows &quot;personal&quot; directory (typically <code>C:\Documents and
-Settings\username\My Documents</code> in Windows XP).  If that fails, and
+Windows &quot;personal&quot; directory (typically <code>My Documents</code> in 
+recent versions of Windows).  If that fails, and
 environment variables <code>HOMEDRIVE</code> and <code>HOMEPATH</code> are defined
 (and they normally are) these define the home directory.  Failing all
 those, the home directory is taken to be the starting directory.
@@ -8448,21 +8445,21 @@ this does not help with the MiKTeX build of LaTeX, but
 <code>R CMD texify mydoc</code> will work in that case.)
 </p>
 <hr>
-<a name="Invoking-R-under-OS-X"></a>
+<a name="Invoking-R-under-macOS"></a>
 <div class="header">
 <p>
 Next: <a href="#Scripting-with-R" accesskey="n" rel="next">Scripting with R</a>, Previous: <a href="#Invoking-R-under-Windows" accesskey="p" rel="prev">Invoking R under Windows</a>, Up: <a href="#Invoking-R" accesskey="u" rel="up">Invoking R</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Invoking-R-under-OS-X-1"></a>
-<h3 class="appendixsec">B.3 Invoking R under OS X</h3>
+<a name="Invoking-R-under-macOS-1"></a>
+<h3 class="appendixsec">B.3 Invoking R under macOS</h3>
 
-<p>There are two ways to run R under OS X.  Within a <code>Terminal.app</code>
+<p>There are two ways to run R under macOS.  Within a <code>Terminal.app</code>
 window by invoking <code>R</code>, the methods described in the first
 subsection apply.  There is also console-based GUI (<code>R.app</code>) that by
 default is installed in the <code>Applications</code> folder on your
-system.  It is a standard double-clickable OS X application.
+system.  It is a standard double-clickable macOS application.
 </p>
-<p>The startup procedure under OS X is very similar to that under UNIX, but
+<p>The startup procedure under macOS is very similar to that under UNIX, but
 <code>R.app</code> does not make use of command-line arguments.  The &lsquo;home
 directory&rsquo; is the one inside the R.framework, but the startup and
 current working directory are set as the user&rsquo;s home directory unless a
@@ -8473,7 +8470,7 @@ accessible from within the GUI.
 <a name="Scripting-with-R"></a>
 <div class="header">
 <p>
-Previous: <a href="#Invoking-R-under-OS-X" accesskey="p" rel="prev">Invoking R under OS X</a>, Up: <a href="#Invoking-R" accesskey="u" rel="up">Invoking R</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="#Invoking-R-under-macOS" accesskey="p" rel="prev">Invoking R under macOS</a>, Up: <a href="#Invoking-R" accesskey="u" rel="up">Invoking R</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Scripting-with-R-1"></a>
 <h3 class="appendixsec">B.4 Scripting with R</h3>
@@ -8530,7 +8527,7 @@ the usual way for the shell running the command.
 </p>
 <p>If you do not wish to hardcode the path to <code>Rscript</code> but have it
 in your path (which is normally the case for an installed R except on
-Windows, but e.g. OS X users may need to add <samp>/usr/local/bin</samp>
+Windows, but e.g. macOS users may need to add <samp>/usr/local/bin</samp>
 to their path), use
 </p>
 <div class="example">
@@ -8594,7 +8591,7 @@ Next: <a href="#Function-and-variable-index" accesskey="n" rel="next">Function a
 time R is configured for compilation under UNIX, an inbuilt command
 line editor allowing recall, editing and re-submission of prior commands
 is used.  Note that other versions of <strong>readline</strong> exist and may be
-used by the inbuilt command line editor: this used to happen on OS X.
+used by the inbuilt command line editor: this used to happen on macOS.
 </p>
 <p>It can be disabled (useful for usage with <acronym>ESS</acronym> <a name="DOCF27" href="#FOOT27"><sup>27</sup></a>) using the startup option
 <samp>--no-readline</samp>.
@@ -8604,21 +8601,24 @@ used by the inbuilt command line editor: this used to happen on OS X.
 file <samp>README.Rterm</samp> for command-line editing under
 <code>Rterm.exe</code>.
 </p>
-<p>When using R with <strong>readline</strong> capabilities, the functions
-described below are available, as well as others (probably) documented
-in <code>man readline</code> or <code>info readline</code> on your system.
+<p>When using R with GNU<a name="DOCF28" href="#FOOT28"><sup>28</sup></a> <strong>readline</strong> capabilities, the functions described
+below are available, as well as others (probably) documented in
+<code>man readline</code> or <code>info readline</code> on your system.
 </p>
 <p>Many of these use either Control or Meta characters.  Control
 characters, such as <kbd>Control-m</kbd>, are obtained by holding the
 <tt class="key">CTRL</tt> down while you press the <tt class="key">m</tt> key, and are written as
 <kbd>C-m</kbd> below.  Meta characters, such as <kbd>Meta-b</kbd>, are typed by
-holding down <tt class="key">META</tt><a name="DOCF28" href="#FOOT28"><sup>28</sup></a> and pressing <tt class="key">b</tt>, and written as <kbd>M-b</kbd>
+holding down <tt class="key">META</tt><a name="DOCF29" href="#FOOT29"><sup>29</sup></a> and pressing <tt class="key">b</tt>, and written as <kbd>M-b</kbd>
 in the following.  If your terminal does not have a <tt class="key">META</tt> key
 enabled, you can still type Meta characters using two-character
 sequences starting with <kbd>ESC</kbd>.  Thus, to enter <kbd>M-b</kbd>, you could
 type <tt class="key">ESC</tt><tt class="key">b</tt>.  The <kbd>ESC</kbd> character sequences are also
 allowed on terminals with real Meta keys.  Note that case is significant
 for Meta characters.
+</p>
+<p>Some but not all versions<a name="DOCF30" href="#FOOT30"><sup>30</sup></a> of <strong>readline</strong>
+will recognize resizing of the terminal window so this is best avoided.
 </p>
 <a name="Editing-actions"></a>
 <h3 class="appendixsection">C.2 Editing actions</h3>
@@ -8654,7 +8654,8 @@ re-submitted.
 <dd><p>Go to the next command (forwards in the history).
 </p></dd>
 <dt><kbd>C-r <var>text</var></kbd></dt>
-<dd><p>Find the last command with the <var>text</var> string in it.
+<dd><p>Find the last command with the <var>text</var> string in it.  This can be
+cancelled by <code>C-g</code> (and on some versions of R by <code>C-c</code>).
 </p></dd>
 </dl>
 
@@ -9501,7 +9502,7 @@ of the next line.</p>
 <h3><a name="FOOT6" href="#DOCF6">(6)</a></h3>
 <p>The leading &ldquo;dot&rdquo; in
 this file name makes it <em>invisible</em> in normal file listings in
-UNIX, and in default GUI file listings on OS X and Windows.</p>
+UNIX, and in default GUI file listings on macOS and Windows.</p>
 <h3><a name="FOOT7" href="#DOCF7">(7)</a></h3>
 <p>With other than vector types of argument,
 such as <code>list</code> mode arguments, the action of <code>c()</code> is rather
@@ -9587,11 +9588,19 @@ on most 64-bit versions of Windows.</p>
 <h3><a name="FOOT27" href="#DOCF27">(27)</a></h3>
 <p>The
 &lsquo;Emacs Speaks Statistics&rsquo; package; see the <acronym>URL</acronym>
-<a href="http://ESS.R-project.org">http://ESS.R-project.org</a></p>
+<a href="https://ESS.R-project.org/">https://ESS.R-project.org/</a></p>
 <h3><a name="FOOT28" href="#DOCF28">(28)</a></h3>
+<p>It is possible to build R using an
+emulation of GNU <strong>readline</strong>, such as one based on NetBSD&rsquo;s
+<strong>editline</strong>, it which case only a subset of the capabilities may
+be provided.</p>
+<h3><a name="FOOT29" href="#DOCF29">(29)</a></h3>
 <p>On a PC keyboard this is usually the
 Alt key, occasionally the &lsquo;Windows&rsquo; key.  On a Mac keyboard normally no
 meta key is available.</p>
+<h3><a name="FOOT30" href="#DOCF30">(30)</a></h3>
+<p>In particular, not versions 6.3 or
+later: this is worked around as from R 3.4.0.</p>
 </div>
 <hr>
 

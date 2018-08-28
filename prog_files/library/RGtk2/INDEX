@@ -17,4 +17,5 @@ checkGTK                Bound versions
 checkPtrType            RGtk2 Type Assertion
 enums-and-flags         Enums and Flags
 gClass                  Custom GObject classes
+giocon                  R connections for GIO streams
 transparent-type        Transparent types in RGtk2

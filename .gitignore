@@ -1,6 +1,6 @@
 .inzight
 *.exe
-prog_files/library/iNZightMaps
+!prog_files/**/*.exe
 *.zip
 
 *.Rhistory

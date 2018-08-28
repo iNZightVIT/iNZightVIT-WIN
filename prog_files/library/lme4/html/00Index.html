@@ -5,13 +5,13 @@
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 <h1> Linear Mixed-Effects Models using 'Eigen' and S4
-<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]" />
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;lme4&rsquo; version 1.1-12</h2>
+</div><h2>Documentation for package &lsquo;lme4&rsquo; version 1.1-17</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -82,9 +82,13 @@
 <td>Breakage Angle of Chocolate Cakes</td></tr>
 <tr><td style="width: 25%;"><a href="cbpp.html">cbpp</a></td>
 <td>Contagious bovine pleuropneumonia</td></tr>
+<tr><td style="width: 25%;"><a href="checkConv.html">checkConv</a></td>
+<td>Extended Convergence Checking</td></tr>
 <tr><td style="width: 25%;"><a href="merMod-class.html">coef.merMod</a></td>
 <td>Class "merMod" of Fitted Mixed-Effect Models</td></tr>
 <tr><td style="width: 25%;"><a href="confint.merMod.html">confint.merMod</a></td>
+<td>Compute Confidence Intervals for Parameters of a [ng]lmer Fit</td></tr>
+<tr><td style="width: 25%;"><a href="confint.merMod.html">confint.thpr</a></td>
 <td>Compute Confidence Intervals for Parameters of a [ng]lmer Fit</td></tr>
 <tr><td style="width: 25%;"><a href="convergence.html">convergence</a></td>
 <td>Assessing Convergence for Fitted Models</td></tr>
@@ -254,7 +258,7 @@
 <tr><td style="width: 25%;"><a href="lmResp-class.html">lmerResp-class</a></td>
 <td>Reference Classes for Response Modules, '"(lm|glm|nls|lmer)Resp"'</td></tr>
 <tr><td style="width: 25%;"><a href="lmList.html">lmList</a></td>
-<td>Fit List of lm Objects with a Common Model</td></tr>
+<td>Fit List of lm or glm Objects with a Common Model</td></tr>
 <tr><td style="width: 25%;"><a href="lmList4-class.html">lmList4-class</a></td>
 <td>Class "lmList4" of 'lm' Objects on Common Model</td></tr>
 <tr><td style="width: 25%;"><a href="lmResp.html">lmResp</a></td>
@@ -286,8 +290,6 @@
 <td>Print and Summary Method Utilities for Mixed Effects</td></tr>
 <tr><td style="width: 25%;"><a href="mkSimulationTemplate.html">mkDataTemplate</a></td>
 <td>Make templates suitable for guiding mixed model simulations</td></tr>
-<tr><td style="width: 25%;"><a href="mkdevfun.html">mkdevfun</a></td>
-<td>Create Deviance Evaluation Function from Predictor and Response Module</td></tr>
 <tr><td style="width: 25%;"><a href="modular.html">mkGlmerDevfun</a></td>
 <td>Modular Functions for Mixed Model Fits</td></tr>
 <tr><td style="width: 25%;"><a href="modular.html">mkLmerDevfun</a></td>
@@ -368,13 +370,9 @@
 <tr><td style="width: 25%;"><a href="Penicillin.html">Penicillin</a></td>
 <td>Variation in penicillin testing</td></tr>
 <tr><td style="width: 25%;"><a href="lmList.html">plot.lmList</a></td>
-<td>Fit List of lm Objects with a Common Model</td></tr>
-<tr><td style="width: 25%;"><a href="plot.lmList4.html">plot.lmList4</a></td>
-<td>plots for lmList4 objects</td></tr>
-<tr><td style="width: 25%;"><a href="plot.lmList4.html">plot.lmList4.confint</a></td>
-<td>plots for lmList4 objects</td></tr>
+<td>Fit List of lm or glm Objects with a Common Model</td></tr>
 <tr><td style="width: 25%;"><a href="plot.merMod.html">plot.merMod</a></td>
-<td>diagnostic plots for merMod fits</td></tr>
+<td>Diagnostic Plots for 'merMod' Fits</td></tr>
 <tr><td style="width: 25%;"><a href="predict.merMod.html">predict.merMod</a></td>
 <td>Predictions from a model at new data values</td></tr>
 <tr><td style="width: 25%;"><a href="merMod-class.html">print.merMod</a></td>
@@ -395,7 +393,7 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="plot.merMod.html">qqmath.merMod</a></td>
-<td>diagnostic plots for merMod fits</td></tr>
+<td>Diagnostic Plots for 'merMod' Fits</td></tr>
 <tr><td style="width: 25%;"><a href="ranef.html">qqmath.ranef.mer</a></td>
 <td>Extract the modes of the random effects</td></tr>
 </table>
@@ -489,8 +487,8 @@
 <td>Extract Variance and Correlation Components</td></tr>
 <tr><td style="width: 25%;"><a href="VarCorr.html">VarCorr.merMod</a></td>
 <td>Extract Variance and Correlation Components</td></tr>
-<tr><td style="width: 25%;"><a href="varianceProf.html">varianceProf</a></td>
-<td>Transform Profile to the variance scale</td></tr>
+<tr><td style="width: 25%;"><a href="profile-methods.html">varianceProf</a></td>
+<td>Profile method for merMod objects</td></tr>
 <tr><td style="width: 25%;"><a href="vcconv.html">vcconv</a></td>
 <td>Convert between representations of (co-)variance structures</td></tr>
 <tr><td style="width: 25%;"><a href="merMod-class.html">vcov.merMod</a></td>

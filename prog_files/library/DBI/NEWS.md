@@ -1,3 +1,88 @@
+# DBI 1.0.0 (2018-05-02)
+
+## New generics
+
+- New `dbAppendTable()` that by default calls `sqlAppendTableTemplate()` and then `dbExecute()` with a `param` argument, without support for `row.names` argument (#74).
+- New `dbCreateTable()` that by default calls `sqlCreateTable()` and then `dbExecute()`, without support for `row.names` argument (#74).
+- New `dbCanConnect()` generic with default implementation (#87).
+- New `dbIsReadOnly()` generic with default implementation (#190, @anhqle).
+
+## Changes
+
+- `sqlAppendTable()` now accepts lists for the `values` argument, to support lists of `SQL` objects in R 3.1.
+- Add default implementation for `dbListFields(DBIConnection, Id)`, this relies on `dbQuoteIdentifier(DBIConnection, Id)` (#75).
+
+## Documentation updates
+
+- The DBI specification vignette is rendered correctly from the installed package (#234).
+- Update docs on how to cope with stored procedures (#242, @aryoda).
+- Add "Additional arguments" sections and more examples for `dbGetQuery()`, `dbSendQuery()`, `dbExecute()` and `dbSendStatement()`.
+- The `dbColumnInfo()` method is now fully specified (#75).
+- The `dbListFields()` method is now fully specified (#75).
+- The dynamic list of methods in help pages doesn't contain methods in DBI anymore.
+
+## Bug fixes
+
+- Pass missing `value` argument to secondary `dbWriteTable()` call (#737, @jimhester).
+- The `Id` class now uses `<Id>` and not `<Table>` when printing.
+- The default `dbUnquoteIdentifier()` implementation now complies to the spec.
+
+
+# DBI 0.8 (2018-02-24)
+
+Breaking changes
+----------------
+
+- `SQL()` now strips the names from the output if the `names` argument is unset.
+- The `dbReadTable()`, `dbWriteTable()`, `dbExistsTable()`, `dbRemoveTable()`, and `dbListFields()` generics now specialize over the first two arguments to support implementations with the `Id` S4 class as type for the second argument. Some packages may need to update their documentation to satisfy R CMD check again.
+
+New generics
+------------
+
+- Schema support: Export `Id()`, new generics `dbListObjects()` and `dbUnquoteIdentifier()`, methods for `Id` that call `dbQuoteIdentifier()` and then forward (#220).
+- New `dbQuoteLiteral()` generic. The default implementation uses switchpatch to avoid dispatch ambiguities, and forwards to `dbQuoteString()` for character vectors. Backends may override methods that also dispatch on the second argument, but in this case also an override for the `"SQL"` class is necessary (#172).
+
+Default implementations
+-----------------------
+
+- Default implementations of `dbQuoteIdentifier()` and `dbQuoteLiteral()` preserve names, default implementation of `dbQuoteString()` strips names (#173).
+- Specialized methods for `dbQuoteString()` and `dbQuoteIdentifier()` are available again, for compatibility with clients that use `getMethod()` to access them (#218).
+- Add default implementation of `dbListFields()`.
+- The default implementation of `dbReadTable()` now has `row.names = FALSE` as default and also supports `row.names = NULL` (#186).
+
+API changes
+-----------
+
+- The `SQL()` function gains an optional `names` argument which can be used to assign names to SQL strings.
+
+Deprecated generics
+-------------------
+
+- `dbListConnections()` is soft-deprecated by documentation.
+- `dbListResults()` is deprecated by documentation (#58).
+- `dbGetException()` is soft-deprecated by documentation (#51).
+- The deprecated `print.list.pairs()` has been removed.
+
+Bug fixes
+---------
+
+- Fix `dbDataType()` for `AsIs` object (#198, @yutannihilation).
+- Fix `dbQuoteString()` and `dbQuoteIdentifier()` to ignore invalid UTF-8 strings (r-dbi/DBItest#156).
+
+Documentation
+-------------
+
+- Help pages for generics now contain a dynamic list of methods implemented by DBI backends (#162).
+- `sqlInterpolate()` now supports both named and positional variables (#216, @hannesmuehleisen).
+- Point to db.rstudio.com (@wibeasley, #209).
+- Reflect new 'r-dbi' organization in `DESCRIPTION` (@wibeasley, #207).
+
+Internal
+--------
+
+- Using switchpatch on the second argument for default implementations of `dbQuoteString()` and `dbQuoteIdentifier()`.
+
+
 # DBI 0.7 (2017-06-17)
 
 - Import updated specs from `DBItest`.
@@ -20,7 +105,8 @@
     - Removed `valueClass = "logical"` for those generics where the return value is meaningless, to allow backends to return invisibly (#135).
     - Avoiding using braces in the definitions of generics if possible, so that standard generics can be detected (#146).
     - Added default implementation for `dbReadTable()`.
-    - All standard generics are required to have an ellipsis (with test), for future extensibility.    - Improved default implementation of `dbQuoteString()` and `dbQuoteIdentifier()` (#77).
+    - All standard generics are required to have an ellipsis (with test), for future extensibility.
+    - Improved default implementation of `dbQuoteString()` and `dbQuoteIdentifier()` (#77).
     - Removed `tryCatch()` call in `dbGetQuery()` (#113).
 
 - Documentation improvements

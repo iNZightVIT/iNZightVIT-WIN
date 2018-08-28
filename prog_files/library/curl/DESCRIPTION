@@ -1,9 +1,10 @@
 Package: curl
 Type: Package
 Title: A Modern and Flexible Web Client for R
-Version: 2.5
+Version: 3.2
 Authors@R: c(
-    person("Jeroen", "Ooms", , "jeroen@berkeley.edu", role = c("cre", "aut")),
+    person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroen@berkeley.edu",
+      comment = c(ORCID = "0000-0002-4035-0289")),
     person("Hadley", "Wickham", , "hadley@rstudio.com", role = "ctb"),
     person("RStudio", role = "cph")
     )
@@ -22,19 +23,21 @@ SystemRequirements: libcurl: libcurl-devel (rpm) or
 URL: https://github.com/jeroen/curl#readme (devel)
         https://curl.haxx.se/libcurl/ (upstream)
 BugReports: https://github.com/jeroen/curl/issues
-Suggests: testthat (>= 1.0.0), knitr, jsonlite, rmarkdown, magrittr,
-        httpuv, webutils
+Suggests: spelling, testthat (>= 1.0.0), knitr, jsonlite, rmarkdown,
+        magrittr, httpuv, webutils
 VignetteBuilder: knitr
 Depends: R (>= 3.0.0)
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
+Encoding: UTF-8
+Language: en-US
 NeedsCompilation: yes
-Packaged: 2017-04-12 20:10:49 UTC; jeroen
-Author: Jeroen Ooms [cre, aut],
+Packaged: 2018-03-19 16:18:53 UTC; jeroen
+Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),
   Hadley Wickham [ctb],
   RStudio [cph]
 Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 Repository: CRAN
-Date/Publication: 2017-04-14 15:32:38 UTC
-Built: R 3.2.5; x86_64-w64-mingw32; 2017-04-20 06:33:23 UTC; windows
+Date/Publication: 2018-03-28 07:42:52 UTC
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-08-15 01:41:45 UTC; windows
 Archs: i386, x64

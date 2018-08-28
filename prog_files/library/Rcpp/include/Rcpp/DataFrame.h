@@ -43,7 +43,7 @@ namespace Rcpp{
         DataFrame_Impl(SEXP x) : Parent(x) {
             set__(x);
         }
-        DataFrame_Impl( const DataFrame_Impl& other){
+        DataFrame_Impl( const DataFrame_Impl& other) : Parent() {
             set__(other) ;
         }
 
@@ -132,7 +132,7 @@ namespace Rcpp{
             obj.attr( "names") = names ;
             Shield<SEXP> call( Rf_lang3(as_df_symb, obj, wrap( strings_as_factors ) ) ) ;
             SET_TAG( CDDR(call),  strings_as_factors_symb ) ;
-            Shield<SEXP> res( Rcpp_eval( call ) ) ;
+            Shield<SEXP> res(Rcpp_fast_eval(call, R_GlobalEnv));
             DataFrame_Impl out( res ) ;
             return out ;
 

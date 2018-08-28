@@ -2,7 +2,7 @@
 //
 // Vector.h: Rcpp R/C++ interface class library -- vectors
 //
-// Copyright (C) 2010 - 2013 Dirk Eddelbuettel and Romain Francois
+// Copyright (C) 2010 - 2018 Dirk Eddelbuettel and Romain Francois
 //
 // This file is part of Rcpp.
 //
@@ -40,12 +40,12 @@ public:
     typedef StoragePolicy<Vector> Storage ;
 
     typename traits::r_vector_cache_type<RTYPE, StoragePolicy>::type cache ;
-    typedef typename traits::r_vector_proxy<RTYPE>::type Proxy ;
-    typedef typename traits::r_vector_const_proxy<RTYPE>::type const_Proxy ;
-    typedef typename traits::r_vector_name_proxy<RTYPE>::type NameProxy ;
-    typedef typename traits::r_vector_proxy<RTYPE>::type value_type ;
-    typedef typename traits::r_vector_iterator<RTYPE>::type iterator ;
-    typedef typename traits::r_vector_const_iterator<RTYPE>::type const_iterator ;
+    typedef typename traits::r_vector_proxy<RTYPE, StoragePolicy>::type Proxy ;
+    typedef typename traits::r_vector_const_proxy<RTYPE, StoragePolicy>::type const_Proxy ;
+    typedef typename traits::r_vector_name_proxy<RTYPE, StoragePolicy>::type NameProxy ;
+    typedef typename traits::r_vector_proxy<RTYPE, StoragePolicy>::type value_type ;
+    typedef typename traits::r_vector_iterator<RTYPE, StoragePolicy>::type iterator ;
+    typedef typename traits::r_vector_const_iterator<RTYPE, StoragePolicy>::type const_iterator ;
     typedef typename traits::init_type<RTYPE>::type init_type ;
     typedef typename traits::r_vector_element_converter<RTYPE>::type converter_type ;
     typedef typename traits::storage_type<RTYPE>::type stored_type ;
@@ -116,15 +116,15 @@ public:
         Storage::set__( Rf_allocVector( RTYPE, siz) ) ;
         std::generate( begin(), end(), gen );
     }
-    
+
     // Add template class T and then restict T to arithmetic.
     template <typename T>
-    Vector(T size, 
+    Vector(T size,
         typename Rcpp::traits::enable_if<traits::is_arithmetic<T>::value, void>::type* = 0) {
         Storage::set__( Rf_allocVector( RTYPE, size) ) ;
         init() ;
     }
-    
+
     Vector( const int& size ) {
         Storage::set__( Rf_allocVector( RTYPE, size) ) ;
         init() ;
@@ -163,7 +163,7 @@ public:
         RCPP_DEBUG_2( "Vector<%d>( const VectorBase<RTYPE,NA,VEC>& ) [VEC = %s]", RTYPE, DEMANGLE(VEC) )
         import_sugar_expression( other, typename traits::same_type<Vector,VEC>::type() ) ;
     }
-    
+
     template <typename T, typename U>
     Vector( const T& size, const U& u,
         typename Rcpp::traits::enable_if<traits::is_arithmetic<T>::value, void>::type* = 0) {
@@ -171,7 +171,7 @@ public:
         Storage::set__( Rf_allocVector( RTYPE, size) ) ;
         fill_or_generate( u ) ;
     }
-    
+
     template <bool NA, typename T>
     Vector( const sugar::SingleLogicalResult<NA,T>& obj ) {
         Storage::set__( r_cast<RTYPE>( const_cast<sugar::SingleLogicalResult<NA,T>&>(obj).get_sexp() ) ) ;
@@ -285,7 +285,12 @@ public:
         const int* dim = dims() ;
         const int nrow = dim[0] ;
         const int ncol = dim[1] ;
-        if(i < 0|| i >= nrow || j < 0 || j >= ncol ) throw index_out_of_bounds() ;
+        if(i < 0|| i >= nrow || j < 0 || j >= ncol )  {
+            const char* fmt = "Location index is out of bounds: "
+                              "[row index=%i; row extent=%i; "
+                              "column index=%i; column extent=%i].";
+            throw index_out_of_bounds(fmt, i, nrow, j, ncol);
+        }
         return i + static_cast<R_xlen_t>(nrow)*j ;
     }
 
@@ -294,20 +299,28 @@ public:
      * it is valid
      */
     R_xlen_t offset(const R_xlen_t& i) const {
-        if(i < 0 || i >= ::Rf_xlength(Storage::get__()) ) throw index_out_of_bounds() ;
+        if(i < 0 || i >= ::Rf_xlength(Storage::get__()) ) {
+            const char* fmt = "Index out of bounds: [index=%i; extent=%i].";
+            throw index_out_of_bounds(fmt, i, ::Rf_xlength(Storage::get__()) ) ;
+        }
         return i ;
     }
-    
+
     R_xlen_t offset(const std::string& name) const {
         SEXP names = RCPP_GET_NAMES( Storage::get__() ) ;
-        if( Rf_isNull(names) ) throw index_out_of_bounds();
+        if( Rf_isNull(names) ) {
+            throw index_out_of_bounds("Object was created without names.");
+        }
+
         R_xlen_t n=size() ;
         for( R_xlen_t i=0; i<n; ++i){
             if( ! name.compare( CHAR(STRING_ELT(names, i)) ) ){
                 return i ;
             }
         }
-        throw index_out_of_bounds() ;
+
+        const char* fmt = "Index out of bounds: [index='%s'].";
+        throw index_out_of_bounds(fmt, name);
         return -1 ; /* -Wall */
     }
 
@@ -320,6 +333,8 @@ public:
     inline iterator end() { return cache.get() + size() ; }
     inline const_iterator begin() const{ return cache.get_const() ; }
     inline const_iterator end() const{ return cache.get_const() + size() ; }
+    inline const_iterator cbegin() const{ return cache.get_const() ; }
+    inline const_iterator cend() const{ return cache.get_const() + size() ; }
 
     inline Proxy operator[]( R_xlen_t i ){ return cache.ref(i) ; }
     inline const_Proxy operator[]( R_xlen_t i ) const { return cache.ref(i) ; }
@@ -389,21 +404,21 @@ public:
         // and is undefined for other types. Hence there will be a
         // compiler error when sorting List, RawVector or ExpressionVector.
         internal::Sort_is_not_allowed_for_this_type<RTYPE>::do_nothing();
-        
+
         typename traits::storage_type<RTYPE>::type* start = internal::r_vector_start<RTYPE>( Storage::get__() );
-        
+
         if (!decreasing) {
             std::sort(
                 start,
                 start + size(),
                 internal::NAComparator<typename traits::storage_type<RTYPE>::type>()
-            );            
+            );
         } else {
             std::sort(
                 start,
                 start + size(),
                 internal::NAComparatorGreater<typename traits::storage_type<RTYPE>::type>()
-            );     
+            );
         }
 
         return *this;
@@ -905,8 +920,23 @@ private:
     }
 
     iterator erase_single__impl( iterator position ) {
-              if( position < begin() || position > end() ) throw index_out_of_bounds( ) ;
+        if( position < begin() || position > end() ) {
+            R_xlen_t requested_loc;
+            R_xlen_t available_locs = std::distance(begin(), end());
+
+            if(position > end()){
+                requested_loc = std::distance(position, begin());
+            } else {
+                // This will be a negative number
+                requested_loc = std::distance(begin(), position);
+            }
+            const char* fmt = "Iterator index is out of bounds: "
+                              "[iterator index=%i; iterator extent=%i]";
+            throw index_out_of_bounds(fmt, requested_loc, available_locs ) ;
+        }
+
         R_xlen_t n = size() ;
+
         Vector target( n - 1 ) ;
         iterator target_it(target.begin()) ;
         iterator it(begin()) ;
@@ -945,7 +975,24 @@ private:
 
     iterator erase_range__impl( iterator first, iterator last ) {
         if( first > last ) throw std::range_error("invalid range") ;
-        if( last > end() || first < begin() ) throw index_out_of_bounds() ;
+        if( last > end() || first < begin() ) {
+            R_xlen_t requested_loc;
+            R_xlen_t available_locs = std::distance(begin(), end());
+            std::string iter_problem;
+
+            if(last > end()){
+                requested_loc = std::distance(last, begin());
+                iter_problem = "last";
+            } else {
+                // This will be a negative number
+                requested_loc = std::distance(begin(), first);
+                iter_problem = "first";
+            }
+            const char* fmt = "Iterator index is out of bounds: "
+                              "[iterator=%s; index=%i; extent=%i]";
+            throw index_out_of_bounds(fmt, iter_problem,
+                                      requested_loc, available_locs ) ;
+        }
 
         iterator it = begin() ;
         iterator this_end = end() ;
@@ -1031,7 +1078,7 @@ private:
 
 
     template <typename T>
-    inline void import_expression( const T& other, int n ) {
+    inline void import_expression( const T& other, R_xlen_t n ) {
         iterator start = begin() ;
         RCPP_LOOP_UNROLL(start,other)
     }
@@ -1079,11 +1126,11 @@ public:
 public:
 
     inline SEXP eval() const {
-        return Rcpp_eval( Storage::get__(), R_GlobalEnv ) ;
+        return Rcpp_fast_eval( Storage::get__(), R_GlobalEnv ) ;
     }
 
     inline SEXP eval(SEXP env) const {
-        return Rcpp_eval( Storage::get__(), env );
+        return Rcpp_fast_eval( Storage::get__(), env );
     }
 
 
