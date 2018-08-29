@@ -15,10 +15,8 @@ Description: Compatibility functions used for multiple packages and
     distributions of iNZight, including Lite.
 License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2018-08-22 02:42:37 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.5.0; ; 2018-08-22 02:42:37 UTC; unix
+Built: R 3.5.0; ; 2018-08-29 22:19:21 UTC; unix

@@ -20,12 +20,10 @@ Suggests: RODBC, iNZightMR, iNZightModules, png, viridis, RColorBrewer,
         FutureLearnData
 LazyData: true
 RoxygenNote: 6.1.0.9000
-NeedsCompilation: no
-Packaged: 2018-08-29 21:22:23 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
   Simon Potter [ctb],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.0; ; 2018-08-29 21:22:24 UTC; unix
+Built: R 3.5.0; ; 2018-08-29 22:19:29 UTC; unix
