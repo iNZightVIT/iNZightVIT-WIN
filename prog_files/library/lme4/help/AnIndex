@@ -11,6 +11,7 @@ lme4-package	lme4-package
 .simulateFun	simulate.merMod
 anova.merMod	merMod-class
 Arabidopsis	Arabidopsis
+as.data.frame.ranef.mer	ranef
 as.data.frame.thpr	profile-methods
 as.data.frame.VarCorr.merMod	VarCorr
 as.function.merMod	merMod-class
@@ -27,6 +28,7 @@ Cv_to_Sv	vcconv
 Cv_to_Vv	vcconv
 densityplot.thpr	plots.thpr
 devcomp	devcomp
+devfun2	devfun2
 deviance.merMod	merMod-class
 df.residual.merMod	merMod-class
 dotplot.ranef.mer	ranef

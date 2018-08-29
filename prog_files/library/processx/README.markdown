@@ -13,7 +13,7 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/r-lib/processx/master.svg)](https://codecov.io/github/r-lib/processx?branch=master)
 
 Tools to run system processes in the background,
-read their standard output and error, kill and restart them.
+read their standard output and error and kill them.
 
 processx can poll the standard output and error of a single process,
 or multiple processes, using the operating system's polling and waiting
@@ -31,7 +31,7 @@ facilities, with a timeout.
          * [Callbacks for I/O](#callbacks-for-io)
       * [Managing external processes](#managing-external-processes)
          * [Starting processes](#starting-processes)
-         * [Killing and restarting a process](#killing-and-restarting-a-process)
+         * [Killing a process](#killing-a-process)
          * [Standard output and error](#standard-output-and-error)
          * [End of output](#end-of-output)
          * [Polling the standard output and error](#polling-the-standard-output-and-error)
@@ -49,14 +49,15 @@ facilities, with a timeout.
 * Read the standard output and error, using non-blocking connections
 * Poll the standard output and error connections of a single process or
   multiple processes.
+* Write to the standard input of background processes.
 * Check if a background process is running.
-* Wait on a background process.
+* Wait on a background process, or multiple processes, with a timeout.
 * Get the exit status of a background process, if it has already
   finished.
 * Kill background processes.
 * Kill background process, when its associated object is garbage
   collected.
-* Restart background processes.
+* Kill background processes and all their child processes.
 * Works on Linux, macOS and Windows.
 * Lightweight, it only depends on the also lightweight
   R6, assertthat and crayon packages.
@@ -68,13 +69,6 @@ Install the stable version from CRAN:
 
 ```r
 install.packages("processx")
-```
-
-Install the development version from GitHub:
-
-
-```r
-source("https://install-github.me/r-lib/processx")
 ```
 
 ## Usage
@@ -138,13 +132,17 @@ result <- run(px, "--help", echo = TRUE)
 ```
 #> Usage: px [command arg] [command arg] ...
 #> 
-#> Commands:   sleep  <seconds>  -- sleep for a number os seconds
-#>             out    <string>   -- print string to stdout
-#>             err    <string>   -- print string to stderr
-#>             outln  <string>   -- print string to stdout, add newline
-#>             errln  <string>   -- print string to stderr, add newline
-#>             cat    <filename> -- print file to stdout
-#>             return <exitcode> -- return with exitcode
+#> Commands:
+#>   sleep  <seconds>           -- sleep for a number os seconds
+#>   out    <string>            -- print string to stdout
+#>   err    <string>            -- print string to stderr
+#>   outln  <string>            -- print string to stdout, add newline
+#>   errln  <string>            -- print string to stderr, add newline
+#>   cat    <filename>          -- print file to stdout
+#>   return <exitcode>          -- return with exitcode
+#>   write <fd> <string>        -- write to file descriptor
+#>   echo <fd1> <fd2> <nbytes>  -- echo from fd to another fd
+#>   getenv <var>               -- environment variable to stdout
 ```
 
 > Note: From version 3.0.1, processx does not let you specify a full
@@ -251,8 +249,8 @@ out2
 #>  [4] "Makefile"           "NAMESPACE"          "NEWS.md"           
 #>  [7] "R"                  "README.Rmd"         "README.markdown"   
 #> [10] "_pkgdown.yml"       "appveyor.yml"       "docs"              
-#> [13] "inst"               "man"                "src"               
-#> [16] "tests"
+#> [13] "inst"               "man"                "processx.Rproj"    
+#> [16] "src"                "tests"
 ```
 
 #### Spinner
@@ -349,7 +347,7 @@ class.
 p <- process$new("sleep", "20")
 ```
 
-#### Killing and restarting a process
+#### Killing a process
 
 A process can be killed via the `kill()` method.
 
@@ -378,20 +376,6 @@ p$is_alive()
 #> [1] FALSE
 ```
 
-A process can be restarted via `restart()`. This works if the process
-has been killed, if it has finished regularly, or even if it is running
-currently. If it is running, then it will be killed first.
-
-
-```r
-p$restart()
-p$is_alive()
-```
-
-```
-#> [1] TRUE
-```
-
 Note that processes are finalized (and killed) automatically if the
 corresponding `process` object goes out of scope, as soon as the object
 is garbage collected by R:
@@ -404,9 +388,9 @@ gc()
 ```
 
 ```
-#>          used (Mb) gc trigger (Mb) max used (Mb)
-#> Ncells 422094 22.6     750400 40.1   592000 31.7
-#> Vcells 839667  6.5    1650153 12.6  1097560  8.4
+#>          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+#> Ncells 428443 22.9     908452 48.6         NA   631340 33.8
+#> Vcells 867615  6.7    8388608 64.0      16384  1769037 13.5
 ```
 
 Here, the direct call to the garbage collector kills the `sleep` process
@@ -508,8 +492,8 @@ p$poll_io(5000)
 ```
 
 ```
-#>   output    error 
-#>  "ready" "nopipe"
+#>   output    error  process 
+#>  "ready" "nopipe" "nopipe"
 ```
 
 ```r
@@ -540,12 +524,12 @@ poll(list(p1 = p1, p2 = p2), 100)
 
 ```
 #> $p1
-#>    output     error 
-#> "timeout"  "nopipe" 
+#>    output     error   process 
+#> "timeout"  "nopipe"  "nopipe" 
 #> 
 #> $p2
-#>    output     error 
-#>  "nopipe" "timeout"
+#>    output     error   process 
+#>  "nopipe" "timeout"  "nopipe"
 ```
 
 ```r
@@ -555,12 +539,12 @@ poll(list(p1 = p1, p2 = p2), 1000)
 
 ```
 #> $p1
-#>   output    error 
-#>  "ready" "nopipe" 
+#>   output    error  process 
+#>  "ready" "nopipe" "nopipe" 
 #> 
 #> $p2
-#>   output    error 
-#> "nopipe" "silent"
+#>   output    error  process 
+#> "nopipe" "silent" "nopipe"
 ```
 
 ```r
@@ -587,12 +571,12 @@ poll(list(p1 = p1, p2 = p2), 5000)
 
 ```
 #> $p1
-#>   output    error 
-#> "closed" "nopipe" 
+#>   output    error  process 
+#> "closed" "nopipe" "nopipe" 
 #> 
 #> $p2
-#>   output    error 
-#> "nopipe"  "ready"
+#>   output    error  process 
+#> "nopipe"  "ready" "nopipe"
 ```
 
 ```r
@@ -625,7 +609,7 @@ Sys.time()
 ```
 
 ```
-#> [1] "2018-05-13 20:54:19 BST"
+#> [1] "2018-07-24 19:57:33 BST"
 ```
 
 ```r
@@ -634,7 +618,7 @@ Sys.time()
 ```
 
 ```
-#> [1] "2018-05-13 20:54:21 BST"
+#> [1] "2018-07-24 19:57:35 BST"
 ```
 
 It is safe to call `wait()` multiple times:
@@ -682,7 +666,7 @@ p <- process$new("nonexistant-command-for-sure")
 ```
 
 ```
-#> Error in process_initialize(self, private, command, args, stdout, stderr, : processx error: 'No such file or directory' at unix/processx.c:378
+#> Error in process_initialize(self, private, command, args, stdin, stdout, : processx error: 'No such file or directory' at unix/processx.c:423
 ```
 
 

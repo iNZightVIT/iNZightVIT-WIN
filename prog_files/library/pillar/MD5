@@ -1,11 +1,11 @@
-6010e1f47ffc80dda1e06ec78e81e9df *DESCRIPTION
+a8e37f40429bfcd5527cea7b884cf586 *DESCRIPTION
 8c84a3af3606c71650cdc99b51080fde *INDEX
 f96e3a7e1680c70e0d0e5fd6b1a98efa *Meta/Rd.rds
 429724b30f0322e2d56778dd130867d3 *Meta/features.rds
 32c02ba8a8d9e1920b59b6749ac07c5d *Meta/hsearch.rds
 e9002f5d219a3fcd611fcf8e9095076d *Meta/links.rds
 0ed6fcf956eb1b1a032a0d6a0608ff59 *Meta/nsInfo.rds
-9b89b6d5b18647749bb8c1a4eb30f9c5 *Meta/package.rds
+1e4dfdbe13286238bd44fb9fd5a51a96 *Meta/package.rds
 38298d185e369d9a6a1b215c37d8c56c *NAMESPACE
 e0b1871434f1cbe9461bee48eb988818 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/pillar
@@ -14,8 +14,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/pillar
 e964ed1229a7c5d979f5eda93db2cfd7 *help/AnIndex
 5bbf1c79f885def42ff7cb6369df3996 *help/aliases.rds
 c797329c1c4502cc2ccce2f2af86060e *help/figures/colours.png
-4b80e3ed87b641b7f3c4c6f114aab922 *help/paths.rds
-c39e34b755a9a60d0f1378910a78f731 *help/pillar.rdb
-856fbeb55e50e9564deabe2f4306b812 *help/pillar.rdx
+1a61373f94eebfc6c334c396b8ab09fe *help/paths.rds
+8a485a12b8ae524e0bfbaf760ba32e91 *help/pillar.rdb
+52eac147c0b52dde05e0d16dee748d2e *help/pillar.rdx
 0f91c7511c50422e49373c0cc9d5e5ed *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

@@ -23,6 +23,8 @@ confint.merMod          Compute Confidence Intervals for Parameters of
                         a [ng]lmer Fit
 convergence             Assessing Convergence for Fitted Models
 devcomp                 Extract the deviance component list
+devfun2                 Deviance function defined in terms of standard
+                        deviations/correlations
 drop1.merMod            Drop all possible single fixed-effect terms
                         from a mixed effect model
 dummy                   Dummy variables (experimental)

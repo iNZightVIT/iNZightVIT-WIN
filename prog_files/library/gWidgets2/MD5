@@ -1,11 +1,11 @@
-9da97aab50a6506dc581057b9583cf5a *DESCRIPTION
+9ada18c81cd1bd6f795cf3ffed72c5c1 *DESCRIPTION
 8841c92fa70870199c2df86ac6c4211b *INDEX
 c06eed29c4296544c56f5b74930aad50 *Meta/Rd.rds
 429724b30f0322e2d56778dd130867d3 *Meta/features.rds
 1612797706ae4e991bd54a3910ee2c28 *Meta/hsearch.rds
 b09072fcbf69c55b94453e00cc74b2bc *Meta/links.rds
 c3b5c6d118f839c18bd77b94d6e4ab40 *Meta/nsInfo.rds
-71602d8d9db01e3e2c60fa1ef75a6ec8 *Meta/package.rds
+474b1a7cda475d9a33429ec57bd5a2d0 *Meta/package.rds
 f4efcd06bf82dbdf90564f075ca07042 *NAMESPACE
 ac2f51e57cfbd98a0f43fb22afa8d4f4 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/gWidgets2
@@ -44,9 +44,9 @@ bc6bc05e64c2dde8f5414d72b608be57 *examples/ex-wizard.R
 a260b73c97a8eae8466a42a1f175af88 *examples/run_examples.R
 3b520ba4729960fa7bd1de7f217f78d9 *help/AnIndex
 b9db25dad999fe8bdc1e457b3077cbb5 *help/aliases.rds
-86887dd6a4c37dbc09f9296347325ccf *help/gWidgets2.rdb
-43c9a36db769e42614e6b55fa8a45b96 *help/gWidgets2.rdx
-fea57571cfe3c92bb96e1deaea6bd342 *help/paths.rds
+865590d9247cdad1090c3224324df163 *help/gWidgets2.rdb
+6579ff0a165bf535a2d5c1e6ea74ab74 *help/gWidgets2.rdx
+3055ce7b6198ad6cf5368c3e8cd40265 *help/paths.rds
 6fe9699fdf2ababc868711eed34c5e3e *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 e9ccb6ca944bbc728017e5b3fc09d9ec *images/1downarrow.gif

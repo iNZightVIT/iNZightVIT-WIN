@@ -1,5 +1,5 @@
 c6ffe6f656ab6ccef3cd5fb8d9302ac5 *ChangeLog
-b615286dd566ab72d5749ce940c3e776 *DESCRIPTION
+94a302495268da5a0a0f519023c01178 *DESCRIPTION
 8b9dbe31b5e2aa89796fea9080d564c7 *INDEX
 f8cffe3f66487a120f9785679635c215 *Meta/Rd.rds
 c69e7b5989c171345af5fa911791507e *Meta/data.rds
@@ -7,7 +7,7 @@ c69e7b5989c171345af5fa911791507e *Meta/data.rds
 5668be7d6c63c43ab7ee386cbbc531a3 *Meta/hsearch.rds
 1aefe617f21208600e2b0c81dcbddd25 *Meta/links.rds
 1f0cb30ed7f3e04f9cdc61a60c67383c *Meta/nsInfo.rds
-a52c074342c4956ec55164fa3dd7761e *Meta/package.rds
+5440cdfece59104648423a45f5ff621a *Meta/package.rds
 37cc0808b165696af9a659acc07e340b *Meta/vignette.rds
 56b67987bb18bed9af4e23c0214919a0 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/maptools
@@ -27,14 +27,14 @@ ef247b6c335e75e48f81da7ef7554fa6 *grids/simple.ag
 15c2101eb916ea116f400d560f73dd7c *grids/test.ag
 f1938efc0ad9e1514fbda1814c1a5fd9 *help/AnIndex
 ad9dfb7d07107f4dcb37a0de721ccc60 *help/aliases.rds
-cfe5e431f959a658f2b5c4e94e2f9f4d *help/maptools.rdb
-4ad732e656d4064323e033c8f1701144 *help/maptools.rdx
-92d4e706191be7e6484e2b1cf67f9e3b *help/paths.rds
+86fa19ed7406a46cc0c41991db721afb *help/maptools.rdb
+cc8f5bd83392aaacaed25ce8f5d4356c *help/maptools.rdx
+a020e67a1d6efbf47538ed94ef2836e3 *help/paths.rds
 ad29823bcce2caf52e0ea8b4f18ae781 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-21ae2df555698633a9c63f9d2f07a066 *libs/i386/maptools.dll
+206479722582c3d161f448be1305761f *libs/i386/maptools.dll
 111d7a8c597c67a292897a5aebf9aca2 *libs/i386/symbols.rds
-94604c7a79e5dff4f20eb14ad918abaf *libs/x64/maptools.dll
+df7802fe9fe823e71b303409e28254a8 *libs/x64/maptools.dll
 3c4182fadd1d8b7b61a2400159d6d70e *libs/x64/symbols.rds
 17238eca9084a1321e2dc9a719ef8dd6 *shapes/Testing.kml
 be9a3966e14428c7c83c6a0fa745baaa *shapes/baltim.dbf

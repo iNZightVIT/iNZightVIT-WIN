@@ -19,5 +19,5 @@ Date/Publication: 2018-08-10 06:11:46 UTC
 X-CRAN-Original-Maintainer: Shengqiao Li <lishengqiao@yahoo.com>
 X-CRAN-Comment: Orphaned on 2018-08-10 as C++ issues were not corrected
         since 2017 despite reminders.
-Built: R 3.5.1; x86_64-w64-mingw32; 2018-08-15 01:44:35 UTC; windows
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-08-25 23:10:54 UTC; windows
 Archs: i386, x64
