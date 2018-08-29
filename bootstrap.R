@@ -47,12 +47,15 @@ if (length(ca) > 0)
 
 extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap, 
                                               fields = c('Depends', 'Imports', 'Suggests', 'LinkingTo'))
-if (!'iNZightMaps' %in% inzpkgs)
+if (!'iNZightMaps' %in% inzpkgs) {
     extrapkgs <- extrapkgs[extrapkgs != "iNZightMaps"]
+    extrapkgs <- extrapkgs[extrapkgs != "sf"]
+}
 extrapkgs <- extrapkgs[extrapkgs != "Acinonyx"]
 
 ## Installing additional packages specified on command line ...
 deps <- unique(c(inzpkgs, extrapkgs, packrat:::recursivePackageDependencies(unique(c(inzpkgs, extrapkgs)), srclib, ap)))
+print(deps)
 
 missing <- deps[!deps %in% names(pkgversions)]
 

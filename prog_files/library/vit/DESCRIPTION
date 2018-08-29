@@ -68,6 +68,8 @@ Collate: 'canvas-refclass.R' 'canvas-viewports.R' 'canvas-plotdata.R'
         'methods-sampvar-proportion-diff.R' 'methods-sampvar-slope.R'
         'stackPoints.R'
 RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-08-17 04:12:03 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Garrett Grolemund [aut],
   Simon Potter [aut],
@@ -75,4 +77,4 @@ Author: Tom Elliott [aut, cre],
   Vivian Li [ctb],
   Danny Chang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.0; ; 2018-08-29 22:19:43 UTC; unix
+Built: R 3.5.0; ; 2018-08-17 04:12:04 UTC; unix
