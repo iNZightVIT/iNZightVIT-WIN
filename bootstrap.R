@@ -52,7 +52,7 @@ if (!'iNZightMaps' %in% inzpkgs)
 extrapkgs <- extrapkgs[extrapkgs != "Acinonyx"]
 
 ## Installing additional packages specified on command line ...
-deps <- c(extrapkgs, packrat:::recursivePackageDependencies(unique(c(inzpkgs, extrapkgs)), srclib, ap))
+deps <- unique(c(inzpkgs, extrapkgs, packrat:::recursivePackageDependencies(unique(c(inzpkgs, extrapkgs)), srclib, ap)))
 
 missing <- deps[!deps %in% names(pkgversions)]
 
