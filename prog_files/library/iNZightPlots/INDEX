@@ -1,3 +1,4 @@
+can.interact            Identify if a plot can be interactive
 convert.to.factor       Convert to Factor
 create                  Method for creating plots for iNZight
 exploreAllPlots         Explore all Univariate Plots
