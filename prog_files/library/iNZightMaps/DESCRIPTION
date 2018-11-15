@@ -1,8 +1,8 @@
 Package: iNZightMaps
 Type: Package
 Title: iNZightMaps
-Version: 2.0.1
-Date: 2018-09-13
+Version: 2.1
+Date: 2018-11-15
 Authors@R: c(person("Daniel", "Barnett", role = c("aut"),
                     email = "dbar344@aucklanduni.ac.nz"),
              person("Tom", "Elliott", role = c("cre", "aut"),
@@ -12,9 +12,10 @@ Authors@R: c(person("Daniel", "Barnett", role = c("aut"),
              person("Jason", "Wen", role = "aut",
 	            email = "jwen246@aucklanduni.ac.nz"))
 Depends: R (>= 3.2)
-Imports: ggplot2, dplyr, gridExtra, grid, rlang, scales, magrittr,
-        curl, XML, RgoogleMaps, maptools, RColorBrewer, countrycode,
-        iNZightPlots, methods, ggmap (>= 2.7.900)
+Imports: ggplot2, dplyr, gridExtra, grid, rlang, scales,
+       magrittr, curl, XML, RgoogleMaps, maptools,
+       RColorBrewer, countrycode, iNZightPlots, methods, ggmap
+       (>= 2.7.900)
 Suggests: sf, rgeos, ggsfextra
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 Description: Simple plotting functions for geographical data.
@@ -26,4 +27,4 @@ Author: Daniel Barnett [aut],
   Eric Lim [aut],
   Jason Wen [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.1; ; 2018-11-09 02:48:03 UTC; unix
+Built: R 3.5.0; ; 2018-11-15 00:09:28 UTC; unix

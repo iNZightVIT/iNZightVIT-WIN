@@ -1,8 +1,8 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 2.4
-Date: 2018-08-14
+Version: 2.4.1
+Date: 2018-11-15
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Daniel", "Barnett", role = "aut"),
@@ -12,9 +12,9 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("Simon", "Potter", role = "aut"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 3.2)
-Imports: stats, graphics, utils, grDevices, methods, gpairs, gWidgets2,
-        gWidgets2RGtk2, iNZightPlots, iNZightRegression, iNZightTools,
-        iNZightMR, iNZightTS
+Imports: stats, graphics, utils, grDevices, methods, gpairs,
+       gWidgets2, gWidgets2RGtk2, iNZightPlots,
+       iNZightRegression, iNZightTools, iNZightMR, iNZightTS
 Suggests: iNZightMaps, rgl, mgcv, sf
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 License: GPL-3 | file LICENSE
@@ -30,4 +30,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.5.1; ; 2018-11-09 02:46:44 UTC; unix
+Built: R 3.5.0; ; 2018-11-15 00:08:52 UTC; unix

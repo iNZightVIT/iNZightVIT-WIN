@@ -1,12 +1,13 @@
 Package: iNZightTools
 Type: Package
 Title: Tools for iNZight
-Version: 1.6.2
-Date: 2018-09-10
-Imports: utils, stats, methods, survey, grDevices, foreign, readr (>=
-        1.2.0), readxl, magrittr, tibble, dplyr, forcats, tidyr,
-        stringr, sas7bdat, tools
-Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData, covr
+Version: 1.6.3
+Date: 2018-11.15
+Imports: utils, stats, methods, survey, grDevices, foreign,
+       readr (>= 1.2.0), readxl, magrittr, tibble, dplyr,
+       forcats, tidyr, stringr, sas7bdat, tools
+Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData,
+       covr
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"),
@@ -19,4 +20,4 @@ Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.5.1; ; 2018-11-09 02:46:41 UTC; unix
+Built: R 3.5.0; ; 2018-11-15 00:08:50 UTC; unix
