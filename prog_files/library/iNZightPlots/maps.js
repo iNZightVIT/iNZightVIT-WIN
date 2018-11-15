@@ -19,7 +19,18 @@ class Inzmap {
     this.type = chart.type[0];
     this.seqVar = chart.seqVar[0];
     this.int = chart.int[0];
-    this.pathElements = document.querySelectorAll('g[id^="grill.gTree"]~g[id^="GRID.pathgrob"] path');
+    // identify which elements represent regions and split if necessary:
+    // selecting 'use' and 'path' as some maps have circles that represent regions (world thematic map)
+    // Note that for centroid maps, the circles will get selected too, so will need to split nodelist
+    let el = document.querySelectorAll('g[id^="grill.gTree"]~g[id^="GRID"] use, path');
+    if (el.length === this.data.length)  {
+      this.pathElements = el;
+    } else {
+      //split into 2: to separate between regions and circles
+      let arrayEL = Array.from(el);
+      this.pathElements = arrayEL.slice(0, this.data.length);
+      this.extraElements = arrayEL.slice(this.data.length);
+    }
     // default color palette = ggplot2 blues
     let defaultColors = ["#101f33", "#162e47", "#1b3c5e", "#234c78", "#2b5f94",
                       "#3572b2", "#3c89d3", "#46a0f7"];
@@ -45,9 +56,10 @@ class Inzmap {
   }
 
   filterMissing(data, names) {
+    const last = names.length - 1;
     // ids to take into account of missing values:
     let arr = data.map((d, i) => {
-      if (d[names[1]]) return i;
+      if (d[names[last]]) return i;
     }).filter(d => d !== undefined);
     return (arr);
   }
@@ -549,7 +561,7 @@ class CentroidMap extends Inzmap {
   }
 
   setCentroids() {
-    d3.select("svg").selectAll("use")
+    d3.selectAll(this.extraElements)
       .attr("class", "centroid");
 
     let arr = this.filteredData;
