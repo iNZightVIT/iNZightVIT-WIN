@@ -17,6 +17,8 @@ cipoisson               Confidence limits for the Poisson
 clogit                  Conditional logistic regression
 cluster                 Identify clusters.
 colon                   Chemotherapy for Stage B/C colon cancer
+concordance             Compute the concordance statistic for data or a
+                        model
 cox.zph                 Test the Proportional Hazards Assumption of a
                         Cox Regression
 coxph                   Fit Proportional Hazards Regression Model
@@ -24,6 +26,7 @@ coxph.control           Ancillary arguments for controlling coxph fits
 coxph.detail            Details of a Cox Model Fit
 coxph.object            Proportional Hazards Regression Object
 coxph.wtest             Compute a quadratic form
+diabetic                Ddiabetic retinopathy
 dsurvreg                Distributions available in survreg.
 finegray                Create data for a Fine-Gray model
 flchain                 Assay of serum free light chain for 7874
@@ -108,6 +111,7 @@ tcut                    Factors for person-year calculations
 tmerge                  Time based merge for survival data
 tobin                   Tobin's Tobit data
 transplant              Liver transplant waiting list
+udca                    Data from a trial of usrodeoxycholic acid
 untangle.specials       Help Process the 'specials' Argument of the
                         'terms' Function.
 uspop2                  Projected US Population

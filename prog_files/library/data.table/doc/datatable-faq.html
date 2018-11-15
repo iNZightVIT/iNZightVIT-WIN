@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="date" content="2018-05-26" />
+<meta name="date" content="2018-09-29" />
 
 <title>Frequently Asked Questions about data.table</title>
 
@@ -68,7 +68,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 <h1 class="title toc-ignore">Frequently Asked Questions about data.table</h1>
-<h4 class="date"><em>2018-05-26</em></h4>
+<h4 class="date"><em>2018-09-29</em></h4>
 
 
 <div id="TOC">
@@ -594,7 +594,7 @@ cbind.data.frame =<span class="st"> </span><span class="cf">function</span>(...)
 </div>
 <div id="i-dont-have-a-key-on-a-large-table-but-grouping-is-still-really-quick.-why-is-that" class="section level2">
 <h2><span class="header-section-number">3.2</span> I don’t have a <code>key</code> on a large table, but grouping is still really quick. Why is that?</h2>
-<p>data.table uses radix sorting. This is significantly faster than other sort algorithms. See <a href="http://user2015.math.aau.dk/presentations/234.pdf">our presentations</a> on <a href="https://github.com/Rdatatable/data.table/wiki">our homepage</a> for more information.</p>
+<p>data.table uses radix sorting. This is significantly faster than other sort algorithms. See <a href="https://github.com/Rdatatable/data.table/wiki/Presentations">our presentations</a> for more information, in particular from useR!2015 Denmark.</p>
 <p>This is also one reason why <code>setkey()</code> is quick.</p>
 <p>When no <code>key</code> is set, or we group in a different order from that of the key, we call it an <em>ad hoc</em> <code>by</code>.</p>
 </div>

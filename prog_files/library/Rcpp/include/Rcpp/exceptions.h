@@ -208,6 +208,7 @@ namespace Rcpp {
     RCPP_SIMPLE_EXCEPTION_CLASS(no_such_field, "No such field.") // not used internally
     RCPP_SIMPLE_EXCEPTION_CLASS(no_such_function, "No such function.")
     RCPP_SIMPLE_EXCEPTION_CLASS(unevaluated_promise, "Promise not yet evaluated.")
+    RCPP_SIMPLE_EXCEPTION_CLASS(embedded_nul_in_string, "Embedded NUL in string.")
 
     // Promoted
     RCPP_EXCEPTION_CLASS(no_such_slot, "No such slot")
@@ -243,7 +244,7 @@ namespace internal {
     inline bool is_Rcpp_eval_call(SEXP expr) {
         SEXP sys_calls_symbol = Rf_install("sys.calls");
         SEXP identity_symbol = Rf_install("identity");
-        SEXP identity_fun = Rf_findFun(identity_symbol, R_BaseEnv);
+        Shield<SEXP> identity_fun(Rf_findFun(identity_symbol, R_BaseEnv));
         SEXP tryCatch_symbol = Rf_install("tryCatch");
         SEXP evalq_symbol = Rf_install("evalq");
 

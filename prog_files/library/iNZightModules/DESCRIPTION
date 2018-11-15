@@ -12,9 +12,9 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("Simon", "Potter", role = "aut"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 3.2)
-Imports: stats, graphics, utils, grDevices, methods, gpairs,
-       gWidgets2, gWidgets2RGtk2, iNZightPlots,
-       iNZightRegression, iNZightTools, iNZightMR, iNZightTS
+Imports: stats, graphics, utils, grDevices, methods, gpairs, gWidgets2,
+        gWidgets2RGtk2, iNZightPlots, iNZightRegression, iNZightTools,
+        iNZightMR, iNZightTS
 Suggests: iNZightMaps, rgl, mgcv, sf
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 License: GPL-3 | file LICENSE
@@ -30,4 +30,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.5.0; ; 2018-11-15 03:16:54 UTC; unix
+Built: R 3.5.1; ; 2018-11-15 04:25:39 UTC; unix

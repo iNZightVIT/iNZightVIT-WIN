@@ -31,6 +31,11 @@ cipoisson	cipoisson
 clogit	clogit
 cluster	cluster
 colon	colon
+concordance	concordance
+concordance.coxph	concordance
+concordance.formula	concordance
+concordance.lm	concordance
+concordance.survreg	concordance
 cox.zph	cox.zph
 coxpenal.df	survival-internal
 coxpenal.fit	survival-internal
@@ -42,6 +47,7 @@ coxph.getdata	coxph
 coxph.object	coxph.object
 coxph.penalty	coxph
 coxph.wtest	coxph.wtest
+diabetic	diabetic
 dsurvreg	dsurvreg
 duplicated.Surv	Survmethods
 extractAIC.coxph.penal	coxph.object
@@ -195,6 +201,9 @@ tcut	tcut
 tmerge	tmerge
 tobin	tobin
 transplant	transplant
+udca	udca
+udca1	udca
+udca2	udca
 unique.Surv	Survmethods
 untangle.specials	untangle.specials
 uspop2	uspop2

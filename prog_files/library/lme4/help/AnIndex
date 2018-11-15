@@ -9,6 +9,7 @@ lme4-package	lme4-package
 .prt.VC	utilities
 .prt.warn	utilities
 .simulateFun	simulate.merMod
+allFit	allFit
 anova.merMod	merMod-class
 Arabidopsis	Arabidopsis
 as.data.frame.ranef.mer	ranef
@@ -23,6 +24,8 @@ coef.merMod	merMod-class
 confint.merMod	confint.merMod
 confint.thpr	confint.merMod
 convergence	convergence
+cooks.distance.influence.merMod	influence.merMod
+cooks.distance.merMod	influence.merMod
 cov2sdcor	vcconv
 Cv_to_Sv	vcconv
 Cv_to_Vv	vcconv
@@ -31,6 +34,8 @@ devcomp	devcomp
 devfun2	devfun2
 deviance.merMod	merMod-class
 df.residual.merMod	merMod-class
+dfbeta.influence.merMod	influence.merMod
+dfbetas.influence.merMod	influence.merMod
 dotplot.ranef.mer	ranef
 drop1.merMod	drop1.merMod
 dummy	dummy
@@ -71,6 +76,7 @@ GQN	GQdk
 grouseticks	grouseticks
 grouseticks_agg	grouseticks
 hatvalues.merMod	hatvalues.merMod
+influence.merMod	influence.merMod
 InstEval	InstEval
 isGLMM	isREML
 isGLMM.merMod	isREML
@@ -81,6 +87,7 @@ isNLMM	isREML
 isNLMM.merMod	isREML
 isREML	isREML
 isREML.merMod	isREML
+isSingular	isSingular
 lFormula	modular
 llikAIC	utilities
 lme4	lme4-package
@@ -153,6 +160,7 @@ refit.merMod	refit
 refitML	refitML
 refitML.merMod	refitML
 REMLcrit	merMod-class
+rePCA	rePCA
 rePos	rePos
 rePos-class	rePos-class
 residuals.glmResp	residuals.merMod
