@@ -159,9 +159,9 @@ class DotScatter extends Inzplot {
   addBrush() {
     var tag, selector;
     // identify if a raster map is present (from iNZightMaps)
-    if (document.querySelectorAll('g[id^="GRID.rastergrob"]').length > 0) {
+    if (document.querySelectorAll('g[id^="background.map"]').length > 0) {
       tag = "inz-plot-bg.1.1.1";
-      selector = 3;
+      selector = 4;
     }  else {
       tag = "inz-x-grid.1.1.1";
       selector = 4;

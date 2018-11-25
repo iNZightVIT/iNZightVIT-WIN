@@ -62,9 +62,9 @@ class Inzplot {
       break;
 
       case "scatter":
-      // test if there's a raster map
+      // test if there's a raster map (originally GRID.rastergrob)
       // OR: you could change the grid name in iNZightMaps package to inz-SCATTERPOINTS...
-       Grob = (document.querySelectorAll('g[id^="GRID.rastergrob"]').length > 0) ?
+       Grob = (document.querySelectorAll('g[id^="background.map"]').length > 0) ?
               'g[id^="SCATTERPOINTS."]' : 'g[id^="inz-SCATTERPOINTS."]';
       break;
 
