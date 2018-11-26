@@ -1,8 +1,8 @@
 Package: iNZightPlots
 Type: Package
 Title: iNZightPlots
-Version: 2.7.11
-Date: 2018-11-15
+Version: 2.7.12
+Date: 2018-11-26
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
              person("Yu Han", "Soh", role = "ctb"))
@@ -18,4 +18,4 @@ RoxygenNote: 6.0.1
 Author: Tom Elliott [aut, cre],
   Yu Han Soh [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.1; ; 2018-11-25 23:16:22 UTC; unix
+Built: R 3.5.1; ; 2018-11-26 00:03:29 UTC; unix
