@@ -1,3 +1,4 @@
+base64_decode           Base64 Encoding and Decoding
 conn_create_fd          Processx connections
 poll                    Poll for process I/O or termination
 process                 External process

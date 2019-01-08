@@ -22,6 +22,8 @@ bandchol                Choleski decomposition of a band diagonal
 betar                   GAM beta regression family
 bug.reports.mgcv        Reporting mgcv bugs.
 cSplineDes              Evaluate cyclic B spline basis
+choldrop                Down date a Cholesky factor on dropping a
+                        row/col
 choose.k                Basis dimension choice for smooths
 columb                  Reduced version of Columbus OH crime data
 concurvity              GAM concurvity measures
