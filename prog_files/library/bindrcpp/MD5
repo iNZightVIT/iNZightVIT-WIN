@@ -1,4 +1,4 @@
-53f55385f5ce1d672c704f070559481f *DESCRIPTION
+d66d10cc3b6f47710790df4cba4aa1e2 *DESCRIPTION
 e35d82e697a4e551f295ee42974917de *INDEX
 d3d2f503f5c96ac395a270e7c295ec0b *LICENSE
 93aca0340de44aff420b23c5cd948418 *Meta/Rd.rds
@@ -6,7 +6,7 @@ d3d2f503f5c96ac395a270e7c295ec0b *LICENSE
 9c140cb2b7c5df872457c5076fdb828b *Meta/hsearch.rds
 67ff98eab75a4b4582ccd5c0909921e4 *Meta/links.rds
 89424d33ea658f8695df6d74d940ac65 *Meta/nsInfo.rds
-96e3c95bff81d410b6c12c72657dd660 *Meta/package.rds
+465f4d578b5faa7896632345e5c431da *Meta/package.rds
 3a9c92677932609677f9a6370d097c29 *NAMESPACE
 e815df11d6de279142b7cddd9ea598e5 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/bindrcpp
@@ -14,15 +14,15 @@ b45e455e9f11274b309f70e321c83e1c *R/bindrcpp.rdb
 5497f88320ecf261180871a55bd76303 *R/bindrcpp.rdx
 0ba640a1ae1e6afbfedf80862db04865 *help/AnIndex
 be495c046e051aa46614ac5c41791cac *help/aliases.rds
-2df6eb32622f7580f85e2866e359115a *help/bindrcpp.rdb
-3e4f54825df723d9e46d50d4537a20a8 *help/bindrcpp.rdx
-06134d037ba5a04fbdb734f3888035e8 *help/paths.rds
+f79feb72ff4e2cd9831b9124ee33088c *help/bindrcpp.rdb
+9ec93af9d549e891b0aae7262d57737a *help/bindrcpp.rdx
+68151ad3213731eb4c85d17624f90135 *help/paths.rds
 c2d6aabc371b08d861a30f98ce989f53 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 ebff110d87c1681eda6f30b93fa7ffde *include/bindrcpp.h
 08686924000a0f02bac2a287254ef989 *include/bindrcpp_RcppExports.h
 7b794b31e36acbd0a5061a81eb2093be *include/bindrcpp_types.h
-6d9a34b2f96f83c4753ae2a05603fa4e *libs/i386/bindrcpp.dll
+595a0035797a20427a77251c8736729e *libs/i386/bindrcpp.dll
 7e0e6e0103607d394b7cd54b5a5887f3 *libs/i386/symbols.rds
-40ad0940f4189928a6388cb6668b11d3 *libs/x64/bindrcpp.dll
+9035c881864b619f1543c22d118e2ddd *libs/x64/bindrcpp.dll
 14f802b1300dc8f80791c4d5b4e9f071 *libs/x64/symbols.rds

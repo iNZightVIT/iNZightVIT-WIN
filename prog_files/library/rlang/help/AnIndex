@@ -10,8 +10,8 @@ abort	abort
 add_backtrace	rlang__backtrace_on_error
 are_na	are_na
 arg_match	arg_match
-as_box	box
-as_box_if	box
+as_box	as_box
+as_box_if	as_box
 as_bytes	as_bytes
 as_character	vector-coercion
 as_closure	as_function
@@ -24,8 +24,10 @@ as_env	as_env
 as_environment	as_environment
 as_function	as_function
 as_integer	vector-coercion
+as_label	as_label
 as_list	vector-coercion
 as_logical	vector-coercion
+as_name	as_name
 as_native_character	as_utf8_character
 as_native_string	as_utf8_character
 as_overscope	as_overscope
@@ -33,7 +35,7 @@ as_pairlist	as_pairlist
 as_quosure	as_quosure
 as_quosureish	is_quosureish
 as_quosures	new_quosures
-as_string	vector-coercion
+as_string	as_string
 as_utf8_character	as_utf8_character
 as_utf8_string	as_utf8_character
 bare-type-predicates	bare-type-predicates
@@ -55,6 +57,7 @@ call_frame	stack
 call_inspect	call_inspect
 call_modify	call_modify
 call_name	call_name
+call_ns	call_name
 call_stack	stack
 call_standardise	call_standardise
 catch_cnd	catch_cnd
@@ -84,6 +87,7 @@ dbl	vector-construction
 dbl_along	vector-old-ctors
 dbl_len	vector-old-ctors
 dictionary	dictionary
+done	done
 dots_definitions	dots_definitions
 dots_list	tidy-dots
 dots_n	dots_n
@@ -97,6 +101,7 @@ enquo	quotation
 enquos	quotation
 ensym	quotation
 ensyms	quotation
+entrace	entrace
 env	env
 env_bind	env_bind
 env_binding_are_active	env_binding_are_active
@@ -221,6 +226,7 @@ is_dbl_na	are_na
 is_definition	op-definition
 is_dictionary	dictionary
 is_dictionaryish	is_named
+is_done_box	done
 is_double	type-predicates
 is_empty	is_empty
 is_env	is_env
@@ -236,6 +242,7 @@ is_function	is_function
 is_installed	is_installed
 is_integer	type-predicates
 is_integerish	is_integerish
+is_interactive	is_interactive
 is_int_na	are_na
 is_lambda	as_function
 is_lang	is_lang
@@ -291,6 +298,7 @@ lang_standardise	lang_modify
 lang_tail	lang_head
 lang_type_of	switch_lang
 last_error	last_error
+last_trace	last_error
 lgl	vector-construction
 lgl_along	vector-old-ctors
 lgl_len	vector-old-ctors
@@ -426,6 +434,7 @@ scalar-type-predicates	scalar-type-predicates
 scoped_bindings	scoped_bindings
 scoped_env	scoped_env
 scoped_envs	scoped_env
+scoped_interactive	is_interactive
 scoped_names	scoped_env
 scoped_options	scoped_options
 search_env	search_envs
@@ -477,6 +486,7 @@ with_abort	with_abort
 with_bindings	scoped_bindings
 with_env	with_env
 with_handlers	with_handlers
+with_interactive	is_interactive
 with_options	scoped_options
 with_restarts	with_restarts
 zap	zap

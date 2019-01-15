@@ -18,7 +18,7 @@ representing calendar dates and times.
 
 <pre>
 ## S3 method for class 'POSIXct'
-print(x, tz = "", usetz = TRUE, ...)
+print(x, tz = "", usetz = TRUE, max = NULL, ...)
 
 ## S3 method for class 'POSIXct'
 summary(object, digits = 15, ...)
@@ -41,6 +41,12 @@ date-time classes.</p>
 <tr valign="top"><td><code>tz, usetz</code></td>
 <td>
 <p>for timezone formatting, passed to <code><a href="strptime.html">format.POSIXct</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>max</code></td>
+<td>
+<p>numeric or <code>NULL</code>, specifying the maximal number of
+entries to be printed.  By default, when <code>NULL</code>,
+<code><a href="options.html">getOption</a>("max.print")</code> used.</p>
 </td></tr>
 <tr valign="top"><td><code>digits</code></td>
 <td>
@@ -337,5 +343,5 @@ for(lpS in list(.leap.seconds, leapS)) {
 }
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.2 <a href="00Index.html">Index</a>]</div>
 </body></html>

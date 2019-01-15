@@ -4,11 +4,11 @@ cat (" * cleaning old files\n")
 if (dir.exists("prog_files")) unlink("prog_files", TRUE, TRUE)
 
 ## download installer
-R_VERSION = "3.5.1"
+R_VERSION = "3.5.2"
 INST_FILE = sprintf("R-%s-win.exe", R_VERSION)
 LOCAL_DIR <- file.path("~", ".wine", "drive_c", "Program Files", "R", sprintf("R-%s", R_VERSION))
 if (!dir.exists(LOCAL_DIR)) {
-    inst.file <- file.path("https://cran.stat.auckland.ac.nz/bin/windows/base", INST_FILE)
+    inst.file <- file.path("https://cran.rstudio.com/bin/windows/base", INST_FILE)
     cat(" * downloading installer\n")
     download.file(inst.file, INST_FILE, quiet = TRUE)
     cat(" * installing into ~/.wine\n")
@@ -34,7 +34,7 @@ cat(" * compiling list of required packages\n")
 pkglib <- file.path("prog_files", "library")
 pkgversions <- installed.packages(pkglib)[, 'Version']
 
-repos <- c('https://r.docker.stat.auckland.ac.nz', 'https://cran.stat.auckland.ac.nz')
+repos <- c('https://r.docker.stat.auckland.ac.nz', 'https://cran.rstudio.com')
 if (!requireNamespace('packrat', quietly = TRUE)) install.packages('packrat', repos = repos[2])
 if (!requireNamespace('devtools', quietly = TRUE)) install.packages('devtools', repos = repos[2])
 
@@ -62,7 +62,8 @@ missing <- deps[!deps %in% names(pkgversions)]
 pkgu <- pkgversions[names(pkgversions) %in% rownames(ap)]
 outdated <- names(pkgu)[ap[names(pkgu), 'Version'] > pkgu]
 
-grab <- unique(c(missing, outdated))
+grab <- unique(c(missing,
+ outdated))
 
 cat(" * downloading packages\n")
 pkgs <- download.packages(grab, pkglib, repos = repos, type = 'win.binary', quiet = TRUE)

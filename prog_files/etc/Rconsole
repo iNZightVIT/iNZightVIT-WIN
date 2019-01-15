@@ -4,8 +4,8 @@
 
 ## Style
 # This can be `yes' (for MDI) or `no' (for SDI).
-# MDI = yes
-  MDI = no
+  MDI = yes
+# MDI = no
 
 # the next two are only relevant for MDI
 toolbar = yes

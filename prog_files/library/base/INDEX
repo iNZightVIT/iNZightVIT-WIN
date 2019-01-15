@@ -454,4 +454,4 @@ withVisible             Return both a Value and its Visibility
 write                   Write Data to a File
 writeLines              Write Lines to a Connection
 xtfrm                   Auxiliary Function for Sorting and Ranking
-zapsmall                Rounding of Numbers
+zapsmall                Rounding of Numbers: Zapping Small Ones to Zero

@@ -342,10 +342,15 @@ standard distributions.
 <pre>
 require(stats)
 
+## Seed the current RNG, i.e., set the RNG status
+set.seed(42); u1 &lt;- runif(30)
+set.seed(42); u2 &lt;- runif(30) # the same because of identical RNG status:
+stopifnot(identical(u1, u2))
+
 ## the default random seed is 626 integers, so only print a few
-runif(1); .Random.seed[1:6]; runif(1); .Random.seed[1:6]
-## If there is no seed, a "random" new one is created:
-rm(.Random.seed); runif(1); .Random.seed[1:6]
+ runif(1); .Random.seed[1:6]; runif(1); .Random.seed[1:6]
+ ## If there is no seed, a "random" new one is created:
+ rm(.Random.seed); runif(1); .Random.seed[1:6]
 
 ok &lt;- RNGkind()
 RNGkind("Wich")  # (partial string matching on 'kind')
@@ -359,6 +364,7 @@ next.WHseed &lt;- function(i.seed = .Random.seed[-1])
   { (a.WH * i.seed) %% p.WH }
 my.runif1 &lt;- function(i.seed = .Random.seed)
   { ns &lt;- next.WHseed(i.seed[-1]); sum(ns / p.WH) %% 1 }
+set.seed(1998-12-04)# (when the next lines were added to the souRce)
 rs &lt;- .Random.seed
 (WHs &lt;- next.WHseed(rs[-1]))
 u &lt;- runif(1)
@@ -382,5 +388,5 @@ sum(duplicated(runif(1e6))) # around 110 for default generator
 qbirthday(1 - 1e-6, classes = 2e9) # 235,000
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.2 <a href="00Index.html">Index</a>]</div>
 </body></html>

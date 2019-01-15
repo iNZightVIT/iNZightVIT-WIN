@@ -1,5 +1,5 @@
 1148328a784117c9ece85e67e7de3c9d *CITATION
-ff0c2d5ad0b0ac3cf3059bfe877df613 *DESCRIPTION
+1cd5f830ea7a4357c22ea00c3d7ee53a *DESCRIPTION
 e27939be2da48a26a84ab9dad8bd2446 *INDEX
 f6c2583b45abc5d23c9ba707149ff094 *Meta/Rd.rds
 de90190fe75dc2211506d19796f19e9b *Meta/demo.rds
@@ -7,7 +7,7 @@ de90190fe75dc2211506d19796f19e9b *Meta/demo.rds
 66aeb43a5b575b44a78813221c53016f *Meta/hsearch.rds
 b1369a2b21ecd71df5e0485db379497c *Meta/links.rds
 7fc3ad6ba43368141b553fe6d1276d5b *Meta/nsInfo.rds
-1d7cf9b9c87e0494a8ae06cbbfb28477 *Meta/package.rds
+cb7e1dfec61d6c6e055c5d63ca6e121e *Meta/package.rds
 8dc0c88d928d2f88418222f44a4ae923 *Meta/vignette.rds
 9651fb0f8c7e12972eeb685106bbd828 *NAMESPACE
 381c9b048602f5425e5e06a516293b19 *NEWS
@@ -40,13 +40,13 @@ a8cbc1c727a9799f10f08cd185c94733 *doc/zoo.R
 75e37b39b82994a199502f9c71607e55 *doc/zoo.pdf
 d384e4d7278a80317c77ffa4139d4826 *help/AnIndex
 65a2d54617e99efd5aa97cb5d3ba5a99 *help/aliases.rds
-6890d3d34af9e4b7eba14cf623fc7d6f *help/paths.rds
-bb8e81bc39a760610a8ea78796f94a49 *help/zoo.rdb
-2822c0f5e3ec530b52a3a367d46cb607 *help/zoo.rdx
+0bb2990069af81f233c8b07d5ba90b6e *help/paths.rds
+238764a5d82a5c72996f05336f2b1dd4 *help/zoo.rdb
+26079c981f1971de4b19ad3bb0ff94fd *help/zoo.rdx
 a142e66b2bf63c1629f9f284190168e0 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 dd2909911733f11d02837283e885402e *include/zoo.h
 203dfd33ce516518e4ba11b28e0efc9e *libs/i386/symbols.rds
-9373d5c8bd16eb53ef04939333fd7570 *libs/i386/zoo.dll
+20373a548202df90fedfdbb953e6b7e4 *libs/i386/zoo.dll
 a72dc072e02fc8a07369a5198c64c2be *libs/x64/symbols.rds
-4676a6ec257f166139bd44faa43814ce *libs/x64/zoo.dll
+795fececbc043558ba44c212583a51ee *libs/x64/zoo.dll
