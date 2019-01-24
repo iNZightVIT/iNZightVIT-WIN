@@ -1,18 +1,23 @@
-ca <- commandArgs(trailingOnly = TRUE)
+## read yaml config
+config <- yaml::read_yaml("pkg_versions.yml")
 
-cat (" * cleaning old files\n")
-if (dir.exists("prog_files")) unlink("prog_files", TRUE, TRUE)
-
-## download installer
-R_VERSION = "3.5.1"
+## download R installer
+R_VERSION = config$r_version
 INST_FILE = sprintf("R-%s-win.exe", R_VERSION)
-LOCAL_DIR <- file.path("~", ".wine", "drive_c", "Program Files", "R", sprintf("R-%s", R_VERSION))
+LOCAL_DIR <- file.path(
+    "~", ".wine", "drive_c", "Program Files", "R", sprintf("R-%s", R_VERSION)
+)
 if (!dir.exists(LOCAL_DIR)) {
-    inst.file <- file.path("https://cran.stat.auckland.ac.nz/bin/windows/base", INST_FILE)
+    dir.create(LOCAL_DIR, recursive = TRUE)
+    inst.file <- file.path("https://cran.rstudio.com/bin/windows/base", INST_FILE)
     cat(" * downloading installer\n")
     download.file(inst.file, INST_FILE, quiet = TRUE)
-    cat(" * installing into ~/.wine\n")
-    system(sprintf("wine %s", INST_FILE))
+    cat(" * installing R\n")
+    if (.Platform$OS.type == "windows") {
+        cat(" - can't do that on windows yet")
+    } else {
+        system(sprintf("wine %s", INST_FILE))
+    }
     unlink(INST_FILE)
 }
 

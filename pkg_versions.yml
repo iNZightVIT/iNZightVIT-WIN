@@ -4,6 +4,8 @@
 # github.com/iNZightVIT/PACKAGENAME/releases/download/VERSION/PACKAGESNAME_VERSION.zip
 # if it exists, else they will use install_github('iNZightVIT/PACKAGES@branch/tag')
 
+r_version: 3.5.2
+
 packages:
   iNZightTools:
     branch: dev
