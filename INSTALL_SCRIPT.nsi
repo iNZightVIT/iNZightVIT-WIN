@@ -36,11 +36,12 @@ Section "install"
 	file ".Rprofile"
 	file "icon.ico"
 
-	${If} $INSTDIR == "$DOCUMENTS\${APPNAME}"
-		createDirectory "$INSTDIR\Saved Plots"
-		createDirectory "$INSTDIR\Saved Data"
-	${Else}
-		IfFileExists $DOCUMENTS\${APPNAME} next 0
+    ${If} $INSTDIR == "$DOCUMENTS\${APPNAME}"
+        createDirectory "$INSTDIR\Saved Plots"
+        createDirectory "$INSTDIR\Saved Data"
+    ${Else}
+        IfFileExists $DOCUMENTS\${APPNAME} next 0
+        IfSilent +6 0
 		MessageBox MB_YESNO|MB_ICONQUESTION|MB_USERICON "Do you want to create an iNZightVIT folder in My Documents for saved plots and data?" IDYES true IDNO next
 		true:
 			createDirectory "$DOCUMENTS\${APPNAME}"
