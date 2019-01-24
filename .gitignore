@@ -1,6 +1,6 @@
 .inzight
 *.exe
-!prog_files/**/*.exe
+prog_files
 *.zip
 
 *.Rhistory
