@@ -1,0 +1,23 @@
+# list of package versions to install for this specific branch
+# packages should be listed in order installed
+# and will be installed from
+# github.com/iNZightVIT/PACKAGENAME/releases/download/VERSION/PACKAGESNAME_VERSION.zip
+# if it exists, else they will use install_github('iNZightVIT/PACKAGES@branch/tag')
+
+packages:
+  iNZightTools:
+    branch: dev
+  iNZightTS:
+    branch: dev
+  iNZightMR:
+    branch: dev
+  iNZightRegression:
+    branch: dev
+  iNZightPlots:
+    branch: dev
+  iNZightModules:
+    branch: dev
+  iNZight:
+    branch: dev
+  vit:
+    branch: dev
