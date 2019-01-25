@@ -1,7 +1,7 @@
 Package: iNZightMaps
 Type: Package
 Title: iNZightMaps
-Version: 2.1.1
+Version: 2.1.1.9000
 Date: 2018-12-03
 Authors@R: c(person("Daniel", "Barnett", role = c("aut"),
                     email = "dbar344@aucklanduni.ac.nz"),
@@ -26,4 +26,4 @@ Author: Daniel Barnett [aut],
   Eric Lim [aut],
   Jason Wen [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.1; ; 2019-01-08 20:29:51 UTC; unix
+Built: R 3.5.2; ; 2019-01-25 03:04:45 UTC; unix
