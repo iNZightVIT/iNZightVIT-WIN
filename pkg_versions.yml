@@ -7,19 +7,19 @@
 r_version: 3.5.2
 
 packages:
-  iNZightTools:
+  - name: iNZightTools
     branch: dev
-  iNZightTS:
-    branch: dev
-  iNZightMR:
-    branch: dev
-  iNZightRegression:
-    branch: dev
-  iNZightPlots:
-    branch: dev
-  iNZightModules:
-    branch: dev
-  iNZight:
-    branch: dev
-  vit:
-    branch: dev
+  # - name: iNZightTS
+  #   branch: dev
+  # - name: iNZightMR
+  #   branch: dev
+  # - name: iNZightRegression
+  #   branch: dev
+  # - name: iNZightPlots
+  #   branch: dev
+  # - name: iNZightModules
+  #   branch: dev
+  # - name: iNZight
+  #   branch: dev
+  # - name: vit
+  #   branch: dev

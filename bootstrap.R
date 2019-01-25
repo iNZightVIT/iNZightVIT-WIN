@@ -33,19 +33,53 @@ for (dir in subdirs)
 x <- dir.create(file.path("prog_files", "images"))
 cat(" * copying assets\n")
 
-x <- file.copy(file.path("assets", "images"), file.path("prog_files"), recursive = TRUE)
-x <- file.copy(file.path("assets", "inzight_profile.R"), file.path(".Rprofile"))
-dir.create(file.path("prog_files", "vit"))
-x <- file.copy(file.path("assets", "vit_profile.R"), file.path("prog_files", "vit", ".Rprofile"))
-x <- file.copy(file.path("assets", "update_profile.R"), file.path("prog_files", ".Rprofile"))
+# x <- file.copy(file.path("assets", "images"), file.path("prog_files"), recursive = TRUE)
+# x <- file.copy(file.path("assets", "inzight_profile.R"), file.path(".Rprofile"))
+# dir.create(file.path("prog_files", "vit"))
+# x <- file.copy(file.path("assets", "vit_profile.R"), file.path("prog_files", "vit", ".Rprofile"))
+# x <- file.copy(file.path("assets", "update_profile.R"), file.path("prog_files", ".Rprofile"))
 
+if (!requireNamespace('devtools', quietly = TRUE)) {
+    stop('install devtools please')
+}
 
-## run this to get all the necessary packages and get them updated and all that jazz
-# cat(" * compiling list of required packages\n")
+# run this to get all the necessary packages and get them updated and all that jazz
+cat(" * compiling list of required packages\n")
+for (pkg in config$packages) {
+    cat(" **", pkg$name, "\n")
+    if (!is.null(pkg$tag)) {
+        url <- sprintf(
+            "https://github.com/iNZightVIT/%s/releases/download/%s/%s_%s.zip",
+            pkg$name, pkg$tag, pkg$name, pkg$tag
+        )
+    } else if (!is.null(pkg$branch)) {
+        url <- sprintf(
+            "https://github.com/iNZightVIT/%s/archive/%s.zip",
+            pkg$name, pkg$branch
+        )
+    }
+    
+    cat(" *** downloading package\n")
+    pkgfile <- sprintf("%s.zip", pkg$name)
+    download.file(url, pkgfile, quiet = TRUE)
+
+    cat(" *** installing package dependencies\n")
+    unzip(pkgfile)
+    unlink(pkgfile)
+    pkgf <- list.files(pattern = pkg$name)
+
+    devtools::install_deps(pkgf, lib = file.path("prog_files", "library"))
+    suggests <- devtools::parse_deps(packageDescription(pkgf)$Suggests)
+    # some pkgs we don't want (unless depanded of)
+    suggests <- suggests[!suggests %in% c('iNZightMaps', 'sf')]
+    if (length(suggests) > 0)
+        utils::install.packages(suggests, lib = file.path("prog_files"))
+}
+
 # pkglib <- file.path("prog_files", "library")
 # pkgversions <- installed.packages(pkglib)[, 'Version']
 
-# repos <- c('https://r.docker.stat.auckland.ac.nz', 'https://cran.stat.auckland.ac.nz')
+repos <- c('https://r.docker.stat.auckland.ac.nz', 'https://cran.stat.auckland.ac.nz')
 # if (!requireNamespace('packrat', quietly = TRUE)) install.packages('packrat', repos = repos[2])
 # if (!requireNamespace('devtools', quietly = TRUE)) install.packages('devtools', repos = repos[2])
 
