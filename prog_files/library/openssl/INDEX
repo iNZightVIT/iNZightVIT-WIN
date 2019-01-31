@@ -1,5 +1,4 @@
 aes_cbc                 Symmetric AES encryption
-askpass                 Password Prompt Utility
 base64_encode           Encode and decode base64
 bignum                  Big number arithmetic
 cert_verify             X509 certificates
