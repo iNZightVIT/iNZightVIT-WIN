@@ -1,5 +1,6 @@
 Package: sf
-Version: 0.7-1
+Version: 0.7-2
+Date: 2018-11-24
 Title: Simple Features for R
 Authors@R: 
     c(person(given = "Edzer",
@@ -46,15 +47,16 @@ BugReports: https://github.com/r-spatial/sf/issues/
 Depends: methods, R (>= 3.3.0)
 Imports: classInt (>= 0.2-1), DBI (>= 0.8), graphics, grDevices, grid,
         magrittr, Rcpp, stats, tools, units (>= 0.6-0), utils
-Suggests: covr, dplyr (>= 0.7-0), ggplot2, knitr, lwgeom (>= 0.1-2),
-        maps, maptools, mapview, microbenchmark, odbc, pillar, pool,
-        raster, rgdal, rgeos, rlang, rmarkdown, RPostgres (>= 1.1.0),
-        RPostgreSQL, RSQLite, sp (>= 1.2-4), spatstat, stars, testthat,
-        tibble (>= 1.4.1), tidyr (>= 0.7-2), tidyselect, tmap (>= 2.0)
+Suggests: blob, covr, dplyr (>= 0.7-0), ggplot2, knitr, lwgeom (>=
+        0.1-5), maps, maptools, mapview, microbenchmark, odbc, pillar,
+        pool, raster, rgdal, rgeos, rlang, rmarkdown, RPostgres (>=
+        1.1.0), RPostgreSQL, RSQLite, sp (>= 1.2-4), spatstat, stars
+        (>= 0.2-0), testthat, tibble (>= 1.4.1), tidyr (>= 0.7-2),
+        tidyselect, tmap (>= 2.0)
 LinkingTo: Rcpp
 VignetteBuilder: knitr
 Encoding: UTF-8
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 SystemRequirements: C++11, GDAL (>= 2.0.1), GEOS (>= 3.4.0), PROJ (>=
         4.8.0)
 Collate: 'RcppExports.R' 'init.R' 'crs.R' 'bbox.R' 'read.R' 'db.R'
@@ -65,7 +67,7 @@ Collate: 'RcppExports.R' 'init.R' 'crs.R' 'bbox.R' 'read.R' 'db.R'
         'collection_extract.R' 'jitter.R' 'sgbp.R' 'spatstat.R'
         'stars.R' 'crop.R' 'gdal_utils.R' 'nearest.R' 'deprecated.R'
 NeedsCompilation: yes
-Packaged: 2018-10-24 12:11:05 UTC; edzer
+Packaged: 2018-12-20 08:55:02 UTC; edzer
 Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Roger Bivand [ctb] (<https://orcid.org/0000-0003-2392-6140>),
   Etienne Racine [ctb],
@@ -78,6 +80,6 @@ Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Kirill Müller [ctb]
 Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 Repository: CRAN
-Date/Publication: 2018-10-24 16:10:03 UTC
-Built: R 3.5.1; x86_64-w64-mingw32; 2018-11-09 21:31:03 UTC; windows
+Date/Publication: 2018-12-20 10:10:03 UTC
+Built: R 3.5.2; x86_64-w64-mingw32; 2019-01-24 16:23:28 UTC; windows
 Archs: i386, x64

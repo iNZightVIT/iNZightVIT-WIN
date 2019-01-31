@@ -218,6 +218,7 @@ st_dimension	geos_query
 st_disjoint	geos_binary_pred
 st_distance	geos_measures
 st_drivers	st_drivers
+st_drop_geometry	st_geometry
 st_equals	geos_binary_pred
 st_equals_exact	geos_binary_pred
 st_geometry	st_geometry

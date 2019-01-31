@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2018-07-30" />
+<meta name="date" content="2019-01-17" />
 
 <title>Fun with bignum: how RSA encryption works</title>
 
@@ -282,6 +282,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -289,14 +292,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -307,7 +370,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Fun with bignum: how RSA encryption works</h1>
-<h4 class="date"><em>2018-07-30</em></h4>
+<h4 class="date"><em>2019-01-17</em></h4>
 
 </div>
 
@@ -341,10 +404,10 @@ stopifnot(div &lt; z)</code></pre>
 <p>OpenSSL has a key generator that does these things for us.</p>
 <pre class="r"><code>(key &lt;- rsa_keygen(512))</code></pre>
 <pre><code>## [512-bit rsa private key]
-## md5: b0d5aa272a532c4b327ee7589454d886</code></pre>
+## md5: 2756efaab62e064be71223d66efeff15</code></pre>
 <pre class="r"><code>(pubkey &lt;- key$pubkey)</code></pre>
 <pre><code>## [512-bit rsa public key]
-## md5: b0d5aa272a532c4b327ee7589454d886</code></pre>
+## md5: 2756efaab62e064be71223d66efeff15</code></pre>
 <p>Usually we would use <code>rsa_encrypt</code> and <code>rsa_decrypt</code> to perform the encryption:</p>
 <pre class="r"><code>msg &lt;- charToRaw(&quot;hello world&quot;)
 ciphertext &lt;- rsa_encrypt(msg, pubkey)
@@ -359,25 +422,25 @@ rawToChar(rsa_decrypt(ciphertext, key))</code></pre>
 <pre><code>## $e
 ## [b] 65537
 ## $n
-## [b] 10947601184357074941325351340160670096981298644535007666657928422995572947809693051674900776972206683597962792463899710263914913037516090872295106325917349
+## [b] 9743775270520008918335575690198532996589564244544663052593899703298728030000357595773660474015684932349756730125127873077819768320547755099920256254436951
 ## $p
-## [b] 108884286841501989078911494915964964578187033716662261704931002645237046833983
+## [b] 102128324288674135667481150134689439540961528693264436583643389811621285278723
 ## $q
-## [b] 100543443888216954653556316422477922998648329435975230044324034218454013163803
+## [b] 95407178550961279984030497768811001570265064106565696834534083378150993745437
 ## $d
-## [b] 772915310130463490143161887955253071375443929814661648742332343763073012641934796038721325136911213458728822886150509516240094129274503706464152439620517
+## [b] 7868674278533827791978734812453382956871731810161073776012514179731833635774577279854634677859938184394244200696195752250174408785172236994288888176125273
 ## $dp
-## [b] 17689106947243109659019648234894471487311859682031571484388976992597141120915
+## [b] 27348705178238721347701209772552903916014996544956144804353899189678403903773
 ## $dq
-## [b] 17582867851791423429275202443169804469040519152016603011092936145653622302979
+## [b] 76783438752031703487765759407940056255581740714965608951289587465053267835105
 ## $qi
-## [b] 82400687760824588033944131903112025160786198825315143055697072724302496047676</code></pre>
+## [b] 89533428055978566910029142754726935646663178885599917629403501346828141532427</code></pre>
 <p>You can verify that the equations above hold for this key. The public key is simply a subset of the key which only contains <span class="math inline">\(n\)</span> and <span class="math inline">\(e\)</span>:</p>
 <pre class="r"><code>pubkey$data</code></pre>
 <pre><code>## $e
 ## [b] 65537
 ## $n
-## [b] 10947601184357074941325351340160670096981298644535007666657928422995572947809693051674900776972206683597962792463899710263914913037516090872295106325917349</code></pre>
+## [b] 9743775270520008918335575690198532996589564244544663052593899703298728030000357595773660474015684932349756730125127873077819768320547755099920256254436951</code></pre>
 <p>In order to encrypt a message into ciphertext we have to treat the message data as an integer. The message cannot be larger than the key size. For example convert the text <code>hello world</code> into an integer:</p>
 <pre class="r"><code>m &lt;- bignum(charToRaw(&quot;hello world&quot;))
 print(m)</code></pre>
@@ -387,10 +450,10 @@ print(m)</code></pre>
 n &lt;- pubkey$data$n
 c &lt;- (m ^ e) %% n
 print(c)</code></pre>
-<pre><code>## [b] 8223702921098317079976842617558909907455140775905443359346640214781529221738121728826640654293560363531330850493033813395708144323293839693351436593966496</code></pre>
+<pre><code>## [b] 3343323364498274343180627475429598574804835151908480827157941384540584860230355856034931115243295601284150320357851036296017096770254800076916077853226180</code></pre>
 <p>This number represents our encrypted message! It is usually exchanged using base64 notation for human readability:</p>
 <pre class="r"><code>base64_encode(c)</code></pre>
-<pre><code>## [1] &quot;nQSfX7PEL/KBj5E/aHx1wLj89AIbaZp10agnn4CSf6k3MjkioD85GETtIHfxjBmnGu3pIrzAYRu/ZbhiS4ytoA==&quot;</code></pre>
+<pre><code>## [1] &quot;P9XS/l3oiELYS+g/iEpBALZZJe/X6Viy6m1+G3N5XuBVVUoQ+XaTPvXsGfVa92dpTxB8WVviQeyHSgX1ZzU0xA==&quot;</code></pre>
 <p>The ciphertext can be decrypted using <span class="math inline">\(d\)</span> from the corresponding private key via <span class="math inline">\(m = c^d \pmod{n}\)</span>. Note that <code>c^d</code> is too large to calculate directly so we need to use <code>bignum_mod_exp</code> instead.</p>
 <pre class="r"><code>d &lt;- key$data$d
 out &lt;- bignum_mod_exp(c, d, n)

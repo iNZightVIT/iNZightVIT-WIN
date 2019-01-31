@@ -1,10 +1,14 @@
 abort                   Signal an error, warning, or message
 are_na                  Test for missing values
 arg_match               Match an argument to a character vector
+as_box                  Convert object to a box
 as_data_mask            Create a data mask
 as_environment          Coerce to an environment
 as_function             Convert to function or closure
+as_label                Create a default name for an R object
+as_name                 Extract names from symbols
 as_quosure              Coerce object to quosure
+as_string               Cast symbol to string
 as_utf8_character       Coerce to a character vector and attempt
                         encoding conversion
 bare-type-predicates    Bare type predicates
@@ -14,7 +18,7 @@ call_args               Extract arguments from a call
 call_fn                 Extract function from a call
 call_inspect            Inspect a call
 call_modify             Modify the arguments of a call
-call_name               Extract function name of a call
+call_name               Extract function name or namespaced of a call
 call_standardise        Standardise a call
 caller_env              Get the current or caller environment
 caller_fn               Get properties of the current or caller frame
@@ -23,10 +27,12 @@ cnd                     Create a condition object
 cnd_muffle              Muffle a condition
 cnd_signal              Signal a condition
 cnd_type                What type is a condition?
+done                    Box a final value for early termination
 dots_n                  How many arguments are currently forwarded in
                         dots?
 dots_values             Evaluate dots with preliminary splicing
 empty_env               Get the empty environment
+entrace                 Add backtrace from error handler
 env                     Create a new environment
 env_bind                Bind symbols to objects in an environment
 env_bury                Mask bindings by defining symbols deeper in a
@@ -75,6 +81,7 @@ is_formula              Is object a formula?
 is_function             Is object a function?
 is_installed            Is a package installed in the library?
 is_integerish           Is a vector integer-like?
+is_interactive          Is R running interactively?
 is_named                Is object named?
 is_namespace            Is an object a namespace environment?
 is_reference            Is an object referencing another?

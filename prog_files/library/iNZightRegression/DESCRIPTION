@@ -1,7 +1,7 @@
 Package: iNZightRegression
 Type: Package
 Title: iNZightRegression
-Version: 1.2.1.9000
+Version: 1.2.1
 Date: 2018-11-15
 Authors@R: c(person("Simon", "Potter", role = c("aut"),
     email = "spot023@aucklanduni.ac.nz"),
@@ -15,8 +15,10 @@ Description: Core functions for iNZight Model Fitting module, and can also be
     used as a standalone package called directly from R.
 License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-11-16 03:55:33 UTC; tell029
 Author: Simon Potter [aut],
   David Banks [aut],
   Tom Elliott [cre, aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.2; ; 2019-01-25 03:03:38 UTC; unix
+Built: R 3.5.1; ; 2018-11-16 03:55:34 UTC; unix

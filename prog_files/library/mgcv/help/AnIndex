@@ -8,6 +8,7 @@ bam.update	bam.update
 bandchol	bandchol
 betar	Beta
 bug.reports.mgcv	bug.reports.mgcv
+choldrop	chol.down
 choose.k	choose.k
 coef.pdIdnot	pdIdnot
 coef.pdTens	pdTens

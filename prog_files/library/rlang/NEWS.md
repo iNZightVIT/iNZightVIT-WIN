@@ -1,9 +1,171 @@
 
+# rlang 0.3.1
+
+This patch release polishes the new backtrace feature introduced in
+rlang 0.3.0 and solves bugs for the upcoming release of purrr
+0.3.0. It also features `as_label()` and `as_name()` which are meant
+to replace `quo_name()` in the future. Finally, a bunch of deparsing
+issues have been fixed.
+
+
+## Backtrace fixes
+
+* New `entrace()` condition handler. Add this to your RProfile to
+  enable rlang backtraces for all errors, including warnings promoted
+  to errors:
+
+  ```r
+  if (requireNamespace("rlang", quietly = TRUE)) {
+    options(error = rlang::entrace)
+  }
+  ```
+
+  This handler also works as a calling handler:
+
+  ```r
+  with_handlers(
+    error = calling(entrace),
+    foo(bar)
+  )
+  ```
+
+  However it's often more practical to use `with_abort()` in that case:
+
+  ```r
+  with_abort(foo(bar))
+  ```
+
+* `with_abort()` gains a `classes` argument to promote any kind of
+  condition to an rlang error.
+
+* New `last_trace()` shortcut to print the backtrace stored in the
+  `last_error()`.
+
+* Backtrace objects now print in full by default.
+
+* Calls in backtraces are now numbered according to their position in
+  the call tree. The numbering is non-contiguous for simplified
+  backtraces because of omitted call frames.
+
+* `catch_cnd()` gains a `classes` argument to specify which classes of
+  condition to catch. It returns `NULL` if the expected condition
+  could not be caught (#696).
+
+
+## `as_label()` and `as_name()`
+
+The new `as_label()` and `as_name()` functions should be used instead
+of `quo_name()` to transform objects and quoted expressions to a
+string. We have noticed that tidy eval users often use `quo_name()` to
+extract names from quosured symbols. This is not a good use for that
+function because the way `quo_name()` creates a string is not a well
+defined operation.
+
+For this reason, we are replacing `quo_name()` with two new functions
+that have more clearly defined purposes, and hopefully better names
+reflecting those purposes. Use `as_label()` to transform any object to
+a short human-readable description, and `as_name()` to extract names
+from (possibly quosured) symbols.
+
+Create labels with `as_label()` to:
+
+* Display an object in a concise way, for example to labellise axes
+  in a graphical plot.
+
+* Give default names to columns in a data frame. In this case,
+  labelling is the first step before name repair.
+
+We expect `as_label()` to gain additional parameters in the future,
+for example to control the maximum width of a label. The way an object
+is labelled is thus subject to change.
+
+On the other hand, `as_name()` transforms symbols back to a string in
+a well defined manner. Unlike `as_label()`, `as_name()` guarantees the
+roundtrip symbol -> string -> symbol.
+
+In general, if you don't know for sure what kind of object you're
+dealing with (a call, a symbol, an unquoted constant), use
+`as_label()` and make no assumption about the resulting string. If you
+know you have a symbol and need the name of the object it refers to,
+use `as_name()`. For instance, use `as_label()` with objects captured
+with `enquo()` and `as_name()` with symbols captured with `ensym()`.
+
+Note that `quo_name()` will only be soft-deprecated at the next major
+version of rlang (0.4.0). At this point, it will start issuing
+once-per-session warnings in scripts, but not in packages. It will
+then be deprecated in yet another major version, at which point it
+will issue once-per-session warnings in packages as well. You thus
+have plenty of time to change your code.
+
+
+## Minor fixes and features
+
+* New `is_interactive()` function. It serves the same purpose as
+  `base::interactive()` but also checks if knitr is in progress and
+  provides an escape hatch. Use `with_interactive()` and
+  `scoped_interactive()` to override the return value of
+  `is_interactive()`. This is useful in unit tests or to manually turn
+  on interactive features in RMarkdown outputs
+
+* `calling()` now boxes its argument.
+
+* New `done()` function to box a value. Done boxes are sentinels to
+  indicate early termination of a loop or computation. For instance,
+  it will be used in the purrr package to allow users to shortcircuit
+  a reduction or accumulation.
+
+* `new_box()` now accepts additional attributes passed to `structure()`.
+
+* `as_string()` now unwraps quosured symbols automatically.
+
+  Note that `quo_name()` is *not* appropriate for transforming symbols
+  to strings. `quo_name()` is suitable for creating default labels,
+  not for deterministic conversions between symbol and string. Please
+  use `as_string()` instead.
+
+* Fixed a quotation bug with binary operators of zero or one argument
+  such as `` `/`(1) `` (#652). They are now deparsed and printed
+  properly as well.
+
+* New `call_ns()` function to retrieve the namespace of a
+  call. Returns `NULL` if the call is not namespaced.
+
+* Top-level S3 objects are now deparsed properly.
+
+* Empty `{` blocks are now deparsed on the same line.
+
+* Fixed a deparsing issue with symbols containing non-ASCII
+  characters (#691).
+
+* `expr_print()` now handles `[` and `[[` operators correctly, and
+  deparses non-syntactic symbols with backticks.
+
+* `call_modify()` now respects ordering of unnamed inputs. Before this
+  fix, it would move all unnamed inputs after named ones.
+
+* `as_closure()` wrappers now call primitives with positional
+  arguments to avoid edge case issues of argument matching.
+
+* `as_closure()` wrappers now dispatch properly on methods defined in
+  the global environment (tidyverse/purrr#459).
+
+* `as_closure()` now supports both base-style (`e1` and `e2`) and
+  purrr-style (`.x` and `.y`) arguments with binary primitives.
+
+* `exec()` takes `.fn` as first argument instead of `f`, for
+  consistency with other rlang functions.
+
+* Fixed infinite loop with quosures created inside a data mask.
+
+* Base errors set as `parent` of rlang errors are now printed
+  correctly.
+
+
 # rlang 0.3.0
 
 ## Breaking changes
 
-The rlang API is still maturing. In these sections you'll find hard
+The rlang API is still maturing. In this section, you'll find hard
 breaking changes. See the life cycle section below for an exhaustive
 list of API changes.
 

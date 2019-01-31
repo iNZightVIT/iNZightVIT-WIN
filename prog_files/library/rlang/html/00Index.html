@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.3.0.1</h2>
+</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.3.1</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -57,10 +57,10 @@
 <td>Test for missing values</td></tr>
 <tr><td style="width: 25%;"><a href="arg_match.html">arg_match</a></td>
 <td>Match an argument to a character vector</td></tr>
-<tr><td style="width: 25%;"><a href="box.html">as_box</a></td>
-<td>Box a value</td></tr>
-<tr><td style="width: 25%;"><a href="box.html">as_box_if</a></td>
-<td>Box a value</td></tr>
+<tr><td style="width: 25%;"><a href="as_box.html">as_box</a></td>
+<td>Convert object to a box</td></tr>
+<tr><td style="width: 25%;"><a href="as_box.html">as_box_if</a></td>
+<td>Convert object to a box</td></tr>
 <tr><td style="width: 25%;"><a href="as_function.html">as_closure</a></td>
 <td>Convert to function or closure</td></tr>
 <tr><td style="width: 25%;"><a href="as_data_mask.html">as_data_mask</a></td>
@@ -71,6 +71,10 @@
 <td>Coerce to an environment</td></tr>
 <tr><td style="width: 25%;"><a href="as_function.html">as_function</a></td>
 <td>Convert to function or closure</td></tr>
+<tr><td style="width: 25%;"><a href="as_label.html">as_label</a></td>
+<td>Create a default name for an R object</td></tr>
+<tr><td style="width: 25%;"><a href="as_name.html">as_name</a></td>
+<td>Extract names from symbols</td></tr>
 <tr><td style="width: 25%;"><a href="as_utf8_character.html">as_native_character</a></td>
 <td>Coerce to a character vector and attempt encoding conversion</td></tr>
 <tr><td style="width: 25%;"><a href="as_utf8_character.html">as_native_string</a></td>
@@ -79,6 +83,8 @@
 <td>Coerce object to quosure</td></tr>
 <tr><td style="width: 25%;"><a href="new_quosures.html">as_quosures</a></td>
 <td>Create a list of quosures</td></tr>
+<tr><td style="width: 25%;"><a href="as_string.html">as_string</a></td>
+<td>Cast symbol to string</td></tr>
 <tr><td style="width: 25%;"><a href="as_utf8_character.html">as_utf8_character</a></td>
 <td>Coerce to a character vector and attempt encoding conversion</td></tr>
 <tr><td style="width: 25%;"><a href="as_utf8_character.html">as_utf8_string</a></td>
@@ -118,7 +124,9 @@
 <tr><td style="width: 25%;"><a href="call_modify.html">call_modify</a></td>
 <td>Modify the arguments of a call</td></tr>
 <tr><td style="width: 25%;"><a href="call_name.html">call_name</a></td>
-<td>Extract function name of a call</td></tr>
+<td>Extract function name or namespaced of a call</td></tr>
+<tr><td style="width: 25%;"><a href="call_name.html">call_ns</a></td>
+<td>Extract function name or namespaced of a call</td></tr>
 <tr><td style="width: 25%;"><a href="call_standardise.html">call_standardise</a></td>
 <td>Standardise a call</td></tr>
 <tr><td style="width: 25%;"><a href="catch_cnd.html">catch_cnd</a></td>
@@ -148,6 +156,8 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="vector-construction.html">dbl</a></td>
 <td>Create vectors</td></tr>
+<tr><td style="width: 25%;"><a href="done.html">done</a></td>
+<td>Box a final value for early termination</td></tr>
 <tr><td style="width: 25%;"><a href="tidy-dots.html">dots_list</a></td>
 <td>Collect dots tidily</td></tr>
 <tr><td style="width: 25%;"><a href="dots_n.html">dots_n</a></td>
@@ -173,6 +183,8 @@
 <td>Quotation</td></tr>
 <tr><td style="width: 25%;"><a href="quotation.html">ensyms</a></td>
 <td>Quotation</td></tr>
+<tr><td style="width: 25%;"><a href="entrace.html">entrace</a></td>
+<td>Add backtrace from error handler</td></tr>
 <tr><td style="width: 25%;"><a href="env.html">env</a></td>
 <td>Create a new environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_bind.html">env_bind</a></td>
@@ -381,6 +393,8 @@
 <td>Test for missing values</td></tr>
 <tr><td style="width: 25%;"><a href="is_named.html">is_dictionaryish</a></td>
 <td>Is object named?</td></tr>
+<tr><td style="width: 25%;"><a href="done.html">is_done_box</a></td>
+<td>Box a final value for early termination</td></tr>
 <tr><td style="width: 25%;"><a href="type-predicates.html">is_double</a></td>
 <td>Type predicates</td></tr>
 <tr><td style="width: 25%;"><a href="is_empty.html">is_empty</a></td>
@@ -403,6 +417,8 @@
 <td>Type predicates</td></tr>
 <tr><td style="width: 25%;"><a href="is_integerish.html">is_integerish</a></td>
 <td>Is a vector integer-like?</td></tr>
+<tr><td style="width: 25%;"><a href="is_interactive.html">is_interactive</a></td>
+<td>Is R running interactively?</td></tr>
 <tr><td style="width: 25%;"><a href="are_na.html">is_int_na</a></td>
 <td>Test for missing values</td></tr>
 <tr><td style="width: 25%;"><a href="as_function.html">is_lambda</a></td>
@@ -483,6 +499,8 @@
 <tr><td style="width: 25%;"><a href="lang_head.html">lang_tail</a></td>
 <td>Return the head or tail of a call</td></tr>
 <tr><td style="width: 25%;"><a href="last_error.html">last_error</a></td>
+<td>Last 'abort()' error</td></tr>
+<tr><td style="width: 25%;"><a href="last_error.html">last_trace</a></td>
 <td>Last 'abort()' error</td></tr>
 <tr><td style="width: 25%;"><a href="vector-construction.html">lgl</a></td>
 <td>Create vectors</td></tr>
@@ -683,6 +701,8 @@
 <td>Scalar type predicates</td></tr>
 <tr><td style="width: 25%;"><a href="scoped_bindings.html">scoped_bindings</a></td>
 <td>Temporarily change bindings of an environment</td></tr>
+<tr><td style="width: 25%;"><a href="is_interactive.html">scoped_interactive</a></td>
+<td>Is R running interactively?</td></tr>
 <tr><td style="width: 25%;"><a href="scoped_options.html">scoped_options</a></td>
 <td>Change global options</td></tr>
 <tr><td style="width: 25%;"><a href="seq2.html">seq2</a></td>
@@ -751,6 +771,8 @@
 <td>Evaluate an expression within a given environment</td></tr>
 <tr><td style="width: 25%;"><a href="with_handlers.html">with_handlers</a></td>
 <td>Establish handlers on the stack</td></tr>
+<tr><td style="width: 25%;"><a href="is_interactive.html">with_interactive</a></td>
+<td>Is R running interactively?</td></tr>
 <tr><td style="width: 25%;"><a href="scoped_options.html">with_options</a></td>
 <td>Change global options</td></tr>
 <tr><td style="width: 25%;"><a href="with_restarts.html">with_restarts</a></td>

@@ -136,3 +136,11 @@ export("[[<-.guiWidget")
 ## put into toolkit only (RGtk2)
 ##export("as.gWidget")
 ##S3method("as.gWidget","default")
+
+S3method("$", guiWidget)
+S3method("[[", guiWidget)
+S3method("[[<-", guiWidget)
+
+importFrom("methods", "callNextMethod", "is", "new")
+importFrom("utils", "RweaveEvalWithOpt", "assignInNamespace",
+           "getFromNamespace", "head", "help", "help.search", "menu")

@@ -440,7 +440,7 @@ s3
 </div>
 <div id="geometrical-operations" class="section level2">
 <h2>Geometrical operations</h2>
-<p>All geometrical operations <code>st_op(x)</code> or or <code>st_op2(x,y)</code> work both for <code>sf</code> objects as well as <code>sfc</code> objects <code>x</code> and <code>y</code>; since the operations work on the geometries, the non-geometries parts of an <code>sf</code> object are simply discarded. Also, all binary operations <code>st_op2(x,y)</code> called with a single argument, as <code>st_op2(x)</code>, are handled as <code>st_op2(x,x)</code>.</p>
+<p>All geometrical operations <code>st_op(x)</code> or <code>st_op2(x,y)</code> work both for <code>sf</code> objects as well as <code>sfc</code> objects <code>x</code> and <code>y</code>; since the operations work on the geometries, the non-geometries parts of an <code>sf</code> object are simply discarded. Also, all binary operations <code>st_op2(x,y)</code> called with a single argument, as <code>st_op2(x)</code>, are handled as <code>st_op2(x,x)</code>.</p>
 <p>We will illustrate the geometrical operations on a very simple dataset:</p>
 <pre class="r"><code>b0 = st_polygon(list(rbind(c(-1,-1), c(1,-1), c(1,1), c(-1,1), c(-1,-1))))
 b1 = b0 + 2
