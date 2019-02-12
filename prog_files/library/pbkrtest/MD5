@@ -1,5 +1,5 @@
 15b224179efc0f40c222cb38463ea34c *CITATION
-bf85e7cfed3d8868b5791d8c218aa985 *DESCRIPTION
+ac23496dd859e826c5380a37ace6cba8 *DESCRIPTION
 4c43d404cf166e9db6069595836bc91d *INDEX
 d609adf51e2f8e0620bf70665d33c39d *Meta/Rd.rds
 95a424d82acfcd6320414d9650e6fdca *Meta/data.rds
@@ -7,7 +7,7 @@ d609adf51e2f8e0620bf70665d33c39d *Meta/Rd.rds
 81efc903945c115abc472fa5984f0bce *Meta/hsearch.rds
 236abbe04f98aaf002c58062f1432a77 *Meta/links.rds
 dad186db334f88b2a1a51268bf8cb1c1 *Meta/nsInfo.rds
-e49c1e259d476ba44ab89f1c716a4c97 *Meta/package.rds
+caabe123f6b30b7e467142bbcf141b1a *Meta/package.rds
 f8082fc0440a592cad891b44184360fb *Meta/vignette.rds
 0306a0a3d6dc0db3544e99f5bd4a45f6 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/pbkrtest
@@ -21,8 +21,8 @@ b2269613cc80640c998141269fa91bfd *doc/pbkrtest-introduction.Rnw
 3c4bbb5c953c0afe120a34ccce881e9e *doc/pbkrtest-introduction.pdf
 79471cd4cd7ee401d6951291436ff03e *help/AnIndex
 523c445652fa754ed359416481f45598 *help/aliases.rds
-c6af9c94ab82bedde948e6661e7aedca *help/paths.rds
-0ae40d7c3006f436c266686be61e62be *help/pbkrtest.rdb
-943693037b4a53a7856d00c4b2b48c1a *help/pbkrtest.rdx
+8737576e5ca53414e74dce30b054affe *help/paths.rds
+a00f719340472d52f47224838005223b *help/pbkrtest.rdb
+4bf5425c4e5fc46c1ed1c8e90a4cca0a *help/pbkrtest.rdx
 58a56206eb17d8236127c99a7f0e9685 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

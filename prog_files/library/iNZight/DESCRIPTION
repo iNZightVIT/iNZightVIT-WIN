@@ -1,8 +1,8 @@
 Package: iNZight
 Type: Package
 Title: iNZight GUI for Data Exploration and Visualisation
-Version: 3.3.5
-Date: 2019-02-01
+Version: 3.3.6
+Date: 2019-02-12
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
              person("Dineika", "Chandrananda", role = "ctb"),
@@ -23,11 +23,11 @@ LazyData: true
 Encoding: UTF-8
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2019-01-31 19:48:42 UTC; tell029
+Packaged: 2019-02-12 19:58:37 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
   Simon Potter [ctb],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.2; ; 2019-01-31 19:48:42 UTC; unix
+Built: R 3.5.2; ; 2019-02-12 19:58:38 UTC; unix

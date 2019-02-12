@@ -1,4 +1,4 @@
-90f576e93717d887ce396eb57c9e4cef *DESCRIPTION
+94eb9c8465b9e31a22bc9d65a5b254b2 *DESCRIPTION
 1dbf20f10e2ef1eb0a56c27c66d7dbd7 *INDEX
 34ede6c3664142c50ad8a23be26c3d02 *LICENSE
 9276bd73453da669fa6ea107a3da6429 *Meta/Rd.rds
@@ -6,7 +6,7 @@
 e6ba81afcb68fae2ad99343fd9dedbef *Meta/hsearch.rds
 27735ff16446f65c29e17c2156298505 *Meta/links.rds
 b5938203ff4c5d38202538b863648d2e *Meta/nsInfo.rds
-9fdf285b00c96a8c496bcd07fc4d4080 *Meta/package.rds
+599d73c9132a2b4be45c2e81758bc862 *Meta/package.rds
 847f6ead756262ee3df2d64414162d97 *Meta/vignette.rds
 bc036141e3ba9dcaa157bfb5170e9d22 *NAMESPACE
 df4a4352e9954c06feab2c40eadabf13 *NEWS
@@ -25,14 +25,14 @@ d9b3502379e682e31efa8dfd31be948f *doc/formatting.pdf
 1b3b5fbc06a2727fe3cba3a3c670ee66 *help/aliases.rds
 9935549e5ab436e1a14b39aa6eb5f586 *help/figures/tableoptions.pdf
 57f30d30484a5402e9fce7539de1d3a6 *help/figures/tableoptions.png
-63c750c883c2645ba7764250dbbb20c4 *help/openxlsx.rdb
-a394c6d5a8f82982dd73d0a9c11495f0 *help/openxlsx.rdx
-b5756c4c12ab0970adcdee4698860403 *help/paths.rds
+517f40f25afb246901edb40483838b70 *help/openxlsx.rdb
+4250fa09dfd71dac28d74a3fee952497 *help/openxlsx.rdx
+8e45629c3a28c99743cf9145d6489f9b *help/paths.rds
 d31bf45605852f954a7ad1e2f75329e2 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-220ae6e093a872427a13b3856b86eeda *libs/i386/openxlsx.dll
+262fa6e8466144d7055bc5405b292e04 *libs/i386/openxlsx.dll
 411eb466cb5e1bdef37148d41c679574 *libs/i386/symbols.rds
-0b8f2485da4d4837cf2000e95ff748d5 *libs/x64/openxlsx.dll
+2021c8742452ed5fdd7aab1419b37155 *libs/x64/openxlsx.dll
 5c0fd6953a6ff8f4b700bc9d3a664f97 *libs/x64/symbols.rds
 fb9a2de7bc2ec82fe52394335d80050d *loadExample.xlsx
 e088897249f5068b3b4dc5401ec4303d *load_xlsx_testing.R
