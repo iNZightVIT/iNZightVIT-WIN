@@ -1,4 +1,4 @@
-6f88ea00c512b582c2c0baf9f1a1f074 *DESCRIPTION
+b9e2f3efa55132a017934e02285f9b03 *DESCRIPTION
 8fed60ef0f009bf183d82d00432e5d77 *INDEX
 4ac396cdf32c44b3d07b7d6c9fd388d0 *LICENSE
 421a74e393cd23a49d031164a443278e *Meta/Rd.rds
@@ -6,7 +6,7 @@
 c562451b53c14aed104d0a636342311d *Meta/hsearch.rds
 d9ced6cf577c8d248f252c7c6df302cb *Meta/links.rds
 6a7a08463939824045f190b4d86ff775 *Meta/nsInfo.rds
-9c2d8d4cb273ed60afaabba2ab4c061d *Meta/package.rds
+4ab32b17e249b6a992b0153c5c649c43 *Meta/package.rds
 6a85924ec866715ebf18930bd7e1eeb9 *Meta/vignette.rds
 1143361e47602d724bb722696a502530 *NAMESPACE
 633d42b881f6f00806854434fde673c6 *NEWS.md
@@ -32,12 +32,12 @@ c3978703d8f40f2679795335715e98f4 *help/figures/lifecycle-experimental.svg
 53b3f893324260b737b3c46ed2a0e643 *help/figures/lifecycle-stable.svg
 2db3b0e7250ce7abb3301a26a21c743c *help/figures/logo.png
 0cf65d50f18a4cfa36999941e2f8d0c7 *help/figures/logo.svg
-2f36676b726b5ba9d72ffad8cba8f54b *help/paths.rds
-0e34e8d13801a1d59793b8080d4a33ac *help/tibble.rdb
-9ec4e8e06edd0a85edfe90c48e181906 *help/tibble.rdx
+6966169da0cd3aee8cc780017eb1cebc *help/paths.rds
+bd8b36a5e576a7d85ace3ecf99d474c8 *help/tibble.rdb
+207734dc1bb3adb6bb7cadfff3d86ccc *help/tibble.rdx
 f423a1629348c18abadfd5b598898616 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 f9baf614db37e87f027c058f5a6cde47 *libs/i386/symbols.rds
-2673c638e66b756c52277ef0e7b02909 *libs/i386/tibble.dll
+a6d48d599b6ee516cbe6129af77e6844 *libs/i386/tibble.dll
 7c632ddf5ef2e92841174b77ee2e73f7 *libs/x64/symbols.rds
-0e0649ecc51855f5022252026f53a2e5 *libs/x64/tibble.dll
+f63c55227f74579fabaf562ade5e25b2 *libs/x64/tibble.dll

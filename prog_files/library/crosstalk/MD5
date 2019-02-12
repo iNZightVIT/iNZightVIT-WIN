@@ -1,4 +1,4 @@
-8f13f422989fa9d92965370fdaeded08 *DESCRIPTION
+2170b4e20d90a1b472c7fc6621bdf2b5 *DESCRIPTION
 67305aaacff8525cea34a202931c7995 *INDEX
 ab30396b0573e2cc7a8f2a3053e2ec18 *LICENSE
 86f7cc01f3689a595da1c54641dd29b4 *Meta/Rd.rds
@@ -6,16 +6,16 @@ ab30396b0573e2cc7a8f2a3053e2ec18 *LICENSE
 2241b8587116fe7fa16d22abd17d48fd *Meta/hsearch.rds
 4d9a0ce0c759c37c2ebfe963eefb8a33 *Meta/links.rds
 f954ef8057c14fd7327d77c71ce9e83c *Meta/nsInfo.rds
-6597389f2ccd4ee08693c1f14f4cf981 *Meta/package.rds
+910a1593c15871fab3af1162d79460fc *Meta/package.rds
 855be570e3b4409c3e1b91a322325f58 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/crosstalk
 b0e3265dec1f600dfcdf33b2ab366c38 *R/crosstalk.rdb
 adb66cbeb3b57011485c7684d1b0518f *R/crosstalk.rdx
 9480699258160391d0cf560d8bde30b5 *help/AnIndex
 e5063ad9be566635b9ed622e5048c671 *help/aliases.rds
-390632b69002a686359483e8f032195b *help/crosstalk.rdb
-c6dcd5ed145589c099b3ad2b9ab94c95 *help/crosstalk.rdx
-f70ce51e5af01a0de04af70624e1d02e *help/paths.rds
+c1a6038d07e08b123e689f566bfe30ee *help/crosstalk.rdb
+f9b607ffdfcde23b6efa2116b2be91c4 *help/crosstalk.rdx
+da5a0bed62d3d44490261b3d7bb08272 *help/paths.rds
 9117f6edcb1f299015bb8778d3712760 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 e5f6fb08f469dc836cb3609e23694b3a *lib/bootstrap/css/bootstrap-theme.css

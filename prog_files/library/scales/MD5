@@ -1,4 +1,4 @@
-3e108affe9ed5700977bde9f36127c6f *DESCRIPTION
+71114d61e39b8cf0e1df6a374f29e437 *DESCRIPTION
 a340359ddede633b0d299f85ad298381 *INDEX
 5a2ffc012eac074809a07ea440f872a8 *LICENSE
 e659b3a159cb2d4da60334ebdf477387 *Meta/Rd.rds
@@ -6,7 +6,7 @@ e659b3a159cb2d4da60334ebdf477387 *Meta/Rd.rds
 c7be17403a818d52d3c1aa86f0f4e552 *Meta/hsearch.rds
 71b9580577f22714353560d5c742f5f1 *Meta/links.rds
 636f3f33d9f127bb25e66c7ca5082447 *Meta/nsInfo.rds
-144bd97fc2f4da24a4df08afcddc2930 *Meta/package.rds
+dc573f7bfc58c71fe022ea46d180799c *Meta/package.rds
 5cdd8672d3cd6f674d98f42f7c28ff67 *NAMESPACE
 d2cd39568b7d1f616d830a4f0eec735d *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/scales
@@ -18,12 +18,12 @@ e3e12ea46b22faf14260950a379f9806 *help/figures/README-palettes-1.png
 f8d054f7735c102f7f21f32c8ef6f2db *help/figures/README-squish-1.png
 3d9b2cad7fea89084f289019df37d127 *help/figures/README-transforms-1.png
 abd26035eb09f81afc00a431f457de2e *help/figures/logo.png
-01a7ca53926682300a0398fc0a3a4fd3 *help/paths.rds
-1dd2c3563133199c038a9828ba57ae7c *help/scales.rdb
-0611e84c8270c881316e267119a6f200 *help/scales.rdx
+c48995782d942e0f558e4ce20f6f1f28 *help/paths.rds
+fd1fa4e1a471d2f047ae71e2336771ab *help/scales.rdb
+db4b36d927fbf8a61fbe8b17eacd1f28 *help/scales.rdx
 650ad85cb23565d8145eed7457d9f3f3 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-89ea6e4acf1becc00d88c9cadab6d648 *libs/i386/scales.dll
+6896b8eebc5a0eb3c24304124870681e *libs/i386/scales.dll
 79ae6b614a4013f5350afe6fac5e329d *libs/i386/symbols.rds
-c2834abb44743c4e15a9a225e439207d *libs/x64/scales.dll
+57b27a2fa4f5f07cc1810b94cf5647f0 *libs/x64/scales.dll
 4ce7fdb3dac7d46155b8a79bb2423c60 *libs/x64/symbols.rds
