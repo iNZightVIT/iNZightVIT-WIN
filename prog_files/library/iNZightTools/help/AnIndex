@@ -9,6 +9,7 @@ convertToCat	convertToCat
 convertToMetadata	convertToMetadata
 convertToMetadata.data.frame	convertToMetadata
 convertToMetadata.list	convertToMetadata
+convert_to_datetime	convert_to_datetime
 countMissing	countMissing
 createNewVar	createNewVar
 deleteVars	deleteVars
@@ -16,6 +17,7 @@ extractFromFrame	extractFromFrame
 extractFromFrame.iNZclass.character	extractFromFrame
 extractFromFrame.iNZclass.factor	extractFromFrame
 extractFromFrame.iNZclass.numeric	extractFromFrame
+extract_part	extract_part
 filterLevels	filterLevels
 filterNumeric	filterNumeric
 filterRandom	filterRandom
@@ -26,6 +28,9 @@ get.form.class.interval	get.form.class.interval
 iNZexport	iNZexport
 iNZightTools	iNZightTools
 isMetadataAvailable	isMetadataAvailable
+is_cat	is_cat
+is_dt	is_dt
+is_num	is_num
 is_preview	is_preview
 makeDatatypeChar	makeDatatypeChar
 makeDatatypeChar.character	makeDatatypeChar
@@ -45,4 +50,6 @@ sortVars	sortVars
 stackVars	stackVars
 standardizeVars	standardizeVars
 str_c	stringConcatenation
+tidy_all_code	tidy_all_code
 transformVar	transformVar
+vartype	vartype

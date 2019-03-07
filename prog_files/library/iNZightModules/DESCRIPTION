@@ -1,7 +1,7 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 2.4.4
+Version: 2.4.4.9000
 Date: 2019-02-01
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
@@ -13,17 +13,15 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("David", "Banks", role = "aut"))
 Depends: R (>= 3.2)
 Imports: stats, graphics, utils, grDevices, methods, gpairs, gWidgets2,
-        gWidgets2RGtk2, iNZightPlots, iNZightRegression, iNZightTools,
-        iNZightMR, iNZightTS
-Suggests: iNZightMaps, rgl, mgcv, sf
+        gWidgets2RGtk2, iNZight, iNZightPlots, iNZightRegression,
+        iNZightTools, iNZightMR, iNZightTS
+Suggests: iNZightMaps, rgl, mgcv, sf, testthat, covr
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 License: GPL-3 | file LICENSE
 Description: A suite of add-on modules for the iNZight GUI, including model
     fitting module, multiple response, time series, and some advanced plotting.
 RoxygenNote: 6.1.1
 Encoding: UTF-8
-NeedsCompilation: no
-Packaged: 2019-01-31 19:47:53 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Daniel Barnett [aut],
   Eric Lim [aut],
@@ -32,4 +30,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.5.2; ; 2019-01-31 19:47:54 UTC; unix
+Built: R 3.5.2; ; 2019-03-07 00:27:21 UTC; unix
