@@ -1,0 +1,11 @@
+GETTING AROUND
+
+You can lay out the windows however you like. There should be three plus this one:
+ - The interface: where you chose variables and graphs
+ - Model Output: text/numerical summaries of fitted models are shown in this window
+        (NOTE: it may be hiding underneath this instructions window)
+ - Model Plots: plots for the chosen model are shown here
+ - And this one: instructions - you can close this window at any time
+
+Note: You can reopen windows from the "View" menu.
+

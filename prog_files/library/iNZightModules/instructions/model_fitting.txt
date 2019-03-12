@@ -1,0 +1,49 @@
+
+Response Options:
+    Here, you can choose a response variable, modeling framework,
+    and other model options.
+
+Explanatory Variables:
+    This is where you construct your variable by choosing variables and
+    applying transformations
+    - On the LEFT side you'll find variables available to use in the model,
+      divided into numeric and categorical
+    - On the RIGHT side is Variables of Interest (i.e., variables in the model),
+      as well as Confounding Variables (variables that are necessary
+      for the model, but for which the coefficients aren't of interest)
+
+Manage Saved Models:
+    After you've decided on a model, you can save it here so you can quickly
+    come back to it later.
+    - Saving a model will cause the R code for that model to be saved
+      and viewable in R Code History
+
+Model/Residual Plots:
+    Here you can browse the avaialable residual plots etc.
+
+
+GETTING STARTED
+
+1. Select a response variable from the Variable drop down under Response Options
+
+2. Select explanatory variables by adding them from the boxes on the left
+  - Double-click variable in the numeric or categorical variables boxes to
+    add them to Variables of Interest box
+  - Drag-and-drop variables from the Available Variables box to either
+    Variables of Interest or Confounding Variables
+  - Use the up/down arrows above the Variables of Interest box to change the
+    order of the selected variable
+
+3. Apply transformations or interactions to variables
+  - Right-click variables in the left-hand boxes and select a transformation
+    to ADD that transformation to the model
+  - Click the properties icon above the Variables of Interest box to MODIFY
+    the transformation for the selected variable
+
+4. Double-click variables in the Explanatory Variables box to remove them
+
+5. Explore plots of the model by selecting them in the Residual Plots section
+
+NOTE: to add transformations or interactions to confounding variables,
+first drag the variable to Variables of Interset, apply the transformation,
+then drag the transformed variable back to confounding.
