@@ -27,6 +27,8 @@ cat(" * copying assets\n")
 x <- file.copy(file.path("assets", "images"), file.path("prog_files"), recursive = TRUE)
 x <- file.copy(file.path("assets", "vit"), file.path("prog_files"), recursive = TRUE)
 x <- file.copy(file.path("assets", ".Rprofile"), file.path("prog_files"))
+# copy the Rconsole file with MDI=no setting
+x <- file.copy(file.path("assets", "Rconsole"), file.path("prog_files/etc"))
 
 
 ## run this to get all the necessary packages and get them updated and all that jazz
@@ -45,7 +47,7 @@ inzpkgs <- c('iNZight', 'iNZightPlots', 'iNZightModules', 'iNZightTools',
 if (length(ca) > 0)
     inzpkgs <- c(inzpkgs, ca)
 
-extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap, 
+extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap,
                                               fields = c('Depends', 'Imports', 'Suggests', 'LinkingTo'))
 if (!'iNZightMaps' %in% inzpkgs) {
     extrapkgs <- extrapkgs[extrapkgs != "iNZightMaps"]
@@ -70,13 +72,13 @@ pkgs <- download.packages(grab, pkglib, repos = repos, type = 'win.binary', quie
 ## unzip
 cat(" * extracting packages into place\n")
 x <- apply(pkgs, 1, function(pkg) {
-    pkgd <- file.path("prog_files", "library", pkg[1]) 
+    pkgd <- file.path("prog_files", "library", pkg[1])
     if (dir.exists(pkgd)) unlink(pkgd, TRUE, TRUE)
     unzip(pkg[2], exdir = file.path("prog_files", "library"))
     unlink(pkg[2])
 })
 
-## and stick gtk into place 
+## and stick gtk into place
 cat(" * copying GTK library\n")
 x <- file.copy(file.path("assets", "gtk"), file.path("prog_files", "library", "RGtk2"), recursive = TRUE)
 
