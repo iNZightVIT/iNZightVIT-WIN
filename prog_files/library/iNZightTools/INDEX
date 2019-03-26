@@ -34,6 +34,7 @@ is_cat                  Is factor check
 is_dt                   Is datetime check
 is_num                  Is numeric check
 is_preview              Is Preview
+joindata                Join data with another dataset
 makeDatatypeChar        Converts the column datatypes to a single word
                         or string which can be passed to
                         readr::read_csv as an argument.

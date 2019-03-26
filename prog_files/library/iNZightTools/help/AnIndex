@@ -32,6 +32,7 @@ is_cat	is_cat
 is_dt	is_dt
 is_num	is_num
 is_preview	is_preview
+joindata	joindata
 makeDatatypeChar	makeDatatypeChar
 makeDatatypeChar.character	makeDatatypeChar
 makeDatatypeChar.list	makeDatatypeChar
