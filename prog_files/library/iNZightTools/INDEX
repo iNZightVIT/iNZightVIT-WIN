@@ -46,6 +46,10 @@ read_meta               Read CSV with iNZight metadata
 renameLevels            Rename the levels of a categorical variable
 renameVars              Rename column names
 reorderLevels           Reorder a categorical
+reshape_data_long_to_wide
+                        Reshape long to wide
+reshape_data_wide_to_long
+                        Reshape wide to long
 sample.data             Takes a sample of rows from a data.frame
 search.name             Searches a list recursivly for a name and
                         returns the value associated with the name

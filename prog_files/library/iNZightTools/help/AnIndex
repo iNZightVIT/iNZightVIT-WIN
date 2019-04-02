@@ -44,6 +44,8 @@ read_meta	read_meta
 renameLevels	renameLevels
 renameVars	renameVars
 reorderLevels	reorderLevels
+reshape_data_long_to_wide	reshape_data_long_to_wide
+reshape_data_wide_to_long	reshape_data_wide_to_long
 sample.data	sample.data
 search.name	search.name
 smart_read	smart_read
