@@ -99,11 +99,11 @@ qtm(nc)
 
 ## ------------------------------------------------------------------------
 tmap_mode("view")
-# if (Sys.getenv("USER") != "CRAN")
-tm_shape(nc) + tm_fill("BIR74", palette = sf.colors(5))
+if (Sys.getenv("USER") != "CRAN")
+  tm_shape(nc) + tm_fill("BIR74", palette = sf.colors(5))
 
 ## ------------------------------------------------------------------------
 ttm()
-#if (Sys.getenv("USER") != "CRAN")
-last_map()
+if (Sys.getenv("USER") != "CRAN")
+   last_map()
 

@@ -1,4 +1,19 @@
 
+# processx 3.3.0
+
+* `process` can now redirect the standard error to the standard output, via
+  specifying `stderr = "2>&1"`. This works both with files and pipes.
+
+* `run()` can now redirect the standard error to the standard output, via
+  the new `stderr_to_stdout` argument.
+
+* The `$kill()` and `$kill_tree()` methods get a `close_connection = TRUE`
+  argument that closes all pipe connections of the process.
+
+* `run()` now always kills the process (and its process tree if
+  `cleanup_tree` is `TRUE`) before exiting. This also closes all
+  pipe connections (#149).
+
 # processx 3.2.1
 
 * processx does not depend on assertthat now, and the crayon package

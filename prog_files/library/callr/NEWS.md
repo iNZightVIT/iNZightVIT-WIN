@@ -1,5 +1,19 @@
 
-# 3.1.1
+# callr 3.2.0
+
+* `r()`, `rcmd()` and `rscript()` can now redirect the standard error of
+  the subprocess its standard output. This allows to keep them correctly
+  interleaved. For this, you need to either set the `stderr` argument to
+  the special string `"2>&1"`, or to the same output file as specified
+  for `stdout`.
+
+* `r()`, `rcmd()` and `rscript()` now pass `...` arguments to
+  `processx::run()`. `r_bg()` and `rcmd_bg()` pass `...` arguments to
+  the `processx::process` constructor. For `r_process`, `rcmd_process`
+  and `rscript_process` extra arguments can be specified as `options$extra`,
+  these are also passed to the `processx::process` constructor (#100).
+
+# callr 3.1.1
 
 * `r()`, `r_bg()`, etc. now handle messages from the cliapp package
   properly. They used to make the R session exit.

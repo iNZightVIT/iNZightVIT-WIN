@@ -1,6 +1,5 @@
 Package: sf
-Version: 0.7-2
-Date: 2018-11-24
+Version: 0.7-3
 Title: Simple Features for R
 Authors@R: 
     c(person(given = "Edzer",
@@ -36,6 +35,9 @@ Authors@R:
              comment = c(ORCID = "0000-0002-4035-0289")),
       person(given = "Kirill",
              family = "Müller",
+             role = "ctb"),
+      person(given = "Thomas Lin",
+             family = "Pedersen",
              role = "ctb"))
 Description: Support for simple features, a standardized way to
     encode spatial vector data. Binds to 'GDAL' for reading and writing
@@ -47,7 +49,7 @@ BugReports: https://github.com/r-spatial/sf/issues/
 Depends: methods, R (>= 3.3.0)
 Imports: classInt (>= 0.2-1), DBI (>= 0.8), graphics, grDevices, grid,
         magrittr, Rcpp, stats, tools, units (>= 0.6-0), utils
-Suggests: blob, covr, dplyr (>= 0.7-0), ggplot2, knitr, lwgeom (>=
+Suggests: blob, covr, dplyr (>= 0.8-0), ggplot2, knitr, lwgeom (>=
         0.1-5), maps, maptools, mapview, microbenchmark, odbc, pillar,
         pool, raster, rgdal, rgeos, rlang, rmarkdown, RPostgres (>=
         1.1.0), RPostgreSQL, RSQLite, sp (>= 1.2-4), spatstat, stars
@@ -65,9 +67,10 @@ Collate: 'RcppExports.R' 'init.R' 'crs.R' 'bbox.R' 'read.R' 'db.R'
         'cast_sfg.R' 'cast_sfc.R' 'graticule.R' 'datasets.R'
         'aggregate.R' 'agr.R' 'maps.R' 'join.R' 'sample.R' 'valid.R'
         'collection_extract.R' 'jitter.R' 'sgbp.R' 'spatstat.R'
-        'stars.R' 'crop.R' 'gdal_utils.R' 'nearest.R' 'deprecated.R'
+        'stars.R' 'crop.R' 'gdal_utils.R' 'nearest.R' 'normalize.R'
+        'deprecated.R'
 NeedsCompilation: yes
-Packaged: 2018-12-20 08:55:02 UTC; edzer
+Packaged: 2019-02-21 09:45:51 UTC; edzer
 Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Roger Bivand [ctb] (<https://orcid.org/0000-0003-2392-6140>),
   Etienne Racine [ctb],
@@ -77,9 +80,10 @@ Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Robin Lovelace [ctb],
   Hadley Wickham [ctb],
   Jeroen Ooms [ctb] (<https://orcid.org/0000-0002-4035-0289>),
-  Kirill Müller [ctb]
+  Kirill Müller [ctb],
+  Thomas Lin Pedersen [ctb]
 Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 Repository: CRAN
-Date/Publication: 2018-12-20 10:10:03 UTC
-Built: R 3.5.2; x86_64-w64-mingw32; 2019-01-24 16:23:28 UTC; windows
+Date/Publication: 2019-02-21 13:30:04 UTC
+Built: R 3.5.3; x86_64-w64-mingw32; 2019-03-31 15:32:28 UTC; windows
 Archs: i386, x64

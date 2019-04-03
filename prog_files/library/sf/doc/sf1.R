@@ -31,7 +31,7 @@ nc_geom[[1]]
 
 ## ----fig.height=3--------------------------------------------------------
 par(mar = c(0,0,1,0))
-plot(nc[1])
+plot(nc[1], reset = FALSE) # reset = FALSE: we want to add to a plot with a legend
 plot(nc[1,1], col = 'grey', add = TRUE)
 
 ## ----fig.height=3.5------------------------------------------------------

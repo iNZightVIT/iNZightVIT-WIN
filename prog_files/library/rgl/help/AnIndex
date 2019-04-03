@@ -8,9 +8,13 @@ addNormals.shapelist3d	addNormals
 addToSubscene3d	subscene3d
 ageControl	ageControl
 ageSetter	ageSetter
+arc3d	arc3d
 arrow3d	arrow3d
 as.mesh3d	mesh3d
+as.mesh3d.ashape3d	as.mesh3d.ashape3d
 as.mesh3d.deldir	persp3d.deldir
+as.mesh3d.tri	persp3d.tri
+as.mesh3d.triSht	persp3d.tri
 asEuclidean	matrices
 asHomogeneous	matrices
 aspect3d	aspect3d
@@ -94,7 +98,10 @@ pch3d	pch3d
 persp3d	persp3d
 persp3d.default	persp3d
 persp3d.deldir	persp3d.deldir
+persp3d.formula	plot3d.formula
 persp3d.function	persp3d.function
+persp3d.tri	persp3d.tri
+persp3d.triSht	persp3d.tri
 pipe	import
 planes3d	planes
 play3d	play3d
@@ -103,10 +110,14 @@ playwidgetOutput	shiny
 plot3d	plot3d
 plot3d.default	plot3d
 plot3d.deldir	persp3d.deldir
+plot3d.formula	plot3d.formula
 plot3d.function	persp3d.function
+plot3d.lm	plot3d.lm
 plot3d.mesh3d	plot3d
 plot3d.rglobject	scene3d
 plot3d.rglscene	scene3d
+plot3d.tri	persp3d.tri
+plot3d.triSht	persp3d.tri
 plotmath3d	plotmath3d
 points3d	3dobjects
 polygon3d	polygon3d
@@ -226,6 +237,8 @@ shade3d.mesh3d	mesh3d
 shade3d.qmesh3d	mesh3d
 shape3d	mesh3d
 shapelist3d	shapelist3d
+shinyGetPar3d	shinyGetPar3d
+shinySetPar3d	shinyGetPar3d
 show2d	show2d
 snapshot3d	snapshot
 spheres3d	spheres
@@ -245,6 +258,7 @@ terrain3d	surface3d
 tetrahedron3d	mesh3d
 text3d	texts
 texts3d	texts
+thigmophobe3d	thigmophobe3d
 title3d	axes3d
 tmesh3d	mesh3d
 toggleButton	webGLcontrols

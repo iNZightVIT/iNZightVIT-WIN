@@ -14,7 +14,6 @@ as	coerce-methods
 as.matrix.sfg	st
 as.matrix.sgbp	sgbp
 as_Spatial	coerce-methods
-bgMap	bgMap
 bind	bind
 c.sfg	st
 cbind.sf	bind
@@ -33,7 +32,6 @@ extension_map	extension_map
 filter.sf	tidyverse
 format.sfg	st
 full_join.sf	tidyverse
-g	bgMap
 gather.sf	tidyverse
 gdal	gdal
 gdal_crs	gdal
@@ -67,6 +65,7 @@ mutate.sf	tidyverse
 NA_agr_	st_agr
 NA_bbox_	st_bbox
 NA_crs_	st_crs
+nc	nc
 nest.sf	tidyverse
 obj_sum.sfc	tibble
 Ops	Ops
@@ -257,6 +256,7 @@ st_nearest_points.sf	st_nearest_points
 st_nearest_points.sfc	st_nearest_points
 st_nearest_points.sfg	st_nearest_points
 st_node	geos_unary
+st_normalize	st_normalize
 st_overlaps	geos_binary_pred
 st_point	st
 st_point_on_surface	geos_unary
