@@ -3,12 +3,14 @@ Type: Package
 Title: Tools for iNZight
 Version: 1.6.3.9000
 Date: 2018-11.15
-Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
-        readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
-        stringr, tools, chron, lubridate, zoo
-Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData, covr
+Imports: utils, stats, methods, survey, grDevices, readr (>=
+       1.2.0), readxl, haven, magrittr, tibble, dplyr,
+       forcats, tidyr, stringr, tools, chron, lubridate, zoo,
+       validate
+Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData,
+       covr
 Additional_repositories: https://r.docker.stat.auckland.ac.nz,
-        http://rforge.net
+       http://rforge.net
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "inzight_support@stat.auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"),
@@ -26,4 +28,4 @@ Author: Tom Elliott [aut, cre],
   Owen Jin [ctb],
   Lushi Cai [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.5.2; ; 2019-04-03 03:02:16 UTC; unix
+Built: R 3.5.2; ; 2019-04-13 03:42:54 UTC; unix

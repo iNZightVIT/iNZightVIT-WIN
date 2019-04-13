@@ -1,3 +1,13 @@
+httpuv 1.5.1
+============
+
+* Fixed issues for compilers that didn't support C++11, notably on RHEL and Centos 6. ([#210](https://github.com/rstudio/httpuv/pull/210))
+
+* Fixed [#208](https://github.com/rstudio/httpuv/issues/208): In some cases, a race condition could cause the R process to exit when starting a new server. ([#211](https://github.com/rstudio/httpuv/pull/211))
+
+* Updated to libuv 1.27.0. This fixed fixed [#213](https://github.com/rstudio/httpuv/issues/213): Valgrind reported an error about a pointer pointing to uninitialized memory. ([#214](https://github.com/rstudio/httpuv/pull/214))
+
+
 httpuv 1.5.0
 ============
 
@@ -18,6 +28,9 @@ httpuv 1.5.0
 * `service()` now executes a single `later` callback, rather than all eligible callbacks. This gives callers more opportunities to perform their own housekeeping when multiple expensive callbacks queue up. ([#176](https://github.com/rstudio/httpuv/pull/176))
 
 * Fixed [#173](https://github.com/rstudio/httpuv/pull/173): The source code is now compiled with `-DSTRICT_R_HEADERS`, which eliminates the need to undefine the `Realloc` and `Free` macros.
+
+* Updated to libuv 1.23.1. ([#174](https://github.com/rstudio/httpuv/pull/174))
+
 
 httpuv 1.4.5.1
 ==============

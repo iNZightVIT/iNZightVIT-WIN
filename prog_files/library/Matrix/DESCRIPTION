@@ -48,5 +48,5 @@ Author: Douglas Bates [aut],
   R Core Team [ctb] (base R matrix implementation)
 Repository: CRAN
 Date/Publication: 2019-03-22 22:56:52 UTC
-Built: R 3.5.3; x86_64-w64-mingw32; 2019-03-31 14:22:53 UTC; windows
+Built: R 3.5.3; x86_64-w64-mingw32; 2019-04-11 00:00:59 UTC; windows
 Archs: i386, x64

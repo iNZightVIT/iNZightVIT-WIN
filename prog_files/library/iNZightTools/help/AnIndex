@@ -55,4 +55,6 @@ standardizeVars	standardizeVars
 str_c	stringConcatenation
 tidy_all_code	tidy_all_code
 transformVar	transformVar
+validation_details	validation_details
+validation_summary	validation_summary
 vartype	vartype

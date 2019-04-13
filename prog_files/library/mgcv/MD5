@@ -1,5 +1,5 @@
 e70536903ca327ade1496529ab817b60 *CITATION
-1d56cc246fe1e235f786a5d78a51ab2e *DESCRIPTION
+a5d670633409111e02b7248550999435 *DESCRIPTION
 f8bbbc1f629b5911ff0a7096174c2a6b *INDEX
 6f9aad096bdb7f217fd2a6a5a242418b *Meta/Rd.rds
 6880ad95f50567aea461148c3744c5e1 *Meta/data.rds
@@ -7,7 +7,7 @@ f8bbbc1f629b5911ff0a7096174c2a6b *INDEX
 8f9d51e41b57a724c4e4134af68e49b6 *Meta/hsearch.rds
 676c3f98473266a0ea159369215f35db *Meta/links.rds
 15fa63b10e19a654ce71fb8b73505b10 *Meta/nsInfo.rds
-729e475442f474a3059808090bd16de2 *Meta/package.rds
+142ae085f84bceb66a0aeebb19f2d59f *Meta/package.rds
 a7edea9aaf9e16a95b7844f9161515d6 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/mgcv
 2ef2f78c127221596dd5583f946df012 *R/mgcv.rdb
@@ -16,14 +16,14 @@ e468195a83fab90da8e760c2c3884bd3 *data/columb.polys.rda
 40874e3ced720a596750f499ded8a60a *data/columb.rda
 deb782073919b15f298d97dd0e8ff2f1 *help/AnIndex
 11297235450314d71ff8ed062ba45b20 *help/aliases.rds
-610435e5f236218a38d4e5fe415f7b1c *help/mgcv.rdb
-a867aa78751c5725469abd9f9d099e96 *help/mgcv.rdx
-8f6d237a415ca64fd5f1bc60ce9b4bb9 *help/paths.rds
+37708c2289e408d7cbc22ea7b4cdbdd8 *help/mgcv.rdb
+44694d1411c79250fa4c5763534899ea *help/mgcv.rdx
+b5163cd4b11a17dc8ad2d1576d07cd4c *help/paths.rds
 273215876806b508e3ec48ede9f7e292 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-3ab7c6dccb195c1c8a723f1a465e3c67 *libs/i386/mgcv.dll
+265f4da91bf5367642b86be0e2844b80 *libs/i386/mgcv.dll
 cd541f23e99d3b2a20cb0d321d3e8c6b *libs/i386/symbols.rds
-2af22b269ee7fcaed1f750597ac1f8c8 *libs/x64/mgcv.dll
+c169660f1330aa4d11e90cc5323f3fef *libs/x64/mgcv.dll
 af4a82275a55cae47278552fff6eef58 *libs/x64/symbols.rds
 e43fa21d71e3a38fdf798e720aa8a7d1 *po/de/LC_MESSAGES/R-mgcv.mo
 0ba3c542c1242482f87e0b26fef1ef2a *po/de/LC_MESSAGES/mgcv.mo
