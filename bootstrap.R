@@ -87,7 +87,7 @@ extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap,
 ## dev version install
 dev.deps <- character()
 if (BRANCH == "dev") {
-    cat(" * on dev branch, installing package dev depependencies\n")
+    cat(" * on dev branch, installing package dev dependencies\n")
     for (pkg in inzpkgs) {
         desc <- remotes:::load_pkg_description(
             file.path("..", pkg)
@@ -148,8 +148,9 @@ x <- file.copy(
 
 if (BRANCH == "dev") {
     cat(" * install dev versions of iNZight packages ... ")
-    system("cd ../dev && make all replace keepMaps=true")
+    system("cd ../dev && make all replace keepMaps=true > /dev/null 2>&1")
+    cat("done\n")
 }
 
 ## and then install the latest versions of things ...
-cat(" * Done!\n\n")
+cat(" * Bootstrapping complete.\n")
