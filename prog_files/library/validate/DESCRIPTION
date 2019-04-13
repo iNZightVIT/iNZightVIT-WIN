@@ -1,0 +1,36 @@
+Package: validate
+Maintainer: Mark van der Loo <mark.vanderloo@gmail.com>
+License: GPL-3
+Title: Data Validation Infrastructure
+LazyData: no
+Type: Package
+LazyLoad: yes
+Authors@R: c(person("Mark", "van der Loo",role=c("cre","aut"),email="mark.vanderloo@gmail.com")
+    , person("Edwin", "de Jonge", role="aut")
+    , person("Paul","Hsieh",role="ctb"))
+Description: Declare data validation rules and data quality indicators; confront
+    data with them and analyze or visualize the results. The package supports
+    rules that are per-field, in-record, cross-record or cross-dataset. Rules
+    can be automatically analyzed for rule type and connectivity.
+Version: 0.2.6
+Depends: R (>= 3.1.3), methods
+URL: https://github.com/data-cleaning/validate
+BugReports: https://github.com/data-cleaning/validate/issues
+Imports: graphics, settings, yaml
+Suggests: testthat, knitr, rmarkdown
+Enhances: lumberjack
+VignetteBuilder: knitr
+Collate: 'rule.R' 'sugar.R' 'validate_pkg.R' 'parse.R'
+        'expressionset.R' 'indicator.R' 'validator.R' 'confrontation.R'
+        'barplot.R' 'compare.R' 'factory.R' 'functions.R'
+        'lumberjack.R' 'retailers.R' 'utils.R' 'yaml.R'
+RoxygenNote: 6.0.1
+NeedsCompilation: yes
+Packaged: 2018-08-01 08:43:49 UTC; mark
+Author: Mark van der Loo [cre, aut],
+  Edwin de Jonge [aut],
+  Paul Hsieh [ctb]
+Repository: CRAN
+Date/Publication: 2018-08-01 15:20:02 UTC
+Built: R 3.5.3; x86_64-w64-mingw32; 2019-04-10 23:18:23 UTC; windows
+Archs: i386, x64

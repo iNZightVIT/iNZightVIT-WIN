@@ -98,6 +98,7 @@ if (BRANCH == "dev") {
             remotes:::parse_deps(desc$suggests)$name
         ))
     }
+    dev.deps <- dev.deps[!dev.deps %in% c(inzpkgs, extrapkgs)]
 }
 
 extrapkgs <- extrapkgs[extrapkgs != "Acinonyx"]
@@ -107,7 +108,7 @@ if (!'iNZightMaps' %in% inzpkgs) {
 }
 
 ## Installing additional packages specified on command line ...
-deps <- unique(c(inzpkgs, extrapkgs, 
+deps <- unique(c(inzpkgs, extrapkgs,  dev.deps,
     suppressWarnings(packrat:::recursivePackageDependencies(
         unique(c(inzpkgs, extrapkgs, dev.deps)), 
         srclib, 
@@ -120,7 +121,7 @@ missing <- deps[!deps %in% names(pkgversions)]
 pkgu <- pkgversions[names(pkgversions) %in% rownames(ap)]
 outdated <- names(pkgu)[ap[names(pkgu), 'Version'] > pkgu]
 
-grab <- unique(c(missing, outdated))
+grab <- sort(unique(c(missing, outdated)))
 
 cat(" * downloading packages\n")
 pkgs <- download.packages(grab, pkglib, 

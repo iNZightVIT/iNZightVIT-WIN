@@ -1,0 +1,64 @@
+%vin%                   A consistent set membership operator
++,indicator,indicator-method
+                        Combine two indicator objects
++,validator,validator-method
+                        Combine two validator objects
+aggregate,validation-method
+                        Aggregate validation results
+all,validation-method   Test if all validations resulted in TRUE
+any,validation-method   Test if any validation resulted in TRUE
+as.data.frame,cellComparison-method
+                        Translate cellComparison objects to data frame
+as.data.frame,confrontation-method
+                        Coerce a confrontation object to data frame
+as.data.frame,expressionset-method
+                        Translate an expressionset to data.frame
+as.data.frame,validatorComparison-method
+                        Translate a validatorComparison object to data
+                        frame
+barplot,cellComparison-method
+                        Barplot of cellComparison object
+barplot,validation-method
+                        Plot number of violations
+barplot,validatorComparison-method
+                        Barplot of validatorComparison object
+cells                   Cell counts and differences for a series of
+                        datasets
+check_that              Simple data validation interface
+compare                 Compare similar data sets
+confront                Confront data with a (set of) expressionset(s)
+created                 Creation timestamp
+description             Rule description
+errors                  Get messages from a confrontation object
+export_yaml             Export to yaml file
+label                   Rule label
+lbj_cells-class         Logging object to use with the lumberjack
+                        package
+lbj_rules-class         Logging object to use with the lumberjack
+                        package
+length,expressionset-method
+                        Determine the number of elements in an object.
+match_cells             Create matching subsets of a sequence of data
+meta                    Get or set rule metadata
+names<-,rule,character-method
+                        Extract or set names
+origin                  Origin of rules
+plot,cellComparison-method
+                        Line graph of a cellComparison object.
+plot,validation-method
+                        Plot a validation object
+plot,validator-method   Plot a validator object
+plot,validatorComparison-method
+                        Line graph of validatorComparison object
+retailers               data on Dutch supermarkets
+sort,validation-method
+                        Aggregate and sort the results of a validation.
+summary                 Create a summary
+syntax                  Syntax to define validation or indicator rules
+validate                Data Validation Infrastructure
+validation-class        Store results of evaluating validating
+                        expressions
+validator               Define validation rules for data
+values                  Get values from object
+variables               Get variable names
+voptions                Set or get options globally or per object.
