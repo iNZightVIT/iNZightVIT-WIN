@@ -22,6 +22,8 @@ if (!dir.exists(LOCAL_DIR)) {
     unlink(INST_FILE)
 }
 
+BRANCH <- git2r::branches()[[1]]$name
+
 ## move it into place
 cat(" * copying into prog_files\n")
 x <- dir.create("prog_files")
@@ -75,29 +77,17 @@ ap <- available.packages(repos = repos)
 srclib <- .libPaths()[1]
 inzpkgs <- c('iNZight', 'iNZightPlots', 'iNZightModules', 'iNZightTools',
              'iNZightRegression', 'iNZightMR', 'iNZightTS', 'vit')
+if (BRANCH == "dev") inzpkgs <- c(inzpkgs, "iNZightMaps")
 if (length(ca) > 0)
     inzpkgs <- c(inzpkgs, ca)
 
 extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap,
     fields = c('Depends', 'Imports', 'Suggests', 'LinkingTo'))
-if (!'iNZightMaps' %in% inzpkgs) {
-    extrapkgs <- extrapkgs[extrapkgs != "iNZightMaps"]
-    extrapkgs <- extrapkgs[extrapkgs != "sf"]
-}
-extrapkgs <- extrapkgs[extrapkgs != "Acinonyx"]
-
-## Installing additional packages specified on command line ...
-deps <- unique(c(inzpkgs, extrapkgs, 
-    packrat:::recursivePackageDependencies(
-        unique(c(inzpkgs, extrapkgs)), 
-        srclib, 
-        ap
-    )
-))
 
 ## dev version install
-if (git2r::branches()[[1]]$name == "dev") {
-    dev.deps <- character()
+dev.deps <- character()
+if (BRANCH == "dev") {
+    cat(" * on dev branch, installing package dev depependencies\n")
     for (pkg in inzpkgs) {
         desc <- remotes:::load_pkg_description(
             file.path("..", pkg)
@@ -108,8 +98,22 @@ if (git2r::branches()[[1]]$name == "dev") {
             remotes:::parse_deps(desc$suggests)$name
         ))
     }
-    deps <- unique(c(deps, dev.deps))
 }
+
+extrapkgs <- extrapkgs[extrapkgs != "Acinonyx"]
+if (!'iNZightMaps' %in% inzpkgs) {
+    extrapkgs <- extrapkgs[extrapkgs != "iNZightMaps"]
+    extrapkgs <- extrapkgs[extrapkgs != "sf"]
+}
+
+## Installing additional packages specified on command line ...
+deps <- unique(c(inzpkgs, extrapkgs, 
+    suppressWarnings(packrat:::recursivePackageDependencies(
+        unique(c(inzpkgs, extrapkgs, dev.deps)), 
+        srclib, 
+        ap
+    ))
+))
 
 missing <- deps[!deps %in% names(pkgversions)]
 

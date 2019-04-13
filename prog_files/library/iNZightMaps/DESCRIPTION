@@ -1,0 +1,31 @@
+Package: iNZightMaps
+Type: Package
+Title: iNZightMaps
+Version: 2.1.1
+Date: 2018-12-03
+Authors@R: c(person("Daniel", "Barnett", role = c("aut"),
+                    email = "dbar344@aucklanduni.ac.nz"),
+             person("Tom", "Elliott", role = c("cre", "aut"),
+	            email = "tom.elliott@auckland.ac.nz"),
+             person("Eric", "Lim", role = c("aut"),
+                    email = "jlim062@aucklanduni.ac.nz"),
+             person("Jason", "Wen", role = "aut",
+	            email = "jwen246@aucklanduni.ac.nz"))
+Depends: R (>= 3.2)
+Imports: ggplot2, dplyr, gridExtra, grid, rlang, scales, magrittr,
+        curl, XML, RgoogleMaps, maptools, RColorBrewer, countrycode,
+        iNZightPlots, methods, ggmap (>= 2.7.900)
+Suggests: sf, rgeos, ggsfextra
+Additional_repositories: https://r.docker.stat.auckland.ac.nz
+Description: Simple plotting functions for geographical data.
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+RoxygenNote: 6.1.0.9000
+NeedsCompilation: no
+Packaged: 2019-01-08 00:39:06 UTC; tell029
+Author: Daniel Barnett [aut],
+  Tom Elliott [cre, aut],
+  Eric Lim [aut],
+  Jason Wen [aut]
+Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
+Built: R 3.5.1; ; 2019-01-08 00:39:07 UTC; unix
