@@ -1,0 +1,6 @@
+GETTING AROUND
+
+Use the tabs above to switch between:
+ - Model Output: text/numerical summaries of fitted models are shown here
+ - Model Plots: plots for the chosen model are shown here
+ - Instructions: you can find this text. You may close this tab at any time by clicking the 'X'

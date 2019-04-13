@@ -1,6 +1,9 @@
 can.interact	can.interact
+cat_palette_names	inzpalette
+const_palette_names	inzpalette
 convert.to.factor	convert.to.factor
 create	create
+emphasize_pal_colour	emphasize_pal_colour
 exploreAllPlots	exploreAllPlots
 exploreAllSummaries	exploreAllSummaries
 exportHTML	exportHTML
@@ -10,5 +13,6 @@ exportHTML.inzplotoutput	exportHTML
 exportSVG	exportSVG
 getPlotSummary	getPlotSummary
 iNZightPlot	iNZightPlot
+inzpalette	inzpalette
 inzpar	inzpar
 print.inzHTML	print.inzHTML

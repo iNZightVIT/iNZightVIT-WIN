@@ -146,5 +146,10 @@ x <- file.copy(
     recursive = TRUE
 )
 
+if (BRANCH == "dev") {
+    cat(" * install dev versions of iNZight packages ... ")
+    system("cd ../dev && make all replace keepMaps=true")
+}
+
 ## and then install the latest versions of things ...
 cat(" * Done!\n\n")

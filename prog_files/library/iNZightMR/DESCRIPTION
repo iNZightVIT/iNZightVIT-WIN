@@ -1,7 +1,7 @@
 Package: iNZightMR
 Type: Package
 Title: Tools for Exploring Multiple Response Data
-Version: 2.2-3
+Version: 2.2-3.9000
 Date: 2017-10-27
 Authors@R: c(person("Junjie", "Zeng", role = c("aut"),
     email = "jzen188@aucklanduni.ac.nz"),
@@ -17,10 +17,8 @@ LazyData: true
 Description: Interaction and analysis of Multiple Response Data.
 License: GPL-3 | file LICENSE
 RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2018-08-17 04:09:43 UTC; tell029
 Author: Junjie Zeng [aut],
   Simon Potter [aut],
   Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.5.0; ; 2018-08-17 04:09:43 UTC; unix
+Built: R 3.5.2; ; 2019-04-13 19:39:00 UTC; unix
