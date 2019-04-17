@@ -1,6 +1,7 @@
 iNZightTools-package	iNZightTools
 %>%	pipe
 aggregateData	aggregateData
+appendrows	appendrows
 code	code
 collapseLevels	collapseLevels
 combine.levels	combine.levels
@@ -44,10 +45,10 @@ read_meta	read_meta
 renameLevels	renameLevels
 renameVars	renameVars
 reorderLevels	reorderLevels
-reshape_data_long_to_wide	reshape_data_long_to_wide
-reshape_data_wide_to_long	reshape_data_wide_to_long
+reshape_data	reshape_data
 sample.data	sample.data
 search.name	search.name
+separate	separate
 smart_read	smart_read
 sortVars	sortVars
 stackVars	stackVars
@@ -55,6 +56,7 @@ standardizeVars	standardizeVars
 str_c	stringConcatenation
 tidy_all_code	tidy_all_code
 transformVar	transformVar
+unite	unite
 validation_details	validation_details
 validation_summary	validation_summary
 vartype	vartype

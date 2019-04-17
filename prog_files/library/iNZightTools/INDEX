@@ -1,4 +1,5 @@
 aggregateData           Aggregate data by categorical variables
+appendrows              Append row to the dataset
 code                    Get Data's Code
 collapseLevels          Collapse data by values of a categorical
                         variable
@@ -46,19 +47,19 @@ read_meta               Read CSV with iNZight metadata
 renameLevels            Rename the levels of a categorical variable
 renameVars              Rename column names
 reorderLevels           Reorder a categorical
-reshape_data_long_to_wide
-                        Reshape long to wide
-reshape_data_wide_to_long
-                        Reshape wide to long
+reshape_data            Reshaping dataset from wide to long or from
+                        long to wide
 sample.data             Takes a sample of rows from a data.frame
 search.name             Searches a list recursivly for a name and
                         returns the value associated with the name
+separate                Separate columns
 smart_read              iNZight Smart Read
 sortVars                Sort data by variables
 stackVars               Stack variables
 standardizeVars         Standardize the data of a numeric variable
 tidy_all_code           iNZight Tidy Code
 transformVar            Transform data of a numeric variable
+unite                   Unite columns in a dataset
 validation_details      Details of Validation Rule Results
 validation_summary      Validation Confrontation Summary
 vartype                 Get variable type name
