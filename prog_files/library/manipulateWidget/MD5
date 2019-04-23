@@ -1,4 +1,4 @@
-8914554cb252610248c99d1d6a9ececf *DESCRIPTION
+4d64257ee5d78b12c969c6335404c738 *DESCRIPTION
 34c0224399dcacec985d43d9c47cd36e *INDEX
 cf47069209a8ee5e05e334b69c3deb13 *LICENSE
 53a27d17bddab54d05522b1a388f95dc *Meta/Rd.rds
@@ -6,7 +6,7 @@ cf47069209a8ee5e05e334b69c3deb13 *LICENSE
 309d2cac5d359e4fca2ae0f39861898a *Meta/hsearch.rds
 7317c65fd4a3d2cc2f3a0f27d544da24 *Meta/links.rds
 dcd5e2c271ce16292a44a6efdbba9ed5 *Meta/nsInfo.rds
-08cbc7e7ab4e75deabc8b11381f64923 *Meta/package.rds
+b7a58b3b814c21168f7beb306c5f3aa4 *Meta/package.rds
 6658d8bdf6815c8229b77cffb4f29bf6 *Meta/vignette.rds
 c44bf54295faa7b3885323d2593872e9 *NAMESPACE
 25c229471e8b67969167df0475a8933f *NEWS.md
@@ -19,9 +19,9 @@ b5c6956c30cfa91595844e930786bfe8 *doc/manipulateWidgets.R
 94a294a5b0562ab3742c905d156ea511 *doc/manipulateWidgets.html
 c709cfda7cb4332f10a24601e20fd886 *help/AnIndex
 05b04c1df32e3daf611bdbce7d130c30 *help/aliases.rds
-f369d93888efe46901c3baf7cdcea6e9 *help/manipulateWidget.rdb
-c3c65ebe173bc8a7c744cccd48d3b767 *help/manipulateWidget.rdx
-2f9466c565e90a50daf5e1bbff20b2ab *help/paths.rds
+bf89e45dfa6c410ed3a7dd20b7a3a2ac *help/manipulateWidget.rdb
+1a855b78ff16674159a968a657471c57 *help/manipulateWidget.rdx
+2dd0a4ab920f748a5eaef4e7c4742575 *help/paths.rds
 8c0976979c4bb921038125f10458ef5f *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 58bda3266ee4cb61246228098ec7d96c *htmlwidgets/combineWidgets.css

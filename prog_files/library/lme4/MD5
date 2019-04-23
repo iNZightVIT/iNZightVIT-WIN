@@ -1,5 +1,5 @@
 8c81a4cdd4cd634e4102999545422b7e *CITATION
-26369ccd9e8aa83067470fd57b9d48e6 *DESCRIPTION
+6e978bb5e1203b10236a216b3114fa61 *DESCRIPTION
 89477849a6c12685be478e92711ae460 *INDEX
 0f394874b8b78c68d4d84260a2b8a87f *Meta/Rd.rds
 d03b4304dddbc89dc65471d98eeeb645 *Meta/data.rds
@@ -7,7 +7,7 @@ d03b4304dddbc89dc65471d98eeeb645 *Meta/data.rds
 95b4451ee18f8110bfe3aa6da61770fa *Meta/hsearch.rds
 f21b2ce0af162f9df046a8284b137055 *Meta/links.rds
 e55576036d603c91ce1263caf1de553b *Meta/nsInfo.rds
-df9b82619023819f42f58a0c252ee1a1 *Meta/package.rds
+18299221d5533cd7ea8989eb0538e6e3 *Meta/package.rds
 b4a18df55812c43d0230a7faf2abf1a0 *Meta/vignette.rds
 c62108623a23839f3801c5d8592dedea *NAMESPACE
 57b1ff31b357c9e55cd3c2ee24a7dffe *NEWS.Rd
@@ -39,14 +39,14 @@ e0b53d207761bcafb0fe4fcdade64aa8 *doc/lmerperf.html
 9b03c01f1b80eb945edbbaf7ee658049 *doc/profiling.txt
 5b3bd9c79a2b2f0ec2f9ff4a6aa99de9 *help/AnIndex
 abed8fdb02fd01f679f199dab333c956 *help/aliases.rds
-cc49a765931774347693440991b4fb51 *help/lme4.rdb
-38c592523e59602a87c633245be022c9 *help/lme4.rdx
-c54bafaac57bd54962170efa7e46b994 *help/paths.rds
+e231a70d432215f4e32508be23d313d6 *help/lme4.rdb
+7e8520778f81c24e9f891f770e82c56a *help/lme4.rdx
+77942c18575624cdbacf10869548bc3f *help/paths.rds
 3b174dc52b87aff959e2df12e87dff2e *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-84d596e47b4ed5c2f636043b00d4990f *libs/i386/lme4.dll
+0000d099247c1b3c4f60379daf424f28 *libs/i386/lme4.dll
 8f608145b04fc720ede5c045fde114c5 *libs/i386/symbols.rds
-6453a4bb7439666fa148dc25da9ed412 *libs/x64/lme4.dll
+7e1dc3f4a372b2da264c1d8cc249324e *libs/x64/lme4.dll
 b55aa67062c239074bfef89dc110dd44 *libs/x64/symbols.rds
 b63ce45d087ac1ac15e011620990b796 *testdata/Johnson.rda
 0228b450876b7d54712465af4c817a16 *testdata/Rplots.pdf

@@ -1,4 +1,4 @@
-8032c1b17f60a6b4023dba03364c10f4 *DESCRIPTION
+8d7f30d6f772122d45b2498d4aaf7e90 *DESCRIPTION
 f39e19f46ed77a63896b7b4e5d0bc4a3 *INDEX
 f35c1dd7a6e913e967bd6e03dd8a3c18 *LICENSE
 397b5526fc0fd4f47cfbc3afef96afe2 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f35c1dd7a6e913e967bd6e03dd8a3c18 *LICENSE
 0ddc7c827b9970e695bcb3351101dcf4 *Meta/hsearch.rds
 e9fa3d9d0c25ca4d1ebb54c08b1e5c16 *Meta/links.rds
 ed623d1379de8e3d62fbd69a5b244865 *Meta/nsInfo.rds
-9d551449c56b46d23ae2828e3f3261e4 *Meta/package.rds
+76b8588ce2452d09e8a9cb73c888747e *Meta/package.rds
 614b53ef7a5600983b374fc13b86fd4d *Meta/vignette.rds
 cf634019071f336fc2fa280c6c2446a2 *NAMESPACE
 9055268a7b68a44844872a52191f5716 *NEWS
@@ -29,13 +29,13 @@ a737a5ac5078bf20ae2f6565e7af5e26 *doc/index.html
 005bb67a37757ff044edae206a5c8233 *doc/secure_rng.html
 8716afb711674c9b15b87462dda1d527 *help/AnIndex
 b1bba8e705f090fc90901477bcf0945b *help/aliases.rds
-0a2fac42619629d3cf81a28335f9e287 *help/openssl.rdb
-c45b0178d400f8ccfb5b3725da4fd376 *help/openssl.rdx
-8376a80266500b8f76818d545515febe *help/paths.rds
+e9abb57ae5d3692443648b9c46c42a88 *help/openssl.rdb
+37fd469c70efc85f366d153681b1b0f2 *help/openssl.rdx
+d8f22dea4a19d6710d8db5fa84ed7092 *help/paths.rds
 88829547a3d9780692b941a0c15a5071 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-24da4dd655d4a1a02abde72f051dc397 *libs/i386/openssl.dll
+444a2d240b83d4f32db523ce41642baa *libs/i386/openssl.dll
 99377f62dbd3ccd45d7a208ba1bf47f0 *libs/i386/symbols.rds
-908f0fa6d332f02474c5d7fe818af8e0 *libs/x64/openssl.dll
+509af5b5be6407d86457a252ebc15ae5 *libs/x64/openssl.dll
 e5257f0228c623396402d11cf21aa15b *libs/x64/symbols.rds
 f7ab82c62438871433ceacf6a9dc54ba *mac-askpass

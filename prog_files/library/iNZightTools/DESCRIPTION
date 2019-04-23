@@ -1,8 +1,7 @@
 Package: iNZightTools
 Type: Package
 Title: Tools for iNZight
-Version: 1.6.3.9000
-Date: 2018-11.15
+Version: 1.7
 Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
         readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
         stringr, tools, chron, lubridate, zoo, validate
@@ -26,4 +25,4 @@ Author: Tom Elliott [aut, cre],
   Owen Jin [ctb],
   Lushi Cai [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.5.2; ; 2019-04-18 02:59:12 UTC; unix
+Built: R 3.5.2; ; 2019-04-23 19:34:48 UTC; unix
