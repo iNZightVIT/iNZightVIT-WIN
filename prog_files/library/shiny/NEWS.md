@@ -1,19 +1,19 @@
-shiny 1.3.1
+shiny 1.3.2
 ===========
 
-## Full changelog
+### Bug fixes
 
-### Breaking changes
+* Fixed [#2285](https://github.com/rstudio/shiny/issues/2285), [#2288](https://github.com/rstudio/shiny/issues/2288): Static CSS/JS resources in subapps in R Markdown documents did not render properly. ([#2386](https://github.com/rstudio/shiny/pull/2386))
 
-### New features
+* Fixed [#2280](https://github.com/rstudio/shiny/issues/2280): Shiny applications that used a www/index.html file did not serve up the index file. ([#2382](https://github.com/rstudio/shiny/pull/2382))
 
-### Minor new features and improvements
+
+shiny 1.3.1
+===========
 
 ### Bug fixes
 
 * Fixed a performance issue introduced in v1.3.0 when using large nested lists within Shiny. ([#2377](https://github.com/rstudio/shiny/pull/2377))
-
-### Documentation Updates
 
 
 shiny 1.3.0

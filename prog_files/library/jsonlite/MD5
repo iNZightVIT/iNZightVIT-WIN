@@ -1,5 +1,5 @@
 192e3ea56abfef6ee44714e69cae5e51 *CITATION
-949dc0426b65d26ca763f006183e2797 *DESCRIPTION
+32b25f8bdff0eb2f914f569fcda70077 *DESCRIPTION
 340e56eb8625e2b327f5c721240fcaea *INDEX
 1ee0683cce6d3479250337954c075d63 *LICENSE
 f18b922416394f2572aa90e667eab383 *Meta/Rd.rds
@@ -7,7 +7,7 @@ f18b922416394f2572aa90e667eab383 *Meta/Rd.rds
 add7ce473ed6fd59b51e06b1c327f66a *Meta/hsearch.rds
 4ed65b34463ca3ac437721ddc5797f53 *Meta/links.rds
 09cabaea6f4efc4a33af438dcb617b1f *Meta/nsInfo.rds
-d0af58a8e13a4274ed7ab0e1a90d3189 *Meta/package.rds
+cf15ee65fe15e359a594a97fcb39f5ce *Meta/package.rds
 9d01a320e3dd086035a65adf69a9c290 *Meta/vignette.rds
 2352e9008dedfbf8d87e916a603923d4 *NAMESPACE
 d6be667e14d26106f44853a810136f62 *NEWS
@@ -28,12 +28,12 @@ b4b774c92a47cd87f0bf2753ac7a1cb1 *doc/json-opencpu.pdf
 501178e0710715ad639bb0337369e2b3 *doc/json-paging.html
 440b38339beb57f39b03dd98e8fd52de *help/AnIndex
 88dbc49d241bf8b9950ddbbd0fb43ad4 *help/aliases.rds
-43c22d96b5503e7188b2eb507bbce1b8 *help/jsonlite.rdb
-8a734d263e00b2c2cfdf8ae84d1bc872 *help/jsonlite.rdx
-973a0b3d87ac14cc5490cde96a564b20 *help/paths.rds
+4414b9216bb9ed189bda5570eaabdc2f *help/jsonlite.rdb
+523041b2bd2ead01850fd60a9b365700 *help/jsonlite.rdx
+accb9e83cb7b6930841955412de424f0 *help/paths.rds
 fb814fd85f6dc48e7478550493e2cfeb *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-f483827f19b1a8c17d991859ec49db57 *libs/i386/jsonlite.dll
+826c380010eb9b05798826c01ada4d66 *libs/i386/jsonlite.dll
 395426f958dd9189c33d33e50b4aad52 *libs/i386/symbols.rds
-bc1c32cdfd9584b8478fad65a73f1637 *libs/x64/jsonlite.dll
+e0231f83b2b0f1d9ede581dc0d76bdba *libs/x64/jsonlite.dll
 a5e53539e02f79fb4432a791d0902406 *libs/x64/symbols.rds

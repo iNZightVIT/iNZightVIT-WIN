@@ -17,10 +17,10 @@
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -33,13 +33,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,8 +80,28 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 
-
 </style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -288,7 +306,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>There are three main parts to writing an expectation, as illustrated by <code>expect_length()</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">expect_length &lt;-<span class="st"> </span><span class="cf">function</span>(object, n) {</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="co"># 1. Capture object and label</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">  act &lt;-<span class="st"> </span><span class="kw">quasi_label</span>(rlang<span class="op">::</span><span class="kw">enquo</span>(object))</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">  act &lt;-<span class="st"> </span><span class="kw">quasi_label</span>(rlang<span class="op">::</span><span class="kw">enquo</span>(object), <span class="dt">arg =</span> <span class="st">&quot;object&quot;</span>)</a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5">  <span class="co"># 2. Call expect()</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6">  act<span class="op">$</span>n &lt;-<span class="st"> </span><span class="kw">length</span>(act<span class="op">$</span>val)</a>
@@ -303,7 +321,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </div>
 <div id="quasi-labelling" class="section level2">
 <h2>Quasi-labelling</h2>
-<p>The first step in any expectation is to capture the actual object, and generate a label for it to use if a failure occur. All testthat expectations supporting quasiquotation so that you can unquote variables. This makes it easier to generate good labels when the expectation is called from a function or within a for loop.</p>
+<p>The first step in any expectation is to capture the actual object, and generate a label for it to use if a failure occur. All testthat expectations support quasiquotation so that you can unquote variables. This makes it easier to generate good labels when the expectation is called from a function or within a for loop.</p>
 <p>By convention, the first argument to every <code>expect_</code> function is called <code>object</code>, and you capture it’s value (<code>val</code>) and label (<code>lab</code>) with <code>act &lt;- quasi_label(enquo(object))</code>, where <code>act</code> is short for actual.</p>
 <div id="verify-the-expectation" class="section level3">
 <h3>Verify the expectation</h3>
@@ -324,15 +342,31 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span><span class="kw">expect_length</span>(<span class="dv">11</span>)</a></code></pre></div>
 </div>
 </div>
+<div id="suceed-and-fail" class="section level2">
+<h2><code>suceed()</code> and <code>fail()</code></h2>
+<p>For expectations with more complex logic governing when success or failure occurs, you can use <code>succeed()</code> and <code>fail()</code>. These are simple wrappers around <code>expect()</code> that allow you to write code that looks like this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">expect_length &lt;-<span class="st"> </span><span class="cf">function</span>(object, n) {</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  act &lt;-<span class="st"> </span><span class="kw">quasi_label</span>(rlang<span class="op">::</span><span class="kw">enquo</span>(object), <span class="dt">arg =</span> <span class="st">&quot;object&quot;</span>)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">  act<span class="op">$</span>n &lt;-<span class="st"> </span><span class="kw">length</span>(act<span class="op">$</span>val)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">  <span class="cf">if</span> (act<span class="op">$</span>n <span class="op">==</span><span class="st"> </span>n) {</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    <span class="kw">succeed</span>()</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    <span class="kw">invisible</span>(act<span class="op">$</span>val)</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">  }</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">  </a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">  message &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%s has length %i, not length %i.&quot;</span>, act<span class="op">$</span>lab, act<span class="op">$</span>n, n)</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">  <span class="kw">fail</span>(message)</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">}</a></code></pre></div>
+</div>
 <div id="testing-your-expectations" class="section level2">
 <h2>Testing your expectations</h2>
 <p>Use the expectations <code>expect_success()</code> and <code>expect_failure()</code> to test your expectation.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">test_that</span>(<span class="st">&quot;length computed correctly&quot;</span>, {</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="kw">expect_success</span>(<span class="kw">expect_length</span>(<span class="dv">1</span>, <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="kw">expect_failure</span>(<span class="kw">expect_length</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="st">&quot;has length 1, not length 2.&quot;</span>)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="kw">expect_success</span>(<span class="kw">expect_length</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">  <span class="kw">expect_success</span>(<span class="kw">expect_length</span>(letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">5</span>))</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">})</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">test_that</span>(<span class="st">&quot;length computed correctly&quot;</span>, {</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="kw">expect_success</span>(<span class="kw">expect_length</span>(<span class="dv">1</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">expect_failure</span>(<span class="kw">expect_length</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="st">&quot;has length 1, not length 2.&quot;</span>)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="kw">expect_success</span>(<span class="kw">expect_length</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="kw">expect_success</span>(<span class="kw">expect_length</span>(letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">})</a></code></pre></div>
 </div>
 
 

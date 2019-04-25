@@ -24,11 +24,12 @@ auto_test_package       Watches a package for changes, rerunning tests
 comparison-expectations
                         Expectation: is returned value less or greater
                         than specified value?
-context                 Describe the context of a set of tests.
 describe                describe: a BDD testing language
 equality-expectations   Expectation: is the object equal to a value?
 expect                  The building block of all 'expect_' functions
 expect_cpp_tests_pass   Test Compiled Code in a Package
+expect_invisible        Expectation: does expression return visibily or
+                        invisibly?
 expect_known_output     Expectations: is the output or the value equal
                         to a known good value?
 expect_length           Expectation: does a vector have the specified
@@ -36,11 +37,16 @@ expect_length           Expectation: does a vector have the specified
 expect_match            Expectation: does string match a regular
                         expression?
 expect_named            Expectation: does object have names?
+expect_null             Expectation: is an object 'NULL'?
+expect_setequal         Expectation: do two vectors contain the same
+                        values?
+expect_vector           Expectation: does the object have vctr
+                        properties?
 fail                    Default expectations that alway succeed or
                         fail.
 inheritance-expectations
                         Expectation: does the object inherit from a S3
-                        or S4 class, or a base type?
+                        or S4 class, or is it a base type?
 logical-expectations    Expectation: is the object true/false?
 output-expectations     Expectation: does code produce
                         output/message/warning/error?
@@ -48,7 +54,7 @@ skip                    Skip a test.
 teardown                Run code on setup/teardown
 test_dir                Run all tests in directory or package
 test_examples           Test package examples
-test_file               Run all tests in specified file.
+test_file               Run all tests in specified file
 test_path               Locate file in testing directory.
 test_that               Create a test.
 use_catch               Use Catch for C++ Unit Testing

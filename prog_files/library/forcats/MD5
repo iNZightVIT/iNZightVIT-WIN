@@ -1,4 +1,4 @@
-bee3d34edd204b73a1af302d22d302ca *DESCRIPTION
+1abe69ef47731c605382eaa52a3922e7 *DESCRIPTION
 0525247231eaf584a6aef91f6057fb75 *INDEX
 e39ec7e452f7f12d725e6b323a57bb75 *Meta/Rd.rds
 7477eeae0f2f74cb8827cf6bdf2da0ee *Meta/data.rds
@@ -6,7 +6,7 @@ e39ec7e452f7f12d725e6b323a57bb75 *Meta/Rd.rds
 b7fa80ec9289ba675b397f5c13c7902d *Meta/hsearch.rds
 00722a4bb0bdf17b6abc4e07ec4ac027 *Meta/links.rds
 7d98be7274f60b21d098c2e3c66878e7 *Meta/nsInfo.rds
-40eb312cd71bcceb0c5e9de53bb36f44 *Meta/package.rds
+e3cfa4c3baa9a76dd87ddd39a4637c1c *Meta/package.rds
 41d9530244f3959018e95f6601eea721 *Meta/vignette.rds
 d5f6ca573834110aff26e8713779a1c8 *NAMESPACE
 87f7d199a4c2b313fd6570a20a99fe39 *NEWS.md
@@ -25,8 +25,8 @@ ef8f7ba941ccfd1ca23c14605419b171 *help/aliases.rds
 1e64288740b04988f0f7b312121328fa *help/figures/README-ordered-plot-1.png
 a59cd623b54459510a0897b3350a65d9 *help/figures/README-unordered-plot-1.png
 3252fda93a16a69b6deb795c4866b7cb *help/figures/logo.png
-5235fbb03aef0fc9b4a82f158d9a645e *help/forcats.rdb
-7446ae98b3ad756e15d58969d44f6f99 *help/forcats.rdx
-f5c1f3f66d81170f2fe62f4248cd569a *help/paths.rds
+80b5c89635be591d82e4c49592e376e2 *help/forcats.rdb
+0df880292b2eba1da52e2499f803e5d9 *help/forcats.rdx
+52f4a9f70bcbb60134ad6bd90c0cca3c *help/paths.rds
 b81e269f510c9f98545f85d16b0ee909 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

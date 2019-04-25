@@ -1,4 +1,4 @@
-e9fb273d92e3021822dce3e06b0a4072 *DESCRIPTION
+ddf0e37c70786def52fc6a62b1303a8a *DESCRIPTION
 b86e9241df6f42c507066fa50db657ae *INDEX
 76311f896830c93dd3f4f0ce9e0155c9 *Meta/Rd.rds
 2c17b193588f9a917fb0517cd6c6f405 *Meta/demo.rds
@@ -6,7 +6,7 @@ b86e9241df6f42c507066fa50db657ae *INDEX
 9d3907e0fcf4d1303752f46d46b22575 *Meta/hsearch.rds
 06bf9624ed2d5ad11a74dc03519e12bf *Meta/links.rds
 6cd484e7f5a7dd3be92567a35eb7a758 *Meta/nsInfo.rds
-7f6ecf3c99f0d290fa560d9fb601f9b7 *Meta/package.rds
+6c02e8dbe0768178faa02e0f6649fe7b *Meta/package.rds
 f4d3e9804cf097ac41b45a29840fcd65 *Meta/vignette.rds
 c7a0907c48009c53c3f3e62186116b32 *NAMESPACE
 596d12e78991a9e0697116f6e28d20c4 *NEWS
@@ -48,9 +48,9 @@ b4ef592c88333c7c509dd74fcd1912d9 *fonts/FreeMono.ttf
 dc0004a804503e126bc99998c7a1c677 *fonts/FreeSerif.ttf
 990e2708457922a9e2433e0f3c8f2f1f *help/AnIndex
 2860368fbb4ff3da26358156c7deb843 *help/aliases.rds
-9a690cc55db68450b407df49c1734993 *help/paths.rds
-565cbc4b5e65d642eb25661d2c345975 *help/rgl.rdb
-0372409d4ea0384b4f105bd25c3cd978 *help/rgl.rdx
+1af189944eca78297d22937a555ac539 *help/paths.rds
+868c25583a21465eb03a88bcd75fd98f *help/rgl.rdb
+5dca1a5bd698a2d0b74d4370eb6fad05 *help/rgl.rdx
 c57a5215d3c97135c452dcd46e41399f *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 f531509fcc00f86e611197ed9b802e73 *htmlwidgets/lib/CanvasMatrix/CanvasMatrix.src.js
@@ -60,9 +60,9 @@ cc1cfad09e78db798014b3d123e7d292 *htmlwidgets/rglPlayer.js
 0ec592bdc675b0cca5b089c13e6f6b42 *htmlwidgets/rglPlayer.yaml
 e96d5d133e0bd80f67e1ed9a120b64a5 *htmlwidgets/rglWebGL.js
 3e1a8bb45dab0242d5430b34d1e73050 *htmlwidgets/rglWebGL.yaml
-16a7a0ba20eb67bd2f1b64b00b1f83b8 *libs/i386/rgl.dll
+c0661d79d270e2b43913aee6b7d4525e *libs/i386/rgl.dll
 c71ef33b85aa6704ebe134ece87a4a68 *libs/i386/symbols.rds
-1134395a1712019521e72254bfc4eda3 *libs/x64/rgl.dll
+1de377924f3f7f7ca1651aa4d30b19a0 *libs/x64/rgl.dll
 7979c45b1734322bae8de1cd7c3ed0da *libs/x64/symbols.rds
 2d6f196e7090e6782650682c1b0110e7 *shinyDemo/server.R
 eb74fabf5803a67c70ddbd1e102d88e5 *shinyDemo/ui.R
