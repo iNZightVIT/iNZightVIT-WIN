@@ -99,6 +99,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -106,14 +109,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -243,7 +306,7 @@ div.tocify {
 <p><code>sf</code> objects can have more than one geometry list-column, but always only one geometry column is considered <em>active</em>, and returned by <code>st_geometry</code>. When there are multiple geometry columns, the default <code>print</code> methods reports which one is active:</p>
 <pre class="r"><code>library(sf)
 demo(nc, ask = FALSE, echo = FALSE)
-## Reading layer `nc.gpkg' from data source `/tmp/Rtmpb7R1w9/Rinst7fecc45b12d/sf/gpkg/nc.gpkg' using driver `GPKG'
+## Reading layer `nc.gpkg' from data source `/tmp/Rtmp4M4CdF/Rinst1c9456b8622c/sf/gpkg/nc.gpkg' using driver `GPKG'
 ## Simple feature collection with 100 features and 14 fields
 ## Attribute-geometry relationship: 0 constant, 8 aggregate, 6 identity
 ## geometry type:  MULTIPOLYGON

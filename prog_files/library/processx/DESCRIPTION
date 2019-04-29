@@ -32,5 +32,5 @@ Author: Gábor Csárdi [aut, cre, cph] (<https://orcid.org/0000-0001-7098-9676>)
 Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
 Repository: CRAN
 Date/Publication: 2019-03-10 22:40:03 UTC
-Built: R 3.5.3; x86_64-w64-mingw32; 2019-04-21 17:26:18 UTC; windows
+Built: R 3.6.0; x86_64-w64-mingw32; 2019-04-24 02:29:28 UTC; windows
 Archs: i386, x64

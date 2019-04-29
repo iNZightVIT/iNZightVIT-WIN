@@ -99,6 +99,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -106,14 +109,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -240,7 +303,7 @@ div.tocify {
 <p>Features are represented by records in an <code>sf</code> object, and have feature attributes (all non-geometry fields) and feature geometry. Since <code>sf</code> objects are a subclass of <code>data.frame</code> or <code>tbl_df</code>, operations on feature attributes work identical to how they work on <code>data.frame</code>s, e.g.</p>
 <pre class="r"><code>library(sf)
 nc &lt;- st_read(system.file(&quot;shape/nc.shp&quot;, package=&quot;sf&quot;))
-## Reading layer `nc' from data source `/tmp/Rtmpb7R1w9/Rinst7fecc45b12d/sf/shape/nc.shp' using driver `ESRI Shapefile'
+## Reading layer `nc' from data source `/tmp/Rtmp4M4CdF/Rinst1c9456b8622c/sf/shape/nc.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 100 features and 14 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY

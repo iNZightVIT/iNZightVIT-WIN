@@ -1,4 +1,28 @@
+# version 0.7-4
+
+* add example on how voronoi polygons can be tied back to the points they contain; #1030
+
+* `st_difference(x, y)`, with `x` an `sfc` with zero feature geometries, now returns `x`; #1024
+
+* don't reset (base) plot device when `add = TRUE`
+
+* `==` and `!=` now return `NA` when one of the operands is an empty geometry; #1013
+
+* `st_intersects` is now a generic
+
+* drop requiring `proj_api.h` in favor of `proj.h`, this enables compatibility to PROJ 6.0.0 and GDAL 2.5.0-dev; #988
+
+* fix regression in binary predicates introduced in #855; #999 reported by Barry Rowlingson
+
+* fix bug in `gdal_utils` util `warper` on certain GDAL/OS combinations; https://github.com/r-spatial/stars/issues/117
+
+* `c.sfc` now ignores the type (class) of empty `sfc` objects when choosing the result type; #985, #982
+
+* rename the default value for `distance` to `"Eucledian"`, rather than  `"distance"` in `st_distance`
+
 # version 0.7-3
+
+* add argument `exact` to `st_sample`, for now defaulting to `FALSE`; #896
 
 * fixed n-ary `st_difference` for cases where geometries are entirely contained in others; #975, by Jonathan Marshall
 

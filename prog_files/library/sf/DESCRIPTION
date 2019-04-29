@@ -1,5 +1,5 @@
 Package: sf
-Version: 0.7-3
+Version: 0.7-4
 Title: Simple Features for R
 Authors@R: 
     c(person(given = "Edzer",
@@ -48,7 +48,8 @@ URL: https://github.com/r-spatial/sf/
 BugReports: https://github.com/r-spatial/sf/issues/
 Depends: methods, R (>= 3.3.0)
 Imports: classInt (>= 0.2-1), DBI (>= 0.8), graphics, grDevices, grid,
-        magrittr, Rcpp, stats, tools, units (>= 0.6-0), utils
+        magrittr, Rcpp (>= 0.12.18), stats, tools, units (>= 0.6-0),
+        utils
 Suggests: blob, covr, dplyr (>= 0.8-0), ggplot2, knitr, lwgeom (>=
         0.1-5), maps, maptools, mapview, microbenchmark, odbc, pillar,
         pool, raster, rgdal, rgeos, rlang, rmarkdown, RPostgres (>=
@@ -70,7 +71,7 @@ Collate: 'RcppExports.R' 'init.R' 'crs.R' 'bbox.R' 'read.R' 'db.R'
         'stars.R' 'crop.R' 'gdal_utils.R' 'nearest.R' 'normalize.R'
         'deprecated.R'
 NeedsCompilation: yes
-Packaged: 2019-02-21 09:45:51 UTC; edzer
+Packaged: 2019-04-25 17:51:47 UTC; edzer
 Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Roger Bivand [ctb] (<https://orcid.org/0000-0003-2392-6140>),
   Etienne Racine [ctb],
@@ -84,6 +85,6 @@ Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Thomas Lin Pedersen [ctb]
 Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 Repository: CRAN
-Date/Publication: 2019-02-21 13:30:04 UTC
-Built: R 3.5.3; x86_64-w64-mingw32; 2019-04-21 18:24:40 UTC; windows
+Date/Publication: 2019-04-25 22:30:03 UTC
+Built: R 3.6.0; x86_64-w64-mingw32; 2019-04-28 07:17:04 UTC; windows
 Archs: i386, x64

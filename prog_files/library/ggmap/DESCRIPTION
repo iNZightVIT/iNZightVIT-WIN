@@ -21,12 +21,13 @@ LazyData: true
 RoxygenNote: 6.1.0
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2019-02-05 09:19:03 UTC; ligges
+Packaged: 2019-01-24 20:42:53 UTC; david_kahle
 Author: David Kahle [aut, cre] (<https://orcid.org/0000-0002-9999-1558>),
   Hadley Wickham [aut] (<https://orcid.org/0000-0003-4757-117X>),
   Scott Jackson [aut],
   Mikko Korpela [ctb]
-Maintainer: David Kahle <david.kahle@gmail.com>
+Maintainer: ORPHANED
+X-CRAN-Original-Maintainer: David Kahle <david.kahle@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-02-05 10:19:04
-Built: R 3.5.3; ; 2019-04-21 20:36:47 UTC; windows
+Date/Publication: 2019-02-04 15:13:23 UTC
+Built: R 3.6.0; ; 2019-04-24 08:06:32 UTC; windows

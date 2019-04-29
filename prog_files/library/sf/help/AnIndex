@@ -204,6 +204,7 @@ st_crosses	geos_binary_pred
 st_crs	st_crs
 st_crs.bbox	st_crs
 st_crs.character	st_crs
+st_crs.CRS	st_crs
 st_crs.crs	st_crs
 st_crs.numeric	st_crs
 st_crs.sf	st_crs

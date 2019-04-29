@@ -38,8 +38,13 @@ RUN apt-get install -y libgeos-dev
 # PROJ:
 # was: ENV PROJ_VERSION 4.9.3
 # http://download.osgeo.org/proj/proj-5.0.0RC3.tar.gz
-ENV PROJ_VERSION 5.1.0
+ENV PROJ_VERSION=6.0.0
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
+  && apt-get install -y \
+  libsqlite3-dev \
+  sqlite3
 
 RUN wget http://download.osgeo.org/proj/proj-${PROJ_VERSION}.tar.gz \
   && tar zxf proj-*tar.gz \
@@ -52,8 +57,8 @@ RUN wget http://download.osgeo.org/proj/proj-${PROJ_VERSION}.tar.gz \
 
 # install proj-datumgrid:
 RUN cd /usr/local/share/proj \
-  && wget http://download.osgeo.org/proj/proj-datumgrid-1.7.zip \
-  && unzip proj-datumgrid*zip \
+  && wget http://download.osgeo.org/proj/proj-datumgrid-1.8.zip \
+  && unzip -o proj-datumgrid*zip \
   && rm proj-datumgrid*zip \
   && cd -
 
@@ -73,8 +78,8 @@ RUN cd /usr/local/share/proj \
 
 # GDAL:
 
-ENV GDAL_VERSION 2.4.0
-ENV GDAL_VERSION_NAME 2.4.0
+ENV GDAL_VERSION 2.5.0
+ENV GDAL_VERSION_NAME 2.5.0beta1
 
 RUN wget http://download.osgeo.org/gdal/${GDAL_VERSION}/gdal-${GDAL_VERSION_NAME}.tar.gz \
   && tar -xf gdal-${GDAL_VERSION_NAME}.tar.gz \
@@ -88,7 +93,6 @@ RUN wget http://download.osgeo.org/gdal/${GDAL_VERSION}/gdal-${GDAL_VERSION_NAME
 #RUN ls
 #
 #RUN git clone --depth 1 https://github.com/OSGeo/gdal.git
-#
 #RUN cd gdal/gdal \
 #  && ls -l \
 #  && ./configure \
@@ -108,42 +112,60 @@ RUN apt-get install -y \
 	libxml2-dev \
 	libprotobuf-dev \
 	protobuf-compiler \
-	unixodbc-dev
-
-RUN Rscript -e 'install.packages(c("sp","rgeos","rgdal","RPostgreSQL","RSQLite","testthat","knitr","tidyr","geosphere","maptools","maps","microbenchmark", "raster", "dplyr", "tibble", "units", "DBI",  "covr", "protolite", "tmap", "mapview"), repos = "https://cloud.r-project.org")'
-
-RUN Rscript -e 'install.packages("sf", dependencies = TRUE, repos = "https://cloud.r-project.org")'
-
-RUN ls
-
-RUN svn  checkout svn://scm.r-forge.r-project.org/svnroot/rgdal/
-# or:
-# svn checkout svn+ssh://edzer@scm.r-forge.r-project.org/svnroot/rgdal/
-RUN R CMD build rgdal/pkg --no-build-vignettes
-
-RUN R CMD INSTALL rgdal_*.tar.gz 
-
-RUN geos-config --libs
-RUN git clone --depth 1 https://github.com/r-spatial/sf.git
-RUN R CMD build --no-build-vignettes --no-manual sf
-RUN R CMD INSTALL sf_*gz
-
-RUN apt-get install -y \
+	unixodbc-dev \
 	libssh2-1-dev \
 	libgit2-dev \
 	libnetcdf-dev
 
+RUN Rscript -e 'install.packages(c("sp"), repos = "https://cloud.r-project.org")'
+RUN Rscript -e 'install.packages(c("rgdal"), repos = "https://cloud.r-project.org")'
+
+# RUN svn  checkout svn://scm.r-forge.r-project.org/svnroot/rgdal/
+# or:
+# svn checkout svn+ssh://edzer@scm.r-forge.r-project.org/svnroot/rgdal/
+# RUN R CMD build rgdal/pkg --no-build-vignettes
+# RUN R CMD INSTALL rgdal_*.tar.gz 
+
+RUN Rscript -e 'install.packages(c("sp","rgeos","RPostgreSQL","RSQLite","testthat","knitr","tidyr","geosphere","maptools","maps","microbenchmark", "raster", "dplyr", "tibble", "units", "DBI",  "covr", "protolite", "tmap", "mapview"), repos = "https://cloud.r-project.org")'
+#RUN Rscript -e 'install.packages(c("sp","rgeos","rgdal","RPostgreSQL","RSQLite","testthat","knitr","tidyr","geosphere","maptools","maps","microbenchmark", "raster", "dplyr", "tibble", "units", "DBI",  "covr", "protolite", "tmap", "mapview"), repos = "https://cloud.r-project.org")'
+
+#RUN Rscript -e 'install.packages("sf", dependencies = TRUE, repos = "https://cloud.r-project.org")'
+
+RUN geos-config --libs
+RUN git clone --depth 10 https://github.com/r-spatial/sf.git
+RUN git config --global user.email "edzer.pebesma@uni-muenster.de"
+#RUN (cd sf; git checkout -b PROJH master; git pull https://github.com/rsbivand/sf.git master)
+RUN (cd sf; git pull https://github.com/r-spatial/sf.git)
+RUN R CMD build --no-build-vignettes --no-manual sf
+# RUN R CMD INSTALL sf_*gz
+
+RUN R CMD INSTALL sf
 RUN Rscript -e 'install.packages("devtools")'
-RUN Rscript -e 'devtools::install_github("r-spatial/stars")'
+# RUN Rscript -e 'devtools::install_github("r-spatial/stars")'
+
+# lwgeom with PROJ6 patch
+RUN Rscript -e 'devtools::install_github("r-spatial/lwgeom")' 
+RUN Rscript -e 'install.packages(c("mapview","odbc","pool","rmarkdown","RPostgres","spatstat"))'
+#RUN Rscript -e 'install.packages(c("rgdal", "tmap", "stars"))'
+#RUN R CMD build --no-build-vignettes --no-manual sf
+#RUN R CMD check --no-build-vignettes --no-manual sf_*gz 
 
 #RUN svn checkout svn://svn.r-forge.r-project.org/svnroot/rgeos/
 #RUN R CMD build rgeos/pkg --no-build-vignettes
 #RUN R CMD INSTALL rgeos_*tar.gz
 
-#RUN Rscript -e 'install.packages(c("lwgeom", "tmap", "pool", "odbc", "mapview"), repos = "https://cloud.r-project.org")'
-
 #RUN R CMD check --no-build-vignettes --no-manual --as-cran --run-dontrun sf_*tar.gz
 #RUN R CMD check --no-build-vignettes --no-manual --as-cran sf_*tar.gz
 #RUN R CMD check --no-build-vignettes --no-manual sf_*tar.gz
+
+RUN svn  checkout svn://scm.r-forge.r-project.org/svnroot/rgdal/
+# or:
+# svn checkout svn+ssh://edzer@scm.r-forge.r-project.org/svnroot/rgdal/
+RUN R CMD build rgdal/pkg --no-build-vignettes
+RUN R CMD INSTALL rgdal_*.tar.gz 
+#RUN R CMD check --no-vignettes --no-manual rgdal_*.tar.gz 
+#RUN Rscript -e 'install.packages(c("lwgeom", "tmap", "pool", "odbc", "mapview"), repos = "https://cloud.r-project.org")'
+RUN Rscript -e 'install.packages(c("stars", "tmap"), repos = "https://cloud.r-project.org")'
+RUN R CMD check --no-build-vignettes --no-manual --as-cran sf_*.tar.gz 
 
 CMD ["/bin/bash"]
