@@ -1,4 +1,10 @@
 default: bootstrap
 
+RVERSION ?= 3.6.0
+
 bootstrap:
-	@Rscript --vanilla bootstrap.R 
+	@~/R-${RVERSION}/bin/Rscript --vanilla bootstrap.R
+
+installer:
+	@makensis INSTALL_SCRIPT.nsi
+

@@ -9,13 +9,13 @@
 
 <h3>Description</h3>
 
-<p>Formatting numbers individually and flexibly, <code>formatC()</code> using
+<p><code>formatC()</code> formats numbers individually and flexibly using
 <code>C</code> style format specifications.
 </p>
 <p><code>prettyNum()</code> is used for &ldquo;prettifying&rdquo; (possibly
 formatted) numbers, also in <code><a href="format.html">format.default</a></code>.
 </p>
-<p><code>.format.zeros()</code>, an auxiliary function of <code>prettyNum()</code>
+<p><code>.format.zeros(x)</code>, an auxiliary function of <code>prettyNum()</code>,
 re-formats the zeros in a vector <code>x</code> of formatted numbers.
 </p>
 
@@ -28,17 +28,20 @@ formatC(x, digits = NULL, width = NULL,
         big.mark = "", big.interval = 3L,
         small.mark = "", small.interval = 5L,
         decimal.mark = getOption("OutDec"),
-        preserve.width = "individual", zero.print = NULL,
+        preserve.width = "individual",
+        zero.print = NULL, replace.zero = TRUE,
         drop0trailing = FALSE)
 
 prettyNum(x, big.mark = "",   big.interval = 3L,
           small.mark  = "", small.interval = 5L,
           decimal.mark = getOption("OutDec"), input.d.mark = decimal.mark,
           preserve.width = c("common", "individual", "none"),
-          zero.print = NULL, drop0trailing = FALSE, is.cmplx = NA,
+          zero.print = NULL, replace.zero = FALSE,
+          drop0trailing = FALSE, is.cmplx = NA,
           ...)
 
-.format.zeros(x, zero.print, nx = suppressWarnings(as.numeric(x)))
+.format.zeros(x, zero.print, nx = suppressWarnings(as.numeric(x)),
+              replace = FALSE, warn.non.fitting = TRUE)
 </pre>
 
 
@@ -165,6 +168,28 @@ whereas <code>"individual"</code> is the default in
 <p>logical, character string or <code>NULL</code> specifying
 if and how <em>zeros</em> should be formatted specially.  Useful for
 pretty printing &lsquo;sparse&rsquo; objects.</p>
+</td></tr>
+<tr valign="top"><td><code>replace.zero, replace</code></td>
+<td>
+<p>logical; if <code>zero.print</code> is a
+character string, indicates if the exact zero entries in <code>x</code>
+should be simply replaced by <code>zero.print</code>.  Otherwise,
+depending on the widths of the respective strings, the (formatted)
+zeroes are <em>partly</em> replaced by <code>zero.print</code> and then
+padded with <code>" "</code> to the right were applicable.  In that case
+(false <code>replace[.zero]</code>), if the <code>zero.print</code> string does
+not fit, a warning is produced (if <code>warn.non.fitting</code> is true).
+</p>
+<p>The implementation has <code>formatC()</code> calling <code>prettyNum()</code>
+(only if <code>zero.print</code> is not <code>NULL</code>) which itself calls
+<code>.format.zeros(*, replace=replace.zero)</code> three times.
+</p>
+</td></tr>
+<tr valign="top"><td><code>warn.non.fitting</code></td>
+<td>
+<p>logical; if it is true, <code>replace[.zero]</code> is
+false and the <code>zero.print</code> string does not fit, a
+<code><a href="warning.html">warning</a></code> is signalled.</p>
 </td></tr>
 <tr valign="top"><td><code>drop0trailing</code></td>
 <td>
@@ -347,5 +372,5 @@ if(doLC) ## revert, typically to  "C"  :
   Sys.setlocale("LC_NUMERIC", oldLC)
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.5.1 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 3.6.0 <a href="00Index.html">Index</a>]</div>
 </body></html>
