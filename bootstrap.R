@@ -54,7 +54,8 @@ x <- file.copy(
 # copy the Rconsole file with MDI=no setting
 x <- file.copy(
     file.path("assets", "Rconsole"),
-    file.path("prog_files/etc")
+    file.path("prog_files/etc"),
+    overwrite = TRUE
 )
 
 
