@@ -2,6 +2,7 @@
 
 export("%>%")
 export(aggregateData)
+export(aggregatedt)
 export(appendrows)
 export(code)
 export(collapseLevels)

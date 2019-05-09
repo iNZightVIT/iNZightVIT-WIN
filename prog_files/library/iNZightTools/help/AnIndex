@@ -1,6 +1,7 @@
 iNZightTools-package	iNZightTools
 %>%	pipe
 aggregateData	aggregateData
+aggregatedt	aggregatedt
 appendrows	appendrows
 code	code
 collapseLevels	collapseLevels

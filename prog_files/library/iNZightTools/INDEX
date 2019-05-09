@@ -1,4 +1,5 @@
 aggregateData           Aggregate data by categorical variables
+aggregatedt             Aggregate datetimes
 appendrows              Append row to the dataset
 code                    Get Data's Code
 collapseLevels          Collapse data by values of a categorical
