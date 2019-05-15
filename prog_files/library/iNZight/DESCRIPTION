@@ -22,10 +22,12 @@ Additional_repositories: https://r.docker.stat.auckland.ac.nz
 LazyData: true
 Encoding: UTF-8
 RoxygenNote: 6.1.1
+NeedsCompilation: no
+Packaged: 2019-05-15 02:04:46 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
   Simon Potter [ctb],
   Marco Kuper [aut],
   David Banks [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-05-15 03:56:54 UTC; unix
+Built: R 3.6.0; ; 2019-05-15 02:04:47 UTC; unix
