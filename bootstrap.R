@@ -76,14 +76,14 @@ if (!requireNamespace('git2r', quietly = TRUE))
     install.packages('git2r', repos = repos[2])
 
 ap <- available.packages(repos = repos)
-srclib <- .libPaths()[1]
+# srclib <- LIBPATH #.libPaths()[1]
 inzpkgs <- c('iNZight', 'iNZightPlots', 'iNZightModules', 'iNZightTools',
              'iNZightRegression', 'iNZightMR', 'iNZightTS', 'vit')
 if (grepl("maps", BRANCH)) inzpkgs <- c(inzpkgs, "iNZightMaps")
 if (length(ca) > 0)
     inzpkgs <- c(inzpkgs, ca)
 
-extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap,
+extrapkgs <- packrat:::getPackageDependencies(inzpkgs, LIBPATH, ap,
     fields = c('Depends', 'Imports', 'Suggests', 'LinkingTo'))
 
 ## dev version install (if not master)
@@ -113,7 +113,7 @@ if (!'iNZightMaps' %in% inzpkgs) {
 deps <- unique(c(inzpkgs, extrapkgs,  dev.deps,
     suppressWarnings(packrat:::recursivePackageDependencies(
         unique(c(inzpkgs, extrapkgs, dev.deps)),
-        srclib,
+        LIBPATH,
         ap
     ))
 ))
