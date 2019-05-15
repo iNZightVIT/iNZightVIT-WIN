@@ -11,8 +11,6 @@ Depends: R (>= 2.10)
 License: GPL-3
 LazyData: true
 RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2019-04-29 00:58:50 UTC; tell029
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-04-29 00:58:50 UTC; unix
+Built: R 3.6.0; ; 2019-05-15 03:57:17 UTC; unix
