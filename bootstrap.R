@@ -22,7 +22,8 @@ if (!dir.exists(LOCAL_DIR)) {
     unlink(INST_FILE)
 }
 
-BRANCH <- git2r::branches()[[1]]$name
+BRANCH <- system("git rev-parse --abbrev-ref HEAD", TRUE)
+cat(" * on branch", BRANCH, "\n")
 
 ## move it into place
 cat(" * copying into prog_files\n")
