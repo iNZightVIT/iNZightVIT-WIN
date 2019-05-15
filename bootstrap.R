@@ -22,7 +22,6 @@ if (!dir.exists(LOCAL_DIR)) {
     unlink(INST_FILE)
 }
 
-BRANCH <- git2r::branches()[[1]]$name
 
 ## move it into place
 cat(" * copying into prog_files\n")
@@ -71,8 +70,10 @@ if (!requireNamespace('packrat', quietly = TRUE))
     install.packages('packrat', repos = repos[2])
 if (!requireNamespace('devtools', quietly = TRUE))
     install.packages('devtools', repos = repos[2])
-if (!requireNamespace('git2r', quietly = TRUE))
-    install.packages('git2r', repos = repos[2])
+#if (!requireNamespace('git2r', quietly = TRUE))
+#    install.packages('git2r', repos = repos[2])
+
+BRANCH <- system("git rev-parse --abbrev-ref HEAD", TRUE)
 
 ap <- available.packages(repos = repos)
 srclib <- .libPaths()[1]

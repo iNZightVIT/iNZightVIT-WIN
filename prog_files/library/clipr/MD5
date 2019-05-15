@@ -1,11 +1,11 @@
-40da1ac7662cc899952559f3e4ab103e *DESCRIPTION
+4cd84e23c5d02b48ea0c22cc867517e7 *DESCRIPTION
 7a61327b56de9c49b5011661ab06f3a4 *INDEX
 1cc342726931457382aaafafb0cb5811 *Meta/Rd.rds
 25ec83abd15128a8ae9185d893802c45 *Meta/features.rds
 e566100e0d789cc923966d6db93034c9 *Meta/hsearch.rds
 c197eaf7c71e34ff1f15eedd9f5d3019 *Meta/links.rds
 07f93e5d41f3e65d1f5c90ffac67135d *Meta/nsInfo.rds
-1584f972e2c76986ca6cdfb829fd0b41 *Meta/package.rds
+51b47a2aa37e98956c12143bd06498b7 *Meta/package.rds
 09945ce222ca037dcf1368207a275184 *Meta/vignette.rds
 ac9216bb379e4dad41fcf47ac889c3d9 *NAMESPACE
 a3a12b8cfe777fb5beee27e85440eea2 *NEWS.md
@@ -18,9 +18,9 @@ f9ba05e47333c6df567f954feae5daf5 *doc/developing-with-clipr.Rmd
 a04200cd42f8cec9943ea88467e597a6 *doc/index.html
 8f3bb283eb2d4b82150a074d3aef91bd *help/AnIndex
 b1dcb2e41399dd1cd4bd15c1aba3eb81 *help/aliases.rds
-2d68b1f8f55766042718cc0aa02d1ee8 *help/clipr.rdb
-27a8f0b0430e9f85bbe735c1350ffa59 *help/clipr.rdx
-46e65a2386d5f1e5740748715004a35f *help/paths.rds
+4d5abcfcc2c1130cd893f6801504882d *help/clipr.rdb
+62c25a413c23485828fd4e57572878f6 *help/clipr.rdx
+3fc96a96d641f599c01fac4542b6a3d7 *help/paths.rds
 ada038c1c72fb16114e43645a6de1643 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 c5d91ccff2716bd64fd3dbf351507c07 *rstudio/addins.dcf

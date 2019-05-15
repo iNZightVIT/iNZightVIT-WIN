@@ -1,6 +1,6 @@
 Package: processx
 Title: Execute and Control System Processes
-Version: 3.3.0
+Version: 3.3.1
 Authors@R: c(
     person("Gábor", "Csárdi", role = c("aut", "cre", "cph"),
            email = "csardi.gabor@gmail.com",
@@ -21,16 +21,16 @@ URL: https://github.com/r-lib/processx#readme
 BugReports: https://github.com/r-lib/processx/issues
 RoxygenNote: 6.1.1
 Imports: ps (>= 1.2.0), R6, utils
-Suggests: callr, covr, crayon, debugme, parallel, testthat, withr
+Suggests: callr, covr, crayon, curl, debugme, parallel, testthat, withr
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2019-03-10 22:11:05 UTC; gaborcsardi
+Packaged: 2019-05-07 07:40:37 UTC; gaborcsardi
 Author: Gábor Csárdi [aut, cre, cph] (<https://orcid.org/0000-0001-7098-9676>),
   Winston Chang [aut],
   RStudio [cph, fnd],
   Mango Solutions [cph, fnd]
 Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-03-10 22:40:03 UTC
-Built: R 3.6.0; x86_64-w64-mingw32; 2019-04-24 02:29:28 UTC; windows
+Date/Publication: 2019-05-08 05:20:02 UTC
+Built: R 3.6.0; x86_64-w64-mingw32; 2019-05-13 04:50:53 UTC; windows
 Archs: i386, x64

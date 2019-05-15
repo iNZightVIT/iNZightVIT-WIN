@@ -16,6 +16,7 @@ conn_set_stderr	processx_connections
 conn_set_stdout	processx_connections
 conn_write	processx_connections
 conn_write.processx_connection	processx_connections
+curl_fds	curl_fds
 poll	poll
 process	process
 processx_conn_close	processx_connections

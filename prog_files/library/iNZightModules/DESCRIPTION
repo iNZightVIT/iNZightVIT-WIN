@@ -21,6 +21,8 @@ Description: A suite of add-on modules for the iNZight GUI, including model
     fitting module, multiple response, time series, and some advanced plotting.
 RoxygenNote: 6.1.1
 Encoding: UTF-8
+NeedsCompilation: no
+Packaged: 2019-05-15 02:03:09 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Daniel Barnett [aut],
   Eric Lim [aut],
@@ -29,4 +31,4 @@ Author: Tom Elliott [aut, cre],
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.6.0; ; 2019-05-15 00:32:08 UTC; unix
+Built: R 3.6.0; ; 2019-05-15 02:03:09 UTC; unix

@@ -18,10 +18,12 @@ Description: Compatibility functions used for multiple packages and
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
 RoxygenNote: 6.1.1
+NeedsCompilation: no
+Packaged: 2019-05-15 02:02:00 UTC; tell029
 Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb],
   Owen Jin [ctb],
   Lushi Cai [ctb]
 Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.6.0; ; 2019-05-15 00:32:03 UTC; unix
+Built: R 3.6.0; ; 2019-05-15 02:02:00 UTC; unix
