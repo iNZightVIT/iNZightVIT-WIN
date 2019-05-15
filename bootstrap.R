@@ -87,7 +87,7 @@ extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap,
 
 ## dev version install (if not master)
 dev.deps <- character()
-if (!grepl("^master", BRANCH)) {
+if (!grepl("master", BRANCH)) {
     cat(" * on dev branch, installing package dev dependencies\n")
     for (pkg in inzpkgs) {
         desc <- remotes:::load_pkg_description(
@@ -148,7 +148,7 @@ x <- file.copy(
     recursive = TRUE
 )
 
-if (grepl("^master", BRANCH)) {
+if (!grepl("master", BRANCH)) {
     cat(" * install dev versions of iNZight packages ... ")
     system(sprintf(
         "cd ../dev && make all replace keepMaps=%s > /dev/null 2>&1",
