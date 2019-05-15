@@ -22,6 +22,7 @@ if (!dir.exists(LOCAL_DIR)) {
     unlink(INST_FILE)
 }
 
+BRANCH <- git2r::branches()[[1]]$name
 
 ## move it into place
 cat(" * copying into prog_files\n")
@@ -70,25 +71,23 @@ if (!requireNamespace('packrat', quietly = TRUE))
     install.packages('packrat', repos = repos[2])
 if (!requireNamespace('devtools', quietly = TRUE))
     install.packages('devtools', repos = repos[2])
-#if (!requireNamespace('git2r', quietly = TRUE))
-#    install.packages('git2r', repos = repos[2])
-
-BRANCH <- system("git rev-parse --abbrev-ref HEAD", TRUE)
+if (!requireNamespace('git2r', quietly = TRUE))
+    install.packages('git2r', repos = repos[2])
 
 ap <- available.packages(repos = repos)
 srclib <- .libPaths()[1]
 inzpkgs <- c('iNZight', 'iNZightPlots', 'iNZightModules', 'iNZightTools',
              'iNZightRegression', 'iNZightMR', 'iNZightTS', 'vit')
-if (BRANCH == "dev") inzpkgs <- c(inzpkgs, "iNZightMaps")
+if (grepl("maps", BRANCH)) inzpkgs <- c(inzpkgs, "iNZightMaps")
 if (length(ca) > 0)
     inzpkgs <- c(inzpkgs, ca)
 
 extrapkgs <- packrat:::getPackageDependencies(inzpkgs, srclib, ap,
     fields = c('Depends', 'Imports', 'Suggests', 'LinkingTo'))
 
-## dev version install
+## dev version install (if not master)
 dev.deps <- character()
-if (BRANCH == "dev") {
+if (!grepl("^master", BRANCH)) {
     cat(" * on dev branch, installing package dev dependencies\n")
     for (pkg in inzpkgs) {
         desc <- remotes:::load_pkg_description(
@@ -149,9 +148,12 @@ x <- file.copy(
     recursive = TRUE
 )
 
-if (BRANCH == "dev") {
+if (grepl("^master", BRANCH)) {
     cat(" * install dev versions of iNZight packages ... ")
-    system("cd ../dev && make all replace keepMaps=true > /dev/null 2>&1")
+    system(sprintf(
+        "cd ../dev && make all replace keepMaps=%s > /dev/null 2>&1",
+        ifelse(grepl("maps", BRANCH), "true", "false")
+    ))
     cat("done\n")
 }
 
