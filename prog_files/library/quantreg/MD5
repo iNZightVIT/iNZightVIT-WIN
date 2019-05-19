@@ -1,5 +1,5 @@
 70cbd7c93a85b9b490c475ab1df4a79f *ChangeLog
-e3b903818deb138d8e2e8b1ed160c388 *DESCRIPTION
+47b23c23784e422be87bad3d749b5907 *DESCRIPTION
 a3f4a3a776bc39d6aa852ffc0c2ec0b4 *FAQ
 36307cf3682668853e6ba685e78ce7ee *INDEX
 f172ee954c71e831961ef2384ff1640e *Meta/Rd.rds
@@ -9,7 +9,7 @@ edda4adc0cdd9dba22c69ac3ee438d83 *Meta/data.rds
 a28671126363b05886043960c2709632 *Meta/hsearch.rds
 0bd5b405784cbc3e4b18d72631320e91 *Meta/links.rds
 a630d37ad396a9837ef9eb15903477b3 *Meta/nsInfo.rds
-ae38a7a45c28b4f4ca8c4b1d992a19d5 *Meta/package.rds
+1c7e087860731c2e44df3ade589b2eab *Meta/package.rds
 af732f8cac699d076dbf6f3f162143e2 *Meta/vignette.rds
 0049c7c3b3bd0184b258c2652df17244 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/quantreg
@@ -55,12 +55,12 @@ ea9c96de3d670a1fa922585cf85789e3 *demo/predemo.R
 96f5c238ade9146a10d4216b38718e35 *doc/rqss.pdf
 99208f38e3b6a82b7e7e4645d2cffd6a *help/AnIndex
 af14820c5a46c26215ae772e3f333b94 *help/aliases.rds
-259fb4a473cd8dee09b297075be75793 *help/paths.rds
-ad8527772f1b03f9bbd876670c10b328 *help/quantreg.rdb
-b1cba07521fb0dded67707862fcb9cd0 *help/quantreg.rdx
+f13a04ce5138290a1eb02768bc785f76 *help/paths.rds
+7a800640964f262e450e5d4129bae18a *help/quantreg.rdb
+63c53fcbc4ee8691dcad488e26b81daa *help/quantreg.rdx
 1717452f1c456c08e45466458b6efaaf *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-4d8e42098c2ee74eae8c1077e7c17d6f *libs/i386/quantreg.dll
+ea650013cab7517484e116eda6311202 *libs/i386/quantreg.dll
 8a1ee58029e0182e8a9f3287fd01799f *libs/i386/symbols.rds
-e54f8fe32f9ca081cca2b7e6113a6a3c *libs/x64/quantreg.dll
+bde6d0e3d602ed276fe149b4eb70c4cd *libs/x64/quantreg.dll
 080033e24a05b9b142540526c8646391 *libs/x64/symbols.rds
