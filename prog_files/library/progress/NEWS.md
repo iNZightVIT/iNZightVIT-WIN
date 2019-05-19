@@ -1,4 +1,22 @@
 
+# 1.2.2
+
+* Fix two bugs in the C++ API that can potentially cause irregular
+  behavior (#94, @jimhester).
+
+# 1.2.1
+
+* Add the `message_class` argument, to add extra classes to the messages
+  thrown by progress.
+
+* Add support for RKWard, running interactive session
+  (#76, @devillemereuil).
+
+* Add support for unicode characters and a right to left progress bar
+  (#86, @jimhester).
+
+* Fix a potential crash in the C++ API (#91, @jimhester).
+
 # 1.2.0
 
 * Option to change the 'current' character in the progress bar. #47

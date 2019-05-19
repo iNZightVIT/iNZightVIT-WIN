@@ -118,6 +118,8 @@ deps <- unique(c(inzpkgs, extrapkgs,  dev.deps,
     ))
 ))
 
+writeLines(deps, "packages.txt")
+
 missing <- deps[!deps %in% names(pkgversions)]
 
 pkgu <- pkgversions[names(pkgversions) %in% rownames(ap)]

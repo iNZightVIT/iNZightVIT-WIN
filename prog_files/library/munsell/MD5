@@ -1,4 +1,4 @@
-5616356d300919b8a7729b25d46cc53e *DESCRIPTION
+669c6e74f99f015cab2d290f9c0d6cfd *DESCRIPTION
 8ad796aa194b6c98057f70302767cb86 *INDEX
 87ef3467fce6d5a255c09d2c0f4e980b *LICENSE
 abcd1b5e79b0fc2d4ee4b2217b9a5c12 *Meta/Rd.rds
@@ -6,7 +6,7 @@ abcd1b5e79b0fc2d4ee4b2217b9a5c12 *Meta/Rd.rds
 5cf67021f8723da5ca4cadaf84f00977 *Meta/hsearch.rds
 bb0adb8b20fe06c9ed32130e8b8a8384 *Meta/links.rds
 300cee037a1d85b955103ccb5ce9d7de *Meta/nsInfo.rds
-11bfc1089796081127772cfca58c69e8 *Meta/package.rds
+146e10b8cfb150cf4422c18a2c8077d6 *Meta/package.rds
 f2b196714119df71068365d96a78adca *NAMESPACE
 bd328b2da12ac6ec1070f9e86329c883 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/munsell
@@ -19,9 +19,9 @@ ff8a5fde45974534ce9f29478ac1c78c *help/aliases.rds
 0437a4915ec1202d4edd135ae4a2165e *help/figures/README-complement-slice-1.png
 1cc548d8918b7d403e2f0ac3e69a2bbb *help/figures/README-manipulate-blue-1.png
 a23b32894ced7dd72d8a2a2ebcede8e5 *help/figures/README-palette-1.png
-c73d4cad5366e6a3f1e2989ee543df50 *help/munsell.rdb
-55f61518fe59b4e05cd98da5ff5188c8 *help/munsell.rdx
-10ebf535910dee8032a2d4551b9671db *help/paths.rds
+c61bb95648d0064460e5de64a40dde51 *help/munsell.rdb
+8fe65e6163b999da40131fc9b776150e *help/munsell.rdx
+30a4000010900a58e5d1abb0ec314532 *help/paths.rds
 2acbbdf1a6eb91cbba1cc95c3e48428e *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 4c45c679a2b7365d48ee7f168b37ce77 *raw/getmunsellmap.R
