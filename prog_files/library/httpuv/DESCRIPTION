@@ -28,5 +28,5 @@ NeedsCompilation: yes
 Packaged: 2019-04-05 20:06:25 UTC; winston
 Repository: CRAN
 Date/Publication: 2019-04-05 22:10:03 UTC
-Built: R 3.6.0; x86_64-w64-mingw32; 2019-05-13 09:06:13 UTC; windows
+Built: R 3.6.0; x86_64-w64-mingw32; 2019-05-17 04:27:00 UTC; windows
 Archs: i386, x64

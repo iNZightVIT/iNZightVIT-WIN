@@ -1,7 +1,7 @@
 Package: xfun
 Type: Package
 Title: Miscellaneous Functions by 'Yihui Xie'
-Version: 0.6
+Version: 0.7
 Authors@R: c(
   person("Yihui", "Xie", role = c("aut", "cre", "cph"), email = "xie@yihui.name", comment = c(ORCID = "0000-0003-0645-5666")),
   person("Daijiang", "Li", role = "ctb"),
@@ -20,11 +20,11 @@ LazyData: true
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-04-02 03:57:42 UTC; yihui
+Packaged: 2019-05-14 01:32:13 UTC; yihui
 Author: Yihui Xie [aut, cre, cph] (<https://orcid.org/0000-0003-0645-5666>),
   Daijiang Li [ctb],
   Xianying Tan [ctb]
 Maintainer: Yihui Xie <xie@yihui.name>
 Repository: CRAN
-Date/Publication: 2019-04-02 05:30:03 UTC
-Built: R 3.6.0; ; 2019-05-13 00:44:03 UTC; windows
+Date/Publication: 2019-05-14 10:30:02 UTC
+Built: R 3.6.0; ; 2019-05-16 22:35:55 UTC; windows
