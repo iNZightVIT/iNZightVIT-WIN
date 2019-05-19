@@ -1,5 +1,5 @@
 23f4b40de0153cb64414e6c6359f28a0 *CITATION
-c92a9f9770827e7846a2dd84602d1df9 *DESCRIPTION
+fa2f6c72ef01dc44ee2d57e5e3a2d71d *DESCRIPTION
 6dffb55f54d66de9cf64d3ebbb185547 *INDEX
 91cc29ce1e6f232533dfbe6e13ddcdb6 *Meta/Rd.rds
 64a55065e251757fa310a4c916704e01 *Meta/data.rds
@@ -7,7 +7,7 @@ c92a9f9770827e7846a2dd84602d1df9 *DESCRIPTION
 186fc04ed52f2d0dee28748c37fd6851 *Meta/hsearch.rds
 9f917c4b8baec5d555b62c92855b30b7 *Meta/links.rds
 ef77b27bded7be4725bfdf9179967a7b *Meta/nsInfo.rds
-0344f3b70f9c44d98949762e40ddb66a *Meta/package.rds
+2568b3b6cd86259833c8846b5c1e1a56 *Meta/package.rds
 10b4e8cd9aa7e8ce3329da89cba889e3 *NAMESPACE
 30f0fa4ba42f6e54d0af0b78e4457fee *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/ggmap
@@ -19,8 +19,8 @@ dfe8ed8f884ac80cbf9829bfb3fb0026 *data/Rdata.rdx
 048dbdda8e2c13fc147f6fea35cf37a9 *data/datalist
 59dbeed0eadd6f5a83653853dad6d44a *help/AnIndex
 2fda42dbea8f1da87a01f3e6092e5690 *help/aliases.rds
-fadbfd6b4fd51432277d0b8129f87a0d *help/ggmap.rdb
-a5880b3ba0131f3f16585d65f796bd02 *help/ggmap.rdx
-7305bef3a5ecc3872fa2522d3860742f *help/paths.rds
+d4343413ce3d7e95db1bf74a2c22ded0 *help/ggmap.rdb
+c10f2688801ddbfa720435226afc130e *help/ggmap.rdx
+3fc6c9df6a7a2b1d7b6ef482175c2e82 *help/paths.rds
 71e0c9589aed0569f96f8fab16669020 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

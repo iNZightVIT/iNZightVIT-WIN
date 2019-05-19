@@ -1,5 +1,5 @@
 cf1d077dd7e8d918645b6bdeb54ded66 *CITATION
-4abb3c705793d7f28c1b1d119f0216ed *DESCRIPTION
+7b2b73156f65ef398d194eda0ada8433 *DESCRIPTION
 549ea3b3879337b156da35ff4d79bae9 *INDEX
 46d9037e0df7d5d0736bc3a9806d4680 *Meta/Rd.rds
 30134827bbf9528dfdcbcfb2a115502e *Meta/demo.rds
@@ -7,7 +7,7 @@ cf1d077dd7e8d918645b6bdeb54ded66 *CITATION
 cb2bcf46ef988db453c94b3d80627f46 *Meta/hsearch.rds
 94bd4885c16be21f2c93d04d26f76edb *Meta/links.rds
 cd8fc19adb91816b644c38b5bbc65699 *Meta/nsInfo.rds
-911d221e0a82492d2450916d5fe698c7 *Meta/package.rds
+b885c56762eef3a2780664814d3848b1 *Meta/package.rds
 be3a060e145c709c65194023de97a31e *Meta/vignette.rds
 6269d1f582a5a7d77acc0f466cca8a40 *NAMESPACE
 d723b75dc6253ba555ebf8debeeb4ec5 *NEWS.md
@@ -28,15 +28,15 @@ dbfc5ec4aaaffc153d301008da35269c *doc/units.Rmd
 7cc21d3e881252611b371b9098b22569 *doc/units.html
 2c509bfd6d8ae776884a96721b24ad1b *help/AnIndex
 0194bc1aafc946718b94998b1b5875c8 *help/aliases.rds
-88ca161ffb0b64633e4f790c11f01f5c *help/paths.rds
-b4a335273d4a522a48b8a75443aa48ea *help/units.rdb
-71b752fb03de4a4daea520f10d46a71a *help/units.rdx
+a719e6522f9ca761bc1581b40e377a12 *help/paths.rds
+46e0c348c957e9688a00865124d62943 *help/units.rdb
+26aae267adae288092b1d4f75af5b5ec *help/units.rdx
 59984bd9a18da3a4d85ebf4a69cec725 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 285f21251d071adbdd3c5690ea1b04b3 *libs/i386/symbols.rds
-66c73e1cce4b720d7551b9054fafe30e *libs/i386/units.dll
+8ce7e9d9c03dd8eb877cec1228ced9da *libs/i386/units.dll
 02e7e83727a5224ed24ce331b8086b05 *libs/x64/symbols.rds
-d37b82825e2d26ce073864ae7b226858 *libs/x64/units.dll
+33898973dbf3e1ffe5a1bd2810f7bd63 *libs/x64/units.dll
 26f28956899a13203f9d11baf0f03a1d *share/udunits/udunits2-accepted.xml
 cf5342a71d0250353fda59ad83c35a9e *share/udunits/udunits2-base.xml
 92b3d24d148513296f9f24449373ddfb *share/udunits/udunits2-common.xml
