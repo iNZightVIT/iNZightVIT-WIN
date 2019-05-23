@@ -39,6 +39,7 @@ Section "install"
 	${If} $INSTDIR == "$DOCUMENTS\${APPNAME}"
 		createDirectory "$INSTDIR\Saved Plots"
 		createDirectory "$INSTDIR\Saved Data"
+		AccessControl::GrantOnFile "$INSTDIR\prog_files" "(S-1-5-32-545)" "FullAccess"
 	${Else}
 		IfFileExists $DOCUMENTS\${APPNAME} next 0
 		MessageBox MB_YESNO|MB_ICONQUESTION|MB_USERICON "Do you want to create an iNZightVIT folder in My Documents for saved plots and data?" IDYES true IDNO next
