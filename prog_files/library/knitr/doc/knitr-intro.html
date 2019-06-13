@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2019-03-08" />
+<meta name="date" content="2019-05-17" />
 
 <title>Not An Introduction to knitr</title>
 
@@ -327,6 +327,9 @@ code > span.fu { color: #900; font-weight: bold; }
 code > span.er { color: #a61717; background-color: #e3d2d2; } 
 </style>
 
+
+
+
 </head>
 
 <body>
@@ -335,8 +338,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">Not An Introduction to knitr</h1>
-<h4 class="author"><em>Yihui Xie</em></h4>
-<h4 class="date"><em>2019-03-08</em></h4>
+<h4 class="author">Yihui Xie</h4>
+<h4 class="date">2019-05-17</h4>
 
 
 
@@ -344,9 +347,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Anyway, here is a code chunk that shows you can compile vignettes with <strong>knitr</strong> as well using R 3.0.x, which supports non-Sweave vignettes:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">options</span>(<span class="dt">digits =</span> <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">rnorm</span>(<span class="dv">20</span>)</a></code></pre></div>
-<pre><code>##  [1] -0.27971  0.20226  0.43451  1.04519 -1.15509 -0.09407  0.04128
-##  [8]  1.14778  0.70944  0.25841  2.17469  1.23306 -1.04496  0.30611
-## [15] -1.47991 -1.28170 -1.11212  1.00938  1.64041  0.81715</code></pre>
+<pre><code>##  [1] -0.47895  1.64563  1.08664 -0.48803  0.44205 -1.03148  0.07407
+##  [8]  0.11753  2.02114  1.22088  0.33964  1.68759 -0.34722  0.84130
+## [15]  0.28156 -0.22972  1.93980  0.06516 -1.21992 -0.79984</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">fit =<span class="st"> </span><span class="kw">lm</span>(dist <span class="op">~</span><span class="st"> </span>speed, <span class="dt">data =</span> cars)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">b =<span class="st"> </span><span class="kw">coef</span>(fit)</a></code></pre></div>
 <table>

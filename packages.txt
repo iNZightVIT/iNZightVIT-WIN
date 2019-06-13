@@ -35,6 +35,7 @@ jsonlite
 knitr
 lubridate
 magrittr
+mgcv
 objectProperties
 plyr
 png
@@ -59,12 +60,12 @@ methods
 grid
 stats
 graphics
-mgcv
 tools
 BH
 DBI
 FNN
 MASS
+Matrix
 MatrixModels
 R6
 Rcpp
@@ -82,6 +83,7 @@ carData
 cellranger
 cli
 clipr
+codetools
 crayon
 crosstalk
 curl
@@ -102,6 +104,7 @@ httpuv
 httr
 labeling
 later
+lattice
 lazyeval
 lme4
 lmtest
@@ -114,7 +117,9 @@ miniUI
 minqa
 mitools
 munsell
+nlme
 nloptr
+nnet
 numDeriv
 objectSignals
 openssl

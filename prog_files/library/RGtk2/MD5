@@ -1,5 +1,5 @@
 75ee920816be3e5dd1a5407a360ef391 *CITATION
-eade01c93818cdd0c0dd2b2196377bab *DESCRIPTION
+581711346b65c81e23dc07d13a7b1a64 *DESCRIPTION
 96fcca2ae7e51667e57b1731b17f9cdd *INDEX
 379158deec16c5ebab47df1771dedc1b *Meta/Rd.rds
 eb11078a0dc2343e425c306b3c5619d8 *Meta/demo.rds
@@ -7,7 +7,7 @@ eb11078a0dc2343e425c306b3c5619d8 *Meta/demo.rds
 edcebe730fabb04579e3659c7e388e47 *Meta/hsearch.rds
 be0514555025266497e64e0ea99c7eb9 *Meta/links.rds
 1054e199b2449297386138ded27209ff *Meta/nsInfo.rds
-4170000f3712c84ac3a61506cfb9c882 *Meta/package.rds
+d33b1ffe1419671d20eddd68e87f0d7a *Meta/package.rds
 61bd8bcbc6533205f8c3b3b6dd5d95bd *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/RGtk2
 e61de741d9329b85ecb9c27dde4056ac *R/RGtk2.rdb
@@ -169,10 +169,10 @@ f3da01a842a7011d7494dd2f33071137 *examples/pango-PangoRenderer.R
 9c9d2ada7d97c5b11795dc689b17ac84 *examples/pango-Scripts-and-Languages.R
 d4d2ee008ed6f5af8e7b80045e98d72b *examples/pango-pango-renderer.R
 9c47d90a34a117a1e43f94b1ac85035f *help/AnIndex
-18f5a9ece4cb415532842e8ae73b3f33 *help/RGtk2.rdb
-b8a3f56ebd85d91ddd3533162596b294 *help/RGtk2.rdx
+e64b67277a3cb2319b59c27b76ac40c5 *help/RGtk2.rdb
+af4720e4f8c29124bfdb13017018e291 *help/RGtk2.rdx
 8c1c7d48a17de622c88b9f745b2b705e *help/aliases.rds
-dc89afc8d7de6aa7ced1ec8ced4973b0 *help/paths.rds
+735942a17b88b817625636eb093bc8d9 *help/paths.rds
 a09a072763b8d1e19e7828d7fc671138 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 ae3fc770889a2fbb0319086e1e11959c *images/alphatest.png
@@ -228,8 +228,8 @@ e6a4bed0811b462e8d001c6d1091ce2e *include/RGtk2/pangoClasses.h
 aeb8e21f1c975e9b172b4c7998cb8a37 *include/RGtk2/pangoImports.c
 868c5aa86cc8b4d9ace56c2b1a935c07 *include/RGtk2/pangoUserFuncImports.c
 c433677ffe98b358908e2decf4217a5a *include/RGtk2/pangoUserFuncs.h
-ffca70a329acfe354e04a92ef3350078 *libs/i386/RGtk2.dll
+ea43713373ab81cde91580e021748ea8 *libs/i386/RGtk2.dll
 cd51ee861a216e20206c34df1468a311 *libs/i386/symbols.rds
-c8bd30e4991e3a1ece7e1a8820288e89 *libs/x64/RGtk2.dll
+9cb2aa62c2c10cbe3f55c1a3de723e3b *libs/x64/RGtk2.dll
 f65f7a9feb533e8ac69dd9dff5c4611b *libs/x64/symbols.rds
 bd7b56722c8805498a0f664829e3ea81 *ui/demo.ui

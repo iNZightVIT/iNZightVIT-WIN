@@ -1,4 +1,4 @@
-34199cb7862a38855c57322c9d9fc3e6 *DESCRIPTION
+88456abde0814e7f2667a4abeffd87b1 *DESCRIPTION
 cb111d3dae0463e043edc3902c180465 *INDEX
 c7180788a8ec3035d54fc733f8939ade *LICENSE
 2e0765699cdf57d6f5f0ae930036055f *Meta/Rd.rds
@@ -7,13 +7,13 @@ ed17ea3e20141609045a3e50eeb6ca6d *Meta/data.rds
 4a66c97d0f2ee83a56680d4fa093b065 *Meta/hsearch.rds
 41afd494dd4c4181abbe2b956462cfd5 *Meta/links.rds
 895e888b61d07152d7615e75b6c0489e *Meta/nsInfo.rds
-60db41f25bcf9c6c64e6a5d43335a1ea *Meta/package.rds
+db13959c64d06155798429d81f6ba636 *Meta/package.rds
 5945f0b7600bac7110347d7d20ed445f *Meta/vignette.rds
 1520d193cd6961529cc1bcd026a0c42f *NAMESPACE
 dabf2524eccdfb17e9e394d02c185382 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/dplyr
-84a72a5dd3ab9f186c351ce669703611 *R/dplyr.rdb
-1dab381b88bce4397ad0579697b7a2fc *R/dplyr.rdx
+7e80c4ed0332f9af9f50135a3b33669b *R/dplyr.rdb
+7b9e4a3208243d557af83ab2c8743abd *R/dplyr.rdx
 aac9f22805db251fb05108eac79773e4 *data/Rdata.rdb
 b1e4967a1b53768673a5bc93f6a89595 *data/Rdata.rds
 9cf2b3ab3c12ec5f25732913b7004af4 *data/Rdata.rdx
@@ -35,8 +35,8 @@ af84b3995c8fdac9aabc4257712c5fb3 *doc/dplyr.html
 16554792f8ac706f25130915d2821fab *doc/window-functions.html
 3ce3ff41d3a4f3976d75bd2dde2ba690 *help/AnIndex
 0fc9f291092a7fc26254fd54344f1523 *help/aliases.rds
-e9641cc55005297cff32551ef5d49e9c *help/dplyr.rdb
-95a4e440fa859357ff73ffbf5d3c484a *help/dplyr.rdx
+f99dc8d628deb177bf7c6a7225216373 *help/dplyr.rdb
+755b14cfb093a1d7d5393095695b31ad *help/dplyr.rdx
 cb1e46f469cfbbbde29c8b5113e1d789 *help/figures/lifecycle-archived.svg
 c0d2e5a54f1fa4ff02bf9533079dd1f7 *help/figures/lifecycle-defunct.svg
 a1b8c987c676c16af790f563f96cbb1f *help/figures/lifecycle-deprecated.svg
@@ -47,7 +47,7 @@ c3978703d8f40f2679795335715e98f4 *help/figures/lifecycle-experimental.svg
 6902bbfaf963fbc4ed98b86bda80caa2 *help/figures/lifecycle-soft-deprecated.svg
 53b3f893324260b737b3c46ed2a0e643 *help/figures/lifecycle-stable.svg
 07a131391baa568b5e0902cf435ead19 *help/figures/logo.png
-7e1391314890e25b61442185b329d624 *help/paths.rds
+f7c9ae97ec6ce2c5a35d76964ad072b6 *help/paths.rds
 7efb5aef300e80ea3271bf1ebed8e7d6 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 d29bc330bd10ca2769ea6168dca26ede *include/dplyr.h
@@ -146,7 +146,7 @@ e138d5a777a12072994f5de444ebee94 *include/tools/rlang-export.h
 8c0b4ad334d9be1f0b5ce771d07dba65 *include/tools/train.h
 4a2183608fb05f258801ca22c8585e32 *include/tools/utils.h
 b4c89445e3db249afa86d5de667de6f9 *include/tools/vector_class.h
-da6716bc10f3cd528d2790a634689122 *libs/i386/dplyr.dll
+7b1640b49fcf45d6c4b68b4e5f1ff435 *libs/i386/dplyr.dll
 d944c52846e706389356a373c1bcbb63 *libs/i386/symbols.rds
-d76b593fd61eb0129f52b747f62b2b22 *libs/x64/dplyr.dll
+376b5a25ac4eb7e557977ff89d7b5160 *libs/x64/dplyr.dll
 7ac4d59098504f787113e94a08f5bc34 *libs/x64/symbols.rds
