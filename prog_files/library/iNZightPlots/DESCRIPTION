@@ -4,11 +4,12 @@ Title: iNZightPlots
 Version: 2.8.0.9000
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
-             person("Yu Han", "Soh", role = "ctb"))
+             person("Yu Han", "Soh", role = "ctb"),
+             person("Daniel Barnett", role = "ctb"))
 Depends: R(>= 3.0)
 Imports: grDevices, stats, utils, grid, boot, s20x, survey, quantreg,
         hexbin, hextri, colorspace, dichromat, chron, scales,
-        iNZightMR, iNZightTools
+        iNZightMR, iNZightTools, magrittr, ggplot2, rlang, dplyr
 Suggests: viridis, RColorBrewer, gridSVG, knitr, jsonlite, testthat,
         covr
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
@@ -18,6 +19,7 @@ License: GPL-3 | file LICENSE
 Encoding: UTF-8
 RoxygenNote: 6.1.1
 Author: Tom Elliott [aut, cre],
-  Yu Han Soh [ctb]
+  Yu Han Soh [ctb],
+  Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-06-13 21:35:22 UTC; unix
+Built: R 3.6.0; ; 2019-06-23 23:02:23 UTC; unix

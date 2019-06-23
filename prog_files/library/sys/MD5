@@ -1,4 +1,4 @@
-bb68ab9f50d7afdf035e7d390e35c81b *DESCRIPTION
+0695ffe11306e777eb4dbb2fc214d8d9 *DESCRIPTION
 72c25cc809978faf4fc7ee5d5b08fd2b *INDEX
 f35c1dd7a6e913e967bd6e03dd8a3c18 *LICENSE
 c95ed5b84d7aed6d703df136b8ec3271 *Meta/Rd.rds
@@ -6,7 +6,7 @@ c95ed5b84d7aed6d703df136b8ec3271 *Meta/Rd.rds
 1f1873388bc2c5f4a118821db79e9fc1 *Meta/hsearch.rds
 f81f4fda48e69ebda750c0c0d5ac22e5 *Meta/links.rds
 ffbf48c55f7b16ee767aa8bf2969a286 *Meta/nsInfo.rds
-121e9b9151a260117be02c8403fd84c7 *Meta/package.rds
+e17a503bb02de9ae5f3884be6b4aba8c *Meta/package.rds
 9c1f8e2d8ed675addf415c3ef5be77f7 *NAMESPACE
 c6a0fb80325c6010f638500a73bf02b9 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/sys
@@ -15,13 +15,13 @@ ebf0fc819595d631b8bf280c4b049940 *R/sys
 5b4875f3218c8cbfd689e0ae3e504c72 *WORDLIST
 f5c03fffe53caa927909483bc0888062 *help/AnIndex
 a7cafe6368d8b5539febce52740f40c0 *help/aliases.rds
-3582b6f1aa777a5ae1fe2302f5dad099 *help/paths.rds
-0e5a6ec3eee298e6248e9b1d0b0e043d *help/sys.rdb
-aaabbe7fe1f31957a5ce0a348bcfa55c *help/sys.rdx
+409cf1780964672531597be936f0b850 *help/paths.rds
+a3472a05637447215ce43ac7a6c30e0e *help/sys.rdb
+277c87376fca7b2765a1641d55c1011d *help/sys.rdx
 8219eb6daf1db6941cb0ab1fbf905606 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 945d13be6e3db6c8a5299eaa92ad082e *libs/i386/symbols.rds
-146811e25e4154e16296f3a85425bc85 *libs/i386/sys.dll
+8264bc7b892043e2d92126cbbc5b4a9b *libs/i386/sys.dll
 0b716d41b02416650ce3de8d48abf488 *libs/x64/symbols.rds
-9ef70dc98d058d997c7c54a15ed17ded *libs/x64/sys.dll
+a905ae6a6be4f9a7121058fbd5400a42 *libs/x64/sys.dll
 6c786db85c26a880352ad8593ad6250f *utf8.txt

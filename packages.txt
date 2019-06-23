@@ -59,6 +59,7 @@ grDevices
 methods
 grid
 stats
+rlang
 graphics
 tools
 BH
@@ -138,7 +139,6 @@ purrr
 rematch
 rex
 rio
-rlang
 settings
 shiny
 sourcetools

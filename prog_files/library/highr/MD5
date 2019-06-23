@@ -1,11 +1,11 @@
-089f2c0f48030c195cdc515fe7d82f93 *DESCRIPTION
+d3f6c006739fac2cd01e3d7e5a77c773 *DESCRIPTION
 790042427de6c4bccfc1b8e71962dd07 *INDEX
 7bd394426bdd17035f472b15e8269b6b *Meta/Rd.rds
 25ec83abd15128a8ae9185d893802c45 *Meta/features.rds
 815ac4aa5b874757e819717ee8744b51 *Meta/hsearch.rds
 7afbf93fcd94e289ad42613296dec83e *Meta/links.rds
 02b0febd26a36f3d3245d59531d2c611 *Meta/nsInfo.rds
-d8d6cf4b250190b20108a19ab35e1e23 *Meta/package.rds
+de5e066d2d493b4de188299cda21f923 *Meta/package.rds
 a9ca33a6be293323471fef7cee5b2c63 *Meta/vignette.rds
 09568ce7b8032450c6356a49bf43b9c5 *NAMESPACE
 5cd2b16614721d19ac8312b67bb9a547 *NEWS
@@ -21,8 +21,8 @@ c5455e9b244aa670fda42f48fb3d2b61 *doc/highr-internals.R
 b42c8abc385cdb4bf8f8958a7c62aa8c *doc/index.html
 e62cecefd2f7ca93461203cad73a2220 *help/AnIndex
 09b4d0ece19af025bd51f4fa6d10e977 *help/aliases.rds
-ddb11e93453837275f7cb5750e37948a *help/highr.rdb
-0fcd0ca30af4d1cd1fb536dde72a24c5 *help/highr.rdx
-7860552ffd54273425dc9f2d8016e842 *help/paths.rds
+c4233bcb662b10687df56e3db91c0622 *help/highr.rdb
+7fd1043eab5ecd00d40f5d1919485dc0 *help/highr.rdx
+d6ce1b8b566da10003f293cdb9f676e1 *help/paths.rds
 9dacb80c0e881b3bb1b7be4962527704 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
