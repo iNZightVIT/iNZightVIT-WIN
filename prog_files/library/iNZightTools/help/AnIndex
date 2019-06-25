@@ -34,6 +34,9 @@ is_cat	is_cat
 is_dt	is_dt
 is_num	is_num
 is_preview	is_preview
+is_survey	is_survey
+is_svydesign	is_svydesign
+is_svyrep	is_svyrep
 joindata	joindata
 makeDatatypeChar	makeDatatypeChar
 makeDatatypeChar.character	makeDatatypeChar

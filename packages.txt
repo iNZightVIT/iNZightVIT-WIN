@@ -43,6 +43,7 @@ knitr
 lubridate
 magrittr
 maptools
+mgcv
 objectProperties
 plyr
 png
@@ -70,12 +71,13 @@ methods
 grid
 stats
 graphics
-mgcv
 tools
 BH
 DBI
 FNN
+KernSmooth
 MASS
+Matrix
 MatrixModels
 R6
 Rcpp
@@ -91,9 +93,11 @@ bitops
 callr
 carData
 cellranger
+class
 classInt
 cli
 clipr
+codetools
 crayon
 crosstalk
 data.table
@@ -116,6 +120,7 @@ httr
 jpeg
 labeling
 later
+lattice
 lazyeval
 lme4
 lmtest
@@ -127,7 +132,9 @@ miniUI
 minqa
 mitools
 munsell
+nlme
 nloptr
+nnet
 numDeriv
 objectSignals
 openssl

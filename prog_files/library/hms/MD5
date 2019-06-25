@@ -1,11 +1,11 @@
-65ad2e72aecc9636a3e8e52d6133ac54 *DESCRIPTION
+8fbb4507dfb2d9d403215d284c4db382 *DESCRIPTION
 908ecc04c5486942eef78dba1316fadc *INDEX
 4b3975adaa2d0c8339698fc3c9c6151f *Meta/Rd.rds
 25ec83abd15128a8ae9185d893802c45 *Meta/features.rds
 b28cf5882e23d6bdb4dfe2f255f07c94 *Meta/hsearch.rds
 72a49629a66a113f12ae3c10733017b0 *Meta/links.rds
 fa6f71f17e4d0163059a0668e4f69b0e *Meta/nsInfo.rds
-d3b69b17e7c27b9a1c7f343e4c345426 *Meta/package.rds
+5823f708adb8bb46cff0c955fe0845b5 *Meta/package.rds
 1113606c0b5e64437766950b624a4afc *NAMESPACE
 b14dbb8e535817fab9e6fc9206d800da *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/hms
@@ -13,8 +13,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/hms
 b8d9482b607efa4517edfc0aabc01947 *R/hms.rdx
 f3e69d6e94a17a9e6449949593c26220 *help/AnIndex
 8509d5f1b2cebd5ad2a86f1172f0db0f *help/aliases.rds
-a983fe313d3cb8d69d4eec2bc5c2f06d *help/hms.rdb
-28fa07af0f9347ecba70d73f95a390e0 *help/hms.rdx
-7378ff5d914037fec7d4a9fa683d1d1f *help/paths.rds
+e6ceb2a57cdfbd380a4f0a45fc2e4ca6 *help/hms.rdb
+c5a5d71a3d17e49cb45ef258db48c899 *help/hms.rdx
+67528eaa4ac5b1fef9e7db7f8c9287ea *help/paths.rds
 821a2afe01ffc989ff5fdfc33a766715 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

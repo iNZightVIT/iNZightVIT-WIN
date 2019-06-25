@@ -1,4 +1,4 @@
-fbfb4760a5bdf645c07d4df1439dfef0 *DESCRIPTION
+a1e893e55f5209a670b1eab211d9692d *DESCRIPTION
 0f77bfc898c58a1aa4fb7aceb88a3115 *INDEX
 8cff75b73749151ff48afea63ed20f50 *LICENSE
 a5ba2ac51e86d68ac2ad223878318824 *Meta/Rd.rds
@@ -6,7 +6,7 @@ a5ba2ac51e86d68ac2ad223878318824 *Meta/Rd.rds
 d7a54a7dfad19d4dda7df43ce2ef4f75 *Meta/hsearch.rds
 1a2972506412afc2d459c44f1faae969 *Meta/links.rds
 e603322e92338ff2440714c7e208cdee *Meta/nsInfo.rds
-5ec931937070281e01011d1d52b6bd13 *Meta/package.rds
+46e64150d272985b5c54bd2e1261e21d *Meta/package.rds
 2b68a15753515e12bb444a8784e7b7e6 *NAMESPACE
 104b43a7414eeb73afc5f408f76d9163 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/praise
@@ -16,8 +16,8 @@ a993aead9c73104d55cd1b499512e149 *R/praise.rdb
 b49a6ea823437620cbadaef9f6e7cad8 *README.md
 3b2b3244d0b0b74676a9f02c656cb9b9 *help/AnIndex
 94221af5ff23aec39016dd355b2302e4 *help/aliases.rds
-6b83df8677aa91623c0bc00e0008f7da *help/paths.rds
-4922b618f940286ce9ca9915faf07cc2 *help/praise.rdb
+74dbfd648fb469da6723d8a7bcb3dc0b *help/paths.rds
+0bc1c6ab2580e8a79dba2c5e7ebcd4f1 *help/praise.rdb
 ca563245fb0aa1ca6114ee5c90409a9c *help/praise.rdx
 5ed7a5aae38d91a19cd38ff11184efe5 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

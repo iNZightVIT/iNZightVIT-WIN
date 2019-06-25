@@ -36,6 +36,12 @@ is_cat                  Is factor check
 is_dt                   Is datetime check
 is_num                  Is numeric check
 is_preview              Is Preview
+is_survey               Check if object is a survey object (either
+                        standard or replicate design)
+is_svydesign            Check if object is a survey object (created by
+                        svydesign())
+is_svyrep               Check if object is a replicate survey object
+                        (created by svrepdesign())
 joindata                Join data with another dataset
 makeDatatypeChar        Converts the column datatypes to a single word
                         or string which can be passed to

@@ -1,4 +1,4 @@
-6c2a779d919e31f6f6902f443c3e9195 *DESCRIPTION
+45220e030405c0d0d7f29b57627a9c91 *DESCRIPTION
 f17e794c1cb241d2b4c8ac9df85209bd *INDEX
 81bb22d15833c773c4959b88d9eeb041 *LICENSE
 37364532a3e7f23bbdbed931ea2d5d62 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f17e794c1cb241d2b4c8ac9df85209bd *INDEX
 0cc7232b53897a4513ddaa9a1134ad18 *Meta/hsearch.rds
 d12b70e08ae129367c14e11769cc2f3c *Meta/links.rds
 0b7a26b2107be2d8537835a6cdedeb8c *Meta/nsInfo.rds
-1ac48d24a94329f1a70410b3aca0d6b4 *Meta/package.rds
+ab7d8459f4b36bdea0fa8818b71e1e04 *Meta/package.rds
 540f319bd2c335683fcf4c1a81ce04d6 *Meta/vignette.rds
 13c129150527cd8c972cde2c129d2985 *NAMESPACE
 7d9e1f677ef76e0b51d87e04ad18b9cf *NEWS.md
@@ -19,8 +19,8 @@ fe8533009aeeaccaa5f0517337055bc7 *doc/index.html
 8d51d36667d582b3fafcdf088933a0b8 *doc/unpacking-assignment.html
 d72bdae0167bd9cbd2ceed297dc4dae7 *help/AnIndex
 97a068cad15e26d033475049cf913de3 *help/aliases.rds
-274a19b1a1a2baddfcbcfd3663c85845 *help/paths.rds
-c094b5ce0c048f93644f06c0050f1910 *help/zeallot.rdb
-681f059be1bcce80c53ad1f8750108e1 *help/zeallot.rdx
+9ae25fd246838d5a64d5819a0fcb62ba *help/paths.rds
+b1577c065fc2104094f22944e98d207b *help/zeallot.rdb
+5105eaa01857f4a9b831da069cf7e001 *help/zeallot.rdx
 0e554996042c3783e3dbb77957c87857 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

@@ -1,5 +1,5 @@
 49bd4ed03833b66480609ecb246032fc *CITATION
-79d48853a8e4b358b9af6de4ffc936f1 *DESCRIPTION
+5676ad4b360e32087a444c6cd69a0113 *DESCRIPTION
 3b55269c5c586eeb4709f8c86e879d01 *INDEX
 4cb2f7b27467f67eb93a5f4a1fe26cd4 *Meta/Rd.rds
 34d70850602ac29800568c19108c7560 *Meta/data.rds
@@ -8,7 +8,7 @@ cda382061e9000ad98dc74d27b8268a9 *Meta/demo.rds
 255a0a19e600f1093bf432b50b441168 *Meta/hsearch.rds
 c5a4978314f24027f4ac8137f0e7aa28 *Meta/links.rds
 3d324cb8ab7539a80e110b053672f41e *Meta/nsInfo.rds
-0e1912dbd62d391aeba63c4101315a75 *Meta/package.rds
+9a7bbdc43915b0b018a91598131e0a57 *Meta/package.rds
 29bdc7d282fa29bedb3551b649fc8a04 *Meta/vignette.rds
 aedc22cbc99fb22f0c1e8e482e998d7c *NAMESPACE
 d19545d6ff515de5e32e412a55ad370e *NEWS.Rd
@@ -43,14 +43,14 @@ ef247b6c335e75e48f81da7ef7554fa6 *external/simple.ag
 15c2101eb916ea116f400d560f73dd7c *external/test.ag
 0945c2ba30e2afe6dad95e57e82a3593 *help/AnIndex
 2f07700f0bd494c8a1e41727207b05e2 *help/aliases.rds
-90c759e23e9a9ac5069f7b14f871df0e *help/paths.rds
-5a0c4f042e1c4fa3de2f81fb25c701b3 *help/sp.rdb
-40961f1a8ddfd5871bf21988995f42a7 *help/sp.rdx
+f16b80943ac9f94ad2bd1622434e5e7f *help/paths.rds
+a8337037c978920ced0ffb441d7cd396 *help/sp.rdb
+08cb7875300980a21010c08be86c755f *help/sp.rdx
 f13fca0b56b6e153b0d6ee15b0b2697b *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 143d8b43834c7f60e7662006dcfc002a *include/sp.h
 85f179076e41701782a685ad110de22b *include/sp_xports.c
-2af05de04090ece2974d30e582262f86 *libs/i386/sp.dll
+5f7f527cac456051f24e012031e3fe48 *libs/i386/sp.dll
 d49060bbace646cbf845b5eb219cfdee *libs/i386/symbols.rds
-766279101a12478c180fdf7f61a21faa *libs/x64/sp.dll
+c81cea3752b419731512e265cbd4d035 *libs/x64/sp.dll
 4896117bb71fa7dddfe024946ea63d8f *libs/x64/symbols.rds

@@ -1,5 +1,5 @@
 12473e26b6f1631eb9f0cc3df258c2ce *CITATION
-bb423eb6e674184a558a2dd76336434a *DESCRIPTION
+d6a7ab24719a1ee1277ece95765bec0a *DESCRIPTION
 c66fa6a89cddcc105679062d38743603 *INDEX
 ff541b545fbb083c8069d55ded1c2c34 *Meta/Rd.rds
 6c38f0eaee221aab6ed51e6ee9dcf6ed *Meta/data.rds
@@ -7,7 +7,7 @@ ff541b545fbb083c8069d55ded1c2c34 *Meta/Rd.rds
 89f91fff83d7564abb0294e0ad8b9cdf *Meta/hsearch.rds
 392a6cb528ebd8f0552505a877010d6b *Meta/links.rds
 4c281cd87c06f280fa413fc41932595e *Meta/nsInfo.rds
-4ed3d1ccc8794074f17b4aff0be55abc *Meta/package.rds
+c4c36c57fb895edf11a9c9ff86cb17df *Meta/package.rds
 03cc6d638c0484cbbf2cfaa56487e6ca *NAMESPACE
 a122c2a90c2d9370019818c49436c731 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/countrycode
@@ -18,8 +18,8 @@ a28c4bbcdce3a1de01e67d339421a333 *data/Rdata.rds
 dd4ab50d217d64b951cddc66a11c10f8 *data/Rdata.rdx
 960f5932f67ee0254f088abff9b93032 *help/AnIndex
 77dc953a5527500538364b3aa4fd4ac6 *help/aliases.rds
-2344d9826ffa810dec53ef68c02af038 *help/countrycode.rdb
-dc808aae400fa44d4aa687de9415d0dd *help/countrycode.rdx
-b9b1ef253b6de18f57a485db47996e11 *help/paths.rds
+6eab252c6994dbfa593e2566bbf062a1 *help/countrycode.rdb
+0a7c6a3338a45cd728dac129e74c2300 *help/countrycode.rdx
+f836eaea9d267581a5d1895c8a452c8c *help/paths.rds
 e4a63049db109f73e6c65b68dd5c86b0 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
