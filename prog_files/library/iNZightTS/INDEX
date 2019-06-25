@@ -1,9 +1,9 @@
 compareplot             Comparison plot - depreciated
 decompositionplot       Plot a Time Series Decomposition
-forecastplot            Forecast plot
+forecastplot            Forecast plot - DEPRECATED
 iNZightTS               iNZightTS (Time-Series) Objects
 iNZightTS-package       Time Series Data Analysis
-multiseries             Compare multiple timeseries - DEPRECIATED
+multiseries             Compare multiple timeseries - DEPRECATED
 plot.iNZightMTS         Plot multiple time series
 plot.iNZightTS          Draw a simple time series plot
 print.iNZightTS         Print an iNZightTS object
