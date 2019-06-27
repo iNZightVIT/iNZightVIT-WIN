@@ -60,6 +60,7 @@ methods
 grid
 stats
 rlang
+ggmosaic
 graphics
 tools
 BH
@@ -129,9 +130,11 @@ pbkrtest
 pillar
 pkgconfig
 plogr
+plotly
 praise
 prettyunits
 processx
+productplots
 progress
 promises
 ps
