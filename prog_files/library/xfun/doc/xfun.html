@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2019-05-13" />
+<meta name="date" content="2019-06-24" />
 
 <title>An Introduction to xfun</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">An Introduction to xfun</h1>
 <h3 class="subtitle">A Collection of Miscellaneous Functions</h3>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2019-05-13</h4>
+<h4 class="date">2019-06-24</h4>
 
 
 <div id="TOC">
@@ -512,12 +512,12 @@ woRld</code></pre>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1">xfun<span class="op">::</span><span class="kw">session_info</span>(<span class="kw">c</span>(<span class="st">&quot;xfun&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;tinytex&quot;</span>), <span class="dt">dependencies =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## R version 3.6.0 (2019-04-26)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Mojave 10.14.4
+## Running under: macOS Mojave 10.14.5
 ## 
 ## Locale: C / en_US.UTF-8 / en_US.UTF-8 / C / en_US.UTF-8 / en_US.UTF-8
 ## 
 ## Package version:
-##   knitr_1.22     rmarkdown_1.12 tinytex_0.12   xfun_0.7      
+##   knitr_1.23.2     rmarkdown_1.13.4 tinytex_0.13.5   xfun_0.8        
 ## 
 ## Pandoc version: 2.3.1</code></pre>
 </div>
@@ -542,6 +542,23 @@ window.onload = function() {
   }
 }
 </script>
+
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
