@@ -7,6 +7,7 @@ iNZightTS	iNZightTS
 multiseries	multiseries
 plot.iNZightMTS	plot.iNZightMTS
 plot.iNZightTS	plot.iNZightTS
+pred	pred
 print.iNZightTS	print.iNZightTS
 rawplot	rawplot
 recompose	recompose

@@ -61,6 +61,7 @@ grid
 stats
 rlang
 ggmosaic
+plotly
 graphics
 tools
 BH
@@ -130,7 +131,6 @@ pbkrtest
 pillar
 pkgconfig
 plogr
-plotly
 praise
 prettyunits
 processx

@@ -13,10 +13,10 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
 Depends: R (>= 2.13)
 Imports: grid, gridExtra, grDevices, graphics, stats, utils, ggplot2,
         tidyr, dplyr, forcats, magrittr
+Suggests: iNZightPlots, testthat, covr
 Description: Time Series functionality for iNZight, allowing users to draw, decompose, and forcast with ease.
 License: GPL-2 | file LICENSE
 RoxygenNote: 6.1.1
-Suggests: testthat, covr
 Author: Tom Elliott [aut, cre],
   Junjie Zeng [aut],
   Simon Potter [aut],
@@ -24,4 +24,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   Dongning Zhang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-06-28 05:05:52 UTC; unix
+Built: R 3.6.0; ; 2019-07-04 03:28:09 UTC; unix
