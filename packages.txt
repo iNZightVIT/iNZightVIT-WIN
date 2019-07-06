@@ -35,7 +35,6 @@ jsonlite
 knitr
 lubridate
 magrittr
-mgcv
 objectProperties
 plyr
 png
@@ -61,18 +60,20 @@ grid
 stats
 rlang
 ggmosaic
+waffle
 plotly
 graphics
+mgcv
 tools
 BH
 DBI
 FNN
 MASS
-Matrix
 MatrixModels
 R6
 Rcpp
 RcppEigen
+Rttf2pt1
 SparseM
 XML
 abind
@@ -86,7 +87,6 @@ carData
 cellranger
 cli
 clipr
-codetools
 crayon
 crosstalk
 curl
@@ -94,6 +94,8 @@ data.table
 digest
 ellipsis
 evaluate
+extrafont
+extrafontdb
 fansi
 foreign
 glue
@@ -107,7 +109,6 @@ httpuv
 httr
 labeling
 later
-lattice
 lazyeval
 lme4
 lmtest
@@ -120,9 +121,7 @@ miniUI
 minqa
 mitools
 munsell
-nlme
 nloptr
-nnet
 numDeriv
 objectSignals
 openssl

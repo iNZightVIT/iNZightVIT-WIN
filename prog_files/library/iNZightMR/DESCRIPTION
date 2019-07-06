@@ -1,7 +1,7 @@
 Package: iNZightMR
 Type: Package
 Title: Tools for Exploring Multiple Response Data
-Version: 2.2-3.9000
+Version: 2.2-3
 Date: 2017-10-27
 Authors@R: c(person("Junjie", "Zeng", role = c("aut"),
     email = "jzen188@aucklanduni.ac.nz"),
@@ -21,4 +21,4 @@ Author: Junjie Zeng [aut],
   Simon Potter [aut],
   Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-07-04 03:28:13 UTC; unix
+Built: R 3.6.0; ; 2019-07-06 06:12:08 UTC; unix
