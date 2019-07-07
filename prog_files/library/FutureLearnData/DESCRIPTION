@@ -13,4 +13,4 @@ LazyData: true
 RoxygenNote: 6.0.1
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-07-07 21:46:19 UTC; unix
+Built: R 3.6.0; ; 2019-07-07 23:09:02 UTC; unix
