@@ -8,16 +8,16 @@ knitr::opts_chunk$set(
 library(vctrs)
 
 ## ------------------------------------------------------------------------
-vec_ptype(median(c(1L, 1L)))
-vec_ptype(median(c(1L, 1L, 1L)))
+vec_ptype_show(median(c(1L, 1L)))
+vec_ptype_show(median(c(1L, 1L, 1L)))
 
 ## ------------------------------------------------------------------------
-vec_ptype(sapply(1L, function(x) c(x, x)))
-vec_ptype(sapply(integer(), function(x) c(x, x)))
+vec_ptype_show(sapply(1L, function(x) c(x, x)))
+vec_ptype_show(sapply(integer(), function(x) c(x, x)))
 
 ## ------------------------------------------------------------------------
-vec_ptype(c(NA, Sys.Date()))
-vec_ptype(c(Sys.Date(), NA))
+vec_ptype_show(c(NA, Sys.Date()))
+vec_ptype_show(c(Sys.Date(), NA))
 
 ## ------------------------------------------------------------------------
 env <- new.env(parent = emptyenv())
@@ -26,8 +26,8 @@ length(mean)
 length(c(env, mean))
 
 ## ------------------------------------------------------------------------
-vec_ptype(ifelse(NA, 1L, 1L))
-vec_ptype(ifelse(FALSE, 1L, 1L))
+vec_ptype_show(ifelse(NA, 1L, 1L))
+vec_ptype_show(ifelse(FALSE, 1L, 1L))
 
 ## ------------------------------------------------------------------------
 c(FALSE, 1L, 2.5)
@@ -121,12 +121,12 @@ vec_c(m, 1)
 #  vec_c <- function(...) {
 #    args <- compact(list2(...))
 #  
-#    ptype <- vec_type_common(!!!args)
+#    ptype <- vec_ptype_common(!!!args)
 #    if (is.null(ptype))
 #      return(NULL)
 #  
 #    ns <- map_int(args, vec_size)
-#    out <- vec_na(ptype, sum(ns))
+#    out <- vec_init(ptype, sum(ns))
 #  
 #    pos <- 1
 #    for (i in seq_along(ns)) {
@@ -146,7 +146,7 @@ if_else <- function(test, yes, no) {
   c(yes, no) %<-% vec_cast_common(yes, no)
   c(test, yes, no) %<-% vec_recycle_common(test, yes, no)
 
-  out <- vec_na(yes, vec_size(yes))
+  out <- vec_init(yes, vec_size(yes))
   vec_slice(out, test) <- vec_slice(yes, test)
   vec_slice(out, !test) <- vec_slice(no, !test)
 

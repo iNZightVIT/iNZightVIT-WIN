@@ -26,5 +26,5 @@ NeedsCompilation: yes
 Packaged: 2019-06-26 10:46:15 UTC; murdoch
 Repository: CRAN
 Date/Publication: 2019-06-26 14:00:03 UTC
-Built: R 3.6.0; i386-w64-mingw32; 2019-07-02 01:25:33 UTC; windows
+Built: R 3.6.1; i386-w64-mingw32; 2019-07-08 05:38:36 UTC; windows
 Archs: i386, x64
