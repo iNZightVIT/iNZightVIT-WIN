@@ -25,5 +25,6 @@ r_process	r_process
 r_process_options	r_process_options
 r_safe	r
 r_session	r_session
+r_session_debug	r_session_debug
 r_session_options	r_session_options
 r_vanilla	r_vanilla

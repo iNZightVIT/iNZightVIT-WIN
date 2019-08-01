@@ -42,7 +42,7 @@ expect_setequal         Expectation: do two vectors contain the same
                         values?
 expect_vector           Expectation: does the object have vctr
                         properties?
-fail                    Default expectations that alway succeed or
+fail                    Default expectations that always succeed or
                         fail.
 inheritance-expectations
                         Expectation: does the object inherit from a S3
@@ -53,8 +53,8 @@ output-expectations     Expectation: does code produce
 skip                    Skip a test.
 teardown                Run code on setup/teardown
 test_dir                Run all tests in directory or package
-test_examples           Test package examples
 test_file               Run all tests in specified file
 test_path               Locate file in testing directory.
 test_that               Create a test.
 use_catch               Use Catch for C++ Unit Testing
+verify_output           Verify output

@@ -24,6 +24,7 @@ gWidgets2
 gWidgets2RGtk2
 gWidgetsRGtk2
 gdata
+ggmosaic
 ggplot2
 gpairs
 gridExtra
@@ -36,6 +37,7 @@ knitr
 lubridate
 magrittr
 objectProperties
+plotly
 plyr
 png
 quantreg
@@ -43,6 +45,7 @@ readr
 readxl
 reshape2
 rgl
+rlang
 s20x
 scales
 stringr
@@ -52,19 +55,18 @@ tibble
 tidyr
 validate
 viridis
+waffle
 zoo
 utils
 grDevices
 methods
 grid
 stats
-rlang
-ggmosaic
-waffle
-plotly
 graphics
 mgcv
 tools
+stats4
+multcomp
 BH
 DBI
 FNN
@@ -75,6 +77,7 @@ Rcpp
 RcppEigen
 Rttf2pt1
 SparseM
+TH.data
 XML
 abind
 askpass
@@ -121,6 +124,7 @@ miniUI
 minqa
 mitools
 munsell
+mvtnorm
 nloptr
 numDeriv
 objectSignals
@@ -141,6 +145,7 @@ purrr
 rematch
 rex
 rio
+sandwich
 settings
 shiny
 sourcetools

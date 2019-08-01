@@ -12,7 +12,7 @@
 
 <meta name="author" content="Matthew Lincoln" />
 
-<meta name="date" content="2019-04-14" />
+<meta name="date" content="2019-07-22" />
 
 <title>Developing with clipr</title>
 
@@ -217,7 +217,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">Developing with clipr</h1>
 <h4 class="author">Matthew Lincoln</h4>
-<h4 class="date">2019-04-14</h4>
+<h4 class="date">2019-07-22</h4>
 
 
 
@@ -233,7 +233,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>Limited exceptions may be allowed in interactive sessions if the package obtains confirmation from the user.</p>
 </blockquote>
 <p>For this reason, <code>write_clip()</code> will error by default in non-interactive use, which includes CRAN tests.</p>
-<p>If you want to use <code>write_clip()</code> interactively, you may either set the environment variable <code>CLIPR_ALLOW=TRUE</code> or call <code>write_clip(..., allow_non_interactive = TRUE)</code>.</p>
+<p>If you want to use <code>write_clip()</code> non-interactively, you may either set the environment variable <code>CLIPR_ALLOW=TRUE</code> or call <code>write_clip(..., allow_non_interactive = TRUE)</code>.</p>
 </div>
 <div id="testing-on-cran-and-ci" class="section level2">
 <h2>Testing on CRAN and CI</h2>

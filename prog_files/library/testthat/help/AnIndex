@@ -124,6 +124,7 @@ skip_if_translated	skip
 skip_on_appveyor	skip
 skip_on_bioc	skip
 skip_on_ci	skip
+skip_on_covr	skip
 skip_on_cran	skip
 skip_on_os	skip
 skip_on_travis	skip
@@ -157,6 +158,7 @@ test_that	test_that
 throws_error	oldskool
 try_again	try_again
 use_catch	use_catch
+verify_output	verify_output
 watch	watch
 with_mock	with_mock
 with_reporter	reporter-accessors
