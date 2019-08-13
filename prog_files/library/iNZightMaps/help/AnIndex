@@ -5,6 +5,7 @@ create.inz.mapplot	create.inz.mapplot
 create.inz.shapemapplot	create.inz.shapemapplot
 data.trans	data.trans
 decodeMapDir	decodeMapDir
+dot.density	dot.density
 download.shapefiles	download.shapefiles
 drawing.features	drawing.features
 findBestMatch	findBestMatch

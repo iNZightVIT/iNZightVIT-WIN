@@ -2,7 +2,7 @@ Package: openssl
 Type: Package
 Title: Toolkit for Encryption, Signatures and Certificates Based on
         OpenSSL
-Version: 1.4
+Version: 1.4.1
 Authors@R: c(person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroen@berkeley.edu",
     comment = c(ORCID = "0000-0002-4035-0289")),
     person("Oliver", "Keyes", role = "ctb"))
@@ -25,11 +25,11 @@ Suggests: testthat, digest, knitr, rmarkdown, jsonlite, jose, sodium
 RoxygenNote: 6.1.1
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2019-05-31 20:04:48 UTC; jeroen
+Packaged: 2019-07-16 17:55:20 UTC; jeroen
 Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),
   Oliver Keyes [ctb]
 Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 Repository: CRAN
-Date/Publication: 2019-05-31 21:30:12 UTC
-Built: R 3.6.0; x86_64-w64-mingw32; 2019-06-20 18:22:24 UTC; windows
+Date/Publication: 2019-07-18 06:35:27 UTC
+Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-11 03:35:06 UTC; windows
 Archs: i386, x64

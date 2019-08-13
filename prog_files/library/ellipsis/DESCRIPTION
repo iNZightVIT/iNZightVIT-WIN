@@ -1,5 +1,5 @@
 Package: ellipsis
-Version: 0.2.0
+Version: 0.2.0.1
 Title: Tools for Working with ...
 Description: The ellipsis is a powerful tool for extending functions. Unfortunately 
     this power comes at a cost: misspelled arguments will be silently ignored. 
@@ -19,11 +19,11 @@ Depends: R (>= 3.1)
 Imports: rlang (>= 0.3.0)
 Suggests: covr, testthat
 NeedsCompilation: yes
-Packaged: 2019-06-20 14:19:38 UTC; lionel
+Packaged: 2019-07-02 09:00:09 UTC; ripley
 Author: Hadley Wickham [aut, cre],
   RStudio [cph]
 Maintainer: Hadley Wickham <hadley@rstudio.com>
 Repository: CRAN
-Date/Publication: 2019-06-20 14:50:15 UTC
-Built: R 3.6.0; x86_64-w64-mingw32; 2019-06-20 14:56:42 UTC; windows
+Date/Publication: 2019-07-02 09:27:27 UTC
+Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-11 01:48:18 UTC; windows
 Archs: i386, x64

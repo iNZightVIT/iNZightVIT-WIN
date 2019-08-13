@@ -1,3 +1,9 @@
+# CHANGES IN xfun VERSION 0.8
+
+## MINOR CHANGES
+
+- `xfun::write_utf8(NULL)` is equivalent to `xfun::write_utf8(character(0))` now (thanks, @schloerke, yihui/knitr#1714).
+
 # CHANGES IN xfun VERSION 0.7
 
 ## MINOR CHANGES

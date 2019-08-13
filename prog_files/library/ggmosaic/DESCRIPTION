@@ -1,0 +1,44 @@
+Package: ggmosaic
+Title: Mosaic Plots in the 'ggplot2' Framework
+Version: 0.2.0
+Authors@R: 
+    c(person(given = "Haley",
+             family = "Jeppson",
+             role = c("aut", "cre"),
+             email = "hjeppson@iastate.edu"),
+      person(given = "Heike",
+             family = "Hofmann",
+             role = "aut",
+             email = "hofmann@iastate.edu"),
+      person(given = "Di",
+             family = "Cook",
+             role = "aut",
+             email = "dicook@monash.edu"),
+      person(given = "Hadley",
+             family = "Wickham",
+             role = "ctb",
+             email = "hadley@rstudio.com"))
+Description: Mosaic plots in the 'ggplot2' framework. Mosaic
+    plot functionality is provided in a single 'ggplot2' layer by calling
+    the geom 'mosaic'.
+License: GPL (>= 2)
+URL: http://github.com/haleyjeppson/ggmosaic
+BugReports: https://github.com/haleyjeppson/ggmosaic
+Depends: ggplot2 (>= 3.0.0), R (>= 3.2.0)
+Imports: dplyr, plotly (>= 4.5.5), productplots (>= 0.1.1), purrr,
+        rlang, tidyr
+Suggests: gridExtra, knitr, NHANES, rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+NeedsCompilation: no
+Packaged: 2018-09-12 14:14:51 UTC; haley
+Author: Haley Jeppson [aut, cre],
+  Heike Hofmann [aut],
+  Di Cook [aut],
+  Hadley Wickham [ctb]
+Maintainer: Haley Jeppson <hjeppson@iastate.edu>
+Repository: CRAN
+Date/Publication: 2018-09-12 15:00:06 UTC
+Built: R 3.6.1; ; 2019-08-11 08:44:08 UTC; windows

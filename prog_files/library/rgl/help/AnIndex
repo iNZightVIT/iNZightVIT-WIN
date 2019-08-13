@@ -10,11 +10,15 @@ ageControl	ageControl
 ageSetter	ageSetter
 arc3d	arc3d
 arrow3d	arrow3d
-as.mesh3d	mesh3d
+as.mesh3d	as.mesh3d.default
 as.mesh3d.ashape3d	as.mesh3d.ashape3d
+as.mesh3d.default	as.mesh3d.default
 as.mesh3d.deldir	persp3d.deldir
+as.mesh3d.rglId	as.mesh3d.rglId
 as.mesh3d.tri	persp3d.tri
 as.mesh3d.triSht	persp3d.tri
+as.triangles3d	as.triangles3d
+as.triangles3d.rglId	as.triangles3d
 asEuclidean	matrices
 asHomogeneous	matrices
 aspect3d	aspect3d
@@ -28,6 +32,7 @@ box3d	axes3d
 check3d	check3d
 clear3d	scene
 clearSubsceneList	mfrow3d
+clipMesh3d	clipMesh3d
 clipplaneControl	clipplaneControl
 clipplanes3d	planes
 clipplaneSlider	webGLcontrols
@@ -76,6 +81,7 @@ lowlevel	rglIds
 material3d	material
 matrices	matrices
 matrixSetter	propertySetter
+mergeVertices	mergeVertices
 mesh3d	mesh3d
 mfrow3d	mfrow3d
 movie3d	play3d

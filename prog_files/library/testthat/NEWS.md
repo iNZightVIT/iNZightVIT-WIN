@@ -1,3 +1,60 @@
+# testthat 2.2.1
+
+* Repair regression in `test_rd()` and add a couple of tests to hopefully 
+  detect the problem earlier in the future.
+
+# testthat 2.2.0
+
+## New features
+
+* New `verify_output()` is designed for testing output aimed at humans 
+  (most commonly print methods and error messages). It is a regression
+  test that saves output in a way that makes it easy to review. It is
+  automatically skipped on CRAN (#782, #834).
+
+## Minor improvements and bug fixes
+
+* `as.data.frame.testthat_results()` now always returns a data frame with 13 
+  columns (@jozefhajnala, #887).
+
+* `auto_test_package()` now correctly handles helper files 
+  (`tests/testthat/helper-*.R`), automatically reloading all code and 
+  rerunning all tests (@CorradoLanera, #376, #896).
+
+* `expect_match()` now displays `info` even when match length is 0 (#867).
+
+* `expect_s3_class()` gains new `expect` argument that allows you to check
+  for an exact class match, not just inheritance (#885).
+
+* `fail()` and `succeed()` gain `info` argument, which is passed along to 
+  `expect()`.
+  
+* `test_examples()` gets some minor fixes: it now returns the results 
+  invisibly, doesn't assume that examples should contain tests, and 
+  documents that you shouldn't be using it routinely (#841).
+
+* `test_file()` only calls `Reporter$end_context()` if a context was started,
+  fixing an error in `TeamcityReporter` (@atheriel, #883).
+
+* `skip()` now reports reason for skipping as: `Reason: {skip condition}` 
+  (@patr1ckm, #868).
+
+* `skip_if()` and `skip_if_not()` now report `Reason: {skip condition} is TRUE` 
+  and `Reason: {skip condition} is not TRUE` respectively (@	patr1ckm, #868).
+  
+* `skip_if_translated()` now tests for translation of a specific message. 
+  This is more robust than the previous approach because translation
+  happens message-by-message, not necessarily for the entire session (#879)
+  (and in general, it's impossible to determine what language R is currently
+  using).
+
+* `skip_on_covr()` allows you to skip tests when covr is running.
+  (@ianmcook, #895)
+  
+* `expect_known_value()` gains a new serialisation `version` argument,
+  defaulting to 2. Prevents the `.rds` files created to hold reference objects
+  from making a package appear to require R >= 3.5 (#888 @jennybc).
+
 # testthat 2.1.1
 
 * Fix test failures in strict latin1 locale

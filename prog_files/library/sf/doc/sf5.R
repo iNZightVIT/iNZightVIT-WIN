@@ -1,5 +1,6 @@
 ## ----echo=FALSE, include=FALSE-------------------------------------------
 knitr::opts_chunk$set(collapse = TRUE)
+mostly_off = Sys.getenv("USER") == "edzer"
 
 ## ------------------------------------------------------------------------
 library(sf)
@@ -68,42 +69,37 @@ plot(usa, graticule = g, key.pos = NULL, axes = TRUE,
 ## ------------------------------------------------------------------------
 methods(st_as_grob)
 
-## ---- eval=FALSE---------------------------------------------------------
-#  devtools::install_github("tidyverse/ggplot2")
-
 ## ------------------------------------------------------------------------
 library(ggplot2)
-if (utils::packageVersion("ggplot2") > "2.2.1")
-  ggplot() + geom_sf(data = usa)
+ggplot() + geom_sf(data = usa)
 
 ## ------------------------------------------------------------------------
-if (utils::packageVersion("ggplot2") > "2.2.1")
-  ggplot() + geom_sf(data = nc, aes(fill = BIR74)) + scale_y_continuous(breaks = 34:36)
+ggplot() + 
+  geom_sf(data = nc, aes(fill = BIR74)) + 
+  scale_y_continuous(breaks = 34:36)
 
 ## ------------------------------------------------------------------------
 library(dplyr)
 library(tidyr)
 nc2 <- nc %>% select(SID74, SID79, geom) %>% gather(VAR, SID, -geom)
-if (utils::packageVersion("ggplot2") > "2.2.1")
-  ggplot() + geom_sf(data = nc2, aes(fill = SID)) + facet_wrap(~VAR, ncol = 1) +
-	scale_y_continuous(breaks = 34:36)
+ggplot() + 
+  geom_sf(data = nc2, aes(fill = SID)) + 
+  facet_wrap(~VAR, ncol = 1) +
+  scale_y_continuous(breaks = 34:36)
 
-## ------------------------------------------------------------------------
+## ----eval=mostly_off-----------------------------------------------------
 library(mapview)
-if (Sys.getenv("USER") %in% c("edzer", "travis"))
-  mapview(nc["BIR74"], col.regions = sf.colors(10))
+mapview(nc["BIR74"], col.regions = sf.colors(10))
 
 ## ------------------------------------------------------------------------
 library(tmap)
 qtm(nc)
 
-## ------------------------------------------------------------------------
+## ----eval=mostly_off-----------------------------------------------------
 tmap_mode("view")
-if (Sys.getenv("USER") != "CRAN")
-  tm_shape(nc) + tm_fill("BIR74", palette = sf.colors(5))
+tm_shape(nc) + tm_fill("BIR74", palette = sf.colors(5))
 
-## ------------------------------------------------------------------------
+## ----eval=mostly_off-----------------------------------------------------
 ttm()
-if (Sys.getenv("USER") != "CRAN")
-   last_map()
+last_map()
 

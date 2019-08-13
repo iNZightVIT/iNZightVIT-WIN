@@ -1,5 +1,9 @@
 iNZightRegression-package	iNZightRegression
 allPartialResPlots	allPartialResPlots
+compare_models	compare_models
+compare_models.default	compare_models
+compare_models.svyglm	compare_models
+factorComp	factorComp
 histogramArray	histogramArray
 iNZightQQplot	iNZightQQplot
 iNZightRegression	iNZightRegression

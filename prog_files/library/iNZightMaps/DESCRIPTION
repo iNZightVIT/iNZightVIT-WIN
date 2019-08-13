@@ -19,10 +19,11 @@ Additional_repositories: https://r.docker.stat.auckland.ac.nz
 Description: Simple plotting functions for geographical data.
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
+LazyData: true
 RoxygenNote: 6.1.0.9000
 Author: Daniel Barnett [aut],
   Tom Elliott [cre, aut],
   Eric Lim [aut],
   Jason Wen [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-06-25 23:53:52 UTC; unix
+Built: R 3.6.0; ; 2019-08-13 01:38:47 UTC; unix

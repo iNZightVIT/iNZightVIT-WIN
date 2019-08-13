@@ -1,0 +1,28 @@
+StatMosaic              Geom proto
+ddecker                 Template for a double decker plot. A double
+                        decker plot is composed of a sequence of spines
+                        in the same direction, with the final spine in
+                        the opposite direction.
+fly                     Flying Etiquette Survey Data
+geom_mosaic             Mosaic plots.
+happy                   Data related to happiness from the general
+                        social survey.
+hbar                    Horizontal bar partition: width constant,
+                        height varies.
+hspine                  Horizontal spine partition: height constant,
+                        width varies.
+mosaic                  Template for a mosaic plot. A mosaic plot is
+                        composed of spines in alternating directions.
+product                 Wrapper for a list
+scale_type.product      Helper function that ggplot2 needs for
+                        determining scales on x and y
+scale_type.productlist
+                        Helper function for determining scales
+scale_type.tbl_df       Helper function for determining scales
+scale_x_productlist     Determining scales for mosaics
+spine                   Spine partition: divide longest dimension.
+squeeze                 Internal helper function
+vbar                    Vertical bar partition: height constant, width
+                        varies.
+vspine                  Vertical spine partition: width constant,
+                        height varies.

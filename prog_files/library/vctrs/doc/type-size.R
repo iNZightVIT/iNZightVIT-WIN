@@ -8,49 +8,49 @@ knitr::opts_chunk$set(
 library(vctrs)
 
 ## ------------------------------------------------------------------------
-vec_ptype(FALSE)
-vec_ptype(1L)
-vec_ptype(2.5)
-vec_ptype("three")
-vec_ptype(list(1, 2, 3))
+vec_ptype_show(FALSE)
+vec_ptype_show(1L)
+vec_ptype_show(2.5)
+vec_ptype_show("three")
+vec_ptype_show(list(1, 2, 3))
 
 ## ------------------------------------------------------------------------
-vec_ptype(array(logical(), c(2, 3)))
-vec_ptype(array(integer(), c(2, 3, 4)))
-vec_ptype(array(character(), c(2, 3, 4, 5)))
+vec_ptype_show(array(logical(), c(2, 3)))
+vec_ptype_show(array(integer(), c(2, 3, 4)))
+vec_ptype_show(array(character(), c(2, 3, 4, 5)))
+
+## ------------------------------------------------------------------------
+vec_ptype_show(factor("a"))
+vec_ptype_show(ordered("b"))
 
 ## ------------------------------------------------------------------------
 vec_ptype(factor("a"))
-vec_ptype(ordered("b"))
 
 ## ------------------------------------------------------------------------
-vec_type(factor("a"))
+vec_ptype_show(Sys.Date())
+vec_ptype_show(Sys.time())
+vec_ptype_show(as.difftime(10, units = "mins"))
 
 ## ------------------------------------------------------------------------
-vec_ptype(Sys.Date())
-vec_ptype(Sys.time())
-vec_ptype(as.difftime(10, units = "mins"))
-
-## ------------------------------------------------------------------------
-vec_ptype(data.frame(a = FALSE, b = 1L, c = 2.5, d = "x"))
+vec_ptype_show(data.frame(a = FALSE, b = 1L, c = 2.5, d = "x"))
 
 ## ------------------------------------------------------------------------
 df <- data.frame(x = FALSE)
 df$y <- data.frame(a = 1L, b = 2.5)
-vec_ptype(df)
+vec_ptype_show(df)
 
 ## ---- error = TRUE-------------------------------------------------------
-vec_ptype(logical(), integer(), double())
+vec_ptype_show(logical(), integer(), double())
 
-vec_ptype(logical(), character())
+vec_ptype_show(logical(), character())
 
 ## ------------------------------------------------------------------------
-vec_ptype(
+vec_ptype_show(
   array(1, c(0, 1)), 
   array(1, c(0, 2))
 )
 
-vec_ptype(
+vec_ptype_show(
   array(1, c(0, 1)), 
   array(1, c(0, 3)),
   array(1, c(0, 3, 4)),
@@ -58,7 +58,7 @@ vec_ptype(
 )
 
 ## ---- error = TRUE-------------------------------------------------------
-vec_ptype(
+vec_ptype_show(
   array(1, c(0, 2)), 
   array(1, c(0, 3))
 )
@@ -67,34 +67,34 @@ vec_ptype(
 fa <- factor("a")
 fb <- factor("b")
 
-levels(vec_type_common(fa, fb))
-levels(vec_type_common(fb, fa))
+levels(vec_ptype_common(fa, fb))
+levels(vec_ptype_common(fb, fa))
 
 ## ------------------------------------------------------------------------
-vec_ptype(new_date(), new_datetime())
+vec_ptype_show(new_date(), new_datetime())
 
 ## ------------------------------------------------------------------------
-vec_ptype(
+vec_ptype_show(
   new_datetime(tzone = "US/Central"), 
   new_datetime(tzone = "Pacific/Auckland")
 )
 
 ## ------------------------------------------------------------------------
-vec_ptype(
+vec_ptype_show(
   new_datetime(tzone = ""), 
   new_datetime(tzone = ""), 
   new_datetime(tzone = "Pacific/Auckland")
 )
 
 ## ------------------------------------------------------------------------
-vec_ptype(
+vec_ptype_show(
   data.frame(x = FALSE), 
   data.frame(x = 1L),
   data.frame(x = 2.5)
 )
 
 ## ------------------------------------------------------------------------
-vec_ptype(data.frame(x = 1, y = 1), data.frame(y = 1, z = 1))
+vec_ptype_show(data.frame(x = 1, y = 1), data.frame(y = 1, z = 1))
 
 ## ------------------------------------------------------------------------
 str(vec_cast_common(
@@ -120,8 +120,20 @@ vec_cast(c(1, 2), integer())
 # Cast fails
 vec_cast(c(1.5, 2.5), factor("a"))
 
-## ------------------------------------------------------------------------
+## ---- error = TRUE-------------------------------------------------------
 vec_cast(c(1.5, 2), integer())
+
+## ------------------------------------------------------------------------
+allow_lossy_cast(
+  vec_cast(c(1.5, 2), integer())
+)
+
+## ------------------------------------------------------------------------
+allow_lossy_cast(
+  vec_cast(c(1.5, 2), integer()),
+  x_ptype = double(),
+  to_ptype = integer()
+)
 
 ## ---- echo = FALSE, fig.cap="Summary of vctrs casting rules"-------------
 knitr::include_graphics("../man/figures/combined.png", dpi = 300)
@@ -136,7 +148,7 @@ vec_slice(df, 5:6)
 ## ------------------------------------------------------------------------
 vec_size_common(1:3, 1:3, 1:3)
 vec_size_common(1:10, 1)
-vec_size_common(integer(), 1:3)
+vec_size_common(integer(), 1)
 
 ## ---- echo = FALSE, fig.cap="Summary of vctrs recycling rules. X indicates n error"----
 knitr::include_graphics("../man/figures/sizes-recycling.png", dpi = 300)
@@ -144,12 +156,10 @@ knitr::include_graphics("../man/figures/sizes-recycling.png", dpi = 300)
 ## ------------------------------------------------------------------------
 vec_recycle(1:3, 3)
 vec_recycle(1, 10)
-vec_recycle(1:3, 0)
 
 ## ------------------------------------------------------------------------
 vec_recycle_common(1:3, 1:3)
 vec_recycle_common(1:10, 1)
-vec_recycle_common(integer(), 1:3)
 
 ## ------------------------------------------------------------------------
 rep(1, 6) + 1

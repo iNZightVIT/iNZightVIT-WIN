@@ -3,7 +3,7 @@ callr	callr
 convert_and_check_my_args	convert_and_check_my_args
 default_repos	default_repos
 get_result	get_result
-make_error	make_error
+new_callr_error	new_callr_error
 poll	reexports
 process	reexports
 r	r
@@ -25,5 +25,6 @@ r_process	r_process
 r_process_options	r_process_options
 r_safe	r
 r_session	r_session
+r_session_debug	r_session_debug
 r_session_options	r_session_options
 r_vanilla	r_vanilla

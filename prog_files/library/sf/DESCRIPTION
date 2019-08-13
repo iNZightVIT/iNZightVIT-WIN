@@ -1,5 +1,5 @@
 Package: sf
-Version: 0.7-4
+Version: 0.7-7
 Title: Simple Features for R
 Authors@R: 
     c(person(given = "Edzer",
@@ -44,13 +44,13 @@ Description: Support for simple features, a standardized way to
     data, to 'GEOS' for geometrical operations, and to 'PROJ' for
     projection conversions and datum transformations.
 License: GPL-2 | MIT + file LICENSE
-URL: https://github.com/r-spatial/sf/
+URL: https://github.com/r-spatial/sf/, https://r-spatial.github.io/sf/
 BugReports: https://github.com/r-spatial/sf/issues/
 Depends: methods, R (>= 3.3.0)
 Imports: classInt (>= 0.2-1), DBI (>= 0.8), graphics, grDevices, grid,
         magrittr, Rcpp (>= 0.12.18), stats, tools, units (>= 0.6-0),
         utils
-Suggests: blob, covr, dplyr (>= 0.8-0), ggplot2, knitr, lwgeom (>=
+Suggests: blob, covr, dplyr (>= 0.8-3), ggplot2, knitr, lwgeom (>=
         0.1-5), maps, maptools, mapview, microbenchmark, odbc, pillar,
         pool, raster, rgdal, rgeos, rlang, rmarkdown, RPostgres (>=
         1.1.0), RPostgreSQL, RSQLite, sp (>= 1.2-4), spatstat, stars
@@ -71,7 +71,7 @@ Collate: 'RcppExports.R' 'init.R' 'crs.R' 'bbox.R' 'read.R' 'db.R'
         'stars.R' 'crop.R' 'gdal_utils.R' 'nearest.R' 'normalize.R'
         'deprecated.R'
 NeedsCompilation: yes
-Packaged: 2019-04-25 17:51:47 UTC; edzer
+Packaged: 2019-07-22 14:08:52 UTC; edzer
 Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Roger Bivand [ctb] (<https://orcid.org/0000-0003-2392-6140>),
   Etienne Racine [ctb],
@@ -85,6 +85,6 @@ Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>),
   Thomas Lin Pedersen [ctb]
 Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 Repository: CRAN
-Date/Publication: 2019-04-25 22:30:03 UTC
-Built: R 3.6.0; x86_64-w64-mingw32; 2019-06-20 18:23:18 UTC; windows
+Date/Publication: 2019-07-24 10:30:02 UTC
+Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-11 01:54:55 UTC; windows
 Archs: i386, x64

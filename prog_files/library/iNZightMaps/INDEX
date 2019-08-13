@@ -8,6 +8,7 @@ create.inz.shapemapplot
                         draw a shape file ...
 data.trans              Transform the data into the range of [0,1].
 decodeMapDir            Convert map filepaths to "tidy" filepaths
+dot.density             Generate dots randomly within regions
 download.shapefiles     Download shapefiles from remote repository
 drawing.features        drawing features
 findBestMatch           Find 'best-matching' pair of variables from map
