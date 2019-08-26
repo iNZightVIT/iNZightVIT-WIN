@@ -17,6 +17,19 @@ summary(cf)
 barplot(cf,main="Checks on the women data set")
 
 ## ------------------------------------------------------------------------
+women1 <- women
+rules <- validator(height == women_reference$height)
+cf <- confront(women, rules, ref = list(women_reference = women1))
+summary(cf)
+
+## ------------------------------------------------------------------------
+rules <- validator( fruit %in% codelist )
+fruits <-  c("apple", "banana", "orange")
+dat <- data.frame(fruit = c("apple","broccoli","orange","banana"))
+cf <- confront(dat, rules, ref = list(codelist = fruits))
+summary(cf)
+
+## ------------------------------------------------------------------------
 v <- validator(height > 0, weight > 0, height/weight > 0)
 v
 
@@ -76,9 +89,9 @@ sort(cf)
 v <- validator(hite > 0, weight>0)
 summary(confront(women, v))
 
-## ----eval=FALSE----------------------------------------------------------
-#  # this gives an error
-#  confront(women, v, raise='all')
+## ----eval=TRUE, error=TRUE-----------------------------------------------
+# this gives an error
+confront(women, v, raise='all')
 
 ## ------------------------------------------------------------------------
 v <- validator(rat = height/weight > 0.5, htest=height>0, wtest=weight > 0)

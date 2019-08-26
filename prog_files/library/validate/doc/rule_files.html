@@ -7,11 +7,12 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Mark van der Loo and Edwin de Jonge" />
 
-<meta name="date" content="2018-08-01" />
+<meta name="date" content="2019-08-23" />
 
 <title>Rules in text files</title>
 
@@ -71,9 +72,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -98,22 +97,80 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -123,8 +180,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Rules in text files</h1>
-<h4 class="author"><em>Mark van der Loo and Edwin de Jonge</em></h4>
-<h4 class="date"><em>2018-08-01</em></h4>
+<h4 class="author">Mark van der Loo and Edwin de Jonge</h4>
+<h4 class="date">2019-08-23</h4>
 
 </div>
 
@@ -161,7 +218,7 @@ mean(height/weight) &lt; 0.5</code></pre>
 </div>
 <div id="importing-from-yaml-files" class="section level3">
 <h3>Importing from yaml files</h3>
-<p>To set options and metadata for the rules, the well-known <a href="www.yaml.org">yaml</a> (yaml ain’t markup language) format is used. Yaml is a human-readable way to define (nested) structures. Here is an example of a yaml-based rule definition file.</p>
+<p>To set options and metadata for the rules, the well-known <a href="https://yaml.org">yaml</a> (yaml ain’t markup language) format is used. Yaml is a human-readable way to define (nested) structures. Here is an example of a yaml-based rule definition file.</p>
 <pre><code># content of ex-2.yaml
 rules:
 - 
@@ -273,6 +330,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

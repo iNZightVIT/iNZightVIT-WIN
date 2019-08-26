@@ -1,0 +1,13 @@
+# define parent:
+parents :=  sub("\\.[0-9]$","",level)
+is_parent := level %in% parents
+
+# define child sums, by search for parent pattern.
+child_sums := sapply(level[is_parent], function(x){ 
+    sum(weight[grepl(paste0("^",x,".[0-9]$"),level)])
+  })
+# rule 16 
+all(weight[is_parent] == child_sums)
+
+
+

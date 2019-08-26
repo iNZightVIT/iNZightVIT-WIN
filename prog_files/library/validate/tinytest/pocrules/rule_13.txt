@@ -1,0 +1,5 @@
+# def_counts:
+counts :=  table(gender, age_group)
+
+# rule_13:
+all(counts <= 1)

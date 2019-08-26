@@ -1,7 +1,7 @@
 Encoding: UTF-8
 Package: covr
 Title: Test Coverage for Packages
-Version: 3.2.1
+Version: 3.3.1
 Authors@R: c(
     person("Jim", "Hester", email = "james.f.hester@gmail.com", role = c("aut", "cre")),
     person("Willem", "Ligtenberg", role = "ctb"),
@@ -42,16 +42,16 @@ URL: https://github.com/r-lib/covr
 BugReports: https://github.com/r-lib/covr/issues
 Depends: R (>= 3.1.0), methods
 Imports: digest, stats, utils, jsonlite, rex, httr, crayon, withr (>=
-        1.0.2)
+        1.0.2), yaml
 Suggests: R6, knitr, rmarkdown, htmltools, DT (>= 0.2), testthat,
-        rstudioapi (>= 0.2), xml2 (>= 1.0.0), parallel, memoise,
+        rlang, rstudioapi (>= 0.2), xml2 (>= 1.0.0), parallel, memoise,
         mockery
 License: GPL-3
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 NeedsCompilation: yes
-Packaged: 2018-10-18 15:49:20 UTC; jhester
+Packaged: 2019-08-23 19:38:31 UTC; Administrator
 Author: Jim Hester [aut, cre],
   Willem Ligtenberg [ctb],
   Kirill Müller [ctb],
@@ -81,6 +81,6 @@ Author: Jim Hester [aut, cre],
   Twitter, Inc [cph] (Bootstrap library)
 Maintainer: Jim Hester <james.f.hester@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-10-18 16:40:03 UTC
-Built: R 3.6.1; x86_64-w64-mingw32; 2019-07-26 13:06:42 UTC; windows
+Date/Publication: 2019-08-23 21:20:02 UTC
+Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-25 09:00:01 UTC; windows
 Archs: i386, x64

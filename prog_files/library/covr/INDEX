@@ -1,3 +1,5 @@
+azure                   Run covr on a package and output the result so
+                        it is available on Azure Pipelines
 code_coverage           Calculate coverage of code directly
 codecov                 Run covr on a package and upload the result to
                         codecov.io

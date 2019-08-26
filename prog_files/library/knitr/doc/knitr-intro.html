@@ -7,12 +7,13 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2019-05-17" />
+<meta name="date" content="2019-08-07" />
 
 <title>Not An Introduction to knitr</title>
 
@@ -96,7 +97,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -339,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Not An Introduction to knitr</h1>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2019-05-17</h4>
+<h4 class="date">2019-08-07</h4>
 
 
 
@@ -347,9 +348,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Anyway, here is a code chunk that shows you can compile vignettes with <strong>knitr</strong> as well using R 3.0.x, which supports non-Sweave vignettes:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">options</span>(<span class="dt">digits =</span> <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">rnorm</span>(<span class="dv">20</span>)</a></code></pre></div>
-<pre><code>##  [1] -0.47895  1.64563  1.08664 -0.48803  0.44205 -1.03148  0.07407
-##  [8]  0.11753  2.02114  1.22088  0.33964  1.68759 -0.34722  0.84130
-## [15]  0.28156 -0.22972  1.93980  0.06516 -1.21992 -0.79984</code></pre>
+<pre><code>##  [1]  1.4754  0.2020 -1.2409 -1.1391  1.5420 -0.8446 -0.3578  0.7237
+##  [9] -0.9776  0.2560  1.9104  1.5153 -1.3449 -0.7188 -1.6258 -0.1711
+## [17]  1.8075 -0.9361 -0.9934 -1.5184</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">fit =<span class="st"> </span><span class="kw">lm</span>(dist <span class="op">~</span><span class="st"> </span>speed, <span class="dt">data =</span> cars)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">b =<span class="st"> </span><span class="kw">coef</span>(fit)</a></code></pre></div>
 <table>
@@ -428,6 +429,9 @@ window.onload = function() {
   }
 }
 </script>
+
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

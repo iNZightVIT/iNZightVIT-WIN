@@ -24,8 +24,10 @@ gWidgets2
 gWidgets2RGtk2
 gWidgetsRGtk2
 gdata
+ggbeeswarm
 ggmosaic
 ggplot2
+ggthemes
 gpairs
 gridExtra
 gridSVG
@@ -85,6 +87,7 @@ assertthat
 backports
 barcode
 base64enc
+beeswarm
 callr
 carData
 cellranger
@@ -157,6 +160,7 @@ tidyselect
 utf8
 vcd
 vctrs
+vipor
 viridisLite
 webshot
 withr
