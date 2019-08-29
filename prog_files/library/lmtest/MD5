@@ -1,5 +1,5 @@
 5ee321d65be6adaba0a58b11d1dc2902 *CITATION
-e09b3bc042419447f21855707389eeaa *DESCRIPTION
+434bd69af791d87a96ad1ca432a741af *DESCRIPTION
 f8c43b90b3d78ebb595e2fde24c6786c *INDEX
 95a4e073b8e4573498750c783b80092b *Meta/Rd.rds
 7b5fc5d1df5207ba3ba397bfa155db3d *Meta/data.rds
@@ -7,7 +7,7 @@ a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 78ddb3d9095789b3862e8fb00411a117 *Meta/hsearch.rds
 e93d67a5708b0802157fffdd17172c59 *Meta/links.rds
 3479a30d098aa88690db22d306af7d82 *Meta/nsInfo.rds
-14ed7edfb54c9162cffad1cfeb15c8bb *Meta/package.rds
+9c4043fbe9a3d5d34b9c9ec5c8449eaa *Meta/package.rds
 5209a91e94912415e55cb72e1144d018 *Meta/vignette.rds
 22735d60ea4b22964b0327e7f4a78658 *NAMESPACE
 aac0b88706e803a734c01f2252a9cedd *NEWS
@@ -23,12 +23,12 @@ fb1ceeddef0e299a6acd781fbd1f79a0 *doc/lmtest-intro.Rnw
 5fa24a6cf59e4af416837fb853eb8ef4 *doc/lmtest-intro.pdf
 836c238fb8a422a1cd3a3a13ac8f5146 *help/AnIndex
 8fe4de421f6635625ed4b8509038247d *help/aliases.rds
-aae2c5a65c0f973e7cb37cd913f30424 *help/lmtest.rdb
-d8237ecb70c45d57d661fa24473e3491 *help/lmtest.rdx
-9f6bbab8ab4dde1e768bf392053964f2 *help/paths.rds
+6e516a2dc08f1d1886c003e93bee07a1 *help/lmtest.rdb
+56eecca0f7e76b5ad59381d983023cf3 *help/lmtest.rdx
+8a0102dbbd5c1e4a2b1edd0d4c527e79 *help/paths.rds
 f1e7f9a029e2bce0f4c5239729fd379c *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-f62c628aead1575caff0a26ee1b25aab *libs/i386/lmtest.dll
+8248be077317e13ad3abc9858b94e64e *libs/i386/lmtest.dll
 9f688fc58e136431f94c2267833dd6e7 *libs/i386/symbols.rds
-742c8a70c48db40f1b42b35ce025687b *libs/x64/lmtest.dll
+31a211fdbd1d139171ed450f7ae47e4f *libs/x64/lmtest.dll
 3f1fc2e8efa782bd7bef7822429857a2 *libs/x64/symbols.rds

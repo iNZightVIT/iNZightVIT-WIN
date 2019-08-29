@@ -141,9 +141,11 @@ class Histogram extends Inzplot {
     tbl.tableToPlot(tbl.DT, this.panel, "histBar");
     this.tbl = tbl.DT;
 
-    // init box plot:
-    var box = new Boxplot(this.chart);
-    box.init();
+    if (this.chart.boxData.length > 0) {
+      // init box plot:
+      var box = new Boxplot(this.chart);
+      box.init();
+    }
 
     // set tooltips, hovers, selection box:
     this.setTooltip(200, 50);

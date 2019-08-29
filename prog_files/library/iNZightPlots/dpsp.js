@@ -229,8 +229,8 @@ class DotScatter extends Inzplot {
     this.setHovers();
     this.addBrush();
 
-    // init box plot if it's a dot plot:
-    if (this.chartType === "dot") {
+    // init box plot if it's a dot plot and boxplots are enabled:
+    if (this.chartType === "dot" && this.chart.boxData.length > 0) {
       var box = new Boxplot(this.chart);
       box.init();
     }

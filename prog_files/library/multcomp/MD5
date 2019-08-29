@@ -1,5 +1,5 @@
 32bf673ddc4ccba6a171eeadb8d51c3e *CITATION
-af5f212b98c4995e423e87a28b1c2508 *DESCRIPTION
+4fc7622a5f8df98b8bb42e4e44f01357 *DESCRIPTION
 d90773d3cff78903dd7185a4dd8e6bce *INDEX
 c330e0321b00523651d707a8b4399020 *MCMT/MCMT.R
 907242a5e32c8cae150f12dcd3019440 *MCMT/MCMT.Rout
@@ -13,7 +13,7 @@ a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 47069b41208416d5f2cfa2339a3c3744 *Meta/hsearch.rds
 7b34d1ace17deb4ffb9a693c4b4de38b *Meta/links.rds
 370675f2d7eac323597372a83d9807e8 *Meta/nsInfo.rds
-7368219ef35fe3e15f8c0433bd74ccc7 *Meta/package.rds
+acd86fd5d3be07d4cc6a2db5457ca8a6 *Meta/package.rds
 77e89a815cd3a09935e91571135f4af8 *Meta/vignette.rds
 6f1c37daef616f400da863d7c86124f6 *NAMESPACE
 01cf5142b5e4a6b02c08cecfab78a1e6 *NEWS
@@ -44,9 +44,9 @@ ebfe06d5557e1d187ff34d3cb5abe225 *doc/multcomp-examples.R
 9ebebf2a3f21b5c131f3f6e171bc7c25 *doc/multcomp-examples.pdf
 41e4a57a315bb8373dd19763fde797ac *help/AnIndex
 ea508309f1ec9482334a71649ed91c4f *help/aliases.rds
-d00e4bdaa23b244618ba020c19c592b3 *help/multcomp.rdb
-07aa686c11c7778ac68cb332ab0737f1 *help/multcomp.rdx
-ad321768d8734dbad92ce1a9a226e8d4 *help/paths.rds
+df35b5cbba3a2c14baf5381244964593 *help/multcomp.rdb
+0ec30ee942281b4d98e64498016fdf14 *help/multcomp.rdx
+89d236d05d93af6397c4d55bf05d7860 *help/paths.rds
 7d740eb6f4d02b306a3db92a9ded854d *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 b8db88a39fe73ccefbd7deaaffdec3cd *multcomp_VA.R
