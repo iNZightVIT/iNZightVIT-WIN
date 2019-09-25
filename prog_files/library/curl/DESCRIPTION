@@ -1,7 +1,7 @@
 Package: curl
 Type: Package
 Title: A Modern and Flexible Web Client for R
-Version: 4.0
+Version: 4.1
 Authors@R: c(
     person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroen@berkeley.edu",
       comment = c(ORCID = "0000-0002-4035-0289")),
@@ -20,7 +20,8 @@ Description: The curl() and curl_download() functions provide highly
 License: MIT + file LICENSE
 SystemRequirements: libcurl: libcurl-devel (rpm) or
         libcurl4-openssl-dev (deb).
-URL: https://github.com/jeroen/curl#readme (devel)
+URL: https://jeroen.cran.dev/curl (docs)
+        https://github.com/jeroen/curl#readme (devel)
         https://curl.haxx.se/libcurl/ (upstream)
 BugReports: https://github.com/jeroen/curl/issues
 Suggests: askpass, spelling, testthat (>= 1.0.0), knitr, jsonlite,
@@ -32,12 +33,12 @@ RoxygenNote: 6.1.1
 Encoding: UTF-8
 Language: en-US
 NeedsCompilation: yes
-Packaged: 2019-07-22 11:13:54 UTC; jeroen
+Packaged: 2019-09-15 18:40:16 UTC; jeroen
 Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),
   Hadley Wickham [ctb],
   RStudio [cph]
 Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 Repository: CRAN
-Date/Publication: 2019-07-22 12:20:02 UTC
-Built: R 3.6.1; x86_64-w64-mingw32; 2019-08-25 10:16:57 UTC; windows
+Date/Publication: 2019-09-16 10:40:05 UTC
+Built: R 3.6.1; x86_64-w64-mingw32; 2019-09-20 23:38:41 UTC; windows
 Archs: i386, x64

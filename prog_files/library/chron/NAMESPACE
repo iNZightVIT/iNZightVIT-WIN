@@ -6,7 +6,7 @@ importFrom("graphics", "Axis", "axis", "barplot", "hist", "par",
            "plot", "plot.default", "plot.new", "plot.window", "rect")
 
 export(".Holidays",
-       "as.chron",
+       "as.chron", "as.dates", "as.times",
        "chron",
        "dates", "day.of.week", "days",
        "hours",
@@ -29,6 +29,8 @@ S3method("as.chron", "default")
 S3method("as.chron", "ts")
 S3method("as.chron", "yearmon")
 S3method("as.chron", "yearqtr")
+S3method("as.dates", "default")
+S3method("as.times", "default")
 S3method("julian", "default")
 S3method("months", "default")
 S3method("quarters", "default")

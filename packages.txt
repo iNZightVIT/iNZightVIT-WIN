@@ -27,6 +27,7 @@ gdata
 ggbeeswarm
 ggmosaic
 ggplot2
+ggridges
 ggthemes
 gpairs
 gridExtra
@@ -39,6 +40,7 @@ knitr
 lubridate
 magrittr
 mgcv
+multcomp
 objectProperties
 plotly
 plyr
@@ -65,11 +67,9 @@ grDevices
 methods
 grid
 stats
-ggridges
 graphics
 tools
 stats4
-multcomp
 BH
 DBI
 FNN
@@ -120,6 +120,7 @@ labeling
 later
 lattice
 lazyeval
+lifecycle
 lme4
 lmtest
 manipulateWidget

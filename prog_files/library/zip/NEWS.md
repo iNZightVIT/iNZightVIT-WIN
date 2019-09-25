@@ -1,4 +1,9 @@
 
+# 2.0.4
+
+* `unzip_process()` prints better error messages to the standard error,
+  and exits with a non-zero status, on error.
+
 # 2.0.3
 
 * `zipr()` and `zipr_append()` get an `include_directories = TRUE`

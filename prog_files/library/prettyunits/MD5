@@ -1,4 +1,4 @@
-ce4ab84cc2a7fb44ac7d967b7b98dd58 *DESCRIPTION
+448c7cb1b8ace436e1069dc353050190 *DESCRIPTION
 935d539ea6a07b9dc55b000ff50f7ccb *INDEX
 3d55ef9a10c04c95a867277c02d32bca *LICENSE
 cbdb46a723f8ff7e1e311cd8e6fe7926 *Meta/Rd.rds
@@ -6,7 +6,7 @@ a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 9c670e21234897a36f91821818961957 *Meta/hsearch.rds
 986d7ba5bdb9517b38e79fd53e260f2c *Meta/links.rds
 77ec9a9280584846037ecef46d14002c *Meta/nsInfo.rds
-036ecd6a523de1fe64a2566cdc705664 *Meta/package.rds
+0bf8ee62bd79be05f960deb297fc8a08 *Meta/package.rds
 a721a0a6adc44cbe1ea3e164bb1fed5c *NAMESPACE
 60bc0664f12e7e4a8c6ee49618db5672 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/prettyunits
@@ -16,8 +16,8 @@ d7ec99fb0bd83ab1d0c2c2911c365923 *R/prettyunits.rdx
 c157c0891b7911a7865b61b8ce18df83 *README.md
 be13abe8e2977b12ae7c5ce91ffa3790 *help/AnIndex
 bd70a799473a2b51cf69a888617be588 *help/aliases.rds
-55c4f07e4ce338207fb881cc79e906c7 *help/paths.rds
-a8b44b57b02bab728d89a5242cacb1f6 *help/prettyunits.rdb
-f9f38d10d234b47d9fc2d0a16b290768 *help/prettyunits.rdx
+0388a7ae984572675bdc265ae55c252d *help/paths.rds
+ed5a9b6c4c0e411f44673732e3627168 *help/prettyunits.rdb
+871ba35398803d244ff4eb82696d561e *help/prettyunits.rdx
 9f08f7f6e4533bef179bd6f09d8f2c3c *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

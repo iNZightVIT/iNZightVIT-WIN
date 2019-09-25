@@ -1,4 +1,4 @@
-68364e4b18d3714739bfcb23a2bd4f41 *DESCRIPTION
+0e10b3943892b84c9c204e91f3c1ce7c *DESCRIPTION
 f92916ea3432453635293ddceeca2d29 *INDEX
 e6c4b060ff385a374133a9782ea2c312 *Meta/Rd.rds
 5649c91b71b1e7ab208370ee1e3e4c76 *Meta/data.rds
@@ -6,7 +6,7 @@ a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 7e2b6bde11e3fc2fea95f2630aff1368 *Meta/hsearch.rds
 1f21dbb226c00945b2b48441e452c125 *Meta/links.rds
 7802dc8407a1f7e75971c3ad58ac7ebd *Meta/nsInfo.rds
-4b96b78ff8ba847ac01e0085be8115b1 *Meta/package.rds
+bc01a78ecc7c18a9d8a753065a33d02f *Meta/package.rds
 12ef4754fa69c37eee5b581abb6ab5bc *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/productplots
 09b31582ccd38c0a0d1bf9c97b06ed7d *R/productplots.rdb
@@ -16,8 +16,8 @@ daf57cae445218020a74ffa63d310184 *data/Rdata.rdb
 aaab0ef4074096582a45335345f6dfa0 *data/Rdata.rdx
 e36038f571af966ebc5ab789f38260bb *help/AnIndex
 2686e33ec876afa5099cf6356977e4aa *help/aliases.rds
-85969c10f9948749166c7803f4ecac93 *help/paths.rds
-d51bb808abdda5e2d03cbab14d7f972a *help/productplots.rdb
-f231ad08711536902ec8b84c42bed824 *help/productplots.rdx
+16a15f2ba91b21489bec7a6f610aaa05 *help/paths.rds
+2e3d4f2c57322f797de9c9aa13dabe3d *help/productplots.rdb
+982dec43b1fdbd2b4aad23f6db5d458f *help/productplots.rdx
 02b49ec7f57031c358c6f0e7e8b00a84 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

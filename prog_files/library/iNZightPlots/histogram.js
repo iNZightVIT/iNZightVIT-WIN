@@ -146,6 +146,11 @@ class Histogram extends Inzplot {
       var box = new Boxplot(this.chart);
       box.init();
     }
+    
+    if (this.chart.meanData.length > 0) {
+      var meanInds = new MeanIndicator(this.chart);
+      meanInds.init();
+    }
 
     // set tooltips, hovers, selection box:
     this.setTooltip(200, 50);

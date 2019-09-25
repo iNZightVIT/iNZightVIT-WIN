@@ -13,7 +13,7 @@
 
 <meta name="author" content="Mark van der Loo and Edwin de Jonge" />
 
-<meta name="date" content="2019-08-23" />
+<meta name="date" content="2019-08-26" />
 
 <title>Introduction to Validate</title>
 
@@ -96,7 +96,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Introduction to Validate</h1>
 <h4 class="author">Mark van der Loo and Edwin de Jonge</h4>
-<h4 class="date">2019-08-23</h4>
+<h4 class="date">2019-08-26</h4>
 
 
 <div id="TOC">
@@ -279,12 +279,12 @@ measure &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(v)
 ## 5   V1  TRUE height &gt; 0 height positive                   
 ## 6   V1  TRUE height &gt; 0 height positive                   
 ##               created       language severity       rule
-## 1 2019-08-23 14:05:59 validate 0.9.1    error height &gt; 0
-## 2 2019-08-23 14:05:59 validate 0.9.1    error height &gt; 0
-## 3 2019-08-23 14:05:59 validate 0.9.1    error height &gt; 0
-## 4 2019-08-23 14:05:59 validate 0.9.1    error height &gt; 0
-## 5 2019-08-23 14:05:59 validate 0.9.1    error height &gt; 0
-## 6 2019-08-23 14:05:59 validate 0.9.1    error height &gt; 0</code></pre>
+## 1 2019-08-26 10:38:31 validate 0.9.2    error height &gt; 0
+## 2 2019-08-26 10:38:31 validate 0.9.2    error height &gt; 0
+## 3 2019-08-26 10:38:31 validate 0.9.2    error height &gt; 0
+## 4 2019-08-26 10:38:31 validate 0.9.2    error height &gt; 0
+## 5 2019-08-26 10:38:31 validate 0.9.2    error height &gt; 0
+## 6 2019-08-26 10:38:31 validate 0.9.2    error height &gt; 0</code></pre>
 <p>Or, merge with the summarized results. The result of <code>summary</code> is just a <code>data.frame</code> (tidy, isn’t it?).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">merge</span>(<span class="kw">summary</span>(cf),measure)</code></pre></div>
 <pre><code>##   name items passes fails nNA error warning          expression
@@ -292,9 +292,9 @@ measure &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(v)
 ## 2   V2    15     15     0   0 FALSE   FALSE          weight &gt; 0
 ## 3   V3    15      2    13   0 FALSE   FALSE height/weight &gt; 0.5
 ##             label description origin             created       language
-## 1 height positive                    2019-08-23 14:05:59 validate 0.9.1
-## 2 weight positive                    2019-08-23 14:05:59 validate 0.9.1
-## 3     ratio limit                    2019-08-23 14:05:59 validate 0.9.1
+## 1 height positive                    2019-08-26 10:38:31 validate 0.9.2
+## 2 weight positive                    2019-08-26 10:38:31 validate 0.9.2
+## 3     ratio limit                    2019-08-26 10:38:31 validate 0.9.2
 ##   severity                rule
 ## 1    error          height &gt; 0
 ## 2    error          weight &gt; 0
@@ -409,14 +409,14 @@ v</code></pre></div>
 ##  label      :  
 ##  description:  
 ##  origin     : command-line 
-##  created    : 2019-08-23 14:05:59
+##  created    : 2019-08-26 10:38:31
 ##  meta       : language&lt;chr&gt;, severity&lt;chr&gt;, foo&lt;nmr&gt;, bar&lt;chr&gt;</code></pre>
 <p>Or by extracting it to a <code>data.frame</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">meta</span>(v)</code></pre></div>
 <pre><code>##    name label description       origin             created       language
-## 1 ratio                   command-line 2019-08-23 14:05:59 validate 0.9.1
-## 2 htest                   command-line 2019-08-23 14:05:59 validate 0.9.1
-## 3 wtest                   command-line 2019-08-23 14:05:59 validate 0.9.1
+## 1 ratio                   command-line 2019-08-26 10:38:31 validate 0.9.2
+## 2 htest                   command-line 2019-08-26 10:38:31 validate 0.9.2
+## 3 wtest                   command-line 2019-08-26 10:38:31 validate 0.9.2
 ##   severity foo bar
 ## 1    error   1 baz
 ## 2    error  NA baz
@@ -456,7 +456,7 @@ v</code></pre></div>
 ##  label      :  
 ##  description:  
 ##  origin     : command-line 
-##  created    : 2019-08-23 14:05:59
+##  created    : 2019-08-26 10:38:31
 ##  meta       : language&lt;chr&gt;, severity&lt;chr&gt;, foo&lt;nmr&gt;, bar&lt;chr&gt;</code></pre>
 </div>
 <div id="validator-objects-and-confrontation-objects-are-reference-objects" class="section level3">

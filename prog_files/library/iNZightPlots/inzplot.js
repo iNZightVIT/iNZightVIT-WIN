@@ -361,6 +361,56 @@ showBox = function(j) {
     boxData.classed('hidden', !boxData.classed('hidden'));
 }
 
+class MeanIndicator {
+  constructor(props) {
+    console.log(props);
+    this.mean = props.meanData;
+    this.levelNo = (chart.levNames) ? chart.levNames.length : 1;
+    // this.boxData = chart.boxData;
+    this.meanPoint = document.querySelectorAll('g[id^="inz-mean."]');
+  }
+  
+  init() {
+    for (let i = 1; i <= this.levelNo; i++) {
+      this.addMouseOver(i - 1);
+    }
+  }
+  
+  addMouseOver(i) {
+    var x = this.meanPoint[i].getElementsByTagName("use")[0].getAttribute('x');
+    var y = this.meanPoint[i].getElementsByTagName("use")[0].getAttribute('y');
+    var transf = this.meanPoint[i].getElementsByTagName("use")[0].getAttribute('transform').toString();
+    
+    var d = transf.slice(transf.indexOf('translate(') + 10, -1).split(',');
+    
+    
+    var meanLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    // boxLabel.setAttribute('class', 'label boxData-' + i + ' hidden');
+    // meanLabel.setAttributeNS(null, 'x', x);
+    // meanLabel.setAttributeNS(null, 'y', y);
+    meanLabel.setAttributeNS(null, 'transform', 'translate(' + Number(x) + ', ' + (Number(y) - Number(d[1])) + ') scale(1, -1)');
+    meanLabel.setAttributeNS(null, 'dominant-baseline', 'baseline');
+    // meanLabel.setAttributeNS(null, 'text-anchor', 'start');
+    meanLabel.setAttribute('class', 'label hidden group-mean-label');
+    meanLabel.setAttribute('id', 'group-mean-' + i);
+    // boxLabel.setAttributeNS(null, 'id', textinput);
+    
+    var textNode = document.createTextNode(this.mean[i]);
+    meanLabel.appendChild(textNode);
+    this.meanPoint[i].appendChild(meanLabel);
+    
+    this.meanPoint[i].setAttribute('onclick', 'showMean(' + i + ')');
+    this.meanPoint[i].setAttribute('style', 'cursor: pointer');
+    
+    return this;
+  }
+}
+
+showMean = function(i) {
+  var boxData = d3.select('#group-mean-' + i);
+    boxData.classed('hidden', !boxData.classed('hidden'));
+}
+
 
 /** LEGEND CLASS
  * For attaching legend interactivity

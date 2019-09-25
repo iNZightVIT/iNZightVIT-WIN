@@ -1,3 +1,14 @@
+4.1
+ - Fixed typechecking code for new internal macro names in libcurl 7.66
+ - Rewrite typechecking to work better with clang and old libcurl (#192)
+ - has_internet() now checks for connectivity via a proxy server if one is detected
+ - Windows: respect the CURL_SSL_BACKEND variable for people that want to use OpenSSL.
+ - Windows: respect CURL_CA_BUNDLE if (and only if) CURL_SSL_BACKEND == openssl
+ - curl_download now writes to a temporary file, which is renamed to the destfile
+   upon success. This prevents corrupt files when a download fails or is interrupted.
+ - Automatically set forbid_reuse = TRUE in curl_echo() handles
+ - Update symbol table to 7.66.0
+
 4.0
  - Stricter type checking for handle options based on <curl/typecheck-gcc.h> macros
  - curl_symbols is now a function instead of a static table to allow easy filtering

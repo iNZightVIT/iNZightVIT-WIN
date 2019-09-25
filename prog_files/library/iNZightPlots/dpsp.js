@@ -234,6 +234,11 @@ class DotScatter extends Inzplot {
       var box = new Boxplot(this.chart);
       box.init();
     }
+    
+    if (this.chartType === 'dot' && this.chart.meanData.length > 0) {
+      var meanInds = new MeanIndicator(this.chart);
+      meanInds.init();
+    }
 
     //enable legend interactions
     let legend = new Legend(this);
