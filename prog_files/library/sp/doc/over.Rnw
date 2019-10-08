@@ -556,7 +556,7 @@ Davidson, R., 2008.  Reading topographic maps. Free e-book from:
 \item
 Heuvelink, G.B.M., and E.J. Pebesma, 1999.  Spatial aggregation
 and soil process modelling. Geoderma 89, 1-2, 
-\href{http://dx.doi.org/10.1016/S0016-7061(98)00077-9}{47-65}.
+\href{https://doi.org/10.1016/S0016-7061(98)00077-9}{47-65}.
 \item
 Pebesma, E., 2012.  Spatio-temporal overlay and
 aggregation.  Package vignette for package spacetime,

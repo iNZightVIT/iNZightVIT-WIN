@@ -10,7 +10,7 @@
 
 * New sequential multi-hue palette: Purple-Yellow. This is a slightly
   improved version (i.e., with higher luminance contrast) of the palette
-  used in Figure 4 of [Stauffer _et al._ (2015, BAMS)](https://dx.doi.org/10.1175/BAMS-D-13-00155.1).
+  used in Figure 4 of [Stauffer _et al._ (2015, BAMS)](https://doi.org/10.1175/BAMS-D-13-00155.1).
 
 * New flexible diverging palette Zissou 1 in `divergingx_hcl()`. This closely
   matches the palette of the same name in _wesanderson_. Note that this is
