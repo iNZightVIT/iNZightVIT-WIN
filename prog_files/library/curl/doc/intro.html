@@ -11,7 +11,7 @@
 
 
 
-<meta name="date" content="2019-09-15" />
+<meta name="date" content="2019-09-24" />
 
 <title>The curl package: a modern R interface to libcurl</title>
 
@@ -1510,7 +1510,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">The curl package: a modern R interface to libcurl</h1>
-<h4 class="date">2019-09-15</h4>
+<h4 class="date">2019-09-24</h4>
 
 </div>
 
@@ -1537,16 +1537,16 @@ str(req)</code></pre>
  $ type       : chr &quot;application/json&quot;
  $ headers    : raw [1:378] 48 54 54 50 ...
  $ modified   : POSIXct[1:1], format: NA
- $ times      : Named num [1:6] 0 0.0565 0.1476 0.3513 0.4325 ...
+ $ times      : Named num [1:6] 0 0.0128 0.1009 0.2885 0.3781 ...
   ..- attr(*, &quot;names&quot;)= chr [1:6] &quot;redirect&quot; &quot;namelookup&quot; &quot;connect&quot; &quot;pretransfer&quot; ...
- $ content    : raw [1:321] 7b 0a 20 20 ...</code></pre>
+ $ content    : raw [1:323] 7b 0a 20 20 ...</code></pre>
 <pre class="r"><code>parse_headers(req$headers)</code></pre>
 <pre><code> [1] &quot;HTTP/1.1 200 OK&quot;                             &quot;Access-Control-Allow-Credentials: true&quot;     
  [3] &quot;Access-Control-Allow-Origin: *&quot;              &quot;Content-Encoding: gzip&quot;                     
- [5] &quot;Content-Type: application/json&quot;              &quot;Date: Sun, 15 Sep 2019 18:40:08 GMT&quot;        
+ [5] &quot;Content-Type: application/json&quot;              &quot;Date: Tue, 24 Sep 2019 10:59:29 GMT&quot;        
  [7] &quot;Referrer-Policy: no-referrer-when-downgrade&quot; &quot;Server: nginx&quot;                              
  [9] &quot;X-Content-Type-Options: nosniff&quot;             &quot;X-Frame-Options: DENY&quot;                      
-[11] &quot;X-XSS-Protection: 1; mode=block&quot;             &quot;Content-Length: 216&quot;                        
+[11] &quot;X-XSS-Protection: 1; mode=block&quot;             &quot;Content-Length: 214&quot;                        
 [13] &quot;Connection: keep-alive&quot;                     </code></pre>
 <pre class="r"><code>jsonlite::prettify(rawToChar(req$content))</code></pre>
 <pre><code>{
@@ -1555,11 +1555,11 @@ str(req)</code></pre>
     },
     &quot;headers&quot;: {
         &quot;Accept&quot;: &quot;*/*&quot;,
-        &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;,
+        &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;,
         &quot;Host&quot;: &quot;eu.httpbin.org&quot;,
         &quot;User-Agent&quot;: &quot;R (3.6.1 x86_64-apple-darwin15.6.0 x86_64 darwin15.6.0)&quot;
     },
-    &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;,
+    &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;,
     &quot;url&quot;: &quot;https://eu.httpbin.org/get?foo=123&quot;
 }
  </code></pre>
@@ -1577,11 +1577,11 @@ jsonlite::prettify(readLines(tmp))</code></pre>
     },
     &quot;headers&quot;: {
         &quot;Accept&quot;: &quot;*/*&quot;,
-        &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;,
+        &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;,
         &quot;Host&quot;: &quot;eu.httpbin.org&quot;,
         &quot;User-Agent&quot;: &quot;R (3.6.1 x86_64-apple-darwin15.6.0 x86_64 darwin15.6.0)&quot;
     },
-    &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;,
+    &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;,
     &quot;url&quot;: &quot;https://eu.httpbin.org/get?bar=456&quot;
 }
  </code></pre>
@@ -1602,7 +1602,7 @@ cat(out, sep = &quot;\n&quot;)</code></pre>
 out &lt;- readLines(con, n = 3)
 cat(out, sep = &quot;\n&quot;)</code></pre>
 <pre><code>    &quot;Accept&quot;: &quot;*/*&quot;, 
-    &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;, 
+    &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;, 
     &quot;Host&quot;: &quot;eu.httpbin.org&quot;, </code></pre>
 <pre class="r"><code># Get remaining lines
 out &lt;- readLines(con)
@@ -1610,7 +1610,7 @@ close(con)
 cat(out, sep = &quot;\n&quot;)</code></pre>
 <pre><code>    &quot;User-Agent&quot;: &quot;R (3.6.1 x86_64-apple-darwin15.6.0 x86_64 darwin15.6.0)&quot;
   }, 
-  &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;, 
+  &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;, 
   &quot;url&quot;: &quot;https://eu.httpbin.org/get&quot;
 }</code></pre>
 <p>The example shows how to use <code>readLines</code> on an opened connection to read <code>n</code> lines at a time. Similarly <code>readBin</code> is used to read <code>n</code> bytes at a time for stream parsing binary data.</p>
@@ -1640,9 +1640,9 @@ curl_fetch_multi(&#39;https://httpbin.org/blabla&#39;, done = cb, pool = pool)</
 <p>When we call <code>multi_run()</code>, all scheduled requests are performed concurrently. The callback functions get triggered when each request completes.</p>
 <pre class="r"><code># This actually performs requests:
 out &lt;- multi_run(pool = pool)</code></pre>
-<pre><code>done: https://www.google.com : HTTP: 200 
-done: https://cloud.r-project.org : HTTP: 200 
-done: https://httpbin.org/blabla : HTTP: 404 </code></pre>
+<pre><code>done: https://www.google.com/ : HTTP: 200 
+done: https://httpbin.org/blabla : HTTP: 404 
+done: https://cloud.r-project.org/ : HTTP: 200 </code></pre>
 <pre class="r"><code>print(out)</code></pre>
 <pre><code>$success
 [1] 3
@@ -1734,7 +1734,7 @@ jsonlite::prettify(rawToChar(req$content))</code></pre>
     },
     &quot;headers&quot;: {
         &quot;Accept&quot;: &quot;*/*&quot;,
-        &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;,
+        &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;,
         &quot;Cache-Control&quot;: &quot;no-cache&quot;,
         &quot;Content-Length&quot;: &quot;11&quot;,
         &quot;Content-Type&quot;: &quot;text/moo&quot;,
@@ -1742,7 +1742,7 @@ jsonlite::prettify(rawToChar(req$content))</code></pre>
         &quot;User-Agent&quot;: &quot;A cow&quot;
     },
     &quot;json&quot;: null,
-    &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;,
+    &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;,
     &quot;url&quot;: &quot;https://eu.httpbin.org/post&quot;
 }
  </code></pre>
@@ -1762,7 +1762,7 @@ jsonlite::prettify(readLines(con))</code></pre>
     },
     &quot;headers&quot;: {
         &quot;Accept&quot;: &quot;*/*&quot;,
-        &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;,
+        &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;,
         &quot;Cache-Control&quot;: &quot;no-cache&quot;,
         &quot;Content-Length&quot;: &quot;11&quot;,
         &quot;Content-Type&quot;: &quot;text/moo&quot;,
@@ -1770,7 +1770,7 @@ jsonlite::prettify(readLines(con))</code></pre>
         &quot;User-Agent&quot;: &quot;A cow&quot;
     },
     &quot;json&quot;: null,
-    &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;,
+    &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;,
     &quot;url&quot;: &quot;https://eu.httpbin.org/post&quot;
 }
  </code></pre>
@@ -1791,7 +1791,7 @@ jsonlite::prettify(readLines(tmp))</code></pre>
     },
     &quot;headers&quot;: {
         &quot;Accept&quot;: &quot;*/*&quot;,
-        &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;,
+        &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;,
         &quot;Cache-Control&quot;: &quot;no-cache&quot;,
         &quot;Content-Length&quot;: &quot;11&quot;,
         &quot;Content-Type&quot;: &quot;text/moo&quot;,
@@ -1799,7 +1799,7 @@ jsonlite::prettify(readLines(tmp))</code></pre>
         &quot;User-Agent&quot;: &quot;A cow&quot;
     },
     &quot;json&quot;: null,
-    &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;,
+    &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;,
     &quot;url&quot;: &quot;https://eu.httpbin.org/post&quot;
 }
  </code></pre>
@@ -1819,7 +1819,7 @@ out &lt;- multi_run()</code></pre>
   &quot;form&quot;: {}, 
   &quot;headers&quot;: {
     &quot;Accept&quot;: &quot;*/*&quot;, 
-    &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;, 
+    &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;, 
     &quot;Cache-Control&quot;: &quot;no-cache&quot;, 
     &quot;Content-Length&quot;: &quot;11&quot;, 
     &quot;Content-Type&quot;: &quot;text/moo&quot;, 
@@ -1827,7 +1827,7 @@ out &lt;- multi_run()</code></pre>
     &quot;User-Agent&quot;: &quot;A cow&quot;
   }, 
   &quot;json&quot;: null, 
-  &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;, 
+  &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;, 
   &quot;url&quot;: &quot;https://eu.httpbin.org/post&quot;
 }</code></pre>
 </div>
@@ -1848,9 +1848,10 @@ handle_cookies(h)</code></pre>
 <pre class="r"><code># Unset a cookie
 req &lt;- curl_fetch_memory(&quot;https://eu.httpbin.org/cookies/delete?foo&quot;, handle = h)
 handle_cookies(h)</code></pre>
-<pre><code>          domain  flag path secure expiration name value
-1 eu.httpbin.org FALSE    /  FALSE       &lt;NA&gt;  bar   ftw
-2 eu.httpbin.org FALSE    /  FALSE       &lt;NA&gt;  baz moooo</code></pre>
+<pre><code>          domain  flag path secure          expiration name value
+1 eu.httpbin.org FALSE    /  FALSE 2019-09-24 12:59:33  foo  &lt;NA&gt;
+2 eu.httpbin.org FALSE    /  FALSE                &lt;NA&gt;  bar   ftw
+3 eu.httpbin.org FALSE    /  FALSE                &lt;NA&gt;  baz moooo</code></pre>
 <p>The <code>handle_cookies</code> function returns a data frame with 7 columns as specified in the <a href="http://www.cookiecentral.com/faq/#3.5">netscape cookie file format</a>.</p>
 </div>
 <div id="on-reusing-handles" class="section level3">
@@ -1863,11 +1864,11 @@ req2 &lt;- curl_fetch_memory(&quot;https://www.r-project.org&quot;)</code></pre>
 <pre class="r"><code>req &lt;- curl_fetch_memory(&quot;https://api.github.com/users/ropensci&quot;)
 req$times</code></pre>
 <pre><code>     redirect    namelookup       connect   pretransfer starttransfer         total 
-     0.000000      0.097613      0.138805      0.202611      0.335395      0.335547 </code></pre>
+     0.000000      0.004816      0.010801      0.038239      0.179453      0.180745 </code></pre>
 <pre class="r"><code>req2 &lt;- curl_fetch_memory(&quot;https://api.github.com/users/rstudio&quot;)
 req2$times</code></pre>
 <pre><code>     redirect    namelookup       connect   pretransfer starttransfer         total 
-     0.000000      0.000029      0.000032      0.000089      0.124772      0.124917 </code></pre>
+     0.000000      0.000029      0.000032      0.000098      0.119086      0.119242 </code></pre>
 <p>If you really need to re-use a handle, do note that that curl does not cleanup the handle after each request. All of the options and internal fields will linger around for all future request until explicitly reset or overwritten. This can sometimes leads to unexpected behavior.</p>
 <pre class="r"><code>handle_reset(h)</code></pre>
 <p>The <code>handle_reset</code> function will reset all curl options and request headers to the default values. It will <strong>not</strong> erase cookies and it will still keep alive the connections. Therefore it is good practice to call <code>handle_reset</code> after performing a request if you want to reuse the handle for a subsequent request. Still it is always safer to create a new fresh handle when possible, rather than recycling old ones.</p>
@@ -1911,7 +1912,7 @@ new_handle() %&gt;%
     },
     &quot;headers&quot;: {
         &quot;Accept&quot;: &quot;*/*&quot;,
-        &quot;Accept-Encoding&quot;: &quot;deflate, gzip, br&quot;,
+        &quot;Accept-Encoding&quot;: &quot;deflate, gzip&quot;,
         &quot;Cache-Control&quot;: &quot;no-cache&quot;,
         &quot;Content-Length&quot;: &quot;11&quot;,
         &quot;Content-Type&quot;: &quot;text/moo&quot;,
@@ -1919,7 +1920,7 @@ new_handle() %&gt;%
         &quot;User-Agent&quot;: &quot;A cow&quot;
     },
     &quot;json&quot;: null,
-    &quot;origin&quot;: &quot;73.15.7.177, 73.15.7.177&quot;,
+    &quot;origin&quot;: &quot;145.136.136.46, 145.136.136.46&quot;,
     &quot;url&quot;: &quot;https://eu.httpbin.org/post&quot;
 }
  </code></pre>

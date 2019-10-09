@@ -16,6 +16,7 @@ Suggests: iNZightPlots, testthat, covr
 Description: Time Series functionality for iNZight, allowing users to draw, decompose, and forcast with ease.
 LazyData: true
 License: GPL-2 | file LICENSE
+Encoding: UTF-8
 RoxygenNote: 6.1.1
 Author: Tom Elliott [aut, cre],
   Junjie Zeng [aut],
@@ -24,4 +25,4 @@ Author: Tom Elliott [aut, cre],
   Marco Kuper [aut],
   Dongning Zhang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.1; ; 2019-09-25 02:28:37 UTC; unix
+Built: R 3.6.1; ; 2019-10-09 01:14:39 UTC; unix

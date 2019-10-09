@@ -38,6 +38,7 @@ is_survey	is_survey
 is_svydesign	is_svydesign
 is_svyrep	is_svyrep
 joindata	joindata
+load_rda	load_rda
 makeDatatypeChar	makeDatatypeChar
 makeDatatypeChar.character	makeDatatypeChar
 makeDatatypeChar.list	makeDatatypeChar
@@ -51,6 +52,7 @@ renameVars	renameVars
 reorderLevels	reorderLevels
 reshape_data	reshape_data
 sample.data	sample.data
+save_rda	save_rda
 search.name	search.name
 separate	separate
 smart_read	smart_read

@@ -41,5 +41,5 @@ X-CRAN-Original-Maintainer: Alexander Walker
         <Alexander.Walker1989@gmail.com>
 X-CRAN-Comment: Orpahaned and corrected on 2019-05-28 as check issues
         were not addressed despite reminder.
-Built: R 3.6.1; x86_64-w64-mingw32; 2019-09-21 03:04:04 UTC; windows
+Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-03 11:23:25 UTC; windows
 Archs: i386, x64

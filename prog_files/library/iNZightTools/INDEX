@@ -43,6 +43,7 @@ is_svydesign            Check if object is a survey object (created by
 is_svyrep               Check if object is a replicate survey object
                         (created by svrepdesign())
 joindata                Join data with another dataset
+load_rda                Load object(s) from an Rdata file
 makeDatatypeChar        Converts the column datatypes to a single word
                         or string which can be passed to
                         readr::read_csv as an argument.
@@ -57,6 +58,7 @@ reorderLevels           Reorder a categorical
 reshape_data            Reshaping dataset from wide to long or from
                         long to wide
 sample.data             Takes a sample of rows from a data.frame
+save_rda                Save an object with, optionally, a (valid) name
 search.name             Searches a list recursivly for a name and
                         returns the value associated with the name
 separate                Separate columns

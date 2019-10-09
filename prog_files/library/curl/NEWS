@@ -1,3 +1,7 @@
+4.2
+ - Fix for old versions of libcurl (build was broken in 4.1 on RHEL / CentOS).
+ - Add hostname to timeout errors (#190)
+
 4.1
  - Fixed typechecking code for new internal macro names in libcurl 7.66
  - Rewrite typechecking to work better with clang and old libcurl (#192)

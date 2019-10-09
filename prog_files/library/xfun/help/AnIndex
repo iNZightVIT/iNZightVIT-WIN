@@ -1,4 +1,5 @@
 $.xfun_strict_list	strict_list
+as_strict_list	strict_list
 attr	attr
 compare_Rcheck	rev_check
 download_file	download_file

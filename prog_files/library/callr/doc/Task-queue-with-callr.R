@@ -1,10 +1,17 @@
-## ---- include = FALSE----------------------------------------------------
+## ----setup, include = FALSE----------------------------------------------
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
+  collapse = TRUE, comment = "#>"
 )
 
-## ---- echo = FALSE-------------------------------------------------------
+## ---- comment="", results="asis", echo = FALSE---------------------------
+if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") {
+  old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+  options(crayon.enabled = TRUE)
+  options(crayon.colors = 256)
+  invisible(crayon::num_colors(forget = TRUE))
+}
+
+## ----echo = FALSE--------------------------------------------------------
 source("taskq.R")
 
 ## ------------------------------------------------------------------------
@@ -14,8 +21,7 @@ q$push(function() { Sys.sleep(.5); Sys.getpid() })
 q$pop()
 
 ## ------------------------------------------------------------------------
-sec <- as.difftime(1, units = "secs")
-q$pop(sec * 1/2)$result
+q$pop(500)$result
 q$pop()
 
 ## ------------------------------------------------------------------------
@@ -35,7 +41,7 @@ for (i in 1:10) {
 q$list_tasks()
 
 ## ------------------------------------------------------------------------
-q$poll(sec)
+q$poll(1000L)
 q$list_tasks()
 
 ## ------------------------------------------------------------------------
@@ -55,7 +61,7 @@ res$error
 ## ------------------------------------------------------------------------
 res$error$parent$trace
 
-## ------------------------------------------------------------------------
+## ----code = readLines("taskq.R")-----------------------------------------
 task_q <- R6::R6Class(
   "task_q",
   public = list(
@@ -69,6 +75,7 @@ task_q <- R6::R6Class(
     get_num_running = function()
       sum(!private$tasks$idle & private$tasks$state == "running"),
     get_num_done = function() sum(private$tasks$state == "done"),
+    is_idle = function() sum(!private$tasks$idle) == 0,
 
     push = function(fun, args = list(), id = NULL) {
       if (is.null(id)) id <- private$get_next_id()
@@ -82,19 +89,19 @@ task_q <- R6::R6Class(
     },
 
     poll = function(timeout = 0) {
-      limit <- Sys.time() + as.difftime(timeout / 1000, units = "secs")
+      limit <- Sys.time() + timeout
+      as_ms <- function(x) if (x == Inf) -1L else as.integer(x)
       repeat{
         topoll <- which(private$tasks$state == "running")
         conns <- lapply(
           private$tasks$worker[topoll],
           function(x) x$get_poll_connection())
-        pr <- unlist(processx::poll(conns, timeout))
+        pr <- processx::poll(conns, as_ms(timeout))
         private$tasks$state[topoll][pr == "ready"] <- "ready"
         private$schedule()
         ret <- private$tasks$id[private$tasks$state == "done"]
-        if (length(ret) || (timeout != -1 && Sys.time() > limit)) break;
-        if (timeout != -1)
-          timeout <- max(0, as.double(limit - Sys.time(), units = "secs"))
+        if (is.finite(timeout)) timeout <- limit - Sys.time()
+        if (length(ret) || timeout < 0) break;
       }
       ret
     },
