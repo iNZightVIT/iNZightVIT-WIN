@@ -19,7 +19,7 @@ Imports: utils, grDevices, methods, grid, gdata, gWidgets2RGtk2,
         iNZightPlots, iNZightTools, reshape2, plyr, survey, colorspace,
         magrittr
 Suggests: RODBC, iNZightMR, iNZightModules, png, viridis, RColorBrewer,
-        FutureLearnData, testthat, covr, dplyr, forcats
+        FutureLearnData, testthat, covr, dplyr, forcats, rlang, withr
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 LazyData: true
 Encoding: UTF-8
@@ -32,4 +32,4 @@ Author: Tom Elliott [aut, cre],
   Yiwen He [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.1; ; 2019-10-09 01:14:55 UTC; unix
+Built: R 3.6.1; ; 2019-10-18 19:04:42 UTC; unix

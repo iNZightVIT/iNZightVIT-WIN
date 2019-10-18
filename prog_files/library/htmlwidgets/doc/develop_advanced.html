@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2019-10-04" />
+<meta name="date" content="2019-10-07" />
 
 <title>HTML Widgets: Advanced Topics</title>
 
@@ -315,9 +315,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -348,8 +346,6 @@ summary {
 </style>
 
 
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -424,13 +420,22 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="fluid-row" id="header">
 
 
 
 <h1 class="title toc-ignore">HTML Widgets: Advanced Topics</h1>
-<h4 class="date"><em>2019-10-04</em></h4>
+<h4 class="date">2019-10-07</h4>
 
 </div>
 
@@ -555,7 +560,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb7-11" data-line-number="11">        <span class="dt">keep_vec_names =</span> keep_vec_names, <span class="dt">json_verbatim =</span> <span class="ot">TRUE</span>, </a>
 <a class="sourceLine" id="cb7-12" data-line-number="12">        ...)</a>
 <a class="sourceLine" id="cb7-13" data-line-number="13">}</a>
-<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="op">&lt;</span>bytecode<span class="op">:</span><span class="st"> </span><span class="dv">0x7f88f5b8ff18</span><span class="op">&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="op">&lt;</span>bytecode<span class="op">:</span><span class="st"> </span><span class="dv">0x7fe511839ae0</span><span class="op">&gt;</span></a></code></pre></div>
 <p>For example, we convert data frames to JSON by columns instead of rows (the latter is <code>jsonlite::toJSON</code>’s default). If you want to change the default values of any arguments, you can attach an attribute <code>TOJSON_ARGS</code> to the widget data to be passed to <code>createWidget()</code>, e.g.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">fooWidget &lt;-<span class="st"> </span><span class="cf">function</span>(data, name, ...) {</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2">  <span class="co"># ... process the data ...</span></a>

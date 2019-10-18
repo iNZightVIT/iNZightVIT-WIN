@@ -24,7 +24,7 @@ htmlwidgets:::toJSON2(head(iris, 8), dataframe = 'values', pretty = TRUE)
 #          keep_vec_names = keep_vec_names, json_verbatim = TRUE,
 #          ...)
 #  }
-#  <bytecode: 0x7f88f5b8ff18>
+#  <bytecode: 0x7fe511839ae0>
 
 ## ----eval=FALSE----------------------------------------------------------
 #  fooWidget <- function(data, name, ...) {

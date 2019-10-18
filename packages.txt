@@ -66,6 +66,7 @@ utils
 grDevices
 methods
 grid
+withr
 stats
 graphics
 tools
@@ -106,6 +107,7 @@ evaluate
 extrafont
 extrafontdb
 fansi
+fastmap
 foreign
 glue
 gtable
@@ -170,7 +172,6 @@ vctrs
 vipor
 viridisLite
 webshot
-withr
 xfun
 xtable
 yaml
