@@ -1,3 +1,7 @@
+# covr 3.3.2
+
+* Fix test failures in the development version of R (4.0.0) (#400)
+
 # covr 3.3.1
 
 * Fix inadvertent regression in return visibility when functions are covered.

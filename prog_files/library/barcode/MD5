@@ -1,4 +1,4 @@
-35dc1c2ac0201371b5b74fd32a3ca462 *DESCRIPTION
+4d2c8ea33fcf3c300930a7b88b2823b3 *DESCRIPTION
 01c2e93cf24daef8e6985785da35d816 *INDEX
 1542f1242587bcaac9fe5bc71dd2fa96 *Meta/Rd.rds
 170e3cd026ac5e021304cbf2f2ed57a1 *Meta/data.rds
@@ -6,7 +6,7 @@ a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 c316430f7ba3c4ab10c084f8a53c9499 *Meta/hsearch.rds
 c50913d6646bd14ce65ff40854f2b4be *Meta/links.rds
 6af020ec2ace2c5292c5d5216aff54fc *Meta/nsInfo.rds
-5e7d4bd9cd417f94eb119c2bc4b8e25b *Meta/package.rds
+d376bbe85b1676ed6a030a647632f2a6 *Meta/package.rds
 326882219599432010cc4c776a92b282 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/barcode
 715447d07b44a0660fee13a3dad9803d *R/barcode.rdb
@@ -14,8 +14,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/barcode
 887636534c591bb71e515a0314627211 *data/NewHavenResidential.rda
 a0d64758b33138c8d0e20c75e697d80c *help/AnIndex
 ac364f5739a9f891d2d25adb87f7a03d *help/aliases.rds
-a7a9447b3c929ae046c6954930569f6c *help/barcode.rdb
-0b22f9e20e17de48832ca6ca354a5012 *help/barcode.rdx
-917efd39ab3edd9bc32e1cbb46d6ed44 *help/paths.rds
+a1149e35a841e5d8d34b105799097d18 *help/barcode.rdb
+7940267e1bd67b5a61de95abc60943a5 *help/barcode.rdx
+d0fe3f067de4b8dab7066e806479a254 *help/paths.rds
 a779c3e10af33411d0805fa2aa38a8d2 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

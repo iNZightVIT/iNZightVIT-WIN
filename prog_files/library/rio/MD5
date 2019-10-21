@@ -1,12 +1,12 @@
 14c89f2f803b3e165ef08455992f1b13 *CITATION
-a1cc59cee6057588f9a437db3e6f9aa3 *DESCRIPTION
+674c21bd16278586d1501cdb502e7e66 *DESCRIPTION
 a756f2870f7e16e03910bc06497a9b39 *INDEX
 baa91d0c0c95dc664989b3d0c72a52fa *Meta/Rd.rds
 a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 b1ec8fd28affdf883d4f9fb086d809a5 *Meta/hsearch.rds
 fc6bd007db558c18bcfbb6c098809a6c *Meta/links.rds
 aebdb0a80b48f162e2e9deba6b9d3c83 *Meta/nsInfo.rds
-7ac94726b2b264187824f32470cd15e7 *Meta/package.rds
+ce5840712be434632fe9321a3080d149 *Meta/package.rds
 9dd09b19c729a6c654e1d84e5bc774a3 *Meta/vignette.rds
 6ec4bfac4ed9a68e6486c3f790ce1de4 *NAMESPACE
 d2c3a081a490eda7d087646b1085cc66 *NEWS.md
@@ -25,8 +25,8 @@ da76d4babe6ce26b1390804777acc096 *examples/noheader.csv
 0d22cfdc8c0bae785b9df616cbb94927 *help/aliases.rds
 28364a60eb6da8d72c52b45e814b5630 *help/figures/logo.png
 6573f6f672b316a40147eb208e5ab14b *help/figures/logo.svg
-9785ae012f0061f255cecd840f204cec *help/paths.rds
-e09aa36345c447999b21e7776beccada *help/rio.rdb
-98390a68785916923971f433993349aa *help/rio.rdx
+bda618a82f4e68796c705d28becb554a *help/paths.rds
+2711c9c9c8c26bd504de2eb56859058f *help/rio.rdb
+9004d3b0476c3c4b15793692399f8d3c *help/rio.rdx
 a40db6d17e252ab67cd748f628fa25dd *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

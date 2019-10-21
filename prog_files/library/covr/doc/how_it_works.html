@@ -13,7 +13,7 @@
 
 <meta name="author" content="Jim Hester" />
 
-<meta name="date" content="2019-08-23" />
+<meta name="date" content="2019-10-16" />
 
 <title>How does covr work anyway?</title>
 
@@ -23,7 +23,7 @@
 <style type="text/css" data-origin="pandoc">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -36,11 +36,13 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -304,7 +306,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">How does covr work anyway?</h1>
 <h4 class="author">Jim Hester</h4>
-<h4 class="date">2019-08-23</h4>
+<h4 class="date">2019-10-16</h4>
 
 
 
@@ -329,11 +331,11 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <h2>Modifying the call tree</h2>
 <p>The core function in <strong>covr</strong> is <code>trace_calls()</code>. This function was adapted from ideas in <a href="http://adv-r.had.co.nz/Expressions.html#ast-funs"><em>Advanced R - Walking the Abstract Syntax Tree with recursive functions</em></a>. This recursive function modifies each of the leaves (atomic or name objects) of an R expression by applying a given function to them. If the expression is not a leaf the walker function calls itself recursively on elements of the expression instead.</p>
 <p>We can use this same framework to instead insert a trace statement before each call by replacing each call with a call to a counting function followed by the previous call. Braces (<code>{</code>) in R may seem like language syntax, but they are actually a Primitive function and you can call them like any other function.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">identical</span>(<span class="dt">x =</span> { <span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>; <span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span> },</a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="dt">y =</span> <span class="st">`</span><span class="dt">{</span><span class="st">`</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">identical</span>(<span class="dt">x =</span> { <span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>; <span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span> },</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="dt">y =</span> <span class="st">`</span><span class="dt">{</span><span class="st">`</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>))</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Remembering that braces always return the value of the last evaluated expression, we can call a counting function followed by the previous function substituting <code>as.call(recurse(x))</code> in our function above with.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="st">`</span><span class="dt">{</span><span class="st">`</span>(<span class="kw">count</span>(), <span class="kw">as.call</span>(<span class="kw">recurse</span>(x)))</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="st">`</span><span class="dt">{</span><span class="st">`</span>(<span class="kw">count</span>(), <span class="kw">as.call</span>(<span class="kw">recurse</span>(x)))</a></code></pre></div>
 </div>
 <div id="source-references" class="section level2">
 <h2>Source References</h2>
@@ -343,26 +345,26 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="refining-source-references" class="section level2">
 <h2>Refining Source References</h2>
 <p>Each statement comes with a source reference. Unfortunately, the following is counted as one statement:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="cf">if</span> (x)</a>
-<a class="sourceLine" id="cb4-2" title="2"> <span class="kw">y</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="cf">if</span> (x)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"> <span class="kw">y</span>()</a></code></pre></div>
 <p>To work around this, detailed parse data (obtained from a refined version of <code>getParseData</code>) is analyzed to impute source references at sub-statement level for <code>if</code>, <code>for</code>, <code>while</code> and <code>switch</code> constructs.</p>
 </div>
 <div id="replacing-source-in-place" class="section level2">
 <h2>Replacing Source In Place</h2>
 <p>After we have our modified function definition, how do we re-define the function to use the updated definition, and ensure that all other functions which call the old function also use the new definition? You might try redefining the function directly.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">1</span></a>
-<a class="sourceLine" id="cb5-2" title="2"></a>
-<a class="sourceLine" id="cb5-3" title="3">f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">2</span></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="kw">f1</span>() <span class="op">==</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">1</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">f1</span>() <span class="op">==</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>While this does work for the simple case of calling the new function in the same environment, it fails if another function calls a function in a different environment.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">env &lt;-<span class="st"> </span><span class="kw">new.env</span>()</a>
-<a class="sourceLine" id="cb7-2" title="2">f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">1</span></a>
-<a class="sourceLine" id="cb7-3" title="3">env<span class="op">$</span>f2 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="kw">f1</span>() <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb7-4" title="4"></a>
-<a class="sourceLine" id="cb7-5" title="5">env<span class="op">$</span>f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">2</span></a>
-<a class="sourceLine" id="cb7-6" title="6"></a>
-<a class="sourceLine" id="cb7-7" title="7">env<span class="op">$</span><span class="kw">f2</span>() <span class="op">==</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">env &lt;-<span class="st"> </span><span class="kw">new.env</span>()</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">1</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">env<span class="op">$</span>f2 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="kw">f1</span>() <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">env<span class="op">$</span>f1 &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="dv">2</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">env<span class="op">$</span><span class="kw">f2</span>() <span class="op">==</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>As modifying external environments and correctly restoring them can be tricky to get correct, we use the C function <a href="https://github.com/r-lib/covr/blob/9753e0e257b053059b85be90ef6eb614a5af9bba/src/reassign.c#L7-L20"><code>reassign_function</code></a>, which is also used in <code>testthat::with_mock</code>. This function takes a function name, environment, old definition, new definition and copies the formals, body, attributes and environment from the old function to the new function. This allows you to do an in-place replacement of a given function with a new function and ensure that all references to the old function will use the new definition.</p>
 </div>
@@ -405,16 +407,16 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="output-formats" class="section level1">
 <h1>Output Formats</h1>
 <p>The output format returned by <strong>covr</strong> is an R object of class “coverage” containing the information gathered when executing the test suite. It consists of a named list, where the names are colon-delimited information from the source references (the file, line and columns the traced call is from). The value is the number of times that given expression was called and the source ref of the original call.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># an object to analyze</span></a>
-<a class="sourceLine" id="cb9-2" title="2">f1 &lt;-<span class="st"> </span><span class="cf">function</span>(x) { x <span class="op">+</span><span class="st"> </span><span class="dv">1</span> }</a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="co"># get results with no unit tests</span></a>
-<a class="sourceLine" id="cb9-4" title="4">c1 &lt;-<span class="st"> </span><span class="kw">function_coverage</span>(<span class="dt">fun =</span> f1, <span class="dt">code =</span> <span class="ot">NULL</span>)</a>
-<a class="sourceLine" id="cb9-5" title="5">c1</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># an object to analyze</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">f1 &lt;-<span class="st"> </span><span class="cf">function</span>(x) { x <span class="op">+</span><span class="st"> </span><span class="dv">1</span> }</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co"># get results with no unit tests</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">c1 &lt;-<span class="st"> </span><span class="kw">function_coverage</span>(<span class="dt">fun =</span> f1, <span class="dt">code =</span> <span class="ot">NULL</span>)</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">c1</a></code></pre></div>
 <pre><code>## Coverage: 0.00%</code></pre>
 <pre><code>## &lt;text&gt;: 0.00%</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># get results with unit tests</span></a>
-<a class="sourceLine" id="cb12-2" title="2">c2 &lt;-<span class="st"> </span><span class="kw">function_coverage</span>(<span class="dt">fun =</span> f1, <span class="dt">code =</span> <span class="kw">f1</span>(<span class="dt">x =</span> <span class="dv">1</span>) <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb12-3" title="3">c2</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># get results with unit tests</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">c2 &lt;-<span class="st"> </span><span class="kw">function_coverage</span>(<span class="dt">fun =</span> f1, <span class="dt">code =</span> <span class="kw">f1</span>(<span class="dt">x =</span> <span class="dv">1</span>) <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">c2</a></code></pre></div>
 <pre><code>## Coverage: 100.00%</code></pre>
 <pre><code>## &lt;text&gt;: 100.00%</code></pre>
 <p>An <code>as.data.frame</code> method is available to make subsetting by various features easy to do.</p>

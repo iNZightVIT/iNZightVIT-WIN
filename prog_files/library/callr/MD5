@@ -1,4 +1,4 @@
-36eca7261cfe25fed6c792d7ffa0550d *DESCRIPTION
+bab38a8235b361889b9a36e22fa14baa *DESCRIPTION
 8ae6470793092f9f804da6bf81ebf062 *INDEX
 09079911e7389192b5cd3b99be725742 *LICENSE
 ea720aad03fe98597961ca1de0e657be *Meta/Rd.rds
@@ -6,7 +6,7 @@ a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 bc956961069b2032ec08943c971bf6a5 *Meta/hsearch.rds
 ae659dbfb83ef3a26e9793b48ec69e98 *Meta/links.rds
 5ba4d294e371138182e3f3bce4510a06 *Meta/nsInfo.rds
-626b194bd2d90cbf3f9297698f822ee8 *Meta/package.rds
+e253a0f8332a37263c150ab900ccf846 *Meta/package.rds
 fa4806e5294b96a4f0992f2b64abdb8e *Meta/vignette.rds
 5da0701e61053eb9b6bd9c3b0448e59c *NAMESPACE
 dc7e78f2d2f6d5fb65687c493928d079 *NEWS.md
@@ -23,8 +23,8 @@ ac0e2b43b5dd9762c74456fc7a2f53ff *doc/Task-queue-with-callr.html
 f2e7f54372e36b4749be589ac325da37 *doc/index.html
 ed928ff424c5cf154d67dfdd74381e4f *help/AnIndex
 1ef117d297a015c95f127e8da07ac647 *help/aliases.rds
-5305d91d34373dcfa370ae077159ec51 *help/callr.rdb
-1ca3d92efed14f390684f83c9648253b *help/callr.rdx
-de856719e3e1ac924beaa15b4ffd48f3 *help/paths.rds
+43e5e4e0ec5a306564136c4863838f67 *help/callr.rdb
+75d855a266ab6971aa90446397d7d19c *help/callr.rdx
+f748b0222bafd5b4b04c580f985db731 *help/paths.rds
 e452552e4ede72860e96e84fb804dd4f *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
