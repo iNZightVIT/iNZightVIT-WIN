@@ -1,6 +1,8 @@
 iNZightModules-package	iNZightModules
 allBivarPlots	allBivarPlots
 allUniPlots	allUniPlots
+CustomModule	CustomModule-class
+CustomModule-class	CustomModule-class
 iNZightMap2Mod	iNZightMap2Mod-class
 iNZightMap2Mod-class	iNZightMap2Mod-class
 iNZightMapLanding	iNZightMapLanding-class
