@@ -55,6 +55,7 @@ sample.data	sample.data
 save_rda	save_rda
 search.name	search.name
 separate	separate
+sheets	sheets
 smart_read	smart_read
 sortVars	sortVars
 stackVars	stackVars

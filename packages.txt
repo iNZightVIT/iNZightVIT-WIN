@@ -71,6 +71,7 @@ stats
 graphics
 tools
 stats4
+egg
 BH
 DBI
 FNN

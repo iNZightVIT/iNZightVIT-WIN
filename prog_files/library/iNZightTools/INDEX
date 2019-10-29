@@ -62,6 +62,7 @@ save_rda                Save an object with, optionally, a (valid) name
 search.name             Searches a list recursivly for a name and
                         returns the value associated with the name
 separate                Separate columns
+sheets                  List of available sheets from a file
 smart_read              iNZight Smart Read
 sortVars                Sort data by variables
 stackVars               Stack variables

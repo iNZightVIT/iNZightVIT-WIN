@@ -1,5 +1,5 @@
 14f12bb73778cc98e505c2620b77a23d *CITATION
-bc39c4391a211fd592fb5c36d5a4c98d *DESCRIPTION
+b9c7e08df1b6ed1d90e98aafbbc716ae *DESCRIPTION
 0f44fab1d0ca39728e1c5d0fe85e1711 *INDEX
 dcd388f52af8e3cb24839540e1b67823 *LICENSE
 60900bcba3a71f161d1afbdc4e0dafd3 *Meta/Rd.rds
@@ -9,7 +9,7 @@ a4081712be3649fee57cb72b810cc0f9 *Meta/features.rds
 7bd446cf0300ea572961070dfb15e5d4 *Meta/hsearch.rds
 bfdb956e8eee81c34a8189b44d9f4eaa *Meta/links.rds
 9d82968b998ddf5e3d25fcc78b15dfd4 *Meta/nsInfo.rds
-fdac0653f60d534c565a30de52ed7cc0 *Meta/package.rds
+f9e7b1ee2550fa42aeb569b28ff5f72c *Meta/package.rds
 bca2e2e16fe949d9e36be1fe63d95f37 *NAMESPACE
 106da485787fbf5eaa3fd291bb45099e *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/plotly
@@ -110,9 +110,9 @@ c6d2cd383039b59e6f7adee1cebe0fd9 *examples/shiny/stream/app.R
 25e019c61cb3e03f1b8c9fdefc2946b7 *help/aliases.rds
 32ed3f82fdb9eb67eba339aff8bb82fa *help/figures/plotly.png
 5ab9e008e62200d0657b1269aa41cf0e *help/figures/plotly.svg
-4206e40622767688534e5941253b5634 *help/paths.rds
-2ed4058e3517baf73bf9ba0c5d49c1c3 *help/plotly.rdb
-e7dc4dc4fa319f467972aa8a18c88835 *help/plotly.rdx
+eaf29117f82a1072f26f0c1ac4f07ae7 *help/paths.rds
+ca1fcec89f772caae0a4cc2a246fb894 *help/plotly.rdb
+5e44c502431b9faf7ce236fc0cbf7c16 *help/plotly.rdx
 d7f5c46ce69a711cdd5e20f8ca2c6a71 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 ebf70b59f17ab360a1a9a2099ef4c806 *htmlwidgets/lib/colourpicker/LICENSE

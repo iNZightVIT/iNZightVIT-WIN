@@ -1,10 +1,12 @@
 iNZightTS-package	iNZightTS-package
 compareplot	compareplot
+decompose	decompose
 decompositionplot	decompositionplot
 forecastplot	forecastplot
 iNZightMTS	iNZightTS
 iNZightTS	iNZightTS
 multiseries	multiseries
+plot.inzdecomp	plot.inzdecomp
 plot.iNZightMTS	plot.iNZightMTS
 plot.iNZightTS	plot.iNZightTS
 pred	pred
