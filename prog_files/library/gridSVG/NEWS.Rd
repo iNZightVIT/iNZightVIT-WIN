@@ -2,6 +2,16 @@
 \title{NEWS file for the gridSVG package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.7-1}{
+  \itemize{
+    \item Fix for evaluation of arguments passed to \code{pdf()}
+    device within \code{gridsvg()}.
+
+    Patch provided by Philipp Angerer.
+
+    \item Avoid peeking at internal representation of \pkg{grid} units.
+  }  
+}
 \section{Changes in version 1.7-0}{
   \itemize{
     \item Update for addition of \code{pathId} argument in
