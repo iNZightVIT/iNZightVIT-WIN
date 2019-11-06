@@ -39,7 +39,6 @@ jsonlite
 knitr
 lubridate
 magrittr
-mgcv
 multcomp
 objectProperties
 plotly
@@ -69,6 +68,7 @@ grid
 withr
 stats
 graphics
+mgcv
 tools
 stats4
 egg
@@ -76,7 +76,6 @@ BH
 DBI
 FNN
 MASS
-Matrix
 MatrixModels
 R6
 Rcpp
@@ -97,7 +96,6 @@ carData
 cellranger
 cli
 clipr
-codetools
 crayon
 crosstalk
 curl
@@ -121,7 +119,6 @@ httpuv
 httr
 labeling
 later
-lattice
 lazyeval
 lifecycle
 lme4
@@ -136,9 +133,7 @@ minqa
 mitools
 munsell
 mvtnorm
-nlme
 nloptr
-nnet
 numDeriv
 objectSignals
 openssl

@@ -1,7 +1,7 @@
 Package: iNZightPlots
 Type: Package
 Title: iNZightPlots
-Version: 2.10.3.9000
+Version: 2.10.4
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
              person("Yu Han", "Soh", role = "ctb"),
@@ -24,4 +24,4 @@ Author: Tom Elliott [aut, cre],
   Yu Han Soh [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.1; ; 2019-10-31 07:56:47 UTC; unix
+Built: R 3.6.0; ; 2019-11-06 03:22:58 UTC; unix
