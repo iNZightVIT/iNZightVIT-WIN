@@ -1,4 +1,22 @@
-# 4.8.0.9000
+# 4.9.1
+
+## Changes to plotly.js
+
+* This version of the R package upgrades the version of the underlying plotly.js library from v1.46.1 to v1.49.4. The [plotly.js release page](https://github.com/plotly/plotly.js/releases) has the full list of changes.
+
+## IMPROVEMENTS
+
+* `event_data()` gains support for the `plotly_sunburstclick` event (#1648)
+
+## BUG FIXES
+
+* Fixed an issue with correctly capturing the return value of user-expressions to `renderPlotly()` (#1528).
+* Fixed a resizing issue where graphs could be incorrectly resized to their initial size in some cases (#1553). 
+* `ggplotly()` now positions the x-axis in the last column of a `facet_wrap()` properly (#1501).
+* `ggplotly()` now handles `geom_hline()`/`geom_vline()` correctly in conjunction with `coord_flip()` (#1519).
+* `event_data()` now correctly relays the `key` attribute for statistical traces (#1610).
+
+# 4.9.0
 
 ## Changes to plotly.js
 

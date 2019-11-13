@@ -18,6 +18,7 @@ colorspace
 covr
 dichromat
 dplyr
+egg
 forcats
 gWidgets
 gWidgets2
@@ -60,18 +61,17 @@ tidyr
 validate
 viridis
 waffle
+withr
 zoo
 utils
 grDevices
 methods
 grid
-withr
 stats
 graphics
 mgcv
 tools
 stats4
-egg
 BH
 DBI
 FNN
