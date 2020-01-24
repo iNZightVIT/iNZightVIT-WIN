@@ -14,8 +14,14 @@ exportHTML.function	exportHTML
 exportHTML.ggplot	exportHTML
 exportHTML.inzplotoutput	exportHTML
 exportSVG	exportSVG
+exportSVG.function	exportSVG
+exportSVG.inzplotoutput	exportSVG
 getPlotSummary	getPlotSummary
 iNZightPlot	iNZightPlot
+iNZInference	iNZPlot
 inzpalette	inzpalette
 inzpar	inzpar
+iNZPlot	iNZPlot
+iNZSummary	iNZPlot
+print.allSummaries	exploreAllSummaries
 print.inzHTML	print.inzHTML

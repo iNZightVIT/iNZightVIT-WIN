@@ -1,24 +1,32 @@
 Package: iNZightMR
 Type: Package
 Title: Tools for Exploring Multiple Response Data
-Version: 2.2-3
-Date: 2017-10-27
-Authors@R: c(person("Junjie", "Zeng", role = c("aut"),
-    email = "jzen188@aucklanduni.ac.nz"),
+Version: 2.2.4
+Authors@R: c(
+    person("Junjie", "Zeng", role = c("aut"),
+        email = "jzen188@aucklanduni.ac.nz",
+        comment = "Original author"),
     person("Simon", "Potter", role = c("aut")),
     person("Tom", "Elliott", role = c("aut", "cre"),
-           email = "tom.elliott@auckland.ac.nz")
-    )
+        email = "tom.elliott@auckland.ac.nz"))
+BugReports: https://github.com/iNZightVIT/iNZightMR/issues
+Contact: inzight_support@stat.auckland.ac.nz
+URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
 Depends: R (>= 2.13)
 Imports: grid, grDevices, graphics, stats, utils
 Suggests: iNZightPlots
-Additional_repositories: https://r.docker.stat.auckland.ac.nz
 LazyData: true
-Description: Interaction and analysis of Multiple Response Data.
+Description: Interaction and analysis of Multiple Response Data,
+    along with other tools for analysing these types of data including
+    missing value analysis and calculation of standard errors for
+    a range of covariance matrix results (proportions, multinomial,
+    independent samples, and multiple response).
 License: GPL-3 | file LICENSE
-RoxygenNote: 6.0.1
-Author: Junjie Zeng [aut],
+Encoding: UTF-8
+Language: en-GB
+RoxygenNote: 7.0.2
+Author: Junjie Zeng [aut] (Original author),
   Simon Potter [aut],
   Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-11-13 21:46:24 UTC; unix
+Built: R 3.6.1; ; 2020-01-24 04:38:38 UTC; unix

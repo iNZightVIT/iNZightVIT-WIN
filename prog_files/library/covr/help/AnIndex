@@ -14,6 +14,7 @@ file_coverage	file_coverage
 file_report	file_report
 function_coverage	function_coverage
 gitlab	gitlab
+in_covr	in_covr
 key	key
 new_counter	new_counter
 package_coverage	package_coverage

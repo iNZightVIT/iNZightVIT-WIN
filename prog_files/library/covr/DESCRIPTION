@@ -1,7 +1,7 @@
 Encoding: UTF-8
 Package: covr
 Title: Test Coverage for Packages
-Version: 3.3.2
+Version: 3.4.0
 Authors@R: c(
     person("Jim", "Hester", email = "james.f.hester@gmail.com", role = c("aut", "cre")),
     person("Willem", "Ligtenberg", role = "ctb"),
@@ -49,9 +49,9 @@ Suggests: R6, knitr, rmarkdown, htmltools, DT (>= 0.2), testthat,
 License: GPL-3
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.0
 NeedsCompilation: yes
-Packaged: 2019-10-16 20:31:53 UTC; jhester
+Packaged: 2019-11-26 19:31:48 UTC; jhester
 Author: Jim Hester [aut, cre],
   Willem Ligtenberg [ctb],
   Kirill Müller [ctb],
@@ -81,6 +81,6 @@ Author: Jim Hester [aut, cre],
   Twitter, Inc [cph] (Bootstrap library)
 Maintainer: Jim Hester <james.f.hester@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-10-16 21:40:02 UTC
-Built: R 3.6.1; x86_64-w64-mingw32; 2019-11-07 17:29:54 UTC; windows
+Date/Publication: 2019-11-26 20:00:02 UTC
+Built: R 3.6.2; x86_64-w64-mingw32; 2020-01-19 08:04:25 UTC; windows
 Archs: i386, x64

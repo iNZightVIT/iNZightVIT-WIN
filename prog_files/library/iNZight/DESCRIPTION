@@ -23,7 +23,7 @@ Suggests: RODBC, iNZightMR, iNZightModules, png, viridis, RColorBrewer,
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 LazyData: true
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Author: Tom Elliott [aut, cre],
   Dineika Chandrananda [ctb],
   Simon Potter [ctb],
@@ -32,4 +32,4 @@ Author: Tom Elliott [aut, cre],
   Yiwen He [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-11-13 21:46:49 UTC; unix
+Built: R 3.6.1; ; 2020-01-24 04:38:52 UTC; unix

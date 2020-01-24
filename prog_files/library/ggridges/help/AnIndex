@@ -1,4 +1,4 @@
-ggridges-package	ggridges
+Aus_athletes	Aus_athletes
 Catalan_elections	Catalan_elections
 cyclical_scale	scale_cyclical
 GeomDensityLine	geom_density_line
@@ -28,7 +28,6 @@ ScaleCyclical	scale_cyclical
 scale_alpha_cyclical	scale_cyclical
 scale_color_cyclical	scale_cyclical
 scale_colour_cyclical	scale_cyclical
-scale_discrete_manual	scale_discrete_manual
 scale_fill_cyclical	scale_cyclical
 scale_linetype_cyclical	scale_cyclical
 scale_point_color_continuous	scale_point

@@ -9,6 +9,7 @@ makeRaw.default	makeRaw
 makeRaw.digest	makeRaw
 makeRaw.raw	makeRaw
 sha1	sha1
+sha1.(	sha1
 sha1.anova	sha1
 sha1.array	sha1
 sha1.call	sha1
@@ -30,3 +31,5 @@ sha1.pairlist	sha1
 sha1.POSIXct	sha1
 sha1.POSIXlt	sha1
 sha1.raw	sha1
+sha1_attr_digest	sha1
+sha1_digest	sha1

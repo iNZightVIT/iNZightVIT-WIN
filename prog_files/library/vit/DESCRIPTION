@@ -1,6 +1,6 @@
 Package: vit
-License: GPL-3 | file LICENSE
-Version: 1.2.7
+License: GPL-2
+Version: 1.2.7.9000
 Date: 2017-06-22
 Title: Visual Inference Tools
 LazyData: true
@@ -67,7 +67,7 @@ Collate: 'canvas-refclass.R' 'canvas-viewports.R' 'canvas-plotdata.R'
         'methods-sampvar-proportion.R'
         'methods-sampvar-proportion-diff.R' 'methods-sampvar-slope.R'
         'stackPoints.R'
-RoxygenNote: 6.0.1
+RoxygenNote: 5.0.1
 Author: Tom Elliott [aut, cre],
   Garrett Grolemund [aut],
   Simon Potter [aut],
@@ -75,4 +75,4 @@ Author: Tom Elliott [aut, cre],
   Vivian Li [ctb],
   Danny Chang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-11-13 21:47:03 UTC; unix
+Built: R 3.6.1; ; 2020-01-24 04:39:03 UTC; unix

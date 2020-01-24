@@ -4,10 +4,13 @@ Eval
 finalizer
 igraph
 interruptible
+keyring
 macOS
+packrat
 pkgdown
 pollable
 processx
+renv
 REPL
 subcommand
 subprocess

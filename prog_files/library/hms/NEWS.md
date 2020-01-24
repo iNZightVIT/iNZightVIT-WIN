@@ -1,11 +1,18 @@
+# hms 0.5.3
+
+- Use `vec_default_ptype2()`, remove `vec_ptype2.hms.unspecified()` (#80, @romainfrancois).
+- `vec_ptype2.hms.default()` forwards to `vec_default_ptype2()` for compatibility with vctrs 0.2.1.
+- Remove `as.data.frame.hms()`, handeld by vctrs.
+
+
+# hms 0.5.2.9000
+
+- Internal changes only.
+
+
 # hms 0.5.2
 
 - Work around parsing error that occurs on DST changeover dates (https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16764).
-
-
-# hms 0.5.1.9000
-
-Same as previous version.
 
 
 # hms 0.5.1

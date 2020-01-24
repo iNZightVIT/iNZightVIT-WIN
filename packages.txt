@@ -40,6 +40,7 @@ jsonlite
 knitr
 lubridate
 magrittr
+mgcv
 multcomp
 objectProperties
 plotly
@@ -69,13 +70,14 @@ methods
 grid
 stats
 graphics
-mgcv
 tools
+RCurl
 stats4
 BH
 DBI
 FNN
 MASS
+Matrix
 MatrixModels
 R6
 Rcpp
@@ -91,11 +93,13 @@ backports
 barcode
 base64enc
 beeswarm
+bitops
 callr
 carData
 cellranger
 cli
 clipr
+codetools
 crayon
 crosstalk
 curl
@@ -107,6 +111,7 @@ evaluate
 extrafont
 extrafontdb
 fansi
+farver
 fastmap
 foreign
 glue
@@ -120,6 +125,7 @@ httpuv
 httr
 labeling
 later
+lattice
 lazyeval
 lifecycle
 lme4
@@ -134,7 +140,9 @@ minqa
 mitools
 munsell
 mvtnorm
+nlme
 nloptr
+nnet
 numDeriv
 objectSignals
 openssl

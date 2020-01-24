@@ -32,6 +32,7 @@ description             Rule description
 errors                  Get messages from a confrontation object
 event                   Get or set event information metadata from a
                         'confrontation' object.
+exists_any              Test for (unique) existence
 export_yaml             Export to yaml file
 is_complete             Test for completeness of records
 is_unique               Test for uniquenes of records

@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.4.1</h2>
+</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.4.2</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -123,8 +123,16 @@
 <td>Create a new environment</td></tr>
 <tr><td style="width: 25%;"><a href="vector-construction.html">chr</a></td>
 <td>Create vectors</td></tr>
+<tr><td style="width: 25%;"><a href="cnd_message.html">cnd_body</a></td>
+<td>Build an error message from parts</td></tr>
 <tr><td style="width: 25%;"><a href="entrace.html">cnd_entrace</a></td>
 <td>Add backtrace from error handler</td></tr>
+<tr><td style="width: 25%;"><a href="cnd_message.html">cnd_footer</a></td>
+<td>Build an error message from parts</td></tr>
+<tr><td style="width: 25%;"><a href="cnd_message.html">cnd_header</a></td>
+<td>Build an error message from parts</td></tr>
+<tr><td style="width: 25%;"><a href="cnd_message.html">cnd_message</a></td>
+<td>Build an error message from parts</td></tr>
 <tr><td style="width: 25%;"><a href="cnd_signal.html">cnd_signal</a></td>
 <td>Signal a condition object</td></tr>
 <tr><td style="width: 25%;"><a href="vector-construction.html">cpl</a></td>
@@ -140,8 +148,10 @@
 <td>Create vectors</td></tr>
 <tr><td style="width: 25%;"><a href="done.html">done</a></td>
 <td>Box a final value for early termination</td></tr>
-<tr><td style="width: 25%;"><a href="tidy-dots.html">dots_list</a></td>
-<td>Collect dots as lists</td></tr>
+<tr><td style="width: 25%;"><a href="list2.html">dots_list</a></td>
+<td>Collect dots in a list</td></tr>
+<tr><td style="width: 25%;"><a href="dyn-dots.html">dyn-dots</a></td>
+<td>Dynamic dots</td></tr>
 </table>
 
 <h2><a name="E">-- E --</a></h2>
@@ -149,18 +159,18 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="empty_env.html">empty_env</a></td>
 <td>Get the empty environment</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">enexpr</a></td>
-<td>Quotation</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">enexprs</a></td>
-<td>Quotation</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">enquo</a></td>
-<td>Quotation</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">enquos</a></td>
-<td>Quotation</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">ensym</a></td>
-<td>Quotation</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">ensyms</a></td>
-<td>Quotation</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">enexpr</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">enexprs</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">enquo</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">enquos</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">ensym</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">ensyms</a></td>
+<td>Defuse R expressions</td></tr>
 <tr><td style="width: 25%;"><a href="entrace.html">entrace</a></td>
 <td>Add backtrace from error handler</td></tr>
 <tr><td style="width: 25%;"><a href="env.html">env</a></td>
@@ -209,10 +219,10 @@
 <td>Evaluate an expression with quosures and pronoun support</td></tr>
 <tr><td style="width: 25%;"><a href="exec.html">exec</a></td>
 <td>Execute a function</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">expr</a></td>
-<td>Quotation</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">exprs</a></td>
-<td>Quotation</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">expr</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">exprs</a></td>
+<td>Defuse R expressions</td></tr>
 <tr><td style="width: 25%;"><a href="exprs_auto_name.html">exprs_auto_name</a></td>
 <td>Ensure that all elements of a list of expressions are named</td></tr>
 <tr><td style="width: 25%;"><a href="expr_print.html">expr_deparse</a></td>
@@ -250,6 +260,8 @@
 <td>Extract arguments from a function</td></tr>
 <tr><td style="width: 25%;"><a href="fn_fmls.html">fn_fmls_syms</a></td>
 <td>Extract arguments from a function</td></tr>
+<tr><td style="width: 25%;"><a href="format_error_bullets.html">format_error_bullets</a></td>
+<td>Format bullets for error messages</td></tr>
 <tr><td style="width: 25%;"><a href="f_rhs.html">f_env</a></td>
 <td>Get or set formula components</td></tr>
 <tr><td style="width: 25%;"><a href="f_rhs.html">f_env&lt;-</a></td>
@@ -444,10 +456,16 @@
 <td>Last 'abort()' error</td></tr>
 <tr><td style="width: 25%;"><a href="vector-construction.html">lgl</a></td>
 <td>Create vectors</td></tr>
-<tr><td style="width: 25%;"><a href="tidy-dots.html">list2</a></td>
-<td>Collect dots as lists</td></tr>
-<tr><td style="width: 25%;"><a href="vector-construction.html">ll</a></td>
-<td>Create vectors</td></tr>
+<tr><td style="width: 25%;"><a href="list2.html">list2</a></td>
+<td>Collect dots in a list</td></tr>
+<tr><td style="width: 25%;"><a href="list2.html">ll</a></td>
+<td>Collect dots in a list</td></tr>
+<tr><td style="width: 25%;"><a href="local_bindings.html">local_bindings</a></td>
+<td>Temporarily change bindings of an environment</td></tr>
+<tr><td style="width: 25%;"><a href="is_interactive.html">local_interactive</a></td>
+<td>Is R running interactively?</td></tr>
+<tr><td style="width: 25%;"><a href="local_options.html">local_options</a></td>
+<td>Change global options</td></tr>
 </table>
 
 <h2><a name="M">-- M --</a></h2>
@@ -480,6 +498,10 @@
 <td>Create a list of quosures</td></tr>
 <tr><td style="width: 25%;"><a href="new_weakref.html">new_weakref</a></td>
 <td>Create a weak reference</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">nse-defuse</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">nse-force</a></td>
+<td>Force parts of an expression</td></tr>
 </table>
 
 <h2><a name="O">-- O --</a></h2>
@@ -506,31 +528,31 @@
 <td>Parse R code</td></tr>
 <tr><td style="width: 25%;"><a href="parse_expr.html">parse_quos</a></td>
 <td>Parse R code</td></tr>
-<tr><td style="width: 25%;"><a href="scoped_options.html">peek_option</a></td>
+<tr><td style="width: 25%;"><a href="local_options.html">peek_option</a></td>
 <td>Change global options</td></tr>
-<tr><td style="width: 25%;"><a href="scoped_options.html">peek_options</a></td>
+<tr><td style="width: 25%;"><a href="local_options.html">peek_options</a></td>
 <td>Change global options</td></tr>
-<tr><td style="width: 25%;"><a href="scoped_options.html">push_options</a></td>
+<tr><td style="width: 25%;"><a href="local_options.html">push_options</a></td>
 <td>Change global options</td></tr>
 </table>
 
 <h2><a name="Q">-- Q --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="quasiquotation.html">qq_show</a></td>
-<td>Quasiquotation of an expression</td></tr>
-<tr><td style="width: 25%;"><a href="quasiquotation.html">quasiquotation</a></td>
-<td>Quasiquotation of an expression</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">quo</a></td>
-<td>Quotation</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">quos</a></td>
-<td>Quotation</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">qq_show</a></td>
+<td>Force parts of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">quasiquotation</a></td>
+<td>Force parts of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">quo</a></td>
+<td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">quos</a></td>
+<td>Defuse R expressions</td></tr>
 <tr><td style="width: 25%;"><a href="quosure.html">quosure</a></td>
 <td>Quosure getters, setters and testers</td></tr>
 <tr><td style="width: 25%;"><a href="exprs_auto_name.html">quos_auto_name</a></td>
 <td>Ensure that all elements of a list of expressions are named</td></tr>
-<tr><td style="width: 25%;"><a href="quotation.html">quotation</a></td>
-<td>Quotation</td></tr>
+<tr><td style="width: 25%;"><a href="nse-defuse.html">quotation</a></td>
+<td>Defuse R expressions</td></tr>
 <tr><td style="width: 25%;"><a href="quosure.html">quo_get_env</a></td>
 <td>Quosure getters, setters and testers</td></tr>
 <tr><td style="width: 25%;"><a href="quosure.html">quo_get_expr</a></td>
@@ -575,12 +597,12 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="scalar-type-predicates.html">scalar-type-predicates</a></td>
 <td>Scalar type predicates</td></tr>
-<tr><td style="width: 25%;"><a href="scoped_bindings.html">scoped_bindings</a></td>
-<td>Temporarily change bindings of an environment</td></tr>
-<tr><td style="width: 25%;"><a href="is_interactive.html">scoped_interactive</a></td>
-<td>Is R running interactively?</td></tr>
-<tr><td style="width: 25%;"><a href="scoped_options.html">scoped_options</a></td>
-<td>Change global options</td></tr>
+<tr><td style="width: 25%;"><a href="scoped_interactive.html">scoped_bindings</a></td>
+<td>Questioning 'scoped_' functions</td></tr>
+<tr><td style="width: 25%;"><a href="scoped_interactive.html">scoped_interactive</a></td>
+<td>Questioning 'scoped_' functions</td></tr>
+<tr><td style="width: 25%;"><a href="scoped_interactive.html">scoped_options</a></td>
+<td>Questioning 'scoped_' functions</td></tr>
 <tr><td style="width: 25%;"><a href="seq2.html">seq2</a></td>
 <td>Increasing sequence of integers in an interval</td></tr>
 <tr><td style="width: 25%;"><a href="seq2.html">seq2_along</a></td>
@@ -602,8 +624,8 @@
 <h2><a name="T">-- T --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="tidy-dots.html">tidy-dots</a></td>
-<td>Collect dots as lists</td></tr>
+<tr><td style="width: 25%;"><a href="dyn-dots.html">tidy-dots</a></td>
+<td>Dynamic dots</td></tr>
 <tr><td style="width: 25%;"><a href="tidyeval-data.html">tidyeval-data</a></td>
 <td>Data pronoun for tidy evaluation</td></tr>
 <tr><td style="width: 25%;"><a href="trace_back.html">trace_back</a></td>
@@ -619,10 +641,10 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="box.html">unbox</a></td>
 <td>Box a value</td></tr>
-<tr><td style="width: 25%;"><a href="quasiquotation.html">UQ</a></td>
-<td>Quasiquotation of an expression</td></tr>
-<tr><td style="width: 25%;"><a href="quasiquotation.html">UQS</a></td>
-<td>Quasiquotation of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">UQ</a></td>
+<td>Force parts of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">UQS</a></td>
+<td>Force parts of an expression</td></tr>
 </table>
 
 <h2><a name="V">-- V --</a></h2>
@@ -639,13 +661,13 @@
 <td>Signal an error, warning, or message</td></tr>
 <tr><td style="width: 25%;"><a href="with_abort.html">with_abort</a></td>
 <td>Promote all errors to rlang errors</td></tr>
-<tr><td style="width: 25%;"><a href="scoped_bindings.html">with_bindings</a></td>
+<tr><td style="width: 25%;"><a href="local_bindings.html">with_bindings</a></td>
 <td>Temporarily change bindings of an environment</td></tr>
 <tr><td style="width: 25%;"><a href="with_handlers.html">with_handlers</a></td>
 <td>Establish handlers on the stack</td></tr>
 <tr><td style="width: 25%;"><a href="is_interactive.html">with_interactive</a></td>
 <td>Is R running interactively?</td></tr>
-<tr><td style="width: 25%;"><a href="scoped_options.html">with_options</a></td>
+<tr><td style="width: 25%;"><a href="local_options.html">with_options</a></td>
 <td>Change global options</td></tr>
 <tr><td style="width: 25%;"><a href="wref_key.html">wref_key</a></td>
 <td>Get key/value from a weak reference object</td></tr>
@@ -663,10 +685,10 @@
 <h2><a name="misc">-- misc --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="quasiquotation.html">!!</a></td>
-<td>Quasiquotation of an expression</td></tr>
-<tr><td style="width: 25%;"><a href="quasiquotation.html">!!!</a></td>
-<td>Quasiquotation of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">!!</a></td>
+<td>Force parts of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">!!!</a></td>
+<td>Force parts of an expression</td></tr>
 <tr><td style="width: 25%;"><a href="op-get-attr.html">%@%</a></td>
 <td>Infix attribute accessor and setter</td></tr>
 <tr><td style="width: 25%;"><a href="op-get-attr.html">%@%&lt;-</a></td>
@@ -677,11 +699,11 @@
 <td>Default value for 'NULL'</td></tr>
 <tr><td style="width: 25%;"><a href="tidyeval-data.html">.data</a></td>
 <td>Data pronoun for tidy evaluation</td></tr>
-<tr><td style="width: 25%;"><a href="quasiquotation.html">:=</a></td>
-<td>Quasiquotation of an expression</td></tr>
-<tr><td style="width: 25%;"><a href="quasiquotation.html">{{</a></td>
-<td>Quasiquotation of an expression</td></tr>
-<tr><td style="width: 25%;"><a href="quasiquotation.html">{{}}</a></td>
-<td>Quasiquotation of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">:=</a></td>
+<td>Force parts of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">{{</a></td>
+<td>Force parts of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="nse-force.html">{{}}</a></td>
+<td>Force parts of an expression</td></tr>
 </table>
 </body></html>

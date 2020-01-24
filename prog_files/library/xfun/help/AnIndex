@@ -47,6 +47,7 @@ rstudio_type	rstudio_type
 same_path	same_path
 sans_ext	file_ext
 session_info	session_info
+split_lines	split_lines
 strict_list	strict_list
 stringsAsStrings	stringsAsStrings
 strings_please	stringsAsStrings

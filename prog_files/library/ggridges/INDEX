@@ -1,3 +1,4 @@
+Aus_athletes            Australian athletes
 Catalan_elections       Results from Catalan regional elections
                         (1980-2015)
 geom_density_line       Smoothed density estimates drawn with a
@@ -22,7 +23,6 @@ reduce                  Reduce a list to a single value by iteratively
                         applying a binary function
 scale_colour_cyclical   Create a discrete scale that cycles between
                         values
-scale_discrete_manual   Generic discrete manual scale
 scale_point_shape       Scales for point aesthetics
 scale_vline_linetype    Scales for vline aesthetics
 stat_binline            Stat for histogram ridgeline plots

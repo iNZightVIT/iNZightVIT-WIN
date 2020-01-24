@@ -1,4 +1,23 @@
 
+# callr 3.4.0
+
+* All callr functions and background processes properly clean up
+  temporary files now (#104).
+
+* callr now uses a more principled setup for the library path, and
+  restores the related environment variables in the child process.
+  This is a **breaking change** if you relied on having the library set
+  in a `system()` subprocess of the callr subprocess (#114).
+
+* Better printing of `rlang_error`s that happened in the subprocess.
+
+* The stacking of error objects is slightly different now, as we keep the
+  unmodified error from the subprocess in `$parent$error`.
+
+* callr now loads `.Rprofile` files from the current working directory
+  by default. This works better with packrat, renv, and other software
+  that relies on a local profile for initialization (#131).
+
 # callr 3.3.2
 
 No user visible changes in this version.

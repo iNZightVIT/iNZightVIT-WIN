@@ -1,27 +1,33 @@
 Package: iNZightTools
 Type: Package
 Title: Tools for iNZight
-Version: 1.8
+Version: 1.8.1.9000
 Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
         readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
         stringr, tools, chron, lubridate, zoo, validate
-Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData, covr
-Additional_repositories: https://r.docker.stat.auckland.ac.nz
+Suggests: testthat, covr, RCurl
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
-                    email = "inzight_support@stat.auckland.ac.nz"),
+                    email = "tom.elliott@auckland.ac.nz"),
              person("Christoph", "Knopf", role = "aut"),
              person("Akshay", "Gupta", role = "ctb"),
              person("Owen", "Jin", role = "ctb"),
              person("Lushi", "Cai", role = "ctb"))
-Description: Compatibility functions used for multiple packages and
-    distributions of iNZight, including Lite.
+BugReports: https://github.com/iNZightVIT/iNZightTools/issues
+Contact: inzight_support@stat.auckland.ac.nz
+URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
+Description: Wrapper functions providing a simple, limited interface to
+    more complex functions and code snippets. In many cases, the result
+    includes a code attribute containing the 'tidyverse' R code used
+    to obtain the result. iNZightTools also contains a set of helper
+    functions used by other 'iNZight' packages (including itself).
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
+Language: en-GB
 RoxygenNote: 6.1.1
 Author: Tom Elliott [aut, cre],
   Christoph Knopf [aut],
   Akshay Gupta [ctb],
   Owen Jin [ctb],
   Lushi Cai [ctb]
-Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.6.0; ; 2019-11-13 21:46:36 UTC; unix
+Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
+Built: R 3.6.1; ; 2020-01-24 04:38:45 UTC; unix

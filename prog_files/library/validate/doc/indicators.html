@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -13,7 +12,7 @@
 
 <meta name="author" content="Mark van der Loo and Edwin de Jonge" />
 
-<meta name="date" content="2019-08-26" />
+<meta name="date" content="2019-12-16" />
 
 <title>Data quality indicators with the validate package</title>
 
@@ -96,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Data quality indicators with the validate package</h1>
 <h4 class="author">Mark van der Loo and Edwin de Jonge</h4>
-<h4 class="date">2019-08-26</h4>
+<h4 class="date">2019-12-16</h4>
 
 
 <div id="TOC">
@@ -115,7 +114,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">i &lt;-<span class="st"> </span><span class="kw">indicator</span>(
     <span class="dt">mh  =</span> <span class="kw">mean</span>(height)
   , <span class="dt">mw  =</span> <span class="kw">mean</span>(weight)
-  , <span class="dt">BMI =</span> (weight/<span class="fl">2.2046</span>)/(height*<span class="fl">0.0254</span>)^<span class="dv">2</span> )
+  , <span class="dt">BMI =</span> (weight<span class="op">/</span><span class="fl">2.2046</span>)<span class="op">/</span>(height<span class="op">*</span><span class="fl">0.0254</span>)<span class="op">^</span><span class="dv">2</span> )
 ind &lt;-<span class="st"> </span><span class="kw">confront</span>(women, i)</code></pre></div>
 <p>In the first statement we define an <code>indicator</code> object storing indicator expressions. Next, we confront a dataset with these indicators. The result is an object of class <code>indication</code>. It prints as follows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ind</code></pre></div>
@@ -157,7 +156,7 @@ cf</code></pre></div>
 <h3>Getting the values</h3>
 <p>Values can be obtained with the <code>values</code> function, or by converting to a <code>data.frame</code>.</p>
 <p>We add a unique identifier (this is optional) to make it easier to connect results with the data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">women$id &lt;-<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">15</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">women<span class="op">$</span>id &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]</code></pre></div>
 <p>Compute indicators and convert to <code>data.frame</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ind &lt;-<span class="st"> </span><span class="kw">confront</span>(women, i,<span class="dt">key=</span><span class="st">&quot;id&quot;</span>)
 (out &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(ind))</code></pre></div>
@@ -202,8 +201,8 @@ measures &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(i)
 ## 1   I1 65.000000 mean(height) average height basic statistic       
 ## 2   I2  4.472136   sd(height) std.dev height fancy statistic       
 ##               created         rule
-## 1 2019-08-26 10:38:30 mean(height)
-## 2 2019-08-26 10:38:30   sd(height)</code></pre>
+## 1 2019-12-16 15:51:22 mean(height)
+## 2 2019-12-16 15:51:22   sd(height)</code></pre>
 </div>
 
 

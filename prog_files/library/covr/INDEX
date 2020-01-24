@@ -15,6 +15,7 @@ function_coverage       Calculate test coverage for a specific
                         function.
 gitlab                  Run covr on package and create report for
                         GitLab
+in_covr                 Determine if code is being run in covr
 package_coverage        Calculate test coverage for a package
 percent_coverage        Provide percent coverage of package
 print.coverage          Print a coverage object

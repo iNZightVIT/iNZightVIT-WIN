@@ -19,8 +19,10 @@ call_name               Extract function name or namespaced of a call
 call_standardise        Standardise a call
 caller_env              Get the current or caller environment
 catch_cnd               Catch a condition
+cnd_message             Build an error message from parts
 cnd_signal              Signal a condition object
 done                    Box a final value for early termination
+dyn-dots                Dynamic dots
 empty_env               Get the empty environment
 entrace                 Add backtrace from error handler
 env                     Create a new environment
@@ -52,6 +54,7 @@ f_text                  Turn RHS of formula into a string or label
 fn_body                 Get or set function body
 fn_env                  Return the closure environment of a function
 fn_fmls                 Extract arguments from a function
+format_error_bullets    Format bullets for error messages
 get_env                 Get or set the environment of an object
 has_name                Does an object have an element with this name?
 inherits_any            Does an object inherit from a set of classes?
@@ -70,35 +73,36 @@ is_symbol               Is object a symbol?
 is_true                 Is object identical to TRUE or FALSE?
 is_weakref              Is object a weak reference?
 last_error              Last 'abort()' error
+list2                   Collect dots in a list
+local_bindings          Temporarily change bindings of an environment
+local_options           Change global options
 missing_arg             Generate or handle a missing argument
 names2                  Get names of a vector
 new_formula             Create a formula
 new_function            Create a function
 new_quosures            Create a list of quosures
 new_weakref             Create a weak reference
+nse-defuse              Defuse R expressions
+nse-force               Force parts of an expression
 op-get-attr             Infix attribute accessor and setter
 op-na-default           Replace missing values
 op-null-default         Default value for 'NULL'
 pairlist2               Create pairlists with splicing support
 parse_expr              Parse R code
-quasiquotation          Quasiquotation of an expression
 quo_label               Format quosures for printing or labelling
 quo_squash              Squash a quosure
 quosure                 Quosure getters, setters and testers
-quotation               Quotation
 rep_along               Create vectors matching the length of a given
                         vector
 rlang_backtrace_on_error
                         Display backtrace on error
 scalar-type-predicates
                         Scalar type predicates
-scoped_bindings         Temporarily change bindings of an environment
-scoped_options          Change global options
+scoped_interactive      Questioning 'scoped_' functions
 seq2                    Increasing sequence of integers in an interval
 set_expr                Set and get an expression
 set_names               Set names of a vector
 sym                     Create a symbol or list of symbols
-tidy-dots               Collect dots as lists
 tidyeval-data           Data pronoun for tidy evaluation
 trace_back              Capture a backtrace
 type-predicates         Type predicates

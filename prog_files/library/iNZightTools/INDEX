@@ -4,34 +4,22 @@ appendrows              Append row to the dataset
 code                    Get Data's Code
 collapseLevels          Collapse data by values of a categorical
                         variable
-combine.levels          Combine the levels of factor variables.
 combineCatVars          Combine categorical variables into one
 convertToCat            Convert numeric variables to categorical
-convertToMetadata       Takes an object (list or a dataframe) and
-                        returns its metadata.
 convert_to_datetime     Convert to datetime
-countMissing            helper function for counting the missing values
-                        - used for aggregateData() function
+countMissing            Count missing values
 createNewVar            Create new variables
+create_varname          Create variable name
 deleteVars              Delete variables
-extractFromFrame        Extracts more information from the dataframe
-                        (obj).
 extract_part            Extract part of a datetimes variable
 filterLevels            Filter data by levels of a categorical
                         variables
 filterNumeric           Filter data by levels of a numeric variables
 filterRandom            Random sampling without replacement
 filterRows              Filter data by row numbers
-fitDesign               Fit Survey Design
-fitModel                Fit a Model
-get.form.class.interval
-                        Form class intervals from a column specified by
-                        column name or column index from the a
-                        data.frame.
-iNZexport               iNZight Metadata Writer
+fitDesign               Fit a survey design
+fitModel                Fit models
 iNZightTools            Tools for data processing with iNZight
-isMetadataAvailable     Reads a file and checks if metadata is
-                        available.
 is_cat                  Is factor check
 is_dt                   Is datetime check
 is_num                  Is numeric check
@@ -44,23 +32,17 @@ is_svyrep               Check if object is a replicate survey object
                         (created by svrepdesign())
 joindata                Join data with another dataset
 load_rda                Load object(s) from an Rdata file
-makeDatatypeChar        Converts the column datatypes to a single word
-                        or string which can be passed to
-                        readr::read_csv as an argument.
 missingToCat            Convert missing values to categorical variables
 newdevice               Open a New Graphics Device
 rankVars                Rank the data of a numeric variables
-readMetadata            iNZight Metadata Reader
 read_meta               Read CSV with iNZight metadata
+read_text               Read text as data
 renameLevels            Rename the levels of a categorical variable
 renameVars              Rename column names
 reorderLevels           Reorder a categorical
 reshape_data            Reshaping dataset from wide to long or from
                         long to wide
-sample.data             Takes a sample of rows from a data.frame
 save_rda                Save an object with, optionally, a (valid) name
-search.name             Searches a list recursivly for a name and
-                        returns the value associated with the name
 separate                Separate columns
 sheets                  List of available sheets from a file
 smart_read              iNZight Smart Read
@@ -70,6 +52,7 @@ standardizeVars         Standardize the data of a numeric variable
 tidy_all_code           iNZight Tidy Code
 transformVar            Transform data of a numeric variable
 unite                   Unite columns in a dataset
+url_to_temp             Download URL to temp file
 validation_details      Details of Validation Rule Results
 validation_summary      Validation Confrontation Summary
 vartype                 Get variable type name
