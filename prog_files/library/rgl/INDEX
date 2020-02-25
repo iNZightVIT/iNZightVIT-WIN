@@ -9,14 +9,18 @@ ageSetter               Set WebGL scene properties based on the age of
                         components of objects.
 arc3d                   Draw arcs.
 arrow3d                 Draw an arrow in a scene.
+as.mesh3d               Convert object to mesh object
 as.mesh3d.ashape3d      Convert alpha-shape surface of a cloud of
                         points to mesh3d object.
+as.mesh3d.rglId         Convert object in plot to mesh3d object.
+as.triangles3d          Convert an object to triangles.
 asRow                   Convenience functions for rgl HTML layouts
 aspect3d                Set the aspect ratios of the current plot
 axes3d                  Draw boxes, axes and other text outside the
                         data
 bg3d                    Set up Background
 bgplot3d                Use base graphics for RGL background
+clipMesh3d              Clip mesh to general region
 clipplaneControl        Sets attributes of a clipping plane.
 cylinder3d              Create cylindrical or "tube" plots.
 elementId2Prefix        Use widget with old-style controls.
@@ -28,6 +32,7 @@ hook_rgl                Hook functions to use with 'knitr'
 identify3d              Identify points in plot.
 lowlevel                rgl id values
 matrices                Work with homogeneous coordinates
+mergeVertices           Merge duplicate vertices in mesh object
 mesh3d                  3D Mesh objects
 mfrow3d                 Set up multiple figure layouts in rgl.
 observer3d              Set the observer location.
@@ -64,6 +69,7 @@ rgl.attrib.info         Get information about attributes of objects
 rgl.bbox                Set up Bounding Box decoration
 rgl.bringtotop          Assign focus to an RGL window
 rgl.clear               scene management
+rgl.init                Initializing rgl
 rgl.light               add light source
 rgl.material            Generic Appearance setup
 rgl.open                3D visualization device system
@@ -108,6 +114,10 @@ surface3d               add height-field surface shape
 text3d                  add text
 thigmophobe3d           Find the direction away from the closest point
                         in a 3d projection.
+tkpar3dsave             Modal dialog for saving par3d settings
+tkrgl                   tkrgl functions
+tkspin3d                Create TCL/TK controller for rgl window
+tkspinControl           Create a spin control in a TCL/TK window
 toggleWidget            An HTML widget to toggle display of elements of
                         a scene.
 triangulate             Triangulate a two-dimensional polygon.

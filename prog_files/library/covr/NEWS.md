@@ -1,3 +1,56 @@
+# covr 3.4.0
+
+* `codecov()` now supports GitHub Actions.
+
+* New `in_covr()` function added to return true if code is being run by covr (#407).
+
+* `file_coverage()`, `environment_coverage()` and `function_coverage()` now set
+  `R_COVR=true`, to be consistent with `package_coverage()` (#407)
+
+# covr 3.3.2
+
+* Fix test failures in the development version of R (4.0.0) (#400)
+
+# covr 3.3.1
+
+* Fix inadvertent regression in return visibility when functions are covered.
+  covr versions prior to 3.3.0 surrounded each statement in `{` blocks. covr
+  3.3.0 switched to using `({`, but this caused an inadvertent regression, as
+  `(` will make the result visible it is the last expression in a function.
+  Using `if (TRUE) {` restores the previous behavior. (#391, #392)
+
+# covr 3.3.0
+
+## New Features
+
+* New `azure()` function added to make it easy to use covr on [Azure
+  Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+  (#370)
+
+* Work around issues related to the new curly curly syntax in rlang (#379, #377, rlang#813)
+
+* Compiled code coverage has been improved, in particular C++ templates now
+  contain the merged coverage of all template instances, even if the instances
+  were defined in separate compilation units. (#390)
+
+## Bugfixes and minor improvements
+
+* `codecov()` now includes support for the flags field (#365)
+* `codecov` now looks `codecov.yml` for token if `CODECOV_TOKEN` envvar is not
+  set (@MishaCivey #349).
+* `per_line()` now does not track lines with only punctuation such as `}` or `{` (#387)
+* `tally_coverage()` now includes compiled code, like it did previously (#384)
+
+* Define the necessary coverage flags for C++14, C++17 and C++20 (#369).
+
+* `to_cobertura()` now works with Cobertura coverage-04.dtd (@samssann, #337).
+
+* [R6](https://github.com/r-lib/R6) class generators prefixed with `.` are now
+  included in coverage results (@jameslamb, #356).
+
+* `package_coverage()` gains option `pre_clean`, set to `FALSE` to disable
+  cleaning of existing objects before running `package_coverage()` (@jpritikin, #375)
+
 # 3.2.1
 
 * Fix for regression when testing coverage of packages using mclapply (#335).

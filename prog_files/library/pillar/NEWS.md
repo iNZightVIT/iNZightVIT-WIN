@@ -1,3 +1,33 @@
+# pillar 1.4.3
+
+- `new_pillar_shaft_simple()` gains `na` argument to control appearance of `NA` values.
+
+- String columns are quoted if at least one value needs quotes (#171).
+
+- Apply subtle style to `list_of` columns (#172).
+
+- Fix formatting if mantissa is very close to 1 (#174).
+
+- Use `as.character()` instead of `as_character()`.
+
+- Remove compatibility with testthat < 2.0.0.
+
+
+# pillar 1.4.2
+
+- List columns are shown with their perceived dimensions, which may be different from those stored in the `"dim"` attribute. Regression introduced in 1.4.0 (#167).
+
+- Add ellipsis to `vec_ptype_abbr()` method.
+
+
+# pillar 1.4.1
+
+- More careful specification of minimum package versions for the dependencies (#165).
+- Fix `type_sum.vctrs_vctr()` that also led to a NOTE in `R CMD check`.
+- Resolve `vec_is()` at runtime instead of during `.onLoad()` (#163, @lionel-).
+- Implement methods for vctrs objects.
+
+
 # pillar 1.4.0
 
 ## Breaking changes

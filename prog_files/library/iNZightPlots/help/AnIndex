@@ -1,4 +1,7 @@
 can.interact	can.interact
+can.interact.default	can.interact
+can.interact.ggplot	can.interact
+can.interact.inzplotoutput	can.interact
 cat_palette_names	inzpalette
 const_palette_names	inzpalette
 convert.to.factor	convert.to.factor
@@ -11,8 +14,14 @@ exportHTML.function	exportHTML
 exportHTML.ggplot	exportHTML
 exportHTML.inzplotoutput	exportHTML
 exportSVG	exportSVG
+exportSVG.function	exportSVG
+exportSVG.inzplotoutput	exportSVG
 getPlotSummary	getPlotSummary
 iNZightPlot	iNZightPlot
+iNZInference	iNZPlot
 inzpalette	inzpalette
 inzpar	inzpar
+iNZPlot	iNZPlot
+iNZSummary	iNZPlot
+print.allSummaries	exploreAllSummaries
 print.inzHTML	print.inzHTML

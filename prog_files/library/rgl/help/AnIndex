@@ -10,11 +10,15 @@ ageControl	ageControl
 ageSetter	ageSetter
 arc3d	arc3d
 arrow3d	arrow3d
-as.mesh3d	mesh3d
+as.mesh3d	as.mesh3d.default
 as.mesh3d.ashape3d	as.mesh3d.ashape3d
+as.mesh3d.default	as.mesh3d.default
 as.mesh3d.deldir	persp3d.deldir
+as.mesh3d.rglId	as.mesh3d.rglId
 as.mesh3d.tri	persp3d.tri
 as.mesh3d.triSht	persp3d.tri
+as.triangles3d	as.triangles3d
+as.triangles3d.rglId	as.triangles3d
 asEuclidean	matrices
 asHomogeneous	matrices
 aspect3d	aspect3d
@@ -28,6 +32,7 @@ box3d	axes3d
 check3d	check3d
 clear3d	scene
 clearSubsceneList	mfrow3d
+clipMesh3d	clipMesh3d
 clipplaneControl	clipplaneControl
 clipplanes3d	planes
 clipplaneSlider	webGLcontrols
@@ -76,6 +81,7 @@ lowlevel	rglIds
 material3d	material
 matrices	matrices
 matrixSetter	propertySetter
+mergeVertices	mergeVertices
 mesh3d	mesh3d
 mfrow3d	mfrow3d
 movie3d	play3d
@@ -93,6 +99,7 @@ par3d	par3d
 par3dinterp	par3dinterp
 par3dinterpControl	par3dinterpControl
 par3dinterpSetter	propertySetter
+par3dsave	tkpar3dsave
 particles3d	sprites
 pch3d	pch3d
 persp3d	persp3d
@@ -169,7 +176,7 @@ rgl.enum.textype	rgl-internal
 rgl.getMouseCallbacks	callbacks
 rgl.getWheelCallback	callbacks
 rgl.ids	scene
-rgl.init	rgl.open
+rgl.init	rgl.init
 rgl.light	light
 rgl.lines	primitive
 rgl.linestrips	primitive
@@ -260,6 +267,10 @@ text3d	texts
 texts3d	texts
 thigmophobe3d	thigmophobe3d
 title3d	axes3d
+tkpar3dsave	tkpar3dsave
+tkrgl	tkrgl
+tkspin3d	tkspin3d
+tkspinControl	tkspinControl
 tmesh3d	mesh3d
 toggleButton	webGLcontrols
 toggleWidget	toggleWidget

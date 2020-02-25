@@ -1,4 +1,63 @@
 
+# callr 3.4.2
+
+* Improved error messages. Error messages are now fully printed after
+  an error. In non-interactive sessions, the stack trace is printed as well.
+
+# callr 3.4.1
+
+* callr is now more careful when loading the local `.Rprofile` in the
+  subprocess. This fixes issues with packrat and renv that use `.Rprofile`
+  for setup (#139).
+
+* callr functions fail early if environment file is missing (#123, @jdblischak)
+
+# callr 3.4.0
+
+* All callr functions and background processes properly clean up
+  temporary files now (#104).
+
+* callr now uses a more principled setup for the library path, and
+  restores the related environment variables in the child process.
+  This is a **breaking change** if you relied on having the library set
+  in a `system()` subprocess of the callr subprocess (#114).
+
+* Better printing of `rlang_error`s that happened in the subprocess.
+
+* The stacking of error objects is slightly different now, as we keep the
+  unmodified error from the subprocess in `$parent$error`.
+
+* callr now loads `.Rprofile` files from the current working directory
+  by default. This works better with packrat, renv, and other software
+  that relies on a local profile for initialization (#131).
+
+# callr 3.3.2
+
+No user visible changes in this version.
+
+# callr 3.3.1
+
+* `r_session` now avoids creating `data` and `env` objects in the global
+  environment of the subprocess.
+
+* New `$debug()` method for `r_session` to inspect the dumped frames
+  in the subprocess, after an error.
+
+# callr 3.3.0
+
+* callr now sets the `.Last.error` variable for every uncaught callr
+  error to the error condition, and also sets `.Last.error.trace` to its
+  stack trace. If the error originates in the subprocess, then `.Last.error`
+  is a hierarchical error object, and `.Last.error.trace` merges the
+  traces from the two processes. See the `README.md` for an example.
+
+* New `$traceback()` method for `r_session`, to run `traceback()` in the
+  subprocess, after an error.
+
+* A callr subprocess now does not load any R packages by default.
+
+* New vignette, that showcases `r_session`.
+
 # callr 3.2.0
 
 * `r()`, `rcmd()` and `rscript()` can now redirect the standard error of
@@ -37,9 +96,9 @@
   `callr_session_result`.
 
 * `r_session$run*()` handle interrupts properly. It tries to interrupt
-  the background process fist, kills it if it is not interruptable,
+  the background process fist, kills it if it is not interruptible,
   and then re-throws the interrupt condition, going back to the top level
-  prompt if the re-thrown condition is un-caught.
+  prompt if the re-thrown condition is uncaught.
 
 # callr 3.0.0
 
@@ -77,19 +136,19 @@ option.
   https://github.com/wch/r-source/commit/924582943706100e88a11d6bb0585d25779c91f5
   #37, #38
 
-* Fix a race condition on Windows, when creating named pipes for stdout
-  or stderr. The client sometimes didn't wait for the server, and callr
+* Fix a race condition on Windows, when creating named pipes for `stdout`
+  or `stderr`. The client sometimes didn't wait for the server, and callr
   failed with ERROR_PIPE_BUSY (231, All pipe instances are busy).
 
 # callr 2.0.1
 
-* Fix compilation issues on CRAN's Solaris machine
+* Fix compilation issues on Solaris
 
-* Fix a test failure on CRAN's macOS machine
+* Fix a test failure on macOS
 
 # callr 2.0.0
 
-* Run R or R CMD * in the background, see `r_bg()`, `rcmd_bg()`,
+* Run R or `R CMD` in the background, see `r_bg()`, `rcmd_bg()`,
   and also `r_process` and `rcmd_process`
 
 * The defaults for `r()` are safer now, the match the defaults of
@@ -107,7 +166,7 @@ option.
 
 * Support timeouts, via the `timeout` argument
 
-* Fix bug when stdout and stderr are redirected to the same file
+* Fix bug when `stdout` and `stderr` are redirected to the same file
 
 * `rcmd_safe_env()` to allow extending the environment variables set in
   safe mode

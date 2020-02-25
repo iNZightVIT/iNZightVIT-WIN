@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;validate&rsquo; version 0.2.6</h2>
+</div><h2>Documentation for package &lsquo;validate&rsquo; version 0.9.3</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -22,8 +22,6 @@
 
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="validate.html">validate-package</a></td>
-<td>Data Validation Infrastructure</td></tr>
 <tr><td style="width: 25%;"><a href="vin.html">%vin%</a></td>
 <td>A consistent set membership operator</td></tr>
 <tr><td style="width: 25%;"><a href="plus-indicator-indicator-method.html">+-method</a></td>
@@ -34,6 +32,10 @@
 <td>Aggregate validation results</td></tr>
 <tr><td style="width: 25%;"><a href="all-validation-method.html">all-method</a></td>
 <td>Test if all validations resulted in TRUE</td></tr>
+<tr><td style="width: 25%;"><a href="is_complete.html">all_complete</a></td>
+<td>Test for completeness of records</td></tr>
+<tr><td style="width: 25%;"><a href="is_unique.html">all_unique</a></td>
+<td>Test for uniquenes of records</td></tr>
 <tr><td style="width: 25%;"><a href="any-validation-method.html">any-method</a></td>
 <td>Test if any validation resulted in TRUE</td></tr>
 <tr><td style="width: 25%;"><a href="as.data.frame-cellComparison-method.html">as.data.frame-method</a></td>
@@ -86,10 +88,30 @@
 <td>Get messages from a confrontation object</td></tr>
 <tr><td style="width: 25%;"><a href="errors.html">errors-method</a></td>
 <td>Get messages from a confrontation object</td></tr>
+<tr><td style="width: 25%;"><a href="event.html">event</a></td>
+<td>Get or set event information metadata from a 'confrontation' object.</td></tr>
+<tr><td style="width: 25%;"><a href="event.html">event-method</a></td>
+<td>Get or set event information metadata from a 'confrontation' object.</td></tr>
+<tr><td style="width: 25%;"><a href="event.html">event&lt;-</a></td>
+<td>Get or set event information metadata from a 'confrontation' object.</td></tr>
+<tr><td style="width: 25%;"><a href="event.html">event&lt;--method</a></td>
+<td>Get or set event information metadata from a 'confrontation' object.</td></tr>
+<tr><td style="width: 25%;"><a href="exists_any.html">exists_any</a></td>
+<td>Test for (unique) existence</td></tr>
+<tr><td style="width: 25%;"><a href="exists_any.html">exists_one</a></td>
+<td>Test for (unique) existence</td></tr>
 <tr><td style="width: 25%;"><a href="export_yaml.html">export_yaml</a></td>
 <td>Export to yaml file</td></tr>
 <tr><td style="width: 25%;"><a href="export_yaml.html">export_yaml-method</a></td>
 <td>Export to yaml file</td></tr>
+<tr><td style="width: 25%;"><a href="is_complete.html">is_complete</a></td>
+<td>Test for completeness of records</td></tr>
+<tr><td style="width: 25%;"><a href="is_unique.html">is_unique</a></td>
+<td>Test for uniquenes of records</td></tr>
+<tr><td style="width: 25%;"><a href="keyset.html">keyset</a></td>
+<td>Get key set stored with a confrontation</td></tr>
+<tr><td style="width: 25%;"><a href="keyset.html">keyset-method</a></td>
+<td>Get key set stored with a confrontation</td></tr>
 <tr><td style="width: 25%;"><a href="label.html">label</a></td>
 <td>Rule label</td></tr>
 <tr><td style="width: 25%;"><a href="label.html">label-method</a></td>
@@ -140,11 +162,19 @@
 <td>Plot a validator object</td></tr>
 <tr><td style="width: 25%;"><a href="plot-validatorComparison-method.html">plot-method</a></td>
 <td>Line graph of validatorComparison object</td></tr>
+<tr><td style="width: 25%;"><a href="run_validation_file.html">print.validations</a></td>
+<td>Run a file with confrontations. Capture results</td></tr>
 <tr><td style="width: 25%;"><a href="voptions.html">reset</a></td>
 <td>Set or get options globally or per object.</td></tr>
 <tr><td style="width: 25%;"><a href="voptions.html">reset-method</a></td>
 <td>Set or get options globally or per object.</td></tr>
 <tr><td style="width: 25%;"><a href="retailers.html">retailers</a></td>
+<td>data on Dutch supermarkets</td></tr>
+<tr><td style="width: 25%;"><a href="run_validation_file.html">run_validation_dir</a></td>
+<td>Run a file with confrontations. Capture results</td></tr>
+<tr><td style="width: 25%;"><a href="run_validation_file.html">run_validation_file</a></td>
+<td>Run a file with confrontations. Capture results</td></tr>
+<tr><td style="width: 25%;"><a href="retailers.html">SBS2000</a></td>
 <td>data on Dutch supermarkets</td></tr>
 <tr><td style="width: 25%;"><a href="sort-validation-method.html">sort-method</a></td>
 <td>Aggregate and sort the results of a validation.</td></tr>
@@ -152,6 +182,8 @@
 <td>Create a summary</td></tr>
 <tr><td style="width: 25%;"><a href="validate-summary.html">summary-method</a></td>
 <td>Create a summary</td></tr>
+<tr><td style="width: 25%;"><a href="run_validation_file.html">summary.validations</a></td>
+<td>Run a file with confrontations. Capture results</td></tr>
 <tr><td style="width: 25%;"><a href="syntax.html">syntax</a></td>
 <td>Syntax to define validation or indicator rules</td></tr>
 <tr><td style="width: 25%;"><a href="validate.html">validate</a></td>

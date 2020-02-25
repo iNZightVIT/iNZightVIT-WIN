@@ -1,0 +1,2 @@
+# rule_08:
+year_of_birth == persons$year_of_birth

@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;testthat&rsquo; version 2.1.1</h2>
+</div><h2>Documentation for package &lsquo;testthat&rsquo; version 2.3.1</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -37,18 +37,14 @@
 <td>Expectation: is the object equal to a value?</td></tr>
 <tr><td style="width: 25%;"><a href="expect.html">expect</a></td>
 <td>The building block of all 'expect_' functions</td></tr>
-<tr><td style="width: 25%;"><a href="output-expectations.html">expect_condition</a></td>
-<td>Expectation: does code produce output/message/warning/error?</td></tr>
-<tr><td style="width: 25%;"><a href="expect_cpp_tests_pass.html">expect_cpp_tests_pass</a></td>
-<td>Test Compiled Code in a Package</td></tr>
+<tr><td style="width: 25%;"><a href="expect_error.html">expect_condition</a></td>
+<td>Expectation: does code throw error or other condition?</td></tr>
 <tr><td style="width: 25%;"><a href="equality-expectations.html">expect_equal</a></td>
 <td>Expectation: is the object equal to a value?</td></tr>
-<tr><td style="width: 25%;"><a href="expect_known_output.html">expect_equal_to_reference</a></td>
-<td>Expectations: is the output or the value equal to a known good value?</td></tr>
 <tr><td style="width: 25%;"><a href="equality-expectations.html">expect_equivalent</a></td>
 <td>Expectation: is the object equal to a value?</td></tr>
-<tr><td style="width: 25%;"><a href="output-expectations.html">expect_error</a></td>
-<td>Expectation: does code produce output/message/warning/error?</td></tr>
+<tr><td style="width: 25%;"><a href="expect_error.html">expect_error</a></td>
+<td>Expectation: does code throw error or other condition?</td></tr>
 <tr><td style="width: 25%;"><a href="logical-expectations.html">expect_false</a></td>
 <td>Expectation: is the object true/false?</td></tr>
 <tr><td style="width: 25%;"><a href="comparison-expectations.html">expect_gt</a></td>
@@ -59,12 +55,6 @@
 <td>Expectation: is the object equal to a value?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_invisible.html">expect_invisible</a></td>
 <td>Expectation: does expression return visibily or invisibly?</td></tr>
-<tr><td style="width: 25%;"><a href="expect_known_output.html">expect_known_hash</a></td>
-<td>Expectations: is the output or the value equal to a known good value?</td></tr>
-<tr><td style="width: 25%;"><a href="expect_known_output.html">expect_known_output</a></td>
-<td>Expectations: is the output or the value equal to a known good value?</td></tr>
-<tr><td style="width: 25%;"><a href="expect_known_output.html">expect_known_value</a></td>
-<td>Expectations: is the output or the value equal to a known good value?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_length.html">expect_length</a></td>
 <td>Expectation: does a vector have the specified length?</td></tr>
 <tr><td style="width: 25%;"><a href="comparison-expectations.html">expect_less_than</a></td>
@@ -77,18 +67,16 @@
 <td>Expectation: do two vectors contain the same values?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_match.html">expect_match</a></td>
 <td>Expectation: does string match a regular expression?</td></tr>
-<tr><td style="width: 25%;"><a href="output-expectations.html">expect_message</a></td>
-<td>Expectation: does code produce output/message/warning/error?</td></tr>
+<tr><td style="width: 25%;"><a href="expect_message.html">expect_message</a></td>
+<td>Expectation: does code produce warnings or messages?</td></tr>
 <tr><td style="width: 25%;"><a href="comparison-expectations.html">expect_more_than</a></td>
 <td>Expectation: is returned value less or greater than specified value?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_named.html">expect_named</a></td>
 <td>Expectation: does object have names?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_null.html">expect_null</a></td>
 <td>Expectation: is an object 'NULL'?</td></tr>
-<tr><td style="width: 25%;"><a href="output-expectations.html">expect_output</a></td>
-<td>Expectation: does code produce output/message/warning/error?</td></tr>
-<tr><td style="width: 25%;"><a href="expect_known_output.html">expect_output_file</a></td>
-<td>Expectations: is the output or the value equal to a known good value?</td></tr>
+<tr><td style="width: 25%;"><a href="expect_output.html">expect_output</a></td>
+<td>Expectation: does code print output to the console?</td></tr>
 <tr><td style="width: 25%;"><a href="equality-expectations.html">expect_reference</a></td>
 <td>Expectation: is the object equal to a value?</td></tr>
 <tr><td style="width: 25%;"><a href="inheritance-expectations.html">expect_s3_class</a></td>
@@ -97,8 +85,8 @@
 <td>Expectation: does the object inherit from a S3 or S4 class, or is it a base type?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_setequal.html">expect_setequal</a></td>
 <td>Expectation: do two vectors contain the same values?</td></tr>
-<tr><td style="width: 25%;"><a href="output-expectations.html">expect_silent</a></td>
-<td>Expectation: does code produce output/message/warning/error?</td></tr>
+<tr><td style="width: 25%;"><a href="expect_silent.html">expect_silent</a></td>
+<td>Expectation: is the code silent?</td></tr>
 <tr><td style="width: 25%;"><a href="logical-expectations.html">expect_true</a></td>
 <td>Expectation: is the object true/false?</td></tr>
 <tr><td style="width: 25%;"><a href="inheritance-expectations.html">expect_type</a></td>
@@ -107,10 +95,10 @@
 <td>Expectation: does the object have vctr properties?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_invisible.html">expect_visible</a></td>
 <td>Expectation: does expression return visibily or invisibly?</td></tr>
-<tr><td style="width: 25%;"><a href="output-expectations.html">expect_warning</a></td>
-<td>Expectation: does code produce output/message/warning/error?</td></tr>
+<tr><td style="width: 25%;"><a href="expect_message.html">expect_warning</a></td>
+<td>Expectation: does code produce warnings or messages?</td></tr>
 <tr><td style="width: 25%;"><a href="fail.html">fail</a></td>
-<td>Default expectations that alway succeed or fail.</td></tr>
+<td>Default expectations that always succeed or fail.</td></tr>
 <tr><td style="width: 25%;"><a href="FailReporter.html">FailReporter</a></td>
 <td>Test reporter: fail at end.</td></tr>
 <tr><td style="width: 25%;"><a href="inheritance-expectations.html">inheritance-expectations</a></td>
@@ -129,8 +117,6 @@
 <td>Test reporter: minimal.</td></tr>
 <tr><td style="width: 25%;"><a href="MultiReporter.html">MultiReporter</a></td>
 <td>Multi reporter: combine several reporters in one.</td></tr>
-<tr><td style="width: 25%;"><a href="output-expectations.html">output-expectations</a></td>
-<td>Expectation: does code produce output/message/warning/error?</td></tr>
 <tr><td style="width: 25%;"><a href="ProgressReporter.html">ProgressReporter</a></td>
 <td>Test reporter: interactive progress bar of errors.</td></tr>
 <tr><td style="width: 25%;"><a href="RstudioReporter.html">RstudioReporter</a></td>
@@ -157,6 +143,8 @@
 <td>Skip a test.</td></tr>
 <tr><td style="width: 25%;"><a href="skip.html">skip_on_ci</a></td>
 <td>Skip a test.</td></tr>
+<tr><td style="width: 25%;"><a href="skip.html">skip_on_covr</a></td>
+<td>Skip a test.</td></tr>
 <tr><td style="width: 25%;"><a href="skip.html">skip_on_cran</a></td>
 <td>Skip a test.</td></tr>
 <tr><td style="width: 25%;"><a href="skip.html">skip_on_os</a></td>
@@ -166,7 +154,7 @@
 <tr><td style="width: 25%;"><a href="StopReporter.html">StopReporter</a></td>
 <td>Test reporter: stop on error.</td></tr>
 <tr><td style="width: 25%;"><a href="fail.html">succeed</a></td>
-<td>Default expectations that alway succeed or fail.</td></tr>
+<td>Default expectations that always succeed or fail.</td></tr>
 <tr><td style="width: 25%;"><a href="SummaryReporter.html">SummaryReporter</a></td>
 <td>Test reporter: summary of errors.</td></tr>
 <tr><td style="width: 25%;"><a href="TapReporter.html">TapReporter</a></td>
@@ -181,21 +169,17 @@
 <td>Run all tests in directory or package</td></tr>
 <tr><td style="width: 25%;"><a href="test_dir.html">test_dir</a></td>
 <td>Run all tests in directory or package</td></tr>
-<tr><td style="width: 25%;"><a href="test_examples.html">test_example</a></td>
-<td>Test package examples</td></tr>
-<tr><td style="width: 25%;"><a href="test_examples.html">test_examples</a></td>
-<td>Test package examples</td></tr>
 <tr><td style="width: 25%;"><a href="test_file.html">test_file</a></td>
 <td>Run all tests in specified file</td></tr>
 <tr><td style="width: 25%;"><a href="test_dir.html">test_package</a></td>
 <td>Run all tests in directory or package</td></tr>
 <tr><td style="width: 25%;"><a href="test_path.html">test_path</a></td>
 <td>Locate file in testing directory.</td></tr>
-<tr><td style="width: 25%;"><a href="test_examples.html">test_rd</a></td>
-<td>Test package examples</td></tr>
 <tr><td style="width: 25%;"><a href="test_that.html">test_that</a></td>
 <td>Create a test.</td></tr>
 <tr><td style="width: 25%;"><a href="use_catch.html">use_catch</a></td>
 <td>Use Catch for C++ Unit Testing</td></tr>
+<tr><td style="width: 25%;"><a href="verify_output.html">verify_output</a></td>
+<td>Verify output</td></tr>
 </table>
 </body></html>

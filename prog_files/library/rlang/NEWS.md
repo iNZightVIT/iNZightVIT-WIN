@@ -1,14 +1,370 @@
 
-# rlang 0.3.4
+# rlang 0.4.4
 
-* Fixed a unit test that failed on the Solaris CRAN machine.
+* Maintenance release for CRAN.
 
 
-# rlang 0.3.3
+# rlang 0.4.3
+
+* You can now use glue syntax to unquote on the LHS of `:=`. This
+  syntax is automatically available in all functions taking dots with
+  `list2()` and `enquos()`, and thus most of the tidyverse. Note that
+  if you use the glue syntax in an R package, you need to import glue.
+
+  A single pair of braces triggers normal glue interpolation:
+
+  ```r
+  df <- data.frame(x = 1:3)
+
+  suffix <- "foo"
+  df %>% dplyr::mutate("var_{suffix}" := x * 2)
+  #>   x var_foo
+  #> 1 1       2
+  #> 2 2       4
+  #> 3 3       6
+  ```
+
+  Using a pair of double braces is for labelling a function argument.
+  Technically, this is shortcut for `"{as_label(enquo(arg))}"`. The
+  syntax is similar to the curly-curly syntax for interpolating
+  function arguments:
+
+  ```r
+  my_wrapper <- function(data, var, suffix = "foo") {
+    data %>% dplyr::mutate("{{ var }}_{suffix}" := {{ var }} * 2)
+  }
+  df %>% my_wrapper(x)
+  #>   x x_foo
+  #> 1 1     2
+  #> 2 2     4
+  #> 3 3     6
+
+  df %>% my_wrapper(sqrt(x))
+  #>   x sqrt(x)_foo
+  #> 1 1    2.000000
+  #> 2 2    2.828427
+  #> 3 3    3.464102
+  ```
+
+* Fixed a bug in magrittr backtraces that caused duplicate calls to
+  appear in the trace.
+
+* Fixed a bug in magrittr backtraces that caused wrong call indices.
+
+* Empty backtraces are no longer shown when `rlang_backtrace_on_error`
+  is set.
+
+* The tidy eval `.env` pronoun is now exported for documentation
+  purposes.
+
+* `warn()` and `abort()` now check that either `class` or `message`
+  was supplied. `inform()` allows sending empty message as it is
+  occasionally useful for building user output incrementally.
+
+* `flatten()` fails with a proper error when input can't be flattened (#868, #885).
+
+* `inform()` now consistently appends a final newline to the message
+  (#880).
+
+* `cnd_body.default()` is now properly registered.
+
+* `cnd_signal()` now uses the same approach as `abort()` to save
+  unhandled errors to `last_error()`.
+
+* Parsable constants like `NaN` and `NA_integer_` are now deparsed by
+  `expr_deparse()` in their parsable form (#890).
+
+* Infix operators now stick to their LHS when deparsed by
+  `expr_deparse()` (#890).
+
+
+# rlang 0.4.2
+
+* New `cnd_header()`, `cnd_body()` and `cnd_footer()` generics. These
+  are automatically called by `conditionMessage.rlang_error()`, the
+  default method for all rlang errors.
+
+  Concretely, this is a way of breaking up lazy generation of error
+  messages with `conditionMessage()` into three independent
+  parts. This provides a lot of flexibility for hierarchies of error
+  classes, for instance you could inherit the body of an error message
+  from a parent class while overriding the header and footer.
+
+* The reminder to call `last_error()` is now less confusing thanks to
+  a suggestion by @markhwhiteii.
+
+* The functions prefixed in `scoped_` have been renamed to use the
+  more conventional `local_` prefix. For instance, `scoped_bindings()`
+  is now `local_bindings()`. The `scoped_` functions will be
+  deprecated in the next significant version of rlang (0.5.0).
+
+* The `.subclass` argument of `abort()`, `warn()` and `inform()` has
+  been renamed to `class`. This is for consistency with our
+  conventions for class constructors documented in
+  https://adv-r.hadley.nz/s3.html#s3-subclassing.
+
+* `inform()` now prints messages to the standard output by default in
+  interactive sessions. This makes them appear more like normal output
+  in IDEs such as RStudio. In non-interactive sessions, messages are
+  still printed to standard error to make it easy to redirect messages
+  when running R scripts (#852).
+
+* Fixed an error in `trace_back()` when the call stack contains a
+  quosured symbol.
+
+* Backtrace is now displayed in full when an error occurs in
+  non-interactive sessions. Previously the backtraces of parent errors
+  were left out.
+
+
+# rlang 0.4.1
+
+* New experimental framework for creating bulleted error messages. See
+  `?cnd_message` for the motivation and an overwiew of the tools we
+  have created to support this approach. In particular, `abort()` now
+  takes character vectors to assemble a bullet list. Elements named
+  `x` are prefixed with a red cross, elements named `i` are prefixed
+  with a blue info symbol, and unnamed elements are prefixed with a
+  bullet.
+
+* Capture of backtrace in the context of rethrowing an error from an
+  exiting handler has been improved. The `tryCatch()` context no
+  longer leaks in the high-level backtrace.
+
+* Printing an error no longer recommends calling `last_trace()`,
+  unless called from `last_error()`.
+
+* `env_clone()` no longer recreates active bindings and is now just an
+  alias for `env2list(as.list(env))`. Unlike `as.list()` which returns
+  the active binding function on R < 4.0, the value of active bindings
+  is consistently used in all versions.
+
+* The display of rlang errors derived from parent errors has been
+  improved. The simplified backtrace (as printed by
+  `rlang::last_error()`) no longer includes the parent errors. On the
+  other hand, the full backtrace (as printed by `rlang::last_trace()`)
+  now includes the backtraces of the parent errors.
+
+* `cnd_signal()` has improved support for rlang errors created with
+  `error_cnd()`. It now records a backtrace if there isn't one
+  already, and saves the error so it can be inspected with
+  `rlang::last_error()`.
+
+* rlang errors are no longer formatted and saved through
+  `conditionMessage()`. This makes it easier to use a
+  `conditionMessage()` method in subclasses created with `abort()`,
+  which is useful to delay expensive generation of error messages
+  until display time.
+
+* `abort()` can now be called without error message. This is useful
+  when `conditionMessage()` is used to generate the message at
+  print-time.
+
+* Fixed an infinite loop in `eval_tidy()`. It occurred when evaluating
+  a quosure that inherits from the mask itself.
+
+* `env_bind()`'s performance has been significantly improved by fixing a bug
+  that caused values to be repeatedly looked up by name.
+
+* `cnd_muffle()` now checks that a restart exists before invoking
+  it. The restart might not exist if the condition is signalled with a
+  different function (such as `stop(warning_cnd)`).
+
+* `trace_length()` returns the number of frames in a backtrace.
+
+* Added internal utility `cnd_entrace()` to add a backtrace to a
+  condition.
+
+* `rlang::last_error()` backtraces are no longer displayed in red.
+
+* `x %|% y` now also works when `y` is of same length as `x` (@rcannood, #806).
+
+* Empty named lists are now deparsed more explicitly as
+  `"<named list>"`.
+
+* Fixed `chr()` bug causing it to return invisibly.
+
+
+# rlang 0.4.0
+
+## Tidy evaluation
+
+### Interpolate function inputs with the curly-curly operator
+
+The main change of this release is the new tidy evaluation operator
+`{{`.  This operator abstracts the quote-and-unquote idiom into a
+single interpolation step:
+
+```
+my_wrapper <- function(data, var, by) {
+  data %>%
+    group_by({{ by }}) %>%
+    summarise(average = mean({{ var }}, na.rm = TRUE))
+}
+```
+
+`{{ var }}` is a shortcut for `!!enquo(var)` that should be easier on
+the eyes, and easier to learn and teach.
+
+Note that for multiple inputs, the existing documentation doesn't
+stress enough that you can just pass dots straight to other tidy eval
+functions. There is no need for quote-and-unquote unless you need to
+modify the inputs or their names in some way:
+
+```
+my_wrapper <- function(data, var, ...) {
+  data %>%
+    group_by(...) %>%
+    summarise(average = mean({{ var }}, na.rm = TRUE))
+}
+```
+
+
+### More robust `.env` pronoun
+
+Another improvement to tidy evaluation should make it easier to use
+the `.env` pronoun. Starting from this release, subsetting an object
+from the `.env` pronoun now evaluates the corresponding symbol. This
+makes `.env` more robust, in particular in magrittr pipelines. The
+following example would previously fail:
+
+```
+foo <- 10
+mtcars %>% mutate(cyl = cyl * .env$foo)
+```
+
+This way, using the `.env` pronoun is now equivalent to unquoting a
+constant objects, but with an easier syntax:
+
+```
+mtcars %>% mutate(cyl = cyl * !!foo)
+```
+
+Note that following this change, and despite its name, `.env` is no
+longer referring to a bare environment. Instead, it is a special
+shortcut with its own rules. Similarly, the `.data` pronoun is not
+really a data frame.
+
+
+## New functions and features
+
+* New `pairlist2()` function with splicing support. It preserves
+  missing arguments, which makes it useful for lists of formal
+  parameters for functions.
+
+* `is_bool()` is a scalar type predicate that checks whether its input
+  is a single `TRUE` or `FALSE`. Like `is_string()`, it returns
+  `FALSE` when the input is missing. This is useful for type-checking
+  function arguments (#695).
+
+* `is_string()` gains a `string` argument. `is_string(x, "foo")` is a
+  shortcut for `is_character(x) && length(x) == 1 && identical(x,
+  "foo")`.
+
+* Lists of quosures now have pillar methods for display in tibbles.
+
+* `set_names()` now names unnamed input vectors before applying a
+  function. The following expressions are now equivalent:
+
+  ```
+  letters %>% set_names() %>% set_names(toupper)
+
+  letters %>% set_names(toupper)
+  ```
+
+* You can now pass a character vector as message argument for
+  `abort()`, `warn()`, `inform()`, and `signal()`. The vector is
+  collapsed to a single string with a `"\n"` newline separating each
+  element of the input vector (#744).
+
+* `maybe_missing()` gains a `default` argument.
+
+* New functions for weak references: `new_weakref()`, `weakref_key()`,
+  `weakref_value()`, and `is_weakref()` (@wch, #787).
+
+
+## Performance
+
+* The performance of `exec()` has been improved. It is now on the same
+  order of performance as `do.call()`, though slightly slower.
+
+* `call2()` now uses the new `pairlist2()` function internally. This
+  considerably improves its performance. This also means it now
+  preserves empty arguments:
+
+  ```
+  call2("fn", 1, , foo = )
+  #> fn(1, , foo = )
+  ```
+
+
+## Bugfixes and small improvements
+
+* `with_handlers()` now installs calling handlers first on the stack,
+  no matter their location in the argument list. This way they always
+  take precedence over exiting handlers, which ensures their side
+  effects (such as logging) take place (#718).
+
+* In rlang backtraces, the `global::` prefix is now only added when
+  the function directly inherits from the global environment.
+  Functions inheriting indirectly no longer have a namespace
+  qualifier (#733).
+
+* `options(error = rlang::entrace)` now has better support for errors
+  thrown from C (#779). It also saves structured errors in the `error`
+  field of `rlang::last_error()`.
+
+* `ns_env()` and `ns_env_name()` (experimental functions) now support
+  functions and environments consisently. They also require an
+  argument from now on.
+
+* `is_interactive()` is aware of the `TESTTHAT` environment variable and
+  returns `FALSE` when it is `"true"` (@jennybc, #738).
+
+* `fn_fmls()` and variants no longer coerce their input to a
+  closure. Instead, they throw an error.
 
 * Fixed an issue in knitr that caused backtraces to print even when `error = TRUE`.
 
-* `maybe_missing()` gains a `default` argument.
+* The return object from `as_function()` now inherits from
+  `"function"` (@richierocks, #735).
+
+
+## Lifecycle
+
+We commit to support 5 versions of R. As R 3.6 is about to be
+released, rlang now requires R 3.2 or greater. We're also continuing
+our efforts to streamline and narrow the rlang API.
+
+* `modify()` and `prepend()` (two experimental functions marked as in
+  the questioning stage since rlang 0.3.0) are now deprecated. Vector
+  functions are now out of scope for rlang. They might be revived in
+  the vctrs or funs packages.
+
+* `exiting()` is soft-deprecated because `with_handlers()` treats
+  handlers as exiting by default.
+
+* The vector constructors like `lgl()` or `new_logical()` are now in
+  the questioning stage. They are likely to be moved to the vctrs
+  package at some point. Same for the missing values shortcuts like
+  `na_lgl`.
+
+* `as_logical()`, `as_integer()`, etc have been soft-deprecated in
+  favour of `vctrs::vec_cast()`.
+
+* `type_of()`, `switch_type()`, `coerce_type()`, and friends are
+  soft-deprecated.
+
+* The encoding and locale API was summarily archived. This API didn't
+  bring any value and wasn't used on CRAN.
+
+* `lang_type_of()`, `switch_lang()`, and `coerce_lang()` were
+  archived. These functions were not used on CRAN or internally.
+
+* Subsetting quosures with `[` or `[[` is soft-deprecated.
+
+* All functions that were soft-deprecated, deprecated, or defunct in
+  previous releases have been bumped to the next lifecycle stage.
 
 
 # rlang 0.3.2

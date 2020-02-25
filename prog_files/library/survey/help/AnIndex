@@ -33,7 +33,6 @@ calibrate.svyrep.design	calibrate
 calibrate.twophase	calibrate
 cal_names	calibrate
 close.DBIsvydesign	open.DBIsvydesign
-close.ODBCsvydesign	open.DBIsvydesign
 coef.svrepstat	surveysummary
 coef.svyby	svyby
 coef.svyglm	svyglm
@@ -67,14 +66,12 @@ degf.survey.design2	svychisq
 degf.svyrep.design	svychisq
 degf.twophase	svychisq
 dim.DBIsvydesign	dimnames.DBIsvydesign
-dim.ODBCsvydesign	dimnames.DBIsvydesign
 dim.repweights_compressed	compressWeights
 dim.survey.design	dimnames.DBIsvydesign
 dim.svyimputationList	dimnames.DBIsvydesign
 dim.svyrep.design	dimnames.DBIsvydesign
 dim.twophase	dimnames.DBIsvydesign
 dimnames.DBIsvydesign	dimnames.DBIsvydesign
-dimnames.ODBCsvydesign	dimnames.DBIsvydesign
 dimnames.repweights_compressed	compressWeights
 dimnames.survey.design	dimnames.DBIsvydesign
 dimnames.svyimputationList	dimnames.DBIsvydesign
@@ -135,7 +132,6 @@ onestage.phase1	twophase
 onestrat	svyCprod
 onestrat.phase1	twophase
 open.DBIsvydesign	open.DBIsvydesign
-open.ODBCsvydesign	open.DBIsvydesign
 paley	paley
 pchisqsum	pchisqsum
 pFsum	pchisqsum
@@ -235,6 +231,7 @@ svyglm	svyglm
 svyglm.survey.design	svyglm
 svyglm.svyrep.design	svyglm
 svyhist	svyhist
+svyivreg	svyivreg
 svykappa	svykappa
 svykm	svykm
 svyloglin	svyloglin
@@ -288,7 +285,6 @@ twophase2var	twophase
 twophasevar	twophase
 unwtd.count	svyby
 update.DBIsvydesign	update.survey.design
-update.ODBCsvydesign	update.survey.design
 update.survey.design	update.survey.design
 update.svyloglin	svyloglin
 update.svyrep.design	update.survey.design

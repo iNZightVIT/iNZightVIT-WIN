@@ -1,4 +1,64 @@
 
+# processx 3.4.2
+
+* `run()` now does a better job with displaying the spinner on terminals
+  that buffer the output (#223).
+
+* Error messages are now fully printed after an error. In non-interactive
+  sessions, the stack trace is printed as well.
+
+* Further improved error messages. Errors from C code now include the
+  name of the C function, and errors that belong to a process include the
+  system command (#197).
+
+* processx does not crash now if the process receives a SIGPIPE signal when
+  trying to write to a pipe, of which the other end has already exited.
+
+* processx now to works better with fork clusters from the parallel
+  package. See 'Mixing processx and the parallel base R package' in the
+  README file (#236).
+
+* processx now does no block SIGCHLD by default in the subprocess,
+  blocking potentially causes zombie sub-subprocesses (#240).
+
+* The `process$wait()` method now does not leak file descriptors on
+  Unix when interrupted (#141).
+
+# processx 3.4.1
+
+* Now `run()` does not create an `ok` variable in the global environment.
+
+# processx 3.4.0
+
+* Processx has now better error messages, in particular, all errors from C
+  code contain the file name and line number, and the system error code
+  and message (where applicable).
+
+* Processx now sets the `.Last.error` variable for every un-caught processx
+  error to the error condition, and also sets `.Last.error.trace` to its
+  stack trace.
+
+* `run()` now prints the last 10 lines of the standard error stream on
+  error, if `echo = FALSE`, and it also prints the exit status of the
+  process.
+
+* `run()` now includes the standard error in the condition signalled on
+  interrupt.
+
+* `process` now supports creating pseudo terminals on Unix systems.
+
+* `conn_create_pipepair()` gets new argument to set the pipes as blocking
+  or non-blocking.
+
+* `process` does not set the inherited extra connections as blocking,
+  and it also does not close them after starting the subprocess.
+  This is now the responsibility of the user. Note that this is a
+  breaking change.
+
+* `run()` now passes extra `...` arguments to `process$new()`.
+
+* `run()` now does not error if the process is killed in a callback.
+
 # processx 3.3.1
 
 * Fix a crash on Windows, when a connection that has a pending read

@@ -1379,8 +1379,15 @@ lgeMatrix-class	lgeMatrix-class
 lgRMatrix-class	lsparseMatrix-classes
 lgTMatrix-class	lsparseMatrix-classes
 lMatrix-class	dMatrix-class
+log,CsparseMatrix-method	CsparseMatrix-class
+log,ddenseMatrix-method	ddenseMatrix-class
+log,denseMatrix-method	denseMatrix-class
 log,dgCMatrix-method	dgCMatrix-class
+log,dgeMatrix-method	dgeMatrix-class
+log,diagonalMatrix-method	diagonalMatrix-class
 log,dMatrix-method	dMatrix-class
+log,sparseMatrix-method	sparseMatrix-class
+log,sparseVector-method	sparseVector-class
 Logic,ANY,Matrix-method	Matrix-class
 Logic,CsparseMatrix,CsparseMatrix-method	CsparseMatrix-class
 Logic,dMatrix,logical-method	dMatrix-class

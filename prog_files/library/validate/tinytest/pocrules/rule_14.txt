@@ -1,0 +1,4 @@
+# rule 14
+all(table(gender, age_group) >= 1) & 
+  all(c("male", "female") %in% gender) &
+  all(c("child","adult","senior") %in% age_group)

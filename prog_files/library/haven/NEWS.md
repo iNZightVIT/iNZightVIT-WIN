@@ -1,3 +1,38 @@
+# haven 2.2.0
+
+## Partial reading
+
+Thanks to the hard work of @mikmart, all `read_*()` functions gain three new arguments that allow you to read in only part of a large file:
+
+* `col_select`: selects columns to read with a tidyselect interface (#248).
+* `skip`: skips rows before reading data (#370).
+* `n_max`: limits the number of rows to read.
+
+This also brings with it a deprecation: `cols_only` in `read_sas()` has been deprecated in favour of the new `col_select` argument.
+
+## Minor improvements and bug fixes
+
+* `as_factor()` allows non-unique labels when `levels = "label"`. This fixes 
+  a particularly annoying printing bug (#424, @gergness)
+
+* `read_sas()` now supports (IS|E|B)8601(DT|DA|TM) date/time formats (@mikmart).
+
+* All `write_` functions gain a `.name_repair` argument that controls
+  what happens when the input dataset has repeated column names (#436).
+
+* All `write_` functions can now write labelled vectors with `NULL` labels 
+  (#442).
+
+* `write_dta()` can now write dataset labels with the `label` argument, 
+  which defaults to the `label` attribute of the input data frame, if present
+  (@gorcha, #449).
+
+* `write_dta()` works better with Stata 15, thanks to updated ReadStat (#461)
+
+# haven 2.1.1
+
+* Fixes for R CMD check
+
 # haven 2.1.0
 
 ## Improved labelling
@@ -22,15 +57,15 @@
 *   Updated to latest ReadStat from @evanmiller:
 
     * `read_por()` can now read files from SPSS 25 (#412)
-    * `read_por()` used base-10 instead of base-30 for the exponent (#413)
+    * `read_por()` now uses base-30 instead of base-10 for the exponent (#413)
     * `read_sas()` can read zero column file (#420)
     * `read_sav()` reads long strings (#381)
     * `read_sav()` has greater memory limit allowing it to read more labels (#418)
     * `read_spss()` reads long variable labels (#422)
-    * `write_sav()` creates incorrect column names when >10k columns (#410)
+    * `write_sav()` no longer creates incorrect column names when >10k columns (#410)
     * `write_sav()` no longer crashes when writing long label names (#395)
   
-# haven 2.0.0R
+# haven 2.0.0
 
 ## BREAKING CHANGES
 

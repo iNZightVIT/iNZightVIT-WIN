@@ -1,4 +1,15 @@
 
+# 2.0.4
+
+* `unzip_process()` prints better error messages to the standard error,
+  and exits with a non-zero status, on error.
+
+# 2.0.3
+
+* `zipr()` and `zipr_append()` get an `include_directories = TRUE`
+  argument, that can be used to omit directory entries from the zip
+  archive. These entries may cause problems in MS Office docx files (#34).
+
 # 2.0.2
 
 * `zip_process()` and `unzip_process()` can now pass extra arguments to

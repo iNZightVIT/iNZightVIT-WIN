@@ -30,7 +30,13 @@ confront                Confront data with a (set of) expressionset(s)
 created                 Creation timestamp
 description             Rule description
 errors                  Get messages from a confrontation object
+event                   Get or set event information metadata from a
+                        'confrontation' object.
+exists_any              Test for (unique) existence
 export_yaml             Export to yaml file
+is_complete             Test for completeness of records
+is_unique               Test for uniquenes of records
+keyset                  Get key set stored with a confrontation
 label                   Rule label
 lbj_cells-class         Logging object to use with the lumberjack
                         package
@@ -51,6 +57,7 @@ plot,validator-method   Plot a validator object
 plot,validatorComparison-method
                         Line graph of validatorComparison object
 retailers               data on Dutch supermarkets
+run_validation_file     Run a file with confrontations. Capture results
 sort,validation-method
                         Aggregate and sort the results of a validation.
 summary                 Create a summary

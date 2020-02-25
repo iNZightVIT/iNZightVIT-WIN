@@ -1,3 +1,148 @@
+
+# testthat 2.3.1
+
+* The last version of testthat introduced a performance regression in
+  error assertions (#963). To fix it, you need to install rlang 0.4.2.
+
+* Fixed error assertions with rJava errors (#964).
+
+* Fixed issue where error and warning messages were not retrieved with
+  `conditionMessage()` under certain circumstances.
+
+
+# testthat 2.3.0
+
+## Conditions
+
+This release mostly focusses on an overhaul of how testthat works with conditions (i.e. errors, warnings and messages). There are relatively few user-facing changes, although you should now see more informative backtraces from errors and failures.
+
+* Unexpected errors are now printed with a simplified backtrace.
+
+* `expect_error()` and `expect_condition()` now display a backtrace
+  when the error doesn't conform to expectations (#729).
+
+* `expect_error()`, `expect_warning()` and `expect_message()` now call
+  `conditionMessage()` to get the condition message. This generic
+  makes it possible to generate messages at print-time rather than
+  signal-time.
+
+* `expect_error()` gets a better warning message when you test for a custom 
+  error class with `regexp`.
+
+* New `exp_signal()` function is a condition signaller that
+  implements the testthat protocol (signal with `stop()` if the
+  expectation is broken, with a `continue_test` restart).
+
+* Existence of restarts is first checked before invokation. This makes
+  it possible to signal warnings or messages with a different
+  condition signaller (#874).
+
+* `ListReporter` now tracks expectations and errors, even when they occur 
+  outside of tests. This ensures that `stop_on_failure` matches the results 
+  displayed by the reporter (#936).
+
+* You can silence warnings about untested error classes by
+  implementing a method for `is_uninformative_warning()`. This method
+  should be lazily registered, e.g. with `vctrs::s3_register()`. This
+  is useful for introducing an experimental error class without
+  encouraging users to depend on the class in their tests.
+  
+* Respect options(warn = -1) to ignore all warnings (@jeroen #958).
+
+## Expectations
+
+* Expectations can now be explicitly subclassed with
+  `new_expectation()`. This constructor follows our new conventions
+  for S3 classes and takes an optional subclass and optional
+  attributes.
+
+* Unquoted inputs no longer potentially generate multiple test messages (#929).
+
+* `verify_output()` no longer uses quasiquotation, which fixes issues
+  when verifying the output of tidy eval functions (#945).
+
+* `verify_output()` gains a `unicode` parameter to turn on or off the
+  use of Unicode characters by the cli package. It is disabled by
+  default to prevent the tests from failing on platforms like Windows
+  that don't support UTF-8 (which could be your contributors' or your
+  CI machines).
+
+* `verify_output()` now correctly handles multi-line condition
+  messages.
+
+* `verify_output()` now adds spacing after condition messages,
+  consistent with the spacing added after normal output.
+
+* `verify_output()` has a new syntax for inserting headers in output
+  files: insert a `"# Header"` string (starting with `#` as in
+  Markdown) to add a header to a set of outputs.
+
+## Other minor improvements and bug fixes
+
+* `compare.numeric()` uses a more sophisticated default tolerance that will
+  automatically skip tests that rely on numeric tolerance if long doubles are 
+  not available (#940).
+
+* `JunitReporter` now reports tests in ISO 8601 in the UTC timezone and 
+  uses the maximum precision of 3 decimal places (#923).
+
+# testthat 2.2.1
+
+* Repair regression in `test_rd()` and add a couple of tests to hopefully 
+  detect the problem earlier in the future.
+
+# testthat 2.2.0
+
+## New features
+
+* New `verify_output()` is designed for testing output aimed at humans 
+  (most commonly print methods and error messages). It is a regression
+  test that saves output in a way that makes it easy to review. It is
+  automatically skipped on CRAN (#782, #834).
+
+## Minor improvements and bug fixes
+
+* `as.data.frame.testthat_results()` now always returns a data frame with 13 
+  columns (@jozefhajnala, #887).
+
+* `auto_test_package()` now correctly handles helper files 
+  (`tests/testthat/helper-*.R`), automatically reloading all code and 
+  rerunning all tests (@CorradoLanera, #376, #896).
+
+* `expect_match()` now displays `info` even when match length is 0 (#867).
+
+* `expect_s3_class()` gains new `exact` argument that allows you to check
+  for an exact class match, not just inheritance (#885).
+
+* `fail()` and `succeed()` gain `info` argument, which is passed along to 
+  `expect()`.
+  
+* `test_examples()` gets some minor fixes: it now returns the results 
+  invisibly, doesn't assume that examples should contain tests, and 
+  documents that you shouldn't be using it routinely (#841).
+
+* `test_file()` only calls `Reporter$end_context()` if a context was started,
+  fixing an error in `TeamcityReporter` (@atheriel, #883).
+
+* `skip()` now reports reason for skipping as: `Reason: {skip condition}` 
+  (@patr1ckm, #868).
+
+* `skip_if()` and `skip_if_not()` now report `Reason: {skip condition} is TRUE` 
+  and `Reason: {skip condition} is not TRUE` respectively (@	patr1ckm, #868).
+  
+* `skip_if_translated()` now tests for translation of a specific message. 
+  This is more robust than the previous approach because translation
+  happens message-by-message, not necessarily for the entire session (#879)
+  (and in general, it's impossible to determine what language R is currently
+  using).
+
+* `skip_on_covr()` allows you to skip tests when covr is running.
+  (@ianmcook, #895)
+  
+* `expect_known_value()` gains a new serialisation `version` argument,
+  defaulting to 2. Prevents the `.rds` files created to hold reference objects
+  from making a package appear to require R >= 3.5 (#888 @jennybc).
+
 # testthat 2.1.1
 
 * Fix test failures in strict latin1 locale

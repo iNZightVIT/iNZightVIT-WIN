@@ -1,5 +1,5 @@
 Package: chron
-Version: 2.3-53
+Version: 2.3-55
 Title: Chronological Objects which can Handle Dates and Times
 Description: Provides chronological objects which can handle dates and times.
 Authors@R: c(person("David", "James", role = "aut",
@@ -16,13 +16,13 @@ Suggests: scales, ggplot2
 Enhances: zoo
 License: GPL-2
 NeedsCompilation: yes
-Packaged: 2018-09-09 09:44:30 UTC; hornik
+Packaged: 2020-02-02 11:15:50 UTC; hornik
 Author: David James [aut] (S original),
   Kurt Hornik [aut, trl, cre] (<https://orcid.org/0000-0003-4198-9911>),
   Gabor Grothendieck [ctb],
   R Core Team [ctb]
 Maintainer: Kurt Hornik <Kurt.Hornik@R-project.org>
 Repository: CRAN
-Date/Publication: 2018-09-09 10:04:36 UTC
-Built: R 3.6.0; x86_64-w64-mingw32; 2019-05-16 23:40:03 UTC; windows
+Date/Publication: 2020-02-02 11:40:37 UTC
+Built: R 3.6.2; x86_64-w64-mingw32; 2020-02-22 02:13:24 UTC; windows
 Archs: i386, x64

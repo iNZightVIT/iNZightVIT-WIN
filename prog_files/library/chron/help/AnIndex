@@ -12,6 +12,8 @@ as.chron.yearqtr	yearmon
 as.data.frame.chron	chron
 as.data.frame.dates	dates
 as.data.frame.times	dates
+as.dates	dates
+as.times	dates
 axis.times	dates
 c.dates	dates
 c.times	dates

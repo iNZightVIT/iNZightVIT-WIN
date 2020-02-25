@@ -265,6 +265,8 @@ rollsum.ts	rollmean
 rollsum.zoo	rollmean
 rollsumr	rollmean
 scale.zoo	zoo
+scale_type.yearmon	ggplot2.zoo
+scale_type.yearqtr	ggplot2.zoo
 scale_x_yearmon	ggplot2.zoo
 scale_x_yearqtr	ggplot2.zoo
 scale_y_yearmon	ggplot2.zoo

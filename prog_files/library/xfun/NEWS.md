@@ -1,3 +1,31 @@
+# CHANGES IN xfun VERSION 0.12
+
+- Added a new function `split_lines()`.
+
+# CHANGES IN xfun VERSION 0.11
+
+## BUG FIXES
+
+- `read_utf8()` will read the file with `options(encoding = 'native.enc')` and ignore user's setting such as `options(encoding = 'UTF-8')` (#21).
+
+# CHANGES IN xfun VERSION 0.10
+
+## NEW FEATURES
+
+- Added the function `as_strict_list()` to convert an existing object to a strict list without wrapping it in another list if the object already is of type list (in contrast to how `strict_list()` behaves) (thanks, @salim-b, #20).
+
+# CHANGES IN xfun VERSION 0.9
+
+## NEW FEATURES
+
+- Added a function `rename_seq()` to rename files to add an incremental numeric prefix to the filenames, e.g., rename `a.txt`, `b.txt`, `c.txt` to `1-a.txt`, `2-b.txt`, `3-c.txt`.
+
+# CHANGES IN xfun VERSION 0.8
+
+## MINOR CHANGES
+
+- `xfun::write_utf8(NULL)` is equivalent to `xfun::write_utf8(character(0))` now (thanks, @schloerke, yihui/knitr#1714).
+
 # CHANGES IN xfun VERSION 0.7
 
 ## MINOR CHANGES

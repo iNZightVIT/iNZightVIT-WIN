@@ -1,11 +1,11 @@
-fea0ee4c106a5117b4b06d651c358d24 *DESCRIPTION
+13382209ea22914467af7602375df442 *DESCRIPTION
 5720451cd712e00b1530b46155b48e6f *INDEX
 98cda74ba9b924e61f55c417862ca9df *Meta/Rd.rds
 25ec83abd15128a8ae9185d893802c45 *Meta/features.rds
 3e9062a1984e74efcad497bcb9dd46d4 *Meta/hsearch.rds
 08fa50391668234fdd217f6409bf3ae6 *Meta/links.rds
 1da1cba4745aa350511065df0be4dd50 *Meta/nsInfo.rds
-1deefc8568bf8441198314d13696955f *Meta/package.rds
+cbea658f567f701fa3b79b4362e3f63a *Meta/package.rds
 afa17a0f0dbb29d316733314c8e95f59 *NAMESPACE
 a7d3eec54e752d2e797c52bcbce368d2 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/objectProperties
@@ -17,8 +17,8 @@ dd7707e412638826c675a53178f169f6 *examples/PropertySet.R
 892c81ed50e4369219ed7eb0aa8699c7 *examples/setNumericWithRange.R
 1f5b22b4b594e7fc04bada8a6dc220f7 *help/AnIndex
 0c422a56a50d2c013424538de0c7de0e *help/aliases.rds
-a23ab277deb3fa8af2b51e3d0aa19727 *help/objectProperties.rdb
-e8cc40e208e63a502cab2799ce558ff7 *help/objectProperties.rdx
-6fe676644a87f31210a794c6bb5abf8f *help/paths.rds
+274670efd7899126399c0f72675f509d *help/objectProperties.rdb
+8682d72eb37cf91911bef6837577442c *help/objectProperties.rdx
+9cd0cb56d7ef2c207a097bbba124ba13 *help/paths.rds
 d4c19c7f0e11b1277dfea1e21dbd80ad *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

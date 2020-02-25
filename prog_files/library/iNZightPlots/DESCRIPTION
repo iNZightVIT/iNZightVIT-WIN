@@ -1,25 +1,36 @@
 Package: iNZightPlots
 Type: Package
-Title: iNZightPlots
-Version: 2.8
+Title: Graphics for iNZight
+Version: 2.11
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
-             person("Yu Han", "Soh", role = "ctb"))
+             person("Yu Han", "Soh", role = "ctb"),
+             person("Daniel Barnett", role = "ctb"))
+BugReports: https://github.com/iNZightVIT/iNZightPlots/issues
+Contact: inzight_support@stat.auckland.ac.nz
+URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
 Depends: R(>= 3.0)
 Imports: grDevices, stats, utils, grid, boot, s20x, survey, quantreg,
         hexbin, hextri, colorspace, dichromat, chron, scales,
-        iNZightMR, iNZightTools
+        iNZightMR, iNZightTools, magrittr, ggplot2, rlang, dplyr,
+        forcats, ggmosaic, waffle, tidyr, plotly, ggbeeswarm,
+        lubridate, ggridges
 Suggests: viridis, RColorBrewer, gridSVG, knitr, jsonlite, testthat,
-        covr
-Additional_repositories: https://r.docker.stat.auckland.ac.nz
+        covr, ggthemes
+Remotes: iNZightVIT/iNZightTools@dev, iNZightVIT/iNZightMR@dev
 Description: Simple plotting function(s) for exploratory data analysis with
-    flexible plotting options to allow users to customise plots.
+    flexible plotting options to allow users to customise plots. The goal of
+    this package is to make it easy for beginniners to start exploring
+    a dataset through simple R function calls, as well as provide a similar
+    interface to summary statistics and inference information.
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+Language: en-GB
+RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2019-05-15 01:49:15 UTC; tell029
+Packaged: 2020-02-25 08:16:21 UTC; tell029
 Author: Tom Elliott [aut, cre],
-  Yu Han Soh [ctb]
+  Yu Han Soh [ctb],
+  Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2019-05-15 01:49:16 UTC; unix
+Built: R 3.6.0; ; 2020-02-25 08:16:27 UTC; unix

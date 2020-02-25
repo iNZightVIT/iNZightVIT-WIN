@@ -1,0 +1,6 @@
+---
+include:
+  - child1.yaml
+  - child2.yaml
+---
+sum(x)>0

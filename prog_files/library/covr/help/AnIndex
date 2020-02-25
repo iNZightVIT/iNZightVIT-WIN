@@ -1,4 +1,5 @@
 covr-package	covr-package
+azure	azure
 clear_counters	clear_counters
 codecov	codecov
 code_coverage	code_coverage
@@ -13,6 +14,7 @@ file_coverage	file_coverage
 file_report	file_report
 function_coverage	function_coverage
 gitlab	gitlab
+in_covr	in_covr
 key	key
 new_counter	new_counter
 package_coverage	package_coverage

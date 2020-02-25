@@ -1,29 +1,36 @@
 Package: iNZightTools
 Type: Package
-Title: Tools for iNZight
-Version: 1.7.1
+Title: Tools for 'iNZight'
+Version: 1.8.3
 Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
         readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
         stringr, tools, chron, lubridate, zoo, validate
-Suggests: Acinonyx, cairoDevice, testthat, FutureLearnData, covr
-Additional_repositories: https://r.docker.stat.auckland.ac.nz
-Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
-                    email = "inzight_support@stat.auckland.ac.nz"),
-             person("Christoph", "Knopf", role = "aut"),
-             person("Akshay", "Gupta", role = "ctb"),
-             person("Owen", "Jin", role = "ctb"),
-             person("Lushi", "Cai", role = "ctb"))
-Description: Compatibility functions used for multiple packages and
-    distributions of iNZight, including Lite.
-License: GPL-3 | file LICENSE
+Suggests: testthat, covr, RCurl
+Authors@R: c(
+    person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
+    person("Christoph", "Knopf", role = "ctb"),
+    person("Akshay", "Gupta", role = "ctb"),
+    person("Owen", "Jin", role = "ctb", comment = "Tidyverse variable/data manipulation functions"),
+    person("Lushi", "Cai", role = "ctb"),
+    person("Yiwen", "He", role = "ctb", comment = "Dates/times and dataset manipulation"),
+    person("Daniel", "Barnett", role = "ctb", comment = "Data validation")
+    )
+BugReports: https://github.com/iNZightVIT/iNZightTools/issues
+Contact: inzight_support@stat.auckland.ac.nz
+URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
+Description: Provides a collection of wrapper functions for common variable and dataset manipulation workflows primarily used by 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions. Additionally, many of the functions return the 'tidyverse' code used to obtain the result in an effort to bridge the gap between GUI and coding.
+License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+Language: en-GB
+RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2019-05-15 02:02:00 UTC; tell029
-Author: Tom Elliott [aut, cre],
-  Christoph Knopf [aut],
+Packaged: 2020-02-25 08:19:40 UTC; tell029
+Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
+  Christoph Knopf [ctb],
   Akshay Gupta [ctb],
-  Owen Jin [ctb],
-  Lushi Cai [ctb]
-Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.6.0; ; 2019-05-15 02:02:00 UTC; unix
+  Owen Jin [ctb] (Tidyverse variable/data manipulation functions),
+  Lushi Cai [ctb],
+  Yiwen He [ctb] (Dates/times and dataset manipulation),
+  Daniel Barnett [ctb] (Data validation)
+Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
+Built: R 3.6.0; ; 2020-02-25 08:19:41 UTC; unix

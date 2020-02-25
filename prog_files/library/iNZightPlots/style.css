@@ -480,3 +480,7 @@ span {
     margin: auto;
     width: 100%;
 }
+
+.group-mean-label {
+  pointer-events: none;
+}

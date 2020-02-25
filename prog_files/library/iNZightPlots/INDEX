@@ -8,6 +8,7 @@ exploreAllSummaries     Explore all Univariate Summaries
 exportHTML              ExportHTML
 exportSVG               Export iNZightPlots as an SVG
 getPlotSummary          iNZight Plot Summary and Inference
+iNZSummary              iNZightPlot Formula Interface
 iNZightPlot             iNZight Plot
 inzpalette              iNZight colour palette
 inzpar                  iNZight Plotting Parameters
