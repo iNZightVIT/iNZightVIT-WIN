@@ -1,4 +1,29 @@
 
+# processx 3.4.2
+
+* `run()` now does a better job with displaying the spinner on terminals
+  that buffer the output (#223).
+
+* Error messages are now fully printed after an error. In non-interactive
+  sessions, the stack trace is printed as well.
+
+* Further improved error messages. Errors from C code now include the
+  name of the C function, and errors that belong to a process include the
+  system command (#197).
+
+* processx does not crash now if the process receives a SIGPIPE signal when
+  trying to write to a pipe, of which the other end has already exited.
+
+* processx now to works better with fork clusters from the parallel
+  package. See 'Mixing processx and the parallel base R package' in the
+  README file (#236).
+
+* processx now does no block SIGCHLD by default in the subprocess,
+  blocking potentially causes zombie sub-subprocesses (#240).
+
+* The `process$wait()` method now does not leak file descriptors on
+  Unix when interrupted (#141).
+
 # processx 3.4.1
 
 * Now `run()` does not create an `ok` variable in the global environment.

@@ -3,8 +3,8 @@ ELISA                   Data from an ELISA assay
 asc                     Convert between characters and ASCII codes
 ask                     Display a prompt and collect the user's
                         response
-badDend                 Dataset That Crashes Base:::Plot.Dendogram with
-                        'Node Stack Overflow'
+badDend                 Dataset That Crashes Base:::Plot.Dendrogram
+                        with 'Node Stack Overflow'
 baseOf                  Transform an integer to an array of base-n
                         digits
 binsearch               Binary Search

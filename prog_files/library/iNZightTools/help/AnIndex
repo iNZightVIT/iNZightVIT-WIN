@@ -1,5 +1,5 @@
-iNZightTools-package	iNZightTools
 %>%	pipe
+add_suffix	add_suffix
 aggregateData	aggregateData
 aggregatedt	aggregatedt
 appendrows	appendrows

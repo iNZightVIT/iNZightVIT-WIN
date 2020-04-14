@@ -1,3 +1,27 @@
+
+# rstudioapi 0.11
+
+* `rstudioapi::launcherResourceLimit()` now properly delegates the type
+  and memory arguments. (#164)
+
+* `rstudioapi` gains the function `highlightUi()`, used to highlight UI
+  elements in newer versions of RStudio.
+  
+* Paths returned from `selectFile()` are now properly marked with
+  UTF-8 encoding.
+
+* It is now possible for `rstudioapi` to communicate with a parent RStudio
+  session, for R sessions launched as RStudio jobs. Use
+  `rstudioapi::isAvailable(child_ok = TRUE)` to assert that it's okay to check
+  that `rstudioapi` is available and is running within an RStudio job.
+
+* Added `bugReport()`, a helper function for reporting RStudio bugs
+  on the GitHub issue tracker with an issue template pre-populated
+  with some helpful diagnostic information.
+
+* Added `userIdentity` and `systemUsername`, used to retrieve information about
+  the current user.
+
 # rstudioapi 0.10
 
 * Added the parameters `echo` and `focus` to `sendToConsole()`.

@@ -1,4 +1,16 @@
 
+# cli 2.0.2
+
+* The status bar now does not simplify multiple spaces by a single space.
+
+* cli now does not crash if it fails to detect whether the RStudio theme
+  is a dark theme (#138).
+
+* cli now works better with wide Unicode characters, for example emojis.
+  In particular, a status bar containing emojis is cleared properly (#133).
+
+* The status bar now does not flicker when updated, in terminals (#135).
+
 # cli 2.0.1
 
 * Symbols (`symbol$*`) are now correctly printed in RStudio on Windows (#124).
@@ -8,6 +20,8 @@
 
 * Remove spurious newline after a `cli_process_start()` was cleared
   manually, and also at the end of the function.
+
+* Use Oxford comma when listing 3 or more items (@jonocarroll, #128).
 
 # cli 2.0.0
 

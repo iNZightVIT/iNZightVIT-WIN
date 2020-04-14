@@ -51,6 +51,7 @@ exprs_auto_name         Ensure that all elements of a list of
                         expressions are named
 f_rhs                   Get or set formula components
 f_text                  Turn RHS of formula into a string or label
+faq-options             Global options for rlang
 fn_body                 Get or set function body
 fn_env                  Return the closure environment of a function
 fn_fmls                 Extract arguments from a function
@@ -103,7 +104,7 @@ seq2                    Increasing sequence of integers in an interval
 set_expr                Set and get an expression
 set_names               Set names of a vector
 sym                     Create a symbol or list of symbols
-tidyeval-data           Data pronoun for tidy evaluation
+tidyeval-data           Data pronouns for tidy evaluation
 trace_back              Capture a backtrace
 type-predicates         Type predicates
 vector-construction     Create vectors

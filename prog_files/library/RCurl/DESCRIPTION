@@ -1,9 +1,13 @@
 Package: RCurl
-Version: 1.95-4.13
+Version: 1.98-1.1
 Title: General Network (HTTP/FTP/...) Client Interface for R
-Author: Duncan Temple Lang and the CRAN team
+Authors@R: c(person("CRAN Team", role = c('ctb', 'cre'),
+                    email = "CRAN@r-project.org",
+                    comment = "de facto maintainer since 2013"),
+             person("Duncan", "Temple Lang", role = "aut",
+                    email = "duncan@r-project.org",
+                    comment = c(ORCID = "0000-0003-0159-1546")))
 SystemRequirements: GNU make, libcurl
-Maintainer: Duncan Temple Lang <duncan@r-project.org>
 Description: A wrapper for 'libcurl' <http://curl.haxx.se/libcurl/>
 	Provides functions to allow one to compose general HTTP requests
         and provides convenient functions to fetch URIs, get & post
@@ -15,10 +19,10 @@ Description: A wrapper for 'libcurl' <http://curl.haxx.se/libcurl/>
         robust and extensive, supporting FTP/FTPS/TFTP (uploads and
         downloads), SSL/HTTPS, telnet, dict, ldap, and also supports
         cookies, redirects, authentication, etc.
-License: BSD_2_clause + file LICENSE
-Depends: R (>= 3.4.0), methods, bitops
-Suggests: Rcompression, XML
-Additional_repositories: http://www.omegahat.net/R/
+License: BSD_3_clause + file LICENSE
+Depends: R (>= 3.4.0), methods
+Imports: bitops
+Suggests: XML
 Collate: aclassesEnums.R bitClasses.R xbits.R base64.R binary.S
         classes.S curl.S curlAuthConstants.R curlEnums.R curlError.R
         curlInfo.S dynamic.R form.S getFormParams.R getURLContent.R
@@ -26,8 +30,11 @@ Collate: aclassesEnums.R bitClasses.R xbits.R base64.R binary.S
         multi.S options.S scp.R support.S upload.R urlExists.R zclone.R
         zzz.R
 NeedsCompilation: yes
-Packaged: 2020-01-16 05:39:37 UTC; ripley
+Packaged: 2020-01-19 07:57:23 UTC; ripley
+Author: CRAN Team [ctb, cre] (de facto maintainer since 2013),
+  Duncan Temple Lang [aut] (<https://orcid.org/0000-0003-0159-1546>)
+Maintainer: CRAN Team <CRAN@r-project.org>
 Repository: CRAN
-Date/Publication: 2020-01-16 07:47:25 UTC
-Built: R 3.6.2; i386-w64-mingw32; 2020-01-18 23:46:00 UTC; windows
+Date/Publication: 2020-01-19 08:00:43 UTC
+Built: R 3.6.2; i386-w64-mingw32; 2020-01-23 17:36:27 UTC; windows
 Archs: i386, x64

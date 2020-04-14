@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 
@@ -18,9 +18,9 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -30,14 +30,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -46,9 +48,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -94,7 +96,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -115,9 +117,6 @@ padding-right: 2em;
 font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-size: 14px;
 line-height: 1.35;
-}
-#header {
-text-align: center;
 }
 #TOC {
 clear: both;
@@ -286,7 +285,8 @@ code > span.st { color: #d14; }
 code > span.co { color: #888888; font-style: italic; } 
 code > span.ot { color: #007020; } 
 code > span.al { color: #ff0000; font-weight: bold; } 
-code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
 </style>
 
 
@@ -303,13 +303,13 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 
-<p>Tibbles are a modern take on data frames. They keep the features that have stood the test of time, and drop the features that used to be convenient but are now frustrating (i.e. converting character vectors to factors).</p>
+<p>Tibbles are a modern take on data frames. They keep the features that have stood the test of time, and drop the features that used to be convenient but are now frustrating (i.e. converting character vectors to factors).</p>
 <div id="creating" class="section level2">
 <h2>Creating</h2>
 <p><code>tibble()</code> is a nice way to create data frames. It encapsulates best practices for data frames:</p>
 <ul>
 <li><p>It never changes an input’s type (i.e., no more <code>stringsAsFactors = FALSE</code>!).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">x =</span> letters)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> letters)</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 26 x 1</span><span>
 #&gt;    </span><span style="font-weight: bold;">x</span><span>    
@@ -328,7 +328,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </span></code></pre>
 </div>
 <p>This makes it easier to use with list-columns:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">y =</span> <span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">y =</span> <span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>))</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 3 x 2</span><span>
 #&gt;       </span><span style="font-weight: bold;">x</span><span> </span><span style="font-weight: bold;">y</span><span>         
@@ -340,18 +340,18 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </div>
 <p>List-columns are most commonly created by <code>do()</code>, but they can be useful to create by hand.</p></li>
 <li><p>It never adjusts the names of variables:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">data.frame</span>(<span class="st">`</span><span class="dt">crazy name</span><span class="st">`</span> =<span class="st"> </span><span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">names</span>(<span class="kw">data.frame</span>(<span class="st">`</span><span class="dt">crazy name</span><span class="st">`</span> =<span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;crazy.name&quot;
 </code></pre>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">tibble</span>(<span class="st">`</span><span class="dt">crazy name</span><span class="st">`</span> =<span class="st"> </span><span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">names</span>(<span class="kw">tibble</span>(<span class="st">`</span><span class="dt">crazy name</span><span class="st">`</span> =<span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;crazy name&quot;
 </code></pre>
 </div></li>
 <li><p>It evaluates its arguments lazily and sequentially:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> x <span class="op">^</span><span class="st"> </span><span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> x <span class="op">^</span><span class="st"> </span><span class="dv">2</span>)</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 5 x 2</span><span>
 #&gt;       </span><span style="font-weight: bold;">x</span><span>     </span><span style="font-weight: bold;">y</span><span>
@@ -371,24 +371,24 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <h2>Coercion</h2>
 <p>To complement <code>tibble()</code>, tibble provides <code>as_tibble()</code> to coerce objects into tibbles. Generally, <code>as_tibble()</code> methods are much simpler than <code>as.data.frame()</code> methods, and in fact, it’s precisely what <code>as.data.frame()</code> does, but it’s similar to <code>do.call(cbind, lapply(x, data.frame))</code> - i.e. it coerces each component to a data frame and then <code>cbinds()</code> them all together.</p>
 <p><code>as_tibble()</code> has been written with an eye for performance:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">l &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">26</span>, <span class="kw">sample</span>(<span class="dv">100</span>), <span class="dt">simplify =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">names</span>(l) &lt;-<span class="st"> </span>letters</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">timing &lt;-<span class="st"> </span>bench<span class="op">::</span><span class="kw">mark</span>(</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="kw">as_tibble</span>(l),</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">  <span class="kw">as.data.frame</span>(l),</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">  <span class="dt">check =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">)</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">timing</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>l &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">26</span>, <span class="kw">sample</span>(<span class="dv">100</span>), <span class="dt">simplify =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">names</span>(l) &lt;-<span class="st"> </span>letters</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a>timing &lt;-<span class="st"> </span>bench<span class="op">::</span><span class="kw">mark</span>(</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="kw">as_tibble</span>(l),</span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="kw">as.data.frame</span>(l),</span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="dt">check =</span> <span class="ot">FALSE</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>)</span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>timing</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 2 x 14</span><span>
-#&gt;   </span><span style="font-weight: bold;">expression</span><span>     </span><span style="font-weight: bold;">min</span><span>    </span><span style="font-weight: bold;">mean</span><span>  </span><span style="font-weight: bold;">median</span><span>     </span><span style="font-weight: bold;">max</span><span> </span><span style="font-weight: bold;">`itr/sec`</span><span> </span><span style="font-weight: bold;">mem_alloc</span><span>  </span><span style="font-weight: bold;">n_gc</span><span>
-#&gt;   </span><span style="color: #555555;font-style: italic;">&lt;chr&gt;</span><span>        </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>   </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>   </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>   </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>     </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>     </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>
-#&gt; </span><span style="color: #555555;">1</span><span> as_tibble… 2.88</span><span style="color: #555555;">e</span><span style="color: #BB0000;">-4</span><span> 6.25</span><span style="color: #555555;">e</span><span style="color: #BB0000;">-4</span><span> 3.27</span><span style="color: #555555;">e</span><span style="color: #BB0000;">-4</span><span> 0.004</span><span style="text-decoration: underline;">51</span><span>     </span><span style="text-decoration: underline;">1</span><span>600.      </span><span style="text-decoration: underline;">1</span><span>840     5
-#&gt; </span><span style="color: #555555;">2</span><span> as.data.f… 7.92</span><span style="color: #555555;">e</span><span style="color: #BB0000;">-4</span><span> 1.66</span><span style="color: #555555;">e</span><span style="color: #BB0000;">-3</span><span> 1.10</span><span style="color: #555555;">e</span><span style="color: #BB0000;">-3</span><span> 0.007</span><span style="text-decoration: underline;">65</span><span>      601.     </span><span style="text-decoration: underline;">34</span><span>584     5
-#&gt; </span><span style="color: #555555;"># … with 6 more variables: </span><span style="color: #555555;font-weight: bold;">n_itr</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;int&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">total_time</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">result</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span style="color: #555555;">,
-#&gt; #   </span><span style="color: #555555;font-weight: bold;">memory</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">time</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">gc</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span>
+#&gt;   </span><span style="font-weight: bold;">expression</span><span> </span><span style="font-weight: bold;">min</span><span>         </span><span style="font-weight: bold;">mean</span><span>         </span><span style="font-weight: bold;">median</span><span>      </span><span style="font-weight: bold;">max</span><span>         </span><span style="font-weight: bold;">`itr/sec`</span><span>
+#&gt;   </span><span style="color: #555555;font-style: italic;">&lt;chr&gt;</span><span>      </span><span style="color: #555555;font-style: italic;">&lt;bench_tm&gt;</span><span>  </span><span style="color: #555555;font-style: italic;">&lt;bench_tm&gt;</span><span>   </span><span style="color: #555555;font-style: italic;">&lt;bench_tm&gt;</span><span>  </span><span style="color: #555555;font-style: italic;">&lt;bench_tm&gt;</span><span>      </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>
+#&gt; </span><span style="color: #555555;">1</span><span> as_tibble… 0.000287696 0.0006251376 0.000327178 0.004508219     </span><span style="text-decoration: underline;">1</span><span>600.
+#&gt; </span><span style="color: #555555;">2</span><span> as.data.f… 0.000791522 0.0016640039 0.001098172 0.007652914      601.
+#&gt; </span><span style="color: #555555;"># … with 8 more variables: </span><span style="color: #555555;font-weight: bold;">mem_alloc</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;bnch_byt&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">n_gc</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">n_itr</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;int&gt;</span><span style="color: #555555;">,</span><span>
+#&gt; </span><span style="color: #555555;">#   </span><span style="color: #555555;font-weight: bold;">total_time</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;bench_tm&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">result</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">memory</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">time</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">gc</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;list&gt;</span><span>
 </span></code></pre>
 </div>
 <p>The speed of <code>as.data.frame()</code> is not usually a bottleneck when used interactively, but can be a problem when combining thousands of messy inputs into one tidy data frame.</p>
@@ -399,7 +399,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="printing" class="section level3">
 <h3>Printing</h3>
 <p>When you print a tibble, it only shows the first ten rows and all the columns that fit on one screen. It also prints an abbreviated description of the column type, and uses font styles and color for highlighting:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">-5</span><span class="op">:</span><span class="dv">1000</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">-5</span><span class="op">:</span><span class="dv">1000</span>)</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 1,006 x 1</span><span>
 #&gt;        </span><span style="font-weight: bold;">x</span><span>
@@ -426,52 +426,52 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="subsetting" class="section level3">
 <h3>Subsetting</h3>
 <p>Tibbles are quite strict about subsetting. <code>[</code> always returns another tibble. Contrast this with a data frame: sometimes <code>[</code> returns a data frame and sometimes it just returns a vector:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">3</span><span class="op">:</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">class</span>(df1[, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">3</span><span class="op">:</span><span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">class</span>(df1[, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>])</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;data.frame&quot;
 </code></pre>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">class</span>(df1[, <span class="dv">1</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">class</span>(df1[, <span class="dv">1</span>])</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;integer&quot;
 </code></pre>
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">df2 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">3</span><span class="op">:</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">class</span>(df2[, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2"></a>df2 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">3</span><span class="op">:</span><span class="dv">1</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">class</span>(df2[, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>])</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;
 </code></pre>
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">class</span>(df2[, <span class="dv">1</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">class</span>(df2[, <span class="dv">1</span>])</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;
 </code></pre>
 </div>
 <p>To extract a single column use <code>[[</code> or <code>$</code>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">class</span>(df2[[<span class="dv">1</span>]])</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">class</span>(df2[[<span class="dv">1</span>]])</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;integer&quot;
 </code></pre>
 </div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">class</span>(df2<span class="op">$</span>x)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">class</span>(df2<span class="op">$</span>x)</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] &quot;integer&quot;
 </code></pre>
 </div>
 <p>Tibbles are also stricter with <code>$</code>. Tibbles never do partial matching, and will throw a warning and return <code>NULL</code> if the column does not exist:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">abc =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">df<span class="op">$</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">abc =</span> <span class="dv">1</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>df<span class="op">$</span>a</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] 1
 </code></pre>
 </div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2">df2 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">abc =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">df2<span class="op">$</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2"></a>df2 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">abc =</span> <span class="dv">1</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a>df2<span class="op">$</span>a</span></code></pre></div>
 <div class="sourceCode">
-<pre class="sourceCode"><code class="sourceCode"><span style="color: #BB0000;">#&gt; Warning: Unknown or uninitialised column: 'a'.
+<pre class="sourceCode"><code class="sourceCode"><span style="color: #BB0000;">#&gt; Warning: Unknown or uninitialised column: `a`.
 </span></code></pre>
 </div>
 <div class="sourceCode">
@@ -479,12 +479,12 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </code></pre>
 </div>
 <p>As of version 1.4.1, tibbles no longer ignore the <code>drop</code> argument:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">data.frame</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)[, <span class="st">&quot;a&quot;</span>, drop =<span class="st"> </span><span class="ot">TRUE</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">data.frame</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)[, <span class="st">&quot;a&quot;</span>, drop =<span class="st"> </span><span class="ot">TRUE</span>]</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] 1 2 3
 </code></pre>
 </div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)[, <span class="st">&quot;a&quot;</span>, drop =<span class="st"> </span><span class="ot">TRUE</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)[, <span class="st">&quot;a&quot;</span>, drop =<span class="st"> </span><span class="ot">TRUE</span>]</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; [1] 1 2 3
 </code></pre>
@@ -493,7 +493,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="recycling" class="section level3">
 <h3>Recycling</h3>
 <p>When constructing a tibble, only values of length 1 are recycled. The first column with length different to one determines the number of rows in the tibble, conflicts lead to an error. This also extends to tibbles with <em>zero</em> rows, which is sometimes important for programming:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 3 x 2</span><span>
 #&gt;       </span><span style="font-weight: bold;">a</span><span>     </span><span style="font-weight: bold;">b</span><span>
@@ -503,7 +503,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 #&gt; </span><span style="color: #555555;">3</span><span>     1     3
 </span></code></pre>
 </div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">b =</span> <span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">b =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 3 x 2</span><span>
 #&gt;       </span><span style="font-weight: bold;">a</span><span>     </span><span style="font-weight: bold;">b</span><span>
@@ -513,20 +513,21 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 #&gt; </span><span style="color: #555555;">3</span><span>     3     1
 </span></code></pre>
 </div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">c =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">c =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</span></code></pre></div>
 <div class="sourceCode">
-<pre class="sourceCode"><code class="sourceCode"><span style="color: #BB0000;">#&gt; Tibble columns must have consistent lengths, only values of length one are recycled:
-#&gt; * Length 2: Column `c`
-#&gt; * Length 3: Column `a`
+<pre class="sourceCode"><code class="sourceCode"><span style="color: #BB0000;">#&gt; Error: Tibble columns must have compatible sizes.
+#&gt; * Size 3: Existing data.
+#&gt; * Size 2: Column `c`.
+#&gt; </span><span style="color: #0000BB;">ℹ</span><span style="color: #BB0000;"> Only values of size one are recycled.
 </span></code></pre>
 </div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="kw">integer</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="kw">integer</span>())</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 0 x 2</span><span>
 #&gt; </span><span style="color: #555555;"># … with 2 variables: </span><span style="color: #555555;font-weight: bold;">a</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">b</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;int&gt;</span><span>
 </span></code></pre>
 </div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="kw">integer</span>(), <span class="dt">b =</span> <span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">tibble</span>(<span class="dt">a =</span> <span class="kw">integer</span>(), <span class="dt">b =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="sourceCode">
 <pre class="sourceCode"><code class="sourceCode">#&gt; <span style="color: #555555;"># A tibble: 0 x 2</span><span>
 #&gt; </span><span style="color: #555555;"># … with 2 variables: </span><span style="color: #555555;font-weight: bold;">a</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;int&gt;</span><span style="color: #555555;">, </span><span style="color: #555555;font-weight: bold;">b</span><span style="color: #555555;"> </span><span style="color: #555555;font-style: italic;">&lt;dbl&gt;</span><span>
@@ -535,6 +536,9 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </div>
 </div>
 
+
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

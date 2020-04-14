@@ -1,7 +1,7 @@
 Package: foreign
 Priority: recommended
-Version: 0.8-74
-Date: 2019-12-25
+Version: 0.8-76
+Date: 2020-03-03
 Title: Read Data Stored by 'Minitab', 'S', 'SAS', 'SPSS', 'Stata',
         'Systat', 'Weka', 'dBase', ...
 Depends: R (>= 3.0.0)
@@ -31,8 +31,9 @@ ByteCompile: yes
 Biarch: yes
 License: GPL (>= 2)
 BugReports: https://bugs.r-project.org
+URL: https://svn.r-project.org/R-packages/trunk/foreign
 NeedsCompilation: yes
-Packaged: 2019-12-26 05:47:05 UTC; ripley
+Packaged: 2020-03-03 11:44:53 UTC; ripley
 Author: R Core Team [aut, cph, cre],
   Roger Bivand [ctb, cph],
   Vincent J. Carey [ctb, cph],
@@ -50,6 +51,6 @@ Author: R Core Team [aut, cph, cre],
   Free Software Foundation, Inc. [cph]
 Maintainer: R Core Team <R-core@R-project.org>
 Repository: CRAN
-Date/Publication: 2019-12-26 06:48:48
-Built: R 3.6.2; x86_64-w64-mingw32; 2019-12-30 17:58:41 UTC; windows
+Date/Publication: 2020-03-03 16:50:47 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-03-12 10:19:57 UTC; windows
 Archs: i386, x64

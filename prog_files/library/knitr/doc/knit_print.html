@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2020-01-16" />
+<meta name="date" content="2020-02-06" />
 
 <title>Custom Print Methods</title>
 
@@ -353,7 +353,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Custom Print Methods</h1>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2020-01-16</h4>
+<h4 class="date">2020-02-06</h4>
 
 
 <div id="TOC">
@@ -392,7 +392,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ##         UseMethod(&quot;knit_print&quot;)
 ##     }
 ## }
-## &lt;bytecode: 0x7ff9bfc2d9e0&gt;
+## &lt;bytecode: 0x7ffd7c91ac28&gt;
 ## &lt;environment: namespace:knitr&gt;</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">methods</span>(knit_print)</span></code></pre></div>
 <pre><code>##  [1] knit_print.data.frame*     knit_print.default*       
@@ -401,19 +401,19 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ##  [7] knit_print.rowwise_df*     knit_print.shiny.tag*     
 ##  [9] knit_print.shiny.tag.list* knit_print.tbl_sql*       
 ## see &#39;?methods&#39; for accessing help and source code</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">getS3method</span>(<span class="st">&quot;knit_print&quot;</span>, <span class="st">&quot;default&quot;</span>)  <span class="co"># the default method</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">getS3method</span>(<span class="st">&#39;knit_print&#39;</span>, <span class="st">&#39;default&#39;</span>)  <span class="co"># the default method</span></span></code></pre></div>
 <pre><code>## function (x, ..., inline = FALSE) 
 ## {
 ##     if (inline) 
 ##         x
 ##     else normal_print(x)
 ## }
-## &lt;bytecode: 0x7ff9bc12e068&gt;
+## &lt;bytecode: 0x7ffd7d8fab30&gt;
 ## &lt;environment: namespace:knitr&gt;</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>normal_print</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## if (isS4(x)) methods::show(x) else print(x)
-## &lt;bytecode: 0x7ff9bfea7270&gt;
+## &lt;bytecode: 0x7ffd7a7cd358&gt;
 ## &lt;environment: namespace:evaluate&gt;</code></pre>
 <p>As we can see, <code>knit_print()</code> has a <code>default</code> method, which is basically <code>print()</code> or <code>show()</code>, depending on whether the object is an S4 object. This means it does nothing special when printing R objects:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">knit_print</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span>
@@ -430,8 +430,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">library</span>(knitr)</span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="co"># define a method for objects of the class data.frame</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>knit_print.data.frame =<span class="st"> </span><span class="cf">function</span>(x, ...) {</span>
-<span id="cb12-4"><a href="#cb12-4"></a>    res =<span class="st"> </span><span class="kw">paste</span>(<span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="kw">kable</span>(x)), <span class="dt">collapse =</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb12-5"><a href="#cb12-5"></a>    <span class="kw">asis_output</span>(res)</span>
+<span id="cb12-4"><a href="#cb12-4"></a>  res =<span class="st"> </span><span class="kw">paste</span>(<span class="kw">c</span>(<span class="st">&#39;&#39;</span>, <span class="st">&#39;&#39;</span>, <span class="kw">kable</span>(x)), <span class="dt">collapse =</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="kw">asis_output</span>(res)</span>
 <span id="cb12-6"><a href="#cb12-6"></a>}</span>
 <span id="cb12-7"><a href="#cb12-7"></a><span class="co"># register the method</span></span>
 <span id="cb12-8"><a href="#cb12-8"></a><span class="kw">registerS3method</span>(<span class="st">&quot;knit_print&quot;</span>, <span class="st">&quot;data.frame&quot;</span>, knit_print.data.frame)</span></code></pre></div>
@@ -552,7 +552,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">cat</span>(<span class="st">&quot;This is cool.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">cat</span>(<span class="st">&#39;This is cool.&#39;</span>)</span></code></pre></div>
 <pre><code>## This is cool.</code></pre>
 <p>We see all objects except the data frame were printed “normally”<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. The data frame was printed as a real table. Note you do not have to use <code>kable()</code> to create tables – there are many other options such as <strong>xtable</strong>. Just make sure the print method returns a character string.</p>
 <p>The <a href="https://github.com/yihui/printr"><strong>printr</strong></a> package is a companion to <strong>knitr</strong> containing printing methods for some common objects like matrices and data frames. Users only need to load this package to get attractive printed results. A major factor to consider (which has been considered in <strong>printr</strong>) when defining a printing method is the output format. For example, the table syntax can be entirely different when the output is LaTeX vs when it is Markdown.</p>
@@ -591,8 +591,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <h3>The <code>render</code> option</h3>
 <p>As mentioned before, the chunk option <code>render</code> is a function that defaults to <code>knit_print()</code>. We can certainly use other render functions. For example, we create a dummy function that always says “I do not know what to print” no matter what objects it receives:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>dummy_print =<span class="st"> </span><span class="cf">function</span>(x, ...) {</span>
-<span id="cb23-2"><a href="#cb23-2"></a>    <span class="kw">cat</span>(<span class="st">&quot;I do not know what to print!&quot;</span>)</span>
-<span id="cb23-3"><a href="#cb23-3"></a>    <span class="co"># this function implicitly returns an invisible NULL</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="kw">cat</span>(<span class="st">&quot;I do not know what to print!&quot;</span>)</span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="co"># this function implicitly returns an invisible NULL</span></span>
 <span id="cb23-4"><a href="#cb23-4"></a>}</span></code></pre></div>
 <p>Now we use the chunk option <code>render = dummy_print</code>:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
@@ -603,7 +603,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb24-6"><a href="#cb24-6"></a><span class="co">## I do not know what to print!</span></span>
 <span id="cb24-7"><a href="#cb24-7"></a><span class="kw">head</span>(mtcars)</span>
 <span id="cb24-8"><a href="#cb24-8"></a><span class="co">## I do not know what to print!</span></span>
-<span id="cb24-9"><a href="#cb24-9"></a><span class="kw">cat</span>(<span class="st">&quot;This is cool.&quot;</span>)</span>
+<span id="cb24-9"><a href="#cb24-9"></a><span class="kw">cat</span>(<span class="st">&#39;This is cool.&#39;</span>)</span>
 <span id="cb24-10"><a href="#cb24-10"></a><span class="co">## This is cool.</span></span></code></pre></div>
 <p>Note the <code>render</code> function is only applied to visible objects. There are cases in which the objects returned are invisible, e.g. those wrapped in <code>invisible()</code>.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
@@ -638,8 +638,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb29-7"><a href="#cb29-7"></a>  ))</span>
 <span id="cb29-8"><a href="#cb29-8"></a>}</span></code></pre></div>
 <p>See what happens when we print <code>foo</code> objects:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>new_foo =<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;foo&quot;</span>)</span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="kw">new_foo</span>(<span class="st">&quot;hello&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>new_foo =<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&#39;foo&#39;</span>)</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="kw">new_foo</span>(<span class="st">&#39;hello&#39;</span>)</span></code></pre></div>
 <blockquote>
 <p><strong>This is a <code>foo</code> object</strong>: hello</p>
 </blockquote>
@@ -650,20 +650,20 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ##  $ css: chr &quot;/Users/yihui/R/shiny/www/shared/shiny.css&quot;
 ##  - attr(*, &quot;knit_meta_id&quot;)= chr [1:2] &quot;unnamed-chunk-9&quot; &quot;unnamed-chunk-9&quot;</code></pre>
 <p>Another <code>foo</code> object:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">new_foo</span>(<span class="st">&quot;world&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">new_foo</span>(<span class="st">&#39;world&#39;</span>)</span></code></pre></div>
 <blockquote>
 <p><strong>This is a <code>foo</code> object</strong>: world</p>
 </blockquote>
 <p>Similarly for <code>bar</code> objects:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>knit_print.bar =<span class="st"> </span><span class="cf">function</span>(x, ...) {</span>
-<span id="cb34-2"><a href="#cb34-2"></a>    <span class="kw">asis_output</span>(x, <span class="dt">meta =</span> <span class="kw">list</span>(<span class="dt">head =</span> <span class="st">&quot;&lt;script&gt;console.log(</span><span class="ch">\&quot;</span><span class="st">bar!</span><span class="ch">\&quot;</span><span class="st">)&lt;/script&gt;&quot;</span>))</span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="kw">asis_output</span>(x, <span class="dt">meta =</span> <span class="kw">list</span>(<span class="dt">head =</span> <span class="st">&#39;&lt;script&gt;console.log(&quot;bar!&quot;)&lt;/script&gt;&#39;</span>))</span>
 <span id="cb34-3"><a href="#cb34-3"></a>}</span>
-<span id="cb34-4"><a href="#cb34-4"></a>new_bar =<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;bar&quot;</span>)</span>
-<span id="cb34-5"><a href="#cb34-5"></a><span class="kw">new_bar</span>(<span class="st">&quot;&gt; **hello** world!&quot;</span>)</span></code></pre></div>
+<span id="cb34-4"><a href="#cb34-4"></a>new_bar =<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="kw">new_bar</span>(<span class="st">&#39;&gt; **hello** world!&#39;</span>)</span></code></pre></div>
 <blockquote>
 <p><strong>hello</strong> world!</p>
 </blockquote>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">new_bar</span>(<span class="st">&quot;&gt; hello **world**!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">new_bar</span>(<span class="st">&#39;&gt; hello **world**!&#39;</span>)</span></code></pre></div>
 <blockquote>
 <p>hello <strong>world</strong>!</p>
 </blockquote>
@@ -677,7 +677,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ##  $ head: chr &quot;&lt;script&gt;console.log(\&quot;bar!\&quot;)&lt;/script&gt;&quot;
 ##  $ head: chr &quot;&lt;script&gt;console.log(\&quot;bar!\&quot;)&lt;/script&gt;&quot;
 ##  - attr(*, &quot;knit_meta_id&quot;)= chr [1:6] &quot;unnamed-chunk-9&quot; &quot;unnamed-chunk-9&quot; &quot;unnamed-chunk-11&quot; &quot;unnamed-chunk-11&quot; ...</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">str</span>(<span class="kw">knit_meta</span>())  <span class="co"># empty now, because clean = TRUE by default</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">str</span>(<span class="kw">knit_meta</span>()) <span class="co"># empty now, because clean = TRUE by default</span></span></code></pre></div>
 <pre><code>##  list()</code></pre>
 </div>
 <div id="for-package-authors" class="section level3">
@@ -691,7 +691,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ## {
 ##     structure(x, class = &quot;knit_asis&quot;, knit_meta = meta, knit_cacheable = cacheable)
 ## }
-## &lt;bytecode: 0x7ff9c2ef7fd8&gt;
+## &lt;bytecode: 0x7ffd7f047278&gt;
 ## &lt;environment: namespace:knitr&gt;</code></pre>
 <p>Note that you can actually put <strong>knitr</strong> in the <code>Suggests</code> field in DESCRIPTION, and use <code>knitr::asis_output()</code>, so that you can avoid the “hard” dependency on <strong>knitr</strong>.</p></li>
 </ol>

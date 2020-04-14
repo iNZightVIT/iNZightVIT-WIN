@@ -1,33 +1,34 @@
 Package: iNZightTools
 Type: Package
-Title: Tools for iNZight
-Version: 1.8.1.9000
+Title: Tools for 'iNZight'
+Version: 1.8.3.9000
 Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
         readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
         stringr, tools, chron, lubridate, zoo, validate
 Suggests: testthat, covr, RCurl
-Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
-                    email = "tom.elliott@auckland.ac.nz"),
-             person("Christoph", "Knopf", role = "aut"),
-             person("Akshay", "Gupta", role = "ctb"),
-             person("Owen", "Jin", role = "ctb"),
-             person("Lushi", "Cai", role = "ctb"))
+Authors@R: c(
+    person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
+    person("Christoph", "Knopf", role = "ctb"),
+    person("Akshay", "Gupta", role = "ctb"),
+    person("Owen", "Jin", role = "ctb", comment = "Tidyverse variable/data manipulation functions"),
+    person("Lushi", "Cai", role = "ctb"),
+    person("Yiwen", "He", role = "ctb", comment = "Dates/times and dataset manipulation"),
+    person("Daniel", "Barnett", role = "ctb", comment = "Data validation")
+    )
 BugReports: https://github.com/iNZightVIT/iNZightTools/issues
 Contact: inzight_support@stat.auckland.ac.nz
 URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
-Description: Wrapper functions providing a simple, limited interface to
-    more complex functions and code snippets. In many cases, the result
-    includes a code attribute containing the 'tidyverse' R code used
-    to obtain the result. iNZightTools also contains a set of helper
-    functions used by other 'iNZight' packages (including itself).
-License: GPL-3 | file LICENSE
+Description: Provides a collection of wrapper functions for common variable and dataset manipulation workflows primarily used by 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions. Additionally, many of the functions return the 'tidyverse' code used to obtain the result in an effort to bridge the gap between GUI and coding.
+License: GPL-3
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 6.1.1
-Author: Tom Elliott [aut, cre],
-  Christoph Knopf [aut],
+RoxygenNote: 7.0.2
+Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
+  Christoph Knopf [ctb],
   Akshay Gupta [ctb],
-  Owen Jin [ctb],
-  Lushi Cai [ctb]
+  Owen Jin [ctb] (Tidyverse variable/data manipulation functions),
+  Lushi Cai [ctb],
+  Yiwen He [ctb] (Dates/times and dataset manipulation),
+  Daniel Barnett [ctb] (Data validation)
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.1; ; 2020-01-24 04:38:45 UTC; unix
+Built: R 3.6.3; ; 2020-04-14 05:31:32 UTC; unix

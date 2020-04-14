@@ -69,6 +69,7 @@ rgl.attrib.info         Get information about attributes of objects
 rgl.bbox                Set up Bounding Box decoration
 rgl.bringtotop          Assign focus to an RGL window
 rgl.clear               scene management
+rgl.init                Initializing rgl
 rgl.light               add light source
 rgl.material            Generic Appearance setup
 rgl.open                3D visualization device system
@@ -113,6 +114,10 @@ surface3d               add height-field surface shape
 text3d                  add text
 thigmophobe3d           Find the direction away from the closest point
                         in a 3d projection.
+tkpar3dsave             Modal dialog for saving par3d settings
+tkrgl                   tkrgl functions
+tkspin3d                Create TCL/TK controller for rgl window
+tkspinControl           Create a spin control in a TCL/TK window
 toggleWidget            An HTML widget to toggle display of elements of
                         a scene.
 triangulate             Triangulate a two-dimensional polygon.

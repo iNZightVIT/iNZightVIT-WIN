@@ -49,13 +49,13 @@ expect_known_hash	expect_known_output
 expect_known_output	expect_known_output
 expect_known_value	expect_known_output
 expect_length	expect_length
-expect_less_than	comparison-expectations
+expect_less_than	expect_less_than
 expect_lt	comparison-expectations
 expect_lte	comparison-expectations
 expect_mapequal	expect_setequal
 expect_match	expect_match
 expect_message	expect_message
-expect_more_than	comparison-expectations
+expect_more_than	expect_less_than
 expect_named	expect_named
 expect_null	expect_null
 expect_output	expect_output

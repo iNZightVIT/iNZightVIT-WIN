@@ -1,3 +1,4 @@
+add_suffix              Add suffix to string
 aggregateData           Aggregate data by categorical variables
 aggregatedt             Aggregate datetimes
 appendrows              Append row to the dataset

@@ -22,5 +22,9 @@ print.coverage          Print a coverage object
 report                  Display covr results using a standalone report
 tally_coverage          Tally coverage by line or expression
 to_cobertura            Create a Cobertura XML file
+to_sonarqube            Create a SonarQube Generic XML file for test
+                        coverage according to
+                        https://docs.sonarqube.org/latest/analysis/generic-test/
+                        Based on cobertura.R
 value                   Retrieve the value from an object
 zero_coverage           Provide locations of zero coverage

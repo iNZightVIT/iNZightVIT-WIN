@@ -99,6 +99,7 @@ par3d	par3d
 par3dinterp	par3dinterp
 par3dinterpControl	par3dinterpControl
 par3dinterpSetter	propertySetter
+par3dsave	tkpar3dsave
 particles3d	sprites
 pch3d	pch3d
 persp3d	persp3d
@@ -175,7 +176,7 @@ rgl.enum.textype	rgl-internal
 rgl.getMouseCallbacks	callbacks
 rgl.getWheelCallback	callbacks
 rgl.ids	scene
-rgl.init	rgl.open
+rgl.init	rgl.init
 rgl.light	light
 rgl.lines	primitive
 rgl.linestrips	primitive
@@ -266,6 +267,10 @@ text3d	texts
 texts3d	texts
 thigmophobe3d	thigmophobe3d
 title3d	axes3d
+tkpar3dsave	tkpar3dsave
+tkrgl	tkrgl
+tkspin3d	tkspin3d
+tkspinControl	tkspinControl
 tmesh3d	mesh3d
 toggleButton	webGLcontrols
 toggleWidget	toggleWidget

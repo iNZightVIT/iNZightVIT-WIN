@@ -67,7 +67,9 @@ pkglib <- file.path("prog_files", "library")
 pkgversions <- installed.packages(pkglib)[, 'Version']
 
 repos <- c('https://r.docker.stat.auckland.ac.nz',
-    'https://cran.stat.auckland.ac.nz')
+    #'https://cran.stat.auckland.ac.nz'
+    'https://cran.csiro.au'
+)
 if (!requireNamespace('packrat', quietly = TRUE))
     install.packages('packrat', repos = repos[2])
 if (!requireNamespace('devtools', quietly = TRUE))

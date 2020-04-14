@@ -1,7 +1,7 @@
 Package: iNZightPlots
 Type: Package
-Title: iNZightPlots
-Version: 2.10.4.9000
+Title: Graphics for iNZight
+Version: 2.11
 Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
                     email = "tom.elliott@auckland.ac.nz"),
              person("Yu Han", "Soh", role = "ctb"),
@@ -19,7 +19,10 @@ Suggests: viridis, RColorBrewer, gridSVG, knitr, jsonlite, testthat,
         covr, ggthemes
 Remotes: iNZightVIT/iNZightTools@dev, iNZightVIT/iNZightMR@dev
 Description: Simple plotting function(s) for exploratory data analysis with
-    flexible plotting options to allow users to customise plots.
+    flexible plotting options to allow users to customise plots. The goal of
+    this package is to make it easy for beginniners to start exploring
+    a dataset through simple R function calls, as well as provide a similar
+    interface to summary statistics and inference information.
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
 Language: en-GB
@@ -28,4 +31,4 @@ Author: Tom Elliott [aut, cre],
   Yu Han Soh [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.1; ; 2020-01-24 04:38:39 UTC; unix
+Built: R 3.6.3; ; 2020-04-14 05:31:26 UTC; unix

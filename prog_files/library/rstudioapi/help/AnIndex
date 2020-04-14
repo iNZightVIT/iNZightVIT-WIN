@@ -4,6 +4,7 @@ as.document_position	document_position
 as.document_range	document_range
 askForPassword	askForPassword
 askForSecret	askForSecret
+bugReport	bugReport
 build-tools	build-tools
 buildToolsCheck	build-tools
 buildToolsExec	build-tools
@@ -26,12 +27,14 @@ getActiveDocumentContext	rstudio-editors
 getActiveProject	getActiveProject
 getConsoleEditorContext	rstudio-editors
 getPersistentValue	persistent-values
+getRStudioPackageDependencies	getRStudioPackageDependencies
 getSourceEditorContext	rstudio-editors
 getThemeInfo	getThemeInfo
 getThemes	getThemes
 getVersion	getVersion
 hasColorConsole	hasColorConsole
 hasFun	hasFun
+highlightUi	highlightUi
 initializeProject	projects
 insertText	rstudio-documents
 is.document_position	document_position
@@ -68,6 +71,7 @@ previewSql	previewSql
 primary_selection	primary_selection
 projects	projects
 readPreference	readPreference
+readRStudioPreference	readRStudioPreference
 removeTheme	removeTheme
 restartSession	restartSession
 rstudio-documents	rstudio-documents
@@ -84,6 +88,7 @@ showDialog	showDialog
 showPrompt	showPrompt
 showQuestion	showQuestion
 sourceMarkers	sourceMarkers
+systemUsername	systemUsername
 terminalActivate	terminalActivate
 terminalBuffer	terminalBuffer
 terminalBusy	terminalBusy
@@ -100,7 +105,9 @@ terminalVisible	terminalVisible
 translateLocalUrl	translateLocalUrl
 updateDialog	updateDialog
 userDictionariesPath	dictionaries
+userIdentity	userIdentity
 verifyAvailable	isAvailable
 versionInfo	versionInfo
 viewer	viewer
 writePreference	writePreference
+writeRStudioPreference	writeRStudioPreference

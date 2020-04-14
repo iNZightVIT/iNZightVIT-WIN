@@ -1,6 +1,6 @@
 Package: stringi
-Version: 1.4.4
-Date: 2020-01-06
+Version: 1.4.6
+Date: 2020-02-17
 Title: Character String Processing Facilities
 Description: Fast, correct, consistent, portable and convenient character
     string/text processing in every locale and any native encoding. 
@@ -14,7 +14,7 @@ Description: Fast, correct, consistent, portable and convenient character
 URL: http://www.gagolewski.com/software/stringi/
         http://site.icu-project.org/ http://www.unicode.org/
 BugReports: http://github.com/gagolews/stringi/issues
-SystemRequirements: ICU4C (>= 52, optional)
+SystemRequirements: ICU4C (>= 55, optional)
 Type: Package
 Depends: R (>= 2.14)
 Imports: tools, utils, stats
@@ -26,10 +26,11 @@ Author: Marek Gagolewski [aut, cre] (<https://orcid.org/0000-0003-0637-6028>),
     IBM, Unicode, Inc. and other contributors (ICU4C source code);
     Unicode, Inc. (Unicode Character Database)
 Maintainer: Marek Gagolewski <marek@gagolewski.com>
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 NeedsCompilation: yes
-Packaged: 2020-01-05 23:46:27 UTC; gagolews
+Packaged: 2020-02-17 01:46:10 UTC; gagolews
+License_is_FOSS: yes
 Repository: CRAN
-Date/Publication: 2020-01-09 14:30:03 UTC
-Built: R 3.6.2; x86_64-w64-mingw32; 2020-01-10 11:03:16 UTC; windows
+Date/Publication: 2020-02-17 18:00:06 UTC
+Built: R 3.6.2; x86_64-w64-mingw32; 2020-02-18 22:16:06 UTC; windows
 Archs: i386, x64

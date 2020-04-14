@@ -1,7 +1,7 @@
 Package: shiny
 Type: Package
 Title: Web Application Framework for R
-Version: 1.4.0
+Version: 1.4.0.2
 Authors@R: c(
     person("Winston", "Chang", role = c("aut", "cre"), email = "winston@rstudio.com"),
     person("Joe", "Cheng", role = "aut", email = "joe@rstudio.com"),
@@ -92,7 +92,7 @@ Collate: 'app.R' 'bookmark-state-local.R' 'stack.R' 'bookmark-state.R'
 RoxygenNote: 6.1.1
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2019-10-08 16:21:27 UTC; winston
+Packaged: 2020-03-12 20:45:13 UTC; winston
 Author: Winston Chang [aut, cre],
   Joe Cheng [aut],
   JJ Allaire [aut],
@@ -125,5 +125,5 @@ Author: Winston Chang [aut, cre],
   R Core Team [ctb, cph] (tar implementation from R)
 Maintainer: Winston Chang <winston@rstudio.com>
 Repository: CRAN
-Date/Publication: 2019-10-10 12:50:02 UTC
-Built: R 3.6.2; ; 2020-01-19 08:04:30 UTC; windows
+Date/Publication: 2020-03-13 10:00:02 UTC
+Built: R 3.6.3; ; 2020-04-02 21:43:03 UTC; windows

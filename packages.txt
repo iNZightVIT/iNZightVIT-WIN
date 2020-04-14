@@ -8,9 +8,9 @@ iNZightTS
 vit
 FutureLearnData
 RColorBrewer
+RCurl
 RGtk2
 RODBC
-boot
 cairoDevice
 car
 chron
@@ -40,7 +40,6 @@ jsonlite
 knitr
 lubridate
 magrittr
-mgcv
 multcomp
 objectProperties
 plotly
@@ -69,15 +68,14 @@ grDevices
 methods
 grid
 stats
+boot
 graphics
+mgcv
 tools
-RCurl
 stats4
 BH
 DBI
 FNN
-MASS
-Matrix
 MatrixModels
 R6
 Rcpp
@@ -99,7 +97,6 @@ carData
 cellranger
 cli
 clipr
-codetools
 crayon
 crosstalk
 curl
@@ -113,7 +110,7 @@ extrafontdb
 fansi
 farver
 fastmap
-foreign
+generics
 glue
 gtable
 gtools
@@ -123,9 +120,9 @@ htmltools
 htmlwidgets
 httpuv
 httr
+isoband
 labeling
 later
-lattice
 lazyeval
 lifecycle
 lme4
@@ -140,9 +137,7 @@ minqa
 mitools
 munsell
 mvtnorm
-nlme
 nloptr
-nnet
 numDeriv
 objectSignals
 openssl
@@ -171,8 +166,8 @@ settings
 shiny
 sourcetools
 sp
+statmod
 stringi
-survival
 sys
 tidyselect
 utf8
@@ -184,5 +179,4 @@ webshot
 xfun
 xtable
 yaml
-zeallot
 zip

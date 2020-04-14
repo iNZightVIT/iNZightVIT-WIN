@@ -1,14 +1,14 @@
-## ----setup, include=FALSE------------------------------------------------
+## ----setup, include=FALSE-----------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
 library(manipulateWidget)
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  manipulateWidget(
 #    myPlotFun(country),
 #    country = mwSelect(c("BE", "DE", "ES", "FR"))
 #  )
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  manipulateWidget(
 #    myPlotFun(distribution, range, title),
 #    distribution = mwSelect(choices = c("gaussian", "uniform")),
@@ -16,10 +16,10 @@ library(manipulateWidget)
 #    title = mwText()
 #  )
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  help(package = "manipulateWidget")
 
-## ----combine, warning=FALSE, out.width="100%"----------------------------
+## ----combine, warning=FALSE, out.width="100%"---------------------------------
 library(dygraphs)
 
 plotRandomTS <- function(id) {
@@ -28,7 +28,7 @@ plotRandomTS <- function(id) {
 
 combineWidgets(plotRandomTS(1), plotRandomTS(2))
 
-## ----combine_complex_layout, , out.width="100%"--------------------------
+## ----combine_complex_layout, , out.width="100%"-------------------------------
 combineWidgets(
   ncol = 2, colsize = c(2, 1),
   plotRandomTS(1),
@@ -40,7 +40,7 @@ combineWidgets(
   )
 )
 
-## ----combine_content, , out.width="100%", out.height=400-----------------
+## ----combine_content, , out.width="100%", out.height=400----------------------
 combineWidgets(
   plotRandomTS(1),
   plotRandomTS(2),
@@ -53,7 +53,7 @@ combineWidgets(
   rightCol = "<div style='margin-top:150px;'>right column</div>"
 )
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  mydata <- data.frame(
 #    timeId = 1:100,
 #    series1 = rnorm(100),
@@ -71,7 +71,7 @@ combineWidgets(
 #    )
 #  )
 
-## ----eval = FALSE--------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  mydata <- data.frame(x = 1:100, y = rnorm(100))
 #  manipulateWidget(
 #    dygraph(mydata[range[1]:range[2], ],
@@ -84,7 +84,7 @@ combineWidgets(
 #    )
 #  )
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  mydata <- data.frame(x = 1:100, y = rnorm(100))
 #  
 #  myPlot <- function(type, lwd) {
@@ -102,7 +102,7 @@ combineWidgets(
 #    lwd = mwSlider(1, 10, 1, .display = type == "lines")
 #  )
 
-## ----dynamic_input, eval=FALSE-------------------------------------------
+## ----dynamic_input, eval=FALSE------------------------------------------------
 #  colMax <- apply(mtcars, 2, max)
 #  
 #  plotCar <- function(carName) {
@@ -126,7 +126,7 @@ combineWidgets(
 #    car = mwSelect(choices = carChoices[[cylinders]])
 #  )
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  lon <- rnorm(10, sd = 20)
 #  lat <- rnorm(10, sd = 20)
 #  

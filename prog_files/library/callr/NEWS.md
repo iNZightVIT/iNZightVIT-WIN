@@ -1,4 +1,22 @@
 
+# callr 3.4.3
+
+* `default_repos()` now returns a list if `getOption("repos")` is a list,
+  and a vector otherwise, on R 4.x.y as well.
+
+# callr 3.4.2
+
+* Improved error messages. Error messages are now fully printed after
+  an error. In non-interactive sessions, the stack trace is printed as well.
+
+# callr 3.4.1
+
+* callr is now more careful when loading the local `.Rprofile` in the
+  subprocess. This fixes issues with packrat and renv that use `.Rprofile`
+  for setup (#139).
+
+* callr functions fail early if environment file is missing (#123, @jdblischak)
+
 # callr 3.4.0
 
 * All callr functions and background processes properly clean up

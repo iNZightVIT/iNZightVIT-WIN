@@ -33,7 +33,6 @@ calibrate.svyrep.design	calibrate
 calibrate.twophase	calibrate
 cal_names	calibrate
 close.DBIsvydesign	open.DBIsvydesign
-close.ODBCsvydesign	open.DBIsvydesign
 coef.svrepstat	surveysummary
 coef.svyby	svyby
 coef.svyglm	svyglm
@@ -67,14 +66,12 @@ degf.survey.design2	svychisq
 degf.svyrep.design	svychisq
 degf.twophase	svychisq
 dim.DBIsvydesign	dimnames.DBIsvydesign
-dim.ODBCsvydesign	dimnames.DBIsvydesign
 dim.repweights_compressed	compressWeights
 dim.survey.design	dimnames.DBIsvydesign
 dim.svyimputationList	dimnames.DBIsvydesign
 dim.svyrep.design	dimnames.DBIsvydesign
 dim.twophase	dimnames.DBIsvydesign
 dimnames.DBIsvydesign	dimnames.DBIsvydesign
-dimnames.ODBCsvydesign	dimnames.DBIsvydesign
 dimnames.repweights_compressed	compressWeights
 dimnames.survey.design	dimnames.DBIsvydesign
 dimnames.svyimputationList	dimnames.DBIsvydesign
@@ -135,7 +132,6 @@ onestage.phase1	twophase
 onestrat	svyCprod
 onestrat.phase1	twophase
 open.DBIsvydesign	open.DBIsvydesign
-open.ODBCsvydesign	open.DBIsvydesign
 paley	paley
 pchisqsum	pchisqsum
 pFsum	pchisqsum
@@ -213,6 +209,7 @@ svy.varcoef	svy.varcoef
 svyboxplot	svyhist
 svyby	svyby
 svyby.default	svyby
+svyby.survey.design2	svyby
 svycdf	svycdf
 svychisq	svychisq
 svychisq.survey.design	svychisq
@@ -235,6 +232,7 @@ svyglm	svyglm
 svyglm.survey.design	svyglm
 svyglm.svyrep.design	svyglm
 svyhist	svyhist
+svyivreg	svyivreg
 svykappa	svykappa
 svykm	svykm
 svyloglin	svyloglin
@@ -245,6 +243,7 @@ svymean.survey.design2	surveysummary
 svymean.svyrep.design	surveysummary
 svymean.twophase	surveysummary
 svymle	svymle
+svynls	svynls
 svyolr	svyolr
 svyolr.survey.design2	svyolr
 svyolr.svyrep.design	svyolr
@@ -288,7 +287,6 @@ twophase2var	twophase
 twophasevar	twophase
 unwtd.count	svyby
 update.DBIsvydesign	update.survey.design
-update.ODBCsvydesign	update.survey.design
 update.survey.design	update.survey.design
 update.svyloglin	svyloglin
 update.svyrep.design	update.survey.design
@@ -296,6 +294,7 @@ update.twophase	update.survey.design
 vcov.svrepstat	surveysummary
 vcov.svyglm	svyglm
 vcov.svymle	svymle
+vcov.svyrep.design	withReplicates
 vcov.svystat	surveysummary
 weights.nonresponse	nonresponse
 weights.survey.design	weights.survey.design

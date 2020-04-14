@@ -1,6 +1,7 @@
 nloptr-package	nloptr-package
 auglag	auglag
 bobyqa	bobyqa
+ccsaq	ccsaq
 check.derivatives	check.derivatives
 cobyla	cobyla
 crs2lm	crs2lm
