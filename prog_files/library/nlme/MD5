@@ -1,5 +1,5 @@
 6889c492a36cc34aeaab486f9eae0a64 *CITATION
-2b8f22d7815a3d619b94072681d0900a *DESCRIPTION
+0be74248c7f9776a91df80553923ba26 *DESCRIPTION
 c843826752e9f806f255d79801354abb *INDEX
 967bf0c65e5a3f8c94efb6186482ade1 *LICENCE
 37d24f52d45fbbd8a3d45a707248f179 *Meta/Rd.rds
@@ -8,7 +8,7 @@ a41abec46e562a673ef16206a123098e *Meta/data.rds
 d4e3697f40aacabadeb2f82ea79d4785 *Meta/hsearch.rds
 613a94356fedc8d7873e8c22041cf4fa *Meta/links.rds
 1d4aa31551963c2043c6a4b1dff8df4c *Meta/nsInfo.rds
-fec570e5db1ba9f0f4efddbccd9492a6 *Meta/package.rds
+98b813758e5a76e2737ecdb6a3baec47 *Meta/package.rds
 607f47e45ab4c7e76698254e83a98e49 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/nlme
 6c960f45817fd2ff07f6e53012012915 *R/nlme.rdb
@@ -18,14 +18,14 @@ b177582be1f255ff1163397d8f3f1316 *data/Rdata.rds
 bfe2335a6178d0d6260291f2bdf69315 *data/Rdata.rdx
 e62f6431605ccdef06e3abed6193e6aa *help/AnIndex
 b58539d39040b22076a199bb73fc74b9 *help/aliases.rds
-6b9e49ec2442a93c0829d99b5980dace *help/nlme.rdb
-1aa9e687cf16318272a69b81ef67ae47 *help/nlme.rdx
-1a562389ba942ce3a5b835b0450fd387 *help/paths.rds
+404eb1c5c753d74252026847ba0d494c *help/nlme.rdb
+0f08450f42708c471e12eff49d904f63 *help/nlme.rdx
+762a371088165459fe30dbe0ebc4a253 *help/paths.rds
 b8da76938df273e72e30b16e25a0041e *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-85682dd5bd372087ddf64ca888b8bfe2 *libs/i386/nlme.dll
+2c9682ac39c9c101f245965598e84d7d *libs/i386/nlme.dll
 1a7426a8d39b8ec93ea154d83af2656e *libs/i386/symbols.rds
-c0ea19023ff65130b73c11aa26e2b67f *libs/x64/nlme.dll
+108e6898213d83d6ed5ce5bef019a38f *libs/x64/nlme.dll
 2face1f07826d7083fbe3c16b298268a *libs/x64/symbols.rds
 64501fa44a098a7b4c9148de789bacf4 *mlbook/README
 fd6efb34026508f27de122da7d5e712f *mlbook/ch04.R

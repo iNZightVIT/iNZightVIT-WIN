@@ -1,4 +1,5 @@
 CustomModule-class      iNZight Custom Module
+InstallModules-class    iNZight Module Installation
 allBivarPlots           Explore All Bivariate Plots
 allUniPlots             Explore All Univariate Plots
 iNZightMap2Mod-class    iNZight Maps Module 2

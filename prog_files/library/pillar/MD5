@@ -1,11 +1,11 @@
-5b525bf2a3289e7c7babef724e58c515 *DESCRIPTION
+5b9a93cc65435970f8ccc024fd98de66 *DESCRIPTION
 8c84a3af3606c71650cdc99b51080fde *INDEX
 322cc03012c95b5c912a20d9d5950678 *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 9473a98128c2d18a1d9dedec69a6e21d *Meta/hsearch.rds
 b7e1f4fae27e20775e12c96c247c9ac2 *Meta/links.rds
 5d5197dd5c88c80553fa5c3d462535bf *Meta/nsInfo.rds
-6f53fccc2994ade8d3741952ba0447ec *Meta/package.rds
+c13859f6f1cd98790f7db836a892afb8 *Meta/package.rds
 3fbf668f60a2be35512982a4ebcee11f *NAMESPACE
 06c55bf0b715fb3c5af63f3aef7e26b3 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/pillar
@@ -23,8 +23,8 @@ c3978703d8f40f2679795335715e98f4 *help/figures/lifecycle-experimental.svg
 46de21252239c5a23d400eae83ec6b2d *help/figures/lifecycle-retired.svg
 6902bbfaf963fbc4ed98b86bda80caa2 *help/figures/lifecycle-soft-deprecated.svg
 53b3f893324260b737b3c46ed2a0e643 *help/figures/lifecycle-stable.svg
-39aed3c0599b708fa340ae030d659943 *help/paths.rds
-725d2435cf492cc449e6c9b44eb6667e *help/pillar.rdb
-affa8d5eaaaf92ce181b0e4d319c2700 *help/pillar.rdx
+c29f43e3134e7de715342f99ed17e204 *help/paths.rds
+2674a92fbb0084b8ed669781520803b4 *help/pillar.rdb
+41688546ff14fd71da662166228b8da5 *help/pillar.rdx
 525f2a8fe7ae1e05dcfcd5b359ebe7c4 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

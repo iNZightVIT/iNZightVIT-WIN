@@ -1,4 +1,4 @@
-e6b538af7f1e80baa103e1eb161c48d6 *DESCRIPTION
+7e267f38dbee225adff4b824a215f94d *DESCRIPTION
 8b095a97bfe075cb4621d7b5429f5487 *INDEX
 a23a74b3f4caf9616230789d94217acb *LICENSE
 f6059ba2d01ee3456a97f746cec3ba33 *Meta/Rd.rds
@@ -7,7 +7,7 @@ f6059ba2d01ee3456a97f746cec3ba33 *Meta/Rd.rds
 4f86fcb9181037889e8a7c7bf02c4d8e *Meta/hsearch.rds
 38f71d3aa39047097092f535638ea29d *Meta/links.rds
 6c47233e3b086a9cb93d101c6df0805f *Meta/nsInfo.rds
-5ab8b7983fe5b316148e6260cb57e748 *Meta/package.rds
+24533d893897ffb8e6944486d9ba0ca2 *Meta/package.rds
 c1ea149896fbdd73f484ec2d7a2b862e *Meta/vignette.rds
 bd81439439f5d51b2aae73b4051237c4 *NAMESPACE
 bf79a39c666204560e15e32095e48dc1 *NEWS.md
@@ -27,8 +27,8 @@ c6dd17bd1b89943776c59c9c85bec8f2 *doc/introduction.Rmd
 cf35678681d1998bdb82329abd250cea *help/AnIndex
 56f8624e07cbf769ed9bedf20931f675 *help/aliases.rds
 fba66ec6df9d61967a1e27b72ac65d7d *help/figures/README-diamonds-1.png
-4105916a943c2ae3b10a7ae76de10f6a *help/ggridges.rdb
-b0da5cff88fba9fe99cd26bd428e264d *help/ggridges.rdx
-d3d0e13ab93a7547f4fcd90a40ae9cf1 *help/paths.rds
+f5ef0a03193a0ce3c985b7d2f2054080 *help/ggridges.rdb
+4cac01fb1134817bc0d18c8097ad6f4a *help/ggridges.rdx
+7565464ffcbdd9c63dfc376b37e40670 *help/paths.rds
 a6f7105a202bc5c2cead405309f2b340 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

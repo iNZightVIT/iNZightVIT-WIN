@@ -1,7 +1,7 @@
 Package: iNZightTS
 Type: Package
 Title: Time Series for iNZight
-Version: 1.5.2
+Version: 1.5.2.9000
 Authors@R: c(
     person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
     person("Junjie", "Zeng",    role = "aut"),
@@ -10,13 +10,11 @@ Authors@R: c(
     person("Marco", "Kuper",    role = "aut"),
     person("Dongning", "Zhang", role = "ctb")
     )
-Depends: R (>= 2.13)
-Imports: grid, gridExtra, grDevices, graphics, stats, utils, ggplot2,
-        tidyr, dplyr, forcats, magrittr, egg, rlang
+Depends: R (>= 3.2)
+Imports: methods, grid, gridExtra, grDevices, graphics, stats, utils,
+        ggplot2, tidyr, dplyr, forcats, magrittr, egg, rlang
 Suggests: testthat, covr
-Description: Time Series functionality for iNZight, allowing users to draw,
-    decompose, and forcast with ease. Includes capabilities to compare multiple series
-    and fit both additive and multiplicative models.
+Description: Provides a collection of functions for working with time series data, including functions for drawing, decomposing, and forecasting. Used by 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions. Includes capabilities to compare multiple series and fit both additive and multiplicative models.
 BugReports: https://github.com/iNZightVIT/iNZightTS/issues
 Contact: inzight_support@stat.auckland.ac.nz
 URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
@@ -32,4 +30,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Marco Kuper [aut],
   Dongning Zhang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-04-14 05:31:22 UTC; unix
+Built: R 3.6.3; ; 2020-04-17 02:37:59 UTC; unix

@@ -29,6 +29,7 @@ is_svydesign	is_svydesign
 is_svyrep	is_svyrep
 joindata	joindata
 load_rda	load_rda
+make_names	make_names
 missingToCat	missingToCat
 newdevice	newdevice
 rankVars	rankVars

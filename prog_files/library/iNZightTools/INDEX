@@ -33,6 +33,7 @@ is_svyrep               Check if object is a replicate survey object
                         (created by svrepdesign())
 joindata                Join data with another dataset
 load_rda                Load object(s) from an Rdata file
+make_names              Make unique variable names
 missingToCat            Convert missing values to categorical variables
 newdevice               Open a New Graphics Device
 rankVars                Rank the data of a numeric variables

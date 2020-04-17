@@ -1,4 +1,4 @@
-09e6a5589c765877d5e7157f95fcb235 *DESCRIPTION
+bf15ceb56a08b909e38033014cad4515 *DESCRIPTION
 11583b0d6a44f8c67c74a8deaa4fdd21 *INDEX
 b063ed0990cdef9e5c45dbf273fe4308 *Meta/Rd.rds
 d0f08d1c536b283dacad805395093138 *Meta/data.rds
@@ -6,7 +6,7 @@ d0f08d1c536b283dacad805395093138 *Meta/data.rds
 275af7780751a93dfc0f4f9e91f0acfe *Meta/hsearch.rds
 6b1e0f9b63ce0d45fbbc6389ec245283 *Meta/links.rds
 24f23944067f684a90e4bf0e44495989 *Meta/nsInfo.rds
-9a3808b2282890dbb951680c648a564e *Meta/package.rds
+3535a1f0bc6ebb6deef5626860553c66 *Meta/package.rds
 114aac68a5847fa4c64fef98531c6ffd *Meta/vignette.rds
 5198d2364ac32ab9547ce519f285423e *NAMESPACE
 f908461b643b1b132f1708a1ff5a4df7 *NEWS.md
@@ -27,9 +27,9 @@ a2b3c904ef05f7d379a43c77c990cd48 *example-not-working.R
 c8163f50c36e0874a7287e9c3348701a *help/AnIndex
 8f7579cecc51f159506d42cdb80d8bde *help/aliases.rds
 3e2f17fcae7e06681df85a1c73604037 *help/figures/README-example-1.png
-a736dbc29eda7215715f02ff6d22a928 *help/ggmosaic.rdb
-743fbf8cc031f183c03ad0af0e122412 *help/ggmosaic.rdx
-974bd473e1c4c3c90c9732bddbd1b9e6 *help/paths.rds
+e9f52a176b1814ef7b6acbe509fafa85 *help/ggmosaic.rdb
+379cb9ddfba567d2021fec2cdd62701e *help/ggmosaic.rdx
+83bc820a1feab610ee71dbdcb3092714 *help/paths.rds
 2248ca4edc5a8b866d2e1e3a43ada187 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 1440c2b770f30c8f69706394edb9d240 *mosaic-rects.csv

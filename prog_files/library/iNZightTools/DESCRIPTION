@@ -22,7 +22,7 @@ Description: Provides a collection of wrapper functions for common variable and 
 License: GPL-3
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Christoph Knopf [ctb],
   Akshay Gupta [ctb],
@@ -31,4 +31,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Yiwen He [ctb] (Dates/times and dataset manipulation),
   Daniel Barnett [ctb] (Data validation)
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-04-14 05:31:32 UTC; unix
+Built: R 3.6.3; ; 2020-04-17 02:38:09 UTC; unix

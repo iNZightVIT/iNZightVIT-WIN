@@ -13,13 +13,14 @@ URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
 Depends: R (>= 2.13)
 Imports: grid, grDevices, graphics, stats, utils
 Suggests: iNZightPlots, testthat, covr
+Additional_repositories: https://r.docker.stat.auckland.ac.nz
 LazyData: true
 Description: Interaction and analysis of multiple response data,
     along with other tools for analysing these types of data including
     missing value analysis and calculation of standard errors for
     a range of covariance matrix results (proportions, multinomial,
     independent samples, and multiple response).
-License: GPL-3 | file LICENSE
+License: GPL-3
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.1.0
@@ -27,4 +28,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Junjie Zeng [aut] (Original author),
   Simon Potter [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-04-14 05:31:25 UTC; unix
+Built: R 3.6.3; ; 2020-04-17 02:38:02 UTC; unix
