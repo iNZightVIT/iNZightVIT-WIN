@@ -1,13 +1,13 @@
-## ----setup, include = FALSE----------------------------------------------
+## ----setup, include = FALSE---------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(isoband)
 library(ggplot2)
-suppressMessages(library(sf))
+suppressWarnings(library(sf))
 
 m <- volcano
 
@@ -34,7 +34,7 @@ ggplot() +
   scale_fill_viridis_c(guide = "none") +
   coord_sf(expand = FALSE)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 suppressMessages(library(magick))
 
 # helper function to convert a raster image into isobands
@@ -77,7 +77,7 @@ ggplot(img_sf) +
     direction = -1
   )
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 m <- matrix(
   c(1.5, 1.5, 1.5, 1.5, 0.6, 0,
     0.5, 1.5, 1.5,   0,   0, 0,
@@ -90,7 +90,7 @@ m <- matrix(
 
 plot_iso(m, 1, 2)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 b <- isobands(x = 1:6, y = 5:1, z = m, levels_low = 0:1, levels_high = 1:2)
 bands <- iso_to_sfg(b)
 
@@ -101,21 +101,21 @@ iso <- st_sf(
 
 st_is_valid(iso, reason = TRUE)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 ggplot(iso, aes(fill = id)) + 
   geom_sf() +
   theme(legend.position = "bottom")
 
-## ------------------------------------------------------------------------
-iso_valid <- lwgeom::st_make_valid(iso)
-st_is_valid(iso_valid, reason=TRUE)
+## -----------------------------------------------------------------------------
+#iso_valid <- st_make_valid(iso)
+#st_is_valid(iso_valid, reason=TRUE)
 
-## ------------------------------------------------------------------------
-ggplot(iso_valid, aes(fill = id)) +
-  geom_sf() +
-  theme(legend.position = "bottom")
+## -----------------------------------------------------------------------------
+#ggplot(iso_valid, aes(fill = id)) +
+#  geom_sf() +
+#  theme(legend.position = "bottom")
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 b <- isobands(x = 1:6, y = 5:1, z = m + 1e-10, levels_low = 0:1, levels_high = 1:2)
 bands <- iso_to_sfg(b)
 iso <- st_sf(id = factor(1:length(bands)), geometry = st_sfc(bands))

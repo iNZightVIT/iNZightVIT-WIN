@@ -12,21 +12,20 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2020-01-12" />
+<meta name="date" content="2020-04-11" />
 
 <title>An Introduction to xfun</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
-document.addEventListener('DOMContentLoaded', function(event) {
-  var divs = document.querySelectorAll("div.section[class*='level'], section[class*='level']");
-  var i, div, h, attrs;
-  for (i = 0; i < divs.length; i++) {
-    div = divs[i];
-    h = div.firstElementChild;
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
     if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
-    attrs = h.attributes;
-    while (attrs.length > 0) h.removeAttribute(attrs[0].name);
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
   }
 });
 </script>
@@ -355,7 +354,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">An Introduction to xfun</h1>
 <h3 class="subtitle">A Collection of Miscellaneous Functions</h3>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2020-01-12</h4>
+<h4 class="date">2020-04-11</h4>
 
 
 <div id="TOC">
@@ -369,6 +368,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <li><a href="#loading-and-attaching-packages">Loading and attaching packages</a></li>
 <li><a href="#readwrite-files-in-utf-8">Read/write files in UTF-8</a></li>
 <li><a href="#convert-numbers-to-english-words">Convert numbers to English words</a></li>
+<li><a href="#cache-an-r-expression-to-an-rds-file">Cache an R expression to an RDS file</a></li>
 <li><a href="#check-reverse-dependencies-of-a-package">Check reverse dependencies of a package</a></li>
 <li><a href="#input-a-character-vector-into-the-rstudio-source-editor">Input a character vector into the RStudio source editor</a></li>
 <li><a href="#print-session-information">Print session information</a></li>
@@ -481,12 +481,12 @@ woRld</code></pre>
 <span id="cb43-3"><a href="#cb43-3"></a><span class="kw">library</span>(tinytex)</span>
 <span id="cb43-4"><a href="#cb43-4"></a><span class="kw">library</span>(mime)</span></code></pre></div>
 <p>is equivalent to</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>xfun<span class="op">::</span><span class="kw">pkg_attach</span>(<span class="kw">c</span>(<span class="st">&quot;testit&quot;</span>, <span class="st">&quot;parallel&quot;</span>, <span class="st">&quot;tinytex&quot;</span>, <span class="st">&quot;mime&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>xfun<span class="op">::</span><span class="kw">pkg_attach</span>(<span class="kw">c</span>(<span class="st">&#39;testit&#39;</span>, <span class="st">&#39;parallel&#39;</span>, <span class="st">&#39;tinytex&#39;</span>, <span class="st">&#39;mime&#39;</span>))</span></code></pre></div>
 <p>I also see scripts that contain code to install a package if it is not available, e.g.,</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">&quot;tinytex&quot;</span>)) <span class="kw">install.packages</span>(<span class="st">&quot;tinytex&quot;</span>)</span>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">&#39;tinytex&#39;</span>)) <span class="kw">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
 <span id="cb45-2"><a href="#cb45-2"></a><span class="kw">library</span>(tinytex)</span></code></pre></div>
 <p>This could be done via</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>xfun<span class="op">::</span><span class="kw">pkg_attach2</span>(<span class="st">&quot;tinytex&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>xfun<span class="op">::</span><span class="kw">pkg_attach2</span>(<span class="st">&#39;tinytex&#39;</span>)</span></code></pre></div>
 <p>The function <code>pkg_attach2()</code> is a shorthand of <code>pkg_attach(..., install = TRUE)</code>, which means if a package is not available, install it. This function can also deal with multiple packages.</p>
 <p>The function <code>loadable()</code> tests if a package is loadable.</p>
 </div>
@@ -515,6 +515,17 @@ woRld</code></pre>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="kw">n2w</span>(<span class="fl">1e+15</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;nine hundred ninety-nine trillion, nine hundred ninety-nine billion, nine hundred ninety-nine million, nine hundred ninety-nine thousand, nine hundred ninety-nine&quot;</code></pre>
 </div>
+<div id="cache-an-r-expression-to-an-rds-file" class="section level2">
+<h2>Cache an R expression to an RDS file</h2>
+<p>The function <code>cache_rds()</code> provides a simple caching mechanism: the first time an expression is passed to it, it saves the result to an RDS file; the next time it will read the RDS file and return the value instead of evaluating the expression again. If you want to invalidate the cache, you can use the argument <code>rerun = TRUE</code>.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>res =<span class="st"> </span>xfun<span class="op">::</span><span class="kw">cache_rds</span>({</span>
+<span id="cb59-2"><a href="#cb59-2"></a>  <span class="co"># pretend the computing here is a time-consuming</span></span>
+<span id="cb59-3"><a href="#cb59-3"></a>  <span class="kw">Sys.sleep</span>(<span class="dv">2</span>)</span>
+<span id="cb59-4"><a href="#cb59-4"></a>  <span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb59-5"><a href="#cb59-5"></a>})</span></code></pre></div>
+<p>When the function is used in a code chunk in a <strong>knitr</strong> document, the RDS cache file is saved to the path determined by the chunk label (the filename) and the chunk option <code>cache.path</code> (usually the cache directory), so you do not have to provide the <code>file</code> and <code>dir</code> arguments of <code>cache_rds()</code>.</p>
+<p>This caching mechanism is much simpler than <strong>knitr</strong>’s caching. Cache invalidation is often tricky (see <a href="https://yihui.org/en/2018/06/cache-invalidation/">this post</a>), so this function may be helpful if you want more transparency and control over when to invalidate the cache (for <code>cache_rds()</code>, the cache is invalidated only when the cache file is deleted, which can be achieved via the argument <code>rerun = TRUE</code>).</p>
+</div>
 <div id="check-reverse-dependencies-of-a-package" class="section level2">
 <h2>Check reverse dependencies of a package</h2>
 <p>Running <code>R CMD check</code> on the reverse dependencies of <strong>knitr</strong> and <strong>rmarkdown</strong> is my least favorite thing in developing R packages, because the numbers of their reverse dependencies are huge. The function <code>rev_check()</code> reflects some of my past experience in this process. I think I have automated it as much as possible, and made it as easy as possible to discover possible new problems introduced by the current version of the package (compared to the CRAN version). Finally I can just sit back and let it run.</p>
@@ -527,17 +538,17 @@ woRld</code></pre>
 <h2>Print session information</h2>
 <p>Since I have never been fully satisfied by the output of <code>sessionInfo()</code>, I tweaked it to make it more useful in my use cases. For example, it is rarely useful to print out the names of base R packages, or information about the matrix products / BLAS / LAPACK. Oftentimes I want additional information in the session information, such as the Pandoc version when <strong>rmarkdown</strong> is used. The function <code>session_info()</code> tweaks the output of <code>sessionInfo()</code>, and makes it possible for other packages to append information in the output of <code>session_info()</code>.</p>
 <p>You can choose to print out the versions of only the packages you specify, e.g.,</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>xfun<span class="op">::</span><span class="kw">session_info</span>(<span class="kw">c</span>(<span class="st">&quot;xfun&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;tinytex&quot;</span>), <span class="dt">dependencies =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## R version 3.6.2 (2019-12-12)
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>xfun<span class="op">::</span><span class="kw">session_info</span>(<span class="kw">c</span>(<span class="st">&#39;xfun&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;tinytex&#39;</span>), <span class="dt">dependencies =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## R version 3.6.3 (2020-02-29)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Catalina 10.15.2
+## Running under: macOS Catalina 10.15.3
 ## 
 ## Locale: C / en_US.UTF-8 / en_US.UTF-8 / C / en_US.UTF-8 / en_US.UTF-8
 ## 
 ## Package version:
-##   knitr_1.26.1    rmarkdown_2.0.4 tinytex_0.18    xfun_0.12      
+##   knitr_1.28.2    rmarkdown_2.1.1 tinytex_0.21.2  xfun_0.13      
 ## 
-## Pandoc version: 2.9.1.1</code></pre>
+## Pandoc version: 2.9.2.1</code></pre>
 </div>
 
 <script type="text/javascript">
