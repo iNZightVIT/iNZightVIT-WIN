@@ -1,7 +1,7 @@
 Package: iNZightTools
 Type: Package
 Title: Tools for 'iNZight'
-Version: 1.8.3
+Version: 1.8.4
 Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
         readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
         stringr, tools, chron, lubridate, zoo, validate
@@ -22,9 +22,9 @@ Description: Provides a collection of wrapper functions for common variable and 
 License: GPL-3
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 NeedsCompilation: no
-Packaged: 2020-02-25 08:19:40 UTC; tell029
+Packaged: 2020-04-21 03:09:51 UTC; tell029
 Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Christoph Knopf [ctb],
   Akshay Gupta [ctb],
@@ -33,4 +33,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Yiwen He [ctb] (Dates/times and dataset manipulation),
   Daniel Barnett [ctb] (Data validation)
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2020-02-25 08:19:41 UTC; unix
+Built: R 3.6.3; ; 2020-04-21 03:09:51 UTC; unix

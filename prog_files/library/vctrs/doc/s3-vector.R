@@ -15,7 +15,7 @@ new_percent <- function(x = double()) {
   new_vctr(x, class = "vctrs_percent")
 }
 
-x <- new_percent(c(seq(0, 1, length = 4), NA))
+x <- new_percent(c(seq(0, 1, length.out = 4), NA))
 x
 
 str(x)
@@ -29,10 +29,6 @@ percent <- function(x = double()) {
 ## -----------------------------------------------------------------------------
 new_percent()
 percent()
-
-## -----------------------------------------------------------------------------
-#' @importFrom methods setOldClass
-methods::setOldClass(c("vctrs_percent", "vctrs_vctr"))
 
 ## -----------------------------------------------------------------------------
 is_percent <- function(x) {
@@ -164,7 +160,7 @@ format.vctrs_decimal <- function(x, ...) {
 }
 
 vec_ptype_abbr.vctrs_decimal <- function(x, ...) {
-  paste0("dec")
+  "dec"
 }
 
 x <- decimal(runif(10), 1L)
@@ -378,7 +374,7 @@ vec_proxy_equal.vctrs_rational <- function(x, ...) {
   
   data.frame(n = n / gcd, d = d / gcd)
 }
-vec_proxy(x)
+vec_proxy_equal(x)
 
 x == rational(1, 1)
 
@@ -563,16 +559,119 @@ vec_arith.vctrs_meter.MISSING <- function(op, x, y, ...) {
 -meter(1) 
 +meter(1) 
 
-## -----------------------------------------------------------------------------
-#' @method vec_cast vctrs_percent
-#' @export
-#' @export vec_cast.vctrs_percent
-vec_cast.vctrs_percent <- function(x, to, ...) {
-} 
+## ----eval = FALSE-------------------------------------------------------------
+#  #' Internal vctrs methods
+#  #'
+#  #' @import vctrs
+#  #' @keywords internal
+#  #' @name pizza-vctrs
+#  NULL
 
 ## -----------------------------------------------------------------------------
-#' @method vec_cast.binned double
-#' @export
-vec_cast.binned.double <- function(x, y, ...) {
+new_percent <- function(x = double()) {
+  vec_assert(x, double())
+  new_vctr(x, class = "pizza_percent")
 }
+
+## -----------------------------------------------------------------------------
+# for compatibility with the S4 system
+methods::setOldClass(c("pizza_percent", "vctrs_vctr"))
+
+## -----------------------------------------------------------------------------
+#' `percent` vector
+#'
+#' This creates a double vector that represents percentages so when it is
+#' printed, it is multiplied by 100 and suffixed with `%`.
+#'
+#' @param x A numeric vector
+#' @return An S3 vector of class `pizza_percent`.
+#' @export
+#' @examples
+#' percent(c(0.25, 0.5, 0.75))
+percent <- function(x = double()) {
+  x <- vec_cast(x, double())
+  new_percent(x)
+}
+
+## -----------------------------------------------------------------------------
+#' @export
+#' @rdname percent
+is_percent <- function(x) {
+  inherits(x, "pizza_percent")
+}
+
+## -----------------------------------------------------------------------------
+#' @param x 
+#'  * For `percent()`: A numeric vector
+#'  * For `is_percent()`: An object to test.
+
+## ----eval = FALSE-------------------------------------------------------------
+#  #' @export
+#  format.pizza_percent <- function(x, ...) {
+#    out <- formatC(signif(vec_data(x) * 100, 3))
+#    out[is.na(x)] <- NA
+#    out[!is.na(x)] <- paste0(out[!is.na(x)], "%")
+#    out
+#  }
+#  
+#  #' @export
+#  vec_ptype_abbr.pizza_percent <- function(x, ...) {
+#    "prcnt"
+#  }
+
+## ----eval = FALSE-------------------------------------------------------------
+#  #' @method vec_ptype2 pizza_percent   # tell roxygen2 its a method
+#  #' @export                            # export as method
+#  #' @export vec_ptype2.pizza_percent   # export as generic
+#  #' @rdname pizza-vctrs                # document (internally)
+#  vec_ptype2.pizza_percent <- function(x, y, ...) {
+#    UseMethod("vec_ptype2.pizza_percent", y)
+#  }
+
+## ---- eval = FALSE------------------------------------------------------------
+#  S3method(vec_ptype2,pizza_percent)
+#  ...
+#  export(vec_ptype2.pizza_percent)
+
+## -----------------------------------------------------------------------------
+#' @method vec_ptype2.vctrs_percent default
+#' @export                                 
+vec_ptype2.vctrs_percent.default <- function(x, y,
+                                             ...,
+                                             x_arg = "x", y_arg = "y") {
+  vec_default_ptype2(x, y, x_arg = x_arg, y_arg = y_arg)
+}
+#' @method vec_ptype2.vctrs_percent vctrs_percent
+#' @export                                       
+vec_ptype2.vctrs_percent.vctrs_percent <- function(x, y, ...) new_percent()
+#' @method vec_ptype2.vctrs_percent double       
+#' @export                                       
+vec_ptype2.vctrs_percent.double <- function(x, y, ...) double()
+#' @method vec_ptype2.double vctrs_percent
+#' @export
+vec_ptype2.double.vctrs_percent <- function(x, y, ...) double()
+
+## ----eval = FALSE-------------------------------------------------------------
+#  #' @method vec_cast pizza_percent
+#  #' @export vec_cast.pizza_percent
+#  #' @export
+#  #' @rdname pizza-vctrs
+#  vec_cast.pizza_percent <- function(x, to, ...) {
+#    UseMethod("vec_cast.pizza_percent")
+#  }
+#  #' @method vec_cast.pizza_percent default
+#  #' @export
+#  vec_cast.pizza_percent.default <- function(x, to, ...) vec_default_cast(x, to)
+#  #' @method vec_cast.pizza_percent pizza_percent
+#  #' @export
+#  vec_cast.pizza_percent.pizza_percent <- function(x, to, ...) x
+#  #' @method vec_cast.pizza_percent double
+#  #' @export
+#  vec_cast.pizza_percent.double <- function(x, to, ...) percent(x)
+#  #' @method vec_cast.double pizza_percent
+#  #' @export
+#  vec_cast.double.pizza_percent <- function(x, to, ...) vec_data(x)
+
+## ---- eval = FALSE------------------------------------------------------------
+#  expect_error(vec_c(1, "a"), class = "vctrs_error_incompatible_type")
 

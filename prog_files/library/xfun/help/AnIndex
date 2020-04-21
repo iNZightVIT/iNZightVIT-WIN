@@ -1,6 +1,7 @@
 $.xfun_strict_list	strict_list
 as_strict_list	strict_list
 attr	attr
+cache_rds	cache_rds
 compare_Rcheck	rev_check
 download_file	download_file
 embed_dir	embed_file
@@ -43,6 +44,7 @@ read_utf8	read_utf8
 rename_seq	rename_seq
 rev_check	rev_check
 Rscript	Rscript
+Rscript_call	Rscript_call
 rstudio_type	rstudio_type
 same_path	same_path
 sans_ext	file_ext

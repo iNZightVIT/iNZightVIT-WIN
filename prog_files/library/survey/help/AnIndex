@@ -209,6 +209,7 @@ svy.varcoef	svy.varcoef
 svyboxplot	svyhist
 svyby	svyby
 svyby.default	svyby
+svyby.survey.design2	svyby
 svycdf	svycdf
 svychisq	svychisq
 svychisq.survey.design	svychisq
@@ -242,6 +243,7 @@ svymean.survey.design2	surveysummary
 svymean.svyrep.design	surveysummary
 svymean.twophase	surveysummary
 svymle	svymle
+svynls	svynls
 svyolr	svyolr
 svyolr.survey.design2	svyolr
 svyolr.svyrep.design	svyolr
@@ -292,6 +294,7 @@ update.twophase	update.survey.design
 vcov.svrepstat	surveysummary
 vcov.svyglm	svyglm
 vcov.svymle	svymle
+vcov.svyrep.design	withReplicates
 vcov.svystat	surveysummary
 weights.nonresponse	nonresponse
 weights.survey.design	weights.survey.design

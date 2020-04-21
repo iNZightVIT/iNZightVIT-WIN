@@ -6,7 +6,7 @@ forecastplot	forecastplot
 iNZightMTS	iNZightTS
 iNZightTS	iNZightTS
 multiseries	multiseries
-plot.inzdecomp	plot.inzdecomp
+plot.inzdecomp	decompose
 plot.iNZightMTS	plot.iNZightMTS
 plot.iNZightTS	plot.iNZightTS
 pred	pred

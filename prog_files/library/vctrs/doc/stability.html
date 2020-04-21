@@ -376,7 +376,7 @@ It is size-unstable for the same reasons as <code>sapply()</code>.</p></li>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; Prototype: logical</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="kw">vec_ptype_show</span>(<span class="kw">ifelse</span>(<span class="ot">FALSE</span>, 1L, 1L))</span>
 <span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt; Prototype: integer</span></span></code></pre></div></li>
-<li><p><code>read.csv(file)</code> is type-unstable and size-unstable because, while you know it will return a data frame, you don’t know what columns it will return or how many rows it will have. Similarly, <code>df[[i]]</code> is not type-stable because the result depends on the <em>value</em> of <code>i</code>. There are very many important functions that can not be made type-stable or size-stable!</p></li>
+<li><p><code>read.csv(file)</code> is type-unstable and size-unstable because, while you know it will return a data frame, you don’t know what columns it will return or how many rows it will have. Similarly, <code>df[[i]]</code> is not type-stable because the result depends on the <em>value</em> of <code>i</code>. There are many important functions that can not be made type-stable or size-stable!</p></li>
 </ol>
 <p>With this understanding of type- and size-stability in hand, we’ll use them to analyse some base R functions in greater depth and then propose alternatives with better properties.</p>
 </div>
@@ -422,20 +422,20 @@ It is size-unstable for the same reasons as <code>sapply()</code>.</p></li>
 <p>As far as I can tell, <code>c()</code> never throws an error. No matter how bizarre the inputs, it always returns something:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">c</span>(<span class="kw">Sys.Date</span>(), <span class="kw">factor</span>(<span class="st">&quot;x&quot;</span>), <span class="st">&quot;x&quot;</span>)</span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="co">#&gt; Warning in as.POSIXlt.Date(x): NAs introduced by coercion</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="co">#&gt; [1] &quot;2020-02-19&quot; &quot;1970-01-02&quot; NA</span></span></code></pre></div>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co">#&gt; [1] &quot;2020-03-08&quot; &quot;1970-01-02&quot; NA</span></span></code></pre></div>
 <p>If the inputs aren’t vectors, <code>c()</code> automatically puts them in a list:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">c</span>(mean, <span class="kw">globalenv</span>())</span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="co">#&gt; [[1]]</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="co">#&gt; function (x, ...) </span></span>
 <span id="cb11-4"><a href="#cb11-4"></a><span class="co">#&gt; UseMethod(&quot;mean&quot;)</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="co">#&gt; &lt;bytecode: 0x7fd3f09f0758&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co">#&gt; &lt;bytecode: 0x7f8b76968198&gt;</span></span>
 <span id="cb11-6"><a href="#cb11-6"></a><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span>
 <span id="cb11-7"><a href="#cb11-7"></a><span class="co">#&gt; </span></span>
 <span id="cb11-8"><a href="#cb11-8"></a><span class="co">#&gt; [[2]]</span></span>
 <span id="cb11-9"><a href="#cb11-9"></a><span class="co">#&gt; &lt;environment: R_GlobalEnv&gt;</span></span></code></pre></div>
 <p><code>vec_c()</code> throws an error if the inputs are not vectors or not automatically coercible:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">vec_c</span>(mean, <span class="kw">globalenv</span>())</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="co">#&gt; Error: `..1` must be a vector, not a function</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co">#&gt; Error: `..1` must be a vector, not a function.</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a></span>
 <span id="cb12-4"><a href="#cb12-4"></a><span class="kw">vec_c</span>(<span class="kw">Sys.Date</span>(), <span class="kw">factor</span>(<span class="st">&quot;x&quot;</span>), <span class="st">&quot;x&quot;</span>)</span>
 <span id="cb12-5"><a href="#cb12-5"></a><span class="co">#&gt; Error: No common type for `..1` &lt;date&gt; and `..2` &lt;factor&lt;5a425&gt;&gt;.</span></span></code></pre></div>
@@ -580,9 +580,9 @@ It is size-unstable for the same reasons as <code>sapply()</code>.</p></li>
 </div>
 <div id="ifelse" class="section level2">
 <h2><code>ifelse()</code></h2>
-<p>One of the functions that motivate the development of vctrs is <code>ifelse</code>. It has the surprising property that the result value is “A vector of the same length and attributes (including dimensions and class) as <code>test</code>”. To me, it seems more reasonable for the type of the output to be controlled by the type of the <code>yes</code> and <code>no</code> arguments.</p>
+<p>One of the functions that motivate the development of vctrs is <code>ifelse()</code>. It has the surprising property that the result value is “A vector of the same length and attributes (including dimensions and class) as <code>test</code>”. To me, it seems more reasonable for the type of the output to be controlled by the type of the <code>yes</code> and <code>no</code> arguments.</p>
 <p>In <code>dplyr::if_else()</code> I swung too far towards strictness: it throws an error if <code>yes</code> and <code>no</code> are not the same type. This is annoying in practice because it requires typed missing values (<code>NA_character_</code> etc), and because the checks are only on the class (not the full prototype), it’s easy to create invalid output.</p>
-<p>I found it much easier understand what <code>ifelse()</code> <em>should</em> do once I internalised the ideas of type- and size-stability:</p>
+<p>I found it much easier to understand what <code>ifelse()</code> <em>should</em> do once I internalised the ideas of type- and size-stability:</p>
 <ul>
 <li><p>The first argument must be logical.</p></li>
 <li><p><code>vec_ptype(if_else(test, yes, no))</code> equals <code>vec_ptype_common(yes, no)</code>. Unlike <code>ifelse()</code> this implies that <code>if_else()</code> must always evaluate both <code>yes</code> and <code>no</code> in order to figure out the correct type. I think this is consistent with <code>&amp;&amp;</code> (scalar operation, short circuits) and <code>&amp;</code> (vectorised, evaluates both sides).</p></li>
@@ -608,7 +608,7 @@ It is size-unstable for the same reasons as <code>sapply()</code>.</p></li>
 <span id="cb27-17"><a href="#cb27-17"></a><span class="co">#&gt; [1] &lt;NA&gt;  big   big   small small</span></span>
 <span id="cb27-18"><a href="#cb27-18"></a><span class="co">#&gt; Levels: small big</span></span>
 <span id="cb27-19"><a href="#cb27-19"></a><span class="kw">if_else</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span>, <span class="kw">Sys.Date</span>(), <span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">7</span>)</span>
-<span id="cb27-20"><a href="#cb27-20"></a><span class="co">#&gt; [1] NA           &quot;2020-02-26&quot; &quot;2020-02-26&quot; &quot;2020-02-19&quot; &quot;2020-02-19&quot;</span></span></code></pre></div>
+<span id="cb27-20"><a href="#cb27-20"></a><span class="co">#&gt; [1] NA           &quot;2020-03-15&quot; &quot;2020-03-15&quot; &quot;2020-03-08&quot; &quot;2020-03-08&quot;</span></span></code></pre></div>
 <p>By using <code>vec_size()</code> and <code>vec_slice()</code>, this definition of <code>if_else()</code> automatically works with data.frames and matrices:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">if_else</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span>, <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">1</span>), <span class="kw">data.frame</span>(<span class="dt">y =</span> <span class="dv">2</span>))</span>
 <span id="cb28-2"><a href="#cb28-2"></a><span class="co">#&gt;    x  y</span></span>

@@ -8,7 +8,6 @@ frame_matrix            Row-wise matrix creation
 glimpse                 Get a glimpse of your data
 is_tibble               Test if the object is a tibble
 lst                     Build a list
-name-repair             Repair the names of a vector
 new_tibble              Tibble constructor and validator
 rownames                Tools for working with row names
 subsetting              Subsetting tibbles

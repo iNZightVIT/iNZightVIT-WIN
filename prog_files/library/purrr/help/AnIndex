@@ -34,6 +34,7 @@ discard	keep
 done	done
 every	every
 exec	exec
+faq-adverbs-export	faq-adverbs-export
 flatten	flatten
 flatten_chr	flatten
 flatten_dbl	flatten
@@ -143,6 +144,7 @@ modify_if	modify
 modify_if.default	modify
 modify_in	modify_in
 negate	negate
+none	every
 null-default	null-default
 partial	partial
 pluck	pluck

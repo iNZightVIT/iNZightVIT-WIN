@@ -32,5 +32,5 @@ Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),
   Lloyd Hilaiel [cph] (author of bundled libyajl)
 Repository: CRAN
 Date/Publication: 2020-02-02 11:40:02 UTC
-Built: R 3.6.2; x86_64-w64-mingw32; 2020-02-19 02:03:55 UTC; windows
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-04-09 13:18:42 UTC; windows
 Archs: i386, x64

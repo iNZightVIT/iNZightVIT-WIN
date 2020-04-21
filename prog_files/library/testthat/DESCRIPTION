@@ -1,6 +1,6 @@
 Package: testthat
 Title: Unit Testing for R
-Version: 2.3.1
+Version: 2.3.2
 Authors@R: c(
     person("Hadley", "Wickham", , "hadley@rstudio.com", c("aut", "cre")),
     person("RStudio", role = c("cph", "fnd")),
@@ -21,7 +21,7 @@ Suggests: covr, curl (>= 0.9.5), devtools, knitr, rmarkdown, usethis,
         vctrs (>= 0.1.0), xml2
 VignetteBuilder: knitr
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Collate: 'auto-test.R' 'capture-condition.R' 'capture-output.R'
         'colour-text.R' 'compare.R' 'compare-character.R'
         'compare-numeric.R' 'compare-time.R' 'context.R' 'describe.R'
@@ -45,12 +45,12 @@ Collate: 'auto-test.R' 'capture-condition.R' 'capture-output.R'
         'try-again.R' 'utils-io.R' 'utils.R' 'verify-output.R'
         'watcher.R'
 NeedsCompilation: yes
-Packaged: 2019-11-19 12:37:52 UTC; lionel
+Packaged: 2020-03-02 14:59:34 UTC; hadley
 Author: Hadley Wickham [aut, cre],
   RStudio [cph, fnd],
   R Core team [ctb] (Implementation of utils::recover())
 Maintainer: Hadley Wickham <hadley@rstudio.com>
 Repository: CRAN
-Date/Publication: 2019-12-01 15:40:03 UTC
-Built: R 3.6.2; x86_64-w64-mingw32; 2020-02-22 06:52:35 UTC; windows
+Date/Publication: 2020-03-02 15:40:02 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-04-09 19:30:33 UTC; windows
 Archs: i386, x64

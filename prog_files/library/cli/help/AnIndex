@@ -98,3 +98,4 @@ style_underline	ansi-styles
 symbol	symbol
 themes	themes
 tree	tree
+unicode-width-workaround	unicode-width-workaround

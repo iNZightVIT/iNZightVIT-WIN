@@ -3,32 +3,31 @@ Type: Package
 Title: Tools for Exploring Multiple Response Data
 Version: 2.2.4
 Authors@R: c(
-    person("Junjie", "Zeng", role = c("aut"),
-        email = "jzen188@aucklanduni.ac.nz",
-        comment = "Original author"),
-    person("Simon", "Potter", role = c("aut")),
-    person("Tom", "Elliott", role = c("aut", "cre"),
-        email = "tom.elliott@auckland.ac.nz"))
+    person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
+    person("Junjie", "Zeng", role = c("aut"), email = "jzen188@aucklanduni.ac.nz", comment = "Original author"),
+    person("Simon", "Potter", role = c("aut"))
+    )
 BugReports: https://github.com/iNZightVIT/iNZightMR/issues
 Contact: inzight_support@stat.auckland.ac.nz
 URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
 Depends: R (>= 2.13)
 Imports: grid, grDevices, graphics, stats, utils
 Suggests: iNZightPlots, testthat, covr
+Additional_repositories: https://r.docker.stat.auckland.ac.nz
 LazyData: true
-Description: Interaction and analysis of Multiple Response Data,
+Description: Interaction and analysis of multiple response data,
     along with other tools for analysing these types of data including
     missing value analysis and calculation of standard errors for
     a range of covariance matrix results (proportions, multinomial,
     independent samples, and multiple response).
-License: GPL-3 | file LICENSE
+License: GPL-3
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 NeedsCompilation: no
-Packaged: 2020-02-25 08:11:35 UTC; tell029
-Author: Junjie Zeng [aut] (Original author),
-  Simon Potter [aut],
-  Tom Elliott [aut, cre]
+Packaged: 2020-04-21 03:04:57 UTC; tell029
+Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
+  Junjie Zeng [aut] (Original author),
+  Simon Potter [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.0; ; 2020-02-25 08:11:36 UTC; unix
+Built: R 3.6.3; ; 2020-04-21 03:04:57 UTC; unix

@@ -25,6 +25,7 @@ system_check	system_check
 system_output	system_output
 tally_coverage	tally_coverage
 to_cobertura	to_cobertura
+to_sonarqube	to_sonarqube
 trace_calls	trace_calls
 value	value
 zero_coverage	zero_coverage

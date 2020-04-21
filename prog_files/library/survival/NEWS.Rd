@@ -1,8 +1,63 @@
 \name{NEWS}
 \title{NEWS file for the survival package}
+\section{Changes in version 3.1-12}{
+  \itemize{
+    \item Change the default for a robust variance: if there is a
+    cluster argument, non-integer case weight, or an id statement and
+    at least one id has more than one event.
+    \item cox.zph would fail if the coxph fit had NA coefficients
+    (something that used to work).  Add a test case to futureproof
+    this.  Caught by Ville Ponkilainen.
+    \item Minor: pyears + data.frame option would not preserve the order
+    of factor levels from a tcut operator.  
+    \item Edge case from Andrea Jaensch: a coxph model with strata +
+    psline terms, plus a (time1, time2) data set containing observations
+    that do not overlap any events, in just the right spot, could cause an
+    infinite loop in agmart3.c.
+    \item Add subset and na.action arguments to survcheck.
+    \item Minor updates to plot.survfit and survcheck.
+    \item Add cluster= option to replace +cluster() in a formula.
+    Remove all mention of the latter from documentation and
+    examples. Make the cluster, id, and robust options consistent across
+    all the functions.
+    \item Fix bug in plot.survfit with xaxs='S'.  At some point one line
+     of code got lost.  
+}}
+
+\section{Changes in version 3.1-11}{
+  \itemize{
+    \item Add 'n' vector to survcheck, update tests.
+    \item Improve multistate coxph printout
+    \item Fix a memory reference error in multicheck.c
+}}
+
+\section{Changes in version 3.1-10}{
+  \itemize{
+    \item Fix error in concordance(fit, newdata= xxx): it used the old
+    data at one point.  Pointed out by Matjin van't Hooft.
+    \item Minor update to tmerge -- print a warning when a user attempts
+    to update a variable using tdc, namely that this results in complete
+    replacement of said variable, with no retention of prior values.
+    \item Minor fixes to plot.survfit, when both xlim and xaxs='S' are
+    specified.  Error and suggested fixes from Heinz Tuechler.
+    \item Two failures in makepredictcall.pspline, found by 2 different
+    users, both cases of options that should have been carried forward.
+    A subsequent termplot() call failed if pspline had 'nterm' or
+    'combine'.
+    \item Fix memory leak (forgotten PROTECT) in zph[12].c; caught by B Ripley
+}}
+
+\section{Changes in version 3.1-9}{
+  \itemize{
+    \item The plot.cox.zph function would fail for a stratified model,
+    if some covariate was a constant in one of the strata.  The cox.zph
+    routine correctly labeled those points as uninformative via NA, the
+    plot routine needed to actually ignore them.
+}}
+
 \section{Changes in version 3.1-8}{
   \itemize{
-    \item For a multistate model which no covariates, the start.time
+    \item For a multistate model with no covariates, the start.time
     value (if present) was inadvertently omitted from the result.  This
     affects the default plot.
     \item Per user request, the tmerge function can now use Dates as the

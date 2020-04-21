@@ -11,7 +11,7 @@ vec_assert              Assert an argument has known prototype and/or
                         size
 vec_bind                Combine many data frames into one data frame
 vec_c                   Combine many vectors into one vector
-vec_chop                Repeatedly slice a vector
+vec_chop                Chopping
 vec_compare             Compare two vectors
 vec_count               Count unique values in a vector
 vec_data                Extract underlying data

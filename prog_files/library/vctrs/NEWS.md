@@ -1,4 +1,38 @@
 
+# vctrs 0.2.4
+
+* Factors and dates methods are now implemented in C for efficiency.
+
+* `new_data_frame()` now correctly updates attributes and supports merging
+  of the `"names"` and `"row.names"` arguments (#883).
+
+* `vec_match()` gains an `na_equal` argument (#718).
+
+* `vec_chop()`'s `indices` argument has been restricted to positive integer
+  vectors. Character and logical subscripts haven't proven useful, and this
+  aligns `vec_chop()` with `vec_unchop()`, for which only positive integer
+  vectors make sense.
+
+* New `vec_unchop()` for combining a list of vectors into a single vector. It
+  is similar to `vec_c()`, but gives greater control over how the elements
+  are placed in the output through the use of a secondary `indices` argument.
+
+* Breaking change: When `.id` is supplied, `vec_rbind()` now creates
+  the identifier column at the start of the data frame rather than at
+  the end.
+
+* `numeric_version` and `package_version` lists are now treated as
+  vectors (#723).
+
+* `vec_slice()` now properly handles symbols and S3 subscripts.
+
+* `vec_as_location()` and `vec_as_subscript()` are now fully
+  implemented in C for efficiency.
+
+* `num_as_location()` gains a new argument, `zero`, for controlling whether
+  to `"remove"`, `"ignore"`, or `"error"` on zero values (#852).
+
+
 # vctrs 0.2.3
 
 * The main feature of this release is considerable performance

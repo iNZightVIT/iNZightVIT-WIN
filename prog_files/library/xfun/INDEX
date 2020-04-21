@@ -1,6 +1,10 @@
 Rscript                 Run the commands 'Rscript' and 'R CMD'
+Rscript_call            Call a function in a new R session via
+                        'Rscript()'
 attr                    Obtain an attribute of an object without
                         partial matching
+cache_rds               Cache the value of an R expression to an RDS
+                        file
 download_file           Try various methods to download a file
 embed_file              Embed a file, multiple files, or directory on
                         an HTML page

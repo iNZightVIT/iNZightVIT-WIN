@@ -11,7 +11,6 @@ RColorBrewer
 RCurl
 RGtk2
 RODBC
-boot
 cairoDevice
 car
 chron
@@ -67,7 +66,6 @@ zoo
 BH
 DBI
 FNN
-MASS
 MatrixModels
 R6
 Rcpp
@@ -102,7 +100,7 @@ extrafontdb
 fansi
 farver
 fastmap
-foreign
+generics
 glue
 gtable
 gtools
@@ -112,9 +110,9 @@ htmltools
 htmlwidgets
 httpuv
 httr
+isoband
 labeling
 later
-lattice
 lazyeval
 lifecycle
 lme4
@@ -158,8 +156,8 @@ settings
 shiny
 sourcetools
 sp
+statmod
 stringi
-survival
 sys
 tidyselect
 utf8

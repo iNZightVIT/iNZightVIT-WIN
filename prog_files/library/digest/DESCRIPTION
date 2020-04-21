@@ -5,8 +5,8 @@ Author: Dirk Eddelbuettel <edd@debian.org> with contributions
  Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, 
  Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,
  Matthew de Queljoe, Ion Suruceanu, and Bill Denney.
-Version: 0.6.24
-Date: 2020-02-11
+Version: 0.6.25
+Date: 2020-02-22
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Title: Create Compact Hash Digests of R Objects
 Description: Implementation of a function 'digest()' for the creation 
@@ -25,8 +25,8 @@ License: GPL (>= 2)
 Suggests: tinytest, knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2020-02-12 12:39:08.081772 UTC; edd
+Packaged: 2020-02-22 14:55:28.282493 UTC; edd
 Repository: CRAN
-Date/Publication: 2020-02-12 14:30:02 UTC
-Built: R 3.6.2; x86_64-w64-mingw32; 2020-02-22 02:12:13 UTC; windows
+Date/Publication: 2020-02-23 00:10:02 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-04-09 13:17:58 UTC; windows
 Archs: i386, x64

@@ -155,6 +155,7 @@ vec_split	vec_split
 vec_type	vec_type
 vec_type2	vec_type
 vec_type_common	vec_type
+vec_unchop	vec_chop
 vec_unique	vec_unique
 vec_unique_count	vec_unique
 vec_unique_loc	vec_unique
