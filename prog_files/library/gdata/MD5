@@ -1,5 +1,5 @@
 0c46058204b94013b5fa456893dc4c00 *ChangeLog
-b77966d09b0f200d0ebf3f0dd24a42ab *DESCRIPTION
+f2966203000acf6590e7dd557abc9336 *DESCRIPTION
 5c9f1516eb6b79c3765fe81d9ddb70ff *INDEX
 301fa55bb3852309fc9f7a60fe33db92 *Meta/Rd.rds
 3647a3358ee4c8490c41fe753ac802cb *Meta/data.rds
@@ -7,7 +7,7 @@ b77966d09b0f200d0ebf3f0dd24a42ab *DESCRIPTION
 60a91c9e722ad5c0f0cc660d23f6c5ee *Meta/hsearch.rds
 bc449426cc37dffc9d6f1b13ed0e184d *Meta/links.rds
 42b45dc0c1a2d8410470becfa3831e21 *Meta/nsInfo.rds
-340eb004741b621f9e34464cc6aa47c8 *Meta/package.rds
+0808ddb84aacef11212c8e21c6b34062 *Meta/package.rds
 740963cb6e258d84bab3f3a7a7d0b385 *Meta/vignette.rds
 d9c89c6d5053540222d6360e8efc127b *NAMESPACE
 c449f3a8a7472e85450b46bf30440206 *NEWS
@@ -27,9 +27,9 @@ a968a07310286934daaea108e3f915f4 *doc/unknown.Rnw
 442cd7cd29a6c16ec69f16b743725683 *doc/unknown.pdf
 be3e9e05da149b2d3ab3c70f9a457144 *help/AnIndex
 16ed1b96493e8e73533d822fc50d05b0 *help/aliases.rds
-5fd903fd7f01142e7d83cc3804c57d3b *help/gdata.rdb
-6e00ec8246a804e3acc2df9ce64a7c3c *help/gdata.rdx
-2beafa9219a7291dcbf978ad3038d589 *help/paths.rds
+122fb946b6707101ccc9c6d02e6c91dd *help/gdata.rdb
+858eb709b9b932dda159efc12a75a5f9 *help/gdata.rdx
+8ce5dac02e654a4c4b7db11e9668c4ba *help/paths.rds
 4c7ece659fd3ed7864f86d7d661a4f34 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 3622c5d29d09f1a179211f22acf6cdef *perl/Archive/README-Archive-Zip

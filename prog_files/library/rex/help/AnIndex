@@ -1,4 +1,3 @@
-%>%	pipe
 %if_next_is%	lookarounds
 %if_next_isnt%	lookarounds
 %if_prev_is%	lookarounds

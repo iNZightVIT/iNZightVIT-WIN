@@ -1,4 +1,4 @@
-70d400dc5636b13c0692338b5dce63ac *DESCRIPTION
+5ba8a63014cbd7a3d81e55de793d31ce *DESCRIPTION
 82e1543f59658aba22f8342595320380 *INDEX
 44b42abf175150c1e37a8d871caac748 *LICENSE
 69fce3bc6cddf723ec939ebc2e16ed8f *Meta/Rd.rds
@@ -6,7 +6,7 @@
 cf0910d123d71a8dfc329949c52c2c73 *Meta/hsearch.rds
 94668e8afe43b75c4a537fa54f60d5ac *Meta/links.rds
 ff90e7ee9c30c16d59793fa2f9a69ece *Meta/nsInfo.rds
-b0c19932348db078a6ac5d80db9ec83a *Meta/package.rds
+4f40bb4ea7a5472ad9f586ad24d4d040 *Meta/package.rds
 b29db6ab00b93a4a8d0859e2e1e74685 *NAMESPACE
 ac348ae611be8e707e5297d71fa21ec6 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/fastmap
@@ -14,12 +14,12 @@ d9c487cc51193f1bb6a68936bfbfe41d *R/fastmap.rdb
 291676ec61f18831375f9e58f5776c5b *R/fastmap.rdx
 ddfa617dc8f3df39f11f4a3002bc348d *help/AnIndex
 28edaa42609952812ce60cb95f6fe1e2 *help/aliases.rds
-49a049144bdb48fcd44825d6fa9dd70d *help/fastmap.rdb
-a7e1d9bdb21205308e12808ee9f58199 *help/fastmap.rdx
-69fb29c07a8eb09df00423bbc6a71a69 *help/paths.rds
+08cab0f33f8214cf496bf729e744b42b *help/fastmap.rdb
+7411344a86a9738ff957b7336de91076 *help/fastmap.rdx
+0f7df9fc8fc43f33c5dc8c2d90f7a3ee *help/paths.rds
 d3c7b513662b5f2b938268786d64d16c *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-e2dd284f5bf8f963fc52f6390ccce76f *libs/i386/fastmap.dll
+6a357d09c6618c4c624ada902f143ba8 *libs/i386/fastmap.dll
 40e3f0b42715054c10014acdabe0d15c *libs/i386/symbols.rds
-aa6fba50a575858a8f0ec8f287de4320 *libs/x64/fastmap.dll
+32d799930c25f95778fd9710df480c5a *libs/x64/fastmap.dll
 15d259b7f0944e552c1b34abfa747701 *libs/x64/symbols.rds

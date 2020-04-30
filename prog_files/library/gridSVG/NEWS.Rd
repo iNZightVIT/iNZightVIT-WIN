@@ -2,6 +2,15 @@
 \title{NEWS file for the gridSVG package}
 \encoding{UTF-8}
 
+\section{Changes in version 1.7-2}{
+  \itemize{
+    \item Simpler and better transformations for exported
+    SVG <image> elements.
+
+    \item Better protection against \code{NA} values in labels
+    in text grobs.  Reported by Daniel Barnett.
+  }
+}
 \section{Changes in version 1.7-1}{
   \itemize{
     \item Fix for evaluation of arguments passed to \code{pdf()}

@@ -1,7 +1,7 @@
 Package: foreign
 Priority: recommended
-Version: 0.8-76
-Date: 2020-03-03
+Version: 0.8-71
+Date: 2018-07-20
 Title: Read Data Stored by 'Minitab', 'S', 'SAS', 'SPSS', 'Stata',
         'Systat', 'Weka', 'dBase', ...
 Depends: R (>= 3.0.0)
@@ -17,7 +17,6 @@ Authors@R: c(
     person("Swetlana", "Herbrandt", role = "ctb"),
     person("Nicholas", "Lewin-Koh", role = c("ctb", "cph")),
     person("Mark", "Myatt", role = c("ctb", "cph")),
-    person("Michael", "Nelson", role = "ctb"),
     person("Ben", "Pfaff", role = "ctb"),
     person("Brian", "Quistorff", role = "ctb"),
     person("Frank", "Warmerdam", role = c("ctb", "cph")),
@@ -31,9 +30,8 @@ ByteCompile: yes
 Biarch: yes
 License: GPL (>= 2)
 BugReports: https://bugs.r-project.org
-URL: https://svn.r-project.org/R-packages/trunk/foreign
 NeedsCompilation: yes
-Packaged: 2020-03-03 11:44:53 UTC; ripley
+Packaged: 2018-07-20 09:11:09 UTC; ripley
 Author: R Core Team [aut, cph, cre],
   Roger Bivand [ctb, cph],
   Vincent J. Carey [ctb, cph],
@@ -43,7 +41,6 @@ Author: R Core Team [aut, cph, cre],
   Swetlana Herbrandt [ctb],
   Nicholas Lewin-Koh [ctb, cph],
   Mark Myatt [ctb, cph],
-  Michael Nelson [ctb],
   Ben Pfaff [ctb],
   Brian Quistorff [ctb],
   Frank Warmerdam [ctb, cph],
@@ -51,6 +48,6 @@ Author: R Core Team [aut, cph, cre],
   Free Software Foundation, Inc. [cph]
 Maintainer: R Core Team <R-core@R-project.org>
 Repository: CRAN
-Date/Publication: 2020-03-03 16:50:47 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-03-12 10:19:57 UTC; windows
+Date/Publication: 2018-07-20 09:15:53 UTC
+Built: R 3.6.0; x86_64-w64-mingw32; 2019-04-26 10:05:17 UTC; windows
 Archs: i386, x64

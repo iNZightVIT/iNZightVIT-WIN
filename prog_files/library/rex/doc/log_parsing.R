@@ -1,10 +1,11 @@
-## ----include = FALSE-----------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 library(rex)
 library(dplyr)
 library(knitr)
 library(ggplot2)
+library(magrittr)
 
-## ----show.warnings=FALSE-------------------------------------------------
+## ----show.warnings=FALSE------------------------------------------------------
 parsed <- scan("NASA.txt", what = "character", sep = "\n") %>%
   re_matches(
     rex(
@@ -30,10 +31,10 @@ parsed <- scan("NASA.txt", what = "character", sep = "\n") %>%
   mutate(filetype = tolower(filetype),
          time = as.POSIXct(time, format="%d/%b/%Y:%H:%M:%S %z"))
 
-## ----echo = FALSE--------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 kable(head(parsed, n = 10))
 
-## ----FALSE, fig.show='hold', warning = FALSE, message = FALSE------------
+## ----FALSE, fig.show='hold', warning = FALSE, message = FALSE-----------------
 ggplot(na.omit(parsed)) + stat_count(aes(x=filetype))
 ggplot(na.omit(parsed)) + geom_histogram(aes(x=time)) + ggtitle("Requests over time")
 

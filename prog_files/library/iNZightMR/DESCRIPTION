@@ -1,10 +1,10 @@
 Package: iNZightMR
 Type: Package
 Title: Tools for Exploring Multiple Response Data
-Version: 2.2.4
+Version: 2.2.5
 Authors@R: c(
     person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
-    person("Junjie", "Zeng", role = c("aut"), email = "jzen188@aucklanduni.ac.nz", comment = "Original author"),
+    person("Junjie", "Zeng", role = c("aut"), comment = "Original author"),
     person("Simon", "Potter", role = c("aut"))
     )
 BugReports: https://github.com/iNZightVIT/iNZightMR/issues
@@ -28,4 +28,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Junjie Zeng [aut] (Original author),
   Simon Potter [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-04-20 23:54:10 UTC; unix
+Built: R 3.6.3; ; 2020-04-30 23:13:17 UTC; unix

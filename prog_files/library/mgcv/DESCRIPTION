@@ -23,5 +23,5 @@ NeedsCompilation: yes
 Packaged: 2019-11-08 21:21:15 UTC; sw283
 Repository: CRAN
 Date/Publication: 2019-11-09 05:30:11 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-04-09 17:58:39 UTC; windows
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-04-25 07:34:15 UTC; windows
 Archs: i386, x64

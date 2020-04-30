@@ -1,6 +1,6 @@
 Package: iNZightUpdate
 Title: An updater for the iNZight desktop apps
-Version: 0.0.2
+Version: 0.0.2.9000
 Authors@R: 
     person("Tom", "Elliott", role = c("aut", "cre"),
            email = "tom.elliott@auckland.ac.nz")
@@ -13,4 +13,4 @@ LazyData: true
 RoxygenNote: 6.1.1
 Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-04-20 23:54:48 UTC; unix
+Built: R 3.6.3; ; 2020-04-30 23:13:55 UTC; unix

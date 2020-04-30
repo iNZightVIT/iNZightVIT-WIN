@@ -450,7 +450,7 @@ setMethod(".ghelpbrowser",
               getContentsOfPackage <- function(package) {
                 ## return a data frame with entry keywords description
                 path <- system.file("help", package = package)
-                contents <- .readRDS(sub("/help", "/Meta/Rd.rds", path, fixed = TRUE))
+                contents <- readRDS(sub("/help", "/Meta/Rd.rds", path, fixed = TRUE))
                 return(data.frame(Entry=contents[,'Name'],
                                   Keywords=sapply(contents[,"Keywords"], paste, collapse=", "),
                                   Description=contents[,'Title'],

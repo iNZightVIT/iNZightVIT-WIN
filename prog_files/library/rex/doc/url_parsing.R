@@ -1,8 +1,9 @@
-## ----url_parsing_stock, eval=F-------------------------------------------
+## ----url_parsing_stock, eval=F------------------------------------------------
 #  "^(?:(?:http(?:s)?|ftp)://)(?:\\S+(?::(?:\\S)*)?@)?(?:(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)(?:\\.(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)*(?:\\.(?:[a-z0-9\u00a1-\uffff]){2,})(?::(?:\\d){2,5})?(?:/(?:\\S)*)?$"
 
-## ----url_parsing_url-----------------------------------------------------
+## ----url_parsing_url----------------------------------------------------------
 library(rex)
+library(magrittr)
 
 valid_chars <- rex(except_some_of(".", "/", " ", "-"))
 
@@ -35,7 +36,7 @@ re <- rex(
   end
 )
 
-## ----url_parsing_validate------------------------------------------------
+## ----url_parsing_validate-----------------------------------------------------
 good <- c("http://foo.com/blah_blah",
   "http://foo.com/blah_blah/",
   "http://foo.com/blah_blah_(wikipedia)",

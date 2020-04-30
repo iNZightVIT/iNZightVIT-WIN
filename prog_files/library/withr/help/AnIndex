@@ -1,5 +1,7 @@
 withr-package	withr
 defer	defer
+deferred_clear	defer
+deferred_run	defer
 defer_parent	defer
 devices	devices
 local_	with_
@@ -26,11 +28,14 @@ local_path	with_path
 local_pdf	devices
 local_png	devices
 local_postscript	devices
+local_rng_version	with_rng_version
 local_svg	devices
 local_tempfile	with_tempfile
 local_temp_libpaths	with_temp_libpaths
 local_tiff	devices
+local_timezone	with_timezone
 local_xfig	devices
+makevars_user	makevars_user
 set_makevars	set_makevars
 withr	withr
 with_	with_
@@ -62,10 +67,13 @@ with_pdf	devices
 with_png	devices
 with_postscript	devices
 with_preserve_seed	with_seed
+with_rng_version	with_rng_version
 with_seed	with_seed
 with_sink	with_sink
 with_svg	devices
+with_tempdir	with_dir
 with_tempfile	with_tempfile
 with_temp_libpaths	with_temp_libpaths
 with_tiff	devices
+with_timezone	with_timezone
 with_xfig	devices

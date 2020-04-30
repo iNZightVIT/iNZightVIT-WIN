@@ -14,4 +14,3 @@ seIndepSes              Independent Standard errors given
 seMNprops               Compute SE for Multinomial proportions
 seMRprops               Multiple binary response
 substrsplit             Extract Common Name from variables
-switcher                Switcher generic
