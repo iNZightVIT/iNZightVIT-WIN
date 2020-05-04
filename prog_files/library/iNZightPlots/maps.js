@@ -19,17 +19,18 @@ class Inzmap {
     this.type = chart.type[0];
     this.seqVar = chart.seqVar[0];
     this.int = chart.int[0];
+    this.n_polygons = chart.n_polygons;
     // identify which elements represent regions and split if necessary:
     // selecting 'use' and 'path' as some maps have circles that represent regions (world thematic map)
     // Note that for centroid maps, the circles will get selected too, so will need to split nodelist
     let el = document.querySelectorAll('g[id^="grill.gTree"]~g[id^="GRID"] use, path');
-    if (el.length === this.data.length)  {
+    if (el.length === this.n_polygons.length)  {
       this.pathElements = el;
     } else {
       //split into 2: to separate between regions and circles
       let arrayEL = Array.from(el);
-      this.pathElements = arrayEL.slice(0, this.data.length);
-      this.extraElements = arrayEL.slice(this.data.length);
+      this.pathElements = arrayEL.slice(0, this.n_polygons.length);
+      this.extraElements = arrayEL.slice(this.n_polygons.length);
     }
     // default color palette = ggplot2 blues
     let defaultColors = ["#101f33", "#162e47", "#1b3c5e", "#234c78", "#2b5f94",
@@ -37,7 +38,7 @@ class Inzmap {
     this.palette = chart.palette ? chart.palette : defaultColors;
     this.filteredData = this.filterMissing(this.data, this.names);
     this.cnames = this.getColNames();
-
+    
     // bind event handlers:
     this.reset = this.reset.bind(this);
     this.matchRegionID = this.matchRegionID.bind(this);
@@ -49,10 +50,13 @@ class Inzmap {
   setRegions() {
     let data = this.data;
     let names = this.names;
+    let n_polygons = this.n_polygons;
 
     d3.selectAll(this.pathElements)
       .attr("class", "region")
-      .attr("id", (d, i) => data[i][names[0]] + "." + i);
+      .attr("id", (d, i) => {
+        return(data[n_polygons[i] - 1][names[0]] + "." + i);
+      });
   }
 
   filterMissing(data, names) {

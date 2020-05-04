@@ -1,7 +1,7 @@
 853b47b0c3796b5a596d02c946f2030f *BUGS
 0c87f96785b5b49fea27d2c8b345ebd3 *CITATION
 9dbfcdd76553194b1513751a02042f91 *COPYING
-f7992506085aa57c39506f20c5d3058d *DESCRIPTION
+220379fd93972b6146ccc44d99a6c9fe *DESCRIPTION
 d717e57c00661221fde317cef2c01089 *INDEX
 a43b2586609177b2ad9885362e9df4ac *Meta/Rd.rds
 28fb77de2dfd0170046a87ff635ad7b1 *Meta/data.rds
@@ -9,7 +9,7 @@ a43b2586609177b2ad9885362e9df4ac *Meta/Rd.rds
 42121a778cd622675577dedadfa3202f *Meta/hsearch.rds
 093b0c6798499f38cb3c2de8aeaaa2d4 *Meta/links.rds
 a4580b71b4fb21286ba0f0e82d890554 *Meta/nsInfo.rds
-e9fc47257507646ab0a7f2a8f1de7d95 *Meta/package.rds
+ee136ed32e4320939c239c29e744cbdb *Meta/package.rds
 b8891b5540c0d0960616c85ec6f0d468 *Meta/vignette.rds
 ec7c6ef38fac773c266998bd1526243d *NAMESPACE
 6ab835b9de55cefec76e3da2e70bbedc *NEWS
@@ -49,9 +49,9 @@ dfdd268e5e85cdb9422e11b2c183aa79 *doc/survey.Rnw
 9ad1a68c35e174b1a7db4626d5275357 *doc/survey.pdf
 f264b57c37e90faa588c7b3a968c9d88 *help/AnIndex
 9adeb272474f4847ac911239b1932e49 *help/aliases.rds
-24485376d83072c95b2c0837370c096c *help/paths.rds
-c1acb9ae272575090726c72e219303fe *help/survey.rdb
-e7066d7835b79b4cf8d155f952b952bf *help/survey.rdx
+34572d9a742e34cdb39884b36805e296 *help/paths.rds
+32075e3c5e4b8447d06913da7bfc18b0 *help/survey.rdb
+199a9af844c7b821bfa39d3cb12d57d9 *help/survey.rdx
 631ebcb35a570941a8811ba7190c077f *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 67fd0dff07ced7069e2ac813865dbf58 *porting.to.S

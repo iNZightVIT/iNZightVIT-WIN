@@ -1,11 +1,11 @@
-5031a9b8ca0eafa36125e66a18ef2675 *DESCRIPTION
+c61b8b36766f8d38cc5f3ec67d2ab9c9 *DESCRIPTION
 5ca22be932599c48bceda3d745a710b6 *INDEX
 fb9e96f423257eace02e4537c2382abe *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 a4a03de6ef3988f7e340b86360ce7a4f *Meta/hsearch.rds
 6195680322a5ac7a66ef349701982ee0 *Meta/links.rds
 9aacf28199e4c4b5a6ac63e34d9aba76 *Meta/nsInfo.rds
-601bbd64524311fdaa3f583ed49f0a56 *Meta/package.rds
+d0dceeb62444382243a45e3111c274e4 *Meta/package.rds
 cee5c3d1c2d36c835832ebe39c019a93 *NAMESPACE
 605e07b43e882e12ee774401c93c655f *NEWS.md
 7fa170eaadaa58b90accf3b78e113fe4 *NOTICE
@@ -29,9 +29,9 @@ e80238bf3b08224189b02ad8f72e5510 *casperjs/modules/xunit.js
 645925550ec2bbb80df7873063b79d5f *examples/shiny.Rmd
 e8600babd7322493f7cd7d2d4c1ddb60 *help/AnIndex
 a89fb9df09245c74e6e443acc8094d02 *help/aliases.rds
-27bf2fd44cf9f67d4764f824fabfad9a *help/paths.rds
-2d548cc02b84a8ccf07397239b45e29c *help/webshot.rdb
-82bc745540251f4055ef6559084e7ec0 *help/webshot.rdx
+c0b31974e189b3d37c772434038266de *help/paths.rds
+3cb178896833dcfaa2bfa8c03c55c347 *help/webshot.rdb
+911e91563c88606b3f6609cb0a33d998 *help/webshot.rdx
 87544b47309f9e6f023e1db94e4805e5 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 812b510d5b867989bb579f28f84034f1 *utils.js

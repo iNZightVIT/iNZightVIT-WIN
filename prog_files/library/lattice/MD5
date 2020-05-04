@@ -1,5 +1,5 @@
 a6a64750f8d29e22e7abaf210b1dded4 *CITATION
-cd1f46b1103857e6797400fe725094be *DESCRIPTION
+df94c39a86ab753a00b80ad34de7d3dd *DESCRIPTION
 9e2e1554cf1f3910fa072051ddcdccca *INDEX
 b42222d4ebe483f72942df4aa83b4dc6 *Meta/Rd.rds
 2d78a418b334e10e0c3212af43100a1c *Meta/data.rds
@@ -8,7 +8,7 @@ b42222d4ebe483f72942df4aa83b4dc6 *Meta/Rd.rds
 070f315d0dde54cc8c6c3e750149826e *Meta/hsearch.rds
 b5884b5b6f100a01f082126226d04852 *Meta/links.rds
 4b48e9abf3ae07de726652c9d75d22f0 *Meta/nsInfo.rds
-513b35ce2029e325c495dbeddbcaa1e2 *Meta/package.rds
+154519258b09e703689cd11fd89cd62e *Meta/package.rds
 23d895116e9dcd18d41dff4f06921d8d *NAMESPACE
 7199eb188d519ce084efef5ed75633be *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/lattice
@@ -23,14 +23,14 @@ aeb8a42c24baed6f0918691449a49681 *demo/lattice.R
 f5e96e30c746b6c4e1dc57d13218b9e7 *demo/panel.R
 695146d2e582264309c56d33c66f8ebc *help/AnIndex
 41bdd992d65f39ad8dad3193a3dc1c51 *help/aliases.rds
-2573d184a34c847dc23ea2d300bff300 *help/lattice.rdb
-d75ea5cc7ec790982c3b91d81854b89a *help/lattice.rdx
-d13bf549860aaa7063d9dd806d87c148 *help/paths.rds
+23bd872484f120bc8ec3e1cedd3bdb21 *help/lattice.rdb
+283afdd5b171f6a4571cb31477232d19 *help/lattice.rdx
+aa9d17a8058dbe2cbe8fa32f3c5042ff *help/paths.rds
 d2fa63c310d97c6e770f0c986900fda8 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-f7189ebbfd9a234a1e588671280ab38b *libs/i386/lattice.dll
+28774c4c72ce9f95415c85f66672bc8d *libs/i386/lattice.dll
 675839a271410dabb11db2f7846e2bb9 *libs/i386/symbols.rds
-4a610d15df742ff9bdee13fb6b65020a *libs/x64/lattice.dll
+9814f3dfbb5bed5ddb8c14e9b02b33e1 *libs/x64/lattice.dll
 5b9daf3ade0dad4edf59b80e78970a1d *libs/x64/symbols.rds
 108f2f7f64244970cadbf4a193312961 *po/de/LC_MESSAGES/R-lattice.mo
 516372cc89dd7a349ae18f000d6c2924 *po/en@quot/LC_MESSAGES/R-lattice.mo
