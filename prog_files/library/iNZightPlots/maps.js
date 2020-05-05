@@ -55,7 +55,8 @@ class Inzmap {
     d3.selectAll(this.pathElements)
       .attr("class", "region")
       .attr("id", (d, i) => {
-        return(data[n_polygons[i] - 1][names[0]] + "." + i);
+        let j = n_polygons[i] - 1;
+        return(data[j][names[0]] + "." + j);
       });
   }
 
