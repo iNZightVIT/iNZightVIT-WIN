@@ -1,34 +1,37 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 2.4.9.9000
-Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
-                    email = "inzight_support@stat.auckland.ac.nz"),
-             person("Daniel", "Barnett", role = "aut"),
-             person("Eric", "Lim", role = "aut"),
-             person("Junjie", "Zeng", role = c('aut')),
-             person("Dineika", "Chandrananda", role = "aut"),
-             person("Simon", "Potter", role = "aut"),
-             person("David", "Banks", role = "aut"))
+Version: 2.5
+Authors@R: c(
+    person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
+    person("Daniel", "Barnett", role = "aut"),
+    person("Eric", "Lim", role = "aut"),
+    person("Junjie", "Zeng", role = c('aut')),
+    person("Dineika", "Chandrananda", role = "aut"),
+    person("Simon", "Potter", role = "aut"),
+    person("David", "Banks", role = "aut")
+    )
 Depends: R (>= 3.2)
 Imports: stats, graphics, utils, grDevices, methods, gpairs, gWidgets2,
-        gWidgets2RGtk2, iNZight (>= 3.5.2), iNZightPlots (>= 2.11.1),
-        iNZightRegression (>= 1.2.6), iNZightTools (>= 1.8.4),
-        iNZightMR (>= 2.2.4), iNZightTS (>= 1.5.2)
+        gWidgets2RGtk2 (>= 1.0.7.1), iNZight (>= 3.5.2.9000),
+        iNZightPlots (>= 2.11.1), iNZightRegression (>= 1.2.6),
+        iNZightTools (>= 1.8.4), iNZightMR (>= 2.2.4), iNZightTS (>=
+        1.5.2)
 Suggests: iNZightMaps (>= 2.2), car, rgl, mgcv, sf, survey, testthat,
         covr
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
-License: GPL-3 | file LICENSE
+License: GPL-3
 Description: A suite of add-on modules for the iNZight GUI, including model
     fitting module, multiple response, time series, and some advanced plotting.
 RoxygenNote: 7.1.0
 Encoding: UTF-8
-Author: Tom Elliott [aut, cre],
+Language: en-GB
+Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Daniel Barnett [aut],
   Eric Lim [aut],
   Junjie Zeng [aut],
   Dineika Chandrananda [aut],
   Simon Potter [aut],
   David Banks [aut]
-Maintainer: Tom Elliott <inzight_support@stat.auckland.ac.nz>
-Built: R 3.6.3; ; 2020-05-05 04:42:44 UTC; unix
+Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
+Built: R 3.6.3; ; 2020-05-06 01:22:05 UTC; unix

@@ -4,7 +4,7 @@ decompositionplot       Plot a Time Series Decomposition
 forecastplot            Forecast plot - DEPRECATED
 iNZightTS               iNZightTS (Time-Series) Objects
 iNZightTS-package       Time Series Data Analysis
-multiseries             Compare multiple timeseries - DEPRECATED
+multiseries             Compare multiple time series - DEPRECATED
 plot.iNZightMTS         Plot multiple time series
 plot.iNZightTS          Draw a simple time series plot
 pred                    Get forecast prediction values
