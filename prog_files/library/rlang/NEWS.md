@@ -1,4 +1,11 @@
 
+# rlang 0.4.6
+
+* `!!!` now uses a combination of `length()`, `names()`, and `[[` to splice
+  S3 and S4 objects. This produces more consistent behaviour than `as.list()`
+  on a wider variety of vector classes (#945, tidyverse/dplyr#4931).
+
+
 # rlang 0.4.5
 
 * `set_names()`, `is_formula()`, and `names2()` are now implemented in

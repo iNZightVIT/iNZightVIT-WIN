@@ -1,4 +1,4 @@
-0706dd3abd97956ff6f7fc1d1bdb6567 *DESCRIPTION
+f27d58a82ce1e7ac64cdec842f10fe69 *DESCRIPTION
 5d2ddf94d07d59d124ec622649359c9b *INDEX
 472904db5a93a07692b3fe24cabcf96c *LICENSE
 1cd811da9f169cddb382670a58041ced *Meta/Rd.rds
@@ -6,7 +6,7 @@
 db2c93e8f3b0de8eaaf7529b352a4e3e *Meta/hsearch.rds
 0ac7b71f94dbaf525804cf035462f47a *Meta/links.rds
 7960d931be1b2729e2a54209fa56a629 *Meta/nsInfo.rds
-f3433bf99ee93648dea135a1599a70be *Meta/package.rds
+89daee6c346b6cc5a8aec2df33e1bb08 *Meta/package.rds
 ce97ebaad581d3ce2c897cdcffa1d66c *NAMESPACE
 90b92a7f767af179e20f200b0a3f6cf5 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/sourcetools
@@ -14,9 +14,9 @@ ebf0fc819595d631b8bf280c4b049940 *R/sourcetools
 c20f7cdb24b848cd86f2ea5d62daa319 *R/sourcetools.rdx
 6a30548de5c776d638dc5a3a2efdf24d *help/AnIndex
 d03e227da009ee14a9174c81983b9a8c *help/aliases.rds
-0db4fc2bdba6f069f8310c298eaf0494 *help/paths.rds
-2a4a502d74afcfe91b939db7444ac3b2 *help/sourcetools.rdb
-e04c05d76ae4cd02de4155d6f5f21f16 *help/sourcetools.rdx
+8e7014859be159c361bfd0a7082999a3 *help/paths.rds
+44c1ece712317aa0219da43a4ed08fb7 *help/sourcetools.rdb
+e6b9cab5a73cc6de9faa045c3d7c70f0 *help/sourcetools.rdx
 0965748be30c998dfdf43d8ccef5bddd *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 c5215eb66349006d73ad7e65ce54046b *include/sourcetools.h
@@ -50,7 +50,7 @@ c6afafc697b747111348dabb88d9fb4a *include/sourcetools/tokenization/Registration.
 6599c5daf2f3e59861153982cc00efef *include/sourcetools/tokenization/Tokenizer.h
 00c91c6e20bc534fa3a689c79770f46c *include/sourcetools/tokenization/tokenization.h
 1491ededa24449d40554757c96bebaf0 *include/sourcetools/utf8/utf8.h
-3f9761f5e51c3a7c61280d07f8a7a8f3 *libs/i386/sourcetools.dll
+78bee0c7779717be19ea36200e9e996e *libs/i386/sourcetools.dll
 d18392b4bc372a6fff773f3baa982a01 *libs/i386/symbols.rds
-7971523a724c870ce20d4c12c3be2a82 *libs/x64/sourcetools.dll
+323a0a93f7c07c4c5751ce3e54f7faf7 *libs/x64/sourcetools.dll
 d42c78f30fbda961c999e058e6a4c496 *libs/x64/symbols.rds

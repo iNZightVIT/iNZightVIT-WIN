@@ -3,7 +3,8 @@ can.interact.default	can.interact
 can.interact.ggplot	can.interact
 can.interact.inzplotoutput	can.interact
 cat_palette_names	inzpalette
-const_palette_names	inzpalette
+const_palette_names	const_palette_names
+cont_palette_names	inzpalette
 convert.to.factor	convert.to.factor
 create	create
 emphasize_pal_colour	emphasize_pal_colour

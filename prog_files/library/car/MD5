@@ -1,12 +1,12 @@
 e2082206594825292948475ea3960d0a *CITATION
-ec289e1d68b55204a7fa6d642c212236 *DESCRIPTION
+c3c5a414d082bfba737d569361e4b896 *DESCRIPTION
 f3e297a1d20eb2fe1e597167d0b1cea4 *INDEX
 772af3037e8f1ec8dd98c7228bc5374f *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 af697edcc1044d1c8eb8a12d4f328d95 *Meta/hsearch.rds
 cc7959879ba110fbe6159c1e7fdab59a *Meta/links.rds
 a8a8b59fb65433d5b453c966b72584fc *Meta/nsInfo.rds
-ca530c067558610671e9c92b65d37019 *Meta/package.rds
+600ae791812396ba2dec82d76060dc79 *Meta/package.rds
 6b00065011cf2c48e356a164030b174f *Meta/vignette.rds
 8499ebee9d41a59e7c037b585fcbde69 *NAMESPACE
 17e615297032e114e253d1c94917a621 *NEWS
@@ -20,8 +20,8 @@ ec79db1c197a1f8b3ae603342005b7d8 *doc/embedding.Rnw
 d499fa7fdd9c409b434654445c881526 *doc/index.html
 8f1a99aa252ddc772d4d9adf6192d660 *help/AnIndex
 6c73be66e1a0cd658e37df9a6456991e *help/aliases.rds
-340bdc4d0e8d54bc7fbd689357bc9552 *help/car.rdb
-d971c53b145249851d67330a71465aee *help/car.rdx
-a8f1c56d8520ba606d2bd54137d429f1 *help/paths.rds
+7b3546cf37fda0fbfa11af8aea0a6170 *help/car.rdb
+552737fd52c5385ad5c0c940a5e594d7 *help/car.rdx
+1c8c97128e2b75d152993745e8dbc520 *help/paths.rds
 7eb6f83824ae9f42a6f6affbcc621720 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
