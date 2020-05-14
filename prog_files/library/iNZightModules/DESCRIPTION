@@ -1,7 +1,7 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 2.5
+Version: 2.5.0.9000
 Authors@R: c(
     person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
     person("Daniel", "Barnett", role = "aut"),
@@ -13,10 +13,9 @@ Authors@R: c(
     )
 Depends: R (>= 3.2)
 Imports: stats, graphics, utils, grDevices, methods, gpairs, gWidgets2,
-        gWidgets2RGtk2 (>= 1.0.7.1), iNZight (>= 3.5.2.9000),
-        iNZightPlots (>= 2.11.1), iNZightRegression (>= 1.2.6),
-        iNZightTools (>= 1.8.4), iNZightMR (>= 2.2.4), iNZightTS (>=
-        1.5.2)
+        gWidgets2RGtk2 (>= 1.0.7.1), iNZight (>= 3.5.3), iNZightPlots
+        (>= 2.11.1), iNZightRegression (>= 1.2.6), iNZightTools (>=
+        1.8.4), iNZightMR (>= 2.2.4), iNZightTS (>= 1.5.2)
 Suggests: iNZightMaps (>= 2.2), car, rgl, mgcv, sf, survey, testthat,
         covr
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
@@ -34,4 +33,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-05-08 03:47:15 UTC; unix
+Built: R 3.6.3; ; 2020-05-13 23:59:52 UTC; unix

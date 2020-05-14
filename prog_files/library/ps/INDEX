@@ -1,5 +1,6 @@
 CleanupReporter         testthat reporter that checks if child
                         processes are cleaned up in tests
+errno                   List of 'errno' error codes
 ps                      Process table
 ps_boot_time            Boot time of the system
 ps_children             List of child processes (process objects) of

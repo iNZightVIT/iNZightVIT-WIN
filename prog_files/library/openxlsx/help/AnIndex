@@ -1,3 +1,4 @@
+addCreator	addCreator
 addFilter	addFilter
 addStyle	addStyle
 addWorksheet	addWorksheet
@@ -20,6 +21,7 @@ deleteData	deleteData
 freezePane	freezePane
 getBaseFont	getBaseFont
 getCellRefs	getCellRefs
+getCreators	getCreators
 getDateOrigin	getDateOrigin
 getNamedRegions	getNamedRegions
 getSheetNames	getSheetNames
@@ -57,6 +59,7 @@ setColWidths	setColWidths
 setFooter	setFooter
 setHeader	setHeader
 setHeaderFooter	setHeaderFooter
+setLastModifiedBy	setLastModifiedBy
 setRowHeights	setRowHeights
 sheets	sheets
 sheetVisibility	sheetVisibility

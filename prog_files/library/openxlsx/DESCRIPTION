@@ -1,8 +1,9 @@
 Type: Package
 Package: openxlsx
 Title: Read, Write and Edit xlsx Files
-Version: 4.1.4
-Date: 2019-12-04
+Version: 4.1.5
+Date: 2020-05-06
+Language: en-US
 Authors@R: 
     c(person(given = "Philipp",
              family = "Schauberger",
@@ -30,23 +31,23 @@ Suggests: knitr, testthat, roxygen2
 LinkingTo: Rcpp
 VignetteBuilder: knitr
 Encoding: UTF-8
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Collate: 'CommentClass.R' 'HyperlinkClass.R' 'RcppExports.R'
         'class_definitions.R' 'StyleClass.R' 'WorkbookClass.R'
         'baseXML.R' 'borderFunctions.R' 'chartsheet_class.R'
         'conditional_formatting.R' 'helperFunctions.R' 'loadWorkbook.R'
-        'onUnload.R' 'openXL.R' 'openxlsx.R' 'openxlsxCoerce.R'
-        'readWorkbook.R' 'sheet_data_class.R'
+        'onUnload.R' 'openXL.R' 'openxlsx-package.R' 'openxlsx.R'
+        'openxlsxCoerce.R' 'readWorkbook.R' 'sheet_data_class.R'
         'workbook_column_widths.R' 'workbook_read_workbook.R'
         'workbook_write_data.R' 'worksheet_class.R' 'wrappers.R'
         'writeData.R' 'writeDataTable.R' 'writexlsx.R'
 NeedsCompilation: yes
-Packaged: 2019-12-06 12:16:01 UTC; ceadm
+Packaged: 2020-05-06 15:47:38 UTC; ceadm
 Author: Philipp Schauberger [aut, cre],
   Alexander Walker [aut],
   Luca Braglia [ctb]
 Maintainer: Philipp Schauberger <philipp@schauberger.co.at>
 Repository: CRAN
-Date/Publication: 2019-12-06 12:50:02 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-05-04 23:50:24 UTC; windows
+Date/Publication: 2020-05-06 17:50:03 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-05-11 04:41:18 UTC; windows
 Archs: i386, x64

@@ -1,6 +1,6 @@
 Package: tidyr
 Title: Tidy Messy Data
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: 
     c(person(given = "Hadley",
              family = "Wickham",
@@ -32,14 +32,14 @@ LinkingTo: Rcpp
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 NeedsCompilation: yes
-Packaged: 2020-01-23 18:01:01 UTC; hadley
+Packaged: 2020-05-06 17:57:18 UTC; hadley
 Author: Hadley Wickham [aut, cre],
   Lionel Henry [aut],
   RStudio [cph]
 Maintainer: Hadley Wickham <hadley@rstudio.com>
 Repository: CRAN
-Date/Publication: 2020-01-24 14:30:02 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-05-05 03:39:27 UTC; windows
+Date/Publication: 2020-05-07 08:40:02 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-05-10 23:22:59 UTC; windows
 Archs: i386, x64

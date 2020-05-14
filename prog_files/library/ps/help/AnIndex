@@ -1,5 +1,6 @@
 as.character.ps_handle	ps_handle
 CleanupReporter	CleanupReporter
+errno	errno
 format.ps_handle	ps_handle
 print.ps_handle	ps_handle
 ps	ps
