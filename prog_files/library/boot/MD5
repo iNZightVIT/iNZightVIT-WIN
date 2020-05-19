@@ -1,5 +1,5 @@
 5dc2147b194c15507379de49828222c1 *CITATION
-74dd3e9077be481f713ef380a249d6b8 *DESCRIPTION
+4454854d5796f6cab6a7d9e400a43d2c *DESCRIPTION
 e6929f73b03924d15f3af4a4c8549a45 *INDEX
 1b14a340dfab876878f97cf9c178026e *Meta/Rd.rds
 b10b9ac64447f6151300c6ad09eb29be *Meta/data.rds
@@ -7,7 +7,7 @@ b10b9ac64447f6151300c6ad09eb29be *Meta/data.rds
 e99f84219d694ba33cb63d3e3248ee72 *Meta/hsearch.rds
 a67ffa8f592ec47d34ee681083bb12d6 *Meta/links.rds
 824421e30815448cb46da4b9026bf388 *Meta/nsInfo.rds
-2aca520614684c7c86f8addcc1935340 *Meta/package.rds
+9bd3e142763ed66ec103033aa8ab0e14 *Meta/package.rds
 52cc784fd6ef9af32d9586726a53bb89 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/boot
 c50d9c92cd889ef6e61e16f93262e18d *R/boot.rdb
@@ -18,9 +18,9 @@ cbc550a847aeafa75fc1e49c392aa508 *R/boot.rdx
 cd729c8f41ce3627cb71cec618fb946b *data/Rdata.rdx
 01efd183d4b22973f14e23601645cf4f *help/AnIndex
 f1ff4ca914e37a3ae6c3e6050e769b75 *help/aliases.rds
-3d1c361843a00cdbb77176a71501275e *help/boot.rdb
-84488e7dfa94852b995773c4fdf80443 *help/boot.rdx
-747db2fa21dbca454589514634c6da87 *help/paths.rds
+323c6b07af6c1bd826c8a3377e5fbc05 *help/boot.rdb
+89d47630a2338aa932a53c5890ecc070 *help/boot.rdx
+84dd1e6caf622bea5d1f5653c0134573 *help/paths.rds
 dc43deaffae385a7069c5f73b40999e4 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 129d0df02a28147425b95e4fda4bec66 *po/de/LC_MESSAGES/R-boot.mo

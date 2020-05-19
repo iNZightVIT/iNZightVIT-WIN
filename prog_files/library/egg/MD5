@@ -1,11 +1,11 @@
-bbd40e09482420ab8f275b7a5532a31b *DESCRIPTION
+36a928721ca91bd82496b0621e09e276 *DESCRIPTION
 5ed6bbd537ae9a018abfea4adc23b71e *INDEX
 fa12e18d1da0146615daa41abf29d167 *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 8d0806416408407dbe3c7882571e626d *Meta/hsearch.rds
 c8b33f2be8fe1795218c106d24457dbc *Meta/links.rds
 d1aa7b67b1ee3267099f46eceb961616 *Meta/nsInfo.rds
-1aa60a92a711ab9ffe447f9cbad4f2fa *Meta/package.rds
+f1e04fe7311c6f6688c0b8b526d6dfdd *Meta/package.rds
 953daa174cf70627deb5d7f278c822bb *Meta/vignette.rds
 bea5f684c3c5051cc64a677caf60c9bd *NAMESPACE
 c47c848a03f56fb7ba1be6cae876df0b *NEWS.md
@@ -27,8 +27,8 @@ f9d92da7bee019cad446d79239b93de9 *flags/gb.png
 635abf946d83e954fc7e8cd65e671b2e *flags/nz.png
 3b90e9f2cb23d84c2f8fd9063485c9f3 *help/AnIndex
 1f5d4da3d296693637e0f03433c4d9c2 *help/aliases.rds
-0c4773eb40eb4ec00e29cb660a0f3790 *help/egg.rdb
-b54e60877221277412dd2e44f306951a *help/egg.rdx
-bc4b34083db579f1dc72e22266e435b4 *help/paths.rds
+00940e057ed4ef05f3af47c5255744cb *help/egg.rdb
+be1238d0af5c74d7a62efab48036e882 *help/egg.rdx
+2b26723a87356658477f6e601de95612 *help/paths.rds
 27db6a744732949a3ae49f379a517d19 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

@@ -1,6 +1,6 @@
 1e27f3b524c112856dd481a2168ee12e *CITATION
 8b394fa87a687b21a763754e0891b7af *COPYRIGHTS
-69569dfb8416cc20b9f8b1af97fb4e48 *DESCRIPTION
+cdc991a8638552c118ddcc65460ba606 *DESCRIPTION
 3da0da86cde258f6b65faa5051f4b75e *INDEX
 e42bf18a51bf55ebd814dbec277ee8a9 *LICENSE
 e1864322b5bbf8fdb0bfab4b99fd346f *Meta/Rd.rds
@@ -8,7 +8,7 @@ e1864322b5bbf8fdb0bfab4b99fd346f *Meta/Rd.rds
 85d4d7a8142209ac8eb457683e95051a *Meta/hsearch.rds
 7e3813660f62be01ec96a4aa7a05ea77 *Meta/links.rds
 587e15ebb5470a3aba5d5e48fdf029a5 *Meta/nsInfo.rds
-0c02fef861639fcf2c35df9a199a05b3 *Meta/package.rds
+f6ef38450b7bb042c2c502a029654e27 *Meta/package.rds
 02ef7c23fa48c4f0017d80e020bd79b2 *Meta/vignette.rds
 d17ad940b19411f375f1430711af4eaf *NAMESPACE
 63645f62a4f468e011932c2ad189841d *NEWS.Rd
@@ -24,10 +24,10 @@ c5365177ddfdf3cffdf061a6bce40d34 *doc/unitTests/RcppEigen-unitTests.R
 d41d8cd98f00b204e9800998ecf8427e *doc/unitTests/RcppEigen-unitTests.Rnw
 a3f7e1e72bbe54ef5e0acaf6e0a90521 *examples/lmBenchmark.R
 5be16e2e201fdecb30c7e250b26b55ab *help/AnIndex
-04b4f9821db29323c06430230ee5ce3f *help/RcppEigen.rdb
-93e762c7e0ba7f19c1272797ae97d79a *help/RcppEigen.rdx
+09556bff56174b716b78e3b5b34a6be4 *help/RcppEigen.rdb
+90c7cfb1112618698bf27a8d95d918e2 *help/RcppEigen.rdx
 f1260a056529172ac5aaf892f316791f *help/aliases.rds
-4c34fe123eca633040a3a7efdabaccb8 *help/paths.rds
+431431923ebd3165fd3aa69b22022775 *help/paths.rds
 510148581dd2c2f43b06a0416b4cdb33 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 3c26d5f42a5a037e3b27f154afad46ef *include/Eigen/Cholesky
@@ -514,9 +514,9 @@ b00003fefec07baa2aabab48590981e2 *include/unsupported/Eigen/src/SpecialFunctions
 8df6976954f25396eb8c59c27e42d09c *include/unsupported/Eigen/src/Splines/Spline.h
 3d99d82a271ec2713f74b54fdfda585b *include/unsupported/Eigen/src/Splines/SplineFitting.h
 7473bb2ef37e5632b4a749f9841de5ab *include/unsupported/Eigen/src/Splines/SplineFwd.h
-06da9efbbc11913b2619da11eef75baa *libs/i386/RcppEigen.dll
+c975eaf7a50ebb59450741c52ff3431c *libs/i386/RcppEigen.dll
 ceede0da3411e705ac66fbb4f63b5aa8 *libs/i386/symbols.rds
-03f91789a040102110abd82a29706ca0 *libs/x64/RcppEigen.dll
+dc10914a67f20311b88827250d304f5e *libs/x64/RcppEigen.dll
 5cc923ffba21e670555bdbe8fd211cb7 *libs/x64/symbols.rds
 b4f0b014ec53404e843dbc718fabf57e *skeleton/Makevars
 b4f0b014ec53404e843dbc718fabf57e *skeleton/Makevars.win

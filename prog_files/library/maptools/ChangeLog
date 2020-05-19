@@ -1,3 +1,15 @@
+2020-05-05 15:07  rsbivand
+
+	* DESCRIPTION, R/GE_png.R, R/Rgshhs.R, R/SpatialLines-methods.R,
+	  R/as.linnet.SL.R, R/checkHoles.R, R/kmlLine.R, R/kmlLines.R,
+	  R/kmlPoints.R, R/kmlPolygon.R, R/kmlPolygons.R, R/maptools.R,
+	  R/nowrapRecenter.R, R/point_line_distance.R, R/sp_bind.R,
+	  R/spatstat1.R: linnet update; spRbind CRS update
+
+2019-10-03 12:21  rsbivand
+
+	* ChangeLog, inst/ChangeLog: tidy
+
 2019-10-03 12:20  rsbivand
 
 	* DESCRIPTION, src/shpopen.c, src/shptree.c: try warn_unused_result

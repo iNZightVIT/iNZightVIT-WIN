@@ -1,4 +1,4 @@
-e8538052b564a1c3eb69a6caff6aa133 *DESCRIPTION
+850a0d343ce1f4e388e4f7b634578dde *DESCRIPTION
 a046fb57fa1b41165ed099de3276eab6 *INDEX
 1ca22839a4a66e4ffab51bef47253101 *Meta/Rd.rds
 57c7fd80de25cb8ff4af2f351714b876 *Meta/data.rds
@@ -6,7 +6,7 @@ a046fb57fa1b41165ed099de3276eab6 *INDEX
 94d99ec6db7277f27ee8f1f6e1cc1fbe *Meta/hsearch.rds
 06233d4aa6597c99397a4d10713509fd *Meta/links.rds
 a5b8375c36210551de269c906a71455c *Meta/nsInfo.rds
-80ae48af0ed7c606708e1d0e31c5e076 *Meta/package.rds
+67a07064593f60235e669c70bc0787e4 *Meta/package.rds
 a9fe59a111108a937a6d8c48a0a60a8a *NAMESPACE
 5c47a66b9f81a27939d6652a7562314f *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/ggthemes
@@ -74,9 +74,9 @@ ff6faf71ef038d04cb311d088a86736d *examples/ex-theme_stata.R
 4a71389ed478d2986c9e7f247b868018 *examples/ex-theme_wsj.R
 fa7133718b09812a88e70084ed9945f1 *help/AnIndex
 e470edd0b1ad155f686d19fa80debb9f *help/aliases.rds
-261b40cec6fcb47cbb8180ef61280ff7 *help/ggthemes.rdb
-ae25d0b6ebbd388d60dc5ee9e5ed02c7 *help/ggthemes.rdx
+70deadfbcbe734065922c6409fe87d22 *help/ggthemes.rdb
+394d53ea054859215ec84b632e507cb0 *help/ggthemes.rdx
 13eb7ead192e3cd93e0f852c377422af *help/macros/funclink.Rd
-5eaabf62e4cd387ee49699bdc3f31a4a *help/paths.rds
+54e4d644a5e11bced05731808bd60058 *help/paths.rds
 fe055c88701100afcd33d17ee186a6e6 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

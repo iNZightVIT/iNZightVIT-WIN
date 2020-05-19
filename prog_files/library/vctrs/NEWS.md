@@ -1,3 +1,310 @@
+# vctrs 0.3.0
+
+This version features an overhaul of the coercion system to make it
+more consistent and easier to implement. See the _Breaking changes_
+and _Type system_ sections for details.
+
+There are three new documentation topics if you'd like to learn how to
+implement coercion methods to make your class compatible with
+tidyverse packages like dplyr:
+
+* https://vctrs.r-lib.org/reference/theory-faq-coercion.html for an
+  overview of the coercion mechanism in vctrs.
+
+* https://vctrs.r-lib.org/reference/howto-faq-coercion.html for a
+  practical guide about implementing methods for vectors.
+
+* https://vctrs.r-lib.org/reference/howto-faq-coercion-data-frame.html
+  for a practical guide about implementing methods for data frames.
+
+
+## Reverse dependencies troubleshooting
+
+The following errors are caused by breaking changes.
+
+* `"Can't convert <character> to <list>."`
+
+  `vec_cast()` no longer converts to list. Use `vec_chop()` or
+  `as.list()` instead.
+
+* `"Can't convert <integer> to <character>."`
+
+  `vec_cast()` no longer converts to character. Use `as.character()`to
+  deparse objects.
+
+* `"names for target but not for current"`
+
+  Names of list-columns are now preserved by `vec_rbind()`. Adjust
+  tests accordingly.
+
+
+## Breaking changes
+
+* Double-dispatch methods for `vec_ptype2()` and `vec_cast()` are no
+  longer inherited (#710). Class implementers must implement one set
+  of methods for each compatible class.
+
+  For example, a tibble subclass no longer inherits from the
+  `vec_ptype2()` methods between `tbl_df` and `data.frame`. This means
+  that you explicitly need to implement `vec_ptype2()` methods with
+  `tbl_df` and `data.frame`.
+
+  This change requires a bit more work from class maintainers but is
+  safer because the coercion hierarchies are generally different from
+  class hierarchies. See the S3 dispatch section of `?vec_ptype2` for
+  more information.
+
+* `vec_cast()` is now restricted to the same conversions as
+  `vec_ptype2()` methods (#606, #741). This change is motivated by
+  safety and performance:
+
+  - It is generally sloppy to generically convert arbitrary inputs to
+    one type. Restricted coercions are more predictable and allow your
+    code to fail earlier when there is a type issue.
+
+  - When unrestricted conversions are useful, this is generally
+    towards a known type. For example, `glue::glue()` needs to convert
+    arbitrary inputs to the known character type. In this case, using
+    double dispatch instead of a single dispatch generic like
+   `as.character()` is wasteful.
+
+  - To implement the useful semantics of coercible casts (already used
+    in `vec_assign()`), two double dispatch were needed. Now it can be
+    done with one double dispatch by calling `vec_cast()` directly.
+
+* `stop_incompatible_cast()` now throws an error of class
+  `vctrs_error_incompatible_type` rather than `vctrs_error_incompatible_cast`.
+  This means that `vec_cast()` also throws errors of this class, which better
+  aligns it with `vec_ptype2()` now that they are restricted to the same
+  conversions.
+
+* The `y` argument of `stop_incompatible_cast()` has been renamed to `to` to
+  better match `to_arg`.
+
+
+## Type system
+
+* Double-dispatch methods for `vec_ptype2()` and `vec_cast()` are now
+  easier to implement. They no longer need any the boiler plate.
+  Implementing a method for classes `foo` and `bar` is now as simple as:
+
+  ```
+  #' @export
+  vec_ptype2.foo.bar <- function(x, y, ...) new_foo()
+  ```
+
+  vctrs also takes care of implementing the default and unspecified
+  methods. If you have implemented these methods, they are no longer
+  called and can now be removed.
+
+  One consequence of the new dispatch mechanism is that `NextMethod()`
+  is now completely unsupported. This is for the best as it never
+  worked correctly in a double-dispatch setting. Parent methods must
+  now be called manually.
+
+* `vec_ptype2()` methods now get zero-size prototypes as inputs. This
+  guarantees that methods do not peek at the data to determine the
+  richer type.
+
+* `vec_is_list()` no longer allows S3 lists that implement a `vec_proxy()`
+  method to automatically be considered lists. A S3 list must explicitly
+  inherit from `"list"` in the base class to be considered a list.
+
+* `vec_restore()` no longer restores row names if the target is not a
+  data frame. This fixes an issue where `POSIXlt` objects would carry
+  a `row.names` attribute after a proxy/restore roundtrip.
+
+* `vec_cast()` to and from data frames preserves the row names of
+  inputs.
+
+* The internal function `vec_names()` now returns row names if the
+  input is a data frame. Similarly, `vec_set_names()` sets row names
+  on data frames. This is part of a general effort at making row names
+  the vector names of data frames in vctrs.
+
+  If necessary, the row names are repaired verbosely but without error
+  to make them unique. This should be a mostly harmless change for
+  users, but it could break unit tests in packages if they make
+  assumptions about the row names.
+
+
+## Compatibility and fallbacks
+
+* With the double dispatch changes, the coercion methods are no longer
+  inherited from parent classes. This is because the coercion
+  hierarchy is in principle different from the S3 hierarchy. A
+  consequence of this change is that subclasses that don't implement
+  coercion methods are now in principle incompatible.
+
+  This is particularly problematic with subclasses of data frames for
+  which throwing incompatible errors would be too incovenient for
+  users. To work around this, we have implemented a fallback to the
+  relevant base data frame class (either `data.frame` or `tbl_df`) in
+  coercion methods (#981). This fallback is silent unless you set the
+  `vctrs:::warn_on_fallback` option to `TRUE`.
+
+  In the future we may extend this fallback principle to other base
+  types when they are explicitly included in the class vector (such as
+  `"list"`).
+
+* Improved support for foreign classes in the combining operations
+  `vec_c()`, `vec_rbind()`, and `vec_unchop()`. A foreign class is a
+  class that doesn't implement `vec_ptype2()`. When all the objects to
+  combine have the same foreign class, one of these fallbacks is invoked:
+
+  -  If the class implements a `base::c()` method, the method is used
+    for the combination. (FIXME: `vec_rbind()` currently doesn't use
+    this fallback.)
+
+  - Otherwise if the objects have identical attributes and the same
+    base type, we consider them to be compatible. The vectors are
+    concatenated and the attributes are restored (#776).
+
+  These fallbacks do not make your class completely compatible with
+  vctrs-powered packages, but they should help in many simple cases.
+
+* `vec_c()` and `vec_unchop()` now fall back to `base::c()` for S4 objects if
+  the object doesn't implement `vec_ptype2()` but sets an S4 `c()`
+  method (#919).
+
+
+## Vector operations
+
+* `vec_rbind()` and `vec_c()` with data frame inputs now consistently
+  preserve the names of list-columns, df-columns, and matrix-columns
+  (#689). This can cause some false positives in unit tests, if they
+  are sensitive to internal names (#1007).
+
+* `vec_rbind()` now repairs row names silently to avoid confusing
+  messages when the row names are not informative and were not created
+  on purpose.
+
+* `vec_rbind()` gains option to treat input names as row names. This
+  is disabled by default (#966).
+
+* New `vec_rep()` and `vec_rep_each()` for repeating an entire vector
+  and elements of a vector, respectively. These two functions provide
+  a clearer interface for the functionality of `vec_repeat()`, which
+  is now deprecated.
+
+* `vec_cbind()` now calls `vec_restore()` on inputs emptied of their
+  columns before computing the common type. This has
+  consequences for data frame classes with special columns that
+  devolve into simpler classes when the columns are subsetted
+  out. These classes are now always simplified by `vec_cbind()`.
+
+  For instance, column-binding a grouped data frame with a data frame
+  now produces a tibble (the simplified class of a grouped data
+  frame).
+
+* `vec_match()` and `vec_in()` gain parameters for argument tags (#944).
+
+* The internal version of `vec_assign()` now has support for assigning
+  names and inner names. For data frames, the names are assigned
+  recursively.
+
+* `vec_assign()` gains `x_arg` and `value_arg` parameters (#918).
+
+* `vec_group_loc()`, which powers `dplyr::group_by()`, now has more
+  efficient vector access (#911).
+
+* `vec_ptype()` gained an `x_arg` argument.
+
+* New `list_sizes()` for computing the size of every element in a list.
+  `list_sizes()` is to `vec_size()` as `lengths()` is to `length()`, except
+  that it only supports lists. Atomic vectors and data frames result in an
+  error.
+
+* `new_data_frame()` infers size from row names when `n = NULL` (#894).
+
+* `vec_c()` now accepts `rlang::zap()` as `.name_spec` input. The
+  returned vector is then always unnamed, and the names do not cause
+  errors when they can't be combined. They are still used to create
+  more informative messages when the inputs have incompatible types (#232).
+
+
+## Classes
+
+* vctrs now supports the `data.table` class. The common type of a data
+  frame and a data table is a data table.
+
+* `new_vctr()` now always appends a base `"list"` class to list `.data` to
+  be compatible with changes to `vec_is_list()`. This affects `new_list_of()`,
+  which now returns an object with a base class of `"list"`.
+
+* dplyr methods are now implemented for `vec_restore()`,
+  `vec_ptype2()`, and `vec_cast()`. The user-visible consequence (and
+  breaking change) is that row-binding a grouped data frame and a data
+  frame or tibble now returns a grouped data frame. It would
+  previously return a tibble.
+
+* The `is.na<-()` method for `vctrs_vctr` now supports numeric and
+  character subscripts to indicate where to insert missing values (#947).
+
+* Improved support for vector-like S4 objects (#550, #551).
+
+* The base classes `AsIs` and `table` have vctrs methods (#904, #906).
+
+* `POSIXlt` and `POSIXct` vectors are handled more consistently (#901).
+
+* Ordered factors that do not have identical levels are now incompatible.
+  They are now incompatible with all factors.
+
+
+## Indexing and names
+
+* `vec_as_subscript()` now fails when the subscript is a matrix or an
+  array, consistently with `vec_as_location()`.
+
+* Improved error messages in `vec_as_location()` when subscript is a
+  matrix or array (#936).
+
+* `vec_as_location2()` properly picks up `subscript_arg`
+  (tidyverse/tibble#735).
+
+* `vec_as_names()` now has more informative error messages when names
+  are not unique (#882).
+
+* `vec_as_names()` gains a `repair_arg` argument that when set will cause
+  `repair = "check_unique"` to generate an informative hint (#692).
+
+
+## Conditions
+
+* `stop_incompatible_type()` now has an `action` argument for customizing
+  whether the coercion error came from `vec_ptype2()` or `vec_cast()`.
+  `stop_incompatible_cast()` is now a thin wrapper around
+  `stop_incompatible_type(action = "convert")`.
+
+* `stop_` functions now take `details` after the dots. This argument
+  can no longer be passed by position.
+
+* Supplying both `details` and `message` to the `stop_` functions is
+  now an internal error.
+
+* `x_arg`, `y_arg`, and `to_arg` are now compulsory arguments in
+  `stop_` functions like `stop_incompatible_type()`.
+
+* Lossy cast errors are now considered internal. Please don't test for
+  the class or explicitly handle them.
+
+* New argument `loss_type` for the experimental function
+  `maybe_lossy_cast()`. It can take the values "precision" or
+  "generality" to indicate in the error message which kind of loss is
+  the error about (double to integer loses precision, character to
+  factor loses generality).
+
+* Coercion and recycling errors are now more consistent.
+
+
+## CRAN results
+
+* Fixed clang-UBSAN error "nan is outside the range of representable
+  values of type 'int'" (#902).
+
+* Fixed compilation of stability vignette following the date
+  conversion changes on R-devel.
+
 
 # vctrs 0.2.4
 
@@ -78,8 +385,7 @@
   and `names_to` is `NULL`, the names define row names. If `names_to`
   is supplied, they are assigned in the column name as before.
 
-* `vec_cbind()` now binds row names if they are congruent across
-  inputs. If the row names are not identical that's an error.
+* `vec_cbind()` now uses the row names of the first named input.
 
 * The `c()` method for `vctrs_vctr` now throws an error when
   `recursive` or `use.names` is supplied (#791).

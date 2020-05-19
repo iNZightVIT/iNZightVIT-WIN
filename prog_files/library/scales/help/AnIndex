@@ -12,7 +12,7 @@ breaks_pretty	breaks_pretty
 breaks_width	breaks_width
 brewer_pal	brewer_pal
 cbreaks	cbreaks
-censor	censor
+censor	oob
 col2hcl	col2hcl
 colour_ramp	colour_ramp
 col_bin	col_numeric
@@ -30,8 +30,9 @@ demo_continuous	demo_continuous
 demo_datetime	demo_continuous
 demo_discrete	demo_continuous
 demo_log10	demo_continuous
+demo_time	demo_continuous
 dichromat_pal	dichromat_pal
-discard	discard
+discard	oob
 DiscreteRange	Range
 div_gradient_pal	div_gradient_pal
 dollar	label_dollar
@@ -82,6 +83,14 @@ number	number
 number_bytes	number_bytes_format
 number_bytes_format	number_bytes_format
 number_format	label_number
+oob	oob
+oob_censor	oob
+oob_censor_any	oob
+oob_discard	oob
+oob_keep	oob
+oob_squish	oob
+oob_squish_any	oob
+oob_squish_infinite	oob
 ordinal	label_ordinal
 ordinal_english	label_ordinal
 ordinal_format	label_ordinal
@@ -124,8 +133,8 @@ seq_gradient_pal	seq_gradient_pal
 shape_pal	shape_pal
 show_col	show_col
 sqrt_trans	sqrt_trans
-squish	squish
-squish_infinite	squish_infinite
+squish	oob
+squish_infinite	oob
 time_format	label_date
 time_trans	time_trans
 train_continuous	train_continuous

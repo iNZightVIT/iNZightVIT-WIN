@@ -1,5 +1,5 @@
 7bf40cbb20005f08d1f9163582f0d815 *CITATION
-ad653687b10e1479d8e3b229e5de2263 *DESCRIPTION
+1e39cc5d922ec492d4dce9f6065696a7 *DESCRIPTION
 35aff05a505ecf7e81e0473767794ca9 *INDEX
 e021c6d6ab90d3f81ea0f1dcf6e2aac1 *Meta/Rd.rds
 ae9134d3504270e856e4646d08180b42 *Meta/data.rds
@@ -7,7 +7,7 @@ ae9134d3504270e856e4646d08180b42 *Meta/data.rds
 9258ea7d4cddacd888178638b7ee640a *Meta/hsearch.rds
 11ae3e237312e0f20b36a47a131fad2d *Meta/links.rds
 ad0f6f4e82fb92459f70c77e5e98b822 *Meta/nsInfo.rds
-7951e28b0f9213e702ec1786cb00de86 *Meta/package.rds
+4d8afc39921a9b7cba291e1b7c8c44de *Meta/package.rds
 0ac7b30ad35a4c19ea69d76a6a366b02 *NAMESPACE
 cfe49768ecb548ac7f483e75ce75d0e0 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/MASS
@@ -17,15 +17,15 @@ ebf0fc819595d631b8bf280c4b049940 *R/MASS
 1dfbb289498b55f6e83c6de90e3e5a3c *data/Rdata.rds
 833cf74208eb69114b01901768f164be *data/Rdata.rdx
 1fd0d40ae9d9df37d0d49c8fab62c36f *help/AnIndex
-0d6b6ab3861935023ee33a3d8960d909 *help/MASS.rdb
-22834a767bf43a74f7eea515c6d8032a *help/MASS.rdx
+267230981ec94a6e18ecc5c42e9f98fa *help/MASS.rdb
+9ad4590189d7d377d6b61e2100b614bc *help/MASS.rdx
 088d9e2bdd8c42133ad3d5cbf5be7094 *help/aliases.rds
-ab5471a9a328b22c3b3194ab953d88c6 *help/paths.rds
+0b3ca89def71f269461371d05072402e *help/paths.rds
 919b1833e07cf3b4b6eaaafbea544088 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-5dd7184d5ec25bbe27b209d119fe5ee1 *libs/i386/MASS.dll
+e10d3d2664f9be516f983042af24d1d2 *libs/i386/MASS.dll
 2788af3e103d622f1823580f17c121da *libs/i386/symbols.rds
-1f5ac3c86935e35de2f71ecb3e2a8240 *libs/x64/MASS.dll
+21ecd251a8cdfb4d0e4960fd5e44bf39 *libs/x64/MASS.dll
 f2c58620ec6006f1af616f54defd7daf *libs/x64/symbols.rds
 53587aeb7cb3a14eeeeb1992895d5a98 *po/de/LC_MESSAGES/R-MASS.mo
 da6ca3e8f40f9228715021e234871401 *po/en@quot/LC_MESSAGES/R-MASS.mo

@@ -1,4 +1,4 @@
-952eada2337171e2441cc6c726e6d296 *DESCRIPTION
+9611b37b2bb5d3da9dba3c6fdccc7786 *DESCRIPTION
 fb6cba326136b391b5ef5b12ecca9a97 *INDEX
 78175506ab79be2bbf5136a8ea9e9485 *LICENSE
 c4392f036bf4cdbbd93a3f45915ef291 *Meta/Rd.rds
@@ -7,7 +7,7 @@ c4392f036bf4cdbbd93a3f45915ef291 *Meta/Rd.rds
 56a967ef29a939e6655b9e7366907136 *Meta/hsearch.rds
 cc97e512d2fcc6a4ee045137e4196499 *Meta/links.rds
 7c1472c63ff37d78ada34a60e0f40ae8 *Meta/nsInfo.rds
-aff684fbb3e6937768c1d73988c178d2 *Meta/package.rds
+f65fcac0662f20575f2c5d883945dc3a *Meta/package.rds
 26d9b5e7c90c969a372ebd064f99c462 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/viridisLite
 2c5616a20852a97600a680ab35f205fc *R/viridisLite.rdb
@@ -18,8 +18,8 @@ af44668606ca8de09993e6a9d92ff388 *data/Rdata.rds
 f156496ce5c21568f29725c5faecad98 *help/AnIndex
 d49f17ade7f6f482706d1a0df8002d04 *help/aliases.rds
 6594cb63e87a798af0dfd498d8bc0cd5 *help/figures/viridis-scales.png
-3ffabf5283c46917a4eb532d7529c05b *help/paths.rds
-f347369e6d812d25fba7a99e1e1b3115 *help/viridisLite.rdb
-e13e6471edfa538bf8c9efc7b65a4c15 *help/viridisLite.rdx
+ef377a7d3b82d27039a7a754cb895cd0 *help/paths.rds
+8946046a4575ff0d2ec89a421019a538 *help/viridisLite.rdb
+bfa8a72d85fdd9640dbe8c60ba81ca6c *help/viridisLite.rdx
 0dc5d1897fe73fe64033f719d672f0d2 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

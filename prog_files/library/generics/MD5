@@ -1,11 +1,11 @@
-ee1a98bfb4884c06bbfe5ce2f86c5f75 *DESCRIPTION
+57329a58351bef69c5d5d3df88d6d3f7 *DESCRIPTION
 6bff99f35e7967a29311a798be719b7d *INDEX
 347e73ded76e2c0b4f46e8358d44c2ac *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 d8e76575938fbf0a9524b14f12477743 *Meta/hsearch.rds
 4c0076be8c091fb25bff72e06f096d88 *Meta/links.rds
 1157cdb14487b2116e6021b630967466 *Meta/nsInfo.rds
-3c61117afc6e9c0d4c0bc649d68a0c6a *Meta/package.rds
+e0387369d3941a519747d25e4484fc81 *Meta/package.rds
 74d5a1914fe128593e981fb7c468e479 *NAMESPACE
 371f2e22d267db7caacc754a5c7325f1 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/generics
@@ -13,8 +13,8 @@ cfb2320359d7582b0d24aaeaaa2fdbd5 *R/generics.rdb
 8a1fea51941b69d25b0965a8a4b2b77b *R/generics.rdx
 3ccaa0d30187a442de9a85da59980357 *help/AnIndex
 dfb7d01f7e35ab2a98b4b1562dabbff2 *help/aliases.rds
-35bae792bec31dd6fba82ea118ecff7a *help/generics.rdb
-4f7df13312eb219cc601ccce90c0eb63 *help/generics.rdx
-549fc409d86078804439e5a5c2996225 *help/paths.rds
+d86a44ac806f015bb253613e7d450d78 *help/generics.rdb
+59b8e5b054907319a235b6c41707c770 *help/generics.rdx
+0e8710693afaefac56a040368c7c5d10 *help/paths.rds
 9b60748a4ad94ccce32d7a6b734f8c19 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
