@@ -1,7 +1,7 @@
 Package: iNZightTools
 Type: Package
 Title: Tools for 'iNZight'
-Version: 1.8.5.9000
+Version: 1.8.5
 Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
         readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
         stringr, tools, chron, lubridate, zoo, validate
@@ -17,7 +17,7 @@ Authors@R: c(
     )
 BugReports: https://github.com/iNZightVIT/iNZightTools/issues
 Contact: inzight_support@stat.auckland.ac.nz
-URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
+URL: http://inzight.nz
 Description: Provides a collection of wrapper functions for common variable and dataset manipulation workflows primarily used by 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions. Additionally, many of the functions return the 'tidyverse' code used to obtain the result in an effort to bridge the gap between GUI and coding.
 License: GPL-3
 Encoding: UTF-8
@@ -31,4 +31,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Yiwen He [ctb] (Dates/times and dataset manipulation),
   Daniel Barnett [ctb] (Data validation)
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-05-18 22:33:14 UTC; unix
+Built: R 3.6.3; ; 2020-05-19 22:51:15 UTC; unix
