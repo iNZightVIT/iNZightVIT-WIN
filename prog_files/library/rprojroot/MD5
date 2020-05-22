@@ -1,11 +1,11 @@
-073e3552d12dc825e315fc3ab60716a6 *DESCRIPTION
+f85a831a992334baa2cf246e7ed3f3c7 *DESCRIPTION
 54a48bebd6216d34b30971e30f8e1957 *INDEX
 bbbd048aa6ddb8b2a7a99b9fcdcd6572 *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 737565c79dcd47fe99a68a9dc8ea151b *Meta/hsearch.rds
 cc976e2a75dc54e9e3e33c63f8f155fe *Meta/links.rds
 cad5dc09807978912a254c9d7b7c1b87 *Meta/nsInfo.rds
-ace6ff0139ad9714b7404fd14ddf3bf0 *Meta/package.rds
+86dbf68a270180dafd7bacb45c034335 *Meta/package.rds
 521e2e3e8ce08f8e9186d76a6c8d1324 *Meta/vignette.rds
 df6dc7704eb1557c3f1aa6ab378d7b83 *NAMESPACE
 11c6882f2f6e7567029434d2a555608b *NEWS.md
@@ -18,8 +18,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/rprojroot
 319f6bd51fe92f18e7310b416db7c21a *doc/rprojroot.html
 1bbd897a2af638fe24c7a9c49b03118c *help/AnIndex
 03a3e2db006eb7337a4b04def6864844 *help/aliases.rds
-31885e092889ddf98e4c1f1bdb3b06de *help/paths.rds
-a0778a218ad4d6e51b4a8cd51190b11c *help/rprojroot.rdb
-20e97afefbbec7389acb1ad0bb9e2b98 *help/rprojroot.rdx
+ede3e5ca554bc1edfc91c3607bf5aef4 *help/paths.rds
+20bb4202d7be2a85551bcb4290d9fb22 *help/rprojroot.rdb
+e9dc26040ca23a8b96adef73ab103dc7 *help/rprojroot.rdx
 a2003fdb3e89f2fd0beabe17ed726ab0 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

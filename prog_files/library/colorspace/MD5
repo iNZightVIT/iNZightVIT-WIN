@@ -1,5 +1,5 @@
 2b85d07fe29779150bf14e437bba34ea *CITATION
-a09f63be9891dd8614e186852d960b94 *DESCRIPTION
+f7259c001d2c7f3e07f376f2994bbbd2 *DESCRIPTION
 fc85ff0e29c88cdf8954628e6f65d266 *INDEX
 fa68054159b9871ae8514fa705a54fa4 *LICENSE
 da3aa62854bfe367397f94381db2827a *Meta/Rd.rds
@@ -9,7 +9,7 @@ ded4fb4e673da0ce6d2ecb6db794d291 *Meta/demo.rds
 2bc5b470a935be490be082ae90a634e7 *Meta/hsearch.rds
 e707843ba5fca57d85330365f727988a *Meta/links.rds
 6dd0de47e30c7c31028d05f5ce52462c *Meta/nsInfo.rds
-2aa6b6a8fa70e748a5444d7c7867c42d *Meta/package.rds
+9cbad10035e0777491b7f40f44fd0a8a *Meta/package.rds
 944dbd599e65a343f23923275a60fbbe *Meta/vignette.rds
 fdd7e9385955872f0104a9a6ca452f28 *NAMESPACE
 6d18ee2fd4d1bf3a5797998692fd9e7a *NEWS.md
@@ -161,12 +161,12 @@ e3650c652177394bed455f77455ed2f1 *hclwizard/www/images/pal_ylgn.png
 0e663f46d8012d8ca5edd7b57499bff9 *hclwizard/www/images/pal_ylorrd.png
 2b602f0d80eee7dee9d5e746a61421f5 *help/AnIndex
 707c734df21268e8f97ee6fc54bb159f *help/aliases.rds
-0af3c58e2c65680ebe0b7af5e6f3fdc6 *help/colorspace.rdb
-52443406b40e40cf8ba7a01f34f3d962 *help/colorspace.rdx
-6e4325f3445a7ca44b7206191a70ced0 *help/paths.rds
+125db48c13f2855bdb7f76a008c1340c *help/colorspace.rdb
+627e3ba4b11969fd1dc5e3ebb5d58b1b *help/colorspace.rdx
+b08bb3ac200942f11c22211e9c3c7899 *help/paths.rds
 7234db63157fd4e2f421532f15102684 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-103b58d710d6f14ed1d6d7a7d8c61b7c *libs/i386/colorspace.dll
+d370adf0455030d8dad89e71e4c2bed1 *libs/i386/colorspace.dll
 5f2ae236cbcee722f09e1c5b539ff79a *libs/i386/symbols.rds
-e846a915e57e1a5c8f5d2cffa8b62588 *libs/x64/colorspace.dll
+b77274b3c7a8b40dee4a9b8c203df264 *libs/x64/colorspace.dll
 cb5e4792880141d200183f72d2b6d766 *libs/x64/symbols.rds

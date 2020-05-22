@@ -1,5 +1,5 @@
 feb0b9906cfa349a1700f3c2e31f3f18 *CITATION
-c8552d486fc844b688b76676cde89ca3 *DESCRIPTION
+b1cb60d3c95bf989a5d2a56dc9284e7d *DESCRIPTION
 675521b77157db5538f920666d895877 *INDEX
 4641e94ec96f98fabc56ff9cc48be14b *LICENSE
 96e8de6e16fe158f596a6841c0446498 *Meta/Rd.rds
@@ -8,7 +8,7 @@ ec35f3f229dea9c37f3140ac83e1177c *Meta/data.rds
 a99092815bb9da8d9250225fda5b70be *Meta/hsearch.rds
 e18c8ea351e5ed8bce2a51e96baa9a1b *Meta/links.rds
 db49d05cbef972ee567f7b3d85f0bac5 *Meta/nsInfo.rds
-2d1672c17cfc0ac3b4dcf2cb9e122aa8 *Meta/package.rds
+559ba5be1ee70a413080430177993b3e *Meta/package.rds
 4b5ea6aee794f381982ae619a98172b1 *Meta/vignette.rds
 0c6aa3e3bf5fd79e68512aefe96327a6 *NAMESPACE
 fb6c5aaa794f2b0d6490aa10377db25f *NEWS.md
@@ -32,8 +32,8 @@ f944ce1158c7a08a852b2e4f7c302fa5 *help/AnIndex
 da9679134650ed417489e6d4e930c06f *help/aliases.rds
 070fe22eca77352298f7facb5d3118e6 *help/figures/README-example-1.png
 b4c1ef442575e8116825b53617ea37af *help/figures/logo.png
-1d8b8549650c3e26110c8b01b769c4c4 *help/ggplot2.rdb
-15020c8548d7be8a5d1ac1a52a579898 *help/ggplot2.rdx
-f69d17fd73ca9e44883607ccefcecc41 *help/paths.rds
+8c99bec08d6127bfeb5aac41e454a678 *help/ggplot2.rdb
+6723cc53c340624d59a9fa95f66aae0d *help/ggplot2.rdx
+75cf641a4a17dcb00214be628125e3c7 *help/paths.rds
 7d2458576b79a5903709b1a9b462402a *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
