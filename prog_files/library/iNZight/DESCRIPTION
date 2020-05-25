@@ -16,8 +16,8 @@ Description: An interactive GUI for easy visual exploration of datasets.
 License: GPL-3
 Depends: R (>= 3.3), objectProperties, RGtk2, gWidgets2, cairoDevice
 Imports: utils, grDevices, methods, grid, gdata, gWidgets2RGtk2,
-        iNZightPlots (>= 2.11.5), iNZightTools (>= 1.8.4), reshape2,
-        plyr, survey, colorspace, magrittr
+        iNZightPlots (>= 2.11.5.9000), iNZightTools (>= 1.8.4),
+        reshape2, plyr, survey, colorspace, magrittr
 Suggests: RODBC, iNZightMR (>= 2.2.4), iNZightModules (>= 2.5), png,
         viridis, RColorBrewer, FutureLearnData, testthat, covr, dplyr,
         forcats, rlang, withr
@@ -34,4 +34,4 @@ Author: Tom Elliott [aut, cre],
   Yiwen He [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 3.6.3; ; 2020-05-25 21:09:57 UTC; unix
+Built: R 3.6.3; ; 2020-05-25 23:06:57 UTC; unix
