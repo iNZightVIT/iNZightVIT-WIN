@@ -18,6 +18,7 @@ read_spss	read_spss
 read_stata	read_dta
 read_xpt	read_xpt
 tagged_na	tagged_na
+vec_arith.haven_labelled	vec_arith.haven_labelled
 write_dta	read_dta
 write_sas	read_sas
 write_sav	read_spss

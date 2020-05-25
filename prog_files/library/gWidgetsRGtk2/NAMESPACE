@@ -89,7 +89,7 @@ exportMethods(
 #)
 
 
-export("gdfedit",".gdfedit")
+#export("gdfedit",".gdfedit")
 
 exportClasses(
 "AtkNoOpObjectFactory", "AtkObjectFactory", "AtkRelationSet", 

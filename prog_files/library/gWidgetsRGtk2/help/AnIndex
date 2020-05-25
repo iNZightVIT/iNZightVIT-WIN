@@ -230,7 +230,6 @@ gWidgetsRGtk2-package	gWidgetsRGtk2-package
 .gconfirm-methods	gWidgetsRGtk2-undocumented
 .gdf,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
 .gdf-methods	gWidgetsRGtk2-undocumented
-.gdfedit	gdfedit
 .gdfedit,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
 .gdfedit-methods	gWidgetsRGtk2-undocumented
 .gdfnotebook,guiWidgetsToolkitRGtk2-method	gWidgetsRGtk2-undocumented
@@ -725,7 +724,6 @@ font<-,guiWidget-method	gWidgetsRGtk2-undocumented
 font<-,gWidgetRGtk-method	gWidgetsRGtk2-undocumented
 font<--methods	gWidgetsRGtk2-undocumented
 GBoxed-class	gWidgetsRGtk2-undocumented
-gdfedit	gdfedit
 GdkDragContext-class	gWidgetsRGtk2-undocumented
 GdkPixbufLoader-class	gWidgetsRGtk2-undocumented
 GdkRegion-class	gWidgetsRGtk2-undocumented

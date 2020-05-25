@@ -11,9 +11,8 @@ library(purrr)
 
 packageVersion("tidyr")
 
-(mini_iris <- iris %>% 
-    as_tibble() %>% 
-    .[c(1, 2, 51, 52, 101, 102), ])
+mini_iris <- as_tibble(iris)[c(1, 2, 51, 52, 101, 102), ]
+mini_iris
 
 ## -----------------------------------------------------------------------------
 mini_iris %>% nest(
@@ -23,30 +22,9 @@ mini_iris %>% nest(
 
 ## -----------------------------------------------------------------------------
 mini_iris %>% nest(
-  petal = one_of("Petal.Length", "Petal.Width"), 
-  sepal = one_of("Sepal.Length", "Sepal.Width")
+  petal = all_of(c("Petal.Length", "Petal.Width")), 
+  sepal = all_of(c("Sepal.Length", "Sepal.Width"))
 )
-
-## -----------------------------------------------------------------------------
-nest_egg <- function(data, cols) {
-  nest(data, egg = one_of(cols))
-}
-
-nest_egg(mini_iris, c("Petal.Length", "Petal.Width", "Sepal.Length", "Sepal.Width"))
-
-## -----------------------------------------------------------------------------
-nest_egg <- function(df, cols) {
-  nest(df, egg = {{ cols }})
-}
-
-nest_egg(mini_iris, -Species)
-
-## -----------------------------------------------------------------------------
-sel_vars <- function(df, cols) {
-  tidyselect::vars_select(names(df), {{ cols }})
-}
-
-sel_vars(mini_iris, -Species)
 
 ## -----------------------------------------------------------------------------
 tidyr_new_interface <- function() {

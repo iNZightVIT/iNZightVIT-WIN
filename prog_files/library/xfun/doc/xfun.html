@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2020-04-11" />
+<meta name="date" content="2020-05-19" />
 
 <title>An Introduction to xfun</title>
 
@@ -354,7 +354,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">An Introduction to xfun</h1>
 <h3 class="subtitle">A Collection of Miscellaneous Functions</h3>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2020-04-11</h4>
+<h4 class="date">2020-05-19</h4>
 
 
 <div id="TOC">
@@ -523,8 +523,39 @@ woRld</code></pre>
 <span id="cb59-3"><a href="#cb59-3"></a>  <span class="kw">Sys.sleep</span>(<span class="dv">2</span>)</span>
 <span id="cb59-4"><a href="#cb59-4"></a>  <span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
 <span id="cb59-5"><a href="#cb59-5"></a>})</span></code></pre></div>
-<p>When the function is used in a code chunk in a <strong>knitr</strong> document, the RDS cache file is saved to the path determined by the chunk label (the filename) and the chunk option <code>cache.path</code> (usually the cache directory), so you do not have to provide the <code>file</code> and <code>dir</code> arguments of <code>cache_rds()</code>.</p>
-<p>This caching mechanism is much simpler than <strong>knitr</strong>’s caching. Cache invalidation is often tricky (see <a href="https://yihui.org/en/2018/06/cache-invalidation/">this post</a>), so this function may be helpful if you want more transparency and control over when to invalidate the cache (for <code>cache_rds()</code>, the cache is invalidated only when the cache file is deleted, which can be achieved via the argument <code>rerun = TRUE</code>).</p>
+<p>When the function is used in a code chunk in a <strong>knitr</strong> document, the RDS cache file is saved to a path determined by the chunk label (the base filename) and the chunk option <code>cache.path</code> (the cache directory), so you do not have to provide the <code>file</code> and <code>dir</code> arguments of <code>cache_rds()</code>.</p>
+<p>This caching mechanism is much simpler than <strong>knitr</strong>’s caching. Cache invalidation is often tricky (see <a href="https://yihui.org/en/2018/06/cache-invalidation/">this post</a>), so this function may be helpful if you want more transparency and control over when to invalidate the cache (for <code>cache_rds()</code>, the cache is invalidated when the cache file is deleted, which can be achieved via the argument <code>rerun = TRUE</code>).</p>
+<p>As documented on the help page of <code>cache_rds()</code>, there are two common cases in which you may want to invalidate the cache:</p>
+<ol style="list-style-type: decimal">
+<li><p>The code in the expression has changed, e.g., if you changed the code from <code>cache_rds({x + 1})</code> to <code>cache_rds({x + 2})</code>, the cache will be automatically invalidated and the expression will be re-evaluated. However, please note that changes in white spaces or comments do not matter. Or generally speaking, as long as the change does not affect the parsed expression, the cache will not be invalidated, e.g., the two expressions below are essentially identical (hence if you have executed <code>cache_rds()</code> on the first expression, the second expression will be able to take advantage of the cache):</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>res =<span class="st"> </span>xfun<span class="op">::</span><span class="kw">cache_rds</span>({</span>
+<span id="cb60-2"><a href="#cb60-2"></a>  <span class="kw">Sys.sleep</span>(<span class="dv">3</span>  );</span>
+<span id="cb60-3"><a href="#cb60-3"></a>  x=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>;  <span class="co"># semi-colons won&#39;t matter</span></span>
+<span id="cb60-4"><a href="#cb60-4"></a>  x<span class="op">+</span><span class="dv">1</span>;</span>
+<span id="cb60-5"><a href="#cb60-5"></a>})</span>
+<span id="cb60-6"><a href="#cb60-6"></a></span>
+<span id="cb60-7"><a href="#cb60-7"></a>res =<span class="st"> </span>xfun<span class="op">::</span><span class="kw">cache_rds</span>({</span>
+<span id="cb60-8"><a href="#cb60-8"></a>  <span class="kw">Sys.sleep</span>(<span class="dv">3</span>)</span>
+<span id="cb60-9"><a href="#cb60-9"></a>  x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>  <span class="co"># a comment</span></span>
+<span id="cb60-10"><a href="#cb60-10"></a>  x <span class="op">+</span></span>
+<span id="cb60-11"><a href="#cb60-11"></a><span class="st">    </span><span class="dv">1</span>  <span class="co"># feel free to make any changes in white spaces</span></span>
+<span id="cb60-12"><a href="#cb60-12"></a>})</span></code></pre></div></li>
+<li><p>The value of a global variable in the expression has changed, e.g., if <code>y</code> has changed, you are most likely to want to invalidate the cache and rerun the expression below:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>res =<span class="st"> </span>xfun<span class="op">::</span><span class="kw">cache_rds</span>({</span>
+<span id="cb61-2"><a href="#cb61-2"></a>  x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb61-3"><a href="#cb61-3"></a>  x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb61-4"><a href="#cb61-4"></a>})</span></code></pre></div>
+<p>This is because <code>x</code> is a local variable in the expression, and <code>y</code> is an external global variable (not created locally like <code>x</code>). To invalidate the cache when <code>y</code> has changed, you may let <code>cache_rds()</code> know through the <code>hash</code> argument that <code>y</code> needs to be considered when deciding if the cache should be invalidated:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>res =<span class="st"> </span>xfun<span class="op">::</span><span class="kw">cache_rds</span>({</span>
+<span id="cb62-2"><a href="#cb62-2"></a>  x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb62-3"><a href="#cb62-3"></a>  x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb62-4"><a href="#cb62-4"></a>}, <span class="dt">hash =</span> <span class="kw">list</span>(y))</span></code></pre></div>
+<p>If you do not want to provide this list of value(s) to the <code>hash</code> argument, you may try <code>hash = &quot;auto&quot;</code> instead, which asks <code>cache_rds()</code> to try to figure out all global variables automatically and use a list of their values as the value for the <code>hash</code> argument.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>res =<span class="st"> </span>xfun<span class="op">::</span><span class="kw">cache_rds</span>({</span>
+<span id="cb63-2"><a href="#cb63-2"></a>  x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb63-3"><a href="#cb63-3"></a>  x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb63-4"><a href="#cb63-4"></a>}, <span class="dt">hash =</span> <span class="st">&quot;auto&quot;</span>)</span></code></pre></div></li>
+</ol>
 </div>
 <div id="check-reverse-dependencies-of-a-package" class="section level2">
 <h2>Check reverse dependencies of a package</h2>
@@ -538,15 +569,15 @@ woRld</code></pre>
 <h2>Print session information</h2>
 <p>Since I have never been fully satisfied by the output of <code>sessionInfo()</code>, I tweaked it to make it more useful in my use cases. For example, it is rarely useful to print out the names of base R packages, or information about the matrix products / BLAS / LAPACK. Oftentimes I want additional information in the session information, such as the Pandoc version when <strong>rmarkdown</strong> is used. The function <code>session_info()</code> tweaks the output of <code>sessionInfo()</code>, and makes it possible for other packages to append information in the output of <code>session_info()</code>.</p>
 <p>You can choose to print out the versions of only the packages you specify, e.g.,</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>xfun<span class="op">::</span><span class="kw">session_info</span>(<span class="kw">c</span>(<span class="st">&#39;xfun&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;tinytex&#39;</span>), <span class="dt">dependencies =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## R version 3.6.3 (2020-02-29)
-## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Catalina 10.15.3
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>xfun<span class="op">::</span><span class="kw">session_info</span>(<span class="kw">c</span>(<span class="st">&#39;xfun&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;tinytex&#39;</span>), <span class="dt">dependencies =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## R version 4.0.0 (2020-04-24)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Catalina 10.15.4
 ## 
 ## Locale: C / en_US.UTF-8 / en_US.UTF-8 / C / en_US.UTF-8 / en_US.UTF-8
 ## 
 ## Package version:
-##   knitr_1.28.2    rmarkdown_2.1.1 tinytex_0.21.2  xfun_0.13      
+##   knitr_1.28.6    rmarkdown_2.1.2 tinytex_0.23    xfun_0.14      
 ## 
 ## Pandoc version: 2.9.2.1</code></pre>
 </div>

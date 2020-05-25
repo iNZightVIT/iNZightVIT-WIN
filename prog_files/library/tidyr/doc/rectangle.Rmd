@@ -1,6 +1,12 @@
 ---
 title: "Rectangling"
 output: rmarkdown::html_vignette
+description: |
+  Rectangling is the art and craft of taking a deeply nested list (often 
+  sourced from wild caught JSON or XML) and taming it into a tidy data set of 
+  rows and columns. This vignette introduces you to the main rectangling tools
+  provided by tidyr: `unnest_longer()`, `unnest_wider()`, `unnest_auto()`,
+  and `hoist()`.
 vignette: >
   %\VignetteIndexEntry{rectangling}
   %\VignetteEngine{knitr::rmarkdown}
@@ -68,7 +74,7 @@ users %>% hoist(user,
 
 `hoist()` removes the named components from the `user` list-column, so you can think of it as moving components out of the inner list into the top-level data frame. 
 
-## Github repos
+## GitHub repos
 
 We start off `gh_repos` similarly, by putting it in a tibble:
 

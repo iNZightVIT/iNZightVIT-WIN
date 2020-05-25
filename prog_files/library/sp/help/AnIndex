@@ -263,6 +263,7 @@ image.SpatialPixelsDataFrame	image
 image2Grid	image
 imageScale	image
 is.projected	is.projected
+is.projected,CRS-method	CRS-class
 is.projected,Spatial-method	is.projected
 labels	gridlines
 labels.SpatialLines	gridlines
@@ -378,6 +379,9 @@ rbind.SpatialPointsDataFrame	SpatialPointsDataFrame-class
 rbind.SpatialPolygons	SpatialPolygons-class
 rbind.SpatialPolygonsDataFrame	SpatialPolygonsDataFrame-class
 read.asciigrid	asciigrid
+rebuild_CRS	CRS-class
+rebuild_CRS,CRS-method	CRS-class
+rebuild_CRS,Spatial-method	Spatial-class
 recenter	recenter-methods
 recenter,Line-method	recenter-methods
 recenter,Lines-method	recenter-methods
@@ -526,6 +530,9 @@ surfaceArea.matrix	surfaceArea
 tail.Spatial	Spatial-class
 text	gridlines
 text.SpatialPointsDataFrame	gridlines
+wkt	is.projected
+wkt,CRS-method	CRS-class
+wkt,Spatial-method	is.projected
 write.asciigrid	asciigrid
 zerodist	zerodist
 zerodist2	zerodist

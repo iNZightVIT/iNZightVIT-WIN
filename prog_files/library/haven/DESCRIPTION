@@ -1,6 +1,6 @@
 Package: haven
 Title: Import and Export 'SPSS', 'Stata' and 'SAS' Files
-Version: 2.2.0
+Version: 2.3.0
 Authors@R: 
     c(person(given = "Hadley",
              family = "Wickham",
@@ -20,23 +20,23 @@ URL: http://haven.tidyverse.org, https://github.com/tidyverse/haven,
         https://github.com/WizardMac/ReadStat
 BugReports: https://github.com/tidyverse/haven/issues
 Depends: R (>= 3.2)
-Imports: forcats (>= 0.2.0), hms, Rcpp (>= 0.11.4), readr (>= 0.1.0),
-        rlang (>= 0.4.0), tibble, tidyselect
+Imports: forcats (>= 0.2.0), hms, methods, Rcpp (>= 0.11.4), readr (>=
+        0.1.0), rlang (>= 0.4.0), tibble, tidyselect, vctrs (>= 0.3.0)
 Suggests: covr, fs, knitr, rmarkdown, testthat, pillar (>= 1.4.0), cli,
         crayon
 LinkingTo: Rcpp
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 SystemRequirements: GNU make
 NeedsCompilation: yes
-Packaged: 2019-11-07 20:13:15 UTC; hadley
+Packaged: 2020-05-22 18:05:23 UTC; hadley
 Author: Hadley Wickham [aut, cre],
   Evan Miller [aut, cph] (Author of included ReadStat code),
   RStudio [cph, fnd]
 Maintainer: Hadley Wickham <hadley@rstudio.com>
 Repository: CRAN
-Date/Publication: 2019-11-08 06:20:22 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-05-18 18:38:07 UTC; windows
+Date/Publication: 2020-05-24 15:00:02 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-05-24 16:24:47 UTC; windows
 Archs: i386, x64

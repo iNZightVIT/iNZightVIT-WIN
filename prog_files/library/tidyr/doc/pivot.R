@@ -29,6 +29,27 @@ billboard %>%
     values_drop_na = TRUE
   )
 
+## ---- eval = FALSE------------------------------------------------------------
+#  billboard %>%
+#    pivot_longer(
+#      cols = starts_with("wk"),
+#      names_to = "week",
+#      names_prefix = "wk",
+#      names_transform = list(week = as.integer),
+#      values_to = "rank",
+#      values_drop_na = TRUE,
+#    )
+
+## ---- eval = FALSE------------------------------------------------------------
+#  billboard %>%
+#    pivot_longer(
+#      cols = starts_with("wk"),
+#      names_to = "week",
+#      names_transform = list(week = readr::parse_number),
+#      values_to = "rank",
+#      values_drop_na = TRUE,
+#    )
+
 ## -----------------------------------------------------------------------------
 who
 
@@ -40,20 +61,21 @@ who %>% pivot_longer(
   values_to = "count"
 )
 
-## -----------------------------------------------------------------------------
-who %>% pivot_longer(
-  cols = new_sp_m014:newrel_f65,
-  names_to = c("diagnosis", "gender", "age"), 
-  names_pattern = "new_?(.*)_(.)(.*)",
-  names_ptypes = list(
-    gender = factor(levels = c("f", "m")),
-    age = factor(
-      levels = c("014", "1524", "2534", "3544", "4554", "5564", "65"), 
-      ordered = TRUE
-    )
-  ),
-  values_to = "count",
-)
+## ---- eval = FALSE------------------------------------------------------------
+#  who %>% pivot_longer(
+#    cols = new_sp_m014:newrel_f65,
+#    names_to = c("diagnosis", "gender", "age"),
+#    names_pattern = "new_?(.*)_(.)(.*)",
+#    names_transform = list(
+#      gender = ~ readr::parse_factor(.x, levels = c("f", "m")),
+#      age = ~ readr::parse_factor(
+#        .x,
+#        levels = c("014", "1524", "2534", "3544", "4554", "5564", "65"),
+#        ordered = TRUE
+#      )
+#    ),
+#    values_to = "count",
+#  )
 
 ## -----------------------------------------------------------------------------
 family <- tribble(
@@ -106,11 +128,15 @@ pnl %>%
   )
 
 ## -----------------------------------------------------------------------------
-df <- tibble(x = 1:3, y = 4:6, y = 5:7, y = 7:9, .name_repair = "minimal")
+df <- tibble(id = 1:3, y = 4:6, y = 5:7, y = 7:9, .name_repair = "minimal")
 df
 
 ## -----------------------------------------------------------------------------
-df %>% pivot_longer(-x, names_to = "name", values_to = "value")
+df %>% pivot_longer(-id, names_to = "name", values_to = "value")
+
+## -----------------------------------------------------------------------------
+df <- tibble(id = 1:3, x1 = 4:6, x2 = 5:7, y1 = 7:9, y2 = 10:12)
+df %>% pivot_longer(-id, names_to = ".value", names_pattern = "(.).")
 
 ## -----------------------------------------------------------------------------
 fish_encounters
@@ -122,7 +148,7 @@ fish_encounters %>% pivot_wider(names_from = station, values_from = seen)
 fish_encounters %>% pivot_wider(
   names_from = station, 
   values_from = seen,
-  values_fill = list(seen = 0)
+  values_fill = 0
 )
 
 ## -----------------------------------------------------------------------------
@@ -157,6 +183,20 @@ production
 production %>% pivot_wider(
   names_from = c(product, country), 
   values_from = production
+)
+
+## -----------------------------------------------------------------------------
+production %>% pivot_wider(
+  names_from = c(product, country), 
+  values_from = production,
+  names_sep = ".",
+  names_prefix = "prod."
+)
+
+production %>% pivot_wider(
+  names_from = c(product, country), 
+  values_from = production,
+  names_glue = "prod_{product}_{country}"
 )
 
 ## -----------------------------------------------------------------------------
@@ -229,7 +269,7 @@ multi2 %>%
     id_cols = id,
     names_from = value, 
     values_from = checked, 
-    values_fill = list(checked = FALSE)
+    values_fill = FALSE
   )
 
 ## -----------------------------------------------------------------------------

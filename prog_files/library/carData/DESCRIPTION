@@ -1,11 +1,11 @@
 Package: carData
-Version: 3.0-3
-Date: 2019-11-16
+Version: 3.0-4
+Date: 2020-04-11
 Title: Companion to Applied Regression Data Sets
 Authors@R: c(person("John", "Fox", role = c("aut", "cre"), email = "jfox@mcmaster.ca"),
 	person("Sanford", "Weisberg", role = "aut", email = "sandy@umn.edu"),
     person("Brad", "Price", role = "aut", email = "brad.price@mail.wvu.edu"))
-Depends: R (>= 3.0)
+Depends: R (>= 3.5.0)
 LazyLoad: yes
 LazyData: yes
 Description: 
@@ -21,9 +21,9 @@ Author: John Fox [aut, cre],
 Maintainer: John Fox <jfox@mcmaster.ca>
 Repository: CRAN
 Repository/R-Forge/Project: car
-Repository/R-Forge/Revision: 616
-Repository/R-Forge/DateTimeStamp: 2019-11-16 15:55:16
-Date/Publication: 2019-11-16 17:50:02 UTC
+Repository/R-Forge/Revision: 626
+Repository/R-Forge/DateTimeStamp: 2020-04-11 21:37:43
+Date/Publication: 2020-05-22 23:30:02 UTC
 NeedsCompilation: no
-Packaged: 2019-11-16 16:10:10 UTC; rforge
-Built: R 3.6.1; ; 2019-11-17 22:51:54 UTC; windows
+Packaged: 2020-04-11 21:50:09 UTC; rforge
+Built: R 3.6.3; ; 2020-05-24 16:27:51 UTC; windows

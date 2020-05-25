@@ -65,6 +65,7 @@ table5	table1
 tibble	reexports
 tidyr	tidyr-package
 tidyr_legacy	tidyr_legacy
+tidyr_tidy_select	tidyr_tidy_select
 tribble	reexports
 unchop	chop
 uncount	uncount
