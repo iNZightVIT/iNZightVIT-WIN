@@ -1,5 +1,5 @@
 15b224179efc0f40c222cb38463ea34c *CITATION
-d8d12b9ab8fb6a97b82ee5c0b581865b *DESCRIPTION
+1c750ff1857077828379c8adc1f795ad *DESCRIPTION
 fd0d245e92471c4209dc94b0da31bfc0 *INDEX
 bf5d9676765ca784516bca5021e29ab4 *Meta/Rd.rds
 626aa8fa42588328e56a1027d28fc047 *Meta/data.rds
@@ -7,7 +7,7 @@ bf5d9676765ca784516bca5021e29ab4 *Meta/Rd.rds
 34b9b114647e0451671d67c8aa774f33 *Meta/hsearch.rds
 a4a0409dc5a7b8cc9729b4f928c6ef5b *Meta/links.rds
 6512bf39f92c7554a3502453d647140d *Meta/nsInfo.rds
-763f1c3a34e980b8bf3488fa727a78f1 *Meta/package.rds
+a44948fa76e0ee1736e8f58a5a365198 *Meta/package.rds
 b32886869c070e67addb7522fe175af3 *Meta/vignette.rds
 9b5c46fc3c08e7dc0d2e197a7e3d1025 *NAMESPACE
 5fd1f47bf50a19b9e480fe7e7405a87d *NEWS
@@ -23,8 +23,8 @@ c09fc6ae0761e0596ff573a43ce03388 *data/Rdata.rds
 d937f78160230d183b18d890428e9e23 *doc/pbkrtest.pdf
 434cda24e86f7c13cd39b87897a02844 *help/AnIndex
 7993d44bbc7fd94256e0922d8b3e51ba *help/aliases.rds
-eaf91adcd8a325e2d5378b208a84b4f2 *help/paths.rds
-f5f10ec34c346292831219749591e62f *help/pbkrtest.rdb
-6d96628acbb0762daf0c326883cb23aa *help/pbkrtest.rdx
+96763213fc6835b19b4f9d5775b2a1da *help/paths.rds
+20b8f9580038b40d13ddd88eef4ba8ed *help/pbkrtest.rdb
+0a2acada59706d628ceed33e19e9e189 *help/pbkrtest.rdx
 c232d075a135b3858bfe767edbfd2c36 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

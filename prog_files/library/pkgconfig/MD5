@@ -1,4 +1,4 @@
-c3c209969d8a1783f4519ce8838937d3 *DESCRIPTION
+a0951c4c9ea5551fe209ad4e7a58809c *DESCRIPTION
 1763b66c0616d3966155bac572e14181 *INDEX
 4b7ff7c348e978f33981b2237200878d *LICENSE
 3073469dccca42a8ab29a1d21dfac652 *Meta/Rd.rds
@@ -6,7 +6,7 @@ c3c209969d8a1783f4519ce8838937d3 *DESCRIPTION
 6a62f4b5eb91395e71750fcd5e7135bb *Meta/hsearch.rds
 bfe0d7ed35bcea4567990d279316aba5 *Meta/links.rds
 e52c815bdef5eb435c4a83a6aa019551 *Meta/nsInfo.rds
-2335eba5bbb877b078fdbf860cc8a3c1 *Meta/package.rds
+f4a26a7e14e4d736d1a0e8dee6acfdc5 *Meta/package.rds
 cd8e0bb63bd54833fe1e01ad1a8647d6 *NAMESPACE
 5d7a6d9138c1f41b095a2a14717707b1 *NEWS.markdown
 ebf0fc819595d631b8bf280c4b049940 *R/pkgconfig
@@ -16,8 +16,8 @@ ebb4499fb7c8f05aed0f8809d5d654d9 *README.Rmd
 ebb4499fb7c8f05aed0f8809d5d654d9 *README.markdown
 b54d18cf41b25d3a921db150f41ff329 *help/AnIndex
 8d5b8c679a94c06ec8e35637d41c0285 *help/aliases.rds
-8c0ea97cfe8e04421cc9fbc05dda3288 *help/paths.rds
-f28c8f4d1e7231e7dd586bfcfe574967 *help/pkgconfig.rdb
-7ae4c591f1a865cf24d6cce4b1d63e79 *help/pkgconfig.rdx
+42a29b42c75e496b83472b8866e690d1 *help/paths.rds
+9652699fb7289736bc8cf9e29ef94b56 *help/pkgconfig.rdb
+b733445b8364232eb562df9885348625 *help/pkgconfig.rdx
 5200c225f6a794e30213f0631f911275 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

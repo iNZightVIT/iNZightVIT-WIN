@@ -1,5 +1,5 @@
 2d1d8b81f92e1e97b282390e90941497 *CITATION
-66445f1aab5722406b66f9ed638b730e *DESCRIPTION
+0b123f89c5d8a6d6f6ceef9f0347a085 *DESCRIPTION
 824c6b9820b7fc963b52b185b8284481 *INDEX
 9c6a31342380721cc181b6bc421ff23c *Meta/Rd.rds
 4e623cf54cd9d1ca5712dd6cc87b1f3e *Meta/data.rds
@@ -7,7 +7,7 @@
 c02b0e2b035cc6f3f4c5e8f46e3b9d58 *Meta/hsearch.rds
 db2688d7a89113f91d745858beeb1079 *Meta/links.rds
 9153bee336f7976e3433faf71ac13941 *Meta/nsInfo.rds
-9cd4b22851cdcc321e2c5f4bcf3c45ca *Meta/package.rds
+45d7b57eee2218698366682850d79609 *Meta/package.rds
 ca2be9171db9bc45a268f08f5edf9539 *NAMESPACE
 b3c2cffc49197619d987992da637178e *NEWS.Rd
 ebf0fc819595d631b8bf280c4b049940 *R/cluster
@@ -18,14 +18,14 @@ ebf0fc819595d631b8bf280c4b049940 *R/cluster
 d4f55fc45d2c3af277faf91d7ecdb6e0 *data/Rdata.rdx
 827857d9e63b081ed133da1156867334 *help/AnIndex
 6bd94816847bd90304d09bc98026ab52 *help/aliases.rds
-4503e3dcf38abe05d7f39e8883ea9070 *help/cluster.rdb
-3f82086e87d49581c8bb86591efe0233 *help/cluster.rdx
-456be1a7fd0c216b765102c579c8de24 *help/paths.rds
+878fef494206dbae29cde86ac0f98a98 *help/cluster.rdb
+108813fcb212d619e5d5ca01f279690c *help/cluster.rdx
+a4d4faa0a66e4caa9b736451f506b05d *help/paths.rds
 90878ab9420ba75d33d898c8a2b02a28 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-c800ee256adb945a6d8e231831d9d657 *libs/i386/cluster.dll
+9b5404391bb46822f0776083587a7c00 *libs/i386/cluster.dll
 47ae348733131820bd5196cc9214753f *libs/i386/symbols.rds
-daf22f0e30a980cb578158f9eaa84e5b *libs/x64/cluster.dll
+75ee3c2618635b5935f9d9cbfda1df5f *libs/x64/cluster.dll
 e5833a4db6058eb1cca358532c1fc59a *libs/x64/symbols.rds
 bfd0bc51a62786ea02f5ce8197adffa7 *po/de/LC_MESSAGES/R-cluster.mo
 be3ce6c5e3a99c4769b31c674953d202 *po/de/LC_MESSAGES/cluster.mo

@@ -1,11 +1,11 @@
-f6696e4b7f5098c43b79c93cabb6a743 *DESCRIPTION
+07ae99da1044ebb3121d4ce10a6591d7 *DESCRIPTION
 5d9f6c392160b1a5babb33f7d532e120 *INDEX
 fab96c34e497617a29ab2ae92ff5b694 *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 47106dec91017f9ba1d43ad682858926 *Meta/hsearch.rds
 cfebd07c12afb3573d63e41e791e59b9 *Meta/links.rds
 83bf860e14aaff0de36b538ce681aad8 *Meta/nsInfo.rds
-02c904e265acd759c39432bdf3b65c0f *Meta/package.rds
+c33cb802e051b0b14e2fe4c329328bb9 *Meta/package.rds
 2d8cc8f1596aa5324e4cd8c75812a6db *Meta/vignette.rds
 24953d6374fd57d6378ea80fc6e5d0a3 *NAMESPACE
 daf7c31f67f9168a34fd6cc7cff80af9 *NEWS.md
@@ -21,8 +21,8 @@ aaa334baba7344f7724885287d2a660c *doc/profiling.html
 8ef70f933b8b7994f0601fa57423c0fa *help/figures/README-unnamed-chunk-2-1.png
 5c994c7589d1201203a2f55e73d2960d *help/figures/README-unnamed-chunk-3-1.png
 ec724ae982431435bc7ba6a2a36a28ff *help/figures/logo.png
-98f466f03162e7cd0f176d44ee1ca723 *help/gtable.rdb
-412c658b16b0585aae5058a5f26b00a6 *help/gtable.rdx
-ff3e7cbe8a841cd67e2c55d88960d03b *help/paths.rds
+0960524e4d46ee6808bab31946f2f643 *help/gtable.rdb
+86679d6f9be4dedbcb1bb26cf5c8d622 *help/gtable.rdx
+bef6f50fbfda891f97c1e44384856f40 *help/paths.rds
 1076b1401c76da4d432a261aa4b57697 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
