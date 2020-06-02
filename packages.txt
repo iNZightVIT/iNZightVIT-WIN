@@ -147,7 +147,6 @@ pillar
 pkgbuild
 pkgconfig
 pkgload
-plogr
 praise
 prettyunits
 processx

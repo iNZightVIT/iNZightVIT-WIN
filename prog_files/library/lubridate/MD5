@@ -1,5 +1,5 @@
 8d4280470088183c93d3b05394f49074 *CITATION
-e95e2af28814ff33318aa2bbf29135cc *DESCRIPTION
+96311fede9e8cbcd120bab051b669699 *DESCRIPTION
 2d3af6583983b691f454d46035b8086e *INDEX
 1364951f9b182aef805bae64abea71bb *Meta/Rd.rds
 66273dbfea9654a7d42f2083225accf1 *Meta/data.rds
@@ -7,7 +7,7 @@ e95e2af28814ff33318aa2bbf29135cc *DESCRIPTION
 c261f97b24255d987bf0e42b08bf266d *Meta/hsearch.rds
 e7b89308d3a08b4f867a047aa138f469 *Meta/links.rds
 04abefcd82c5883815eacfca91c296f7 *Meta/nsInfo.rds
-a434e9b1201d7a2d47a5d194262b3a4b *Meta/package.rds
+e5052d4a20b3dbb1d6048e21e2c80123 *Meta/package.rds
 e7502360d546c494294450690a64f28a *Meta/vignette.rds
 b6ecb847d778bcfb98ea2426883981d6 *NAMESPACE
 72541e4a2d9f0c2e505b0d72c58d2357 *NEWS.md
@@ -25,14 +25,14 @@ e7286471f8de1b9bc2cd3178d28185a7 *doc/lubridate.html
 71d7b77651f2056cc9d5849975378bb6 *help/AnIndex
 e10f37525b49ed74b823032a3bee3102 *help/aliases.rds
 68349cce281ef8ef965844cf20429f13 *help/figures/logo.png
-6738a75e4c1fb6904de04226970f319b *help/lubridate.rdb
-89e02e45c514e853cc909a9038f5cbc4 *help/lubridate.rdx
-41f337e85039dcd9b4732db1e326669d *help/paths.rds
+5b5968490ba5c257e3eaf0c163c3deed *help/lubridate.rdb
+5c9582a11bd513ed19b111f189909d70 *help/lubridate.rdx
+deba4566aeafb84a3688150f0eb144c4 *help/paths.rds
 0da87368942b8a4d4ebc179833d5544e *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-bda16afde49ca37530947d771563e73c *libs/i386/lubridate.dll
+40964987950e724f3389dc04d4ba4fd4 *libs/i386/lubridate.dll
 793b4d8cd3741147145eb7bbe98cd166 *libs/i386/symbols.rds
-a2ecfe594b6a8f77a49d4b554dffb28d *libs/x64/lubridate.dll
+606a8e1cd6edf105f95b790e6678f1a9 *libs/x64/lubridate.dll
 dbc0bdfa00593f375b20c1068241cd10 *libs/x64/symbols.rds
 cbd0115223b55d1d4e6b1b9084872104 *pkgdown/assets/tidyverse.css
 1b382473f33def546c7c664480b005f6 *pkgdown/assets/tidyverse.css.map

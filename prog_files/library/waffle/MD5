@@ -1,11 +1,11 @@
-3028b5911d806cdb061be859569ebf65 *DESCRIPTION
+07ee00c4758fb8c344f9e4479efeb8bc *DESCRIPTION
 bd87dbd2240496c13d1b3be84da9ca88 *INDEX
 48a0c6b56438e8816891b6ca292e8689 *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 eeafef5960bdadb234e2367dab3b2db8 *Meta/hsearch.rds
 7100408575c47a287c551eac14deae04 *Meta/links.rds
 832673ad4f0e2c0b787eb05a242d338b *Meta/nsInfo.rds
-51f0f48b7e041c35ab801a158b30d974 *Meta/package.rds
+4cda35d0a8596459c19ca4e87e7a5fca *Meta/package.rds
 f3aa65d9874adf7d70bf5f8e9d3167a3 *NAMESPACE
 63a5d193e8ce37564c5966c2155b5d2c *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/waffle
@@ -17,8 +17,8 @@ d9ee23d59d0e0e727b51368b458a0bff *fonts/fontawesome-webfont.woff
 97493d3f11c0a3bd5cbd959f5d19b699 *fonts/fontawesome-webfont.woff2
 2e4e77ac7ba9489388141ee2a4f104c7 *help/AnIndex
 44e1e9a9b0546256e0c80e5364000ccc *help/aliases.rds
-adffebccf226076b37f247e359a648d2 *help/paths.rds
-80a39680a2301221d4a8fb946519329e *help/waffle.rdb
-e28709c07060f672a89b94a41197b497 *help/waffle.rdx
+a212a2ed52bdc941aacf54224be7fa07 *help/paths.rds
+f8047071e7cf3fd5b61c8c0ae9f927cb *help/waffle.rdb
+ac81f4f540addd01969279a228279f6f *help/waffle.rdx
 3ade031c49fd73e057306615e71f768c *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

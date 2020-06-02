@@ -1,3 +1,10 @@
+# haven 2.3.1
+
+* Add missing methods so `median()`, `quantile()` and `summary()` work
+  once more (#520).
+  
+* Add missing cast methods (#522).
+
 # haven 2.3.0
 
 * `labelled()` gains the necessary support to work seemlessly in dplyr 1.0.0,

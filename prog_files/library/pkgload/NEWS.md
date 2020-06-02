@@ -1,4 +1,19 @@
+# pkgload 1.1.0
+
+* `dev_example()` now works after removing an inconsistent call to `load_all()` (@riccardoporreca, #122).
+
+* `load_all()` now issues a warning if exported objects conflict with objects defined in the global environment (#112)
+
+* `run_example()` arguments `run` and `test` are deprecated in favor of the (hopefully) more clear `run_dontrun` and `run_donttest` (#107).
+
+* Internal fixes for compatibility with the future 4.1.0 release.
+
 # pkgload 1.0.2
+
+* `shim_question()` now works for topics from the R base package that are passed with the double colon operator (e.g. `base::min`) (@mdequeljoe, #99).
+
+* `load_all()` now allows using explicitly qualified, exported names in test
+  helpers (@klmr, #95).
 
 * `load_all()` gains a `compile` argument which controls more finely whether to
   compile the code or not. The `recompile` argument is now deprecated and will

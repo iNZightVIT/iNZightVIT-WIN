@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;dplyr&rsquo; version 0.8.5</h2>
+</div><h2>Documentation for package &lsquo;dplyr&rsquo; version 1.0.0</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -21,7 +21,6 @@
 
 
 <p style="text-align: center;">
-<a href="# "> </a>
 <a href="#A">A</a>
 <a href="#B">B</a>
 <a href="#C">C</a>
@@ -29,7 +28,6 @@
 <a href="#E">E</a>
 <a href="#F">F</a>
 <a href="#G">G</a>
-<a href="#H">H</a>
 <a href="#I">I</a>
 <a href="#J">J</a>
 <a href="#L">L</a>
@@ -42,60 +40,37 @@
 <a href="#T">T</a>
 <a href="#U">U</a>
 <a href="#V">V</a>
+<a href="#W">W</a>
 </p>
 
-<table width="100%">
-<tr><td style="width: 25%;"><a href="dplyr-package.html">dplyr-package</a></td>
-<td>dplyr: a grammar of data manipulation</td></tr>
-</table>
 
 <h2><a name="A">-- A --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="tally.html">add_count</a></td>
-<td>Count/tally observations by group</td></tr>
-<tr><td style="width: 25%;"><a href="tally.html">add_tally</a></td>
-<td>Count/tally observations by group</td></tr>
-<tr><td style="width: 25%;"><a href="all_equal.html">all.equal.tbl_df</a></td>
-<td>Flexible equality comparison for data frames</td></tr>
-<tr><td style="width: 25%;"><a href="all_equal.html">all_equal</a></td>
-<td>Flexible equality comparison for data frames</td></tr>
+<tr><td style="width: 25%;"><a href="across.html">across</a></td>
+<td>Apply a function (or a set of functions) to a set of columns</td></tr>
+<tr><td style="width: 25%;"><a href="count.html">add_count</a></td>
+<td>Count observations by group</td></tr>
+<tr><td style="width: 25%;"><a href="count.html">add_tally</a></td>
+<td>Count observations by group</td></tr>
 <tr><td style="width: 25%;"><a href="all_vars.html">all_vars</a></td>
 <td>Apply predicate to all variables</td></tr>
-<tr><td style="width: 25%;"><a href="join.html">anti_join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">anti_join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
+<tr><td style="width: 25%;"><a href="filter-joins.html">anti_join</a></td>
+<td>Filtering joins</td></tr>
+<tr><td style="width: 25%;"><a href="filter-joins.html">anti_join.data.frame</a></td>
+<td>Filtering joins</td></tr>
 <tr><td style="width: 25%;"><a href="all_vars.html">any_vars</a></td>
 <td>Apply predicate to all variables</td></tr>
 <tr><td style="width: 25%;"><a href="arrange.html">arrange</a></td>
-<td>Arrange rows by variables</td></tr>
-<tr><td style="width: 25%;"><a href="arrange.html">arrange.grouped_df</a></td>
-<td>Arrange rows by variables</td></tr>
+<td>Arrange rows by column values</td></tr>
+<tr><td style="width: 25%;"><a href="arrange.html">arrange.data.frame</a></td>
+<td>Arrange rows by column values</td></tr>
 <tr><td style="width: 25%;"><a href="arrange_all.html">arrange_all</a></td>
 <td>Arrange rows by a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="arrange_all.html">arrange_at</a></td>
 <td>Arrange rows by a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="arrange_all.html">arrange_if</a></td>
 <td>Arrange rows by a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="as.table.tbl_cube.html">as.data.frame.tbl_cube</a></td>
-<td>Coerce a 'tbl_cube' to other data structures</td></tr>
-<tr><td style="width: 25%;"><a href="as.table.tbl_cube.html">as.table.tbl_cube</a></td>
-<td>Coerce a 'tbl_cube' to other data structures</td></tr>
-<tr><td style="width: 25%;"><a href="tbl.html">as.tbl</a></td>
-<td>Create a table from a data source</td></tr>
-<tr><td style="width: 25%;"><a href="as.tbl_cube.html">as.tbl_cube</a></td>
-<td>Coerce an existing data structure into a 'tbl_cube'</td></tr>
-<tr><td style="width: 25%;"><a href="as.tbl_cube.html">as.tbl_cube.array</a></td>
-<td>Coerce an existing data structure into a 'tbl_cube'</td></tr>
-<tr><td style="width: 25%;"><a href="as.tbl_cube.html">as.tbl_cube.data.frame</a></td>
-<td>Coerce an existing data structure into a 'tbl_cube'</td></tr>
-<tr><td style="width: 25%;"><a href="as.tbl_cube.html">as.tbl_cube.matrix</a></td>
-<td>Coerce an existing data structure into a 'tbl_cube'</td></tr>
-<tr><td style="width: 25%;"><a href="as.tbl_cube.html">as.tbl_cube.table</a></td>
-<td>Coerce an existing data structure into a 'tbl_cube'</td></tr>
-<tr><td style="width: 25%;"><a href="as.table.tbl_cube.html">as_tibble.tbl_cube</a></td>
-<td>Coerce a 'tbl_cube' to other data structures</td></tr>
 <tr><td style="width: 25%;"><a href="auto_copy.html">auto_copy</a></td>
 <td>Copy tables to same source, if necessary</td></tr>
 </table>
@@ -130,14 +105,14 @@
 <td>Force computation of a database query</td></tr>
 <tr><td style="width: 25%;"><a href="compute.html">collect</a></td>
 <td>Force computation of a database query</td></tr>
-<tr><td style="width: 25%;"><a href="combine.html">combine</a></td>
-<td>Combine vectors</td></tr>
 <tr><td style="width: 25%;"><a href="compute.html">compute</a></td>
 <td>Force computation of a database query</td></tr>
+<tr><td style="width: 25%;"><a href="context.html">context</a></td>
+<td>Context dependent expressions</td></tr>
 <tr><td style="width: 25%;"><a href="copy_to.html">copy_to</a></td>
 <td>Copy a local data frame to a remote src</td></tr>
-<tr><td style="width: 25%;"><a href="tally.html">count</a></td>
-<td>Count/tally observations by group</td></tr>
+<tr><td style="width: 25%;"><a href="count.html">count</a></td>
+<td>Count observations by group</td></tr>
 <tr><td style="width: 25%;"><a href="cumall.html">cumall</a></td>
 <td>Cumulativate versions of any, all, and mean</td></tr>
 <tr><td style="width: 25%;"><a href="cumall.html">cumany</a></td>
@@ -146,8 +121,18 @@
 <td>Windowed rank functions.</td></tr>
 <tr><td style="width: 25%;"><a href="cumall.html">cummean</a></td>
 <td>Cumulativate versions of any, all, and mean</td></tr>
-<tr><td style="width: 25%;"><a href="select_vars.html">current_vars</a></td>
-<td>Select variables</td></tr>
+<tr><td style="width: 25%;"><a href="context.html">cur_column</a></td>
+<td>Context dependent expressions</td></tr>
+<tr><td style="width: 25%;"><a href="context.html">cur_data</a></td>
+<td>Context dependent expressions</td></tr>
+<tr><td style="width: 25%;"><a href="context.html">cur_group</a></td>
+<td>Context dependent expressions</td></tr>
+<tr><td style="width: 25%;"><a href="context.html">cur_group_id</a></td>
+<td>Context dependent expressions</td></tr>
+<tr><td style="width: 25%;"><a href="context.html">cur_group_rows</a></td>
+<td>Context dependent expressions</td></tr>
+<tr><td style="width: 25%;"><a href="across.html">c_across</a></td>
+<td>Apply a function (or a set of functions) to a set of columns</td></tr>
 </table>
 
 <h2><a name="D">-- D --</a></h2>
@@ -158,19 +143,13 @@
 <tr><td style="width: 25%;"><a href="desc.html">desc</a></td>
 <td>Descending order</td></tr>
 <tr><td style="width: 25%;"><a href="distinct.html">distinct</a></td>
-<td>Select distinct/unique rows</td></tr>
+<td>Subset distinct/unique rows</td></tr>
 <tr><td style="width: 25%;"><a href="distinct_all.html">distinct_all</a></td>
 <td>Select distinct rows by a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="distinct_all.html">distinct_at</a></td>
 <td>Select distinct rows by a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="distinct_all.html">distinct_if</a></td>
 <td>Select distinct rows by a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="do.html">do</a></td>
-<td>Do anything</td></tr>
-<tr><td style="width: 25%;"><a href="dplyr-package.html">dplyr</a></td>
-<td>dplyr: a grammar of data manipulation</td></tr>
-<tr><td style="width: 25%;"><a href="dr_dplyr.html">dr_dplyr</a></td>
-<td>Dr Dplyr checks your installation for common problems.</td></tr>
 </table>
 
 <h2><a name="E">-- E --</a></h2>
@@ -184,7 +163,9 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="filter.html">filter</a></td>
-<td>Return rows with matching conditions</td></tr>
+<td>Subset rows using column values</td></tr>
+<tr><td style="width: 25%;"><a href="filter-joins.html">filter-joins</a></td>
+<td>Filtering joins</td></tr>
 <tr><td style="width: 25%;"><a href="filter_all.html">filter_all</a></td>
 <td>Filter within a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="filter_all.html">filter_at</a></td>
@@ -193,56 +174,35 @@
 <td>Filter within a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="nth.html">first</a></td>
 <td>Extract the first, last or nth value from a vector</td></tr>
-<tr><td style="width: 25%;"><a href="join.html">full_join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">full_join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
-<tr><td style="width: 25%;"><a href="funs.html">funs</a></td>
-<td>Create a list of functions calls.</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">full_join</a></td>
+<td>Mutating joins</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">full_join.data.frame</a></td>
+<td>Mutating joins</td></tr>
 </table>
 
 <h2><a name="G">-- G --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="groups.html">groups</a></td>
-<td>Return grouping variables</td></tr>
 <tr><td style="width: 25%;"><a href="group_by.html">group_by</a></td>
 <td>Group by one or more variables</td></tr>
 <tr><td style="width: 25%;"><a href="group_by_all.html">group_by_all</a></td>
 <td>Group by a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="group_by_all.html">group_by_at</a></td>
 <td>Group by a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="group_by_drop_default.html">group_by_drop_default</a></td>
-<td>Default value for .drop argument of group_by</td></tr>
 <tr><td style="width: 25%;"><a href="group_by_all.html">group_by_if</a></td>
 <td>Group by a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="group_cols.html">group_cols</a></td>
 <td>Select grouping variables</td></tr>
-<tr><td style="width: 25%;"><a href="group_data.html">group_data</a></td>
-<td>Grouping data</td></tr>
-<tr><td style="width: 25%;"><a href="group_split.html">group_keys</a></td>
-<td>Split data frame by groups</td></tr>
 <tr><td style="width: 25%;"><a href="group_map.html">group_map</a></td>
 <td>Apply a function to each group</td></tr>
 <tr><td style="width: 25%;"><a href="group_map.html">group_modify</a></td>
 <td>Apply a function to each group</td></tr>
-<tr><td style="width: 25%;"><a href="group_data.html">group_rows</a></td>
-<td>Grouping data</td></tr>
 <tr><td style="width: 25%;"><a href="group_split.html">group_split</a></td>
 <td>Split data frame by groups</td></tr>
 <tr><td style="width: 25%;"><a href="group_trim.html">group_trim</a></td>
 <td>Trim grouping structure</td></tr>
-<tr><td style="width: 25%;"><a href="groups.html">group_vars</a></td>
-<td>Return grouping variables</td></tr>
 <tr><td style="width: 25%;"><a href="group_map.html">group_walk</a></td>
 <td>Apply a function to each group</td></tr>
-</table>
-
-<h2><a name="H">-- H --</a></h2>
-
-<table width="100%">
-<tr><td style="width: 25%;"><a href="hybrid_call.html">hybrid_call</a></td>
-<td>Inspect how dplyr evaluates an expression</td></tr>
 </table>
 
 <h2><a name="I">-- I --</a></h2>
@@ -252,12 +212,10 @@
 <td>Flag a character vector as SQL identifiers</td></tr>
 <tr><td style="width: 25%;"><a href="if_else.html">if_else</a></td>
 <td>Vectorised if</td></tr>
-<tr><td style="width: 25%;"><a href="join.html">inner_join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">inner_join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
-<tr><td style="width: 25%;"><a href="setops.html">intersect</a></td>
-<td>Set operations</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">inner_join</a></td>
+<td>Mutating joins</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">inner_join.data.frame</a></td>
+<td>Mutating joins</td></tr>
 <tr><td style="width: 25%;"><a href="tbl.html">is.tbl</a></td>
 <td>Create a table from a data source</td></tr>
 </table>
@@ -265,27 +223,27 @@
 <h2><a name="J">-- J --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="join.html">join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">join</a></td>
+<td>Mutating joins</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">join.data.frame</a></td>
+<td>Mutating joins</td></tr>
 </table>
 
 <h2><a name="L">-- L --</a></h2>
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="lead-lag.html">lag</a></td>
-<td>Lead and lag.</td></tr>
+<td>Compute lagged or leading values</td></tr>
 <tr><td style="width: 25%;"><a href="nth.html">last</a></td>
 <td>Extract the first, last or nth value from a vector</td></tr>
 <tr><td style="width: 25%;"><a href="lead-lag.html">lead</a></td>
-<td>Lead and lag.</td></tr>
+<td>Compute lagged or leading values</td></tr>
 <tr><td style="width: 25%;"><a href="lead-lag.html">lead-lag</a></td>
-<td>Lead and lag.</td></tr>
-<tr><td style="width: 25%;"><a href="join.html">left_join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">left_join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
+<td>Compute lagged or leading values</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">left_join</a></td>
+<td>Mutating joins</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">left_join.data.frame</a></td>
+<td>Mutating joins</td></tr>
 </table>
 
 <h2><a name="M">-- M --</a></h2>
@@ -294,7 +252,11 @@
 <tr><td style="width: 25%;"><a href="ranking.html">min_rank</a></td>
 <td>Windowed rank functions.</td></tr>
 <tr><td style="width: 25%;"><a href="mutate.html">mutate</a></td>
-<td>Create or transform variables</td></tr>
+<td>Create, modify, and delete columns</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">mutate-joins</a></td>
+<td>Mutating joins</td></tr>
+<tr><td style="width: 25%;"><a href="mutate.html">mutate.data.frame</a></td>
+<td>Create, modify, and delete columns</td></tr>
 <tr><td style="width: 25%;"><a href="mutate_all.html">mutate_all</a></td>
 <td>Mutate multiple columns</td></tr>
 <tr><td style="width: 25%;"><a href="mutate_all.html">mutate_at</a></td>
@@ -306,20 +268,16 @@
 <h2><a name="N">-- N --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="n.html">n</a></td>
-<td>The number of observations in the current group.</td></tr>
-<tr><td style="width: 25%;"><a href="nasa.html">nasa</a></td>
-<td>NASA spatio-temporal data</td></tr>
+<tr><td style="width: 25%;"><a href="context.html">n</a></td>
+<td>Context dependent expressions</td></tr>
 <tr><td style="width: 25%;"><a href="na_if.html">na_if</a></td>
 <td>Convert values to NA</td></tr>
 <tr><td style="width: 25%;"><a href="near.html">near</a></td>
 <td>Compare two numeric vectors</td></tr>
-<tr><td style="width: 25%;"><a href="join.html">nest_join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">nest_join.data.frame</a></td>
-<td>Join data frame tbls</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">nest_join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
+<tr><td style="width: 25%;"><a href="nest_join.html">nest_join</a></td>
+<td>Nest join</td></tr>
+<tr><td style="width: 25%;"><a href="nest_join.html">nest_join.data.frame</a></td>
+<td>Nest join</td></tr>
 <tr><td style="width: 25%;"><a href="nth.html">nth</a></td>
 <td>Extract the first, last or nth value from a vector</td></tr>
 <tr><td style="width: 25%;"><a href="ranking.html">ntile</a></td>
@@ -341,7 +299,7 @@
 <tr><td style="width: 25%;"><a href="ranking.html">percent_rank</a></td>
 <td>Windowed rank functions.</td></tr>
 <tr><td style="width: 25%;"><a href="pull.html">pull</a></td>
-<td>Pull out a single variable</td></tr>
+<td>Extract a single column</td></tr>
 </table>
 
 <h2><a name="R">-- R --</a></h2>
@@ -349,28 +307,32 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="ranking.html">ranking</a></td>
 <td>Windowed rank functions.</td></tr>
-<tr><td style="width: 25%;"><a href="bind.html">rbind_all</a></td>
-<td>Efficiently bind multiple data frames by row and column</td></tr>
-<tr><td style="width: 25%;"><a href="bind.html">rbind_list</a></td>
-<td>Efficiently bind multiple data frames by row and column</td></tr>
 <tr><td style="width: 25%;"><a href="recode.html">recode</a></td>
 <td>Recode values</td></tr>
 <tr><td style="width: 25%;"><a href="recode.html">recode_factor</a></td>
 <td>Recode values</td></tr>
-<tr><td style="width: 25%;"><a href="select.html">rename</a></td>
-<td>Select/rename variables by name</td></tr>
-<tr><td style="width: 25%;"><a href="select_all.html">rename_all</a></td>
-<td>Select and rename a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="select_all.html">rename_at</a></td>
-<td>Select and rename a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="select_all.html">rename_if</a></td>
-<td>Select and rename a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="select_vars.html">rename_vars</a></td>
-<td>Select variables</td></tr>
-<tr><td style="width: 25%;"><a href="join.html">right_join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">right_join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
+<tr><td style="width: 25%;"><a href="relocate.html">relocate</a></td>
+<td>Change column order</td></tr>
+<tr><td style="width: 25%;"><a href="rename.html">rename</a></td>
+<td>Rename columns</td></tr>
+<tr><td style="width: 25%;"><a href="rename.html">rename_with</a></td>
+<td>Rename columns</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">right_join</a></td>
+<td>Mutating joins</td></tr>
+<tr><td style="width: 25%;"><a href="mutate-joins.html">right_join.data.frame</a></td>
+<td>Mutating joins</td></tr>
+<tr><td style="width: 25%;"><a href="rows.html">rows</a></td>
+<td>Manipulate individual rows</td></tr>
+<tr><td style="width: 25%;"><a href="rows.html">rows_delete</a></td>
+<td>Manipulate individual rows</td></tr>
+<tr><td style="width: 25%;"><a href="rows.html">rows_insert</a></td>
+<td>Manipulate individual rows</td></tr>
+<tr><td style="width: 25%;"><a href="rows.html">rows_patch</a></td>
+<td>Manipulate individual rows</td></tr>
+<tr><td style="width: 25%;"><a href="rows.html">rows_update</a></td>
+<td>Manipulate individual rows</td></tr>
+<tr><td style="width: 25%;"><a href="rows.html">rows_upsert</a></td>
+<td>Manipulate individual rows</td></tr>
 <tr><td style="width: 25%;"><a href="rowwise.html">rowwise</a></td>
 <td>Group input by rows</td></tr>
 <tr><td style="width: 25%;"><a href="ranking.html">row_number</a></td>
@@ -380,56 +342,38 @@
 <h2><a name="S">-- S --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="sample.html">sample</a></td>
-<td>Sample n rows from a table</td></tr>
-<tr><td style="width: 25%;"><a href="sample.html">sample_frac</a></td>
-<td>Sample n rows from a table</td></tr>
-<tr><td style="width: 25%;"><a href="sample.html">sample_n</a></td>
-<td>Sample n rows from a table</td></tr>
 <tr><td style="width: 25%;"><a href="scoped.html">scoped</a></td>
 <td>Operate on a selection of variables</td></tr>
 <tr><td style="width: 25%;"><a href="select.html">select</a></td>
-<td>Select/rename variables by name</td></tr>
-<tr><td style="width: 25%;"><a href="select_all.html">select_all</a></td>
-<td>Select and rename a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="select_all.html">select_at</a></td>
-<td>Select and rename a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="select_all.html">select_if</a></td>
-<td>Select and rename a selection of variables</td></tr>
-<tr><td style="width: 25%;"><a href="select_vars.html">select_var</a></td>
-<td>Select variables</td></tr>
-<tr><td style="width: 25%;"><a href="select_vars.html">select_vars</a></td>
-<td>Select variables</td></tr>
-<tr><td style="width: 25%;"><a href="join.html">semi_join</a></td>
-<td>Join two tbls together</td></tr>
-<tr><td style="width: 25%;"><a href="join.tbl_df.html">semi_join.tbl_df</a></td>
-<td>Join data frame tbls</td></tr>
-<tr><td style="width: 25%;"><a href="setops.html">setdiff</a></td>
-<td>Set operations</td></tr>
-<tr><td style="width: 25%;"><a href="setops.html">setequal</a></td>
-<td>Set operations</td></tr>
+<td>Subset columns using their names and types</td></tr>
+<tr><td style="width: 25%;"><a href="filter-joins.html">semi_join</a></td>
+<td>Filtering joins</td></tr>
+<tr><td style="width: 25%;"><a href="filter-joins.html">semi_join.data.frame</a></td>
+<td>Filtering joins</td></tr>
 <tr><td style="width: 25%;"><a href="setops.html">setops</a></td>
 <td>Set operations</td></tr>
 <tr><td style="width: 25%;"><a href="explain.html">show_query</a></td>
 <td>Explain details of a tbl</td></tr>
 <tr><td style="width: 25%;"><a href="slice.html">slice</a></td>
-<td>Choose rows by position</td></tr>
+<td>Subset rows using their positions</td></tr>
+<tr><td style="width: 25%;"><a href="slice.html">slice_head</a></td>
+<td>Subset rows using their positions</td></tr>
+<tr><td style="width: 25%;"><a href="slice.html">slice_max</a></td>
+<td>Subset rows using their positions</td></tr>
+<tr><td style="width: 25%;"><a href="slice.html">slice_min</a></td>
+<td>Subset rows using their positions</td></tr>
+<tr><td style="width: 25%;"><a href="slice.html">slice_sample</a></td>
+<td>Subset rows using their positions</td></tr>
+<tr><td style="width: 25%;"><a href="slice.html">slice_tail</a></td>
+<td>Subset rows using their positions</td></tr>
 <tr><td style="width: 25%;"><a href="sql.html">sql</a></td>
 <td>SQL escaping.</td></tr>
-<tr><td style="width: 25%;"><a href="src_dbi.html">src_dbi</a></td>
-<td>Source for database backends</td></tr>
-<tr><td style="width: 25%;"><a href="src_dbi.html">src_mysql</a></td>
-<td>Source for database backends</td></tr>
-<tr><td style="width: 25%;"><a href="src_dbi.html">src_postgres</a></td>
-<td>Source for database backends</td></tr>
-<tr><td style="width: 25%;"><a href="src_dbi.html">src_sqlite</a></td>
-<td>Source for database backends</td></tr>
 <tr><td style="width: 25%;"><a href="starwars.html">starwars</a></td>
 <td>Starwars characters</td></tr>
 <tr><td style="width: 25%;"><a href="storms.html">storms</a></td>
 <td>Storm tracks data</td></tr>
 <tr><td style="width: 25%;"><a href="summarise.html">summarise</a></td>
-<td>Reduce multiple values down to a single value</td></tr>
+<td>Summarise each group to fewer rows</td></tr>
 <tr><td style="width: 25%;"><a href="summarise_all.html">summarise_all</a></td>
 <td>Summarise multiple columns</td></tr>
 <tr><td style="width: 25%;"><a href="summarise_all.html">summarise_at</a></td>
@@ -437,7 +381,7 @@
 <tr><td style="width: 25%;"><a href="summarise_all.html">summarise_if</a></td>
 <td>Summarise multiple columns</td></tr>
 <tr><td style="width: 25%;"><a href="summarise.html">summarize</a></td>
-<td>Reduce multiple values down to a single value</td></tr>
+<td>Summarise each group to fewer rows</td></tr>
 <tr><td style="width: 25%;"><a href="summarise_all.html">summarize_all</a></td>
 <td>Summarise multiple columns</td></tr>
 <tr><td style="width: 25%;"><a href="summarise_all.html">summarize_at</a></td>
@@ -449,18 +393,12 @@
 <h2><a name="T">-- T --</a></h2>
 
 <table width="100%">
-<tr><td style="width: 25%;"><a href="tally.html">tally</a></td>
-<td>Count/tally observations by group</td></tr>
+<tr><td style="width: 25%;"><a href="count.html">tally</a></td>
+<td>Count observations by group</td></tr>
 <tr><td style="width: 25%;"><a href="tbl.html">tbl</a></td>
 <td>Create a table from a data source</td></tr>
-<tr><td style="width: 25%;"><a href="tbl_cube.html">tbl_cube</a></td>
-<td>A data cube tbl</td></tr>
-<tr><td style="width: 25%;"><a href="top_n.html">top_frac</a></td>
-<td>Select top (or bottom) n rows (by value)</td></tr>
-<tr><td style="width: 25%;"><a href="top_n.html">top_n</a></td>
-<td>Select top (or bottom) n rows (by value)</td></tr>
 <tr><td style="width: 25%;"><a href="mutate.html">transmute</a></td>
-<td>Create or transform variables</td></tr>
+<td>Create, modify, and delete columns</td></tr>
 <tr><td style="width: 25%;"><a href="mutate_all.html">transmute_all</a></td>
 <td>Mutate multiple columns</td></tr>
 <tr><td style="width: 25%;"><a href="mutate_all.html">transmute_at</a></td>
@@ -474,8 +412,6 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="group_by.html">ungroup</a></td>
 <td>Group by one or more variables</td></tr>
-<tr><td style="width: 25%;"><a href="setops.html">union</a></td>
-<td>Set operations</td></tr>
 <tr><td style="width: 25%;"><a href="setops.html">union_all</a></td>
 <td>Set operations</td></tr>
 </table>
@@ -485,5 +421,12 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="vars.html">vars</a></td>
 <td>Select variables</td></tr>
+</table>
+
+<h2><a name="W">-- W --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="with_groups.html">with_groups</a></td>
+<td>Perform an operation with temporary groups</td></tr>
 </table>
 </body></html>

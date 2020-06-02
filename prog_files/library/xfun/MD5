@@ -1,4 +1,4 @@
-cc0191e82692cf28d36eb35af0a90d14 *DESCRIPTION
+9cefd3e812ccd92d0c7876f48b229bc8 *DESCRIPTION
 c396a20b668f548221c9f745c660df5c *INDEX
 4da54e2d32ef92748cac3d16b89df90a *LICENSE
 a3a6f735331b1afa50f02df8e0102414 *Meta/Rd.rds
@@ -6,7 +6,7 @@ a3a6f735331b1afa50f02df8e0102414 *Meta/Rd.rds
 8d91f99cb3c869fe1a0d6fa3f7fbb092 *Meta/hsearch.rds
 87634f055c80f0aa103bda309824f08b *Meta/links.rds
 dd4e3a69cec69e8a77607f03ab1be9d8 *Meta/nsInfo.rds
-d471116c8170b0578b545de004b7c475 *Meta/package.rds
+77f23d5663773eb16fb90dcbf2c805ec *Meta/package.rds
 bc35dfd0121077d239351e7925ddba94 *Meta/vignette.rds
 30c5c5ad44a559c312e1597ce3152f6b *NAMESPACE
 abd3bdceb0cc2884d43d434589385083 *NEWS.md
@@ -19,9 +19,9 @@ b1bc1ec6df17d51f4ed5191342f850d4 *doc/index.html
 1e280141207e20d836d451ca1dc6131c *doc/xfun.html
 feea7218eb2d40242204dc19d6ae734b *help/AnIndex
 a89e4a4c2b0135561725df32fa06d202 *help/aliases.rds
-93563b6c7314de2d5e62993f959da6df *help/paths.rds
-dd5ee3c6a8a3efdaf1fd3f59e1c41edd *help/xfun.rdb
-6931d050fafdd221f83016789fec993c *help/xfun.rdx
+92681ad2f89733e45e81a5c7c1dab1b2 *help/paths.rds
+fe55c4478b604193d44aab1cf1055ca4 *help/xfun.rdb
+aff22187d1e7411d8917819b20072c1a *help/xfun.rdx
 a7eef214cea8ef42858c29d85ae991c6 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 9293b4398c636200df8bf31ce8e6ad3f *scripts/call-fun.R

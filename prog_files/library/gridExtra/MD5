@@ -1,11 +1,11 @@
-9ee3c79a2ecb456f5400499a33a08718 *DESCRIPTION
+5e4691395b5ed44ff058140716000bc8 *DESCRIPTION
 bc7a1bc9890ee93c10366a0d86a35c48 *INDEX
 901250f55481df560d76e9cb950613cf *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 3aade299b2c3894db364483db64bdb56 *Meta/hsearch.rds
 40dd1ef7e28b479ef305fca1ac17d44a *Meta/links.rds
 ef463c161731805523a51a8476b21e9f *Meta/nsInfo.rds
-1a36f114b9b5bc0e3f84721ca6c87cb1 *Meta/package.rds
+430eb67df7c1ba87b8f497dafa1f9557 *Meta/package.rds
 a6f6d02dc9d39f8cad65bb83b28d6b5b *Meta/vignette.rds
 153198ad785493071fa07fe8a66740d6 *NAMESPACE
 48b3a65a8eb82ac5675826ac168776e9 *NEWS.md
@@ -27,9 +27,9 @@ f7e1415e0d2c8ce3bc9971c696894bcc *doc/ngonGrob.html
 499810a773b9f4cccb696d41d3829337 *doc/tableGrob.html
 edaecae728bea6ae222b79dd82626a7e *help/AnIndex
 037533781f636279e96fe749ddae8263 *help/aliases.rds
-c603621d466b32cc9ac66ec1b687a6c2 *help/gridExtra.rdb
-c899b68555b299af47d2b7ba905740a0 *help/gridExtra.rdx
-f877a3b016f880ff58b2ff1a05ffbb72 *help/paths.rds
+1a26015d6b5d287f29606f8e279bb66f *help/gridExtra.rdb
+c1f154e9237080db4bc708237cb7b022 *help/gridExtra.rdx
+8e7f6699a572293c03808f6e52e762a4 *help/paths.rds
 df8cf3851129bf5ea5da891966e1b764 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 618723bd19c005badd6924545e8b0d06 *tests/testthat.r
