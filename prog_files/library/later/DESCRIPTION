@@ -2,7 +2,7 @@ Package: later
 Type: Package
 Title: Utilities for Scheduling Functions to Execute Later with Event
         Loops
-Version: 1.0.0
+Version: 1.1.0.1
 Authors@R: c(
     person("Joe", "Cheng", role = c("aut", "cre"), email = "joe@rstudio.com"),
     person(family = "RStudio", role = "cph"),
@@ -18,11 +18,11 @@ BugReports: https://github.com/r-lib/later/issues
 License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.9), rlang
 LinkingTo: Rcpp, BH
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2019-10-03 23:31:59 UTC; jcheng
+Packaged: 2020-06-02 13:23:01 UTC; winston
 Author: Joe Cheng [aut, cre],
   RStudio [cph],
   Winston Chang [aut],
@@ -32,6 +32,6 @@ Author: Joe Cheng [aut, cre],
     https://tinycthread.github.io/)
 Maintainer: Joe Cheng <joe@rstudio.com>
 Repository: CRAN
-Date/Publication: 2019-10-04 05:00:02 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-06-02 05:39:48 UTC; windows
+Date/Publication: 2020-06-05 10:10:13 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-06-05 22:51:07 UTC; windows
 Archs: i386, x64
