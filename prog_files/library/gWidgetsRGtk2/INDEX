@@ -1,0 +1,4 @@
+as.gWidgetsRGtk2        Coerce an RGtk2 object into a gWidgetsRGtk2
+                        object
+gWidgetsRGtk2-misc      Miscellaneous functions in gWidgetsRGtk
+gWidgetsRGtk2-package   Toolkit implementation of gWidgets for RGtk2

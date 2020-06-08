@@ -1,11 +1,11 @@
-bcb91acd635e85bcc3d7b36471aa0f30 *DESCRIPTION
+5a07495746447d48ad692e9aacffb518 *DESCRIPTION
 bbfe442f54f92c71917b7cac965d4de2 *INDEX
 01cf0e1fd75660dec28b34aa6d35dea6 *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 163e7080f390dfcc5589812652ca9cac *Meta/hsearch.rds
 99b5a781451e153e0267e2de1f5debb0 *Meta/links.rds
 b8893d0bdc8d5aefe3e9041065f32f17 *Meta/nsInfo.rds
-0a4ff97f0c977b8f9c30061de2c691df *Meta/package.rds
+de022d180884b3ee9ad420e1baccc8d3 *Meta/package.rds
 8fae6d873b361f5658ffd0658b9b7fc2 *Meta/vignette.rds
 8e4b0518c69b56386e6886790b67d25d *NAMESPACE
 5142bd8f29c56fb8732fef06ca7f5463 *NEWS.md
@@ -21,8 +21,8 @@ cceffb1cc58a31bef9aa9e00fc3b626b *doc/tidyselect.R
 1bad1c6d394c9c266474639f83f11713 *doc/tidyselect.html
 8c4c7a0d79bdc52d80f7c965d8558c1a *help/AnIndex
 0be7d2b46ee9016637311562603b4e82 *help/aliases.rds
-1064f72e7545561eadbbc4956bef2548 *help/paths.rds
-af16d807643a47ad754194846245604f *help/tidyselect.rdb
-a86face7b717dc019ac2e020d4177f0e *help/tidyselect.rdx
+7136f2ce39ea31de395ee6a661870419 *help/paths.rds
+6e20d16c580178775cd3c2d86636ea16 *help/tidyselect.rdb
+3e97705ce6369625258463eb3232a342 *help/tidyselect.rdx
 41e04cf79693132a414b52da392a3e9e *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

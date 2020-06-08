@@ -43,6 +43,7 @@ obj_str_header	obj_print
 partial_factor	partial_factor
 partial_frame	partial_frame
 rcrd	new_rcrd
+reference-faq-compatibility	reference-faq-compatibility
 s3_register	s3_register
 ses	new_rcrd
 stop_incompatible_cast	vctrs-conditions

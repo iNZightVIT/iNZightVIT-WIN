@@ -1,0 +1,166 @@
+import(methods)
+import(utils)
+import(grDevices)
+import(graphics)
+import(RGtk2)
+import(gWidgets)
+import(cairoDevice)
+
+exportMethods(
+"[", 
+".glabel", ".gbutton", ".gcheckbox", ".gradio", ".gdroplist",
+".gcheckboxgroup", ".gspinbutton", ".gslider", ".gedit", ".gtext",
+".gaction", ".gmenu", ".gtoolbar", ".gtable", ".gdf", ".gdfnotebook", ".gtree",
+".gfile", ".gfilebrowse", ".gcalendar", ".ggraphics",
+".ggraphicsnotebook", ".gimage", ".gstatusbar", ".gseparator",
+".gcommandline", ".ghelp", ".ghelpbrowser",
+              ".ghtml",
+".gvarbrowser",
+#              ".gdynamicselect",
+              ".gwindow", ".ggroup", ".gframe", ".gexpandgroup",
+".gnotebook", ".glayout", ".gpanedgroup", 
+"svalue", "svalue<-", "add", "addSpace", "addSpring", "insert","delete",
+"dispose", "visible", "visible<-", "enabled", "enabled<-", "size",
+"size<-", "focus", "focus<-", "tooltip<-", "defaultWidget","defaultWidget<-",
+              "font", "font<-", "tag", "tag<-", "id",
+"id<-", "isExtant",
+              "addhandler", #"addHandler",
+              "addhandlerchanged","addHandlerChanged",
+              "addhandlerkeystroke",
+              "addhandlerclicked",
+              "addhandlerdoubleclick",
+              "addhandlerrightclick",
+              "addhandlerfocus",
+              "addhandlerblur",
+              "addhandlerdestroy",
+              "addhandlerexpose",
+              "addhandlerunrealize",
+              "addhandlermousemotion",                  
+              "addhandleridle",
+              "addpopupmenu",
+              "add3rdmousepopupmenu",
+              "adddropsource",
+              "adddropmotion",
+              "adddroptarget",
+              "removehandler",
+              "blockhandler", 
+              "unblockhandler",
+              ".svalue", ".svalue<-",
+              ".leftBracket", ".leftBracket<-", ".add", ".addSpace", ".addSpring",
+              ".insert", ".delete", ".dispose",
+              ".visible", ".visible<-",
+              ".enabled",
+              ".editable", ".editable<-",
+              ".enabled<-",
+              ".size", ".size<-",
+              ".focus", ".focus<-",
+              ".tooltip<-",
+              ".defaultWidget",".defaultWidget<-",".font",
+              ".font<-", ".tag", ".tag<-", ".id", ".id<-", ".isExtant",
+              ".addhandler",".addhandlerchanged",
+              ".addhandlerkeystroke", ".addhandlerclicked",
+              ".addhandlerdoubleclick",  ".addhandlerrightclick",
+              ".addhandlerfocus",  ".addhandlerblur",              
+              ".addhandlerdestroy", ".addhandlerexpose", ".addhandlerunrealize",
+              ".addhandlermousemotion",                  
+              ".addhandleridle", ".addpopupmenu", ".add3rdmousepopupmenu",
+              ".adddropsource", ".adddropmotion", ".adddroptarget", ".galert",".gmessage",
+              ".ginput", ".gconfirm", ".gbasicdialog",".gbasicdialognoparent",
+              ".addStockIcons",".getStockIcons",
+              ".stockIconFromClass",".stockIconFromObject",
+              ".removehandler",
+              ".blockhandler",
+              ".unblockhandler",
+              ".svalue",
+              "update",".update",
+              "length",".length",
+"dim",".dim",
+"dimnames",".dimnames",
+"dimnames<-",".dimnames<-",
+"names",".names",
+"names<-",".names<-",
+              ".getToolkitWidget"
+
+              )
+#,
+#              "as.gWidgetsRGtk2",
+#              "as.gWidgetsRGtk2.default",
+#              "as.gWidgetsRGtk2.GtkButton"
+#)
+
+
+#export("gdfedit",".gdfedit")
+
+exportClasses(
+"AtkNoOpObjectFactory", "AtkObjectFactory", "AtkRelationSet", 
+"AtkStateSet", "GBoxed", "GObject", "GScanner", "GdkDragContext", 
+"GdkPixbufLoader", "GdkRegion", "GtkAboutDialog", "GtkAccelGroup", 
+"GtkAccelLabel", "GtkAction", "GtkActionGroup", "GtkAdjustment", 
+"GtkAlignment", "GtkArrow", "GtkAspectFrame", "GtkBin", "GtkBox", 
+"GtkButton", "GtkButtonBox", "GtkCList", "GtkCTree", "GtkCalendar", 
+"GtkCellRenderer", "GtkCellRendererCombo", "GtkCellRendererPixbuf", 
+"GtkCellRendererProgress", "GtkCellRendererText", "GtkCellRendererToggle", 
+"GtkCellView", "GtkCheckButton", "GtkCheckMenuItem", "GtkColorButton", 
+"GtkColorSelection", "GtkColorSelectionDialog", "GtkCombo", "GtkComboBox", 
+"GtkComboBoxEntry", "GtkContainer", "GtkCurve", "GtkDialog", 
+"GtkDrawingArea", "GtkEntry", "GtkEntryCompletion", "GtkEventBox", 
+"GtkExpander", "GtkFileFilter", "GtkFileSelection", "GtkFixed", 
+"GtkFontButton", "GtkFontSelection", "GtkFontSelectionDialog", 
+"GtkFrame", "GtkGammaCurve", "GtkHBox", "GtkHButtonBox", "GtkHPaned", 
+"GtkHRuler", "GtkHScale", "GtkHScrollbar", "GtkHSeparator", "GtkHandleBox", 
+"GtkIMContext", "GtkIMContextSimple", "GtkIMMulticontext", "GtkIconFactory", 
+"GtkIconSet", "GtkIconSource", "GtkIconTheme", "GtkIconView", 
+"GtkImage", "GtkImageMenuItem", "GtkInputDialog", "GtkInvisible", 
+"GtkItem", "GtkLabel", "GtkLayout", "GtkList", "GtkListItem", 
+"GtkMenu", "GtkMenuBar", "GtkMenuItem", "GtkMenuShell", "GtkMisc", 
+"GtkNotebook", "GtkObject", "GtkOptionMenu", "GtkPaned", "GtkProgress", 
+"GtkProgressBar", "GtkRadioAction", "GtkRadioButton", "GtkRange", 
+"GtkRcStyle", "GtkRuler", "GtkScale", "GtkScrollbar", "GtkScrolledWindow", 
+"GtkSeparator", "GtkSeparatorMenuItem", "GtkSeparatorToolItem", 
+"GtkSizeGroup", "GtkSocket", "GtkSpinButton", "GtkStatusbar", 
+"GtkStyle", "GtkTable", "GtkTearoffMenuItem", "GtkTextAttributes", 
+"GtkTextBuffer", "GtkTextChildAnchor", "GtkTextTag", "GtkTextTagTable", 
+"GtkTextView", "GtkTipsQuery", "GtkToggleAction", "GtkToggleButton", 
+"GtkToggleToolButton", "GtkToolButton", "GtkToolItem", "GtkToolbar", 
+"GtkTooltips", "GtkTreeModelSort", "GtkTreePath", "GtkTreeView", 
+"GtkTreeViewColumn", "GtkUIManager", "GtkVBox", "GtkVButtonBox", 
+"GtkVPaned", "GtkVRuler", "GtkVScale", "GtkVScrollbar", "GtkVSeparator", 
+"GtkViewport", "GtkWidget", "GtkWindow", "GtkWindowGroup", 
+"PangoAttrList", "PangoCairoFcFontMap", "PangoCoverage", "PangoFcFontMap", 
+"PangoFontDescription", "PangoFontMap", "PangoGlyphString", "PangoItem", 
+"RGtkDataFrame")
+
+## coercion methods
+#importFrom(gWidgets, "as.gWidget")
+export("as.gWidgetsRGtk2")
+S3method("as.gWidgetsRGtk2","default")
+S3method(as.gWidgetsRGtk2,"GtkButton")
+S3method(as.gWidgetsRGtk2,"GtkCheckButton")
+## no gcheckboxgroup -- made from gWidgets
+S3method(as.gWidgetsRGtk2,"GtkComboBoxEntry") ## ISSUE WITH [, ..
+S3method(as.gWidgetsRGtk2,"GtkComboBox")
+S3method(as.gWidgetsRGtk2,"GtkEntry")
+S3method(as.gWidgetsRGtk2,"GtkExpander")
+S3method(as.gWidgetsRGtk2,"GtkFrame")
+S3method(as.gWidgetsRGtk2,"GtkDrawingArea")
+## ggrid didn't touch
+S3method(as.gWidgetsRGtk2,"GtkHBox")
+S3method(as.gWidgetsRGtk2,"GtkVBox")
+S3method(as.gWidgetsRGtk2,"GtkImage")
+S3method(as.gWidgetsRGtk2,"GtkLabel")
+S3method(as.gWidgetsRGtk2,"GtkTable")   # glayout
+S3method(as.gWidgetsRGtk2,"GtkNotebook")
+S3method(as.gWidgetsRGtk2,"GtkHPaned")  # gpanedgroup
+S3method(as.gWidgetsRGtk2,"GtkVPaned")
+S3method(as.gWidgetsRGtk2,"GtkRadioButton")
+S3method(as.gWidgetsRGtk2,"GtkHSeparator")
+S3method(as.gWidgetsRGtk2,"GtkVSeparator")
+S3method(as.gWidgetsRGtk2,"GtkHScale")
+S3method(as.gWidgetsRGtk2,"GtkVScale")
+S3method(as.gWidgetsRGtk2,"GtkSpinButton")
+S3method(as.gWidgetsRGtk2,"GtkStatusbar")
+S3method(as.gWidgetsRGtk2,"GtkTextView")    
+## no gtoolbar -- odd datastore -- a list
+## no gtree -- odd data store
+S3method(as.gWidgetsRGtk2,"GtkWindow")
+

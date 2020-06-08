@@ -1,3 +1,40 @@
+
+# vctrs 0.3.1
+
+* `vec_slice()` no longer restores attributes of foreign objects for
+  which a `[` method exist. This fixes an issue with `ts` objects
+  which were previously incorrectly restored.
+
+* The `as.list()` method for `vctrs_rcrd` objects has been removed in favor
+  of directly using the method for `vctrs_vctr`, which calls `vec_chop()`.
+
+* `vec_c()` and `vec_rbind()` now fall back to `base::c()` if the
+  inputs have a common class hierarchy for which a `c()` method is
+  implemented but no self-to-self `vec_ptype2()` method is
+  implemented.
+
+* `vec_rbind()` now internally calls `vec_proxy()` and `vec_restore()` on
+  the data frame common type that is used to create the output (#1109).
+
+* `vec_as_location2("0")` now works correctly (#1131).
+
+* `?reference-faq-compatibility` is a new reference guide on vctrs
+  primitives. It includes an overview of the fallbacks to base R
+  generics implemented in vctrs for compatibility with existing
+  classes.
+
+* The documentation of vctrs functions now includes a Dependencies
+  section to reference which other vctrs operations are called from
+  that function. By following the dependencies links recursively, you
+  will find the vctrs primitives on which an operation relies.
+
+
+## CRAN results
+
+* Fixed type declaration mismatches revealed by LTO build.
+* Fixed r-devel issue with new `c.factor()` method.
+
+
 # vctrs 0.3.0
 
 This version features an overhaul of the coercion system to make it
