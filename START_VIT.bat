@@ -1,3 +1,3 @@
 cd prog_files/vit
-start /MIN prog_files/bin/i386/Rgui.exe --quiet --no-save --no-restore
+start /MIN ../../prog_files/bin/i386/Rgui.exe --quiet --no-save --no-restore
 exit
