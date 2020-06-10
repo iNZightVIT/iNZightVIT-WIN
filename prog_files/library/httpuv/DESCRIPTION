@@ -2,10 +2,15 @@ Package: httpuv
 Type: Package
 Encoding: UTF-8
 Title: HTTP and WebSocket Server Library
-Version: 1.5.3.1
-Author: Joe Cheng, Hector Corrada Bravo [ctb], Jeroen Ooms [ctb],
-    Winston Chang [ctb]
-Copyright: RStudio, Inc.; Joyent, Inc.; Nginx Inc.; Igor Sysoev; Niels
+Version: 1.5.4
+Authors@R: c(
+    person("Joe", "Cheng", role = c("aut"), email = "joe@rstudio.com"),
+    person("Winston", "Chang", role = c("aut", "cre"), email = "winston@rstudio.com"),
+    person(family = "RStudio, PBC", role = "cph"),
+    person("Hector", "Corrada Bravo", role = "ctb"),
+    person("Jeroen", "Ooms", role = "ctb")
+    )
+Copyright: RStudio, PBC; Joyent, Inc.; Nginx Inc.; Igor Sysoev; Niels
         Provos; Internet Systems Consortium, Inc.; Alexander Chemeris;
         Berkeley Software Design; Google Inc.; Sony Mobile
         Communications AB; Alexander Peslyak; Free Software Foundation,
@@ -14,7 +19,6 @@ Copyright: RStudio, Inc.; Joyent, Inc.; Nginx Inc.; Igor Sysoev; Niels
         Refael Ackermann; Kenneth MacKay; Emergya; Diego Pettenò; xine
         project, The Regents of the University of California, Dariusz
         Dwornikowski
-Maintainer: Joe Cheng <joe@rstudio.com>
 Description: Provides low-level socket and protocol support for handling
     HTTP and WebSocket requests directly from within R. It is primarily
     intended as a building block for other packages, rather than making it
@@ -33,8 +37,14 @@ Suggests: testthat, callr, curl, websocket
 Collate: 'RcppExports.R' 'httpuv.R' 'random_port.R' 'server.R'
         'static_paths.R' 'utils.R'
 NeedsCompilation: yes
-Packaged: 2020-05-26 17:43:40 UTC; winston
+Packaged: 2020-06-05 19:56:39 UTC; winston
+Author: Joe Cheng [aut],
+  Winston Chang [aut, cre],
+  RStudio, PBC [cph],
+  Hector Corrada Bravo [ctb],
+  Jeroen Ooms [ctb]
+Maintainer: Winston Chang <winston@rstudio.com>
 Repository: CRAN
-Date/Publication: 2020-05-26 20:40:11 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-06-06 07:13:24 UTC; windows
+Date/Publication: 2020-06-06 05:00:06 UTC
+Built: R 3.6.3; x86_64-w64-mingw32; 2020-06-08 23:54:20 UTC; windows
 Archs: i386, x64
