@@ -1,4 +1,4 @@
-6a712ae35bcdb4ef52aa936e8e60b8da *DESCRIPTION
+9f952a8ba7bbd598ca4d444136236cd3 *DESCRIPTION
 a4725b217e746e326d078a82d784e7f0 *INDEX
 b234ee4d69f5fce4486a80fdaf4a4263 *LICENSE
 8e2f314160d1dd7dd3434dd4ab648255 *Meta/Rd.rds
@@ -6,7 +6,7 @@ b234ee4d69f5fce4486a80fdaf4a4263 *LICENSE
 8a4f732c5b0be139ef41df271f2cb771 *Meta/hsearch.rds
 8386a049e36779d96e1f98e62d9c8ad2 *Meta/links.rds
 553b5a244d3a26c73dc5ec1b1a523e32 *Meta/nsInfo.rds
-1df522ec022268228ebc26b02502967b *Meta/package.rds
+ced055123b880425eaae33c85586e68d *Meta/package.rds
 39a7106f0962b2ab4dde17222d87d633 *Meta/vignette.rds
 707bbe1e93b7c2b79d0ac4f617bd9668 *NAMESPACE
 70093b402a6ca4a06c251ded102ebb41 *NEWS.md
@@ -34,14 +34,14 @@ d347f11bcaccca8806927c7a211a9640 *extdata/mtcars.csv.zip
 86c943166ac96b676ab8a39c7b9201bc *help/AnIndex
 e4354b6f47970f530ec0df4cd8fe3fb6 *help/aliases.rds
 dce2d7caa795abd627854366dc31594f *help/figures/logo.png
-b7dcff6c2acaf5e435ff25ca1a45e720 *help/paths.rds
-dffb73186ed377ee1c6dc59619c3facb *help/readr.rdb
-83e9a57b2e15e05d9f351ada255288dd *help/readr.rdx
+601a4a2238c39c6d949afbc422ceef42 *help/paths.rds
+8bf108b3ea28789c77ffd81adffe6689 *help/readr.rdb
+861b8a43f08913bebfe9d6d9a718219d *help/readr.rdx
 8676f55104ce88899cba75a2f2163855 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-90841e807de3860fdd8a35dbcff88e19 *libs/i386/librcon.lib
-cdd00fe77b5546c11628e68ae7e26d51 *libs/i386/readr.dll
+0f71b01ad6e7f01aab3db1c9f083c8a8 *libs/i386/librcon.lib
+38eb9a7fecadef8a91f6be7dfc0d8995 *libs/i386/readr.dll
 35ab72f501986a18ebe61a77495d3895 *libs/i386/symbols.rds
-b6dae6d9de397872dea14ace65eefc8a *libs/x64/librcon.lib
-dbff581358c17c21da57b28ff1e50c6c *libs/x64/readr.dll
+496616150b1f9543e67734de2d8bdc5c *libs/x64/librcon.lib
+525c264f9c289bd86d1e4d41c3b1c064 *libs/x64/readr.dll
 011f485977ab6646baf59e8ec87e22a9 *libs/x64/symbols.rds

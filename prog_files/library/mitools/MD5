@@ -1,4 +1,4 @@
-ff32a23242f95785230637004ba4190c *DESCRIPTION
+521222dd2a972cc2f0181672f8c411f2 *DESCRIPTION
 367f92d6370cbbb115ee789ae0dad62f *INDEX
 9dd48a26ebe2f338ca3677dfc0152c8d *Meta/Rd.rds
 0ccdfeff8e8a06bb56788e81848b6ce9 *Meta/data.rds
@@ -7,7 +7,7 @@ ff32a23242f95785230637004ba4190c *DESCRIPTION
 593fff0cf56a7395c7f3f7bdf92b0f58 *Meta/hsearch.rds
 085930d90a79985c83962d4e20d2c360 *Meta/links.rds
 3d77c3f67929c2c51353006b8a9416c9 *Meta/nsInfo.rds
-6f272f4c123b416d7613753b1fb8b329 *Meta/package.rds
+a84676f6b29898746d35c4acba4d9042 *Meta/package.rds
 5e1a01934ffdca0c68eb1c1b6d7a3bf2 *Meta/vignette.rds
 bf4227f218d685407d6e37c9371802c0 *NAMESPACE
 470f41cfdb0c6d644d193a28f8ef1541 *NEWS
@@ -33,8 +33,8 @@ ad4226af151bbbcc6feb977255988c5e *dta/smim1.dta
 651a6f4e9a8180da2680e2166e02e558 *dta/smim5.dta
 e066ef8f86b263a00f10e7ae4232db2d *help/AnIndex
 8ec9e6de91d3e771f02c9a5f5ec0143e *help/aliases.rds
-b285cda4cc01a37b8644c02ba4fba474 *help/mitools.rdb
-38b46b98498fcfd819445badb0b9ae65 *help/mitools.rdx
-9a53d2b482e5dcec8af4289b0d24c18a *help/paths.rds
+e4d9edbbec6953313f2ed313b8e9fe45 *help/mitools.rdb
+764ad961ff1bb9e006f5b9360a2de6fa *help/mitools.rdx
+98b14634c9d17c7a121614629b6e3c62 *help/paths.rds
 a3512ca8c54558e5b06744f7d2f9b759 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

@@ -1,11 +1,11 @@
-3e351772ea2ade494956c03f6de98e89 *DESCRIPTION
+b42570e26f2fd0d137a01037ac8a8e67 *DESCRIPTION
 d84790d17d01a0c5351fda3bc0cabb87 *INDEX
 a2723153681e88fa81bad20eaaa541b1 *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 b1fbd8bbae3986ca15c8811829eed1ea *Meta/hsearch.rds
 ea82fbf22795f85004617e1d72aa48cf *Meta/links.rds
 ae083217887fbef10d53a53c373da6d9 *Meta/nsInfo.rds
-c9f2b7bf7558aa20e0362cbfcdbde29f *Meta/package.rds
+3b3fb280190019428a60b700a4f1e931 *Meta/package.rds
 6d6a1caf8194b3d18e905fa2ff7cb724 *Meta/vignette.rds
 260b88ea9db4461466bd7230e6f551ce *NAMESPACE
 8f2df62ba01c73216f6891aa8b731854 *NEWS.md
@@ -20,8 +20,8 @@ b57655595fe86b17b9412a488014d20f *doc/withr.html
 863892f7715f559baf982e644a0c46c9 *help/aliases.rds
 50a76f34ad9d373f9b8899383d856cdb *help/figures/README-unnamed-chunk-3-1.png
 ab471e54cdcde1b00fbfb165e9c3639b *help/figures/logo.png
-3bad2d9666d02808b4effebb14799acf *help/paths.rds
-72ac3b5ec428a12378edbeff550c0c44 *help/withr.rdb
-f71b8e7ca9e2dc3b9ede6a5a1b1d93f9 *help/withr.rdx
+51a36abf08859520d6c47ca89b59d9fe *help/paths.rds
+1f80cee3d5cc2590b603b444d2e6cc3e *help/withr.rdb
+40b9bcbb25a445e5798427da274e7a19 *help/withr.rdx
 ca18f7be00803f41f7a84c1ddd8f852c *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
