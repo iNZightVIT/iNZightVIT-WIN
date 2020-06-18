@@ -1,5 +1,5 @@
 12b53c3de6776dbc33ac3a0e098f033a *CITATION
-175b2485475c1f4fd3c2e175643e8775 *DESCRIPTION
+0096afe2b748932002562b8bbb06bbba *DESCRIPTION
 a75189ad49ca0baaabb1d7c2cff5a458 *INDEX
 52ac19ae9d7d2ea7e3caf948a47fa7c7 *Meta/Rd.rds
 2a16d0c4ba9b64505fe65add922e0dc2 *Meta/data.rds
@@ -7,7 +7,7 @@ a75189ad49ca0baaabb1d7c2cff5a458 *INDEX
 8513b9815296b0142b08e99f3f51e261 *Meta/hsearch.rds
 c2ef84e7f4409fb0a49ea7ffaac6fd28 *Meta/links.rds
 40bca43a84f3bcc31ab72a95aba3ff26 *Meta/nsInfo.rds
-a862aedbf09b45c5073db6bd6527601a *Meta/package.rds
+3f0b91428f9a0f6a28e1e018bb3efbb8 *Meta/package.rds
 f9339c225b76e77744e0ff59cf229454 *NAMESPACE
 1da31e965ed18656de890855fe03bde7 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/statmod
@@ -16,12 +16,12 @@ ab71521b11f709ec154ec5e44c7768a1 *R/statmod.rdx
 e600a474fedf570b1913b278022d46bf *data/welding.rdata
 72b6a695dae3e5d322a1d287dcfebe55 *help/AnIndex
 f8214e340c7346aca6048f6c61b2800b *help/aliases.rds
-78f39b1b73e0a5812e9ad2a90e2b8954 *help/paths.rds
-c237c61fc7cf5f531988ae5ec6040e03 *help/statmod.rdb
-e8f2c94a2d080564f91293014b4011a8 *help/statmod.rdx
+c19a81fa23e26fe84f5c9b8f73aaa3c2 *help/paths.rds
+4abaa1da806da8b7ef83b774ff0bf491 *help/statmod.rdb
+11f6efc341bb16c3d8613da5ce7edb3a *help/statmod.rdx
 1700460737bf841cf5892338d56a26f8 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-6522e297778ed1a526ed5cdd487c6f9b *libs/i386/statmod.dll
+025260f5bfebc084641f00cfcb0f59e2 *libs/i386/statmod.dll
 a88a8e3db288c931f0b1e2dfa850001a *libs/i386/symbols.rds
-31866171f9fe0734064dd5a893988011 *libs/x64/statmod.dll
+60b7d9069daf4dea6371a01307fc2520 *libs/x64/statmod.dll
 de299ceb39a2cee6988893690275717e *libs/x64/symbols.rds

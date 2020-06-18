@@ -1,4 +1,4 @@
-7fc5018fcf5902c2ee7e7ea8bed51696 *DESCRIPTION
+305d7017d3a0fd2208dc735bd24decd7 *DESCRIPTION
 a906c26c4a2a523bb35e316efe8ada0c *INDEX
 f35c1dd7a6e913e967bd6e03dd8a3c18 *LICENSE
 fc2e2e11c87f3157bfc9d7e042101942 *Meta/Rd.rds
@@ -6,7 +6,7 @@ fc2e2e11c87f3157bfc9d7e042101942 *Meta/Rd.rds
 bdb3e4ff7ac5b0ba80db362083091316 *Meta/hsearch.rds
 369fc570fad32f24f8a4b65f4dad3e70 *Meta/links.rds
 5253693eb1d231fefaad3543a4aa6eef *Meta/nsInfo.rds
-bc03d39521f3790966bdc59c873a9054 *Meta/package.rds
+64776ac7b78a30ca6bd9ae565d1df8cb *Meta/package.rds
 b1f007d4af0df0c4abc255d4f5f7fbfa *Meta/vignette.rds
 b407d013d2ddba529110c89a5542a78a *NAMESPACE
 ffaa04a6888219bfa45550af301eda3e *NEWS
@@ -29,12 +29,12 @@ a737a5ac5078bf20ae2f6565e7af5e26 *doc/index.html
 5218ccfe4939c8996f61853b2ce291bd *doc/secure_rng.html
 b396aebf6f7775872c579671e89b91b9 *help/AnIndex
 348ccbc1af38a978e0c26ce4ccf1d3cd *help/aliases.rds
-df51f951dd07bedb55c6eb52a96312c7 *help/openssl.rdb
-a7856db7509dcf9a207a24be8d68fe37 *help/openssl.rdx
-34c20ed853d8b6b25f3b174c5ed4de1e *help/paths.rds
+b5a95ca11199c7772a4a0dbde9d00312 *help/openssl.rdb
+fe016dc183cbfb97f70753dd56a733a5 *help/openssl.rdx
+da75ab333c0287f32af9e45390f88337 *help/paths.rds
 04d9782966081a3767677f838470e717 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-d4c7a56080c430901cc52bf125a1bab6 *libs/i386/openssl.dll
+ed5fb8d330094dd06d6fb4d8f88c0136 *libs/i386/openssl.dll
 3d6a3e85f977617436faf5449d3c6691 *libs/i386/symbols.rds
-8d6a798ceb7a2ee48d75436b918e4698 *libs/x64/openssl.dll
+6dea639c934c17153a1b61f7cedde4ca *libs/x64/openssl.dll
 87c0e54d93563bda72d18ba41d6c37dc *libs/x64/symbols.rds

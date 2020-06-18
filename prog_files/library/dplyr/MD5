@@ -1,4 +1,4 @@
-cf3e0c7337c1e833a4f4c3dc36499f4a *DESCRIPTION
+5284f3a1332c7a411e4220dfbc48e6b8 *DESCRIPTION
 9a6737cbb903f0be6ab13f3346b72ffa *INDEX
 3b44dfe91f4912ca3b742aee84e32745 *LICENSE
 c1089e38faa5e9a11fd843f9b0db2ca0 *Meta/Rd.rds
@@ -7,7 +7,7 @@ a7fba46e118be9335a352d6631315a3f *Meta/data.rds
 c0bf2b573e7697314fc0a0f715f76896 *Meta/hsearch.rds
 96e3217c746b0f890fcf6196a3d5ae2a *Meta/links.rds
 b2e8371c43348bcffdd8590b473c6c45 *Meta/nsInfo.rds
-45701ae1e89ea3960a44068effa7cfc2 *Meta/package.rds
+0bd71e7092bf42640bcd5f3eb2dfd24e *Meta/package.rds
 a3f9c4a56b490c845434f27e2bcc58a5 *Meta/vignette.rds
 ef110c1edc58041e7e241c2acc9a5aab *NAMESPACE
 98b5df329af469cbd39e2ea62387aa84 *NEWS.md
@@ -47,8 +47,8 @@ d2f32541d9af8e3b0fb34af6b5799ba4 *doc/two-table.Rmd
 15130577e234cbe10ad3eb8b1de6f2c1 *doc/window-functions.html
 e9b326e08caf7a0472c72348ec35dee6 *help/AnIndex
 3aa9d4d928bb8f5690aee340d143cbc9 *help/aliases.rds
-370f1027870560a077cc664706bfaf1b *help/dplyr.rdb
-65907b3f58f52edfc8e8e33641e0f581 *help/dplyr.rdx
+16a0d03e7080a1bd43f1df2437683b03 *help/dplyr.rdb
+e38e3b096fa6cc462567f43810a5bcf3 *help/dplyr.rdx
 cb1e46f469cfbbbde29c8b5113e1d789 *help/figures/lifecycle-archived.svg
 c0d2e5a54f1fa4ff02bf9533079dd1f7 *help/figures/lifecycle-defunct.svg
 a1b8c987c676c16af790f563f96cbb1f *help/figures/lifecycle-deprecated.svg
@@ -60,10 +60,10 @@ c3978703d8f40f2679795335715e98f4 *help/figures/lifecycle-experimental.svg
 53b3f893324260b737b3c46ed2a0e643 *help/figures/lifecycle-stable.svg
 1c1fe7a759b86dc6dbcbe7797ab8246c *help/figures/lifecycle-superseded.svg
 85095a2a3fbf23db19a67ff3362abb48 *help/figures/logo.png
-39cd5b83d8884fbffbe0941730d22f4b *help/paths.rds
+5f02def9a0d6f057454ac7f31fa72d1a *help/paths.rds
 8604007408dbba8d4bd248aa87b8fb83 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-d7208cd557cc9f6de00be2b2f1404c27 *libs/i386/dplyr.dll
+5754d869714ace6fa8837a30f0b0d4d5 *libs/i386/dplyr.dll
 a20bf771c191c78d0fe51068c5081892 *libs/i386/symbols.rds
-09c5f05da1a184cabae08faec65ee777 *libs/x64/dplyr.dll
+539321459bbcfb045d99dac70eed7ba8 *libs/x64/dplyr.dll
 91555bfed5099ee57cf3afc65a445efa *libs/x64/symbols.rds

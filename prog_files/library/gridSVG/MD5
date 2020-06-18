@@ -1,11 +1,11 @@
-252b6506866ef70db95e8b209c78aedb *DESCRIPTION
+134463f46475bd9493bda548012b797a *DESCRIPTION
 78376d876db20cf8137065698bac5c24 *INDEX
 59ac0ccaabf8a0477f834d21259d154b *Meta/Rd.rds
 145bf2c78f999791e0c372db36ed6d7a *Meta/features.rds
 63bf878d0c9e441c64dd4b48d17fc334 *Meta/hsearch.rds
 8496616b16180cb83c182c850ff2532d *Meta/links.rds
 e6b037d5fc6f449605cd0509201e06ac *Meta/nsInfo.rds
-8d6ed83ed1a1467f12c878e596feb831 *Meta/package.rds
+32a53677ed33cf9e486cf0845af90f21 *Meta/package.rds
 e8b5746d8fafc31295ff5336ec2685d5 *Meta/vignette.rds
 74498469bcff4e6c33cf2dbacca586dd *NAMESPACE
 dc3406903bd9ae9daac6e57fe6fb9fd8 *NEWS.Rd
@@ -24,9 +24,9 @@ e019ea7dc398b352a803cf3a28e53ecb *doc/gridSVG.Rnw
 8c48ce04119d1f4d8b1ec69a0662eb69 *doc/index.html
 131971c2d40a3399bf200458c6e7c321 *help/AnIndex
 d7231378d9fa6d1c50c1637096426361 *help/aliases.rds
-c2a910fe741ffb12d9bf768f79de2503 *help/gridSVG.rdb
-5a1ce8d311c5bb83e3c59c7af86fd5d2 *help/gridSVG.rdx
-25eaeccc198751bfbcecc004217b23f2 *help/paths.rds
+0a79b80d54a143a3246b5d9e7bb9daeb *help/gridSVG.rdb
+a8793ca0b5a4f6af6b1411a014e11850 *help/gridSVG.rdx
+69a955050d65f259ee36c3d313432147 *help/paths.rds
 6435951f679822624914be6abdea8ce7 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 a0d05eb085ad6ec74ff60dedd111f210 *js/utils.js

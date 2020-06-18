@@ -1,4 +1,4 @@
-5cd94502cdb61cec01969480a1ff1f8f *DESCRIPTION
+b04471002853d94b5c69b977994de4ef *DESCRIPTION
 0e427cf366bdac5ab98ab64909de770a *INDEX
 d32239bcb673463ab874e80d47fae504 *LICENSE
 418775c5810910cbd1e91c4f59465a4f *Meta/Rd.rds
@@ -6,7 +6,7 @@ d32239bcb673463ab874e80d47fae504 *LICENSE
 972cff9bc33b41f5cc23bf02a58877a8 *Meta/hsearch.rds
 bf462a62abdf0638d48dd33c70a765a9 *Meta/links.rds
 bf67457071de634d2d87f186157338a1 *Meta/nsInfo.rds
-921e5bea823deab549abe32dab274227 *Meta/package.rds
+ba74915b00995407f7553f662a7e190b *Meta/package.rds
 28c8dc6adacf72da7d80d3fd3d967390 *Meta/vignette.rds
 962589cbbc2df19f15f29746adbab101 *NAMESPACE
 5d29883d9cf25226265a77a057029129 *NEWS.md
@@ -28,12 +28,12 @@ c3978703d8f40f2679795335715e98f4 *help/figures/lifecycle-experimental.svg
 6902bbfaf963fbc4ed98b86bda80caa2 *help/figures/lifecycle-soft-deprecated.svg
 53b3f893324260b737b3c46ed2a0e643 *help/figures/lifecycle-stable.svg
 1d60cfe447b30937913953382e194602 *help/figures/logo.png
-c6fbac8eae3f8b57dd0df867d728026a *help/paths.rds
-6d0fb1f0573c4ba566681e6be08f706d *help/purrr.rdb
-571737baa1e32a8e5c5bbf94e0d23de3 *help/purrr.rdx
+5e087fb91b370f6f3d488eaf0bfdb7a2 *help/paths.rds
+cd43f7408fb50542b0c6c4d8925e5571 *help/purrr.rdb
+828ab214919933a7df7578614336ef23 *help/purrr.rdx
 cf4ca08fd638dbd4f392f619013f6a71 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-9ad5c787caf16fcbc9dd65e85da67fdc *libs/i386/purrr.dll
+011879b93effa3eac21968ab7f879cf7 *libs/i386/purrr.dll
 03c6379b336de1c936e120ce2a03f13d *libs/i386/symbols.rds
-2185521712ca987224261fc0bb7414c7 *libs/x64/purrr.dll
+46e9dbc2f5778746a87fbe8e82ecb70b *libs/x64/purrr.dll
 3e56870d56dfe16e6e8a593bf5b0dea1 *libs/x64/symbols.rds
