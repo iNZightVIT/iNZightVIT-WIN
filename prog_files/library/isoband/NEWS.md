@@ -1,3 +1,7 @@
+isoband 0.2.2
+----------------------------------------
+- Remove Rcpp dependency (#11, @thomasp85).
+
 isoband 0.2.1
 ----------------------------------------
 - Improved clipping algorithm for `clip_lines()`, less likely to

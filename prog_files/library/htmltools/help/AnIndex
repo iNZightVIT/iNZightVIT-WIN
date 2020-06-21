@@ -4,9 +4,11 @@ attachDependencies	htmlDependencies
 br	builder
 browsable	browsable
 builder	builder
+capturePlot	capturePlot
 code	builder
 copyDependencyToDir	copyDependencyToDir
 css	css
+defaultPngDevice	defaultPngDevice
 div	builder
 doRenderTags	renderTags
 em	builder
@@ -42,6 +44,8 @@ knit_print.shiny.tag	knitr_methods
 knit_print.shiny.tag.list	knitr_methods
 makeDependencyRelative	makeDependencyRelative
 p	builder
+parseCssColors	parseCssColors
+plotTag	plotTag
 pre	builder
 print.html	print.html
 print.shiny.tag	print.html
