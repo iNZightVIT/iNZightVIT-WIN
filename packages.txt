@@ -102,6 +102,7 @@ cellranger
 cli
 clipr
 codetools
+commonmark
 crayon
 crosstalk
 curl

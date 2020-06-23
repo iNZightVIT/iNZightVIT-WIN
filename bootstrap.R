@@ -5,6 +5,7 @@ if (dir.exists("prog_files")) unlink("prog_files", TRUE, TRUE)
 
 ## download installer
 R_VERSION <- as.character(getRversion())
+R_VERSION_SHORT <- paste(strsplit(R_VERSION, "\\.")[[1]][1:2], collapse = ".")
 INST_FILE <- sprintf("R-%s-win.exe", R_VERSION)
 LOCAL_DIR <- file.path("~", ".wine", "drive_c", "Program Files", "R",
     sprintf("R-%s", R_VERSION)
@@ -22,6 +23,7 @@ if (!dir.exists(LOCAL_DIR)) {
     system(sprintf("wine %s", INST_FILE))
     unlink(INST_FILE)
 }
+cat (" * using R version ", R_VERSION, " (R-", R_VERSION_SHORT, ")\n", sep = "")
 
 BRANCH <- system("git rev-parse --abbrev-ref HEAD", TRUE)
 cat(" * on branch", BRANCH, "\n")
@@ -157,8 +159,9 @@ x <- file.copy(
 if (!grepl("master", BRANCH)) {
     cat(" * install dev versions of iNZight packages ... ")
     system(sprintf(
-        "cd ../dev && make all replace keepMaps=%s > /dev/null 2>&1",
-        ifelse(grepl("maps", BRANCH), "true", "false")
+        "cd ../dev && make all replace keepMaps=%s WINV=%s > /dev/null 2>&1",
+        ifelse(grepl("maps", BRANCH), "true", "false"),
+        R_VERSION_SHORT
     ))
     cat("done\n")
 }

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2020-05-19" />
+<meta name="date" content="2020-06-20" />
 
 <title>An Introduction to xfun</title>
 
@@ -26,6 +26,22 @@ document.addEventListener('DOMContentLoaded', function(e) {
     if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
     a = h.attributes;
     while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
   }
 });
 </script>
@@ -354,7 +370,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">An Introduction to xfun</h1>
 <h3 class="subtitle">A Collection of Miscellaneous Functions</h3>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2020-05-19</h4>
+<h4 class="date">2020-06-20</h4>
 
 
 <div id="TOC">
@@ -570,14 +586,14 @@ woRld</code></pre>
 <p>Since I have never been fully satisfied by the output of <code>sessionInfo()</code>, I tweaked it to make it more useful in my use cases. For example, it is rarely useful to print out the names of base R packages, or information about the matrix products / BLAS / LAPACK. Oftentimes I want additional information in the session information, such as the Pandoc version when <strong>rmarkdown</strong> is used. The function <code>session_info()</code> tweaks the output of <code>sessionInfo()</code>, and makes it possible for other packages to append information in the output of <code>session_info()</code>.</p>
 <p>You can choose to print out the versions of only the packages you specify, e.g.,</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>xfun<span class="op">::</span><span class="kw">session_info</span>(<span class="kw">c</span>(<span class="st">&#39;xfun&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;tinytex&#39;</span>), <span class="dt">dependencies =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## R version 4.0.0 (2020-04-24)
+<pre><code>## R version 4.0.1 (2020-06-06)
 ## Platform: x86_64-apple-darwin17.0 (64-bit)
-## Running under: macOS Catalina 10.15.4
+## Running under: macOS Catalina 10.15.5
 ## 
 ## Locale: C / en_US.UTF-8 / en_US.UTF-8 / C / en_US.UTF-8 / en_US.UTF-8
 ## 
 ## Package version:
-##   knitr_1.28.6    rmarkdown_2.1.2 tinytex_0.23    xfun_0.14      
+##   knitr_1.28.9    rmarkdown_2.2.6 tinytex_0.24.1  xfun_0.15      
 ## 
 ## Pandoc version: 2.9.2.1</code></pre>
 </div>

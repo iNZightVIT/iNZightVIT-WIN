@@ -3,6 +3,8 @@ Rscript_call            Call a function in a new R session via
                         'Rscript()'
 attr                    Obtain an attribute of an object without
                         partial matching
+base64_encode           Encode data into the base64 encoding.
+base64_uri              Generate the Data URI for a file
 cache_rds               Cache the value of an R expression to an RDS
                         file
 download_file           Try various methods to download a file
@@ -49,5 +51,6 @@ stringsAsStrings        Set the global option 'options(stringsAsFactors
                         = FALSE)' inside a parent function and restore
                         the option after the parent function exits
 tojson                  A simple JSON serializer
+tree                    Turn the output of 'str()' into a tree diagram
 try_silent              Try to evaluate an expression silently
 upload_ftp              Upload to an FTP server via 'curl'
