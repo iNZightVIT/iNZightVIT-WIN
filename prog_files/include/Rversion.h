@@ -6,17 +6,17 @@
 extern "C" {
 #endif
 
-#define R_VERSION 198144
-#define R_NICK "Planting of a Tree"
+#define R_VERSION 262144
+#define R_NICK "Arbor Day"
 #define R_Version(v,p,s) (((v) * 65536) + ((p) * 256) + (s))
-#define R_MAJOR  "3"
-#define R_MINOR  "6.0"
+#define R_MAJOR  "4"
+#define R_MINOR  "0.0"
 #define R_STATUS ""
-#define R_YEAR   "2019"
+#define R_YEAR   "2020"
 #define R_MONTH  "04"
-#define R_DAY    "26"
-#define R_SVN_REVISION 76424
-#define R_FILEVERSION    3,60,76424,0
+#define R_DAY    "24"
+#define R_SVN_REVISION 78286
+#define R_FILEVERSION    4,00,78286,0
 
 #ifdef __cplusplus
 }

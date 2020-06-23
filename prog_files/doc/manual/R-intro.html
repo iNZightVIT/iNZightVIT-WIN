@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.6.0 (2019-04-26).
+<!-- This manual is for R, version 4.0.0 (2020-04-24).
 
 Copyright (C) 1990 W. N. Venables
 
@@ -29,6 +29,7 @@ approved by the R Core Team. -->
 <head>
 <title>An Introduction to R</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="An Introduction to R">
 <meta name="keywords" content="An Introduction to R">
 <meta name="resource-type" content="document">
@@ -404,7 +405,7 @@ analysis, classification, clustering, ...).
 <p>This manual provides information on data types, programming elements,
 statistical modelling and graphics.
 </p>
-<p>This manual is for R, version 3.6.0 (2019-04-26).
+<p>This manual is for R, version 4.0.0 (2020-04-24).
 </p>
 <p>Copyright &copy; 1990 W. N. Venables<br>
 Copyright &copy; 1992 W. N. Venables &amp; D. M. Smith<br>
@@ -495,7 +496,7 @@ for granting permission to distribute this modified version of the notes
 in this way, and for being a supporter of R from way back.
 </p>
 <p>Comments and corrections are always welcome.  Please address email
-correspondence to <a href="mailto:R-core@R-project.org">R-core@R-project.org</a>.
+correspondence to <a href="mailto:R-help@R-project.org">R-help@R-project.org</a>.
 </p>
 <a name="Suggestions-to-the-reader"></a>
 <h4 class="subheading">Suggestions to the reader</h4>
@@ -1426,7 +1427,7 @@ of characters delimited by the double quote character, e.g.,
 <p>Character strings are entered using either matching double (<code>&quot;</code>) or
 single (<code>'</code>) quotes, but are printed using double quotes (or
 sometimes without quotes).  They use C-style escape sequences, using
-<code>\</code> as the escape character, so <code>\\</code> is entered and printed as
+<code>\</code> as the escape character, so <code>\</code> is entered and printed as
 <code>\\</code>, and inside double quotes <code>&quot;</code> is entered as <code>\&quot;</code>.
 Other useful escape sequences are <code>\n</code>, newline, <code>\t</code>, tab and
 <code>\b</code>, backspace&mdash;see <code>?Quotes</code> for a full list.
@@ -7312,7 +7313,7 @@ available from
 </p></blockquote>
 
 <p>and these can be accessed from R via the package <a href="https://CRAN.R-project.org/package=rggobi"><strong>rggobi</strong></a>, described at
-<a href="http://www.ggobi.org/rggobi">http://www.ggobi.org/rggobi</a>.
+<a href="http://ggobi.org/rggobi.html">http://ggobi.org/rggobi.html</a>.
 </p>
 <p>Also, package <a href="https://CRAN.R-project.org/package=rgl"><strong>rgl</strong></a> provides ways to interact with 3D plots, for example
 of surfaces.
@@ -7332,7 +7333,7 @@ when a package is loaded are its contents available.  This is done both
 for efficiency (the full list would take more memory and would take
 longer to search than a subset), and to aid package developers, who are
 protected from name clashes with other code.  The process of developing
-packages is described in <a href="R-exts.html#Creating-R-packages">Creating R
+packages is described in <a href="http://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages">Creating R
 packages</a> in <cite>Writing R Extensions</cite>.  Here, we will describe them
 from a user&rsquo;s point of view.
 </p>
@@ -7352,7 +7353,7 @@ command like
 
 <p>Users connected to the Internet can use the <code>install.packages()</code>
 and <code>update.packages()</code> functions (available through the
-<code>Packages</code> menu in the Windows and macOS GUIs, see <a href="R-admin.html#Installing-packages">Installing
+<code>Packages</code> menu in the Windows and macOS GUIs, see <a href="http://cran.r-project.org/doc/manuals/R-admin.html#Installing-packages">Installing
 packages</a> in <cite>R Installation and Administration</cite>) to install
 and update packages.
 </p>
@@ -7424,7 +7425,7 @@ packages) are distributed with every binary distribution of R.  Most
 are available for download from <acronym>CRAN</acronym>
 (<a href="https://CRAN.R-project.org/">https://CRAN.R-project.org/</a> and its mirrors) and other
 repositories such as Bioconductor (<a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a>).
-and Omegahat (<a href="http://www.omegahat.net/">http://www.omegahat.net/</a>).  The <em>R FAQ</em>
+The <em>R FAQ</em>
 contains a list of CRAN packages current at the time of release, but the
 collection of available packages changes very frequently.
 </p>
@@ -7839,7 +7840,7 @@ suitably coded.
 </p>
 </dd>
 <dt><code>attach(mm)</code></dt>
-<dd><p>Make the data frame visible at position 3 (the default).
+<dd><p>Make the data frame visible at position 2 (the default).
 </p>
 </dd>
 <dt><code>plot(Expt, Speed, main=&quot;Speed of Light Data&quot;, xlab=&quot;Experiment No.&quot;)</code></dt>
@@ -8192,7 +8193,7 @@ maximum allowed on that version of Windows.
 <dd><p>Do not print out the initial copyright and welcome messages.
 </p>
 </dd>
-<dt><samp>--slave</samp></dt>
+<dt><samp>--no-echo</samp></dt>
 <dd><p>Make R run as quietly as possible.  This option is intended to
 support programs which use R to compute results for them.  It implies
 <samp>--quiet</samp> and <samp>--no-save</samp>.
@@ -8558,7 +8559,7 @@ Pinard) is to use a <em>here document</em> like
 <div class="example">
 <pre class="example">#!/bin/sh
 [environment variables can be set here]
-R --slave [other options] &lt;&lt;EOF
+R --no-echo [other options] &lt;&lt;EOF
 
    R program goes here...
 

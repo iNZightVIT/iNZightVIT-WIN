@@ -1,0 +1,96 @@
+allCheckFunctions       Overview of all available checkFunctions
+allClasses              Vector of all variable classes in 'dataMaid'
+allSummaryFunctions     Overview of all available summaryFunctions
+allVisualFunctions      Overview of all available visualFunctions
+artData                 Semi-artificial data about masterpieces of art
+basicVisual             Produce distribution plots in the base R
+                        (graphics) style using 'plot' and 'barplot'
+basicVisualCFLB         importFrom stats na.omit
+bigPresidentData        Semi-artificial data about the US presidents
+                        (extended version)
+centralValue            summaryFunction for central values
+check                   Perform checks of potential errors in
+                        variable/dataset
+checkFunction           Create an object of class checkFunction
+checkResult             Create object of class checkResult
+classes                 Extract the contents of the attribute 'classes'
+countMissing            Summary function for missing values
+defaultCharacterChecks
+                        Default checks for character variables
+defaultCharacterSummaries
+                        Default summary functions for character
+                        variables
+defaultDateChecks       Default checks for Date variables
+defaultDateSummaries    Default summary functions for Date variables
+defaultFactorChecks     Default checks for factor variables
+defaultFactorSummaries
+                        Default summary functions for factor variables
+defaultHavenlabelledChecks
+                        Default checks for haven_labelled variables
+defaultHavenlabelledSummaries
+                        Default summary functions for haven_labelled
+                        variables
+defaultIntegerChecks    Default checks for integer variables
+defaultIntegerSummaries
+                        Default summary functions for integer variables
+defaultLabelledChecks   Default checks for labelled variables
+defaultLabelledSummaries
+                        Default summary functions for labelled
+                        variables
+defaultLogicalChecks    Default checks for logical variables
+defaultLogicalSummaries
+                        Default summary functions for logical variables
+defaultNumericChecks    Default checks for numeric variables
+defaultNumericSummaries
+                        Default summary functions for numeric variables
+description             Extract the contents of the attribute
+                        'description'
+exampleData             Example data with zero-inflated variables
+identifyCaseIssues      A checkFunction for identifying case issues
+identifyLoners          A checkFunction for identifying sparsely
+                        represented values (loners)
+identifyMissing         A checkFunction for identifying miscoded
+                        missing values.
+identifyNums            A checkFunction
+identifyOutliers        A checkFunction for identifying outliers
+identifyOutliersTBStyle
+                        A checkFunction for identifying outliers Turkey
+                        Boxstole style
+identifyWhitespace      A checkFunction for identifying whitespace
+isCPR                   Check if a variable consists of Danish CPR
+                        numbers
+isKey                   Check if a variable qualifies as a key
+isSingular              Check if a variable only contains a single
+                        value
+isSupported             Check if a variable has a class supported by
+                        dataMaid
+makeCodebook            Produce a data codebook
+makeDataReport          Produce a data report
+messageGenerator        Produce a message for the output of a
+                        checkFunction
+minMax                  summaryFunction for minimum and maximum
+presidentData           Semi-artificial data about the US presidents
+quartiles               summaryFunction for quartiles
+refCat                  summaryFunction that finds reference level for
+                        factor variables
+render                  Simplified Rmarkdown rendering
+setChecks               Set check arguments for makeDataReport
+setSummaries            Set summary arguments for makeDataReport
+setVisuals              Set visual arguments for makeDataReport
+standardVisual          Produce distribution plots using ggplot from
+                        ggplot2.
+summarize               Summarize a variable/dataset
+summaryFunction         Create an object of class summaryFunction
+summaryResult           Create object of class summaryResult
+tableVisual             Produce tables for the makeDataReport
+                        visualizations.
+testData                Extended example data to test the features of
+                        dataMaid
+toyData                 Small example data to show the features of
+                        dataMaid
+uniqueValues            summaryFunction for unique values
+variableType            Summary function for original class
+visualFunction          Create an object of class visualFunction
+visualize               Produce distribution plots
+whoami_available        Find out if the whoami package binaries is
+                        installed (git + whoami)

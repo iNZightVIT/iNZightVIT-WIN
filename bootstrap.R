@@ -12,7 +12,8 @@ LOCAL_DIR <- file.path("~", ".wine", "drive_c", "Program Files", "R",
 LIBPATH <- file.path("prog_files", "library")
 if (!dir.exists(LOCAL_DIR)) {
     inst.file <- file.path(
-        "https://cran.stat.auckland.ac.nz/bin/windows/base",
+        "https://cran.stat.auckland.ac.nz/bin/windows/base/old",
+        R_VERSION,
         INST_FILE
     )
     cat(" * downloading installer\n")

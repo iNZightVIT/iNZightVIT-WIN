@@ -220,14 +220,16 @@ to the PCRE library that implements regular expression pattern
 matching using the same syntax and semantics as Perl 5.x,
 with just a few differences.
 </p>
-<p>For complete details please consult the man pages for PCRE (and not
-PCRE2), especially <code>man pcrepattern</code> and <code>man
-  pcreapi</code>, on your system or from the sources at
-<a href="http://www.pcre.org">http://www.pcre.org</a>.  (The version in use can be found by
-calling <code><a href="extSoftVersion.html">extSoftVersion</a></code>.  It need not be the version
-described in the system's man page.  As PCRE has been feature-frozen
-for some time (essentially 2012), the man pages at
-<a href="http://www.pcre.org/original/doc/html/">http://www.pcre.org/original/doc/html/</a> should be a good match.)
+<p>For complete details please consult the man pages for PCRE, especially
+<code>man pcrepattern</code> and <code>man pcreapi</code>, on your system or
+from the sources at <a href="http://www.pcre.org">http://www.pcre.org</a>.  (The version in use can be
+found by calling <code><a href="extSoftVersion.html">extSoftVersion</a></code>.  It need not be the version
+described in the system's man page.  PCRE1 (reported as version &lt; 10.00 by
+<code><a href="extSoftVersion.html">extSoftVersion</a></code>) has been feature-frozen for some time
+(essentially 2012), the man pages at
+<a href="http://www.pcre.org/original/doc/html/">http://www.pcre.org/original/doc/html/</a> should be a good match.
+PCRE2 (PCRE version &gt;= 10.00) has man pages at
+<a href="http://www.pcre.org/current/doc/html/">http://www.pcre.org/current/doc/html/</a>).
 </p>
 <p>Perl regular expressions can be computed byte-by-byte or
 (UTF-8) character-by-character: the latter is used in all multibyte
@@ -303,7 +305,15 @@ end of the previous match).  <span class="samp">\C</span> matches a single
 byte, including a newline, but its use is warned against.  In UTF-8
 mode, <span class="samp">\R</span> matches any Unicode newline character (not just CR),
 and <span class="samp">\X</span> matches any number of Unicode characters that form an
-extended Unicode sequence.
+extended Unicode sequence. <span class="samp">\X</span>, <span class="samp">\R</span> and <span class="samp">\B</span> cannot be
+used inside a character class (with PCRE1, they are treated as characters
+<span class="samp">X</span>, <span class="samp">R</span> and <span class="samp">B</span>; with PCRE2 they cause an error).
+</p>
+<p>A hyphen (minus) inside a character class is treated as a range, unless it
+is first or last character in the class definition.  It can be quoted to
+represent the hyphen literal (<span class="samp">\-</span>).  PCRE1 allows an unquoted hyphen
+at some other locations inside a character class where it cannot represent
+a valid range, but PCRE2 reports an error in such cases.
 </p>
 <p>In UTF-8 mode, some Unicode properties may be supported via
 <span class="samp">\p{xx}</span> and <span class="samp">\P{xx}</span> which match characters with and
@@ -312,7 +322,8 @@ properties see the PCRE documentation, but for example <span class="samp">Lu</sp
 &lsquo;upper case letter&rsquo; and <span class="samp">Sc</span> is &lsquo;currency symbol&rsquo;.
 (This support depends on the PCRE library being compiled with
 &lsquo;Unicode property support&rsquo; which can be checked <em>via</em>
-<code><a href="pcre_config.html">pcre_config</a></code>.)
+<code><a href="pcre_config.html">pcre_config</a></code>. PCRE2 when compiled with Unicode support always
+supports also Unicode properties.)
 </p>
 <p>The sequence <span class="samp">(?#</span> marks the start of a comment which continues
 up to the next closing parenthesis.  Nested parentheses are not
@@ -368,5 +379,5 @@ standard, and the <code>pcrepattern</code> man page from PCRE 8.36.
 implementation at <a href="http://perldoc.perl.org/perlre.html">http://perldoc.perl.org/perlre.html</a>.
 </p>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.6.0 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 4.0.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

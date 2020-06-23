@@ -25,5 +25,5 @@ Author: Matt Wand [aut],
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
 Repository: CRAN
 Date/Publication: 2020-04-26 10:31:57 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-06-16 09:27:07 UTC; windows
+Built: R 4.0.0; x86_64-w64-mingw32; 2020-06-18 20:22:02 UTC; windows
 Archs: i386, x64

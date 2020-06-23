@@ -302,9 +302,8 @@ either their own or the system ones).
 number of variants.  One distinction is between &lsquo;active&rsquo; and
 &lsquo;(extended) passive&rsquo; modes: which is used is chosen by the
 client.  The <code>"internal"</code> and <code>"libcurl"</code> methods use passive
-mode, and that is almost universally used by browsers.  Prior to <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
-3.2.3 the <code>"wininet"</code> method used active mode: nowadays it first
-tries passive and then active.
+mode, and that is almost universally used by browsers.  The
+<code>"wininet"</code> method first tries passive and then active.
 </p>
 
 
@@ -317,8 +316,7 @@ and should do so in a package or script.
 </p>
 <p>If you use <code>download.file</code> in a package or script, you must check
 the return value, since it is possible that the download will fail
-with a non-zero status but not an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> error. (This was more likely
-prior to <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.4.0.)
+with a non-zero status but not an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> error.
 </p>
 <p>The supported <code>method</code>s do change: method <code>libcurl</code> was
 introduced in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0 and is still optional on Windows &ndash; use
@@ -359,9 +357,9 @@ and <code>internet.info</code> options used by some of the methods.
 <p><code><a href="url.show.html">url.show</a></code>, <code><a href="available.packages.html">available.packages</a></code>,
 <code><a href="download.packages.html">download.packages</a></code> for applications.
 </p>
-<p>Contributed package <a href="https://CRAN.R-project.org/package=RCurl"><span class="pkg">RCurl</span></a> provides more comprehensive
-facilities to download from URLs.
+<p>Contributed packages <a href="https://CRAN.R-project.org/package=RCurl"><span class="pkg">RCurl</span></a> and <a href="https://CRAN.R-project.org/package=curl"><span class="pkg">curl</span></a> provide more
+comprehensive facilities to download from URLs.
 </p>
 
-<hr /><div style="text-align: center;">[Package <em>utils</em> version 3.6.0 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>utils</em> version 4.0.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

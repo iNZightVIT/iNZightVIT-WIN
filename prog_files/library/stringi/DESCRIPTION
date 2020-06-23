@@ -32,5 +32,5 @@ Packaged: 2020-02-17 01:46:10 UTC; gagolews
 License_is_FOSS: yes
 Repository: CRAN
 Date/Publication: 2020-02-17 18:00:06 UTC
-Built: R 3.6.2; x86_64-w64-mingw32; 2020-02-18 22:16:06 UTC; windows
+Built: R 4.0.0; x86_64-w64-mingw32; 2020-04-26 13:21:16 UTC; windows
 Archs: i386, x64

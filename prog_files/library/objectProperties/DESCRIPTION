@@ -11,4 +11,4 @@ Collate: PropertySet-class.R Enum-class.R comp-classes.R
 Packaged: 2011-12-12 18:35:02 UTC; tengfei
 Repository: CRAN
 Date/Publication: 2011-12-13 08:36:36
-Built: R 3.6.0; ; 2019-05-28 23:28:44 UTC; windows
+Built: R 4.0.0; ; 2020-04-26 16:40:49 UTC; windows

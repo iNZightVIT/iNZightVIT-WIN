@@ -175,8 +175,6 @@ summary.survexp	summary.survexp
 summary.survfit	summary.survfit
 summary.survreg	survreg.object
 Surv	Surv
-Surv2	Surv2
-Surv2data	Surv2data
 survcheck	survcheck
 survConcordance	survConcordance-deprecated
 survConcordance.fit	survConcordance-deprecated

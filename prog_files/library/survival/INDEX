@@ -1,8 +1,5 @@
 Math.Surv               Methods for Surv objects
 Surv                    Create a Survival Object
-Surv2                   Create a survival object
-Surv2data               Convert data from timecourse to (time1,time2)
-                        style
 aareg                   Aalen's additive regression model for censored
                         data
 aeqSurv                 Adjudicate near ties in a Surv object

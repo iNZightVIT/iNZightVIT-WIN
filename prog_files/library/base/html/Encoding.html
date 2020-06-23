@@ -52,7 +52,8 @@ encoding, since their representation is the same in all supported
 encodings.  Strings marked as <code>"bytes"</code> are intended to be
 non-ASCII strings which should be manipulated as bytes, and never
 converted to a character encoding (so writing them to a text file is
-not supported). 
+supported only by <code>writeLines(useBytes = TRUE)</code>).
+
 </p>
 <p><code>enc2native</code> and <code>enc2utf8</code> convert elements of character
 vectors to the native encoding or UTF-8 respectively, taking any
@@ -133,5 +134,5 @@ xx # will be encoded in hex
 cat("xx = ", xx, "\n", sep = "")
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 3.6.0 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 4.0.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

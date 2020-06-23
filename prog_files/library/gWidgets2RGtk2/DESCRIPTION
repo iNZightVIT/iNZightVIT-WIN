@@ -22,5 +22,5 @@ Collate: 'gWidgets2RGtk2-package.R' 'misc.R' 'gtk-misc.R'
         'gvarbrowser.R' 'gwindow.R' 'icons.R' 'startup.R'
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2020-05-05 20:47:56 UTC; tell029
-Built: R 3.6.3; ; 2020-05-05 20:47:57 UTC; unix
+Packaged: 2020-05-05 20:48:19 UTC; tell029
+Built: R 4.0.0; ; 2020-05-05 20:48:19 UTC; unix

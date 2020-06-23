@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: A Suite of Checks for Identification of Potential Errors in a
+Data Frame as Part of the Data Screening Process</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> A Suite of Checks for Identification of Potential Errors in a
+Data Frame as Part of the Data Screening Process
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;dataMaid&rsquo; version 1.4.0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="allCheckFunctions.html">allCheckFunctions</a></td>
+<td>Overview of all available checkFunctions</td></tr>
+<tr><td style="width: 25%;"><a href="allClasses.html">allClasses</a></td>
+<td>Vector of all variable classes in 'dataMaid'</td></tr>
+<tr><td style="width: 25%;"><a href="allSummaryFunctions.html">allSummaryFunctions</a></td>
+<td>Overview of all available summaryFunctions</td></tr>
+<tr><td style="width: 25%;"><a href="allVisualFunctions.html">allVisualFunctions</a></td>
+<td>Overview of all available visualFunctions</td></tr>
+<tr><td style="width: 25%;"><a href="artData.html">artData</a></td>
+<td>Semi-artificial data about masterpieces of art</td></tr>
+<tr><td style="width: 25%;"><a href="basicVisual.html">basicVisual</a></td>
+<td>Produce distribution plots in the base R (graphics) style using 'plot' and 'barplot'</td></tr>
+<tr><td style="width: 25%;"><a href="basicVisualCFLB.html">basicVisualCFLB</a></td>
+<td>importFrom stats na.omit</td></tr>
+<tr><td style="width: 25%;"><a href="bigPresidentData.html">bigPresidentData</a></td>
+<td>Semi-artificial data about the US presidents (extended version)</td></tr>
+<tr><td style="width: 25%;"><a href="centralValue.html">centralValue</a></td>
+<td>summaryFunction for central values</td></tr>
+<tr><td style="width: 25%;"><a href="check.html">check</a></td>
+<td>Perform checks of potential errors in variable/dataset</td></tr>
+<tr><td style="width: 25%;"><a href="checkFunction.html">checkFunction</a></td>
+<td>Create an object of class checkFunction</td></tr>
+<tr><td style="width: 25%;"><a href="checkResult.html">checkResult</a></td>
+<td>Create object of class checkResult</td></tr>
+<tr><td style="width: 25%;"><a href="classes.html">classes</a></td>
+<td>Extract the contents of the attribute 'classes'</td></tr>
+<tr><td style="width: 25%;"><a href="classes.html">classes&lt;-</a></td>
+<td>Extract the contents of the attribute 'classes'</td></tr>
+<tr><td style="width: 25%;"><a href="countMissing.html">countMissing</a></td>
+<td>Summary function for missing values</td></tr>
+<tr><td style="width: 25%;"><a href="defaultCharacterChecks.html">defaultCharacterChecks</a></td>
+<td>Default checks for character variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultCharacterSummaries.html">defaultCharacterSummaries</a></td>
+<td>Default summary functions for character variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultDateChecks.html">defaultDateChecks</a></td>
+<td>Default checks for Date variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultDateSummaries.html">defaultDateSummaries</a></td>
+<td>Default summary functions for Date variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultFactorChecks.html">defaultFactorChecks</a></td>
+<td>Default checks for factor variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultFactorSummaries.html">defaultFactorSummaries</a></td>
+<td>Default summary functions for factor variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultHavenlabelledChecks.html">defaultHavenlabelledChecks</a></td>
+<td>Default checks for haven_labelled variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultHavenlabelledSummaries.html">defaultHavenlabelledSummaries</a></td>
+<td>Default summary functions for haven_labelled variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultIntegerChecks.html">defaultIntegerChecks</a></td>
+<td>Default checks for integer variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultIntegerSummaries.html">defaultIntegerSummaries</a></td>
+<td>Default summary functions for integer variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultLabelledChecks.html">defaultLabelledChecks</a></td>
+<td>Default checks for labelled variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultLabelledSummaries.html">defaultLabelledSummaries</a></td>
+<td>Default summary functions for labelled variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultLogicalChecks.html">defaultLogicalChecks</a></td>
+<td>Default checks for logical variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultLogicalSummaries.html">defaultLogicalSummaries</a></td>
+<td>Default summary functions for logical variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultNumericChecks.html">defaultNumericChecks</a></td>
+<td>Default checks for numeric variables</td></tr>
+<tr><td style="width: 25%;"><a href="defaultNumericSummaries.html">defaultNumericSummaries</a></td>
+<td>Default summary functions for numeric variables</td></tr>
+<tr><td style="width: 25%;"><a href="description.html">description</a></td>
+<td>Extract the contents of the attribute 'description'</td></tr>
+<tr><td style="width: 25%;"><a href="description.html">description&lt;-</a></td>
+<td>Extract the contents of the attribute 'description'</td></tr>
+<tr><td style="width: 25%;"><a href="exampleData.html">exampleData</a></td>
+<td>Example data with zero-inflated variables</td></tr>
+<tr><td style="width: 25%;"><a href="identifyCaseIssues.html">identifyCaseIssues</a></td>
+<td>A checkFunction for identifying case issues</td></tr>
+<tr><td style="width: 25%;"><a href="identifyLoners.html">identifyLoners</a></td>
+<td>A checkFunction for identifying sparsely represented values (loners)</td></tr>
+<tr><td style="width: 25%;"><a href="identifyMissing.html">identifyMissing</a></td>
+<td>A checkFunction for identifying miscoded missing values.</td></tr>
+<tr><td style="width: 25%;"><a href="identifyNums.html">identifyNums</a></td>
+<td>A checkFunction</td></tr>
+<tr><td style="width: 25%;"><a href="identifyOutliers.html">identifyOutliers</a></td>
+<td>A checkFunction for identifying outliers</td></tr>
+<tr><td style="width: 25%;"><a href="identifyOutliersTBStyle.html">identifyOutliersTBStyle</a></td>
+<td>A checkFunction for identifying outliers Turkey Boxstole style</td></tr>
+<tr><td style="width: 25%;"><a href="identifyWhitespace.html">identifyWhitespace</a></td>
+<td>A checkFunction for identifying whitespace</td></tr>
+<tr><td style="width: 25%;"><a href="isCPR.html">isCPR</a></td>
+<td>Check if a variable consists of Danish CPR numbers</td></tr>
+<tr><td style="width: 25%;"><a href="isSingular.html">isEmpty</a></td>
+<td>Check if a variable only contains a single value</td></tr>
+<tr><td style="width: 25%;"><a href="isKey.html">isKey</a></td>
+<td>Check if a variable qualifies as a key</td></tr>
+<tr><td style="width: 25%;"><a href="isSingular.html">isSingular</a></td>
+<td>Check if a variable only contains a single value</td></tr>
+<tr><td style="width: 25%;"><a href="isSupported.html">isSupported</a></td>
+<td>Check if a variable has a class supported by dataMaid</td></tr>
+<tr><td style="width: 25%;"><a href="makeCodebook.html">makeCodebook</a></td>
+<td>Produce a data codebook</td></tr>
+<tr><td style="width: 25%;"><a href="makeDataReport.html">makeDataReport</a></td>
+<td>Produce a data report</td></tr>
+<tr><td style="width: 25%;"><a href="messageGenerator.html">messageGenerator</a></td>
+<td>Produce a message for the output of a checkFunction</td></tr>
+<tr><td style="width: 25%;"><a href="minMax.html">minMax</a></td>
+<td>summaryFunction for minimum and maximum</td></tr>
+<tr><td style="width: 25%;"><a href="presidentData.html">presidentData</a></td>
+<td>Semi-artificial data about the US presidents</td></tr>
+<tr><td style="width: 25%;"><a href="quartiles.html">quartiles</a></td>
+<td>summaryFunction for quartiles</td></tr>
+<tr><td style="width: 25%;"><a href="refCat.html">refCat</a></td>
+<td>summaryFunction that finds reference level for factor variables</td></tr>
+<tr><td style="width: 25%;"><a href="render.html">render</a></td>
+<td>Simplified Rmarkdown rendering</td></tr>
+<tr><td style="width: 25%;"><a href="setChecks.html">setChecks</a></td>
+<td>Set check arguments for makeDataReport</td></tr>
+<tr><td style="width: 25%;"><a href="setSummaries.html">setSummaries</a></td>
+<td>Set summary arguments for makeDataReport</td></tr>
+<tr><td style="width: 25%;"><a href="setVisuals.html">setVisuals</a></td>
+<td>Set visual arguments for makeDataReport</td></tr>
+<tr><td style="width: 25%;"><a href="standardVisual.html">standardVisual</a></td>
+<td>Produce distribution plots using ggplot from ggplot2.</td></tr>
+<tr><td style="width: 25%;"><a href="summarize.html">summarize</a></td>
+<td>Summarize a variable/dataset</td></tr>
+<tr><td style="width: 25%;"><a href="summaryFunction.html">summaryFunction</a></td>
+<td>Create an object of class summaryFunction</td></tr>
+<tr><td style="width: 25%;"><a href="summaryResult.html">summaryResult</a></td>
+<td>Create object of class summaryResult</td></tr>
+<tr><td style="width: 25%;"><a href="tableVisual.html">tableVisual</a></td>
+<td>Produce tables for the makeDataReport visualizations.</td></tr>
+<tr><td style="width: 25%;"><a href="testData.html">testData</a></td>
+<td>Extended example data to test the features of dataMaid</td></tr>
+<tr><td style="width: 25%;"><a href="toyData.html">toyData</a></td>
+<td>Small example data to show the features of dataMaid</td></tr>
+<tr><td style="width: 25%;"><a href="uniqueValues.html">uniqueValues</a></td>
+<td>summaryFunction for unique values</td></tr>
+<tr><td style="width: 25%;"><a href="variableType.html">variableType</a></td>
+<td>Summary function for original class</td></tr>
+<tr><td style="width: 25%;"><a href="visualFunction.html">visualFunction</a></td>
+<td>Create an object of class visualFunction</td></tr>
+<tr><td style="width: 25%;"><a href="visualize.html">visualize</a></td>
+<td>Produce distribution plots</td></tr>
+<tr><td style="width: 25%;"><a href="whoami_available.html">whoami_available</a></td>
+<td>Find out if the whoami package binaries is installed (git + whoami)</td></tr>
+</table>
+</body></html>

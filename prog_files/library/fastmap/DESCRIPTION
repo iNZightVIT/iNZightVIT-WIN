@@ -26,5 +26,5 @@ Author: Winston Chang [aut, cre],
 Maintainer: Winston Chang <winston@rstudio.com>
 Repository: CRAN
 Date/Publication: 2019-10-08 05:20:02 UTC
-Built: R 3.6.3; x86_64-w64-mingw32; 2020-06-16 09:25:51 UTC; windows
+Built: R 4.0.0; x86_64-w64-mingw32; 2020-06-18 20:20:43 UTC; windows
 Archs: i386, x64

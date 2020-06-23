@@ -19,7 +19,7 @@ Collate: aaaGenerics.R common.R toolkitClasses.R guiWidget.R
         gwindow.R gdfnotebook.R gradio.R gedit.R gseparator.R icons.R
         gfile.R gformlayout.R gstatusbar.R bbbGenericsANY.R zzz.R
 LazyLoad: yes
-Packaged: 2020-06-08 21:39:14 UTC; tell029
+Packaged: 2020-06-08 21:39:22 UTC; tell029
 NeedsCompilation: no
 Repository: CRAN
 Date/Publication: 2020-04-29 05:27:07 UTC
@@ -28,4 +28,4 @@ X-CRAN-Comment: Orphaned and corrected on 2020-04-29 as no response
         from maintainer.
  .
  And NMUs by the CRAN team since 2014.
-Built: R 3.6.3; ; 2020-06-08 21:39:15 UTC; unix
+Built: R 4.0.0; ; 2020-06-08 21:39:22 UTC; unix

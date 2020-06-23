@@ -36,5 +36,5 @@ Author: CRAN Team [ctb, cre] (de facto maintainer since 2013),
 Maintainer: CRAN Team <CRAN@r-project.org>
 Repository: CRAN
 Date/Publication: 2020-04-18 03:44:52 UTC
-Built: R 3.6.3; i386-w64-mingw32; 2020-04-25 00:14:21 UTC; windows
+Built: R 4.0.0; i386-w64-mingw32; 2020-04-20 09:06:23 UTC; windows
 Archs: i386, x64

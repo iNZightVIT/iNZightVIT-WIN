@@ -19,5 +19,5 @@ NeedsCompilation: yes
 Packaged: 2019-10-08 12:00:40 UTC; larman
 Repository: CRAN
 Date/Publication: 2019-10-11 10:20:02 UTC
-Built: R 3.6.1; x86_64-w64-mingw32; 2019-10-14 09:27:15 UTC; windows
+Built: R 4.0.0; x86_64-w64-mingw32; 2020-04-26 13:30:19 UTC; windows
 Archs: i386, x64
