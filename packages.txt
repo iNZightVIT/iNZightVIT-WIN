@@ -70,6 +70,7 @@ grDevices
 methods
 grid
 dataMaid
+rmarkdown
 stats
 graphics
 tools
@@ -169,7 +170,6 @@ purrr
 rematch
 rex
 rio
-rmarkdown
 robustbase
 rprojroot
 rstudioapi

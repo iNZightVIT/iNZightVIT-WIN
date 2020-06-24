@@ -156,6 +156,9 @@ x <- file.copy(
     recursive = TRUE
 )
 
+## install pandoc ...
+# wine install pandoc-2.9.2.1/pandoc.exe
+
 if (!grepl("master", BRANCH)) {
     cat(" * install dev versions of iNZight packages ... ")
     system(sprintf(
