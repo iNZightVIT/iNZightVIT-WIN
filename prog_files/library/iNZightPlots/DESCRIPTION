@@ -1,7 +1,7 @@
 Package: iNZightPlots
 Type: Package
 Title: Graphical Tools for Exploring Data with 'iNZight'
-Version: 2.11.6.9000
+Version: 2.12
 Authors@R: c(
     person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
     person("Yu Han", "Soh", role = "ctb"),
@@ -26,4 +26,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Yu Han Soh [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.0; ; 2020-06-24 03:29:37 UTC; unix
+Built: R 4.0.0; ; 2020-06-25 02:03:42 UTC; unix

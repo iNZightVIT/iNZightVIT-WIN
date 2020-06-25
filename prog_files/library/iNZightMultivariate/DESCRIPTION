@@ -14,4 +14,4 @@ LazyData: true
 RoxygenNote: 7.0.2
 Author: Daniel Barnett [aut, cre]
 Maintainer: Daniel Barnett <daniel.barnett@auckland.ac.nz>
-Built: R 4.0.0; ; 2020-06-24 03:30:24 UTC; unix
+Built: R 4.0.0; ; 2020-06-25 02:04:29 UTC; unix

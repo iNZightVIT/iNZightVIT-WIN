@@ -40,6 +40,7 @@ renameVars	renameVars
 reorderLevels	reorderLevels
 reshape_data	reshape_data
 save_rda	save_rda
+selectVars	selectVars
 separate	separate
 sheets	sheets
 smart_read	smart_read

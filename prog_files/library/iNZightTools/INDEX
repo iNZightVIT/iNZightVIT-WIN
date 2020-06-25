@@ -45,6 +45,7 @@ reorderLevels           Reorder a categorical
 reshape_data            Reshaping dataset from wide to long or from
                         long to wide
 save_rda                Save an object with, optionally, a (valid) name
+selectVars              Select variables from a dataset
 separate                Separate columns
 sheets                  List of available sheets from a file
 smart_read              iNZight Smart Read
