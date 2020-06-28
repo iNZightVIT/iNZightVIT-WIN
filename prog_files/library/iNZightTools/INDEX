@@ -38,6 +38,7 @@ make_names              Make unique variable names
 make_survey             Make a survey object
 missingToCat            Convert missing values to categorical variables
 newdevice               Open a New Graphics Device
+print.inzsvyspec        Print iNZight Survey Spec
 rankVars                Rank the data of a numeric variables
 read_meta               Read CSV with iNZight metadata
 read_text               Read text as data

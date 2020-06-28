@@ -34,6 +34,7 @@ make_names	make_names
 make_survey	make_survey
 missingToCat	missingToCat
 newdevice	newdevice
+print.inzsvyspec	print.inzsvyspec
 rankVars	rankVars
 read_meta	read_meta
 read_text	read_text
