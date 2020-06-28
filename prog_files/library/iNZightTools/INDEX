@@ -21,6 +21,7 @@ filterRows              Filter data by row numbers
 fitDesign               Fit a survey design
 fitModel                Fit models
 iNZightTools            Tools for data processing with iNZight
+import_survey           Import survey information from a file
 is_cat                  Is factor check
 is_dt                   Is datetime check
 is_num                  Is numeric check
@@ -34,6 +35,7 @@ is_svyrep               Check if object is a replicate survey object
 joindata                Join data with another dataset
 load_rda                Load object(s) from an Rdata file
 make_names              Make unique variable names
+make_survey             Make a survey object
 missingToCat            Convert missing values to categorical variables
 newdevice               Open a New Graphics Device
 rankVars                Rank the data of a numeric variables

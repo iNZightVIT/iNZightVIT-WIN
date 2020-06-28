@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2020-02-06" />
+<meta name="date" content="2020-06-22" />
 
 <title>Not An Introduction to knitr</title>
 
@@ -26,6 +26,22 @@ document.addEventListener('DOMContentLoaded', function(e) {
     if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
     a = h.attributes;
     while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
   }
 });
 </script>
@@ -353,7 +369,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Not An Introduction to knitr</h1>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2020-02-06</h4>
+<h4 class="date">2020-06-22</h4>
 
 
 
@@ -361,16 +377,16 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Anyway, here is a code chunk that shows you can compile vignettes with <strong>knitr</strong> as well using R 3.0.x, which supports non-Sweave vignettes:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">options</span>(<span class="dt">digits =</span> <span class="dv">4</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="kw">rnorm</span>(<span class="dv">20</span>)</span></code></pre></div>
-<pre><code>##  [1] -0.33060 -0.39099  0.93292  0.59460 -0.57211  0.52964 -2.21362  1.02436
-##  [9] -0.21179 -0.22230 -2.37931 -0.40977 -0.36230  0.04407 -0.49126 -0.93393
-## [17]  1.10141  1.25615 -0.07600  0.92807</code></pre>
+<pre><code>##  [1] -0.19169  0.67134  0.22346  0.71502 -0.11204  0.75763  1.46664 -0.50364
+##  [9] -0.09981 -0.25703  0.49641 -0.72781 -1.75855 -1.34796 -0.06976  0.62396
+## [17]  0.13471  1.02056 -2.16856 -1.73060</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>fit =<span class="st"> </span><span class="kw">lm</span>(dist <span class="op">~</span><span class="st"> </span>speed, <span class="dt">data =</span> cars)</span>
 <span id="cb3-2"><a href="#cb3-2"></a>b =<span class="st"> </span><span class="kw">coef</span>(fit)</span></code></pre></div>
 <table>
 <caption>Regression coefficients.</caption>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Estimate</th>
 <th align="right">Std. Error</th>
 <th align="right">t value</th>
@@ -379,14 +395,14 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </thead>
 <tbody>
 <tr class="odd">
-<td>(Intercept)</td>
+<td align="left">(Intercept)</td>
 <td align="right">-17.579</td>
 <td align="right">6.7584</td>
 <td align="right">-2.601</td>
 <td align="right">0.0123</td>
 </tr>
 <tr class="even">
-<td>speed</td>
+<td align="left">speed</td>
 <td align="right">3.932</td>
 <td align="right">0.4155</td>
 <td align="right">9.464</td>

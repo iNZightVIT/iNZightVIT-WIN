@@ -19,6 +19,7 @@ filterRandom	filterRandom
 filterRows	filterRows
 fitDesign	fitDesign
 fitModel	fitModel
+import_survey	import_survey
 iNZightTools	iNZightTools
 is_cat	is_cat
 is_dt	is_dt
@@ -30,6 +31,7 @@ is_svyrep	is_svyrep
 joindata	joindata
 load_rda	load_rda
 make_names	make_names
+make_survey	make_survey
 missingToCat	missingToCat
 newdevice	newdevice
 rankVars	rankVars

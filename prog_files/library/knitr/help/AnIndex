@@ -39,6 +39,7 @@ inline_expr	inline_expr
 is_html_output	output_type
 is_latex_output	output_type
 kable	kable
+kables	kable
 knit	knit
 knit2html	knit2html
 knit2pandoc	knit2pandoc
