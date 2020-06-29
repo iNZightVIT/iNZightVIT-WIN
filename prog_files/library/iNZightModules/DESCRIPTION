@@ -1,7 +1,7 @@
 Package: iNZightModules
 Type: Package
 Title: iNZight GUI Modules
-Version: 2.5.2.9000
+Version: 2.5.2
 Authors@R: c(
     person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
     person("Daniel", "Barnett", role = "aut"),
@@ -25,6 +25,8 @@ Description: A suite of add-on modules for the iNZight GUI, including model
 RoxygenNote: 7.1.0
 Encoding: UTF-8
 Language: en-GB
+NeedsCompilation: no
+Packaged: 2020-06-14 21:33:42 UTC; tell029
 Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Daniel Barnett [aut],
   Eric Lim [aut],
@@ -33,4 +35,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.0; ; 2020-06-29 02:20:20 UTC; unix
+Built: R 4.0.0; ; 2020-06-14 21:33:43 UTC; unix

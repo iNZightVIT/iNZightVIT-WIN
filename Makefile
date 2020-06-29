@@ -1,6 +1,6 @@
 default: bootstrap
 
-RVERSION ?= 4.0.0
+RVERSION ?= 4.0.2
 
 bootstrap:
 	@~/R-${RVERSION}/bin/Rscript --vanilla bootstrap.R

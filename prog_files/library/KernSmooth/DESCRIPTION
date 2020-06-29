@@ -24,6 +24,6 @@ Author: Matt Wand [aut],
   Brian Ripley [trl, cre, ctb] (R port and updates)
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
 Repository: CRAN
-Date/Publication: 2020-04-26 10:31:57 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-06-23 03:57:17 UTC; windows
+Date/Publication: 2020-04-26 10:31:03 UTC
+Built: R 4.0.2; x86_64-w64-mingw32; 2020-06-22 08:51:53 UTC; windows
 Archs: i386, x64

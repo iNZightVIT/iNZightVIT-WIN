@@ -52,7 +52,7 @@ using namespace std;
 /*-- Mathlib as part of R --  define this for standalone : */
 /* #undef MATHLIB_STANDALONE */
 
-#define R_VERSION_STRING "4.0.0"
+#define R_VERSION_STRING "4.0.2"
 
 // Legacy defines -- C99 functions which R >= 3.5.0 reauires
 #ifndef HAVE_EXPM1

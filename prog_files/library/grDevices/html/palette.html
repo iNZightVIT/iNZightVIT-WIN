@@ -183,7 +183,7 @@ palette.swatch &lt;- function(palette = palette.pals(), n = 8, nrow = 8,
  	rect(rep(0:(n-1), n), y, rep(1:n, n), y - 0.5,
  	     col = cols[, subset], border = border)
  	palette &lt;- palette[-subset]
- 	cols    &lt;- cols [, -subset]
+ 	cols    &lt;- cols [, -subset, drop = FALSE]
      }
 }
 
@@ -192,5 +192,5 @@ palette.swatch()
 palette.swatch(n = 26) # show full "Alphabet"; recycle most others
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>grDevices</em> version 4.0.0 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>grDevices</em> version 4.0.2 <a href="00Index.html">Index</a>]</div>
 </body></html>

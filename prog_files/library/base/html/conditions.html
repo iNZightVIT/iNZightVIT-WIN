@@ -235,7 +235,7 @@ returns silently when the restart cannot be found with
 <code>findRestart</code>. Because a condition of a given class might be
 signalled with arbitrary protocols (error, warning, etc), it is
 recommended to use this permissive variant whenever you are handling
-conditions signalled from a foreign context. For instance, invokation
+conditions signalled from a foreign context. For instance, invocation
 of a <code>"muffleWarnings"</code> restart should be optional because the
 warning might have been signalled by the user or from a different
 package with the <code>stop</code> or <code>message</code> protocols. Only use
@@ -318,5 +318,5 @@ withRestarts(invokeRestart("foo", 1, 2), foo = function(x, y) {x + y})
 ##--&gt;   demo(error.catching)
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>base</em> version 4.0.0 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>base</em> version 4.0.2 <a href="00Index.html">Index</a>]</div>
 </body></html>

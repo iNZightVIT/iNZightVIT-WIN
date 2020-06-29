@@ -267,7 +267,7 @@ hcl.swatch &lt;- function(type = NULL, n = 5, nrow = 11,
         rect(rep(0:(n-1), n), rev(y), rep(1:n, n), rev(y) - 0.5,
              col = cols[, subset], border = border)
         palette &lt;- palette[-subset]
-        cols &lt;- cols[, -subset]
+        cols &lt;- cols[, -subset, drop = FALSE]
     }
 
     par(mfrow = c(1, 1), mar = c(5.1, 4.1, 4.1, 2.1), cex = 1)
@@ -291,5 +291,5 @@ hcl.pals("diverging")
 hcl.pals("divergingx")
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>grDevices</em> version 4.0.0 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>grDevices</em> version 4.0.2 <a href="00Index.html">Index</a>]</div>
 </body></html>
