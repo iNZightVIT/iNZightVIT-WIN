@@ -19,6 +19,7 @@ filterRandom	filterRandom
 filterRows	filterRows
 fitDesign	fitDesign
 fitModel	fitModel
+import_survey	import_survey
 iNZightTools	iNZightTools
 is_cat	is_cat
 is_dt	is_dt
@@ -30,8 +31,10 @@ is_svyrep	is_svyrep
 joindata	joindata
 load_rda	load_rda
 make_names	make_names
+make_survey	make_survey
 missingToCat	missingToCat
 newdevice	newdevice
+print.inzsvyspec	print.inzsvyspec
 rankVars	rankVars
 read_meta	read_meta
 read_text	read_text
@@ -40,6 +43,7 @@ renameVars	renameVars
 reorderLevels	reorderLevels
 reshape_data	reshape_data
 save_rda	save_rda
+selectVars	selectVars
 separate	separate
 sheets	sheets
 smart_read	smart_read

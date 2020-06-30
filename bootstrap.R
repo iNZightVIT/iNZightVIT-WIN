@@ -161,11 +161,12 @@ x <- file.copy(
 
 if (!grepl("master", BRANCH)) {
     cat(" * install dev versions of iNZight packages ... ")
-    system(sprintf(
+    o <- system(sprintf(
         "cd ../dev && make all replace keepMaps=%s WINV=%s > /dev/null 2>&1",
         ifelse(grepl("maps", BRANCH), "true", "false"),
         R_VERSION_SHORT
     ))
+    print(o)
     cat("done\n")
 }
 
