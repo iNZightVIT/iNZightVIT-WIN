@@ -1,4 +1,4 @@
-cde8c9b04b87d052feae4712286cfc3f *DESCRIPTION
+b73459c9012a6977fe4e26b5ae5412cf *DESCRIPTION
 5d2ddf94d07d59d124ec622649359c9b *INDEX
 472904db5a93a07692b3fe24cabcf96c *LICENSE
 9030581212d9d64247d18d2ecac22589 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 2a798f7bde294c00390dc0a8b4d7b8c6 *Meta/hsearch.rds
 c3405638c901efdc540dbc23e542a262 *Meta/links.rds
 7f2266a2f79a71eec6827816411cd07b *Meta/nsInfo.rds
-e7c033e88968797c0586419c859beae1 *Meta/package.rds
+e1b9524f1f916068352ec77c990c7610 *Meta/package.rds
 ce97ebaad581d3ce2c897cdcffa1d66c *NAMESPACE
 90b92a7f767af179e20f200b0a3f6cf5 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/sourcetools
@@ -14,9 +14,9 @@ ebf0fc819595d631b8bf280c4b049940 *R/sourcetools
 2cea0e23d9ed942badea7a5979fe8a9a *R/sourcetools.rdx
 6a30548de5c776d638dc5a3a2efdf24d *help/AnIndex
 a354e10f7fbad38d0a4d78f82b1d2576 *help/aliases.rds
-9bdb20760aaa5c17cf69cf7fd08395dd *help/paths.rds
-81c8845dedc2d9c7e62a9996985f3768 *help/sourcetools.rdb
-b2eb484a00e4f38400e9c4fa0688c31a *help/sourcetools.rdx
+9d667736722d033656e083abd848e438 *help/paths.rds
+20aacbffaa0842af7f23afd67b4e3644 *help/sourcetools.rdb
+601e73dc8b740194ffb1e196fc3a026b *help/sourcetools.rdx
 0965748be30c998dfdf43d8ccef5bddd *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 c5215eb66349006d73ad7e65ce54046b *include/sourcetools.h
@@ -50,7 +50,7 @@ c6afafc697b747111348dabb88d9fb4a *include/sourcetools/tokenization/Registration.
 6599c5daf2f3e59861153982cc00efef *include/sourcetools/tokenization/Tokenizer.h
 00c91c6e20bc534fa3a689c79770f46c *include/sourcetools/tokenization/tokenization.h
 1491ededa24449d40554757c96bebaf0 *include/sourcetools/utf8/utf8.h
-84193ecb157a42f0c4bafaaafbc624fc *libs/i386/sourcetools.dll
+ad7aa422e8241d00c780649cf2e0b92c *libs/i386/sourcetools.dll
 ea39451ace8b43258416e992fa52710d *libs/i386/symbols.rds
-2983461c1d2d030da339ee183c083970 *libs/x64/sourcetools.dll
+067ce4b2a743c23278b2e92eb96ace19 *libs/x64/sourcetools.dll
 d3500aeeb9856dd639febc0c2796fcb5 *libs/x64/symbols.rds

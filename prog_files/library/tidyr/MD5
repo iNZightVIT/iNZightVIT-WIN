@@ -1,4 +1,4 @@
-e7a98743b7ca48a6f0dc1f1b43435b8e *DESCRIPTION
+9bcc8322e53e2d48681d9be6d6f8ab20 *DESCRIPTION
 4e7bc5eb9b8149d3e417e55513068166 *INDEX
 1734bf7b2a958fa874a85d6417f4a0e0 *LICENSE
 49cbb12c79d385dbc88cee5685986237 *Meta/Rd.rds
@@ -7,7 +7,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 a5399730098a974395b3be68113143af *Meta/hsearch.rds
 1280a83a45db42f80486c6ac914309b3 *Meta/links.rds
 1c73b1c4a369b342f0e91f48125c4c74 *Meta/nsInfo.rds
-3b27780b9722e80b3203cbfde1b6a610 *Meta/package.rds
+e342df1485c85c69fd4cd9b54e80f5ee *Meta/package.rds
 b28cd87ef5b0a4c1946fedfd046e57dc *Meta/vignette.rds
 ee307d6cbd279a81ed24d9139c6a9203 *NAMESPACE
 d43f64e9676b2c5f64e082a0ddc8af2e *NEWS.md
@@ -48,12 +48,12 @@ c3978703d8f40f2679795335715e98f4 *help/figures/lifecycle-experimental.svg
 6902bbfaf963fbc4ed98b86bda80caa2 *help/figures/lifecycle-soft-deprecated.svg
 53b3f893324260b737b3c46ed2a0e643 *help/figures/lifecycle-stable.svg
 864d317571951416e99a345c0d15850d *help/figures/logo.png
-80cd6cccfb29d13ae38824d2a93ecac9 *help/paths.rds
-1bf1afcf3ea9df20341b2f9c01ef5a44 *help/tidyr.rdb
-aa356a9e605a6dae07bf5f5b629bb34a *help/tidyr.rdx
+355327bafc581d5c5f06134da182bfb6 *help/paths.rds
+2dfe1bd3c19c5ff089998ddf2ed6f48c *help/tidyr.rdb
+9293cf4c87ea0b45ffed444946c3c9d3 *help/tidyr.rdx
 73983019b48ca57894f89ff3c60c214d *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 52a76d78c740a11de56569c2fee92442 *libs/i386/symbols.rds
-801dbdff25fe8ec71f7cc49b599db934 *libs/i386/tidyr.dll
+179a5d55f0530e398f4f3f0c2839d6fc *libs/i386/tidyr.dll
 2295e08e48b568dcd9fb77937abd3fc1 *libs/x64/symbols.rds
-aca6d111792338a9705368181989ffe9 *libs/x64/tidyr.dll
+aec1bfd9eded3884735558e847252f07 *libs/x64/tidyr.dll

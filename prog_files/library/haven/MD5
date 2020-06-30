@@ -1,4 +1,4 @@
-b58477d25f5f681f9d4cba73ae16e829 *DESCRIPTION
+7f2dffdd38e6278f93d922459035daf9 *DESCRIPTION
 06a98a254979aaff201d1a0ba4f56ad4 *INDEX
 59057db2fcc7f8f6bb930846cc7ae761 *LICENSE
 20c2671fe1cb988172fefb38a0244ec5 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 c83fae487a3ee722af37490f162d66e6 *Meta/hsearch.rds
 944d0bb7e727d694719efeba47ece9f7 *Meta/links.rds
 35da64e822565d50ad92c589e7a1784d *Meta/nsInfo.rds
-3a3fb3d4a5f72a3fa672c9016269af22 *Meta/package.rds
+cd7a79b13ed23294b12b933923823c85 *Meta/package.rds
 c91c453f7bfdced26f8542a4aa7aa6ef *Meta/vignette.rds
 fd8bf6ac33897961c059cfab8b243b85 *NAMESPACE
 d59d9c398f92719f354fbff95d2a2083 *NEWS.md
@@ -25,12 +25,12 @@ d65caa7be28eceb46483900f58d129db *doc/semantics.R
 486ea01d0bfb4f03e11916a7f8004b35 *help/AnIndex
 9b66969ee0c1e3e3e68205ac3ebdbe26 *help/aliases.rds
 0fa3558f0a322190305e9aa9c560305e *help/figures/logo.png
-1eee0a90cdd3bf15fd2f90439c4d9bc0 *help/haven.rdb
-97db0566af07c935be4ecca84dc79ef8 *help/haven.rdx
-193f85e970e51910d6fe58115e4dda3c *help/paths.rds
+101e07886dc859f8af39be5cf96c08f2 *help/haven.rdb
+fad213779fb90e41e7d2b8b40cb5e431 *help/haven.rdx
+a4e0c9208f0b3cfe9e3b0d9c58614f91 *help/paths.rds
 464045670e4f12665edfb63934e49e4c *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-5831c3883267e278385b2811b6c6f094 *libs/i386/haven.dll
+56a89458bb2cc5b4fc404c059d8e78b8 *libs/i386/haven.dll
 9ca430f25f06ac3804c72793de2c559f *libs/i386/symbols.rds
-b6de95784cfe33b4148ef26d41f3812b *libs/x64/haven.dll
+7db19115770273f464b10c3603deee0b *libs/x64/haven.dll
 2c7f720287c4706dceda241d47824312 *libs/x64/symbols.rds

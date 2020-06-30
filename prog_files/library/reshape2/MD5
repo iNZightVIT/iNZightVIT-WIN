@@ -1,5 +1,5 @@
 12120b1cc03a4e744f04421ef99ebc48 *CITATION
-2e57d9db34c4f54fc3d9d72f607a9954 *DESCRIPTION
+2371bbaaf357c2135078b4573abd4372 *DESCRIPTION
 0455771df81c45bb13ec84f91931f7db *INDEX
 581827da3959cce1750fb90f1eb98ec8 *LICENSE
 dbeae7c6570885e21e88eb70f304ba32 *Meta/Rd.rds
@@ -8,7 +8,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 2264ffba57688d0bd0322082a7a7f341 *Meta/hsearch.rds
 3a7db8914f7a407ef25b0017c567c82a *Meta/links.rds
 5d72b198c983fecc8223f387619cb3bd *Meta/nsInfo.rds
-a8eebb375569f77f633c59e6b741b97c *Meta/package.rds
+82fd4ebbe782b9efa3cf43f62d5f23b9 *Meta/package.rds
 fd8905f0d53ec03f481bb242dd7a0e75 *NAMESPACE
 c9589946d7c1f423bf88d957bb10f79b *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/reshape2
@@ -19,12 +19,12 @@ ebf0fc819595d631b8bf280c4b049940 *R/reshape2
 e64f3adad280256abb26b176e1f14914 *data/Rdata.rdx
 66b073a4da6cd40d6c2616932f0ee6ba *help/AnIndex
 24dc3af26de609e478b4fdd330c70fb1 *help/aliases.rds
-4e096a93d8601eb1fca531491ce99ec1 *help/paths.rds
-ff1e1827d8b23f636169c874f7c94a3e *help/reshape2.rdb
-5b77252cca9abe2c7c65a0ec10ba5927 *help/reshape2.rdx
+6685b05a4b3d326405341aad49cee090 *help/paths.rds
+34ecc5e15bb5abc8a9a116da737ac482 *help/reshape2.rdb
+9b11729a4bf46557a03289cc3d12c420 *help/reshape2.rdx
 28aa677222e2c394c72e7fd99960c0f2 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-76dc05e890257838dff0bcbe576af9a0 *libs/i386/reshape2.dll
+a32e7a447b46a2e584d968fcb82e3f66 *libs/i386/reshape2.dll
 3a36b6851d7af74fd072a8325e8bba41 *libs/i386/symbols.rds
-c12cece2aa8793ed3c848d7f32f7b98a *libs/x64/reshape2.dll
+db7e1fcbc6d45b671c5d2d867285db15 *libs/x64/reshape2.dll
 b7397a45d66276d9fdb7e9e63aa8a424 *libs/x64/symbols.rds

@@ -1,4 +1,4 @@
-d1cc1937ea486b0b060f1fb99725329e *DESCRIPTION
+a299fa571406bf60b8b827ebaf922f0c *DESCRIPTION
 e287733b86e153f91f26005a164a9bbf *INDEX
 fc336a3a5a4bad853160e2d95a42d104 *Meta/Rd.rds
 1cef543d71015ca9390d8f5298d4fc88 *Meta/data.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 92cf91b73b769ae2d75e8345d037e8e5 *Meta/hsearch.rds
 4375af35f34955dc32c6f25d9b1c7a31 *Meta/links.rds
 bb70b632981dcafc7247b0b7cf993b5c *Meta/nsInfo.rds
-d533d4876e7df4edcc635fb3b3789762 *Meta/package.rds
+4a3cf86ff0ee8582339a1b20deb511d9 *Meta/package.rds
 538c49be8b53a4aa781341c4c03be608 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/gpairs
 26973e40cf0d8e7d0483685c1c0fef2a *R/gpairs.rdb
@@ -14,8 +14,8 @@ f8d3ecb8adbb77bdfb56e3f36a297534 *R/gpairs.rdx
 9ee9764f680fa768f371376e106d2751 *data/Leaves.rda
 4f53dce3d3f44033b546c10b23f38ba4 *help/AnIndex
 6b74a10ca0c721c234778d4181f15b78 *help/aliases.rds
-2f7669ecd5665747bc4236bc8421eb41 *help/gpairs.rdb
-347b8662906c1093b1a54ab5772bcecc *help/gpairs.rdx
-77d84c496b9f51885ce700805f1f3155 *help/paths.rds
+22d8c4728fc4425cf17c666ee2eaba10 *help/gpairs.rdb
+054a82e9282d4181b82848a8e06e4699 *help/gpairs.rdx
+4734ed802b2369559779a8810504285b *help/paths.rds
 57fe5c394e08de986b96c6233d55ee03 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
