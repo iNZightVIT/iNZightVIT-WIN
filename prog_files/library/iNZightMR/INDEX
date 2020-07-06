@@ -1,20 +1,16 @@
-barplotMR            Multiple response barplot
-between              Compute Between se's
-byMRO                Calculate MRO inference for subsets
-calcmissing          Calculate missing observation summary
-census.at.school.5000
-                     Census at School 5000
-iNZightMR            Create iNZightMR multiple response object
-                     (MRO)
-iNZightMR-package    iNZightMR: Multiple Response Data
-                     Analysis
-moecalc              Margin of Error Calculation
-mroPara              Calculate MRO inference
-plotcombn            Missing Value plot
-seBinprops           Independent Binomial Proportions
-seCovs               Compute standard error for covariance
-                     matrix
-seIndepSes           Independent Standard errors given
-seMNprops            Compute SE for Multinomial proportions
-seMRprops            Multiple binary response
-substrsplit          Extract Common Name from variables
+barplotMR               Multiple response barplot
+between                 Compute Between se's
+byMRO                   Calculate MRO inference for subsets
+calcmissing             Calculate missing observation summary
+census.at.school.5000   Census at School 5000
+iNZightMR               Create iNZightMR multiple response object (MRO)
+iNZightMR-package       iNZightMR: Multiple Response Data Analysis
+moecalc                 Margin of Error Calculation
+mroPara                 Calculate MRO inference
+plotcombn               Missing Value plot
+seBinprops              Independent Binomial Proportions
+seCovs                  Compute standard error for covariance matrix
+seIndepSes              Independent Standard errors given
+seMNprops               Compute SE for Multinomial proportions
+seMRprops               Multiple binary response
+substrsplit             Extract Common Name from variables

@@ -1,70 +1,64 @@
-add_suffix           Add suffix to string
-aggregateData        Aggregate data by categorical variables
-aggregatedt          Aggregate datetimes
-appendrows           Append row to the dataset
-code                 Get Data's Code
-collapseLevels       Collapse data by values of a categorical
-                     variable
-combineCatVars       Combine categorical variables into one
-convertToCat         Convert numeric variables to categorical
-convert_to_datetime
-                     Convert to datetime
-countMissing         Count missing values
-createNewVar         Create new variables
-create_varname       Create variable name
-deleteVars           Delete variables
-extract_part         Extract part of a datetimes variable
-filterLevels         Filter data by levels of a categorical
-                     variables
-filterNumeric        Filter data by levels of a numeric
-                     variables
-filterRandom         Random sampling without replacement
-filterRows           Filter data by row numbers
-fitDesign            Fit a survey design
-fitModel             Fit models
-iNZightTools         Tools for data processing with iNZight
-import_survey        Import survey information from a file
-is_cat               Is factor check
-is_dt                Is datetime check
-is_num               Is numeric check
-is_preview           Is Preview
-is_survey            Check if object is a survey object
-                     (either standard or replicate design)
-is_svydesign         Check if object is a survey object
-                     (created by svydesign())
-is_svyrep            Check if object is a replicate survey
-                     object (created by svrepdesign())
-joindata             Join data with another dataset
-load_rda             Load object(s) from an Rdata file
-make_names           Make unique variable names
-make_survey          Make a survey object
-missingToCat         Convert missing values to categorical
-                     variables
-newdevice            Open a New Graphics Device
-print.inzsvyspec     Print iNZight Survey Spec
-rankVars             Rank the data of a numeric variables
-read_meta            Read CSV with iNZight metadata
-read_text            Read text as data
-renameLevels         Rename the levels of a categorical
-                     variable
-renameVars           Rename column names
-reorderLevels        Reorder a categorical
-reshape_data         Reshaping dataset from wide to long or
-                     from long to wide
-save_rda             Save an object with, optionally, a
-                     (valid) name
-selectVars           Select variables from a dataset
-separate             Separate columns
-sheets               List of available sheets from a file
-smart_read           iNZight Smart Read
-sortVars             Sort data by variables
-stackVars            Stack variables
-standardizeVars      Standardize the data of a numeric
-                     variable
-tidy_all_code        iNZight Tidy Code
-transformVar         Transform data of a numeric variable
-unite                Unite columns in a dataset
-url_to_temp          Download URL to temp file
-validation_details   Details of Validation Rule Results
-validation_summary   Validation Confrontation Summary
-vartype              Get variable type name
+add_suffix              Add suffix to string
+aggregateData           Aggregate data by categorical variables
+aggregatedt             Aggregate datetimes
+appendrows              Append row to the dataset
+code                    Get Data's Code
+collapseLevels          Collapse data by values of a categorical
+                        variable
+combineCatVars          Combine categorical variables into one
+convertToCat            Convert numeric variables to categorical
+convert_to_datetime     Convert to datetime
+countMissing            Count missing values
+createNewVar            Create new variables
+create_varname          Create variable name
+deleteVars              Delete variables
+extract_part            Extract part of a datetimes variable
+filterLevels            Filter data by levels of a categorical
+                        variables
+filterNumeric           Filter data by levels of a numeric variables
+filterRandom            Random sampling without replacement
+filterRows              Filter data by row numbers
+fitDesign               Fit a survey design
+fitModel                Fit models
+iNZightTools            Tools for data processing with iNZight
+import_survey           Import survey information from a file
+is_cat                  Is factor check
+is_dt                   Is datetime check
+is_num                  Is numeric check
+is_preview              Is Preview
+is_survey               Check if object is a survey object (either
+                        standard or replicate design)
+is_svydesign            Check if object is a survey object (created by
+                        svydesign())
+is_svyrep               Check if object is a replicate survey object
+                        (created by svrepdesign())
+joindata                Join data with another dataset
+load_rda                Load object(s) from an Rdata file
+make_names              Make unique variable names
+make_survey             Make a survey object
+missingToCat            Convert missing values to categorical variables
+newdevice               Open a New Graphics Device
+print.inzsvyspec        Print iNZight Survey Spec
+rankVars                Rank the data of a numeric variables
+read_meta               Read CSV with iNZight metadata
+read_text               Read text as data
+renameLevels            Rename the levels of a categorical variable
+renameVars              Rename column names
+reorderLevels           Reorder a categorical
+reshape_data            Reshaping dataset from wide to long or from
+                        long to wide
+save_rda                Save an object with, optionally, a (valid) name
+selectVars              Select variables from a dataset
+separate                Separate columns
+sheets                  List of available sheets from a file
+smart_read              iNZight Smart Read
+sortVars                Sort data by variables
+stackVars               Stack variables
+standardizeVars         Standardize the data of a numeric variable
+tidy_all_code           iNZight Tidy Code
+transformVar            Transform data of a numeric variable
+unite                   Unite columns in a dataset
+url_to_temp             Download URL to temp file
+validation_details      Details of Validation Rule Results
+validation_summary      Validation Confrontation Summary
+vartype                 Get variable type name
