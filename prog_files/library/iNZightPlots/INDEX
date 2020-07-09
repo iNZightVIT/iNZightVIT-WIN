@@ -1,5 +1,6 @@
 can.interact            Identify if a plot can be interactive
 const_palette_names     An incorrectly spelled function - deprecated
+construct_call          Construct plot call from settings list
 convert.to.factor       Convert to Factor
 create                  Create plots for iNZight
 emphasize_pal_colour    Emphasize a level or interval of a colour
@@ -13,4 +14,5 @@ iNZSummary              iNZightPlot Formula Interface
 iNZightPlot             iNZight Plot
 inzpalette              iNZight colour palette
 inzpar                  iNZight Plotting Parameters
+mend_call               Mend a plot call based on valid parameters
 print.inzHTML           Print method for 'inzHTML' object

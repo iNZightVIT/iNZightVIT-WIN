@@ -1,3 +1,4 @@
+%notin%                 Anti value matching
 add_suffix              Add suffix to string
 aggregateData           Aggregate data by categorical variables
 aggregatedt             Aggregate datetimes
@@ -21,6 +22,7 @@ filterRows              Filter data by row numbers
 fitDesign               Fit a survey design
 fitModel                Fit models
 iNZightTools            Tools for data processing with iNZight
+import_survey           Import survey information from a file
 is_cat                  Is factor check
 is_dt                   Is datetime check
 is_num                  Is numeric check
@@ -34,8 +36,10 @@ is_svyrep               Check if object is a replicate survey object
 joindata                Join data with another dataset
 load_rda                Load object(s) from an Rdata file
 make_names              Make unique variable names
+make_survey             Make a survey object
 missingToCat            Convert missing values to categorical variables
 newdevice               Open a New Graphics Device
+print.inzsvyspec        Print iNZight Survey Spec
 rankVars                Rank the data of a numeric variables
 read_meta               Read CSV with iNZight metadata
 read_text               Read text as data
@@ -45,6 +49,7 @@ reorderLevels           Reorder a categorical
 reshape_data            Reshaping dataset from wide to long or from
                         long to wide
 save_rda                Save an object with, optionally, a (valid) name
+selectVars              Select variables from a dataset
 separate                Separate columns
 sheets                  List of available sheets from a file
 smart_read              iNZight Smart Read

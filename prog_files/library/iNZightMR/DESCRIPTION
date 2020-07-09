@@ -9,7 +9,7 @@ Authors@R: c(
     )
 BugReports: https://github.com/iNZightVIT/iNZightMR/issues
 Contact: inzight_support@stat.auckland.ac.nz
-URL: https://www.stat.auckland.ac.nz/~wild/iNZight/
+URL: https://inzight.nz
 Depends: R (>= 2.13)
 Imports: grid, grDevices, graphics, stats, utils
 Suggests: iNZightPlots, testthat, covr
@@ -24,10 +24,8 @@ License: GPL-3
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.1.0
-NeedsCompilation: no
-Packaged: 2020-05-11 04:15:28 UTC; tell029
 Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Junjie Zeng [aut] (Original author),
   Simon Potter [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.0; ; 2020-05-11 04:15:28 UTC; unix
+Built: R 4.0.2; ; 2020-07-09 04:40:12 UTC; unix
