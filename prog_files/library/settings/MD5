@@ -1,11 +1,11 @@
-4378d51e70d1ac5d809980780fdfb1b4 *DESCRIPTION
+ba121867bff6851b0675665777c08125 *DESCRIPTION
 ed39ddb101e9d618fee58e3381465f9f *INDEX
 263cccc9eee04b78cbf8b3389e903325 *Meta/Rd.rds
 f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 1583d2ad86fcd70a9667b178c6b00a86 *Meta/hsearch.rds
 a84f1b02bda9eafc47814309efc62e85 *Meta/links.rds
 833b5d7d996475a0e2e6d97efdd47598 *Meta/nsInfo.rds
-43c79f8dd3826078863154eeac5ce296 *Meta/package.rds
+727010a26a28fa394378a7585a0c0344 *Meta/package.rds
 a1b8adec89428bb7894fc8df7625bd54 *Meta/vignette.rds
 e35b44a59846584594e77a543fe52f60 *NAMESPACE
 7c89c03b7375148decd17b1455015818 *NEWS
@@ -18,8 +18,8 @@ be8717f49960932d7c985532a4d33fe5 *doc/settings.Rmd
 eb7f0978ea92a89dc97b6966c55e1ddc *doc/settings.html
 f613b1e994808ae014f06367a6ece16e *help/AnIndex
 98b723f11d9c26f54311b61934dea1ff *help/aliases.rds
-70baaaec7a0f970ee99a31ca8c58c157 *help/paths.rds
-0e83fe9f21c68b567517f1b8800073b4 *help/settings.rdb
-f0d3ecad417c3ba5adcf01bdef7da5ad *help/settings.rdx
+2d0a9b9ce05c64fd39106ae3c49ca594 *help/paths.rds
+5aecf89ab59b72641538335ce721e0e8 *help/settings.rdb
+c1b533bdf8ba0bf4f8a534e9e542a3df *help/settings.rdx
 88146fff1049f5796e424aab198c13a5 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

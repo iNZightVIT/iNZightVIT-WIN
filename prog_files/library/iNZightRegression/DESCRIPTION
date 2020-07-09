@@ -1,23 +1,25 @@
 Package: iNZightRegression
 Type: Package
-Title: Tools for Exploring Regression Models with 'iNZight'
-Version: 1.2.7.9000
-Authors@R: c(
-    person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
-    person("Simon", "Potter", role = c("aut"), email = "spot023@aucklanduni.ac.nz"),
+Title: iNZightRegression
+Version: 1.2.7
+Authors@R: c(person("Simon", "Potter", role = c("aut"),
+    email = "spot023@aucklanduni.ac.nz"),
     person("David", "Banks", role = "aut"),
-    person("Danny", "Chang", role = "ctb")
-    )
+    person("Tom", "Elliott", role = c("cre", "aut"),
+    email = "tom.elliott@auckland.ac.nz"))
 Depends: R (>= 2.13)
 Imports: stats, grDevices, graphics, grid, car, stats4, multcomp
 Suggests: iNZightPlots, survey, testthat, covr
-Description: Provides a suite of funcitons to use with regression models, including summaries, residual plots, and factor comparisons. Used as part of the Model Fitting module of 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions.
-License: GPL-3
+Additional_repositories: https://r.docker.stat.auckland.ac.nz
+Description: Core functions for iNZight Model Fitting module, and can also be
+    used as a standalone package called directly from R.
+License: GPL-3 | file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.0
-Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
-  Simon Potter [aut],
+NeedsCompilation: no
+Packaged: 2020-04-25 01:25:24 UTC; tell029
+Author: Simon Potter [aut],
   David Banks [aut],
-  Danny Chang [ctb]
+  Tom Elliott [cre, aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-06 03:32:19 UTC; unix
+Built: R 4.0.0; ; 2020-04-25 01:25:24 UTC; unix

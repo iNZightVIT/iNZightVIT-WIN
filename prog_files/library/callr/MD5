@@ -1,4 +1,4 @@
-b8568019a473ae0197c4766bf03cdf8e *DESCRIPTION
+0fc3c2b56f86eb4cab26b114a66d68c4 *DESCRIPTION
 71d52f742c496bf5b7b866f37a2deab4 *INDEX
 09079911e7389192b5cd3b99be725742 *LICENSE
 4b19abe19a69b983241d0856295b2fd4 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 a7a6dc5b4917117a2bd8e668ea661d67 *Meta/hsearch.rds
 9f06d4b14faa1c274406956e63cdf2d9 *Meta/links.rds
 db6c7c913651f4719e37399113ce6e0c *Meta/nsInfo.rds
-9977f0e4f2e898dbfdff5c678fa13b14 *Meta/package.rds
+7a7fe83f8fbf0b3695726bd9dca27862 *Meta/package.rds
 3baef32ac7c4d289985d487f57a94512 *NAMESPACE
 378d7386c39fe3ff351ee371c7d85e07 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/callr
@@ -19,8 +19,8 @@ f016ae44474fd10d44cef6ccaf294913 *developer-notes.md
 ddad6d425cef13eeac08473b35e96d7d *doc/assets/rd.js
 ed928ff424c5cf154d67dfdd74381e4f *help/AnIndex
 931d67b5d3990b0fdc3b35efbd37ece8 *help/aliases.rds
-cf7781f6add27c77d01f9e4ec6374660 *help/callr.rdb
-374bc36a417a34675d92bfaf5b1dd2b1 *help/callr.rdx
-66f2bb65922e47badad4fdfe0ace20a3 *help/paths.rds
+0548b9416f44572d521e06052684ed3d *help/callr.rdb
+34e6b5b756c9083c171b1fe712b6e2dc *help/callr.rdx
+9349de1dd3599409323fff7afdb156db *help/paths.rds
 690af74709235251911adef9d3dcc531 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

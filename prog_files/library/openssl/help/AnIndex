@@ -39,6 +39,7 @@ keygen	keygen
 mac	hash
 md4	hash
 md5	hash
+multihash	hash
 my_key	my_key
 my_pubkey	my_key
 openssl	openssl

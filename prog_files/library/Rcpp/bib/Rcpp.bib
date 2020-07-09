@@ -72,6 +72,15 @@
   url =          {http://www.icce.rug.nl/documents/cplusplus/}
 }
 
+@Manual{CRAN:BH,
+  title =        {BH: Boost C++ Header Files},
+  author =       {Dirk Eddelbuettel and John W. Emerson and Michael
+                  J. Kane},
+  year =         {2019},
+  note =         {R package version 1.69.0-1},
+  url =          {https://CRAN.R-project.org/package=BH},
+}
+
 @Manual{CRAN:Matrix,
   title =	 {\pkg{Matrix}: Sparse and Dense Matrix Classes and Methods},
   author =	 {Douglas Bates and Martin Maechler},
@@ -119,7 +128,7 @@
                   Allaire and Kevin Ushey and Qiang Kou and
                   Nathan Russel and John Chambers and Douglas Bates},
   year =	 2020,
-  note =	 {R package version 1.0.4},
+  note =	 {R package version 1.0.5},
   url =		 CRAN # "package=Rcpp"
 }
 
@@ -299,6 +308,15 @@
   url =		 CRAN # "package=minqa"
 }
 
+@Manual{CRAN:pkgKitten,
+  title =        {pkgKitten: Create Simple Packages Which Do not Upset
+                  R Package Checks},
+  author =       {Dirk Eddelbuettel},
+  year =         {2019},
+  note =         {R package version 0.1.5},
+  url =          CRAN # "package=pkgKitten"
+}
+
 @Manual{CRAN:profvis,
   title =        {profvis: Interactive Visualizations for Profiling R Code},
   author =       {Winston Chang and Javier Luraschi},
@@ -359,6 +377,25 @@
   series =       {{The R Series}},
   address =      {London},
   note =         {{ISBN} 9781498775717}
+}
+
+@Article{Chambers:2020:S+R+DS,
+  author =       {Chambers, John M.},
+  title =        {S, R, and Data Science},
+  year =         2020,
+  issue_date =   {June 2020},
+  publisher =    {Association for Computing Machinery},
+  address =      {New York, NY, USA},
+  volume =       4,
+  number =       {HOPL},
+  url =          {https://doi.org/10.1145/3386334},
+  doi =          {10.1145/3386334},
+  journal =      {Proceeding of the ACM on Programming Languages},
+  month =        jun,
+  articleno =    84,
+  numpages =     17,
+  keywords =     {data science, statistical computing, scientific
+                  computing}
 }
 
 @Misc{Cpp11,
@@ -429,10 +466,8 @@
   author =	 {Ga\"{e}l Guennebaud and Beno\^{i}t Jacob and others},
   title =	 {Eigen v3},
   year =	 2012,
-  url =		 {http://eigen.tuxfamily.org},
+  url =		 {http://eigen.tuxfamily.org}
 }
-; see http://eigen.tuxfamily.org/index.php?title=BibTeX
-; replaced 'howpublished' with 'url' and updated year to 2011, and again to 2012
 
 @Manual{GSL,
   title = 	{{GNU} {S}cientific {L}ibrary {R}eference {M}anual},
@@ -836,6 +871,7 @@
   address =	 {London},
 }
 
+
 @Book{Venables+Ripley:2000:SProgramming,
   author = 	 {Willian N. Venables and Brian D. Ripley},
   title = 	 {S Programming},
@@ -844,6 +880,7 @@
   series = 	 {Statistics and Computing},
   address = 	 {New York}
 }
+
 
 @Book{Venables+Ripley:2002:MASS,
   title =        {Modern Applied Statistics with S},
@@ -854,4 +891,31 @@
   year =         2002,
   note =         {ISBN 0-387-95457-0},
   url =          {http://www.stats.ox.ac.uk/pub/MASS4},
+}
+
+@misc{arxiv:corels,
+  title =        {Learning Certifiably Optimal Rule Lists for
+                  Categorical Data},
+  author =       {Elaine Angelino and Nicholas Larus-Stone and Daniel
+                  Alabi and Margo Seltzer and Cynthia Rudin},
+  year =         2017,
+  howpublished = {\href{http://www.arxiv.org/1704.01701}{arXiv:1704.01701}},
+  archivePrefix ={arXiv},
+  primaryClass = {stat.ML}
+}
+
+@Misc{github:corels,
+  author =       {Nicholas Laurus-Stone},
+  title =        {corels: {Learning Certifiably Optimal Rule Lists}},
+  howpublished = {\url{https://github.com/nlarusstone/corels}. Also online at \url{https://corels.eecs.harvard.edu/corels/}},
+  month =        06,
+  year =         2019
+}
+
+@Misc{github:rcppcorels,
+  author =       {Dirk Eddelbuettel},
+  title =        {RcppCorels: R binding for the 'Certifiably Optimal RulE ListS (Corels)' Learner},
+  howpublished = {\url{https://github.com/eddelbuettel/rcppcorels}},
+  month =        11,
+  year =         2019
 }

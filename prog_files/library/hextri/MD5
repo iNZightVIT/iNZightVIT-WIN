@@ -1,4 +1,4 @@
-879ad653c0dc13f1df90717c307265bd *DESCRIPTION
+6d3364c0bcea774bd222b74636456286 *DESCRIPTION
 92374459e2f7089f679c2da3d372d211 *INDEX
 4b05d8d741f7c4f866798b76a57e1896 *LICENSE
 9935d49cfd2e64569a5f7b73bad2c0c8 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 7016e7a9e6b7da5c1c9d228563617046 *Meta/hsearch.rds
 8eff76c7db4d4c9974727d299882acdd *Meta/links.rds
 2b5d36248b1bc61b1cef545ed5afd372 *Meta/nsInfo.rds
-23010f0b035671cbe4da4ac7ca4fdc0c *Meta/package.rds
+65e3e989b754c76c3e15c658425d6462 *Meta/package.rds
 9a80dc4ce42c492bfa8d293a1fed02d2 *Meta/vignette.rds
 6ab95795e9551314bb765b0c6d1411c1 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/hextri
@@ -20,8 +20,8 @@ c2ef452802cb255cdc24a2cf098daddf *doc/hexbin-classes.Rmd
 fab73828400fd6e079d421bc7e6395cb *doc/index.html
 2dff056cf8e4eb06de107bfd047ed9f2 *help/AnIndex
 20956e815e09e63e6fa6d3081cbfce74 *help/aliases.rds
-13851f415da6b8e64340080c6aa92f04 *help/hextri.rdb
-63516135294ffed9885d450813c835d1 *help/hextri.rdx
-bda23ad05578c728a38eac5b110ad8b5 *help/paths.rds
+09b5578746aa58005153b75bf7ab8bf9 *help/hextri.rdb
+9791f72d714d5045801b1511551acfc0 *help/hextri.rdx
+cba0482af3f600535c0fda8d90b38758 *help/paths.rds
 b830bba85c2008349aea82466dd6b72d *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

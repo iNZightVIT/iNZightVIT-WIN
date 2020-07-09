@@ -2,7 +2,7 @@ Package: openssl
 Type: Package
 Title: Toolkit for Encryption, Signatures and Certificates Based on
         OpenSSL
-Version: 1.4.1
+Version: 1.4.2
 Authors@R: c(person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroen@berkeley.edu",
     comment = c(ORCID = "0000-0002-4035-0289")),
     person("Oliver", "Keyes", role = "ctb"))
@@ -21,15 +21,16 @@ BugReports: https://github.com/jeroen/openssl/issues
 SystemRequirements: OpenSSL >= 1.0.1
 VignetteBuilder: knitr
 Imports: askpass
-Suggests: testthat, digest, knitr, rmarkdown, jsonlite, jose, sodium
-RoxygenNote: 6.1.1
+Suggests: testthat (>= 2.1.0), digest, knitr, rmarkdown, jsonlite,
+        jose, sodium
+RoxygenNote: 7.1.1
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2019-07-16 17:55:20 UTC; jeroen
+Packaged: 2020-06-27 13:18:44 UTC; jeroen
 Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),
   Oliver Keyes [ctb]
 Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 Repository: CRAN
-Date/Publication: 2019-07-18 06:35:27 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-06-27 20:07:22 UTC; windows
+Date/Publication: 2020-06-27 15:00:02 UTC
+Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-06 21:32:26 UTC; windows
 Archs: i386, x64

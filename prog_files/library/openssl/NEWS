@@ -1,3 +1,8 @@
+1.4.2
+ - Catch FIPS errors and add FIPS flag to openssl_config()
+ - Win/Mac: update binary packages to openssl 1.1.1g
+ - Early preparations for upcoming OpenSSL 3
+
 1.4.1
  - write_pkcs1 now supports RSA/DSA/EC keys for legacy ssh compatibility
  - as.list.cert() gains a parameter 'name_format' to control printing #72
