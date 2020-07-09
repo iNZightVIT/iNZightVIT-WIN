@@ -84,6 +84,7 @@ Matrix
 MatrixModels
 R6
 Rcpp
+RcppArmadillo
 RcppEigen
 Rttf2pt1
 SparseM
@@ -104,6 +105,7 @@ cli
 clipr
 codetools
 commonmark
+conquer
 crayon
 crosstalk
 curl
@@ -139,6 +141,7 @@ lmtest
 manipulateWidget
 maptools
 markdown
+matrixStats
 memoise
 mime
 miniUI
