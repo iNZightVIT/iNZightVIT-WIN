@@ -13,5 +13,5 @@ NeedsCompilation: yes
 Packaged: 2020-02-16 10:22:25 UTC; smyth
 Repository: CRAN
 Date/Publication: 2020-02-17 16:40:02 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-06 18:14:09 UTC; windows
+Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-09 21:14:25 UTC; windows
 Archs: i386, x64

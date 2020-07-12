@@ -12,6 +12,7 @@ bandwidth.rq            bandwidth selection for rq functions
 barro                   Barro Data
 boot.crq                Bootstrapping Censored Quantile Regression
 boot.rq                 Bootstrapping Quantile Regression
+boot.rq.pxy             Preprocessing bootstrap method
 combos                  Ordered Combinations
 critval                 Hotelling Critical Values
 crq                     Functions to fit censored quantile regression
@@ -52,6 +53,7 @@ rq.fit                  Function to choose method for Quantile
                         Regression
 rq.fit.br               Quantile Regression Fitting by Exterior Point
                         Methods
+rq.fit.conquer          Optional Fitting Method for Quantile Regression
 rq.fit.fnb              Quantile Regression Fitting via Interior Point
                         Methods
 rq.fit.fnc              Quantile Regression Fitting via Interior Point
@@ -59,6 +61,7 @@ rq.fit.fnc              Quantile Regression Fitting via Interior Point
 rq.fit.hogg             weighted quantile regression fitting
 rq.fit.lasso            Lasso Penalized Quantile Regression
 rq.fit.pfn              Preprocessing Algorithm for Quantile Regression
+rq.fit.ppro             Preprocessing fitting method for QR
 rq.fit.scad             SCADPenalized Quantile Regression
 rq.fit.sfn              Sparse Regression Quantile Fitting
 rq.fit.sfnc             Sparse Constrained Regression Quantile Fitting

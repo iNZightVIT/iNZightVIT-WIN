@@ -1,4 +1,4 @@
-e1480d99dcd8f0d372bbbe631523ddcb *DESCRIPTION
+b051114f18ee96afefe3aff51e387e19 *DESCRIPTION
 5a6057627a82ebd047645447e0047264 *INDEX
 4f631b60276f1da4fb82bf51eb99ea9d *LICENSE
 d42234e27b795c48e5071c46f87ddaa8 *Meta/Rd.rds
@@ -6,13 +6,13 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 6525c884ebd6065eba24f3cd77b16106 *Meta/hsearch.rds
 cf3d99683fbf3146806f9f4642915960 *Meta/links.rds
 725cabced9ab84f2dec4a7056753e929 *Meta/nsInfo.rds
-9a29d1ad374890c3faca2b439dd36801 *Meta/package.rds
+133a77cb1d7e1ccc757cfc7c29e3e295 *Meta/package.rds
 defc14612dcaadad76a2f931a34b8cc1 *Meta/vignette.rds
 dbb2a5c25aafe52fa5deabee591fb7c2 *NAMESPACE
 df31f6e84a5eb24901a43a326a7dd733 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/cli
-b093e046cffaa02cdfb01637e4053bb9 *R/cli.rdb
-c6f15d2cc08746aedabcaad70b28753c *R/cli.rdx
+42f55ee764234ca097be6e2e068107d4 *R/cli.rdb
+be5132ca2b21f4bf3c24098710f905e6 *R/cli.rdx
 5499c243e161320c56e50287033622b0 *R/sysdata.rdb
 815dbd4b4590c81114a7069f1230ba6e *R/sysdata.rdx
 e20b647f608581ac2ffa06927d570e53 *doc/index.html
@@ -25,9 +25,9 @@ e3540d59292af42b3b1570c25cb55260 *examples/apps/search.R
 234ede852bac1dc638fc0d774a764ee8 *examples/apps/up.R
 f5e8c356d9fb2bdd71583f696037fd2d *help/AnIndex
 ea26987d86f3d431ddf5bf8b1b9702f0 *help/aliases.rds
-534b21cb9e11fdf60cbc5ff784945916 *help/cli.rdb
-9545e4f283534bf03ad2938259284870 *help/cli.rdx
-453c659855ce6aeb14d51252f6b34f4d *help/paths.rds
+d33f590be080d368ec015d688e97f682 *help/cli.rdb
+79bcc83b94615773228e35eacacebba9 *help/cli.rdx
+49da854170f9185bcf7ab34b1d4a2b1d *help/paths.rds
 bfe307a28dfdf544aadc829f0dc4a8d6 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 aaffd10fd0246bb9d2333d0d2c920093 *logo.txt

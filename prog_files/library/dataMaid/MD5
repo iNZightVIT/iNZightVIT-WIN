@@ -1,5 +1,5 @@
 7fdefaeeeafa7c40ef433f878154a0d8 *CITATION
-b9b736a2df80016b9a6a513e44baedb5 *DESCRIPTION
+5b2d23ec8d87f3d183547f29791fd122 *DESCRIPTION
 eb7c332e59716444bba68ff01c744be7 *INDEX
 555ad9ac2a1196225c3a4693141edf00 *Meta/Rd.rds
 d62af1923742b946bc5903a1053fcf61 *Meta/data.rds
@@ -7,7 +7,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 73d59909786f5faa73bf2f4b448c24b8 *Meta/hsearch.rds
 d79757bf7600cee3734d1079f89c63bc *Meta/links.rds
 b654a6e6b7f950e7724eeeb93360fa34 *Meta/nsInfo.rds
-41c8de93cc6801577716c290f4a8deb6 *Meta/package.rds
+02299f73aa819042196c464bc97049a8 *Meta/package.rds
 45c974b07a198a35a4c89ac48aad7f7d *Meta/vignette.rds
 9039977fa12e3dc9640eeaa4bb91fc0d *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/dataMaid
@@ -22,8 +22,8 @@ e32f3a9eb013664a0ac50d43c5dc9477 *doc/extending_dataMaid.html
 7c0e862c3321bc45c753d0c4e7c422b8 *doc/index.html
 7ebb1bce8a72c023f8308e84e7d925eb *help/AnIndex
 502902699b32e1111c1954f33c885de6 *help/aliases.rds
-7cfd4c72d508e5de42c94b1c0ae09795 *help/dataMaid.rdb
-29975cf3f99ce56bff16093ce72163a8 *help/dataMaid.rdx
-bed5f1cd20dd65da2080a214a22f95cf *help/paths.rds
+b63307f798781752a602d020ae8ba992 *help/dataMaid.rdb
+8ba8b4548cb8edb9b546353d36e2e473 *help/dataMaid.rdx
+5cbf2f8d6807b7e96a870a56f37dd51b *help/paths.rds
 98624fb7cdfaddd365fd9643786853ab *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

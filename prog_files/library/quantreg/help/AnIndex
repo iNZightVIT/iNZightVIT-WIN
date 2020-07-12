@@ -12,6 +12,7 @@ boot.crq	boot.crq
 boot.rq	boot.rq
 boot.rq.mcmb	boot.rq
 boot.rq.pwy	boot.rq
+boot.rq.pxy	boot.rq.pxy
 boot.rq.spwy	boot.rq
 boot.rq.wxy	boot.rq
 boot.rq.xy	boot.rq
@@ -109,11 +110,13 @@ residuals.nlrq	residuals.nlrq
 rq	rq
 rq.fit	rq.fit
 rq.fit.br	rq.fit.br
+rq.fit.conquer	rq.fit.conquer
 rq.fit.fnb	rq.fit.fnb
 rq.fit.fnc	rq.fit.fnc
 rq.fit.hogg	rq.fit.hogg
 rq.fit.lasso	rq.fit.lasso
 rq.fit.pfn	rq.fit.pfn
+rq.fit.ppro	rq.fit.ppro
 rq.fit.scad	rq.fit.scad
 rq.fit.sfn	rq.fit.sfn
 rq.fit.sfnc	rq.fit.sfnc
