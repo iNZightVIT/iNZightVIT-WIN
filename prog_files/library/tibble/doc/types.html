@@ -14,6 +14,22 @@
 
 <title>Column data types</title>
 
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -534,8 +550,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; $ [1m`named list`     [22m [3m[90m&lt;named list&gt;[39m[23m [1]
 #&gt; $ [1mfactor           [22m [3m[90m&lt;fct&gt;[39m[23m A
 #&gt; $ [1mordered          [22m [3m[90m&lt;ord&gt;[39m[23m a
-#&gt; $ [1mDate             [22m [3m[90m&lt;date&gt;[39m[23m 2020-07-07
-#&gt; $ [1mPOSIXt           [22m [3m[90m&lt;dttm&gt;[39m[23m 2020-07-07 05:05:10
+#&gt; $ [1mDate             [22m [3m[90m&lt;date&gt;[39m[23m 2020-07-10
+#&gt; $ [1mPOSIXt           [22m [3m[90m&lt;dttm&gt;[39m[23m 2020-07-10 11:44:37
 #&gt; $ [1mdifftime         [22m [3m[90m&lt;drtn&gt;[39m[23m 1 secs
 #&gt; $ [1mhms              [22m [3m[90m&lt;time&gt;[39m[23m 00:00:01
 #&gt; $ [1minteger64        [22m [3m[90m&lt;int64&gt;[39m[23m 10000000000
@@ -553,7 +569,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>The column header is obtained by calling <code>pillar::type_sum()</code> on the column. This is an S3 method that can be overridden, but most of the time it is more useful to override <code>vctrs::vec_ptype_abbr()</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>pillar<span class="op">:::</span>type_sum.default</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt; function(x) {</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;   if (is.object(x) || vec_is(x)) return(vctrs::vec_ptype_abbr(x))</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;   if (is.object(x) || vctrs::vec_is(x)) return(vctrs::vec_ptype_abbr(x))</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt; </span></span>
 <span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;   switch(typeof(x),</span></span>
 <span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt;     builtin = ,</span></span>
@@ -570,8 +586,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb5-17"><a href="#cb5-17"></a><span class="co">#&gt;     typeof(x)</span></span>
 <span id="cb5-18"><a href="#cb5-18"></a><span class="co">#&gt;   )</span></span>
 <span id="cb5-19"><a href="#cb5-19"></a><span class="co">#&gt; }</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a><span class="co">#&gt; &lt;bytecode: 0x562e1fac6398&gt;</span></span>
-<span id="cb5-21"><a href="#cb5-21"></a><span class="co">#&gt; &lt;environment: namespace:pillar&gt;</span></span></code></pre></div>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="co">#&gt; &lt;environment: namespace:pillar&gt;</span></span></code></pre></div>
 </div>
 
 

@@ -1,6 +1,6 @@
 Package: tibble
 Title: Simple Data Frames
-Version: 3.0.2
+Version: 3.0.3
 Authors@R: 
     c(person(given = "Kirill",
              family = "M\u00fcller",
@@ -38,7 +38,7 @@ Encoding: UTF-8
 LazyData: yes
 RoxygenNote: 7.1.1.9000
 NeedsCompilation: yes
-Packaged: 2020-07-07 03:05:11 UTC; kirill
+Packaged: 2020-07-10 09:44:37 UTC; kirill
 Author: Kirill Müller [aut, cre],
   Hadley Wickham [aut],
   Romain Francois [ctb],
@@ -46,6 +46,6 @@ Author: Kirill Müller [aut, cre],
   RStudio [cph]
 Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 Repository: CRAN
-Date/Publication: 2020-07-07 13:00:02 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-09 17:30:06 UTC; windows
+Date/Publication: 2020-07-10 20:40:03 UTC
+Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-16 15:08:50 UTC; windows
 Archs: i386, x64
