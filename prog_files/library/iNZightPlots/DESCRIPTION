@@ -21,9 +21,9 @@ Suggests: hextri, viridis, RColorBrewer, gridSVG (>= 1.7-2), knitr,
 License: GPL-3
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Yu Han Soh [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-17 21:48:44 UTC; unix
+Built: R 4.0.2; ; 2020-07-19 00:12:33 UTC; unix

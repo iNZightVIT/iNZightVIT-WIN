@@ -20,11 +20,11 @@ exportSVG.function	exportSVG
 exportSVG.inzplotoutput	exportSVG
 getPlotSummary	getPlotSummary
 iNZightPlot	iNZightPlot
-iNZInference	iNZPlot
+inzinference	inzplot
 inzpalette	inzpalette
 inzpar	inzpar
-iNZPlot	iNZPlot
-iNZSummary	iNZPlot
+inzplot	inzplot
+inzsummary	inzplot
 mend_call	mend_call
 print.allSummaries	exploreAllSummaries
 print.inzHTML	print.inzHTML
