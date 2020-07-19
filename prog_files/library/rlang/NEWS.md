@@ -1,4 +1,69 @@
 
+# rlang 0.4.7
+
+* `cnd_muffle()` now returns `FALSE` instead of failing if the
+  condition is not mufflable (#1022).
+
+* `warn()` and `inform()` gain a `.frequency` argument to control how
+  frequently the warning or message should be displayed.
+
+* New `raw_deparse_str()` function for converting a raw vector into a
+  string of hexadecimal characters (@krlmlr, #978).
+
+* The backtraces of chained errors are no longer decomposed by error
+  context. Instead, the error messages are displayed as a tree to
+  reflect the error ancestry, and the deepest backtrace in the ancestry
+  is displayed.
+
+  This change simplifies the display (#851) and makes it possible to
+  rethow errors from a calling handler rather than an exiting handler,
+  which we now think is more appropriate because it allows users to
+  `recover()` into the error.
+
+* `env_bind()`, `env_bind_active()`, `env_bind_lazy()`, `env_get()`,
+  and `env_get_list()` have been rewritten in C.
+
+* `env_poke()` now supports `zap()` sentinels for removing bindings
+  (#1012) and has better support for characters that are not
+  representable in the local encoding.
+
+* `env_poke()` has been rewritten in C for performance.
+
+* The unicode translation warnings that appeared on Windows with R 4.0
+  are now fixed.
+
+* `env_unbind(inherit = TRUE)` now only removes a binding from the
+  first parent environment that has a binding. It used to remove the
+  bindings from the whole ancestry. The new behaviour doesn't
+  guarantee that a scope doesn't have a binding but it is safer.
+
+* `env_has()` is now rewritten in C for performance.
+
+* `dots_list()` gains a `.named` argument for auto-naming dots (#957).
+
+* It is now possible to subset the `.data` pronoun with quosured
+  symbols or strings (#807).
+
+* Expressions like `quote(list("a b" = 1))` are now properly deparsed
+  by `expr_deparse()` (#950).
+
+* `parse_exprs()` now preserves names (#808). When a single string
+  produces multiple expressions, the names may be useful to figure out
+  what input produced which expression.
+
+* `parse_exprs()` now supports empty expressions (#954).
+
+* `list2(!!!x)` no longer evaluates `x` multiple times (#981).
+
+* `is_installed()` now properly handles a `pkg` argument of length > 1.
+  Before this it silently tested the first element of `pkg` only
+  and thus always returned `TRUE` if the first package was installed
+  regardless of the actual length of `pkg`. (#991, @salim-b)
+
+* `arg_match0()` is a faster version of `arg_match()` for use when performance
+  is at a premium (#997, @krlmlr).
+
+
 # rlang 0.4.6
 
 * `!!!` now uses a combination of `length()`, `names()`, and `[[` to splice

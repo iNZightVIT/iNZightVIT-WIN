@@ -9,8 +9,9 @@ Authors@R: c(
     person("Danny", "Chang", role = "ctb")
     )
 Depends: R (>= 2.13)
-Imports: stats, grDevices, graphics, grid, car, stats4, multcomp
-Suggests: iNZightPlots, survey, testthat, covr
+Imports: stats, grDevices, graphics, grid, car, stats4, iNZightPlots
+        (>= 2.12), multcomp
+Suggests: survey, testthat, covr
 Description: Provides a suite of funcitons to use with regression models, including summaries, residual plots, and factor comparisons. Used as part of the Model Fitting module of 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions.
 License: GPL-3
 Encoding: UTF-8
@@ -20,4 +21,4 @@ Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   David Banks [aut],
   Danny Chang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-19 00:12:29 UTC; unix
+Built: R 4.0.2; ; 2020-07-19 20:38:49 UTC; unix

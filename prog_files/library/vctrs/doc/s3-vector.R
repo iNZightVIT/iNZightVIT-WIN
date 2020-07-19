@@ -117,6 +117,20 @@ as_percent <- function(x) {
 }
 
 ## -----------------------------------------------------------------------------
+as_percent <- function(x, ...) {
+  UseMethod("as_percent")
+}
+
+as_percent.default <- function(x, ...) {
+  vec_cast(x, new_percent())
+}
+
+as_percent.character <- function(x) {
+  value <- as.numeric(gsub(" *% *$", "", x)) / 100
+  new_percent(value)
+}
+
+## -----------------------------------------------------------------------------
 new_decimal <- function(x = double(), digits = 2L) {
   vec_assert(x, ptype = double())
   vec_assert(digits, ptype = integer(), size = 1)
@@ -506,6 +520,7 @@ vec_arith.numeric.vctrs_meter <- function(op, x, y, ...) {
 }
 
 meter(2) * 10
+meter(2) * as.integer(10)
 10 * meter(2)
 meter(20) / 10
 10 / meter(20)

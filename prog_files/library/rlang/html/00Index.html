@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.4.6</h2>
+</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.4.7</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -54,6 +54,8 @@
 <tr><td style="width: 25%;"><a href="rlang_backtrace_on_error.html">add_backtrace</a></td>
 <td>Display backtrace on error</td></tr>
 <tr><td style="width: 25%;"><a href="arg_match.html">arg_match</a></td>
+<td>Match an argument to a character vector</td></tr>
+<tr><td style="width: 25%;"><a href="arg_match.html">arg_match0</a></td>
 <td>Match an argument to a character vector</td></tr>
 <tr><td style="width: 25%;"><a href="as_box.html">as_box</a></td>
 <td>Convert object to a box</td></tr>
@@ -112,9 +114,9 @@
 <tr><td style="width: 25%;"><a href="call_modify.html">call_modify</a></td>
 <td>Modify the arguments of a call</td></tr>
 <tr><td style="width: 25%;"><a href="call_name.html">call_name</a></td>
-<td>Extract function name or namespaced of a call</td></tr>
+<td>Extract function name or namespace of a call</td></tr>
 <tr><td style="width: 25%;"><a href="call_name.html">call_ns</a></td>
-<td>Extract function name or namespaced of a call</td></tr>
+<td>Extract function name or namespace of a call</td></tr>
 <tr><td style="width: 25%;"><a href="call_standardise.html">call_standardise</a></td>
 <td>Standardise a call</td></tr>
 <tr><td style="width: 25%;"><a href="catch_cnd.html">catch_cnd</a></td>
@@ -205,6 +207,8 @@
 <td>Get parent environments</td></tr>
 <tr><td style="width: 25%;"><a href="env_parent.html">env_parents</a></td>
 <td>Get parent environments</td></tr>
+<tr><td style="width: 25%;"><a href="env_poke.html">env_poke</a></td>
+<td>Poke an object in an environment</td></tr>
 <tr><td style="width: 25%;"><a href="get_env.html">env_poke_parent</a></td>
 <td>Get or set the environment of an object</td></tr>
 <tr><td style="width: 25%;"><a href="env_print.html">env_print</a></td>
@@ -378,7 +382,7 @@
 <tr><td style="width: 25%;"><a href="is_function.html">is_function</a></td>
 <td>Is object a function?</td></tr>
 <tr><td style="width: 25%;"><a href="is_installed.html">is_installed</a></td>
-<td>Is a package installed in the library?</td></tr>
+<td>Are packages installed in any of the libraries?</td></tr>
 <tr><td style="width: 25%;"><a href="type-predicates.html">is_integer</a></td>
 <td>Type predicates</td></tr>
 <tr><td style="width: 25%;"><a href="is_integerish.html">is_integerish</a></td>
@@ -526,10 +530,6 @@
 <td>Parse R code</td></tr>
 <tr><td style="width: 25%;"><a href="parse_expr.html">parse_exprs</a></td>
 <td>Parse R code</td></tr>
-<tr><td style="width: 25%;"><a href="parse_expr.html">parse_quo</a></td>
-<td>Parse R code</td></tr>
-<tr><td style="width: 25%;"><a href="parse_expr.html">parse_quos</a></td>
-<td>Parse R code</td></tr>
 <tr><td style="width: 25%;"><a href="local_options.html">peek_option</a></td>
 <td>Change global options</td></tr>
 <tr><td style="width: 25%;"><a href="local_options.html">peek_options</a></td>
@@ -586,6 +586,8 @@
 <h2><a name="R">-- R --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="raw_deparse_str.html">raw_deparse_str</a></td>
+<td>Serialize a raw vector to a string</td></tr>
 <tr><td style="width: 25%;"><a href="rep_along.html">rep_along</a></td>
 <td>Create vectors matching the length of a given vector</td></tr>
 <tr><td style="width: 25%;"><a href="rep_along.html">rep_named</a></td>

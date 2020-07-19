@@ -1,4 +1,4 @@
-676769dd306dc40cfdb2988b08e59b8c *DESCRIPTION
+1fa500fe6157e60b80ba1f25a60de275 *DESCRIPTION
 1fcfa9a6475bed82d6ca54cc4d382ca1 *INDEX
 b1e53cdb27fb6f2912b5d5a248456bd9 *LICENSE
 993b2096090933d5356fe9ed12ba2f53 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 42da20748ae7e6fa0e7398a4e5d40e65 *Meta/hsearch.rds
 ba2a28ecd9d8b71736c2624021fac372 *Meta/links.rds
 c252ee07015b66b5b6394acf3892d9db *Meta/nsInfo.rds
-b9c179c494976986a78c9f1f2cd908db *Meta/package.rds
+2abacff8846e92c7fe0da0d46536535d *Meta/package.rds
 d6015c82bca32ecc27783964c9509d80 *Meta/vignette.rds
 0f841ab9a7e1d1e62945c73786e51731 *NAMESPACE
 e2cfda02b9b3c37a48eadd1a8f9470d1 *NEWS
@@ -32,9 +32,9 @@ f56021d89fa2dee431de853778949867 *examples/minimal.brew
 20f4b0f710e9c0378908c7927bf27340 *examples/olympics.brew
 51633bdb67dc7a373135abd6d5030a2c *help/AnIndex
 335b1b60a9925df63409eed7bc679577 *help/aliases.rds
-a621a5b726fcbd1d1c2403c66af19e0f *help/pander.rdb
-83da7b6ef6c6fe664df5d2e02be44569 *help/pander.rdx
-76922ec511a8aff04c15df616d79787e *help/paths.rds
+1185c87c5892011d40081aed899459a4 *help/pander.rdb
+013ee12b9021e8b6e441c690b43d688a *help/pander.rdx
+8f373751ba4b62710843aa2c6a1e994b *help/paths.rds
 fa960d4792f1fd87b60e025cf6bcfb57 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 91b0d34ef6fbb891a05712eb3d718604 *includes/html/footer.html
@@ -53,9 +53,9 @@ af0c402b0ed4511e60d7138359dc3fbb *includes/javascripts/custom.js
 b8d64d0bc142b3f670cc0611b0aebcae *includes/javascripts/jquery-1.7.2.min.js
 d1b88253a3cd8013517c80deff45ca2f *includes/javascripts/slimbox2.js
 8ff319e85318c07ee2017bbf2e4b213a *includes/javascripts/tabs.js
-33d61035568897867fabfcc269c26b83 *libs/i386/pander.dll
+d708daa316b3c3803282fe75cf9e023f *libs/i386/pander.dll
 a530ae4db148a9c5e47fe09714f23c8c *libs/i386/symbols.rds
-c0286fcb34e369c1ec36e5a1ac6ecad3 *libs/x64/pander.dll
+69f8aac8e579beaa73a1b5c68cdc62a9 *libs/x64/pander.dll
 4dcdf49953653492357a784ee623bf39 *libs/x64/symbols.rds
 e4887f6c8486fb969d6efd421d4bff1d *pander.el
 39b8992b709442307095c05929c42c0b *tests/test-R5.R

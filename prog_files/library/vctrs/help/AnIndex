@@ -128,6 +128,8 @@ vec_list_cast	vec_list_cast
 vec_match	vec_match
 vec_math	vec_math
 vec_math_base	vec_math
+vec_names	vec_names
+vec_names2	vec_names
 vec_order	vec_order
 vec_proxy	vec_proxy
 vec_proxy_compare	vec_proxy_compare
@@ -167,6 +169,7 @@ vec_repeat	vec_repeat
 vec_rep_each	vec-rep
 vec_restore	vec_proxy
 vec_seq_along	vec_seq_along
+vec_set_names	vec_names
 vec_size	vec_size
 vec_size_common	vec_size
 vec_slice	vec_slice

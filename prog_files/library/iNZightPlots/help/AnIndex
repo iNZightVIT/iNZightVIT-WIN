@@ -24,6 +24,7 @@ inzinference	inzplot
 inzpalette	inzpalette
 inzpar	inzpar
 inzplot	inzplot
+inzplot.formula	inzplot
 inzsummary	inzplot
 mend_call	mend_call
 print.allSummaries	exploreAllSummaries

@@ -13,6 +13,6 @@ getPlotSummary          iNZight Plot Summary and Inference
 iNZightPlot             iNZight Plot
 inzpalette              iNZight colour palette
 inzpar                  iNZight Plotting Parameters
-inzsummary              iNZightPlot Formula Interface
+inzsummary              iNZight Plot Method
 mend_call               Mend a plot call based on valid parameters
 print.inzHTML           Print method for 'inzHTML' object

@@ -30,6 +30,7 @@ vec_equal               Test if two vectors are equal
 vec_init                Initialize a vector
 vec_is_list             Is the object a list?
 vec_match               Find matching observations across vectors
+vec_names               Get or set the names of a vector
 vec_order               Order and sort vectors
 vec_ptype               Find the prototype of a set of vectors
 vec_ptype2.logical      Find the common type for a pair of vectors

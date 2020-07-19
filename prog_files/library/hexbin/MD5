@@ -1,4 +1,4 @@
-2e6f621843ac4a8bac7720214797708e *DESCRIPTION
+3c804cbf267cf073f9475ba6c045c36a *DESCRIPTION
 06cda7e0c38c19dbc85de99be43545dd *INDEX
 132b8be0bab6758963ef670fc3293a58 *Meta/Rd.rds
 8eb946b3718be98c4e2f16db6fced6af *Meta/data.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 d2b06148903cf52ccbd368f2f4e1572f *Meta/hsearch.rds
 56139f1d87b727af13b15e9cd40ea3f5 *Meta/links.rds
 9674eb5316fc742d3f93cd6997f33176 *Meta/nsInfo.rds
-8f7353a58fe3a4bf9c38f05831c2fd88 *Meta/package.rds
+619af09bd5fa4244cf016fbc25df1ad0 *Meta/package.rds
 a08ac6eda08bcc5791debab3b3a9c716 *Meta/vignette.rds
 9129a733a21f780d50b1c3bb85da0047 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/hexbin
@@ -19,12 +19,12 @@ e857b573460b9eba00bdb571dfccfb23 *doc/hexagon_binning.R
 6e070d87da5e83ecf9504271a09fa996 *doc/index.html
 2313d1de517d73d10ec120e1879bbb54 *help/AnIndex
 39f98b3dd128355b4f5929f340c2b3ad *help/aliases.rds
-9ec1eacc6bd018ed09861d6e154daab8 *help/hexbin.rdb
-bc401e65ee082e1a25703f79ea4f6ee1 *help/hexbin.rdx
-dfa61ccbf52e28736122f40df108af77 *help/paths.rds
+d71d4ae5ea9d079773fbeacacaf980dd *help/hexbin.rdb
+50eb9506b9cab01ece7483ccedd86db8 *help/hexbin.rdx
+5372029d22c4693049315722697a767a *help/paths.rds
 1c1076c4c43b8f2a1224e71cb6fa17e1 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-0f6858a5dde5d3d47e9130a601a70028 *libs/i386/hexbin.dll
+3ea90940c3889b7a96de9e0114301130 *libs/i386/hexbin.dll
 e0d8e9c5b6be16acb321183e2e7287ed *libs/i386/symbols.rds
-861758ec4116618c874d603351bfe3b8 *libs/x64/hexbin.dll
+8141e9bc8ce136728880b7c001100747 *libs/x64/hexbin.dll
 a9e667fae9189b5c84eec6a88e4903c0 *libs/x64/symbols.rds

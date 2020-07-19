@@ -11,6 +11,7 @@ abort	abort
 add_backtrace	rlang_backtrace_on_error
 are_na	are_na
 arg_match	arg_match
+arg_match0	arg_match
 as_box	as_box
 as_box_if	as_box
 as_bytes	as_bytes
@@ -54,6 +55,7 @@ call_inspect	call_inspect
 call_modify	call_modify
 call_name	call_name
 call_ns	call_name
+call_parse_type	call_parse_type
 call_stack	stack
 call_standardise	call_standardise
 catch_cnd	catch_cnd
@@ -387,8 +389,8 @@ overscope_eval_next	overscope_eval_next
 pairlist2	pairlist2
 parse_expr	parse_expr
 parse_exprs	parse_expr
-parse_quo	parse_expr
-parse_quos	parse_expr
+parse_quo	parse_quo
+parse_quos	parse_quo
 parse_quosure	parse_quosure
 parse_quosures	parse_quosure
 peek_option	local_options
@@ -421,6 +423,7 @@ quo_set_expr	quosure
 quo_squash	quo_squash
 quo_text	quo_label
 raw_along	vector-old-ctors
+raw_deparse_str	raw_deparse_str
 raw_len	vector-old-ctors
 rep_along	rep_along
 rep_named	rep_along

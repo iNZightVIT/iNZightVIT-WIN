@@ -1,4 +1,4 @@
-017cc82bf3560abdf6910cbb45dd335c *DESCRIPTION
+f9cddac19d6f4ffa4c9f2a02e2414714 *DESCRIPTION
 aa77bde0ca0c3cc8c2654826511da300 *INDEX
 4da54e2d32ef92748cac3d16b89df90a *LICENSE
 0b287bf11e69869763dc6d996e3d4cbe *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 2d8a41a29febdd337a70b1ffa28a5e58 *Meta/hsearch.rds
 8f98c35e4ed737c1e38be6fd5381be14 *Meta/links.rds
 30d925a4aaa4c41a970f63e2365f00ed *Meta/nsInfo.rds
-54efc30f73cadfc56debb56ffb9fce51 *Meta/package.rds
+f89f4a7cf8996120c39ed069cbc6b506 *Meta/package.rds
 0db27cc059fb09cf5f686886de66ef42 *Meta/vignette.rds
 2c1698fcf315fa6885dd623688738db3 *NAMESPACE
 7836ea7e4cbc7f2ebd918d265f7dd429 *NEWS.md
@@ -19,13 +19,13 @@ b1bc1ec6df17d51f4ed5191342f850d4 *doc/index.html
 060ff8aa1ad53f3ea5d9ba808e0da7bd *doc/xfun.html
 1f6214ead248e098ecf7c28ffe00d8cb *help/AnIndex
 c6d2ccd8058cf4c45fa217bd2b0fda9a *help/aliases.rds
-7a48189f9e45ac93dc79d9ce401bdb07 *help/paths.rds
-add05861ea0de2ed6c0db3a4f2cb2dff *help/xfun.rdb
-a7a52d2ef0fcd6bafa33b2c0c7742b5c *help/xfun.rdx
+8588320f104a66cca42c4eb7c26f09d2 *help/paths.rds
+eafc41f7183dd008a11552960a0cc0ec *help/xfun.rdb
+ac9de4584839ef69f4058ad5d487946d *help/xfun.rdx
 ee146ad94507a005909f67490774f830 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 1cf7b9738c86df8216d0aee9b75d51ce *libs/i386/symbols.rds
-d10affe6ef1ccdbec84767440ee13e2a *libs/i386/xfun.dll
+48a1840d062417344c0120c18e1caa5f *libs/i386/xfun.dll
 c1744bbeb0c5194deddb2972ab2b7579 *libs/x64/symbols.rds
-e749f0ddd0c6b85849b715bcba8db663 *libs/x64/xfun.dll
+bb50ade1ec771003582c8db1dbefc390 *libs/x64/xfun.dll
 9293b4398c636200df8bf31ce8e6ad3f *scripts/call-fun.R
