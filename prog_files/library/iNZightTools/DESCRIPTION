@@ -2,9 +2,10 @@ Package: iNZightTools
 Type: Package
 Title: Tools for 'iNZight'
 Version: 1.9
-Imports: utils, stats, methods, survey, grDevices, readr (>= 1.2.0),
-        readxl, haven, magrittr, tibble, dplyr, forcats, tidyr,
-        stringr, tools, chron, lubridate, zoo, validate
+Imports: utils, stats, methods, survey, grDevices, readr (>=
+       1.2.0), readxl, haven, magrittr, tibble, dplyr,
+       forcats, tidyr, stringr, tools, chron, lubridate, zoo,
+       validate
 Suggests: jsonlite, testthat, covr, RCurl
 Authors@R: c(
     person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
@@ -23,12 +24,14 @@ License: GPL-3
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.1.1
-Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
+Author: Tom Elliott [aut, cre]
+    (<https://orcid.org/0000-0002-7815-6318>),
   Christoph Knopf [ctb],
   Akshay Gupta [ctb],
-  Owen Jin [ctb] (Tidyverse variable/data manipulation functions),
+  Owen Jin [ctb] (Tidyverse variable/data manipulation
+    functions),
   Lushi Cai [ctb],
   Yiwen He [ctb] (Dates/times and dataset manipulation),
   Daniel Barnett [ctb] (Data validation)
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-20 04:48:02 UTC; unix
+Built: R 4.0.2; ; 2020-07-20 21:38:36 UTC; unix
