@@ -12,21 +12,18 @@ BugReports: https://github.com/iNZightVIT/iNZightPlots/issues
 Contact: inzight_support@stat.auckland.ac.nz
 URL: inzight.nz
 Depends: R(>= 3.2)
-Imports: grDevices, stats, utils, grid, boot, s20x, survey,
-       quantreg, hexbin, colorspace, dichromat, chron, scales,
-       iNZightMR (>= 2.2.4), iNZightTools (>= 1.9), rlang,
-       magrittr, lubridate
-Suggests: hextri, viridis, RColorBrewer, gridSVG (>= 1.7-2),
-       knitr, jsonlite, testthat, covr, ggplot2, dplyr, tidyr,
-       forcats, ggmosaic, waffle, ggthemes, ggbeeswarm,
-       ggridges, plotly
+Imports: grDevices, stats, utils, grid, boot, s20x, survey, quantreg,
+        hexbin, colorspace, dichromat, chron, scales, iNZightMR (>=
+        2.2.4), iNZightTools (>= 1.9), rlang, magrittr, lubridate
+Suggests: hextri, viridis, RColorBrewer, gridSVG (>= 1.7-2), knitr,
+        jsonlite, testthat, covr, ggplot2, dplyr, tidyr, forcats,
+        ggmosaic, waffle, ggthemes, ggbeeswarm, ggridges, plotly
 License: GPL-3
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.1.1
-Author: Tom Elliott [aut, cre]
-    (<https://orcid.org/0000-0002-7815-6318>),
+Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Yu Han Soh [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-20 21:38:43 UTC; unix
+Built: R 4.0.2; ; 2020-07-21 00:57:33 UTC; unix
