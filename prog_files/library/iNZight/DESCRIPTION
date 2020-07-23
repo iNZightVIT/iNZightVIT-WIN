@@ -14,13 +14,15 @@ Authors@R: c(person("Tom", "Elliott", role = c("aut", "cre"),
              person("Daniel", "Barnett", role = "ctb"))
 Description: An interactive GUI for easy visual exploration of datasets.
 License: GPL-3
-Depends: R (>= 3.3), objectProperties, RGtk2, gWidgets2, cairoDevice
-Imports: utils, grDevices, methods, grid, gdata, gWidgets2RGtk2,
-        iNZightPlots (>= 2.12), iNZightTools (>= 1.9), reshape2, plyr,
-        survey, colorspace, magrittr
-Suggests: RODBC, iNZightMR (>= 2.2.4), iNZightModules (>= 2.5), png,
-        viridis, RColorBrewer, FutureLearnData, testthat, covr, dplyr,
-        forcats, rlang, withr, jsonlite, dataMaid, rmarkdown
+Depends: R (>= 3.3), objectProperties, RGtk2, gWidgets2,
+       cairoDevice
+Imports: utils, grDevices, methods, grid, gdata,
+       gWidgets2RGtk2, iNZightPlots (>= 2.12), iNZightTools
+       (>= 1.9), reshape2, plyr, survey, colorspace, magrittr
+Suggests: RODBC, iNZightMR (>= 2.2.4), iNZightModules (>=
+       2.5), png, viridis, RColorBrewer, FutureLearnData,
+       testthat, covr, dplyr, forcats, rlang, withr, jsonlite,
+       dataMaid, rmarkdown
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 LazyData: true
 Encoding: UTF-8
@@ -34,4 +36,4 @@ Author: Tom Elliott [aut, cre],
   Yiwen He [ctb],
   Daniel Barnett [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-21 21:37:02 UTC; unix
+Built: R 4.0.2; ; 2020-07-23 01:35:28 UTC; unix

@@ -24,8 +24,9 @@ License: GPL-3
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.1.0
-Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
+Author: Tom Elliott [aut, cre]
+    (<https://orcid.org/0000-0002-7815-6318>),
   Junjie Zeng [aut] (Original author),
   Simon Potter [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-21 21:36:40 UTC; unix
+Built: R 4.0.2; ; 2020-07-23 01:35:07 UTC; unix
