@@ -1,4 +1,4 @@
-2659e2ef07cab71594a43ccda2964308 *DESCRIPTION
+4cc1f38129d3c2c55e0663de174effe8 *DESCRIPTION
 12f872f5d6649890f62d629bf6fed869 *INDEX
 df787079ebcc8d97d5f6892d0568349d *LICENSE
 947959a8894757d4fe1ea673d03b62ed *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 d1acdb6e53618b609b37009c16a87fa9 *Meta/hsearch.rds
 74a2f79fb8eb932d0ef84964227ce90f *Meta/links.rds
 5df0675ec720edb85e9c0c2fc388b09c *Meta/nsInfo.rds
-664757210e4480b1132c08ec2e8e82ab *Meta/package.rds
+8609a573f4d180ccf55b508a30a25667 *Meta/package.rds
 e6b916493e61a51a8fa3028a443778df *NAMESPACE
 8a14e3043f8ff4b472d7127e05250c6c *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/whoami
@@ -15,8 +15,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/whoami
 e4877c2ea6ab04a5d0df81454669ef24 *README.md
 28e03463005e96256a7c5dbd56152bfa *help/AnIndex
 a4f935d5a4d0f1b76e9e2c10db2de0ec *help/aliases.rds
-b0ecfd3c3535a16bda77979d2ac04ec9 *help/paths.rds
-0ef9531fe7658355e6be13769281e235 *help/whoami.rdb
-0fc4b42693103293bdcbeca99f24b5b8 *help/whoami.rdx
+b1c8ee4b2b4e6860f44e191813ade7ac *help/paths.rds
+3321714bb74bfbc5987d707fae0efa3f *help/whoami.rdb
+68593c486143cafb12c9920616c1f0d1 *help/whoami.rdx
 1387107253c934d304443f8f6b9921a9 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

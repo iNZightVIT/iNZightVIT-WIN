@@ -1,10 +1,6 @@
-# iNZightUpdate 0.0.4
-
-- checks if iNZight is being upgraded to 4.0, in which case point to website instead
-
 # iNZightUpdate 0.0.3
 
-A temporary version to disable updating while next major release is prepared.
+- checks if iNZight is being upgraded to 4.0, in which case point to website instead
 
 # iNZightUpdate 0.0.2
 

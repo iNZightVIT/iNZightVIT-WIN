@@ -1,4 +1,4 @@
-1b13b0e927f9c7abfeda9c323e4548bc *DESCRIPTION
+86e0fee7e0457ada9671eea0731ad3fe *DESCRIPTION
 4f8cbc182fe046f044687bdec6c57524 *INDEX
 80dc940bee4876c20f47e65d510ffef3 *Meta/Rd.rds
 168d6a008a463c8172809ec83cfe773d *Meta/data.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 d5bf74608a66f706f4681332ba51a2a7 *Meta/hsearch.rds
 85f6fa4b125aacd3d09ae9c3e664c677 *Meta/links.rds
 c5cc911418e7077b10ba617d8b538af0 *Meta/nsInfo.rds
-b47bc0beb5f71a4489e2751aed1a545c *Meta/package.rds
+109c3fc717a7808bf76d76cace8b3c45 *Meta/package.rds
 930a040d0556e8b23b9f91d0d10fa6fc *Meta/vignette.rds
 f5a6218ffd45184133083cc9ac365ec8 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/vipor
@@ -24,8 +24,8 @@ d05e889603f9d8ae65594be2fc78e705 *doc/methodComparison.pdf
 ef9f0a8876735e627f4eed5b27f03a23 *doc/usageExamples.pdf
 e879037aa44b89f56b17321a647a0078 *help/AnIndex
 0c3eee55586c919ea7920a2938bc74a0 *help/aliases.rds
-af342f0def08f41f5d561732c63de694 *help/paths.rds
-b26b1f91bde0f1e331acee6dd8a8913a *help/vipor.rdb
-57ee618da6d940e567fec48f772ed3b8 *help/vipor.rdx
+c9ea973530665ad615c7db03c41b18f8 *help/paths.rds
+e752ef234d43d2edbf674ab33eedb294 *help/vipor.rdb
+38c48cb4c72b0060c690d182d6c43e87 *help/vipor.rdx
 a6029c42ec4d7da58e5bba9c081ada4b *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

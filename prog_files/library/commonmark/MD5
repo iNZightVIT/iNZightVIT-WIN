@@ -1,4 +1,4 @@
-cad80dc137115183c7621b67d10eb459 *DESCRIPTION
+e9c43983380984c7e265a9eae0b292f1 *DESCRIPTION
 94ff060cee7a021ff3f56c263c09e098 *INDEX
 a43f0a9fda65ff8f23b3aa2688aafce4 *LICENSE
 5c8aec44ce4ef1a99c36e228784cffa8 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 10f86420da85524de1c0423c2018be21 *Meta/hsearch.rds
 94d933c08d3e3027caa40d93c69cdfc0 *Meta/links.rds
 942686481885febd8ec8380e57a620e4 *Meta/nsInfo.rds
-75c50ebed498e7788a79f7ce4ad60c66 *Meta/package.rds
+03500172196ff3071afe357cfff67269 *Meta/package.rds
 d14d8da6f599bc6b91bcf858f907d4ca *NAMESPACE
 3ef70fcdfebb67a78361ad10c42dcdee *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/commonmark
@@ -14,12 +14,12 @@ ebf0fc819595d631b8bf280c4b049940 *R/commonmark
 344d345daf30b1d8c3927a9f473d5780 *R/commonmark.rdx
 14726177e1fbd869fd83078ebdb49842 *help/AnIndex
 e52a00b3c657faa9f4f0a0e3a4c6e02e *help/aliases.rds
-8dc139176002ec74cbd9f416c0867f35 *help/commonmark.rdb
-e39671b95ec4d0152f5d614c28b4439f *help/commonmark.rdx
-039e49c39ce84b7e4ea069797767659e *help/paths.rds
+4e2a04e7f8051a7afaa0db0798e69b03 *help/commonmark.rdb
+a275dbea6ae780f9cb7ffe5ccb0ecbd0 *help/commonmark.rdx
+756eea6202db98d77e8deeaafa1c4e8e *help/paths.rds
 bf993657245ef8e02f57883000077508 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-4b5b74870333f03cf133033d3616b888 *libs/i386/commonmark.dll
+12e7c25256c6f4fc2796b82fdaf7acc9 *libs/i386/commonmark.dll
 d49d5ef1c275c1e66bb41e2b0136b649 *libs/i386/symbols.rds
-49c5fef5a399f336df21df28c2e8b234 *libs/x64/commonmark.dll
+6f2d55654763a70a41026cdf725bdb09 *libs/x64/commonmark.dll
 e2f47a314b04716a89b8e332c089f25d *libs/x64/symbols.rds

@@ -1,19 +1,18 @@
-compareplot          Comparison plot - depreciated
-decompose            Decompose a time series object
-decompositionplot    Plot a Time Series Decomposition
-forecastplot         Forecast plot - DEPRECATED
-iNZightTS            iNZightTS (Time-Series) Objects
-iNZightTS-package    Time Series Data Analysis
-multiseries          Compare multiple time series - DEPRECATED
-plot.iNZightMTS      Plot multiple time series
-plot.iNZightTS       Draw a simple time series plot
-pred                 Get forecast prediction values
-print.iNZightTS      Print an iNZightTS object
-rawplot              Time series plot - depreciated
-recompose            Recompose a decomposed time series
-seaice               Sea Ice
-seasonplot           Plot Seasonal Subseries from a Time
-                     Series
-visitorsA2           Visitors (annual)
-visitorsM2           Visitors (monthly)
-visitorsQ            Visitors (quarterly)
+compareplot             Comparison plot - depreciated
+decompose               Decompose a time series object
+decompositionplot       Plot a Time Series Decomposition
+forecastplot            Forecast plot - DEPRECATED
+iNZightTS               iNZightTS (Time-Series) Objects
+iNZightTS-package       Time Series Data Analysis
+multiseries             Compare multiple time series - DEPRECATED
+plot.iNZightMTS         Plot multiple time series
+plot.iNZightTS          Draw a simple time series plot
+pred                    Get forecast prediction values
+print.iNZightTS         Print an iNZightTS object
+rawplot                 Time series plot - depreciated
+recompose               Recompose a decomposed time series
+seaice                  Sea Ice
+seasonplot              Plot Seasonal Subseries from a Time Series
+visitorsA2              Visitors (annual)
+visitorsM2              Visitors (monthly)
+visitorsQ               Visitors (quarterly)

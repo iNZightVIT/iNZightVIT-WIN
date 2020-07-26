@@ -1,4 +1,4 @@
-6aa4918650f94d119f18242421f23453 *DESCRIPTION
+a21a9166ee7cdf47ee9d9282c7ac1be4 *DESCRIPTION
 c15dfedcb5a585823fe686e66423b204 *INDEX
 720ed9a84409fd85a87e05decc0e30d0 *LICENSE
 1b2108d03668ca7caa36ef38b74fb9e7 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 6431f942c6ba1a489145d3b47563f7b9 *Meta/hsearch.rds
 27134f5ecea54e21023dc9ac1945158e *Meta/links.rds
 543feb71499a99d95cc29bde80132ab2 *Meta/nsInfo.rds
-5bc2f3467b941ab35b0fcf3b337c6b1a *Meta/package.rds
+0357f68b92d1b76be0930a33b054e44e *Meta/package.rds
 5ec57e48a356d3273750f4fbc67822a3 *Meta/vignette.rds
 d470a481a2e6f75439c5d69abd297edb *NAMESPACE
 948246c0a52246b62d35550285734379 *NEWS.md
@@ -30,12 +30,12 @@ b15ab744cf4e90032f620cf68ec2c0a8 *doc/motivation.html
 8985e3de9070e0791f277ae3f4009c54 *doc/shiny.html
 b6534707b82f8b30e18ee93a37382688 *help/AnIndex
 79a99c76886993fd361efb0bd9e99a43 *help/aliases.rds
-e7c91917040fbf9c782d1f93a1380df7 *help/paths.rds
-f3f832cfc5d877046f9b2c645e0b59bb *help/promises.rdb
-1292a9d86d46e7e9e493ae35f560e32e *help/promises.rdx
+c31ac389ee6626a91fc7070c0f00c414 *help/paths.rds
+46939cac4bada3e973ac6090ba2be8b5 *help/promises.rdb
+79a083cf33bc493a5c90b7bc86252710 *help/promises.rdx
 5f6743ef4839184572d8f29aa4e3d1cb *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
-ce5ecb392d639908214a0bc5eba37cab *libs/i386/promises.dll
+7b0ce42b279390089906424f513fc5b5 *libs/i386/promises.dll
 dee51fef88ad9f07ab2aa3939fac078a *libs/i386/symbols.rds
-1dc8ec609ef9569e67f5001d142134d7 *libs/x64/promises.dll
+d47cdb2545dc7cee852ad3c957eb9266 *libs/x64/promises.dll
 6fac949434dfaf40ada722cc19e4e34e *libs/x64/symbols.rds

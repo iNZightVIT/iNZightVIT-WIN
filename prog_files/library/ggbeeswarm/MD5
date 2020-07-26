@@ -1,11 +1,11 @@
-5b357626329c60b995d0278a747278b7 *DESCRIPTION
+8de47db9c0e21f42cbac30f7b2c1ce10 *DESCRIPTION
 077bd23d534b4272efdc2b6343f405d1 *INDEX
 0081ff4717ecc05c1afd799f0314143a *Meta/Rd.rds
 f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 5906e7090c075094a45bbbfa790fc335 *Meta/hsearch.rds
 d0e2e6397963fad5339d5f70e4b21e60 *Meta/links.rds
 7e573a478842e848236aeee87f6c4de7 *Meta/nsInfo.rds
-c0e92c5cb5963ccccf90553d55a69f11 *Meta/package.rds
+03acbf9a91cc02c08bd3ce524af22737 *Meta/package.rds
 054df764692148122406a30c3d16429e *Meta/vignette.rds
 902388cece88cbc77209f0dbafa726d3 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/ggbeeswarm
@@ -17,8 +17,8 @@ ddfec8fef96f86acb2a5943a02c44a06 *doc/usageExamples.Rnw
 c57e9cbd1c461e510340e7b7d28fb526 *doc/usageExamples.pdf
 5ab57babf0875f29850f0a5beee3610b *help/AnIndex
 39d913c7066f93125d715090d0310aac *help/aliases.rds
-5ef221d742dee7da552504e7fec06881 *help/ggbeeswarm.rdb
-f6c8a7235d6aa5705e7ecef36babbf9e *help/ggbeeswarm.rdx
-e78f00963949d328231e49cac02f5fd0 *help/paths.rds
+89c77871c0d34ec175cdf8a46827af3b *help/ggbeeswarm.rdb
+dd77623a3376acf12beadba4949d14d8 *help/ggbeeswarm.rdx
+968114eddc1228c34c174b077d422f8a *help/paths.rds
 2918b2809c93cc10e9291f2cd3fa9083 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

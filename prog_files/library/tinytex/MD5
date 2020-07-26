@@ -1,5 +1,5 @@
 07b1d67fc7523f46f234d2a78056943d *CITATION
-ac35cca265581fd8bb18219725253814 *DESCRIPTION
+186103f8eddbca788bf7b8fa3090a5f7 *DESCRIPTION
 067ba6ec41bc22c2fd8f5da747ac5f40 *INDEX
 138e2498e08ffd714d54bfc64b1ac83a *LICENSE
 d5a792d992752ecc5e06f07476c6e666 *Meta/Rd.rds
@@ -7,7 +7,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 2c8cfea6c66df68862e4539defa04641 *Meta/hsearch.rds
 762be4044025db91a01c4630e10ef577 *Meta/links.rds
 886ec52af084fec5ab389a9e546b9941 *Meta/nsInfo.rds
-93028908bbc2549c128ab646be3fd7c1 *Meta/package.rds
+2dbe1a204cfc04279713bdcae6d3624d *Meta/package.rds
 ce603f0ada31f1705bab10d3edae2adc *NAMESPACE
 a4aa863437c27133719365ac8a3fc840 *NEWS.Rd
 ebf0fc819595d631b8bf280c4b049940 *R/tinytex
@@ -15,8 +15,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/tinytex
 bbe83555ec411af02c34830d1144b59f *R/tinytex.rdx
 e772d683ad5bae3dfa6cc3ed69d41b80 *help/AnIndex
 2ee0afe44db8d62ea8d39af791019d41 *help/aliases.rds
-4712df6391a4fd4fdaa4139a84cef0c8 *help/paths.rds
-e0066e8c968b165ad4c8778bd18d6b2c *help/tinytex.rdb
-99c9f2ce5fe121998255e3801329ccbf *help/tinytex.rdx
+973654fd1bf6c082427e52e4d8c0c9ea *help/paths.rds
+4a68377331660886da1d42c14ee1ff84 *help/tinytex.rdb
+23960b1775e76f5dc7eebb19bffa197b *help/tinytex.rdx
 8f4a9a9bf5da88eac137ec74931fce28 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css

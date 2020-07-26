@@ -75,6 +75,7 @@ stats
 graphics
 tools
 stats4
+survival
 BH
 DBI
 DEoptimR
@@ -183,7 +184,6 @@ sourcetools
 sp
 statmod
 stringi
-survival
 sys
 tidyselect
 tinytex

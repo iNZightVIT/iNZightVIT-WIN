@@ -1,5 +1,5 @@
 1cdce995c436fda155a82f368ab28d9f *CITATION
-c4a3954efd13e513099e9c935bc46ec0 *DESCRIPTION
+6b0c548d30dc89a00c4b1afff665e0fa *DESCRIPTION
 a7bf1404967a63bc1852aeea3113a311 *INDEX
 4f76133fc579b8cdd7732a567f5db560 *Meta/Rd.rds
 ea4a459e69d610cbc004afa94e01aee3 *Meta/data.rds
@@ -7,7 +7,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 162ed67b2afeb08ea27f28591f6945d6 *Meta/hsearch.rds
 9a40a10e2c91f114b50a85e86c5b40fa *Meta/links.rds
 9add188ee999b8e117d2d0061617c823 *Meta/nsInfo.rds
-15c3ed453746e012090e9d4cdab7c5a9 *Meta/package.rds
+708d1ceeae2605d197b97f49f21c6882 *Meta/package.rds
 a21faca6a91eb00d1cc05ad62f262baf *Meta/vignette.rds
 f7440698fe3ef338113cfeab4c0e6485 *NAMESPACE
 ea7779e54d51407ac57869341b3f64d1 *NEWS
@@ -34,15 +34,15 @@ af4f427da72a1df721e28aef6d55e1aa *help/figures/cellsplit.pdf
 1e083b09f7f69ae25ea2d364ee818e51 *help/figures/cellsplit.png
 bb1727f69f2fc9947c6db18a488b8e31 *help/figures/rulesplit.pdf
 bdd685bea44908339fa5475263f034fe *help/figures/rulesplit.png
-faffc082d08686ab8e444a26919a1059 *help/paths.rds
-fa83ce7296c462ea3956cccf83f3b069 *help/validate.rdb
-67d2244e3bf0187ec89f49b9bd5f584b *help/validate.rdx
+08936752975c7e47e7786c175c59c93d *help/paths.rds
+8f20d769959d8e2ec734d0b3f26f3e7e *help/validate.rdb
+a406fb8a1cba55ace6917f3cf8c50203 *help/validate.rdx
 cab32410d7e7dcd1e7d1b2b53f848900 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 3402ada62d9006df33767a32fb0a4a6e *libs/i386/symbols.rds
-e537e2cb26d0ff29d2821928be1e88b2 *libs/i386/validate.dll
+b9792b5129891d040a9923bf020bcc9b *libs/i386/validate.dll
 8cf45e117cdaf3d0c90aa4bb659d4496 *libs/x64/symbols.rds
-24d20d04e8f6646121032e1cf6a07f41 *libs/x64/validate.dll
+4926af2ae060ef4fc7d9c4cc545a1709 *libs/x64/validate.dll
 6da6b54e0a9bf6bc30c0ffba7108ca53 *tinytest/pocdata/Rule_01.csv
 d635a5dfcd85335d354bbef670ebd0be *tinytest/pocdata/Rule_02.csv
 b9dc5a0b884b23042cc5445682669d3c *tinytest/pocdata/Rule_03_invalid.csv

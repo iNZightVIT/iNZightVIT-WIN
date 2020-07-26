@@ -1,4 +1,4 @@
-62d6a28d2c8f78aa80236e2e98ded08f *DESCRIPTION
+6f2109f73f5de22c2b1746272e2bbb41 *DESCRIPTION
 4a0c48de699685f55d21894d308f9da3 *INDEX
 d5e014920944fd879bfd6c3b9d943512 *LICENSE
 ad3fe1d5c15d1b2da6c65f206cfae978 *Meta/Rd.rds
@@ -6,7 +6,7 @@ f51f28e08b4fc215e2f6955f2c2ae531 *Meta/features.rds
 f106efa281bbe78f6e3989b6de1e0642 *Meta/hsearch.rds
 2556028954f28b92ffca749870d082c9 *Meta/links.rds
 2b1254652b99b819b0de39f93d39432b *Meta/nsInfo.rds
-39a67c9295ed6bfbb717fc8b864839f7 *Meta/package.rds
+6f58a3bd2ee8f448fdb432592b6dd991 *Meta/package.rds
 8acfda811a0fabdc8ffa2727389a740e *Meta/vignette.rds
 27ad3bb8893369b9e179fb99f2034ae4 *NAMESPACE
 e75dedc384193dfa06798552447c64c2 *NEWS
@@ -24,9 +24,9 @@ bfd7b70ac88fefcad1df75d9e17381bb *doc/develop_sizing.html
 61c4532772c513be550101f3298e5e89 *doc/index.html
 b47488d4572901564c6dcad1f5b68c52 *help/AnIndex
 17db7cbfe63b8d167cbb1387661b42e1 *help/aliases.rds
-788bdd77ca11ff1387a9929fb7e93bce *help/htmlwidgets.rdb
-163a33a250f0b7f43fbc731ccd9a3929 *help/htmlwidgets.rdx
-b186c48401a57b7e7b84711e49343614 *help/paths.rds
+880f88e0ab0483d7d04352d09f7897ad *help/htmlwidgets.rdb
+1c84052afe3af267b27b83494a043d2b *help/htmlwidgets.rdx
+0313a7b2b826aa5e7a81aec820c394f1 *help/paths.rds
 418aa80835abca5735f5a63d06cd4135 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 6349641ac577c3e0f6459d53600dafff *templates/widget_js.txt

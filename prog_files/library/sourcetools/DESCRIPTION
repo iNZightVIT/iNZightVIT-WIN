@@ -19,5 +19,5 @@ NeedsCompilation: yes
 Packaged: 2018-04-25 03:19:22 UTC; kevin
 Repository: CRAN
 Date/Publication: 2018-04-25 03:38:09 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-16 19:25:29 UTC; windows
+Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 14:29:15 UTC; windows
 Archs: i386, x64

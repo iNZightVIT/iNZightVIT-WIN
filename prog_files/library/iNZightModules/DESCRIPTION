@@ -12,13 +12,12 @@ Authors@R: c(
     person("David", "Banks", role = "aut")
     )
 Depends: R (>= 3.2)
-Imports: stats, graphics, utils, grDevices, methods, gpairs,
-       gWidgets2, gWidgets2RGtk2 (>= 1.0.7.1), iNZight (>=
-       3.5.3), iNZightPlots (>= 2.11.1), iNZightRegression (>=
-       1.2.6), iNZightTools (>= 1.8.4), iNZightMR (>= 2.2.4),
-       iNZightTS (>= 1.5.3)
-Suggests: iNZightMaps (>= 2.2), car, rgl, mgcv, sf, survey,
-       testthat, covr
+Imports: stats, graphics, utils, grDevices, methods, gpairs, gWidgets2,
+        gWidgets2RGtk2 (>= 1.0.7.1), iNZight (>= 3.5.3), iNZightPlots
+        (>= 2.11.1), iNZightRegression (>= 1.2.6), iNZightTools (>=
+        1.8.4), iNZightMR (>= 2.2.4), iNZightTS (>= 1.5.3)
+Suggests: iNZightMaps (>= 2.2), car, rgl, mgcv, sf, survey, testthat,
+        covr
 Additional_repositories: https://r.docker.stat.auckland.ac.nz
 License: GPL-3
 Description: A suite of add-on modules for the iNZight GUI, including model
@@ -26,8 +25,7 @@ Description: A suite of add-on modules for the iNZight GUI, including model
 RoxygenNote: 7.1.0
 Encoding: UTF-8
 Language: en-GB
-Author: Tom Elliott [aut, cre]
-    (<https://orcid.org/0000-0002-7815-6318>),
+Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Daniel Barnett [aut],
   Eric Lim [aut],
   Junjie Zeng [aut],
@@ -35,4 +33,4 @@ Author: Tom Elliott [aut, cre]
   Simon Potter [aut],
   David Banks [aut]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-23 05:03:42 UTC; unix
+Built: R 4.0.2; ; 2020-07-26 00:23:00 UTC; unix

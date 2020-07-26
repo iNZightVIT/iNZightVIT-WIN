@@ -1,23 +1,18 @@
-can.interact         Identify if a plot can be interactive
-const_palette_names
-                     An incorrectly spelled function -
-                     deprecated
-construct_call       Construct plot call from settings list
-convert.to.factor    Convert to Factor
-create               Create plots for iNZight
-emphasize_pal_colour
-                     Emphasize a level or interval of a colour
-                     palette
-exploreAllPlots      Explore all Univariate Plots
-exploreAllSummaries
-                     Explore all Univariate Summaries
-exportHTML           ExportHTML
-exportSVG            Export iNZightPlots as an SVG
-getPlotSummary       iNZight Plot Summary and Inference
-iNZightPlot          iNZight Plot
-inzpalette           iNZight colour palette
-inzpar               iNZight Plotting Parameters
-inzsummary           iNZight Plot Method
-mend_call            Mend a plot call based on valid
-                     parameters
-print.inzHTML        Print method for 'inzHTML' object
+can.interact            Identify if a plot can be interactive
+const_palette_names     An incorrectly spelled function - deprecated
+construct_call          Construct plot call from settings list
+convert.to.factor       Convert to Factor
+create                  Create plots for iNZight
+emphasize_pal_colour    Emphasize a level or interval of a colour
+                        palette
+exploreAllPlots         Explore all Univariate Plots
+exploreAllSummaries     Explore all Univariate Summaries
+exportHTML              ExportHTML
+exportSVG               Export iNZightPlots as an SVG
+getPlotSummary          iNZight Plot Summary and Inference
+iNZightPlot             iNZight Plot
+inzpalette              iNZight colour palette
+inzpar                  iNZight Plotting Parameters
+inzsummary              iNZight Plot Method
+mend_call               Mend a plot call based on valid parameters
+print.inzHTML           Print method for 'inzHTML' object
