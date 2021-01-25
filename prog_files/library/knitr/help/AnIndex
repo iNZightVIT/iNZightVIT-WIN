@@ -13,6 +13,15 @@ engine_output	engine_output
 extract_raw_output	raw_output
 fig_chunk	fig_chunk
 fig_path	fig_path
+hooks_asciidoc	output_hooks
+hooks_html	output_hooks
+hooks_jekyll	output_hooks
+hooks_latex	output_hooks
+hooks_listings	output_hooks
+hooks_markdown	output_hooks
+hooks_rst	output_hooks
+hooks_sweave	output_hooks
+hooks_textile	output_hooks
 hook_ffmpeg_html	hook_animation
 hook_gifski	hook_animation
 hook_mogrify	chunk_hook

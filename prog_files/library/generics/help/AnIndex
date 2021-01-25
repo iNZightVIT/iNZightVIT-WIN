@@ -23,14 +23,17 @@ interpolate	interpolate
 intersect	setops
 is.element	setops
 learn	learn
+min_grid	min_grid
 prune	prune
 refit	refit
+required_pkgs	required_pkgs
 setdiff	setops
 setequal	setops
 setops	setops
 specify	specify
 tidy	tidy
 train	train
+tunable	tunable
 union	setops
 varying_args	varying_args
 var_imp	var_imp

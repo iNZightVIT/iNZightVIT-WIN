@@ -27,6 +27,22 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -388,17 +404,16 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Finally, <code>ntile()</code> divides the data up into <code>n</code> evenly sized buckets. It’s a coarse ranking, and it can be used in with <code>mutate()</code> to divide the data into buckets for further summary. For example, we could use <code>ntile()</code> to divide the players within a team into four ranked groups, and calculate the average number of games within each group.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>by_team_player &lt;-<span class="st"> </span><span class="kw">group_by</span>(batting, teamID, playerID)</span>
 <span id="cb6-2"><a href="#cb6-2"></a>by_team &lt;-<span class="st"> </span><span class="kw">summarise</span>(by_team_player, <span class="dt">G =</span> <span class="kw">sum</span>(G))</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt; `summarise()` regrouping output by &#39;teamID&#39; (override with `.groups` argument)</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt; `summarise()` has grouped output by &#39;teamID&#39;. You can override using the `.groups` argument.</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>by_team_quartile &lt;-<span class="st"> </span><span class="kw">group_by</span>(by_team, <span class="dt">quartile =</span> <span class="kw">ntile</span>(G, <span class="dv">4</span>))</span>
 <span id="cb6-5"><a href="#cb6-5"></a><span class="kw">summarise</span>(by_team_quartile, <span class="kw">mean</span>(G))</span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; `summarise()` ungrouping output (override with `.groups` argument)</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; # A tibble: 4 x 2</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt;   quartile `mean(G)`</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt;      &lt;int&gt;     &lt;dbl&gt;</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; 1        1      26.9</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt; 2        2      97.7</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co">#&gt; 3        3     272. </span></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="co">#&gt; 4        4     976.</span></span></code></pre></div>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; # A tibble: 4 x 2</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt;   quartile `mean(G)`</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; *    &lt;int&gt;     &lt;dbl&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 1        1      23.2</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; 2        2      93.4</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt; 3        3     258. </span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co">#&gt; 4        4     975.</span></span></code></pre></div>
 <p>All ranking functions rank from lowest to highest so that small input values get small ranks. Use <code>desc()</code> to rank from highest to lowest.</p>
 </div>
 <div id="lead-and-lag" class="section level2">

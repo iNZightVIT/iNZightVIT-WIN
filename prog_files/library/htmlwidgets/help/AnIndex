@@ -5,6 +5,7 @@ getDependency	getDependency
 htmlwidgets	htmlwidgets-package
 htmlwidgets-shiny	htmlwidgets-shiny
 JS	JS
+JSEvals	JSEvals
 onRender	onRender
 onStaticRenderComplete	onStaticRenderComplete
 prependContent	prependContent

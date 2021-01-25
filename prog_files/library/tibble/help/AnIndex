@@ -23,6 +23,7 @@ deframe	enframe
 deprecated	deprecated
 enframe	enframe
 format.tbl	formatting
+format.tbl_df	formatting
 formatting	formatting
 frame_data	deprecated
 frame_matrix	frame_matrix
@@ -40,7 +41,7 @@ name-repair-superseded	name-repair-superseded
 new_tibble	new_tibble
 obj_sum	reexports
 print.tbl	formatting
-print.tbl_df	print.tbl_df
+print.tbl_df	formatting
 reexports	reexports
 remove_rownames	rownames
 repair_names	name-repair-superseded

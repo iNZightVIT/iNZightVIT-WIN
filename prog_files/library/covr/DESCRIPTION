@@ -1,7 +1,7 @@
 Encoding: UTF-8
 Package: covr
 Title: Test Coverage for Packages
-Version: 3.5.0
+Version: 3.5.1
 Authors@R: c(
     person("Jim", "Hester", email = "james.f.hester@gmail.com", role = c("aut", "cre")),
     person("Willem", "Ligtenberg", role = "ctb"),
@@ -32,8 +32,8 @@ Authors@R: c(
     person(family = "Twitter, Inc", role = "cph", comment = "Bootstrap library")
     )
 Description: Track and report code coverage for your package and (optionally)
-    upload the results to a coverage service like 'Codecov' <http://codecov.io> or
-    'Coveralls' <http://coveralls.io>. Code coverage is a measure of the amount of
+    upload the results to a coverage service like 'Codecov' <https://codecov.io> or
+    'Coveralls' <https://coveralls.io>. Code coverage is a measure of the amount of
     code being exercised by a set of tests. It is an indirect measure of test
     quality and completeness. This package is compatible with any testing
     methodology or framework and tracks coverage of both R code and compiled
@@ -43,15 +43,15 @@ BugReports: https://github.com/r-lib/covr/issues
 Depends: R (>= 3.1.0), methods
 Imports: digest, stats, utils, jsonlite, rex, httr, crayon, withr (>=
         1.0.2), yaml
-Suggests: R6, knitr, rmarkdown, htmltools, DT (>= 0.2), testthat,
+Suggests: R6, curl, knitr, rmarkdown, htmltools, DT (>= 0.2), testthat,
         rlang, rstudioapi (>= 0.2), xml2 (>= 1.0.0), parallel, memoise,
         mockery
 License: GPL-3
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 NeedsCompilation: yes
-Packaged: 2020-03-06 17:59:04 UTC; jhester
+Packaged: 2020-09-16 20:09:53 UTC; jhester
 Author: Jim Hester [aut, cre],
   Willem Ligtenberg [ctb],
   Kirill Müller [ctb],
@@ -81,6 +81,6 @@ Author: Jim Hester [aut, cre],
   Twitter, Inc [cph] (Bootstrap library)
 Maintainer: Jim Hester <james.f.hester@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-03-06 18:50:06 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 17:35:53 UTC; windows
+Date/Publication: 2020-09-16 21:10:13 UTC
+Built: R 4.0.3; x86_64-w64-mingw32; 2021-01-23 17:46:17 UTC; windows
 Archs: i386, x64

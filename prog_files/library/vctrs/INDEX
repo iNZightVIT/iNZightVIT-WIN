@@ -1,17 +1,26 @@
 %0%                     Default value for empty vectors
+data_frame              Construct a data frame
+df_list                 Collect columns for data frame construction
 df_ptype2               Coercion between two data frames
+faq-compatibility-types
+                        FAQ - How is the compatibility of vector types
+                        decided?
 faq-error-incompatible-attributes
                         FAQ - Error/Warning: Some attributes are
                         incompatible
+faq-error-scalar-type   FAQ - Error: Input must be a vector
 howto-faq-coercion      FAQ - How to implement ptype2 and cast methods?
 howto-faq-coercion-data-frame
                         FAQ - How to implement ptype2 and cast methods?
                         (Data frames)
+howto-faq-fix-scalar-type-error
+                        FAQ - Why isn't my class treated as a vector?
 internal-faq-ptype2-identity
                         Internal FAQ - 'vec_ptype2()', 'NULL', and
                         unspecified vectors
 list_of                 'list_of' S3 class for homogenous lists
 name_spec               Name specifications
+new_data_frame          Assemble attributes for data frame construction
 reference-faq-compatibility
                         FAQ - Is my class compatible with vctrs?
 theory-faq-coercion     FAQ - How does coercion work in vctrs?
@@ -27,6 +36,9 @@ vec_compare             Compare two vectors
 vec_count               Count unique values in a vector
 vec_duplicate           Find duplicated values
 vec_equal               Test if two vectors are equal
+vec_fill_missing        Fill in missing values with the previous or
+                        following value
+vec_identify_runs       Runs
 vec_init                Initialize a vector
 vec_is_list             Is the object a list?
 vec_match               Find matching observations across vectors

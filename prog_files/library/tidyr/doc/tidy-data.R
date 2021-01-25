@@ -62,7 +62,7 @@ tb
 ## -----------------------------------------------------------------------------
 tb2 <- tb %>% 
   pivot_longer(
-    c(-iso2, -year), 
+    !c(iso2, year), 
     names_to = "demo", 
     values_to = "n", 
     values_drop_na = TRUE
@@ -76,7 +76,7 @@ tb3
 
 ## -----------------------------------------------------------------------------
 tb %>% pivot_longer(
-  c(-iso2, -year), 
+  !c(iso2, year), 
   names_to = c("sex", "age"), 
   names_pattern = "(.)(.+)",
   values_to = "n", 

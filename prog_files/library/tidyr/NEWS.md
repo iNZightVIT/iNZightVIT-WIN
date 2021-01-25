@@ -1,3 +1,19 @@
+# tidyr 1.1.2
+
+* `separate_rows()` returns to 1.1.0 behaviour for empty strings 
+  (@rjpatm, #1014).
+
+# tidyr 1.1.1
+
+* New tidyr logo!
+
+* stringi dependency has been removed; this was a substantial dependency that
+  make tidyr hard to compile in resource constrained environments 
+  (@rjpat, #936).
+  
+* Replace Rcpp with cpp11. See <https://cpp11.r-lib.org/articles/motivations.html>
+  for reasons why.
+
 # tidyr 1.1.0
 
 ## General features
@@ -149,7 +165,7 @@ See `vignette("in-packages")` for a detailed transition guide.
 
 * The first argument of `nest()` has changed from `data` to `.data`.
 
-* `unnest()` uses the [emerging tidyverse standard](https://www.tidyverse.org/articles/2019/01/tibble-2.0.1/#name-repair)
+* `unnest()` uses the [emerging tidyverse standard](https://www.tidyverse.org/blog/2019/01/tibble-2.0.1/#name-repair)
   to disambiguate unique names. Use `names_repair = tidyr_legacy` to 
   request the previous approach.
 
@@ -498,7 +514,7 @@ backend.
 ## Switch to tidy evaluation
 
 tidyr is now a tidy evaluation grammar. See the
-[programming vignette](http://dplyr.tidyverse.org/articles/programming.html)
+[programming vignette](https://dplyr.tidyverse.org/articles/programming.html)
 in dplyr for practical information about tidy evaluation.
 
 The tidyr port is a bit special. While the philosophy of tidy

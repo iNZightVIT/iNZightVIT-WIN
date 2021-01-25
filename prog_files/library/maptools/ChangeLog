@@ -1,3 +1,33 @@
+2020-08-13 19:07  rsbivand
+
+	* data/SplashDams.rda, data/wrld_simpl.rda, man/as.im.Rd,
+	  man/state.vbm.Rd: as.im man page and sp data objects
+
+2020-08-13 19:03  rsbivand
+
+	* DESCRIPTION, man/pal2SpatialPolygons.Rd: tidy
+
+2020-08-12 17:45  rsbivand
+
+	* DESCRIPTION, R/sp_spat1.R, man/as.im.Rd: new as.im.RasterLayer
+	  version
+
+2020-05-06 17:49  rsbivand
+
+	* ChangeLog: tidy
+
+2020-05-06 17:45  rsbivand
+
+	* R/SpatialPolys-methods.R, R/shapelib.R: read MAP format files
+
+2020-05-05 15:15  rsbivand
+
+	* DESCRIPTION: tidy
+
+2020-05-05 15:09  rsbivand
+
+	* ChangeLog, inst/ChangeLog: tidy
+
 2020-05-05 15:07  rsbivand
 
 	* DESCRIPTION, R/GE_png.R, R/Rgshhs.R, R/SpatialLines-methods.R,

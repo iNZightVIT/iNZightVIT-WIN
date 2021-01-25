@@ -1,0 +1,284 @@
+---
+title: "Databases in srvyr"
+author: "Greg Freedman Ellis"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{databases-srvyr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE}
+if (!require(RSQLite)) {
+  message("Could not find RSQLite so could not run vignette.")
+  knitr::opts_chunk$set(eval = FALSE)
+}
+
+if (!file.exists("acs_m.Rdata")) {
+  message("Could not find db file so could not run vignette.")
+  knitr::opts_chunk$set(eval = FALSE)
+}
+```
+
+Srvyr 0.3 has a completely rewritten database backend. Using databases that are already stored
+dplyr's `tbl_lazy` objects is now just as easy as working with data stored in regular R 
+data.frames as you don't need to have a unique identifier. Additionally, it now works more
+similarly to the survey package's database code and so shouldn't be any slower.
+
+During development, I have tested using SQLite (and the now defunct MonetDBLite) 
+databases, but in theory other database backends should work as well.
+
+This vignette shows the basics of how to use srvyr with databases. 
+It is based on analysis from the wonderful resource asdfree 
+( [website](http://asdfree.com/) and [github](https://github.com/ajdamico/asdfree) ). 
+Many thanks to [ajdamico](https://github.com/ajdamico) and collaborators. 
+Specifically, I have adapted code from [American Community Survey - 2011 single year analysis](https://github.com/ajdamico/asdfree/blob/d0b965e9672161da086e30471760d08281b74343/American%20Community%20Survey/2011%20single-year%20-%20analysis%20examples.R) and the associated data preparation scripts. 
+
+## Database Setup ##
+In order to focus on srvyr and databases, we start with a prepared dataset. The full code 
+is available [on Github](https://github.com/gergness/srvyr/blob/master/vignettes/save_acs_data.R), and the high level description of what it does is:
+
+- Download data from acs website (currently only Alaska and Hawaii to save time, 
+though it would be easy to adapt to download to all 50 states and Puerto Rico). 
+
+- Merges the household and person datasets so that we can look at the variables
+related to each person including those at the household level
+
+- Selects only a few variables that will be used in this analysis to save space, but
+again it could easily be adapted to keep all of the variables. 
+
+
+For more information on the specifics of the American Community Survey, see 
+the asdfree site. Now, our code loads this prepared dataset, initiates a SQLite database, and 
+puts the data into the dataset.
+
+```{r}
+suppressMessages({
+  library(survey)
+  library(srvyr)
+  library(dplyr)
+  library(dbplyr)
+  library(RSQLite)
+})
+
+# Load data (Currently only Alaska and Hawaii to keep file size small and with 
+# limited variables, butcode that downloaded the files is available here
+# https://github.com/gergness/srvyr/blob/master/vignettes/save_acs_data.R
+# and could easily be adapted to download all states.)
+load("acs_m.Rdata") # acs_m data
+
+# Set up database and table
+db <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+acs_m_db <- copy_to(db, acs_m, "acs_m", temporary = FALSE)
+
+# Or, if the data was already stored in the database, you could do this
+# acs_m_data <- tbl(db, sql("SELECT * FROM acs_m")) 
+```
+
+Now that we have the data in the database, we can interact with the database directly using sql 
+commands, or we can use dplyr's functionality to treat it mostly the same as a local `data.frame`.
+However, the data is not stored in memory, so we could work with much larger datasets (though
+in this case, the data is too small for this to be a problem).
+
+```{r}
+# Same results
+acs_m %>% 
+  group_by(sex) %>%
+  summarize(hicov = mean(hicov))
+
+acs_m_db %>% 
+  group_by(sex) %>%
+  summarize(hicov = mean(hicov))
+
+# But smaller object size
+object.size(acs_m)
+object.size(acs_m_db)
+
+```
+
+Note that though many commands behave exactly the same whether on a local data.frame or
+database, sometimes more advanced / complicated syntax around variable modification allowed 
+in dplyr does not work on a particular database and so it is better to be more explicit. For
+example, creating a variable inside of a summarize call does not work in some databases.
+.
+
+```{r}
+acs_m %>% 
+  group_by(sex) %>%
+  summarize(hicov = mean(hicov == 1))
+
+# Works in RSQlite, but didn't in the now defunct MonetDB
+# acs_m_db %>% 
+#   group_by(sex) %>%
+#   summarize(hicov = mean(hicov == 1))
+#
+# > Error in .local(conn, statement, ...) :
+# > Unable to execute statement....
+# > ....
+
+# Creating the variable separately works as an integer works though
+acs_m_db %>% 
+  group_by(sex) %>%
+  mutate(hicov = ifelse(hicov == 1, 1L, 0L)) %>%
+  summarize(hicov = mean(hicov))
+```
+
+Further, sometimes working with variable types can get difficult if you are used to working in
+R. Notice how in the above, instead of `hicov = (hicov == 1)`, I wrote out the ifelse statement. 
+If I hadn't RSQLite would be unable to calculate the mean of the boolean variable created.
+
+Finally, a major difference when transitioning from dplyr on local data.frames is that not 
+all R functions are translated to SQL. For example, `cut()` isn't implemented in SQL, 
+so you can't create a new variable in the data.frame using it. 
+
+```{r}
+acs_m %>% 
+  group_by(agecat = cut(agep, c(0, 19, 35, 50, 65, 200))) %>%
+  summarize(hicov = mean(hicov == 1))
+
+# acs_m_db %>% 
+#   group_by(agecat = cut(agep, c(0, 19, 35, 50, 65, 200))) %>%
+#   summarize(hicov = mean(hicov == 1))
+#
+# > Error in .local(conn, statement, ...) :
+# > Unable to execute statement....
+# > ...
+
+acs_m_db %>% 
+  mutate(agecat = ifelse(agep < 19, "0-18", 
+                         ifelse(agep >= 19 & agep < 35, "19-34", 
+                                ifelse(agep >= 35 & agep < 50, "35-49", 
+                                       ifelse(agep >= 50 & agep < 65, "50-64", 
+                                              ifelse(agep >= 65, "65+", NA)))))) %>%
+  group_by(agecat) %>% 
+  summarize(hicov = mean(hicov))
+```
+
+For more information on the specifics of databases
+with dplyr, see `vignette("database", package = "dplyr")`, the `DBI` package or the 
+specific database packages, like `RSQLite`.
+
+## Srvyr Setup ##
+Srvyr commands are nearly identical to old. The only difference for setup is that you 
+need a variable that uniquely identifies each row in the database (uid). 
+
+```{r}
+acs_m_db_svy <- acs_m_db %>% 
+  as_survey_rep(
+    weight = pwgtp,
+    repweights = matches("pwgtp[0-9]+") ,
+    scale = 4 / 80,
+    rscales = rep(1 , 80),
+    mse = TRUE,
+    type = "JK1", 
+    variables = -c(matches("^pwgtp"))
+  )
+
+acs_m_db_svy
+```
+
+Because srvyr stores the survey variables locally, the srvyr object takes up
+much more memory than the dplyr one. However, this object would not grow in size
+if you added more data variables to your survey, so if your survey is very wide,
+it will save a lot space.
+
+```{r}
+object.size(acs_m_db_svy)
+```
+
+# Analysis # 
+
+Analysis commands from srvyr are also similar to ones that work on local data.frames. 
+The main differences come from the issues discussed above about explicitly creating variables
+difficulties in translating R commands, and variable types. 
+
+The following analysis is based on the asdfree analysis and shows some basic analysis on
+the total population, insurance coverage, age and sex. 
+
+```{r}
+# You can calculate the population of the united states #
+# by state
+acs_m_db_svy %>%
+  mutate(one = 1L) %>% # Note that because of weird behavior of MonetDB, need to use 1L not just 1
+  group_by(st) %>% 
+  summarize(count = survey_total(one))
+
+# Or the average age of downloaded states
+acs_m_db_svy %>%
+  summarize(agep = survey_mean(agep, na.rm = TRUE))
+
+# Average age by state
+acs_m_db_svy %>%
+  group_by(st) %>% 
+  summarize(agep = survey_mean(agep, na.rm = TRUE))
+
+# percent uninsured - nationwide (of downloaded states)
+acs_m_db_svy %>%
+  mutate(hicov = as.character(hicov)) %>% 
+  group_by(hicov) %>% 
+  summarize(pct = survey_mean(na.rm = TRUE))
+
+# by state
+acs_m_db_svy %>%
+  mutate(hicov = as.character(hicov)) %>% 
+  group_by(st, hicov) %>% 
+  summarize(pct = survey_mean(na.rm = TRUE))
+
+
+# 25th, median, and 75th percentile of age of residents of the united states (downloaded states)
+acs_m_db_svy %>%
+  summarize(agep = survey_quantile(agep, c(0.25, 0.5, 0.75), na.rm = TRUE))
+
+
+# Filter works, so we can restrict the acs_m object to females only
+acs_m_db_svy_female <- acs_m_db_svy %>%
+  filter(sex == 2)
+
+# Now any of the above commands can be re-run using the acs_m_female object
+# instead of the acs_m object in order to analyze females only
+
+# This is equivalent to using acs_m, and applying the filter every time.
+
+# average age - nationwide (of downloaded states), restricted to females
+acs_m_db_svy_female %>%
+  summarize(agep = survey_mean(agep, na.rm = TRUE))
+
+# median age - nationwide (of downloaded states), restricted to females
+acs_m_db_svy_female %>%
+  summarize(agep = survey_median(agep, na.rm = TRUE))
+
+
+# Note that though some R functions are translated by dplyr into SQL, not
+# all of them are. For example, when constructing a new age category 
+# variable in the dataset neither findIntervals nor cut work on databases, 
+# so we have to spell out groups with ifelse()
+acs_m_db_svy %>% 
+  mutate(agecat = ifelse(agep < 19, "0-18", 
+                         ifelse(agep >= 19 & agep < 35, "19-34", 
+                                ifelse(agep >= 35 & agep < 50, "35-49", 
+                                       ifelse(agep >= 50 & agep < 65, "50-64", 
+                                              ifelse(agep >= 65, "65+", NA)))))) %>%
+  group_by(agecat) %>% 
+  summarize(pct = survey_mean(na.rm = TRUE))
+```
+
+## Advanced Topics ##
+### Running survey commands with collect ###
+If you'd like to run a command from the survey package, you'll need to collect the
+data locally first. You can select only the variables you'll need for the analysis 
+so that you don't have to store the whole dataset in memory.
+
+```{r}
+acs_m_db_svy %>%
+  select(agep, hicov, sex) %>%
+  collect() %>%
+  {survey::svyglm(hicov ~ sex + agep, .)} %>%
+  summary()
+```
+
+### Write Access ###
+Note that srvyr does not require write access to perform calculations, 
+the database created in this vignette was set to read-only at the beginning. 
+This can be important when you want to make sure that your original data is
+not altered accidentally, or if you don't have write access to a database.

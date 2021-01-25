@@ -66,6 +66,7 @@ tag	tag
 tagAppendAttributes	tag
 tagAppendChild	tag
 tagAppendChildren	tag
+tagFunction	tagFunction
 tagGetAttribute	tag
 tagHasAttribute	tag
 tagList	tag

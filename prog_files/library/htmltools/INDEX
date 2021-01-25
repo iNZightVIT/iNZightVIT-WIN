@@ -31,6 +31,7 @@ singleton_tools         Singleton manipulation functions
 subtractDependencies    Subtract dependencies
 suppressDependencies    Suppress web dependencies
 tag                     HTML Tag Object
+tagFunction             Tag function
 urlEncodePath           Encode a URL path
 validateCssUnit         Validate proper CSS formatting of a unit
 withTags                Evaluate an expression using 'tags'

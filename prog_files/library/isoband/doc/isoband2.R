@@ -107,13 +107,13 @@ ggplot(iso, aes(fill = id)) +
   theme(legend.position = "bottom")
 
 ## -----------------------------------------------------------------------------
-#iso_valid <- st_make_valid(iso)
-#st_is_valid(iso_valid, reason=TRUE)
+iso_valid <- st_make_valid(iso)
+st_is_valid(iso_valid, reason=TRUE)
 
 ## -----------------------------------------------------------------------------
-#ggplot(iso_valid, aes(fill = id)) +
-#  geom_sf() +
-#  theme(legend.position = "bottom")
+ggplot(iso_valid, aes(fill = id)) +
+  geom_sf() +
+  theme(legend.position = "bottom")
 
 ## -----------------------------------------------------------------------------
 b <- isobands(x = 1:6, y = 5:1, z = m + 1e-10, levels_low = 0:1, levels_high = 1:2)

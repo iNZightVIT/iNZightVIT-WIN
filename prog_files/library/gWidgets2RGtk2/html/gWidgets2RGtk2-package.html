@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: gWidgets2Rtk2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gWidgets2RGtk2-package {gWidgets2RGtk2}"><tr><td>gWidgets2RGtk2-package {gWidgets2RGtk2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>gWidgets2Rtk2</h2>
+
+<h3>Description</h3>
+
+<p>The <span class="pkg">gWidgets2</span> package provides a programming interface for
+making graphical user interfaces within R. The package is a
+rewrite of the <span class="pkg">gWidgets</span> package, introducing a few external
+changes but a significant number of internal ones. The package
+relies on one of several underlying toolkit packages providing
+access to the graphical libraries. This package provides the
+implementation to interface with the underlying <span class="pkg">RGtk2</span>
+package.
+</p>
+<p>GComponent is a parent class for both GContainer and GWidget and
+inherits its primary interface from
+gWidgets2::BasicToolkitInterface.
+</p>
+<p>GContainer is the base class for container objects. The main
+method is <code>add_child</code>, but there is also book-keepingn code
+to keep track of the child components of the container
+</p>
+<p>GWidget is the Base class for widget objects
+</p>
+<p>GWidgetWithItems is Base class for selection widgets based on a set of items. The key
+here is the handlers apply to each item, but the handler is
+assigned to the class member.
+</p>
+<p>For RGtk2, the GButton class has the extra reference method
+<code>set_border</code>. The <code>border</code> argument has been deprecated.
+</p>
+<p>This GTable class for RGtk2 implements a few additional reference
+methods: <code>hide_names</code> to hide the header names;
+<code>remove_popup_menu</code> to remove the popup menu;
+<code>add_popup</code> to add a popup menu
+</p>
+<p>Passing in a value <code>freeze_attributes = TRUE</code> will make it so
+there are no menu items to resize frame, change variable types,
+relabel factors, .... Values of <code>"row"</code> or <code>"column"</code>
+will remove popup menus just for the row or columns.
+</p>
+<p>The label class for RGtk2 has the extra method
+<code>set_angle</code> to set the angle for the
+text. A value of 90 will rotate ccw to read bottom to top
+</p>
+<p>For RGtk2, the Gprogressbar class has the extra reference method
+<code>set_border</code>. The <code>border</code> argument has been deprecated.
+</p>
+<p>The main reference methods <code>GTimer</code> are <code>start_timer</code> and <code>stop_timer</code>
+</p>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>passed to constructor</p>
+</td></tr>
+</table>
+
+
+<h3>Methods</h3>
+
+
+<dl>
+<dt><code>add_drag_motion(handler, action = NULL, ...)</code></dt><dd><p>Called when motion over widget occurs</p>
+</dd>
+<dt><code>add_to_parent(parent, child, expand = NULL, fill = NULL, anchor = NULL,
+  ...)</code></dt><dd><p>Add a child to parent if it is ia container and non null. Dispatches to add_child method of parent</p>
+</dd>
+<dt><code>get_enabled()</code></dt><dd><p>is widget sensistive to user input</p>
+</dd>
+<dt><code>set_enabled(value, ...)</code></dt><dd><p>specify with logical if widget is sensistive to user input</p>
+</dd>
+<dt><code>set_rgtk2_font(obj, value)</code></dt><dd><p>Set font on a gtkWidget instance</p>
+</dd>
+<dt><code>set_size(value, ...)</code></dt><dd><p>Set widget size (size request), value=c(width=-1, height=-1)</p>
+</dd>
+<dt><code>child_bookkeeping(child)</code></dt><dd><p>Update parent property of child and children property of parent container</p>
+</dd>
+<dt><code>set_child_align(child, alt_child, anchor)</code></dt><dd><p>Set child alignment, if a GtkMisc or GtkAlignment object</p>
+</dd>
+<dt><code>set_child_fill(child, fill, horizontal = TRUE)</code></dt><dd><p>Fill can be NULL, TRUE, FALSE, &rdquo;, 'both', 'x', 'y'...</p>
+</dd>
+<dt><code>connect_to_toolkit_signal(signal, decorator, emitter = .self$handler_widget())</code></dt><dd><p>Connect signal of toolkit to notify observer</p>
+</dd>
+<dt><code>get_value(drop = NULL, ...)</code></dt><dd><p>Get main value of widget. From 'svalue' when index = FALSE or NULL</p>
+</dd>
+<dt><code>remove_border()</code></dt><dd><p>Remove border by setting relief to none</p>
+</dd>
+<dt><code>set_value(value, ..., drop = NULL)</code></dt><dd><p>for 'svalue&lt;-' when index = FALSE or NULL</p>
+</dd>
+<dt><code>add_popup(menu_fun = NULL)</code></dt><dd><p>Add a popup menu to the columns. Function should generate list of actions, ...</p>
+</dd>
+<dt><code>clear_columns()</code></dt><dd><p>Clear out old treeview columns in preparation of new</p>
+</dd>
+<dt><code>default_popup_menu(col_index)</code></dt><dd><p>Provide default popup menu (passed to gmenu(..., popup=TRUE))</p>
+</dd>
+<dt><code>get_index(drop = NULL, ...)</code></dt><dd><p>svalue; index=TRUE</p>
+</dd>
+<dt><code>get_length(...)</code></dt><dd><p>Get length of object. Needed for sapply.</p>
+</dd>
+<dt><code>get_model()</code></dt><dd><p>Helper: get rGtkDataFrame model, which is filtered</p>
+</dd>
+<dt><code>get_selected()</code></dt><dd><p>Get selected indices or numeric(0)</p>
+</dd>
+<dt><code>get_valid_columns()</code></dt><dd><p>Helper: get column indices less those for icons, tooltips, visible</p>
+</dd>
+<dt><code>get_value(drop = NULL, ...)</code></dt><dd><p>Get main value of widget. From 'svalue' when index = FALSE or NULL</p>
+</dd>
+<dt><code>get_view_columns()</code></dt><dd><p>Helper: get non-icon columns to iterate over</p>
+</dd>
+<dt><code>hide_names(value)</code></dt><dd><p>adjust visibility of header</p>
+</dd>
+<dt><code>make_columns()</code></dt><dd><p>Make new columns, watching out for icons, tooltips, visible</p>
+</dd>
+<dt><code>make_icon_column()</code></dt><dd><p>Make column for icons</p>
+</dd>
+<dt><code>not_these()</code></dt><dd><p>Helper: Remove these indices due to icon_col, ...</p>
+</dd>
+<dt><code>remove_popup_menu()</code></dt><dd><p>remove popup menu from column headers</p>
+</dd>
+<dt><code>set_focus(value)</code></dt><dd><p>If we can focus, do so, then raise</p>
+</dd>
+<dt><code>set_selected(ind)</code></dt><dd><p>Set selected rows by index</p>
+</dd>
+<dt><code>set_selection_mode(mode = c("none", "single", "browse", "multiple",
+  "extended"))</code></dt><dd><p>Helper: Set the selection mode</p>
+</dd>
+<dt><code>set_size(value, ...)</code></dt><dd><p>Set widget size (size request), value=c(width=-1, height=-1)</p>
+</dd>
+<dt><code>set_value(value, ..., drop = NULL)</code></dt><dd><p>for 'svalue&lt;-' when index = FALSE or NULL</p>
+</dd>
+<dt><code>get_value(drop = NULL, ...)</code></dt><dd><p>Get main value of widget. From 'svalue' when index = FALSE or NULL</p>
+</dd>
+<dt><code>set_angle(angle)</code></dt><dd><p>Rotate text by angle degrees ccw</p>
+</dd>
+<dt><code>set_value(value, ..., drop = NULL)</code></dt><dd><p>for 'svalue&lt;-' when index = FALSE or NULL</p>
+</dd>
+<dt><code>get_value(drop = NULL, ...)</code></dt><dd><p>Get main value of widget. From 'svalue' when index = FALSE or NULL</p>
+</dd>
+<dt><code>set_value(value, ..., drop = NULL)</code></dt><dd><p>for 'svalue&lt;-' when index = FALSE or NULL</p>
+</dd>
+<dt><code>set_interval(ms)</code></dt><dd><p>Set the interval. Need to stop and start active timer to implement.</p>
+</dd>
+<dt><code>start_timer()</code></dt><dd><p>Start the timer</p>
+</dd>
+<dt><code>stop_timer()</code></dt><dd><p>stop the timer</p>
+</dd>
+</dl>
+
+
+<h3>Author(s)</h3>
+
+<p>John Verzani <a href="mailto:jverzani@gmail.com">jverzani@gmail.com</a>
+</p>
+<p>Maintainer: John Verzani <a href="mailto:jverzani@gmail.com">jverzani@gmail.com</a>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>gWidgets2RGtk2</em> version 1.0-7.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

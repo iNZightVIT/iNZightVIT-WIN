@@ -27,6 +27,22 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -537,7 +553,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>First we use <code>pivot_longer()</code> to gather up the non-variable columns:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>tb2 &lt;-<span class="st"> </span>tb <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(</span>
-<span id="cb13-3"><a href="#cb13-3"></a>    <span class="kw">c</span>(<span class="op">-</span>iso2, <span class="op">-</span>year), </span>
+<span id="cb13-3"><a href="#cb13-3"></a>    <span class="op">!</span><span class="kw">c</span>(iso2, year), </span>
 <span id="cb13-4"><a href="#cb13-4"></a>    <span class="dt">names_to =</span> <span class="st">&quot;demo&quot;</span>, </span>
 <span id="cb13-5"><a href="#cb13-5"></a>    <span class="dt">values_to =</span> <span class="st">&quot;n&quot;</span>, </span>
 <span id="cb13-6"><a href="#cb13-6"></a>    <span class="dt">values_drop_na =</span> <span class="ot">TRUE</span></span>
@@ -570,7 +586,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Storing the values in this form resolves a problem in the original data. We want to compare rates, not counts, which means we need to know the population. In the original format, there is no easy way to add a population variable. It has to be stored in a separate table, which makes it hard to correctly match populations to counts. In tidy form, adding variables for population and rate is easy because they’re just additional columns.</p>
 <p>In this case, we could also do the transformation in a single step by supplying multiple column names to <code>names_to</code> and also supplying a grouped regular expression to <code>names_pattern</code>:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>tb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="kw">c</span>(<span class="op">-</span>iso2, <span class="op">-</span>year), </span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="op">!</span><span class="kw">c</span>(iso2, year), </span>
 <span id="cb15-3"><a href="#cb15-3"></a>  <span class="dt">names_to =</span> <span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;age&quot;</span>), </span>
 <span id="cb15-4"><a href="#cb15-4"></a>  <span class="dt">names_pattern =</span> <span class="st">&quot;(.)(.+)&quot;</span>,</span>
 <span id="cb15-5"><a href="#cb15-5"></a>  <span class="dt">values_to =</span> <span class="st">&quot;n&quot;</span>, </span>

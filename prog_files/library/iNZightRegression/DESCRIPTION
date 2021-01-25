@@ -1,24 +1,32 @@
 Package: iNZightRegression
 Type: Package
 Title: Tools for Exploring Regression Models with 'iNZight'
-Version: 1.2.8
+Version: 1.3.0
 Authors@R: c(
-    person("Tom", "Elliott", role = c("aut", "cre"), email = "tom.elliott@auckland.ac.nz", comment = c(ORCID = "0000-0002-7815-6318")),
-    person("Simon", "Potter", role = c("aut"), email = "spot023@aucklanduni.ac.nz"),
+    person("Tom", "Elliott",
+        role = c("aut", "cre"),
+        email = "tom.elliott@auckland.ac.nz",
+        comment = c(ORCID = "0000-0002-7815-6318")),
+    person("Simon", "Potter", role = c("aut")),
     person("David", "Banks", role = "aut"),
     person("Danny", "Chang", role = "ctb")
     )
-Depends: R (>= 2.13)
-Imports: stats, grDevices, graphics, grid, car, stats4, iNZightPlots
-        (>= 2.12), multcomp, magrittr, dplyr, ggplot2, utils
-Suggests: survey, testthat, covr, survival
-Description: Provides a suite of funcitons to use with regression models, including summaries, residual plots, and factor comparisons. Used as part of the Model Fitting module of 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions.
+Depends: R (>= 3.6)
+Imports: car, dplyr, ggplot2, ggrepel, ggtext, graphics, grDevices,
+        grid, iNZightPlots (>= 2.12), multcomp, patchwork, stats,
+        stats4, utils
+Suggests: covr, iNZightTools (>= 1.9), survey, survival, testthat
+Description: Provides a suite of functions to use with regression models, including summaries, residual plots, and factor comparisons. Used as part of the Model Fitting module of 'iNZight', a graphical user interface providing easy exploration and visualisation of data for students of statistics, available in both desktop and online versions.
+BugReports: https://github.com/iNZightVIT/iNZightRegression/issues
+Contact: inzight_support@stat.auckland.ac.nz
+URL: http://inzight.nz
 License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.1.1
+Language: en-GB
 Author: Tom Elliott [aut, cre] (<https://orcid.org/0000-0002-7815-6318>),
   Simon Potter [aut],
   David Banks [aut],
   Danny Chang [ctb]
 Maintainer: Tom Elliott <tom.elliott@auckland.ac.nz>
-Built: R 4.0.2; ; 2020-07-26 00:22:55 UTC; unix
+Built: R 4.0.2; ; 2021-01-25 19:51:25 UTC; unix

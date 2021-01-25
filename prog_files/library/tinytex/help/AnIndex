@@ -13,6 +13,7 @@ tlmgr_conf	tlmgr
 tlmgr_install	tlmgr
 tlmgr_path	tlmgr
 tlmgr_remove	tlmgr
+tlmgr_repo	tlmgr
 tlmgr_search	tlmgr
 tlmgr_update	tlmgr
 tl_pkgs	tl_pkgs

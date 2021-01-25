@@ -40,14 +40,14 @@ This document introduces you to dplyr's basic set of tools, and shows you how to
 
 ## Data: starwars
 
-To explore the basic data manipulation verbs of dplyr, we'll use the dataset `starwars`. This dataset contains `r nrow(starwars)` characters and comes from the [Star Wars API](http://swapi.dev), and is documented in `?starwars`
+To explore the basic data manipulation verbs of dplyr, we'll use the dataset `starwars`. This dataset contains `r nrow(starwars)` characters and comes from the [Star Wars API](https://swapi.dev), and is documented in `?starwars`
 
 ```{r}
 dim(starwars)
 starwars
 ```
 
-Note that `starwars` is a tibble, a modern reimagining of the data frame. It's particularly useful for large datasets because it only prints the first few rows. You can learn more about tibbles at <http://tibble.tidyverse.org>; in particular you can convert data frames to tibbles with `as_tibble()`.
+Note that `starwars` is a tibble, a modern reimagining of the data frame. It's particularly useful for large datasets because it only prints the first few rows. You can learn more about tibbles at <https://tibble.tidyverse.org>; in particular you can convert data frames to tibbles with `as_tibble()`.
 
 ## Single table verbs
 
@@ -81,7 +81,7 @@ For example, we can select all character with light skin color and brown eyes wi
 starwars %>% filter(skin_color == "light", eye_color == "brown")
 ```
 
-This is rougly equivalent to this base R code:
+This is roughly equivalent to this base R code:
 
 ```{r, eval = FALSE}
 starwars[starwars$skin_color == "light" & starwars$eye_color == "brown", ]
@@ -144,7 +144,7 @@ starwars %>% select(hair_color, skin_color, eye_color)
 # Select all columns between hair_color and eye_color (inclusive)
 starwars %>% select(hair_color:eye_color)
 # Select all columns except those from hair_color to eye_color (inclusive)
-starwars %>% select(-(hair_color:eye_color))
+starwars %>% select(!(hair_color:eye_color))
 # Select all columns ending with color
 starwars %>% select(ends_with("color"))
 ```
@@ -295,7 +295,7 @@ their own positions in the tibble. The following calls are completely
 equivalent from dplyr's point of view:
 
 ```{r}
-# `year` represents the integer 1
+# `name` represents the integer 1
 select(starwars, name)
 select(starwars, 1)
 ```

@@ -1,5 +1,5 @@
 ClientValue             ClientValue object
-SharedData              An R6 class that represents a shared data frame
+SharedData              Shared data frame
 bscols                  Arrange HTML elements or widgets in Bootstrap
                         columns
 crosstalkLibs           Crosstalk dependencies

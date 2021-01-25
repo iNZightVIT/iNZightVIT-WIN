@@ -4,14 +4,14 @@ options(rgl.useNULL = TRUE)
 library(shiny)
 library(rgl)
 
-app = shinyApp(
+app <- shinyApp(
 	ui = bootstrapPage(
 		checkboxInput("rescale", "Rescale"),
 		rglwidgetOutput("rglPlot")
 	),
 	server = function(input, output) {
 		output$rglPlot <- renderRglwidget({
-			try(rgl.close(), silent = TRUE)
+			try(close3d(), silent = TRUE)
 			if (input$rescale) aspect3d(1,1,10) else aspect3d(1,1,1)
 
 			spheres3d(rnorm(100), rnorm(100), rnorm(100,sd = 0.1), col = "red",

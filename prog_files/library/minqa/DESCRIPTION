@@ -17,5 +17,5 @@ NeedsCompilation: yes
 Packaged: 2014-10-09 07:29:53 UTC; kmm
 Repository: CRAN
 Date/Publication: 2014-10-09 15:29:18
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 14:31:30 UTC; windows
+Built: R 4.0.3; x86_64-w64-mingw32; 2021-01-23 13:40:30 UTC; windows
 Archs: i386, x64

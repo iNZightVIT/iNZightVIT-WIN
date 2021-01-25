@@ -26,11 +26,24 @@ f = system.file("LICENSE", package = "xfun")
 xfun::file_string(f)
 as.character(xfun::file_string(f))  # essentially a character string
 
+## -----------------------------------------------------------------------------
+f = system.file("LICENSE", package = "xfun")
+xfun::base64_uri(f)
+
+## -----------------------------------------------------------------------------
+xfun::grep_sub('a([b]+)c', 'a\\U\\1c', c('abc', 'abbbc', 'addc', '123'), perl = TRUE)
+
 ## ----comment=''---------------------------------------------------------------
 library(xfun)
 f = tempfile()
 writeLines(c("hello", "world"), f)
 gsub_file(f, "world", "woRld", fixed = TRUE)
+file_string(f)
+
+## ---- comment=''--------------------------------------------------------------
+process_file(f, function(x) {
+  rep(x, 3)  # repeat the content 3 times
+})
 file_string(f)
 
 ## -----------------------------------------------------------------------------

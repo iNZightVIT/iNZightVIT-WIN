@@ -2,6 +2,7 @@ bgtest	bgtest
 bondyield	bondyield
 bptest	bptest
 ChickEgg	ChickEgg
+coef.coeftest	coeftest
 coefci	coeftest
 coefci.default	coeftest
 coefci.glm	coeftest
@@ -34,11 +35,13 @@ ip	jocci
 jocci	jocci
 jtest	jtest
 lhur	jocci
+logLik.coeftest	coeftest
 lrtest	lrtest
 lrtest.default	lrtest
 lrtest.formula	lrtest
 Mandible	Mandible
 moneydemand	moneydemand
+nobs.coeftest	coeftest
 petest	petest
 print.coeftest	coeftest
 pw561	jocci

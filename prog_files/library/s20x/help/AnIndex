@@ -1,4 +1,3 @@
-s0x-package	s0x
 airpass.df	airpass.df
 apples.df	apples.df
 arousal.df	arousal.df
@@ -60,6 +59,7 @@ pairs20x	pairs20x
 peru.df	peru.df
 predict20x	predict20x
 predictCount	predictCount
+predictGLM	predictGLM
 propslsd.new	propslsd.new
 rain.df	rain.df
 residPlot	residPlot
@@ -70,6 +70,7 @@ seeds.df	seeds.df
 sheep.df	sheep.df
 skewness	skewness
 skulls.df	skulls.df
+snapper.df	snapper.df
 soyabean.df	soyabean.df
 stripqq	stripqq
 stripqq.formula	stripqq

@@ -11,7 +11,7 @@ all_of <- tidyselect::all_of
 library(tidyr)
 
 iris %>%
-  nest(data = -Species)
+  nest(data = !Species)
 
 ## -----------------------------------------------------------------------------
 packageVersion("tidyr")
@@ -24,7 +24,7 @@ nest_egg <- function(df, cols) {
   nest(df, egg = {{ cols }})
 }
 
-nest_egg(mini_iris, -Species)
+nest_egg(mini_iris, !Species)
 
 ## -----------------------------------------------------------------------------
 nest_egg <- function(df, cols) {
@@ -38,5 +38,5 @@ nest_egg(mini_iris, vars)
 sel_vars <- function(df, cols) {
   tidyselect::eval_select(rlang::enquo(cols), df)
 }
-sel_vars(mini_iris, -Species)
+sel_vars(mini_iris, !Species)
 

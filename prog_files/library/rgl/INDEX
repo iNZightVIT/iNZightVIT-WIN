@@ -20,22 +20,25 @@ axes3d                  Draw boxes, axes and other text outside the
                         data
 bg3d                    Set up Background
 bgplot3d                Use base graphics for RGL background
-clipMesh3d              Clip mesh to general region
+clipMesh3d              Clip mesh or 'rgl' object to general region
 clipplaneControl        Sets attributes of a clipping plane.
+contourLines3d          Draw contours on a surface.
 cylinder3d              Create cylindrical or "tube" plots.
 elementId2Prefix        Use widget with old-style controls.
 ellipse3d               Make an ellipsoid
 extrude3d               Generate extrusion mesh
 figWidth                Get R Markdown figure dimensions in pixels.
 grid3d                  Add a grid to a 3D plot
-hook_rgl                Hook functions to use with 'knitr'
 identify3d              Identify points in plot.
 lowlevel                rgl id values
+makeDependency          Process Javascript for HTML dependency.
 matrices                Work with homogeneous coordinates
+merge.mesh3d            Merge '"mesh3d"' objects.
 mergeVertices           Merge duplicate vertices in mesh object
 mesh3d                  3D Mesh objects
 mfrow3d                 Set up multiple figure layouts in rgl.
 observer3d              Set the observer location.
+open3d                  RGL Display Functions
 par3d                   Set or Query RGL Parameters
 par3dinterp             Interpolator for par3d parameters
 par3dinterpControl      Control rgl widget like par3dinterp().
@@ -57,8 +60,8 @@ points3d                add primitive set shape
 polygon3d               Triangulate and draw a polygon in three
                         dimensions.
 propertyControl         Controls to use with playwidget().
-propertySetter          Write HTML/Javascript code to control a WebGL
-                        display.
+propertySetter          Obsolete function to write HTML/Javascript code
+                        to control a WebGL display.
 r3d                     Generic 3D interface
 readSTL                 Read and write STL (stereolithography) format
                         files
@@ -96,7 +99,10 @@ scene3d                 Saves the current scene to a variable, and
 sceneChange             Make large change to a scene from Shiny
 select3d                Select a rectangle in an RGL scene
 selectpoints3d          Select points from a scene
+setGraphicsDelay        Set a one-time slowdown on opening standard
+                        graphics
 setUserShaders          Set user-defined shaders for 'rgl' objects.
+setupKnitr              Displaying 'rgl' scenes in 'knitr' documents.
 shapelist3d             Create and plot a list of shapes
 shinyGetPar3d           Communicate rgl parameters between R and
                         Javascript in Shiny.
@@ -108,8 +114,8 @@ sprites3d               add sprite set shape
 subdivision3d           generic subdivision surface method
 subscene3d              Create, select or modify a subscene.
 subsceneInfo            Get information on subscenes
-subsetSlider            Write HTML/Javascript code to control a WebGL
-                        display.
+subsetSlider            Obsolete functions to write HTML/Javascript
+                        code to control a WebGL display.
 surface3d               add height-field surface shape
 text3d                  add text
 thigmophobe3d           Find the direction away from the closest point

@@ -53,6 +53,8 @@ pandoc_self_contained_html
 pandoc_template         Render a pandoc template.
 parse_html_notebook     Parse an HTML Notebook
 pdf_document            Convert to a PDF/LaTeX document
+pkg_file_lua            Get the full paths of Lua filters in an R
+                        package
 powerpoint_presentation
                         Convert to a PowerPoint presentation
 publish_site            Publish an R Markdown Website

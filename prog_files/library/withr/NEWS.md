@@ -1,6 +1,33 @@
-# withr 2.2.0
+# withr 2.4.0
 
-# withr 2.1.2.9000
+- withr is now licensed as MIT (#154).
+
+- Tests for `with_cairo_pdf()` and `with_cairo_ps()` have been removed, as they fail if Cairo is not available, such as with M1 macOS systems (#158)
+
+- `local_seed()` is now exported (#153)
+
+# withr 2.3.0
+
+## Deprecations
+
+- `local_tempfile()` argument `new` is deprecated, in favor of returning the path to the new tempfile.
+  calls like `local_tempfile("xyz")` should be replaced with `xyx <- local_tempfile()` in your code (#141).
+
+## New features
+
+- New `local_seed()` function and `local_preserve_seed()` functions to correspond to `with_seed()` and `with_preserve_seed()` (#139).
+
+- New `local_tempdir()` function added to create a temp directory (#140)
+
+- `local_*()` functions now take dots (`...`), which can simplify calls in some cases, e.g. you can now use `local_options(foo = "bar")` rather than `local_options(c(foo = "bar"))`.
+
+## Minor improvements and fixes
+
+- `defer()` now throws an error if an error occurs in the deferred expression (#148)
+
+- `with_file()` and `local_file()` can now work if the file is actually a directory (#144).
+
+# withr 2.2.0
 
 - `defer()` can set deferred events on `.GlobalEnv` to facilitate the interactive development of code inside a function or test.
   Helpers `deferred_run()` (and `deferred_clear()`) provide a way to explicity run and clear (or just clear) deferred events (#76, @jennybc).

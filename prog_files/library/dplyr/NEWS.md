@@ -1,3 +1,74 @@
+# dplyr 1.0.3
+
+* `summarise()` no longer informs when the result is ungrouped (#5633).
+
+* `group_by(.drop = FALSE)` preserves ordered factors (@brianrice2, #5545).
+
+* `count()` and `tally()` are now generic. 
+
+* Removed default fallbacks to lazyeval methods; this will yield better error messages when 
+  you call a dplyr function with the wrong input, and is part of our long term 
+  plan to remove the deprecated lazyeval interface. 
+
+* `inner_join()` gains a `keep` parameter for consistency with the other
+  mutating joins (@patrickbarks, #5581).
+
+* Improved performance with many columns, with a dynamic data mask using active
+  bindings and lazy chops (#5017). 
+
+* `mutate()` and friends preserves row names in data frames once more (#5418).
+
+* `group_by()` uses the ungrouped data for the implicit mutate step (#5598). 
+  You might have to define an `ungroup()` method for custom classes.
+  For example, see https://github.com/hadley/cubelyr/pull/3. 
+
+* `relocate()` can rename columns it relocates (#5569).
+
+* `distinct()` and `group_by()` have better error messages when the mutate step fails (#5060).
+
+* Clarify that `between()` is not vectorised (#5493).
+
+* Fixed `across()` issue where data frame columns would could not be referred to
+  with `all_of()` in the nested case (`mutate()` within `mutate()`) (#5498).
+  
+* `across()` handles data frames with 0 columns (#5523). 
+
+* `mutate()` always keeps grouping variables, unconditional to `.keep=` (#5582).
+
+* dplyr now depends on R 3.3.0
+
+# dplyr 1.0.2
+
+* Fixed `across()` issue where data frame columns would mask objects referred to
+  from `all_of()` (#5460).
+
+* `bind_cols()` gains a `.name_repair` argument, passed to `vctrs::vec_cbind()` (#5451)
+
+* `summarise(.groups = "rowwise")` makes a rowwise data frame even if the input data 
+  is not grouped (#5422). 
+
+# dplyr 1.0.1
+
+* New function `cur_data_all()` similar to `cur_data()` but includes the grouping variables (#5342). 
+
+* `count()` and `tally()` no longer automatically weights by column `n` if 
+  present (#5298). dplyr 1.0.0 introduced this behaviour because of Hadley's
+  faulty memory. Historically `tally()` automatically weighted and `count()` 
+  did not, but this behaviour was accidentally changed in 0.8.2 (#4408) so that 
+  neither automatically weighted by `n`. Since 0.8.2 is almost a year old,
+  and the automatically weighting behaviour was a little confusing anyway,
+  we've removed it from both `count()` and `tally()`.
+  
+    Use of `wt = n()` is now deprecated; now just omit the `wt` argument.
+
+* `coalesce()` now supports data frames correctly (#5326).
+
+* `cummean()` no longer has off-by-one indexing problem (@cropgen, #5287).
+
+* The call stack is preserved on error. This makes it possible to `recover()`
+  into problematic code called from dplyr verbs (#5308).
+
+
 # dplyr 1.0.0
 
 ## Breaking changes
@@ -39,7 +110,7 @@
 * `lead()` and `lag()` are stricter about their inputs. 
 
 * Extending data frames requires that the extra class or classes are added first, not last. 
-  Having the exta class at the end causes some vctrs operations to fail with a mesage like:
+  Having the extra class at the end causes some vctrs operations to fail with a message like:
   
   ```
   Input must be a vector, not a `<data.frame/...>` object
@@ -245,7 +316,7 @@
 
 * `src_mysql()`, `src_postgres()`, and `src_sqlite()` has been deprecated. 
   We've recommended against them for some time. Instead please use the approach 
-  described at <http://dbplyr.tidyverse.org/>.
+  described at <https://dbplyr.tidyverse.org/>.
 
 * `select_vars()`, `rename_vars()`, `select_var()`, `current_vars()` are now
   deprecated (@perezp44, #4432)
@@ -977,7 +1048,7 @@
 * `as_tibble()` is re-exported from tibble. This is the recommend way to create
   tibbles from existing data frames. `tbl_df()` has been softly deprecated.
   `tribble()` is now imported from tibble (#2336, @chrMongeau); this
-  is now prefered to `frame_data()`.
+  is now preferred to `frame_data()`.
 
 ## Deprecated and defunct
 
@@ -1000,7 +1071,7 @@
 This version of dplyr includes some major changes to how database connections work. By and large, you should be able to continue using your existing dplyr database code without modification, but there are two big changes that you should be aware of:
 
 * Almost all database related code has been moved out of dplyr and into a
-  new package, [dbplyr](http://github.com/hadley/dbplyr/). This makes dplyr
+  new package, [dbplyr](https://github.com/tidyverse/dbplyr/). This makes dplyr
   simpler, and will make it easier to release fixes for bugs that only affect
   databases. `src_mysql()`, `src_postgres()`, and `src_sqlite()` will still
   live dplyr so your existing code continues to work.
@@ -1026,7 +1097,7 @@ mtcars2
 
 This is particularly useful if you want to perform non-SELECT queries as you can do whatever you want with `DBI::dbGetQuery()` and `DBI::dbExecute()`.
 
-If you've implemented a database backend for dplyr, please read the [backend news](https://github.com/hadley/dbplyr/blob/master/NEWS.md#backends) to see what's changed from your perspective (not much). If you want to ensure your package works with both the current and previous version of dplyr, see `wrap_dbplyr_obj()` for helpers.
+If you've implemented a database backend for dplyr, please read the [backend news](https://github.com/tidyverse/dbplyr/blob/master/NEWS.md#backends) to see what's changed from your perspective (not much). If you want to ensure your package works with both the current and previous version of dplyr, see `wrap_dbplyr_obj()` for helpers.
 
 ## UTF-8
 
@@ -1365,7 +1436,7 @@ and so these functions have been deprecated (but remain around for backward comp
 * Outdated benchmarking demos have been removed (#1487).
 
 * Code related to starting and signalling clusters has been moved out to
-  [multidplyr](http://github.com/hadley/multidplyr).
+  [multidplyr](https://github.com/tidyverse/multidplyr).
 
 ## New functions
 
@@ -1392,7 +1463,7 @@ and so these functions have been deprecated (but remain around for backward comp
   `mutate_each()` (which will thus be deprecated in a future release).
   `summarise_all()` and `mutate_all()` apply a function to all columns
   while `summarise_at()` and `mutate_at()` operate on a subset of
-  columns. These columuns are selected with either a character vector
+  columns. These columns are selected with either a character vector
   of columns names, a numeric vector of column positions, or a column
   specification with `select()` semantics generated by the new
   `columns()` helper. In addition, `summarise_if()` and `mutate_if()`
@@ -1412,7 +1483,7 @@ All data table related code has been separated out in to a new dtplyr package. T
 
 ### Tibble
 
-Functions related to the creation and coercion of `tbl_df`s, now live in their own package: [tibble](http://blog.rstudio.org/2016/03/24/tibble-1-0-0/). See `vignette("tibble")` for more details.
+Functions related to the creation and coercion of `tbl_df`s, now live in their own package: [tibble](https://blog.rstudio.com/2016/03/24/tibble-1-0-0/). See `vignette("tibble")` for more details.
 
 * `$` and `[[` methods that never do partial matching (#1504), and throw
   an error if the variable does not exist.
@@ -1516,7 +1587,7 @@ Functions related to the creation and coercion of `tbl_df`s, now live in their o
 
 * `is.na()` gets a missing space (#1695).
 
-* `if`, `is.na()`, and `is.null()` get extra parens to make precendence
+* `if`, `is.na()`, and `is.null()` get extra parens to make precedence
   more clear (#1695).
 
 * `pmin()` and `pmax()` are translated to `MIN()` and `MAX()` (#1711).
@@ -1585,7 +1656,7 @@ There were two other tweaks to the exported API, but these are less likely to af
   called `n` (#1633). Weighted `count()`/`tally()` ignore `NA`s (#1145).
 
 * The progress bar in `do()` is now updated at most 20 times per second,
-  avoiding uneccessary redraws (#1734, @mkuhn)
+  avoiding unneccessary redraws (#1734, @mkuhn)
 
 * `distinct()` doesn't crash when given a 0-column data frame (#1437).
 
@@ -1614,7 +1685,7 @@ There were two other tweaks to the exported API, but these are less likely to af
   levels in different groups (#1414). It disambiguates `NA` and `NaN` (#1448),
   and silently promotes groups that only contain `NA` (#1463). It deep copies
   data in list columns (#1643), and correctly fails on incompatible columns
-  (#1641). `mutate()` on a grouped data no longer droups grouping attributes
+  (#1641). `mutate()` on a grouped data no longer groups grouping attributes
   (#1120). `rowwise()` mutate gives expected results (#1381).
 
 * `one_of()` tolerates unknown variables in `vars`, but warns (#1848, @jennybc).
@@ -1658,7 +1729,7 @@ There were two other tweaks to the exported API, but these are less likely to af
 
 * `inner_join()`, `left_join()`, `right_join()`, and `full_join()` gain a
   `suffix` argument which allows you to control what suffix duplicated variable
-  names recieve (#1296).
+  names receive (#1296).
 
 * Set operations (`intersect()`, `union()` etc) respect coercion rules
   (#799). `setdiff()` handles factors with `NA` levels (#1526).
@@ -1698,7 +1769,7 @@ There were two other tweaks to the exported API, but these are less likely to af
 
 ## Improved encoding support
 
-Until now, dplyr's support for non-UTF8 encodings has been rather shaky. This release brings a number of improvement to fix these problems: it's probably not perfect, but should be a lot better than the previously version. This includes fixes to `arrange()` (#1280), `bind_rows()` (#1265), `distinct()` (#1179), and joins (#1315). `print.tbl_df()` also recieved a fix for strings with invalid encodings (#851).
+Until now, dplyr's support for non-UTF8 encodings has been rather shaky. This release brings a number of improvement to fix these problems: it's probably not perfect, but should be a lot better than the previously version. This includes fixes to `arrange()` (#1280), `bind_rows()` (#1265), `distinct()` (#1179), and joins (#1315). `print.tbl_df()` also received a fix for strings with invalid encodings (#851).
 
 ## Other minor improvements and bug fixes
 
@@ -1799,7 +1870,7 @@ Until now, dplyr's support for non-UTF8 encodings has been rather shaky. This re
 * Improved `$` handling (#1134).
 
 * Simplified code for `lead()` and `lag()` and make sure they work properly on
-  factors (#955). Both repsect the `default` argument (#915).
+  factors (#955). Both respect the `default` argument (#915).
 
 * `mutate` can set to `NULL` the first column (used to segfault, #1329).
 
@@ -1813,7 +1884,7 @@ This is a minor release containing fixes for a number of crashes and issues iden
 
 * `lag()` and `lead()` for grouped data were confused about indices and therefore
   produced wrong results (#925, #937). `lag()` once again overrides `lag()`
-  instead of just the default method `lag.default()`. This is necesary due to
+  instead of just the default method `lag.default()`. This is necessary due to
   changes in R CMD check. To use the lag function provided by another package,
   use `pkg::lag`.
 
@@ -1897,7 +1968,7 @@ This is a minor release containing fixes for a number of crashes and issues iden
 
 * In `*_join()`, you can now name only those variables that are different between
   the two tables, e.g. `inner_join(x, y, c("a", "b", "c" = "d"))` (#682).
-  If non-join colums are the same, dplyr will add `.x` and `.y`
+  If non-join columns are the same, dplyr will add `.x` and `.y`
   suffixes to distinguish the source (#655).
 
 * `mutate()` handles complex vectors (#436) and forbids `POSIXlt` results
@@ -1909,7 +1980,7 @@ This is a minor release containing fixes for a number of crashes and issues iden
   message if you supply an input that doesn't resolve to an integer
   column position (#643).
 
-* Printing has recieved a number of small tweaks. All `print()` method methods
+* Printing has received a number of small tweaks. All `print()` methods
   invisibly return their input so you can interleave `print()` statements into a
   pipeline to see interim results. `print()` will column names of 0 row data
   frames (#652), and will never print more 20 rows (i.e.
@@ -1989,7 +2060,7 @@ This is a minor release containing fixes for a number of crashes and issues iden
 
 * `group_by()` on a data table preserves original order of the rows (#623).
   `group_by()` supports variables with more than 39 characters thanks to
-  a fix in lazyeval (#705). It gives meaninful error message when a variable
+  a fix in lazyeval (#705). It gives meaningful error message when a variable
   is not found in the data frame (#716).
 
 * `grouped_df()` requires `vars` to be a list of symbols (#665).
@@ -2119,7 +2190,7 @@ This is a minor release containing fixes for a number of crashes and issues iden
   dataset (#462).
 
 * `trunc_mat()` and hence `print.tbl_df()` and friends gets a `width` argument
-  to control the deafult output width. Set `options(dplyr.width = Inf)` to
+  to control the default output width. Set `options(dplyr.width = Inf)` to
   always show all columns (#589).
 
 * `select()` gains `one_of()` selector: this allows you to select variables
@@ -2401,7 +2472,7 @@ dplyr 0.2 adds three new verbs:
 * `select()` correctly works with the vars attribute (#309).
 
 * Internal code is stricter when deciding if a data frame is grouped (#308):
-  this avoids a number of situations which previously causedd .
+  this avoids a number of situations which previously caused problems.
 
 * More data frame joins work with missing values in keys (#306).
 

@@ -59,6 +59,11 @@ expect_true(all_unique(x=1:3))
 expect_equal(is_complete(women$height, women$weight),rep(TRUE,15))
 expect_true(all_complete(women$height, women$weight))
 
+
+
+
+
+
 w1 <- women
 w1[1,1] <- NA
 expect_equal(is_complete(w1$height, w1$weight), c(FALSE, rep(TRUE, 14)) )
@@ -109,7 +114,7 @@ expect_equivalent(
 )
 
 # Households must have at least one member.
-v <- validator(exists_any(hhrole == "m", hhid))
+v <- validator(exists_any(hhrole == "m", by=hhid))
 expect_equivalent(
     values(confront(dd,v))
   , matrix(c(NA, NA, TRUE, NA, TRUE, TRUE, FALSE), nrow=7)

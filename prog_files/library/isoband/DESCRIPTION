@@ -1,7 +1,7 @@
 Package: isoband
 Title: Generate Isolines and Isobands from Regularly Spaced Elevation
         Grids
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: 
     c(person(given = "Claus O.",
              family = "Wilke",
@@ -22,17 +22,18 @@ Encoding: UTF-8
 LazyData: true
 LinkingTo: testthat
 Imports: grid, utils
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
+Config/testthat/edition: 3
 Suggests: covr, ggplot2, knitr, magick, microbenchmark, rmarkdown, sf,
-        testthat
+        testthat, xml2
 SystemRequirements: C++11
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2020-06-20 17:41:18 UTC; clauswilke
+Packaged: 2020-12-01 05:49:15 UTC; clauswilke
 Author: Claus O. Wilke [aut, cre] (<https://orcid.org/0000-0002-7470-9261>),
   Thomas Lin Pedersen [aut] (<https://orcid.org/0000-0002-5147-4711>)
 Maintainer: Claus O. Wilke <wilke@austin.utexas.edu>
 Repository: CRAN
-Date/Publication: 2020-06-20 18:20:03 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 22:20:44 UTC; windows
+Date/Publication: 2020-12-01 10:10:03 UTC
+Built: R 4.0.3; x86_64-w64-mingw32; 2021-01-23 19:12:40 UTC; windows
 Archs: i386, x64

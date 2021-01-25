@@ -18,6 +18,7 @@ glmnb.fit	glmnbfit
 hommel.test	hommel.test
 InverseGaussian	invgauss
 limdil	elda
+limdil-class	elda
 limdil.class	elda
 logmdigamma	logmdigamma
 matvec	matvec

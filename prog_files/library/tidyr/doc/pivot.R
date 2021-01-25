@@ -15,7 +15,7 @@ relig_income
 
 ## -----------------------------------------------------------------------------
 relig_income %>% 
-  pivot_longer(-religion, names_to = "income", values_to = "count")
+  pivot_longer(!religion, names_to = "income", values_to = "count")
 
 ## -----------------------------------------------------------------------------
 billboard
@@ -92,7 +92,7 @@ family
 ## -----------------------------------------------------------------------------
 family %>% 
   pivot_longer(
-    -family, 
+    !family, 
     names_to = c(".value", "child"), 
     names_sep = "_", 
     values_drop_na = TRUE
@@ -122,7 +122,7 @@ pnl <- tibble(
 
 pnl %>% 
   pivot_longer(
-    -c(x, a, b), 
+    !c(x, a, b), 
     names_to = c(".value", "time"), 
     names_pattern = "(.)(.)"
   )
@@ -132,11 +132,11 @@ df <- tibble(id = 1:3, y = 4:6, y = 5:7, y = 7:9, .name_repair = "minimal")
 df
 
 ## -----------------------------------------------------------------------------
-df %>% pivot_longer(-id, names_to = "name", values_to = "value")
+df %>% pivot_longer(!id, names_to = "name", values_to = "value")
 
 ## -----------------------------------------------------------------------------
 df <- tibble(id = 1:3, x1 = 4:6, x2 = 5:7, y1 = 7:9, y2 = 10:12)
-df %>% pivot_longer(-id, names_to = ".value", names_pattern = "(.).")
+df %>% pivot_longer(!id, names_to = ".value", names_pattern = "(.).")
 
 ## -----------------------------------------------------------------------------
 fish_encounters
@@ -259,7 +259,7 @@ multi <- tribble(
 
 ## -----------------------------------------------------------------------------
 multi2 <- multi %>% 
-  pivot_longer(-id, values_drop_na = TRUE) %>% 
+  pivot_longer(!id, values_drop_na = TRUE) %>% 
   mutate(checked = TRUE)
 multi2
 
@@ -274,7 +274,7 @@ multi2 %>%
 
 ## -----------------------------------------------------------------------------
 spec <- relig_income %>% build_longer_spec(
-  cols = -religion, 
+  cols = !religion, 
   names_to = "income",
   values_to = "count"
 )

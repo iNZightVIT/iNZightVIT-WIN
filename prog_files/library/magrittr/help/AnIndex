@@ -1,4 +1,4 @@
-magrittr-package	magrittr
+magrittr-package	magrittr-package
 %$%	exposition
 %<>%	compound
 %>%	pipe
@@ -12,6 +12,7 @@ divide_by_int	aliases
 equals	aliases
 extract	aliases
 extract2	aliases
+faq-pipe-gender	faq-pipe-gender
 freduce	freduce
 functions	functions
 inset	aliases
@@ -21,15 +22,21 @@ is_in	aliases
 is_less_than	aliases
 is_weakly_greater_than	aliases
 is_weakly_less_than	aliases
-magrittr	magrittr
+magrittr	magrittr-package
 mod	aliases
 multiply_by	aliases
 multiply_by_matrix	aliases
 n'est pas	aliases
 not	aliases
 or	aliases
+pipe_eager_lexical	pipe_eager_lexical
+pipe_lazy_masking	pipe_eager_lexical
+pipe_nested	pipe_eager_lexical
 print.fseq	print.fseq
 raise_to_power	aliases
+set_attr	aliases
+set_attributes	aliases
+set_class	aliases
 set_colnames	aliases
 set_names	aliases
 set_rownames	aliases

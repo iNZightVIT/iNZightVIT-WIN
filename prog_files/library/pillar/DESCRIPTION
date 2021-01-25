@@ -1,6 +1,6 @@
 Package: pillar
 Title: Coloured Formatting for Columns
-Version: 1.4.6
+Version: 1.4.7
 Authors@R: 
     c(person(given = "Kirill",
              family = "M\u00fcller",
@@ -24,11 +24,11 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1.9000
 NeedsCompilation: no
-Packaged: 2020-07-10 13:36:04 UTC; kirill
+Packaged: 2020-11-20 06:09:25 UTC; kirill
 Author: Kirill Müller [aut, cre],
   Hadley Wickham [aut],
   RStudio [cph]
 Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 Repository: CRAN
-Date/Publication: 2020-07-10 17:10:13 UTC
-Built: R 4.0.2; ; 2020-07-21 20:21:44 UTC; windows
+Date/Publication: 2020-11-20 06:50:02 UTC
+Built: R 4.0.3; ; 2021-01-23 17:43:18 UTC; windows

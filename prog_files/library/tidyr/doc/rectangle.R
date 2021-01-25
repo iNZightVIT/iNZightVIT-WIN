@@ -171,7 +171,7 @@ discs %>% unnest_wider(basic_information, names_repair = "unique")
 
 ## -----------------------------------------------------------------------------
 discs %>% 
-  select(-id) %>% 
+  select(!id) %>% 
   unnest_wider(basic_information)
 
 ## -----------------------------------------------------------------------------

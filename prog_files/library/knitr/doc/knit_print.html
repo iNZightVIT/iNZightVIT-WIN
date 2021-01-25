@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2020-06-22" />
+<meta name="date" content="2020-09-22" />
 
 <title>Custom Print Methods</title>
 
@@ -369,7 +369,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Custom Print Methods</h1>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2020-06-22</h4>
+<h4 class="date">2020-09-22</h4>
 
 
 <div id="TOC">
@@ -408,7 +408,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ##         UseMethod(&quot;knit_print&quot;)
 ##     }
 ## }
-## &lt;bytecode: 0x7f95960399e8&gt;
+## &lt;bytecode: 0x7fa99c07e328&gt;
 ## &lt;environment: namespace:knitr&gt;</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">methods</span>(knit_print)</span></code></pre></div>
 <pre><code>##  [1] knit_print.data.frame*     knit_print.default*       
@@ -424,12 +424,12 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ##         x
 ##     else normal_print(x)
 ## }
-## &lt;bytecode: 0x7f95979badb0&gt;
+## &lt;bytecode: 0x7fa99b28f070&gt;
 ## &lt;environment: namespace:knitr&gt;</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>normal_print</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## if (isS4(x)) methods::show(x) else print(x)
-## &lt;bytecode: 0x7f9593a85358&gt;
+## &lt;bytecode: 0x7fa997b75950&gt;
 ## &lt;environment: namespace:evaluate&gt;</code></pre>
 <p>As we can see, <code>knit_print()</code> has a <code>default</code> method, which is basically <code>print()</code> or <code>show()</code>, depending on whether the object is an S4 object. This means it does nothing special when printing R objects:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">knit_print</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span>
@@ -707,7 +707,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 ## {
 ##     structure(x, class = &quot;knit_asis&quot;, knit_meta = meta, knit_cacheable = cacheable)
 ## }
-## &lt;bytecode: 0x7f9597172a98&gt;
+## &lt;bytecode: 0x7fa99b870668&gt;
 ## &lt;environment: namespace:knitr&gt;</code></pre>
 <p>Note that you can actually put <strong>knitr</strong> in the <code>Suggests</code> field in DESCRIPTION, and use <code>knitr::asis_output()</code>, so that you can avoid the “hard” dependency on <strong>knitr</strong>.</p></li>
 </ol>

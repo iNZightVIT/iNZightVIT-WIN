@@ -3,14 +3,19 @@ vctrs-package	vctrs-package
 allow_lossy_cast	vctrs-conditions
 as-is	as-is
 as_list_of	list_of
+data_frame	data_frame
 df_cast	df_ptype2
+df_list	df_list
 df_ptype2	df_ptype2
+faq-compatibility-types	faq-compatibility-types
 faq-error-incompatible-attributes	faq-error-incompatible-attributes
+faq-error-scalar-type	faq-error-scalar-type
 field	fields
 field<-	fields
 fields	fields
 howto-faq-coercion	howto-faq-coercion
 howto-faq-coercion-data-frame	howto-faq-coercion-data-frame
+howto-faq-fix-scalar-type-error	howto-faq-fix-scalar-type-error
 internal-faq-ptype2-identity	internal-faq-ptype2-identity
 is_list_of	list_of
 is_partial	new_partial
@@ -59,6 +64,7 @@ validate_list_of	list_of
 vctr	new_vctr
 vctrs	vctrs-package
 vctrs-conditions	vctrs-conditions
+vctrs-data-frame	vctrs-data-frame
 vec-rep	vec-rep
 vec_arith	vec_arith
 vec_arith.Date	new_date
@@ -83,7 +89,7 @@ vec_c	vec_c
 vec_cast	vec_cast
 vec_cast.character	vec_cast
 vec_cast.complex	vec_cast
-vec_cast.data.frame	new_data_frame
+vec_cast.data.frame	vctrs-data-frame
 vec_cast.Date	new_date
 vec_cast.difftime	new_date
 vec_cast.double	vec_cast
@@ -96,7 +102,6 @@ vec_cast.ordered	new_factor
 vec_cast.POSIXct	new_date
 vec_cast.POSIXlt	new_date
 vec_cast.raw	vec_cast
-vec_cast.table	table
 vec_cast.vctrs_list_of	list_of
 vec_cast_common	vec_cast
 vec_cbind	vec_bind
@@ -114,10 +119,12 @@ vec_duplicate_id	vec_duplicate
 vec_empty	vec_empty
 vec_equal	vec_equal
 vec_equal_na	vec_equal
+vec_fill_missing	vec_fill_missing
 vec_group	vec_group
 vec_group_id	vec_group
 vec_group_loc	vec_group
 vec_group_rle	vec_group
+vec_identify_runs	vec_identify_runs
 vec_in	vec_match
 vec_init	vec_init
 vec_init_along	vec_seq_along
@@ -134,12 +141,13 @@ vec_order	vec_order
 vec_proxy	vec_proxy
 vec_proxy_compare	vec_proxy_compare
 vec_proxy_equal	vec_proxy_equal
+vec_proxy_order	vec_proxy_compare
 vec_ptype	vec_ptype
 vec_ptype2	vec_ptype2
 vec_ptype2.AsIs	as-is
 vec_ptype2.character	vec_ptype2
 vec_ptype2.complex	vec_ptype2
-vec_ptype2.data.frame	new_data_frame
+vec_ptype2.data.frame	vctrs-data-frame
 vec_ptype2.Date	new_date
 vec_ptype2.difftime	new_date
 vec_ptype2.double	vec_ptype2
@@ -152,7 +160,6 @@ vec_ptype2.ordered	new_factor
 vec_ptype2.POSIXct	new_date
 vec_ptype2.POSIXlt	new_date
 vec_ptype2.raw	vec_ptype2
-vec_ptype2.table	table
 vec_ptype2.vctrs_list_of	list_of
 vec_ptype_abbr	vec_ptype_full
 vec_ptype_abbr.integer64	int64
@@ -183,3 +190,4 @@ vec_unchop	vec_chop
 vec_unique	vec_unique
 vec_unique_count	vec_unique
 vec_unique_loc	vec_unique
+vec_unrep	vec-rep

@@ -150,40 +150,6 @@ format.pillar_shaft_latlon <- function(x, width, ...) {
 data
 print(data, width = 30)
 
-## -----------------------------------------------------------------------------
-library(testthat)
-
-## ----include = FALSE----------------------------------------------------------
-unlink("latlon.txt")
-
-## ----error = TRUE, warning = TRUE---------------------------------------------
-verify_output("latlon.txt", {
-  pillar_shaft(data$loc)
-})
-
-## -----------------------------------------------------------------------------
-verify_output("latlon.txt", {
-  pillar_shaft(data$loc)
-})
-
-## -----------------------------------------------------------------------------
-cat(readLines("latlon.txt"), sep = "\n")
-
-## ----error = TRUE-------------------------------------------------------------
-verify_output("latlon.txt", {
-  pillar_shaft(data$loc)
-  print(pillar_shaft(data$loc), width = 12)
-})
-
-## -----------------------------------------------------------------------------
-cat(readLines("latlon.txt"), sep = "\n")
-
-## ----error = TRUE-------------------------------------------------------------
-verify_output("latlon.txt", {
-  pillar_shaft(data$loc)
-  print(pillar_shaft(data$loc), width = 12)
-})
-
-## ----include = FALSE----------------------------------------------------------
-unlink("latlon.txt")
+## ----eval = FALSE-------------------------------------------------------------
+#  expect_snapshot(pillar_shaft(data$loc))
 

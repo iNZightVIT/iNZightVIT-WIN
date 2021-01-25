@@ -1,3 +1,11 @@
+## crosstalk 1.1.1
+
+* Upgrade to jQuery v3.5.1.
+
+## crosstalk 1.1.0.1
+
+* SharedData now works even when shiny isn't installed.
+
 ## crosstalk 1.1.0
 
 * `shiny` and `ggplot2` are now Suggested packages instead of Imported packages.

@@ -14,39 +14,44 @@
 
 <title>Column data types</title>
 
-<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
-// v0.0.1
-// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const codeList = document.getElementsByClassName("sourceCode");
-  for (var i = 0; i < codeList.length; i++) {
-    var linkList = codeList[i].getElementsByTagName('a');
-    for (var j = 0; j < linkList.length; j++) {
-      if (linkList[j].innerHTML === "") {
-        linkList[j].setAttribute('aria-hidden', 'true');
-      }
-    }
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
   }
 });
 </script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,7 +71,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,6 +125,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
+
 
 
 
@@ -319,7 +325,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span></code></pre></div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
 <p>This vignette shows an overview of known data types and their abbreviations, and their origin. For example, <code>&lt;int&gt;</code> in the header of a column indicates an integer column, and <code>&lt;chr&gt;</code> denotes a character column.</p>
 <pre><code>#&gt; Warning: `as_character()` is deprecated as of rlang 0.4.0
 #&gt; Please use `vctrs::vec_cast()` instead.
@@ -476,7 +484,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <tr class="even">
 <td align="left">vctrs types</td>
 <td align="left">unspecified</td>
-<td align="left"><code>vctrs::unspecified(1L)</code></td>
+<td align="left"><code>vctrs::unspecified(1)</code></td>
 <td align="left">???</td>
 </tr>
 <tr class="odd">
@@ -493,41 +501,35 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="left">vctrs_unspecified</td>
-<td align="left"><code>vctrs::unspecified(1)</code></td>
-<td align="left">???</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
 <td align="left">vctrs_partial_factor</td>
 <td align="left"><code>vctrs::partial_factor(letters)</code></td>
 <td align="left">prtl_fctr</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"></td>
 <td align="left">vctrs_partial_frame</td>
 <td align="left"><code>vctrs::partial_frame(a = 1)</code></td>
 <td align="left">prtl</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Language objects</td>
 <td align="left">function</td>
 <td align="left"><code>function() NULL</code></td>
 <td align="left">fn</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"></td>
 <td align="left">symbol</td>
 <td align="left"><code>quote(a)</code></td>
 <td align="left">sym</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"></td>
 <td align="left">expression</td>
 <td align="left"><code>parse(text = &quot;a &lt;- 1\nb&lt;- 2&quot;)</code></td>
 <td align="left">expression</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"></td>
 <td align="left">quosures</td>
 <td align="left"><code>rlang::quos(a = 1)</code></td>
@@ -535,58 +537,62 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </tr>
 </tbody>
 </table>
+</div>
+<div id="example-values" class="section level2">
+<h2>Example values</h2>
 <p>The following overview contains example values for each type:</p>
 <pre><code>#&gt; Rows: 1
-#&gt; Columns: 24
+#&gt; Columns: 23
 #&gt; Warning: Subsetting quosures with `[[` is deprecated as of rlang 0.4.0
 #&gt; Please use `quo_get_expr()` instead.
-#&gt; $ [1mlogical          [22m [3m[90m&lt;lgl&gt;[39m[23m TRUE
-#&gt; $ [1minteger          [22m [3m[90m&lt;int&gt;[39m[23m 1
-#&gt; $ [1mdouble           [22m [3m[90m&lt;dbl&gt;[39m[23m 1.5
-#&gt; $ [1mcharacter        [22m [3m[90m&lt;chr&gt;[39m[23m &quot;A&quot;
-#&gt; $ [1mcomplex          [22m [3m[90m&lt;cpl&gt;[39m[23m 0+1i
-#&gt; $ [1mraw              [22m [3m[90m&lt;raw&gt;[39m[23m 01
-#&gt; $ [1mlist             [22m [3m[90m&lt;list&gt;[39m[23m [1]
-#&gt; $ [1m`named list`     [22m [3m[90m&lt;named list&gt;[39m[23m [1]
-#&gt; $ [1mfactor           [22m [3m[90m&lt;fct&gt;[39m[23m A
-#&gt; $ [1mordered          [22m [3m[90m&lt;ord&gt;[39m[23m a
-#&gt; $ [1mDate             [22m [3m[90m&lt;date&gt;[39m[23m 2020-07-10
-#&gt; $ [1mPOSIXt           [22m [3m[90m&lt;dttm&gt;[39m[23m 2020-07-10 11:44:37
-#&gt; $ [1mdifftime         [22m [3m[90m&lt;drtn&gt;[39m[23m 1 secs
-#&gt; $ [1mhms              [22m [3m[90m&lt;time&gt;[39m[23m 00:00:01
-#&gt; $ [1minteger64        [22m [3m[90m&lt;int64&gt;[39m[23m 10000000000
-#&gt; $ [1mblob             [22m [3m[90m&lt;blob&gt;[39m[23m [00]
-#&gt; $ [1mdata.frame       [22m [3m[90m&lt;df[,1]&gt;[39m[23m &lt;data.frame[1 x 1]&gt;
-#&gt; $ [1mtbl_df           [22m [3m[90m&lt;tibble&gt;[39m[23m &lt;tbl_df[1 x 1]&gt;
-#&gt; $ [1mAsIs             [22m [3m[90m&lt;I&lt;int&gt;&gt;[39m[23m 1
-#&gt; $ [1munspecified      [22m [3m[90m&lt;???&gt;[39m[23m NA
-#&gt; $ [1mvctrs_list_of    [22m [3m[90m&lt;list&lt;int&gt;&gt;[39m[23m [1]
-#&gt; $ [1mvctrs_vctr       [22m [3m[90m&lt;vctrs_vc&gt;[39m[23m 1
-#&gt; $ [1mvctrs_unspecified[22m [3m[90m&lt;???&gt;[39m[23m NA
-#&gt; $ [1mquosures         [22m [3m[90m&lt;quos&gt;[39m[23m [~1]</code></pre>
+#&gt; $ logical       &lt;lgl&gt; TRUE
+#&gt; $ integer       &lt;int&gt; 1
+#&gt; $ double        &lt;dbl&gt; 1.5
+#&gt; $ character     &lt;chr&gt; &quot;A&quot;
+#&gt; $ complex       &lt;cpl&gt; 0+1i
+#&gt; $ raw           &lt;raw&gt; 01
+#&gt; $ list          &lt;list&gt; [1]
+#&gt; $ `named list`  &lt;named list&gt; [1]
+#&gt; $ factor        &lt;fct&gt; A
+#&gt; $ ordered       &lt;ord&gt; a
+#&gt; $ Date          &lt;date&gt; 2021-01-08
+#&gt; $ POSIXt        &lt;dttm&gt; 2021-01-08 08:26:42
+#&gt; $ difftime      &lt;drtn&gt; 1 secs
+#&gt; $ hms           &lt;time&gt; 00:00:01
+#&gt; $ integer64     &lt;int64&gt; 10000000000
+#&gt; $ blob          &lt;blob&gt; [00]
+#&gt; $ data.frame    &lt;df[,1]&gt; &lt;data.frame[1 x 1]&gt;
+#&gt; $ tbl_df        &lt;tibble&gt; &lt;tbl_df[1 x 1]&gt;
+#&gt; $ AsIs          &lt;I&lt;int&gt;&gt; 1
+#&gt; $ unspecified   &lt;???&gt; NA
+#&gt; $ vctrs_list_of &lt;list&lt;int&gt;&gt; [1]
+#&gt; $ vctrs_vctr    &lt;vctrs_vc&gt; 1
+#&gt; $ quosures      &lt;quos&gt; [~1]</code></pre>
+</div>
 <div id="implementation" class="section level2">
 <h2>Implementation</h2>
 <p>The column header is obtained by calling <code>pillar::type_sum()</code> on the column. This is an S3 method that can be overridden, but most of the time it is more useful to override <code>vctrs::vec_ptype_abbr()</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>pillar<span class="op">:::</span>type_sum.default</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt; function(x) {</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;   if (is.object(x) || vctrs::vec_is(x)) return(vctrs::vec_ptype_abbr(x))</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt; </span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;   switch(typeof(x),</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt;     builtin = ,</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt;     special = ,</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt;     closure = &quot;fn&quot;,</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt;     environment = &quot;env&quot;,</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt;     symbol =</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt;       if (is_missing(x)) {</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt;         &quot;missing&quot;</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt;       } else {</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt;         &quot;sym&quot;</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="co">#&gt;       },</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a><span class="co">#&gt; </span></span>
-<span id="cb5-17"><a href="#cb5-17"></a><span class="co">#&gt;     typeof(x)</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a><span class="co">#&gt;   )</span></span>
-<span id="cb5-19"><a href="#cb5-19"></a><span class="co">#&gt; }</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a><span class="co">#&gt; &lt;environment: namespace:pillar&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pillar<span class="sc">:::</span>type_sum.default</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; function(x) {</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   if (is.object(x) || vctrs::vec_is(x)) return(vctrs::vec_ptype_abbr(x))</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   switch(typeof(x),</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     builtin = ,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     special = ,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     closure = &quot;fn&quot;,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     environment = &quot;env&quot;,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     symbol =</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       if (is_missing(x)) {</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         &quot;missing&quot;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       } else {</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         &quot;sym&quot;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       },</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     typeof(x)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   )</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; }</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;bytecode: 0x55d83309b078&gt;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;environment: namespace:pillar&gt;</span></span></code></pre></div>
 </div>
 
 

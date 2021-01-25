@@ -1,16 +1,78 @@
-# stringi package NEWS and CHANGELOG
+# stringi Package NEWS and CHANGELOG
+
 
 -------------------------------------------------------------------------------
 
-## 1.4.6 (2020-02-17) **devel*
+## 1.5.3 (2020-09-04) **CRAN**
 
-* [NEW FEATURE] #369: `stri_c()` now returns an empty string
+* [NEW FEATURE] #400: `%s$%` and `%stri$%` are now binary operators
+  that call base R's `sprintf()`.
+
+* [NEW FEATURE] #399: The `%s*%` and `%stri*%` operators can be used
+  in addition to `stri_dup()`, for the very same purpose.
+
+* [NEW FEATURE] #355: `stri_opts_regex()` now accepts the `time_limit` and
+  `stack_limit` options so as to prevent malformed or malicious regexes
+  from running for too long.
+
+* [NEW FEATURE] #345: `stri_startswith()` and `stri_endswith()` are now equipped
+  with the `negate` parameter.
+
+* [NEW FEATURE] #382: Incorrect regexes are now reported to ease debugging.
+
+* [DEPRECATION WARNING] #347: Any unknown option passed to `stri_opts_fixed()`,
+  `stri_opts_regex()`, `stri_opts_coll()`, and `stri_opts_brkiter()` now
+  generates a warning. In the future, the `...` parameter will be removed,
+  so that will be an error.
+
+* [DEPRECATION WARNING] `stri_duplicated()`'s `fromLast` argument
+  has been renamed `from_last`. `fromLast` is now its alias scheduled
+  for removal in a future version of the package.
+
+* [DEPRECATION WARNING] `stri_enc_detect2()`
+  is scheduled for removal in a future version of the package.
+  Use `stri_enc_detect()` or the more targeted `stri_enc_isutf8()`,
+  `stri_enc_isascii()`, etc., instead.
+
+* [DEPRECATION WARNING] `stri_read_lines()`,  `stri_write_lines()`,
+  `stri_read_raw()`: use `con` argument instead of `fname` now.
+  The argument `fallback_encoding` is scheduled for removal and is no longer
+  used. `stri_read_lines()` does not support `encoding="auto"` anymore.
+
+* [DEPRECATION WARNING] `nparagraphs` in `stri_rand_lipsum()` has been renamed
+  `n_paragraphs`.
+
+* [NEW FEATURE] #398: Alternative, British spelling of function parameters
+  has been introduced, e.g., `stri_opts_coll()` now supports both
+  `normalization` and `normalisation`.
+
+* [NEW FEATURE] #393: `stri_read_bin()`, `stri_read_lines()`, and
+  `stri_write_lines()` are no longer marked as draft API.
+
+* [NEW FEATURE] #187: `stri_read_bin()`, `stri_read_lines()`, and
+  `stri_write_lines()` now support connection objects as well.
+
+* [NEW FEATURE] #386: New function `stri_sort_key()` for generating
+  locale-dependent sort keys which can be ordered at the byte level and
+  return an equivalent ordering to the original string (@DavisVaughan).
+
+* [BUGFIX] #138: `stri_encode()` and `stri_rand_strings()`
+  now can generate strings of much larger lengths.
+
+* [BUGFIX] `stri_wrap()` did not honour `indent` correctly when
+  `use_width` was `TRUE`.
+
+-------------------------------------------------------------------------------
+
+## 1.4.6 (2020-02-17) **CRAN*
+
+* [BACKWARD INCOMPATIBILITY] #369: `stri_c()` now returns an empty string
 when input is empty and `collapse` is set.
 
 * [BUGFIX] #370: fixed an issue in `stri_prepare_arg_POSIXct()`
 reported by rchk.
 
-* [BUGFIX] #372: documented arguments not in `\usage` in
+* [DOCUMENTATION] #372: documented arguments not in `\usage` in
 documentation object `stri_datetime_format`: `...`
 
 -----------------------------------------------------------------------------

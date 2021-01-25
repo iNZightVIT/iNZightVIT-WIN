@@ -1,3 +1,10 @@
+## ----include=FALSE------------------------------------------------------------
+knitr::opts_chunk$set(collapse = TRUE,
+                      class.output = NULL,
+                      class.message = NULL,
+                      class.warning = NULL,
+                      class.error = NULL)
+
 ## ----faq7_31------------------------------------------------------------------
 # FAQ 7.31
 a0 <- 2

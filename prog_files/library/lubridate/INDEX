@@ -53,7 +53,8 @@ pretty_dates            Computes attractive axis breaks for date-time
                         data
 quarter                 Get the fiscal quarter and semester of a
                         date-time
-rollback                Roll back date to last day of previous month
+rollbackward            Roll backward or forward a date the previous,
+                        current or next month
 round_date              Round, floor and ceiling methods for date-time
                         objects
 second                  Get/set seconds component of a date-time

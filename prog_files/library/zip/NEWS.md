@@ -1,4 +1,29 @@
 
+# 2.1.1
+
+This version has no user visible changes.
+
+# 2.1.0
+
+* `unzip_process()` now does not fail randomly on Windows (#60).
+
+* Now all functions handle Unicode paths correctly, on Windows
+  as well (#42, #53).
+
+* `unzip_process()` now works when R library is on different drive
+  than `exdir` on Windows (#45)
+
+* zip functions now have a `mode` argument to choose how files and
+  directories are assembled into the archive. See the docs for
+  details.
+
+* zip functions now have a `root` argument, zip changes the working
+  directory to this before creating the archive, so all files are
+  relative to `root`.
+
+* `zip()` and `zip_append()` are not deprecated any more, as it was
+  hard to achieve the same functionality with the other zip functions.
+
 # 2.0.4
 
 * `unzip_process()` prints better error messages to the standard error,

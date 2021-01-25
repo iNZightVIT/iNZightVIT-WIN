@@ -1,36 +1,98 @@
+# openxlsx 4.2.3
+ 
+## Fixes for Check issues
+ 
+* Fix to pass the tests for link-time optimization type mismatches
+
+* Fix to pass the checks of native code (C/C++) based on static code analysis
+
+## Bug Fixes
+
+* Grouping columns after setting widths no longer throws an error ([#100](https://github.com/ycphs/openxlsx/issues/100))
+
+* Fix inability to save workbook more than once ([#106](https://github.com/ycphs/openxlsx/issues/106))
+
+* Fix `loadWorkbook()` sometimes importing incorrect column attributes
+
+# openxlsx 4.2.2
+
+## New Features
+
+* Added features for `conditionalFormatting` to support also 'contains not', 'begins with' and 'ends with'
+
+* Added return value for `saveWorkbook()` the default value for `returnValue` is `FALSE` ([#71](https://github.com/ycphs/openxlsx/issues/71))
+
+* Added Tests for new parameter of `saveWorkbook()`
+
+## Bug Fixes 
+ 
+* Solved CRAN check errors based on the change disussed in [PR#17277](https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=17277)
+
+# openxlsx 4.2.0
+
+## New Features
+
+* Added `groupColumns()`, `groupRows()`, `ungroupColumns()`, and `ungroupRows()` to group/ugroup columns/rows ([#32](https://github.com/ycphs/openxlsx/issues/32))
+
+## Bug Fixes 
+
+* Allow xml-sensitve characters in sheetnames ([#78](https://github.com/ycphs/openxlsx/issues/78))
+
+## Internal
+
+* Updated roxygen2 to 7.1.1
+
+# openxlsx 4.1.5.1
+
+## Bug Fixes
+
+*  fixed issue [#68](https://github.com/ycphs/openxlsx/issues/68])
+
 # openxlsx 4.1.5
 
-*  include tests for cloneWorksheet
+## New Features
+
+*  Add functions to get and set the creator of the xlsx file
+
+*  add function to set the name of the user who last modified the xlsx file
+
+## Bug Fixes
 
 *  Fixed NEWS hyperlink
 
 *  Fixed writing of mixed EST/EDT datetimes
 
-*  Added description for `writeFormula` to use only english function names
+*  Added description for `writeFormula()` to use only english function names
 
 *  Fixed validateSheet for special characters
 
-*  Add functions to get and set the creator of the xlsx-file
-
-*  add function to set the name of the user who last modified the xlsx-file
+## Internal
 
 *  applied the tidyverse-style to the package `styler::style_pkg()`
 
+*  include tests for `cloneWorksheet`
+
 # openxlsx 4.1.4
+
+## New Features
+
+*  Added `getCellRefs()` as function. [#7](https://github.com/ycphs/openxlsx/issues/7)
+
+*  Added parameter for customizing na.strings
+
+## Bug Fixes
 
 *  Use `zip::zipr()` instead of `zip::zip()`.
 
 *  Keep correct visibility option for loadWorkbook. [#12](https://github.com/ycphs/openxlsx/issues/12])
 
-*  Added getCellRefs as function. [#7](https://github.com/ycphs/openxlsx/issues/7)
-
-*  update to rogygen2 7.0.0
-
-*  Added parameter for customizing na.strings
-
 *  Add space surrounding "wrapText" [#17](https://github.com/ycphs/openxlsx/issues/17)
 
 *  Corrected Percentage, Accounting, Comma, Currency class on column level
+
+## Internal
+
+*  update to rogygen2 7.0.0
 
 # openxlsx 4.1.3
 

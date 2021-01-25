@@ -31,7 +31,7 @@ mistake <- force_tz(meeting, "America/Chicago")
 with_tz(mistake, "Pacific/Auckland")
 
 ## -----------------------------------------------------------------------------
-auckland <- interval(arrive, leave) 
+auckland <- interval(arrive, leave)
 auckland
 auckland <- arrive %--% leave
 auckland

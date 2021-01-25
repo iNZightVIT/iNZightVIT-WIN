@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;rstudioapi&rsquo; version 0.11</h2>
+</div><h2>Documentation for package &lsquo;rstudioapi&rsquo; version 0.13</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -59,7 +59,7 @@
 <tr><td style="width: 25%;"><a href="askForPassword.html">askForPassword</a></td>
 <td>Ask the user for a password interactively</td></tr>
 <tr><td style="width: 25%;"><a href="askForSecret.html">askForSecret</a></td>
-<td>Show Prompt for Secret Dialog</td></tr>
+<td>Prompt user for secret</td></tr>
 </table>
 
 <h2><a name="B">-- B --</a></h2>
@@ -82,6 +82,8 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="callFun.html">callFun</a></td>
 <td>Call an RStudio API function</td></tr>
+<tr><td style="width: 25%;"><a href="chunk-callbacks.html">chunk-callbacks</a></td>
+<td>Register and Unregister a Chunk Callback</td></tr>
 <tr><td style="width: 25%;"><a href="convertTheme.html">convertTheme</a></td>
 <td>Convert a tmTheme to an RStudio Theme</td></tr>
 <tr><td style="width: 25%;"><a href="createProjectTemplate.html">createProjectTemplate</a></td>
@@ -97,7 +99,11 @@
 <td>Interact with RStudio's Dictionaries</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-documents.html">documentClose</a></td>
 <td>Interact with Documents open in RStudio</td></tr>
+<tr><td style="width: 25%;"><a href="rstudio-documents.html">documentId</a></td>
+<td>Interact with Documents open in RStudio</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-documents.html">documentNew</a></td>
+<td>Interact with Documents open in RStudio</td></tr>
+<tr><td style="width: 25%;"><a href="rstudio-documents.html">documentPath</a></td>
 <td>Interact with Documents open in RStudio</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-documents.html">documentSave</a></td>
 <td>Interact with Documents open in RStudio</td></tr>
@@ -120,7 +126,9 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="file-dialogs.html">file-dialogs</a></td>
-<td>Select a File / Folder</td></tr>
+<td>Select a file / folder</td></tr>
+<tr><td style="width: 25%;"><a href="filesPaneNavigate.html">filesPaneNavigate</a></td>
+<td>Navigate to a Directory in the Files Pane</td></tr>
 <tr><td style="width: 25%;"><a href="hasFun.html">findFun</a></td>
 <td>Exists/get for RStudio functions</td></tr>
 </table>
@@ -131,11 +139,11 @@
 <tr><td style="width: 25%;"><a href="rstudio-editors.html">getActiveDocumentContext</a></td>
 <td>Retrieve Information about an RStudio Editor</td></tr>
 <tr><td style="width: 25%;"><a href="getActiveProject.html">getActiveProject</a></td>
-<td>Path to Active RStudio Project</td></tr>
+<td>Retrieve path to active RStudio project</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-editors.html">getConsoleEditorContext</a></td>
 <td>Retrieve Information about an RStudio Editor</td></tr>
 <tr><td style="width: 25%;"><a href="persistent-values.html">getPersistentValue</a></td>
-<td>Persistent Keys and Values</td></tr>
+<td>Persistent keys and values</td></tr>
 <tr><td style="width: 25%;"><a href="getRStudioPackageDependencies.html">getRStudioPackageDependencies</a></td>
 <td>Get RStudio Package Dependencies</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-editors.html">getSourceEditorContext</a></td>
@@ -152,7 +160,7 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="hasColorConsole.html">hasColorConsole</a></td>
-<td>Check if Console Supports ANSI Color Escapes</td></tr>
+<td>Check if console supports ANSI color escapes.</td></tr>
 <tr><td style="width: 25%;"><a href="hasFun.html">hasFun</a></td>
 <td>Exists/get for RStudio functions</td></tr>
 <tr><td style="width: 25%;"><a href="highlightUi.html">highlightUi</a></td>
@@ -163,7 +171,7 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="projects.html">initializeProject</a></td>
-<td>Open a Project in RStudio</td></tr>
+<td>Open a project in RStudio</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-documents.html">insertText</a></td>
 <td>Interact with Documents open in RStudio</td></tr>
 <tr><td style="width: 25%;"><a href="document_position.html">is.document_position</a></td>
@@ -171,7 +179,7 @@
 <tr><td style="width: 25%;"><a href="document_range.html">is.document_range</a></td>
 <td>Create a Range</td></tr>
 <tr><td style="width: 25%;"><a href="isAvailable.html">isAvailable</a></td>
-<td>Check if RStudio is running.</td></tr>
+<td>Check if RStudio is running</td></tr>
 </table>
 
 <h2><a name="J">-- J --</a></h2>
@@ -239,21 +247,21 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="navigateToFile.html">navigateToFile</a></td>
-<td>Navigate to File</td></tr>
+<td>Navigate to file</td></tr>
 </table>
 
 <h2><a name="O">-- O --</a></h2>
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="projects.html">openProject</a></td>
-<td>Open a Project in RStudio</td></tr>
+<td>Open a project in RStudio</td></tr>
 </table>
 
 <h2><a name="P">-- P --</a></h2>
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="persistent-values.html">persistent-values</a></td>
-<td>Persistent Keys and Values</td></tr>
+<td>Persistent keys and values</td></tr>
 <tr><td style="width: 25%;"><a href="previewRd.html">previewRd</a></td>
 <td>Preview an Rd topic in the Help pane</td></tr>
 <tr><td style="width: 25%;"><a href="previewSql.html">previewSql</a></td>
@@ -261,7 +269,7 @@
 <tr><td style="width: 25%;"><a href="primary_selection.html">primary_selection</a></td>
 <td>Extract the Primary Selection</td></tr>
 <tr><td style="width: 25%;"><a href="projects.html">projects</a></td>
-<td>Open a Project in RStudio</td></tr>
+<td>Open a project in RStudio</td></tr>
 </table>
 
 <h2><a name="R">-- R --</a></h2>
@@ -271,6 +279,8 @@
 <td>Read Preference</td></tr>
 <tr><td style="width: 25%;"><a href="readRStudioPreference.html">readRStudioPreference</a></td>
 <td>Read RStudio Preference</td></tr>
+<tr><td style="width: 25%;"><a href="chunk-callbacks.html">registerChunkCallback</a></td>
+<td>Register and Unregister a Chunk Callback</td></tr>
 <tr><td style="width: 25%;"><a href="removeTheme.html">removeTheme</a></td>
 <td>Remove a custom theme from RStudio.</td></tr>
 <tr><td style="width: 25%;"><a href="restartSession.html">restartSession</a></td>
@@ -285,19 +295,25 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="savePlotAsImage.html">savePlotAsImage</a></td>
-<td>Save Active RStudio Plot as an Image</td></tr>
+<td>Save active RStudio plot image</td></tr>
 <tr><td style="width: 25%;"><a href="file-dialogs.html">selectDirectory</a></td>
-<td>Select a File / Folder</td></tr>
+<td>Select a file / folder</td></tr>
 <tr><td style="width: 25%;"><a href="file-dialogs.html">selectFile</a></td>
-<td>Select a File / Folder</td></tr>
+<td>Select a file / folder</td></tr>
+<tr><td style="width: 25%;"><a href="selections.html">selectionGet</a></td>
+<td>Manipulate User Selections in the RStudio IDE</td></tr>
+<tr><td style="width: 25%;"><a href="selections.html">selections</a></td>
+<td>Manipulate User Selections in the RStudio IDE</td></tr>
+<tr><td style="width: 25%;"><a href="selections.html">selectionSet</a></td>
+<td>Manipulate User Selections in the RStudio IDE</td></tr>
 <tr><td style="width: 25%;"><a href="sendToConsole.html">sendToConsole</a></td>
-<td>Send Code to the R Console</td></tr>
+<td>Send code to the R console</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-documents.html">setCursorPosition</a></td>
 <td>Interact with Documents open in RStudio</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-documents.html">setDocumentContents</a></td>
 <td>Interact with Documents open in RStudio</td></tr>
 <tr><td style="width: 25%;"><a href="persistent-values.html">setPersistentValue</a></td>
-<td>Persistent Keys and Values</td></tr>
+<td>Persistent keys and values</td></tr>
 <tr><td style="width: 25%;"><a href="rstudio-documents.html">setSelectionRanges</a></td>
 <td>Interact with Documents open in RStudio</td></tr>
 <tr><td style="width: 25%;"><a href="showDialog.html">showDialog</a></td>
@@ -307,7 +323,7 @@
 <tr><td style="width: 25%;"><a href="showQuestion.html">showQuestion</a></td>
 <td>Show Question Dialog Box</td></tr>
 <tr><td style="width: 25%;"><a href="sourceMarkers.html">sourceMarkers</a></td>
-<td>Display Source Markers</td></tr>
+<td>Display source markers</td></tr>
 <tr><td style="width: 25%;"><a href="systemUsername.html">systemUsername</a></td>
 <td>Get System Username</td></tr>
 </table>
@@ -348,6 +364,8 @@
 <h2><a name="U">-- U --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="chunk-callbacks.html">unregisterChunkCallback</a></td>
+<td>Register and Unregister a Chunk Callback</td></tr>
 <tr><td style="width: 25%;"><a href="updateDialog.html">updateDialog</a></td>
 <td>Updates a Dialog Box</td></tr>
 <tr><td style="width: 25%;"><a href="dictionaries.html">userDictionariesPath</a></td>
@@ -360,9 +378,9 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="isAvailable.html">verifyAvailable</a></td>
-<td>Check if RStudio is running.</td></tr>
+<td>Check if RStudio is running</td></tr>
 <tr><td style="width: 25%;"><a href="versionInfo.html">versionInfo</a></td>
-<td>RStudio Version Information</td></tr>
+<td>RStudio version information</td></tr>
 <tr><td style="width: 25%;"><a href="viewer.html">viewer</a></td>
 <td>View local web content within RStudio</td></tr>
 </table>

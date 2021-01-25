@@ -27,6 +27,22 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -410,7 +426,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb8-8"><a href="#cb8-8"></a><span class="co">#&gt; 1     6 &lt;tibble [7 × 10]&gt;  &lt;dbl [7]&gt; </span></span>
 <span id="cb8-9"><a href="#cb8-9"></a><span class="co">#&gt; 2     4 &lt;tibble [11 × 10]&gt; &lt;dbl [11]&gt;</span></span>
 <span id="cb8-10"><a href="#cb8-10"></a><span class="co">#&gt; 3     8 &lt;tibble [14 × 10]&gt; &lt;dbl [14]&gt;</span></span></code></pre></div>
-<p>This workflow works particularly well in conjunction with <a href="https://broom.tidyverse.org/">broom</a>, which makes it easy to turn models into tidy data frames which can then be <code>unnest()</code>ed to get back to flat data frames. You can see a bigger example in the <a href="https://broom.tidyverse.org/articles/broom_and_dplyr.html">broom and dplyr vignette</a>.</p>
+<p>This workflow works particularly well in conjunction with <a href="https://broom.tidymodels.org/">broom</a>, which makes it easy to turn models into tidy data frames which can then be <code>unnest()</code>ed to get back to flat data frames. You can see a bigger example in the <a href="https://broom.tidymodels.org/articles/broom_and_dplyr.html">broom and dplyr vignette</a>.</p>
 </div>
 
 

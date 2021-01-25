@@ -1,5 +1,5 @@
-/* This file is part of the 'stringi' package for R.
- * Copyright (c) 2013-2019, Marek Gagolewski and other contributors.
+/* This file is part of the 'stringi' project.
+ * Copyright (c) 2013-2020, Marek Gagolewski <https://www.gagolewski.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -106,6 +106,13 @@ SEXP stri_order(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {
       if (!fun)
          fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_order");
       return fun(e1, e2, e3, e4);
+   }
+
+SEXP stri_sort_key(SEXP e1, SEXP e2) {
+      static SEXP(*fun)(SEXP,SEXP) = NULL;
+      if (!fun)
+         fun = (SEXP(*)(SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_sort_key");
+      return fun(e1, e2);
    }
 
 SEXP stri_unique(SEXP e1, SEXP e2) {
@@ -675,18 +682,18 @@ SEXP stri_split_coll(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5, SEXP e6, SEXP 
       return fun(e1, e2, e3, e4, e5, e6, e7);
    }
 
-SEXP stri_endswith_coll(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {
-      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP) = NULL;
+SEXP stri_endswith_coll(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5) {
+      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP,SEXP) = NULL;
       if (!fun)
-         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_endswith_coll");
-      return fun(e1, e2, e3, e4);
+         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_endswith_coll");
+      return fun(e1, e2, e3, e4, e5);
    }
 
-SEXP stri_startswith_coll(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {
-      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP) = NULL;
+SEXP stri_startswith_coll(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5) {
+      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP,SEXP) = NULL;
       if (!fun)
-         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_startswith_coll");
-      return fun(e1, e2, e3, e4);
+         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_startswith_coll");
+      return fun(e1, e2, e3, e4, e5);
    }
 
 SEXP stri_subset_coll(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5) {
@@ -794,18 +801,18 @@ SEXP stri_subset_fixed(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5) {
       return fun(e1, e2, e3, e4, e5);
    }
 
-SEXP stri_endswith_fixed(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {
-      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP) = NULL;
+SEXP stri_endswith_fixed(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5) {
+      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP,SEXP) = NULL;
       if (!fun)
-         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_endswith_fixed");
-      return fun(e1, e2, e3, e4);
+         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_endswith_fixed");
+      return fun(e1, e2, e3, e4, e5);
    }
 
-SEXP stri_startswith_fixed(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {
-      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP) = NULL;
+SEXP stri_startswith_fixed(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5) {
+      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP,SEXP) = NULL;
       if (!fun)
-         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_startswith_fixed");
-      return fun(e1, e2, e3, e4);
+         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_startswith_fixed");
+      return fun(e1, e2, e3, e4, e5);
    }
 
 SEXP stri_subset_fixed_replacement(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5) {
@@ -1018,18 +1025,18 @@ SEXP stri_split_charclass(SEXP e1, SEXP e2, SEXP e3, SEXP e4, SEXP e5, SEXP e6) 
       return fun(e1, e2, e3, e4, e5, e6);
    }
 
-SEXP stri_endswith_charclass(SEXP e1, SEXP e2, SEXP e3) {
-      static SEXP(*fun)(SEXP,SEXP,SEXP) = NULL;
+SEXP stri_endswith_charclass(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {
+      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP) = NULL;
       if (!fun)
-         fun = (SEXP(*)(SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_endswith_charclass");
-      return fun(e1, e2, e3);
+         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_endswith_charclass");
+      return fun(e1, e2, e3, e4);
    }
 
-SEXP stri_startswith_charclass(SEXP e1, SEXP e2, SEXP e3) {
-      static SEXP(*fun)(SEXP,SEXP,SEXP) = NULL;
+SEXP stri_startswith_charclass(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {
+      static SEXP(*fun)(SEXP,SEXP,SEXP,SEXP) = NULL;
       if (!fun)
-         fun = (SEXP(*)(SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_startswith_charclass");
-      return fun(e1, e2, e3);
+         fun = (SEXP(*)(SEXP,SEXP,SEXP,SEXP)) R_GetCCallable("stringi", "C_stri_startswith_charclass");
+      return fun(e1, e2, e3, e4);
    }
 
 SEXP stri_subset_charclass(SEXP e1, SEXP e2, SEXP e3, SEXP e4) {

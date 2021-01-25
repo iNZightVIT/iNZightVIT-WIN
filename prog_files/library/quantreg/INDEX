@@ -4,6 +4,9 @@ FAQ                     FAQ and ChangeLog of a package
 KhmaladzeTest           Tests of Location and Location Scale Shift
                         Hypotheses for Linear Models
 Mammals                 Garland(1983) Data on Running Speed of Mammals
+Munge                   Munge rqss formula
+ParetoTest              Estimation and Inference on the Pareto Tail
+                        Exponent for Linear Models
 Peirce                  C.S. Peirce's Auditory Response Data
 QTECox                  Function to obtain QTE from a Cox model
 akj                     Density Estimation using Adaptive Kernel method
@@ -12,6 +15,7 @@ bandwidth.rq            bandwidth selection for rq functions
 barro                   Barro Data
 boot.crq                Bootstrapping Censored Quantile Regression
 boot.rq                 Bootstrapping Quantile Regression
+boot.rq.pwxy            Preprocessing weighted bootstrap method
 boot.rq.pxy             Preprocessing bootstrap method
 combos                  Ordered Combinations
 critval                 Hotelling Critical Values
@@ -43,6 +47,7 @@ predict.rqss            Predict from fitted nonparametric quantile
 print.KhmaladzeTest     Print a KhmaladzeTest object
 print.rq                Print an rq object
 print.summary.rq        Print Quantile Regression Summary Object
+q489                    Even Quicker Sample Quantiles
 qrisk                   Function to compute Choquet portfolio weights
 qss                     Additive Nonparametric Terms for rqss Fitting
 ranks                   Quantile Regression Ranks
@@ -61,7 +66,11 @@ rq.fit.fnc              Quantile Regression Fitting via Interior Point
 rq.fit.hogg             weighted quantile regression fitting
 rq.fit.lasso            Lasso Penalized Quantile Regression
 rq.fit.pfn              Preprocessing Algorithm for Quantile Regression
+rq.fit.pfnb             Quantile Regression Fitting via Interior Point
+                        Methods
 rq.fit.ppro             Preprocessing fitting method for QR
+rq.fit.qfnb             Quantile Regression Fitting via Interior Point
+                        Methods
 rq.fit.scad             SCADPenalized Quantile Regression
 rq.fit.sfn              Sparse Regression Quantile Fitting
 rq.fit.sfnc             Sparse Constrained Regression Quantile Fitting

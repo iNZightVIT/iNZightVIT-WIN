@@ -4,7 +4,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 
 ## -----------------------------------------------------------------------------
 #' Driver for Kazam database.
-#' 
+#'
 #' @keywords internal
 #' @export
 #' @import DBI
@@ -33,21 +33,21 @@ Kazam()
 
 ## -----------------------------------------------------------------------------
 #' Kazam connection class.
-#' 
+#'
 #' @export
 #' @keywords internal
-setClass("KazamConnection", 
-  contains = "DBIConnection", 
+setClass("KazamConnection",
+  contains = "DBIConnection",
   slots = list(
-    host = "character", 
-    username = "character", 
+    host = "character",
+    username = "character",
     # and so on
     ptr = "externalptr"
   )
 )
 
 ## -----------------------------------------------------------------------------
-#' @param drv An object created by \code{Kazam()} 
+#' @param drv An object created by \code{Kazam()}
 #' @rdname Kazam
 #' @export
 #' @examples
@@ -58,25 +58,25 @@ setClass("KazamConnection",
 #' }
 setMethod("dbConnect", "KazamDriver", function(drv, ...) {
   # ...
-  
+
   new("KazamConnection", host = host, ...)
 })
 
 ## -----------------------------------------------------------------------------
 #' Kazam results class.
-#' 
+#'
 #' @keywords internal
 #' @export
-setClass("KazamResult", 
+setClass("KazamResult",
   contains = "DBIResult",
   slots = list(ptr = "externalptr")
 )
 
 ## -----------------------------------------------------------------------------
 #' Send a query to Kazam.
-#' 
+#'
 #' @export
-#' @examples 
+#' @examples
 #' # This is another good place to put examples
 setMethod("dbSendQuery", "KazamConnection", function(conn, statement, ...) {
   # some code
@@ -107,7 +107,7 @@ setMethod("dbDataType", "KazamConnection", function(dbObj, obj, ...) {
 
 ## -----------------------------------------------------------------------------
 #' @export
-setMethod("dbHasCompleted", "KazamResult", function(res, ...) { 
-  
+setMethod("dbHasCompleted", "KazamResult", function(res, ...) {
+
 })
 

@@ -1,8 +1,8 @@
 Package: tinytex
 Type: Package
-Title: Helper Functions to Install and Maintain 'TeX Live', and Compile
-        'LaTeX' Documents
-Version: 0.24
+Title: Helper Functions to Install and Maintain TeX Live, and Compile
+        LaTeX Documents
+Version: 0.29
 Authors@R: c(
   person("Yihui", "Xie", role = c("aut", "cre", "cph"), email = "xie@yihui.name", comment = c(ORCID = "0000-0003-0645-5666")),
   person(family = "RStudio, PBC", role = "cph"),
@@ -15,21 +15,21 @@ Description: Helper functions to install and maintain the 'LaTeX' distribution
   portable, and easy-to-maintain version of 'TeX Live'. This package also
   contains helper functions to compile 'LaTeX' documents, and install missing
   'LaTeX' packages automatically.
-Imports: xfun (>= 0.5)
+Imports: xfun (>= 0.19)
 Suggests: testit, rstudioapi
 License: MIT + file LICENSE
 URL: https://github.com/yihui/tinytex
 BugReports: https://github.com/yihui/tinytex/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2020-06-20 02:40:59 UTC; yihui
+Packaged: 2021-01-21 02:43:35 UTC; yihui
 Author: Yihui Xie [aut, cre, cph] (<https://orcid.org/0000-0003-0645-5666>),
   RStudio, PBC [cph],
   Fernando Cagua [ctb],
   Ethan Heinzen [ctb]
 Maintainer: Yihui Xie <xie@yihui.name>
 Repository: CRAN
-Date/Publication: 2020-06-20 09:20:06 UTC
-Built: R 4.0.2; ; 2020-07-21 14:31:10 UTC; windows
+Date/Publication: 2021-01-21 05:50:02 UTC
+Built: R 4.0.3; ; 2021-01-23 06:59:49 UTC; windows

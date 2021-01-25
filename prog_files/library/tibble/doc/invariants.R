@@ -262,7 +262,7 @@ tbl[NA_integer_, ]
 df[1, , drop = TRUE]
 tbl[1, , drop = TRUE]
 
-## ----bracket-i-j-equivalent-to-j-subset-then-i, dftbl = TRUE, include = eval_details, eval = eval_details----
+## ----bracket-i-j-equivalent-to-i-subset-then-j, dftbl = TRUE, include = eval_details, eval = eval_details----
 #  df[1, 1]
 #  tbl[1, 1]
 #  df[1, ][1]
@@ -273,6 +273,10 @@ tbl[1, , drop = TRUE]
 #  identical(tbl[2:3, 1], tbl[1][2:3, ])
 #  identical(df2[2:3, 1:2], df2[1:2][2:3, ])
 #  identical(tbl2[2:3, 1:2], tbl2[1:2][2:3, ])
+
+## ----bracket-bracket-i-j-equivalent-to-i-subset-then-j------------------------
+df[[1, 1]]
+df[[1, 3]]
 
 ## ----double-bracket-assign-definition, dftbl = TRUE, include = eval_details, eval = eval_details----
 #  with_df(df[[1]] <- 0)

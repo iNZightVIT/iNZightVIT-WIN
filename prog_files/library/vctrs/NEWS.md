@@ -1,5 +1,129 @@
+# vctrs 0.3.6
+
+* Fixed an issue with tibble 3.0.0 where removing column names with
+  `names(x) <- NULL` is now deprecated (#1298).
+
+* Fixed a GCC 11 issue revealed by CRAN checks.
+
+
+# vctrs 0.3.5
+
+* New experimental `vec_fill_missing()` for filling in missing values with
+  the previous or following value. It is similar to `tidyr::fill()`, but
+  also works with data frames and has an additional `max_fill` argument to
+  limit the number of sequential missing values to fill.
+
+* New `vec_unrep()` to compress a vector with repeated values. It is very
+  similar to run length encoding, and works nicely alongside `vec_rep_each()`
+  as a way to invert the compression.
+
+* `vec_cbind()` with only empty data frames now preserves the common size of
+  the inputs in the result (#1281).
+
+* `vec_c()` now correctly returns a named result with named empty inputs
+  (#1263).
+
+* vctrs has been relicensed as MIT (#1259).
+
+* Functions that make comparisons within a single vector, such as
+  `vec_unique()`, or between two vectors, such as `vec_match()`, now
+  convert all character input to UTF-8 before making comparisons (#1246).
+
+* New `vec_identify_runs()` which returns a vector of identifiers for the
+  elements of `x` that indicate which run of repeated values they fall in
+  (#1081).
+
+* Fixed an encoding translation bug with lists containing data frames which
+  have columns where `vec_size()` is different from the low level
+  `Rf_length()` (#1233).
+
+
+# vctrs 0.3.4
+
+* Fixed a GCC sanitiser error revealed by CRAN checks.
+
+
+# vctrs 0.3.3
+
+* The `table` class is now implemented as a wrapper type that
+  delegates its coercion methods. It used to be restricted to integer
+  tables (#1190).
+
+* Named one-dimensional arrays now behave consistently with simple
+  vectors in `vec_names()` and `vec_rbind()`.
+
+* `new_rcrd()` now uses `df_list()` to validate the fields. This makes
+  it more flexible as the fields can now be of any type supported by
+  vctrs, including data frames.
+
+* Thanks to the previous change the `[[` method of records now
+  preserves list fields (#1205).
+
+* `vec_data()` now preserves data frames. This is consistent with the
+  notion that data frames are a primitive vector type in vctrs. This
+  shouldn't affect code that uses `[[` and `length()` to manipulate
+  the data. On the other hand, the vctrs primitives like `vec_slice()`
+  will now operate rowwise when `vec_data()` returns a data frame.
+
+* `outer` is now passed unrecycled to name specifications. Instead,
+  the return value is recycled (#1099).
+
+* Name specifications can now return `NULL`. The names vector will
+  only be allocated if the spec function returns non-`NULL` during the
+  concatenation. This makes it possible to ignore outer names without
+  having to create an empty names vector when there are no inner
+  names:
+
+  ```
+  zap_outer_spec <- function(outer, inner) if (is_character(inner)) inner
+
+  # `NULL` names rather than a vector of ""
+  names(vec_c(a = 1:2, .name_spec = zap_outer_spec))
+  #> NULL
+
+  # Names are allocated when inner names exist
+  names(vec_c(a = 1:2, c(b = 3L), .name_spec = zap_outer_spec))
+  #> [1] ""  ""  "b"
+  ```
+
+* Fixed several performance issues in `vec_c()` and `vec_unchop()`
+  with named vectors.
+
+* The restriction that S3 lists must have a list-based proxy to be considered
+  lists by `vec_is_list()` has been removed (#1208).
+
+* New performant `data_frame()` constructor for creating data frames in a way
+  that follows tidyverse semantics. Among other things, inputs are recycled
+  using tidyverse recycling rules, strings are never converted to factors,
+  list-columns are easier to create, and unnamed data frame input is
+  automatically spliced.
+
+* New `df_list()` for safely and consistently constructing the data structure
+  underlying a data frame, a named list of equal-length vectors. It is useful
+  in combination with `new_data_frame()` for creating user-friendly
+  constructors for data frame subclasses that use the tidyverse rules for
+  recycling and determining types.
+
+* Fixed performance issue with `vec_order()` on classed vectors which
+  affected `dplyr::group_by()` (tidyverse/dplyr#5423).
+
+* `vec_set_names()` no longer alters the input in-place (#1194).
+
+* New `vec_proxy_order()` that provides an ordering proxy for use in
+  `vec_order()` and `vec_sort()`. The default method falls through to
+  `vec_proxy_compare()`. Lists are special cased, and return an integer
+  vector proxy that orders by first appearance.
+
+* List columns in data frames are no longer comparable through `vec_compare()`.
+
+* The experimental `relax` argument has been removed from
+  `vec_proxy_compare()`.
+
 
 # vctrs 0.3.2
+
+* Fixed a performance issue in `bind_rows()` with S3 columns (#1122,
+  #1124, #1151, tidyverse/dplyr#5327).
 
 * `vec_slice()` now checks sizes of data frame columns in case the
   data structure is corrupt (#552).
@@ -10,7 +134,6 @@
 * `new_data_frame()` is now twice as fast when `class` is supplied.
 
 * New `vec_names2()`, `vec_names()` and `vec_set_names()` (#1173).
-
 
 
 # vctrs 0.3.1

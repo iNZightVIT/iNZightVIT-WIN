@@ -63,6 +63,7 @@ parse_vector	parse_vector
 problems	problems
 readr	readr-package
 readr_example	readr_example
+read_builtin	read_builtin
 read_csv	read_delim
 read_csv2	read_delim
 read_csv2_chunked	read_delim_chunked

@@ -1,6 +1,6 @@
 Package: withr
 Title: Run Code 'With' Temporarily Modified Global State
-Version: 2.2.0
+Version: 2.4.0
 Authors@R: 
     c(person(given = "Jim",
              family = "Hester",
@@ -21,6 +21,9 @@ Authors@R:
       person(given = "Winston",
              family = "Chang",
              role = "aut"),
+      person(given = "Jennifer",
+             family = "Bryan",
+             role = "ctb"),
       person(given = "Richard",
              family = "Cotton",
              role = "ctb"),
@@ -31,9 +34,9 @@ Description: A set of functions to run code 'with' safely and
     originally a part of the 'devtools' package, this provides a simple
     package with limited dependencies to provide access to these
     functions.
-License: GPL (>= 2)
-URL: http://withr.r-lib.org, http://github.com/r-lib/withr#readme
-BugReports: http://github.com/r-lib/withr/issues
+License: MIT + file LICENSE
+URL: https://withr.r-lib.org, https://github.com/r-lib/withr#readme
+BugReports: https://github.com/r-lib/withr/issues
 Depends: R (>= 3.2.0)
 Imports: graphics, grDevices, stats
 Suggests: covr, DBI, knitr, lattice, methods, rmarkdown, RSQLite,
@@ -41,22 +44,24 @@ Suggests: covr, DBI, knitr, lattice, methods, rmarkdown, RSQLite,
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
-Collate: 'local_.R' 'with_.R' 'collate.R' 'connection.R' 'db.R'
-        'defer.R' 'wrap.R' 'devices.R' 'dir.R' 'env.R' 'file.R'
-        'libpaths.R' 'locale.R' 'makevars.R' 'namespace.R' 'options.R'
-        'par.R' 'path.R' 'rng.R' 'seed.R' 'sink.R' 'tempfile.R'
-        'timezone.R' 'torture.R' 'utils.R' 'with.R'
+RoxygenNote: 7.1.1
+Collate: 'local_.R' 'with_.R' 'collate.R' 'compat-defer.R'
+        'connection.R' 'db.R' 'defer.R' 'wrap.R' 'devices.R' 'dir.R'
+        'env.R' 'file.R' 'libpaths.R' 'locale.R' 'makevars.R'
+        'namespace.R' 'options.R' 'par.R' 'path.R' 'rng.R' 'seed.R'
+        'sink.R' 'tempfile.R' 'timezone.R' 'torture.R' 'utils.R'
+        'with.R'
 NeedsCompilation: no
-Packaged: 2020-04-20 21:18:04 UTC; jhester
+Packaged: 2021-01-15 16:34:41 UTC; jhester
 Author: Jim Hester [aut, cre],
   Kirill Müller [aut],
   Kevin Ushey [aut],
   Hadley Wickham [aut],
   Winston Chang [aut],
+  Jennifer Bryan [ctb],
   Richard Cotton [ctb],
   RStudio [cph]
 Maintainer: Jim Hester <james.f.hester@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-04-20 22:10:02 UTC
-Built: R 4.0.2; ; 2020-07-21 14:28:20 UTC; windows
+Date/Publication: 2021-01-16 02:10:02 UTC
+Built: R 4.0.3; ; 2021-01-23 11:29:21 UTC; windows

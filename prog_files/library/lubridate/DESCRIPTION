@@ -1,7 +1,7 @@
 Type: Package
 Package: lubridate
 Title: Make Dealing with Dates a Little Easier
-Version: 1.7.9
+Version: 1.7.9.2
 Authors@R: 
     c(person(given = "Vitalie",
              family = "Spinu",
@@ -33,7 +33,8 @@ Authors@R:
              role = "ctb"),
       person(given = "Chel Hee",
              family = "Lee",
-             role = "ctb"))
+             role = "ctb"),
+      person("Google Inc.", role = c("ctb", "cph")))
 Maintainer: Vitalie Spinu <spinuvit@gmail.com>
 Description: Functions to work with date-times and time-spans:
     fast and user friendly parsing of date-time data, extraction and
@@ -45,18 +46,18 @@ Description: Functions to work with date-times and time-spans:
     included in this package. See <https://github.com/google/cctz> for
     more details.
 License: GPL (>= 2)
-URL: http://lubridate.tidyverse.org,
+URL: https://lubridate.tidyverse.org,
         https://github.com/tidyverse/lubridate
 BugReports: https://github.com/tidyverse/lubridate/issues
 Depends: methods, R (>= 3.2)
 Imports: generics, Rcpp (>= 0.12.13)
-Suggests: covr, knitr, testthat (>= 2.1.0), vctrs (>= 0.3.0)
+Suggests: covr, knitr, testthat (>= 2.1.0), vctrs (>= 0.3.0), rmarkdown
 Enhances: chron, timeDate, tis, zoo
 LinkingTo: Rcpp
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 SystemRequirements: A system with zoneinfo data (e.g.
         /usr/share/zoneinfo) as well as a recent-enough C++11 compiler
         (such as g++-4.8 or later). On Windows the zoneinfo included
@@ -76,7 +77,7 @@ Collate: 'Dates.r' 'POSIXt.r' 'RcppExports.R' 'util.r' 'parse.r'
         'package.r' 'pretty.r' 'round.r' 'stamp.r' 'update.r' 'vctrs.R'
         'zzz.R'
 NeedsCompilation: yes
-Packaged: 2020-06-03 11:12:59 UTC; vspinu
+Packaged: 2020-11-11 19:57:49 UTC; vspinu
 Author: Vitalie Spinu [aut, cre],
   Garrett Grolemund [aut],
   Hadley Wickham [aut],
@@ -86,8 +87,9 @@ Author: Vitalie Spinu [aut, cre],
   Doug Mitarotonda [ctb],
   Joseph Larmarange [ctb],
   Jonathan Boiser [ctb],
-  Chel Hee Lee [ctb]
+  Chel Hee Lee [ctb],
+  Google Inc. [ctb, cph]
 Repository: CRAN
-Date/Publication: 2020-06-08 15:40:02 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 14:29:44 UTC; windows
+Date/Publication: 2020-11-13 15:30:02 UTC
+Built: R 4.0.3; x86_64-w64-mingw32; 2021-01-23 13:41:19 UTC; windows
 Archs: i386, x64

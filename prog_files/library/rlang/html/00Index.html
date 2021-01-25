@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.4.7</h2>
+</div><h2>Documentation for package &lsquo;rlang&rsquo; version 0.4.10</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -121,6 +121,8 @@
 <td>Standardise a call</td></tr>
 <tr><td style="width: 25%;"><a href="catch_cnd.html">catch_cnd</a></td>
 <td>Catch a condition</td></tr>
+<tr><td style="width: 25%;"><a href="is_installed.html">check_installed</a></td>
+<td>Are packages installed in any of the libraries?</td></tr>
 <tr><td style="width: 25%;"><a href="env.html">child_env</a></td>
 <td>Create a new environment</td></tr>
 <tr><td style="width: 25%;"><a href="vector-construction.html">chr</a></td>
@@ -167,8 +169,12 @@
 <td>Defuse R expressions</td></tr>
 <tr><td style="width: 25%;"><a href="nse-defuse.html">enquo</a></td>
 <td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="enquo0.html">enquo0</a></td>
+<td>Defuse arguments without automatic injection</td></tr>
 <tr><td style="width: 25%;"><a href="nse-defuse.html">enquos</a></td>
 <td>Defuse R expressions</td></tr>
+<tr><td style="width: 25%;"><a href="enquo0.html">enquos0</a></td>
+<td>Defuse arguments without automatic injection</td></tr>
 <tr><td style="width: 25%;"><a href="nse-defuse.html">ensym</a></td>
 <td>Defuse R expressions</td></tr>
 <tr><td style="width: 25%;"><a href="nse-defuse.html">ensyms</a></td>
@@ -183,6 +189,8 @@
 <td>Bind symbols to objects in an environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_bind.html">env_bind_lazy</a></td>
 <td>Bind symbols to objects in an environment</td></tr>
+<tr><td style="width: 25%;"><a href="env_browse.html">env_browse</a></td>
+<td>Browse environments</td></tr>
 <tr><td style="width: 25%;"><a href="env_clone.html">env_clone</a></td>
 <td>Clone an environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_depth.html">env_depth</a></td>
@@ -195,6 +203,8 @@
 <td>Does an environment have or see bindings?</td></tr>
 <tr><td style="width: 25%;"><a href="env_inherits.html">env_inherits</a></td>
 <td>Does environment inherit from another environment?</td></tr>
+<tr><td style="width: 25%;"><a href="env_browse.html">env_is_browsed</a></td>
+<td>Browse environments</td></tr>
 <tr><td style="width: 25%;"><a href="env_name.html">env_label</a></td>
 <td>Label of an environment</td></tr>
 <tr><td style="width: 25%;"><a href="env_names.html">env_length</a></td>
@@ -300,6 +310,8 @@
 <h2><a name="H">-- H --</a></h2>
 
 <table width="100%">
+<tr><td style="width: 25%;"><a href="hash.html">hash</a></td>
+<td>Hash an object</td></tr>
 <tr><td style="width: 25%;"><a href="has_name.html">has_name</a></td>
 <td>Does an object have an element with this name?</td></tr>
 <tr><td style="width: 25%;"><a href="is_named.html">have_name</a></td>
@@ -317,6 +329,8 @@
 <td>Does an object inherit from a set of classes?</td></tr>
 <tr><td style="width: 25%;"><a href="inherits_any.html">inherits_only</a></td>
 <td>Does an object inherit from a set of classes?</td></tr>
+<tr><td style="width: 25%;"><a href="inject.html">inject</a></td>
+<td>Inject objects in an R expression</td></tr>
 <tr><td style="width: 25%;"><a href="vector-construction.html">int</a></td>
 <td>Create vectors</td></tr>
 <tr><td style="width: 25%;"><a href="abort.html">interrupt</a></td>
@@ -530,6 +544,10 @@
 <td>Parse R code</td></tr>
 <tr><td style="width: 25%;"><a href="parse_expr.html">parse_exprs</a></td>
 <td>Parse R code</td></tr>
+<tr><td style="width: 25%;"><a href="parse_expr.html">parse_quo</a></td>
+<td>Parse R code</td></tr>
+<tr><td style="width: 25%;"><a href="parse_expr.html">parse_quos</a></td>
+<td>Parse R code</td></tr>
 <tr><td style="width: 25%;"><a href="local_options.html">peek_option</a></td>
 <td>Change global options</td></tr>
 <tr><td style="width: 25%;"><a href="local_options.html">peek_options</a></td>
@@ -684,6 +702,8 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="zap.html">zap</a></td>
 <td>Create zap objects</td></tr>
+<tr><td style="width: 25%;"><a href="zap_srcref.html">zap_srcref</a></td>
+<td>Zap source references</td></tr>
 </table>
 
 <h2><a name="misc">-- misc --</a></h2>
@@ -693,6 +713,8 @@
 <td>Force parts of an expression</td></tr>
 <tr><td style="width: 25%;"><a href="nse-force.html">!!!</a></td>
 <td>Force parts of an expression</td></tr>
+<tr><td style="width: 25%;"><a href="env_bind.html">%&lt;~%</a></td>
+<td>Bind symbols to objects in an environment</td></tr>
 <tr><td style="width: 25%;"><a href="op-get-attr.html">%@%</a></td>
 <td>Infix attribute accessor and setter</td></tr>
 <tr><td style="width: 25%;"><a href="op-get-attr.html">%@%&lt;-</a></td>

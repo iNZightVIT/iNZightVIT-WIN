@@ -14,6 +14,9 @@ ps_cpu_times            CPU times of the process
 ps_create_time          Start time of a process
 ps_cwd                  Process current working directory as an
                         absolute path.
+ps_descent              Query the ancestry of a process
+ps_disk_partitions      List all mounted partitions
+ps_disk_usage           Disk usage statistics, per partition
 ps_environ              Environment variables of a process
 ps_exe                  Full path of the executable of a process
 ps_handle               Create a process handle
@@ -32,11 +35,19 @@ ps_pids                 Ids of all processes on the system
 ps_ppid                 Parent pid or parent process of a process
 ps_resume               Resume (continue) a stopped process
 ps_send_signal          Send signal to a process
+ps_shared_lib_users     List all processes that loaded a shared library
+ps_shared_libs          List the dynamically loaded libraries of a
+                        process
 ps_status               Current process status
 ps_suspend              Suspend (stop) the process
+ps_system_memory        Statistics about system memory usage
+ps_system_swap          System swap memory statistics
 ps_terminal             Terminal device of the process
 ps_terminate            Terminate a Unix process
+ps_tty_size             Query the size of the current terminal
 ps_uids                 User ids and group ids of the process
 ps_username             Owner of the process
 ps_users                List users connected to the system
+ps_windows_nice_values
+                        Get or set the priority of a process
 signals                 List of all supported signals

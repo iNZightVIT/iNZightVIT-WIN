@@ -58,10 +58,11 @@ cummean	cumall
 current_vars	select_vars
 cur_column	context
 cur_data	context
+cur_data_all	context
 cur_group	context
 cur_group_id	context
 cur_group_rows	context
-c_across	across
+c_across	c_across
 data_frame	reexports
 data_frame_	reexports
 db_analyze	backend_dbplyr

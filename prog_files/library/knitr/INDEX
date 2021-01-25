@@ -75,7 +75,8 @@ raw_block               Mark character strings as raw blocks in R
                         Markdown
 read_chunk              Read chunks from an external script
 read_rforge             Read source code from R-Forge
-render_html             Set output hooks for different output formats
+render_html             Set or get output hooks for different output
+                        formats
 rocco                   Knit R Markdown using the classic Docco style
 rst2pdf                 A wrapper for rst2pdf
 set_alias               Set aliases for chunk options

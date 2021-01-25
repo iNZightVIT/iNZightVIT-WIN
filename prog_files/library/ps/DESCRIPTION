@@ -1,5 +1,5 @@
 Package: ps
-Version: 1.3.3
+Version: 1.5.0
 Title: List, Query, Manipulate System Processes
 Description: List, query and manipulate all system processes, on 'Windows',
     'Linux' and 'macOS'.
@@ -9,7 +9,7 @@ Authors@R: c(
     person("Giampaolo", "Rodola'", role = "aut"),
     person("Gábor", "Csárdi", , "csardi.gabor@gmail.com", c("aut", "cre")),
     person("RStudio", role = "cph"))
-License: BSD_3_clause + file LICENSE
+License: MIT + file LICENSE
 URL: https://github.com/r-lib/ps#readme
 BugReports: https://github.com/r-lib/ps/issues
 Encoding: UTF-8
@@ -17,10 +17,10 @@ Depends: R (>= 3.1)
 Imports: utils
 Suggests: callr, covr, curl, pingr, processx (>= 3.1.0), R6, rlang,
         testthat, tibble
-RoxygenNote: 7.0.2.9000
+RoxygenNote: 7.1.1
 Biarch: true
 NeedsCompilation: yes
-Packaged: 2020-05-07 21:14:24 UTC; gaborcsardi
+Packaged: 2020-12-05 10:22:34 UTC; gaborcsardi
 Author: Jay Loden [aut],
   Dave Daeschler [aut],
   Giampaolo Rodola' [aut],
@@ -28,6 +28,6 @@ Author: Jay Loden [aut],
   RStudio [cph]
 Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-05-08 08:50:02 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 14:28:23 UTC; windows
+Date/Publication: 2020-12-05 16:40:02 UTC
+Built: R 4.0.3; x86_64-w64-mingw32; 2021-01-23 11:29:25 UTC; windows
 Archs: i386, x64

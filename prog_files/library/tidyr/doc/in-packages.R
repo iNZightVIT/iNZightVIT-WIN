@@ -37,7 +37,7 @@ tidyr_new_interface <- function() {
 #  
 #    if (tidyr_new_interface()) {
 #      # Freshly written code for v1.0.0
-#      out <- tidyr::nest(df, data = one_of("x", "y", "z"))
+#      out <- tidyr::nest(df, data = any_of(c("x", "y", "z")))
 #    } else {
 #      # Existing code for v0.8.3
 #      out <- tidyr::nest(df, x, y, z)
@@ -61,11 +61,11 @@ mini_iris %>%
 #  
 #  # v1.0.0 avoiding R CMD check NOTE
 #  mini_iris %>%
-#    nest(my_data = one_of(c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")))
+#    nest(my_data = any_of(c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")))
 #  
 #  # or equivalently:
 #  mini_iris %>%
-#    nest(my_data = -one_of("Species"))
+#    nest(my_data = !any_of("Species"))
 
 ## ---- eval = FALSE------------------------------------------------------------
 #  if (tidyr_new_interface()) {
@@ -89,7 +89,7 @@ mini_iris %>%
 #  nested %>% unnest()
 #  
 #  # v1.0.0 must be told which columns to unnest
-#  nested %>% unnest(one_of("my_data"))
+#  nested %>% unnest(any_of("my_data"))
 
 ## ---- eval = FALSE------------------------------------------------------------
 #  if (tidyr_new_interface()) {
@@ -128,7 +128,7 @@ df %>%
 #  
 #  # v1.0.0
 #  mini_iris %>%
-#    nest(my_data = one_of("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"))
+#    nest(my_data = any_of(c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")))
 #  
-#  nested %>% unnest(one_of("my_data"))
+#  nested %>% unnest(any_of("my_data"))
 

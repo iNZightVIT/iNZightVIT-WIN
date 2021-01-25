@@ -48,6 +48,7 @@ pairs20x                Pairwise Scatter Plots with Histograms and
 peru.df                 Peruvian Indians
 predict20x              Model Predictions for a Linear Model
 predictCount            Predicted Counts for a Generalized Linear Model
+predictGLM              Predictions for Generalized Linear Models
 propslsd.new            LSD-Display Intervals
 rain.df                 Cloud Seeding and Levels of Rainfall
 residPlot               Fitted values versus residuals plot
@@ -60,6 +61,7 @@ seeds.df                Seeds Data
 sheep.df                Sheep Data
 skewness                Skewness Statistic
 skulls.df               Skulls Data
+snapper.df              Snapper Weight Data
 soyabean.df             Soya Bean Yields
 stripqq                 Strip charts and normal quantile-quantile plots
 summary1way             One-way Analysis of Variance Summary

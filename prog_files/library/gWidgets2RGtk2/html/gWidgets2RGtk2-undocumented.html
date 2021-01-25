@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: method for stopping getWidget</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for getWidget.RGtkObject {gWidgets2RGtk2}"><tr><td>getWidget.RGtkObject {gWidgets2RGtk2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>method for stopping getWidget</h2>
+
+<h3>Description</h3>
+
+<p>method for stopping getWidget
+</p>
+<p>S3 method for stopping getBlock
+</p>
+<p>The <code>gWidgets</code> separation of API from toolkit requires the
+exporting of &quot;dot&quot; functions from each toolkit package. These are
+not documented, as they mirror the definition in the API package,
+but must be to get pass R's package check. Hence this stub.
+</p>
+<p>toolkit implementation for gmessage
+</p>
+<p>toolkit implementation for gconfirm
+</p>
+<p>toolkit implmentation of ginput
+</p>
+<p>toolkit implementation
+</p>
+<p>toolkit implementation of galert
+</p>
+<p>Toolkit constructor
+</p>
+<p>toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit XXX constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit gedit constructor
+</p>
+<p>toolkit constructor for ggroup
+</p>
+<p>gframe constructor
+</p>
+<p>toolkit constructor
+</p>
+<p>Toolkit implementation
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit label constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit  constructor
+</p>
+<p>Toolkit  constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit  constructor
+</p>
+<p>Toolkit XXX constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>toolkit implementation
+</p>
+<p>S3 method for gtimer
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>Toolkit constructor
+</p>
+<p>toolkit constructor for gwindow
+</p>
+<p>add stock icons
+</p>
+<p>Returns list of stock ids
+</p>
+<p>return stock id
+</p>
+<p>helper function
+</p>
+<p>return stock id from object
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'RGtkObject'
+getWidget(obj)
+
+## S3 method for class 'RGtkObject'
+getBlock(obj)
+
+.docstub()
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gmessage(toolkit, msg, title = "message",
+  icon = c("info", "warning", "error", "question"), parent = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gconfirm(toolkit, msg, title = "Confirm",
+  icon = c("info", "warning", "error", "question"), parent = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.ginput(toolkit, msg, text = "",
+  title = "Input", icon = c("info", "warning", "error", "question"),
+  parent = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gbasicdialog(toolkit, title = "Dialog",
+  parent = NULL, do.buttons = TRUE, handler = NULL, action = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.galert(toolkit, msg, title = "message",
+  delay = 3, parent = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gaction(toolkit, label, tooltip = NULL,
+  icon = NULL, key.accel = NULL, handler = NULL, action = NULL,
+  parent = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gbutton(toolkit, text, handler, action,
+  container, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gcalendar(toolkit, text = "",
+  format = "%Y-%m-%d", handler = NULL, action = NULL,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gcheckbox(toolkit, text, checked = FALSE,
+  use.togglebutton = FALSE, handler = NULL, action = NULL,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gcheckboxgroup(toolkit = NULL, items,
+  checked = FALSE, horizontal = FALSE, use.table = FALSE,
+  handler = NULL, action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gcombobox(toolkit, items, selected = 1,
+  editable = FALSE, coerce.with = NULL, handler = NULL, action = NULL,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gtable(toolkit, items, multiple = FALSE,
+  chosen.col = 1, icon.col = NULL, tooltip.col = NULL, handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gmenu(toolkit, menu.list = list(),
+  popup = FALSE, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gdf(toolkit, items = NULL, handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gedit(toolkit, text = "", width = 25,
+  coerce.with = NULL, initial.msg = initial.msg, handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.ggroup(toolkit, horizontal = TRUE,
+  spacing = 5, use.scrollwindow = FALSE, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gframe(toolkit, text, markup, pos,
+  horizontal = TRUE, spacing = 5, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gexpandgroup(toolkit, text, markup,
+  horizontal = TRUE, handler = NULL, action = NULL, container = NULL,
+  ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gfile(toolkit, text = "", type = c("open",
+  "save", "selectdir"), initial.filename = NULL, initial.dir = getwd(),
+  filter = list(), multi = FALSE, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gfilebrowse(toolkit, text = "",
+  type = c("open", "save", "selectdir"), initial.filename = NULL,
+  initial.dir = getwd(), filter = list(), quote = TRUE, handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gformlayout(toolkit, align = "left",
+  spacing = 5, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.ggraphics(toolkit, width = dpi * 6,
+  height = dpi * 6, dpi = 75, ps = 12, handler = NULL, action = NULL,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gimage(toolkit, filename = "",
+  dirname = "", stock.id = NULL, size = "", handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.glabel(toolkit, text = "", markup = FALSE,
+  editable = FALSE, handler = NULL, action = NULL, container = NULL,
+  ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.glayout(toolkit, homogeneous = FALSE,
+  spacing = 10, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gnotebook(toolkit, tab.pos = 3,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gpanedgroup(toolkit, horizontal = TRUE,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gprogressbar(toolkit, value, container, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gradio(toolkit, items, selected = 1,
+  horizontal = FALSE, handler = NULL, action = NULL, container = NULL,
+  ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gseparator(toolkit, horizontal = TRUE,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gslider(toolkit, from = 0, to = 100,
+  by = 1, value = from, horizontal = TRUE, handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gspinbutton(toolkit, from = 0, to = 10,
+  by = 1, value = from, digits = 0, handler = NULL, action = NULL,
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gstackwidget(toolkit, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gstatusbar(toolkit, text = "",
+  container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gtext(toolkit, text = NULL, width = NULL,
+  height = 300, font.attr = NULL, wrap = TRUE, handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gtimer(toolkit, ms, FUN, data = NULL,
+  one.shot = FALSE, start = TRUE)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gtoolbar(toolkit, toolbar.list = list(),
+  style = c("both", "icons", "text", "both-horiz"), container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gtree(toolkit, offspring = NULL,
+  offspring.data = NULL, chosen.col = 1, offspring.col = 2,
+  icon.col = NULL, tooltip.col = NULL, multiple = FALSE, handler = NULL,
+  action = NULL, container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gvarbrowser(toolkit, handler = NULL,
+  action = "summary", container = NULL, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.gwindow(toolkit, title, visible = visible,
+  name, width, height, parent, handler, action, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.addStockIcons(toolkit, iconNames, iconFiles,
+  ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.getStockIcons(toolkit, ...)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.getStockIconByName(toolkit,name, ...)
+
+addToGtkStockIcons(iconNames, iconFiles)
+
+## S3 method for class 'guiWidgetsToolkitRGtk2'
+.stockIconFromObject(toolkit,obj, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>R object to get icon from</p>
+</td></tr>
+<tr valign="top"><td><code>toolkit</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>msg</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>title</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>icon</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>parent</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>text</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>do.buttons</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>handler</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>action</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>delay</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>label</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>tooltip</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>key.accel</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>container</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>format</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>checked</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>use.togglebutton</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>items</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>horizontal</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>use.table</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>selected</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>editable</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>coerce.with</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>multiple</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>chosen.col</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>icon.col</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>tooltip.col</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>menu.list</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>popup</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>width of device (pixels)</p>
+</td></tr>
+<tr valign="top"><td><code>initial.msg</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>spacing</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>use.scrollwindow</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>markup</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>pos</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>initial.filename</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>initial.dir</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>filter</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>multi</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>quote</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>align</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p>height of device (pixels)</p>
+</td></tr>
+<tr valign="top"><td><code>dpi</code></td>
+<td>
+<p>dots per inch</p>
+</td></tr>
+<tr valign="top"><td><code>ps</code></td>
+<td>
+<p>pointsize</p>
+</td></tr>
+<tr valign="top"><td><code>filename</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>dirname</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>stock.id</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>size</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>homogeneous</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>tab.pos</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>value</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>from</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>to</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>by</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>digits</code></td>
+<td>
+<p>digits</p>
+</td></tr>
+<tr valign="top"><td><code>font.attr</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>wrap</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>ms</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>FUN</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>one.shot</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>start</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>toolbar.list</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>style</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>offspring</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>offspring.data</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>offspring.col</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>visible</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>name</code></td>
+<td>
+<p>name of icon</p>
+</td></tr>
+<tr valign="top"><td><code>iconNames</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+<tr valign="top"><td><code>iconFiles</code></td>
+<td>
+<p>undocumented argument, cf. gWidgets2 documentation.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>The documentation for this is found at <code><a href="../../gWidgets/html/gbutton.html">gbutton</a></code>.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>gWidgets2RGtk2</em> version 1.0-7.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

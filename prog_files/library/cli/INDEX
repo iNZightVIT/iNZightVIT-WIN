@@ -1,5 +1,15 @@
 ansi-styles             ANSI colored text
+ansi_align              Align an ANSI colored string
+ansi_has_any            Check if a string has some ANSI styling
 ansi_hide_cursor        Hide/show cursor in a terminal
+ansi_nchar              Count number of characters in an ANSI colored
+                        string
+ansi_regex              Perl comparible regular expression that matches
+                        ANSI escape sequences
+ansi_strip              Remove ANSI escape sequences from a string
+ansi_strsplit           Split an ANSI colored string
+ansi_substr             Substring(s) of an ANSI colored string
+ansi_substring          Substring(s) of an ANSI colored string
 builtin_theme           The built-in CLI theme
 cat_line                'cat()' helpers
 cli_alert               CLI alerts
@@ -26,6 +36,7 @@ cli_status_clear        Clear the status bar
 cli_status_update       Update the status bar
 cli_text                CLI text
 cli_ul                  Unordered CLI list
+cli_vec                 Add custom cli style to a vector
 cli_verbatim            CLI verbatim text
 combine_ansi_styles     Combine two or more ANSI styles
 console_width           Determine the width of the console
@@ -44,9 +55,11 @@ make_ansi_style         Create a new ANSI style
 make_spinner            Create a spinner
 no                      Pluralization helper functions
 pluralization           CLI pluralization
+pluralize               String templating with pluralization
 rule                    Make a rule with one or two text labels
 simple_theme            A simple CLI theme
 start_app               Start, stop, query the default cli application
+style_hyperlink         Terminal Hyperlinks
 symbol                  Various handy symbols to use in a command line
                         UI
 themes                  CLI themes

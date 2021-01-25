@@ -1,6 +1,6 @@
 Package: processx
 Title: Execute and Control System Processes
-Version: 3.4.3
+Version: 3.4.5
 Authors@R: c(
     person("Gábor", "Csárdi", role = c("aut", "cre", "cph"),
            email = "csardi.gabor@gmail.com",
@@ -26,13 +26,13 @@ Suggests: callr (>= 3.2.0), codetools, covr, crayon, curl, debugme,
         parallel, testthat, withr
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2020-07-05 12:57:04 UTC; gaborcsardi
+Packaged: 2020-11-30 11:08:13 UTC; gaborcsardi
 Author: Gábor Csárdi [aut, cre, cph] (<https://orcid.org/0000-0001-7098-9676>),
   Winston Chang [aut],
   RStudio [cph, fnd],
   Mango Solutions [cph, fnd]
 Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-07-05 13:40:08 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 17:33:20 UTC; windows
+Date/Publication: 2020-11-30 11:40:02 UTC
+Built: R 4.0.3; x86_64-w64-mingw32; 2021-01-23 13:41:29 UTC; windows
 Archs: i386, x64

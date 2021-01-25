@@ -3,6 +3,7 @@
                         Combine two indicator objects
 +,validator,validator-method
                         Combine two validator objects
+add_indicators          Add indicator values as columns to a data frame
 aggregate,validation-method
                         Aggregate validation results
 all,validation-method   Test if all validations resulted in TRUE
@@ -27,14 +28,27 @@ cells                   Cell counts and differences for a series of
 check_that              Simple data validation interface
 compare                 Compare similar data sets
 confront                Confront data with a (set of) expressionset(s)
+contains_exactly        Check records using a predifined table of
+                        (im)possible values
 created                 Creation timestamp
 description             Rule description
+do_by                   split-apply-combine for vectors, with
+                        equal-length outptu
 errors                  Get messages from a confrontation object
 event                   Get or set event information metadata from a
                         'confrontation' object.
 exists_any              Test for (unique) existence
 export_yaml             Export to yaml file
+field_format            Check whether a field conforms to a regular
+                        expression
+field_length            Check number of code points
+hb                      Hiridoglu-Berthelot function
+hierarchy               Check aggregates defined by a hierarchical code
+                        list
+in_range                Check variable range
 is_complete             Test for completeness of records
+is_linear_sequence      Check whether a variable represents a linear
+                        sequence
 is_unique               Test for uniquenes of records
 keyset                  Get key set stored with a confrontation
 label                   Rule label
@@ -46,18 +60,25 @@ length,expressionset-method
                         Determine the number of elements in an object.
 match_cells             Create matching subsets of a sequence of data
 meta                    Get or set rule metadata
+nace_rev2               NACE classification code table
 names<-,rule,character-method
                         Extract or set names
+number_format           Check the layouts of numbers.
 origin                  Origin of rules
+part_whole_relation     Test whether details combine to a chosen
+                        aggregate
 plot,cellComparison-method
                         Line graph of a cellComparison object.
 plot,validation-method
-                        Plot a validation object
+                        Plot validaiton results
 plot,validator-method   Plot a validator object
 plot,validatorComparison-method
                         Line graph of validatorComparison object
 retailers               data on Dutch supermarkets
 run_validation_file     Run a file with confrontations. Capture results
+rx                      Label objects for interpretation as pattern
+samplonomy              Economic data on Samplonia
+satisfying              Select records (not) satisfying rules
 sort,validation-method
                         Aggregate and sort the results of a validation.
 summary                 Create a summary

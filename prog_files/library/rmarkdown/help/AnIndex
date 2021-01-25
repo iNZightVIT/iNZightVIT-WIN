@@ -54,12 +54,14 @@ output_metadata	output_metadata
 paged_table	paged_table
 pandoc_args	pandoc_args
 pandoc_available	pandoc_available
+pandoc_citeproc_args	pandoc_args
 pandoc_citeproc_convert	pandoc_citeproc_convert
 pandoc_convert	pandoc_convert
 pandoc_exec	pandoc_exec
 pandoc_highlight_args	pandoc_args
 pandoc_include_args	pandoc_args
 pandoc_latex_engine_args	pandoc_args
+pandoc_lua_filter_args	pandoc_args
 pandoc_metadata_arg	pandoc_args
 pandoc_options	pandoc_options
 pandoc_path_arg	pandoc_path_arg
@@ -70,6 +72,7 @@ pandoc_variable_arg	pandoc_args
 pandoc_version	pandoc_available
 parse_html_notebook	parse_html_notebook
 pdf_document	pdf_document
+pkg_file_lua	pkg_file_lua
 powerpoint_presentation	powerpoint_presentation
 publish_site	publish_site
 relative_to	relative_to

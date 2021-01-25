@@ -27,6 +27,8 @@ getNamedRegions	getNamedRegions
 getSheetNames	getSheetNames
 getStyles	getStyles
 getTables	getTables
+groupColumns	groupColumns
+groupRows	groupRows
 insertImage	insertImage
 insertPlot	insertPlot
 int2col	int2col
@@ -67,6 +69,8 @@ sheetVisibility<-	sheetVisibility
 sheetVisible	sheetVisible
 sheetVisible<-	sheetVisible
 showGridLines	showGridLines
+ungroupColumns	ungroupColumns
+ungroupRows	ungroupRows
 worksheetOrder	worksheetOrder
 worksheetOrder<-	worksheetOrder
 write.xlsx	write.xlsx

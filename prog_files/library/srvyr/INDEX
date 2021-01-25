@@ -1,0 +1,44 @@
+as_survey               Create a tbl_svy from a data.frame
+as_survey_design        Create a tbl_svy survey object using sampling
+                        design
+as_survey_rep           Create a tbl_svy survey object using replicate
+                        weights
+as_survey_twophase      Create a tbl_svy survey object using two phase
+                        design
+as_tibble               Coerce survey variables to a data frame
+                        (tibble)
+cascade                 Summarise multiple values into cascading groups
+collect                 Force computation of a database query
+cur_svy                 Get the survey data for the current context
+get_var_est             Get the variance estimates for a survey
+                        estimate
+group_by                Group a (survey) dataset by one or more
+                        variables.
+group_map_dfr           Apply a function to each group
+group_trim              Single table verbs from dplyr and tidyr
+groups                  Get/set the grouping variables for tbl.
+set_survey_vars         Set the variables for the current survey
+                        variable
+srvyr                   srvyr: A package for 'dplyr'-Like Syntax for
+                        Summary Statistics of Survey Data.
+srvyr-se-deprecated     Deprecated SE versions of main srvyr verbs
+summarise               Summarise multiple values to a single value.
+summarise_all           Manipulate multiple columns.
+survey_mean             Calculate the mean and its variation using
+                        survey methods
+survey_quantile         Calculate the quantile and its variation using
+                        survey methods
+survey_ratio            Calculate the ratio and its variation using
+                        survey methods
+survey_tally            Count/tally survey weighted observations by
+                        group
+survey_total            Calculate the total and its variation using
+                        survey methods
+survey_var              Calculate the population variance and its
+                        variation using survey methods
+svychisq                Chisquared tests of association for survey
+                        data.
+tbl_svy                 tbl_svy object.
+tbl_vars                List variables produced by a tbl.
+unweighted              Calculate the an unweighted summary statistic
+                        from a survey

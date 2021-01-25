@@ -1,4 +1,22 @@
 
+# callr 3.5.1
+
+* `callr::r_session` now handles large messages from the subprocess
+  well (#168).
+
+# callr 3.5.0
+
+* callr can now pass the environment of the function to the subprocess,
+  optionally. This makes it easier to call an internal function of a
+  package in a subprocess. See the `package` argument of `r()`, `r_bg()`,
+  `r_session$run()`, etc. (#147).
+
+# callr 3.4.4
+
+* An `r_session` now exits if the load hook errors. This generates an error
+  if the session is started with `wait = TRUE`. For `wait = FALSE` the
+  first `$read()` operation will return with an error (#162).
+
 # callr 3.4.3
 
 * `default_repos()` now returns a list if `getOption("repos")` is a list,

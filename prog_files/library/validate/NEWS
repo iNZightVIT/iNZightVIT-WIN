@@ -1,3 +1,50 @@
+version 1.0.1
+- Fixed URL issues caught by CRAN but not by R CMD check --as-cran.
+
+version 1.0.0
+- Added The Data Validation Cookbook as vignette. See also
+  <https://data-cleaning.github.io/validate>
+- Improved visualisation of validation output using 'plot'. The 'barplot'
+  method for 'confrontation' objects is now deprecated and will be removed
+  eventually.
+- New functions 'violating', 'satisfying', 'lacking' to select records 
+  based on 'validator' objects or the outcome of validations ('validation' 
+  objects).
+- New function 'hierarchy' checks aggregations against hierarchical code lists.
+  Supports globbing and regular expression to define parent-child relations.
+- New functions 'in_linear_sequence' and 'is_linear_sequence' 
+  check for gaps/duplicates in numerical or time series.
+- New function in_range checks whether a variable is between bounds.
+- New function 'part_whole_relation' facilitates checking aggregates
+  against details, for data in 'long' format.
+- New helper functions that for split-apply-combine on vectors, with the property
+  that output is always of the same size as the input: 'sum_by', 'min_by', 'max_by'
+  'mean_by' and the general 'do_by'.
+- New function 'hb' implementing Hiridoglou-Berthelot outlier measure.
+- New convenience function 'field_length' checks number (or range) of code
+  points.
+- New convenience function 'number_format' with simple syntax for
+  specifying layout of numbers that are stored as character.
+- New functions to check (non)existens of a given set of key combinations:
+  'contains_exactly', 'contains_at_least', 'contains_at_most', 'does_not_contain'.
+  Support for globbing and regular expression is built in, and tests can be
+  performed group-wise.
+- New function 'field_format': convenience wrapper for 'grepl' that also supports
+  globbing.
+- New dataset 'samplonomy' with simulated national account figures of the
+  island of Samplonia in long format, and with errors.
+- New dataset 'nace_rev2', representing the 2008 (revision 2) NACE hierarchy
+  for classification of economic activity.
+- Added 'names' method for 'confrontation' objects.
+- Fix: option 'lin.ineq.eps' was ignored by 'confront'.
+- Fix: indexing of 'confrontation' objects failed in 'lapply' context. (Thanks
+  to Matthias Gomolka for GH issue #116)
+- Package now depends on R >= 3.5.0 because of the samplonomy RData file.
+- Breaking change: for consistency, the '...' argument in 'exists_one' and 'exists_any'
+  is replaced with 'by'. This only affects cases with multiple grouping variables.
+- Internal: of x$y in reference data are now parsed to x[["y"]] (used to be x[,"y"]).
+
+
 version 0.9.3
 - New functions 'exists_any' and 'exists_one' to help define cross-record 
   validation rules (thanks to David Salgado)

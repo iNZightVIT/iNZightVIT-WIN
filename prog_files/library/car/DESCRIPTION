@@ -1,6 +1,6 @@
 Package: car
-Version: 3.0-8
-Date: 2020-05-17
+Version: 3.0-10
+Date: 2020-09-23
 Title: Companion to Applied Regression
 Authors@R: c(person("John", "Fox", role = c("aut", "cre"), email = "jfox@mcmaster.ca"),
 	person("Sanford", "Weisberg", role = "aut", email = "sandy@umn.edu"),
@@ -42,7 +42,7 @@ Description:
 License: GPL (>= 2)
 URL: https://r-forge.r-project.org/projects/car/,
         https://CRAN.R-project.org/package=car,
-        https://socserv.socsci.mcmaster.ca/jfox/Books/Companion/index.html
+        https://socialsciences.mcmaster.ca/jfox/Books/Companion/index.html
 VignetteBuilder: knitr
 Author: John Fox [aut, cre],
   Sanford Weisberg [aut],
@@ -73,9 +73,9 @@ Author: John Fox [aut, cre],
 Maintainer: John Fox <jfox@mcmaster.ca>
 Repository: CRAN
 Repository/R-Forge/Project: car
-Repository/R-Forge/Revision: 637
-Repository/R-Forge/DateTimeStamp: 2020-05-21 03:46:38
-Date/Publication: 2020-05-21 16:00:03 UTC
+Repository/R-Forge/Revision: 653
+Repository/R-Forge/DateTimeStamp: 2020-09-23 17:25:46
+Date/Publication: 2020-09-29 07:20:03 UTC
 NeedsCompilation: no
-Packaged: 2020-05-21 04:09:32 UTC; rforge
-Built: R 4.0.2; ; 2020-07-21 23:50:38 UTC; windows
+Packaged: 2020-09-23 17:48:21 UTC; rforge
+Built: R 4.0.3; ; 2021-01-23 19:24:10 UTC; windows

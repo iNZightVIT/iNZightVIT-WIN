@@ -1,3 +1,29 @@
+# hms 1.0.0
+
+## Life cycle
+
+- hms is now marked as "stable".
+
+## Breaking changes
+
+- `"hms"` objects no longer have a common type with `character` and `numeric`. Combining such values previously threw a warning, now throws an error (#94).
+- `vec_cast()` and `as_hms()` now throw error instead of a warning if input can't be parsed (#68).
+
+## Features
+
+- `as_hms()` is a generic again (#81).
+- `round_hms()` and `trunc_hms()` gain `digits` argument (#78, @hglanz).
+
+## Bug fixes
+
+- `as_hms()` and `vec_cast()` now correctly treat objects of class `"difftime"` with `integer` mode (#84).
+
+## Internal
+
+- Using lifecycle package (#94).
+- hms has been re-licensed as MIT (#86).
+
+
 # hms 0.5.3
 
 - Use `vec_default_ptype2()`, remove `vec_ptype2.hms.unspecified()` (#80, @romainfrancois).

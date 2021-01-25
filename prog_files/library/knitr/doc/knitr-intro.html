@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2020-06-22" />
+<meta name="date" content="2020-09-22" />
 
 <title>Not An Introduction to knitr</title>
 
@@ -369,7 +369,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Not An Introduction to knitr</h1>
 <h4 class="author">Yihui Xie</h4>
-<h4 class="date">2020-06-22</h4>
+<h4 class="date">2020-09-22</h4>
 
 
 
@@ -377,9 +377,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Anyway, here is a code chunk that shows you can compile vignettes with <strong>knitr</strong> as well using R 3.0.x, which supports non-Sweave vignettes:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">options</span>(<span class="dt">digits =</span> <span class="dv">4</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="kw">rnorm</span>(<span class="dv">20</span>)</span></code></pre></div>
-<pre><code>##  [1] -0.19169  0.67134  0.22346  0.71502 -0.11204  0.75763  1.46664 -0.50364
-##  [9] -0.09981 -0.25703  0.49641 -0.72781 -1.75855 -1.34796 -0.06976  0.62396
-## [17]  0.13471  1.02056 -2.16856 -1.73060</code></pre>
+<pre><code>##  [1]  1.545004  1.131897  0.002776 -0.082819  2.409905 -1.396916  1.083896
+##  [8]  1.802385  0.627644 -1.241974 -1.485010 -0.979978 -0.378730  0.190003
+## [15]  1.241976 -0.617919  1.056736  0.418370 -0.569578  0.858991</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>fit =<span class="st"> </span><span class="kw">lm</span>(dist <span class="op">~</span><span class="st"> </span>speed, <span class="dt">data =</span> cars)</span>
 <span id="cb3-2"><a href="#cb3-2"></a>b =<span class="st"> </span><span class="kw">coef</span>(fit)</span></code></pre></div>
 <table>
@@ -424,10 +424,10 @@ A scatterplot with a regression line.
 <h2 class="unnumbered">References</h2>
 <div id="refs" class="references hanging-indent">
 <div id="ref-xie2013">
-<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.</p>
+<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.</p>
 </div>
 <div id="ref-R-knitr">
-<p>———. 2016. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.</p>
+<p>———. 2016. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.</p>
 </div>
 </div>
 </div>

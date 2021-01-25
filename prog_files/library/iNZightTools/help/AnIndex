@@ -4,6 +4,8 @@ add_suffix	add_suffix
 aggregateData	aggregateData
 aggregatedt	aggregatedt
 appendrows	appendrows
+as_survey_spec	as_survey_spec
+as_survey_spec.survey.design	as_survey_spec
 code	code
 collapseLevels	collapseLevels
 combineCatVars	combineCatVars
@@ -52,6 +54,7 @@ sortVars	sortVars
 stackVars	stackVars
 standardizeVars	standardizeVars
 str_c	stringConcatenation
+survey_IQR	survey_IQR
 tidy_all_code	tidy_all_code
 transformVar	transformVar
 unite	unite

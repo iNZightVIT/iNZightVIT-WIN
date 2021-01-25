@@ -1,6 +1,5 @@
 Poly                    Polynomial Matrix
-allPartialResPlots      Draw multiple partial residual plots
-compare_models          Compare regression models using AIC, BIC, etc
+compare_models          Compare regression models using AIC and BIC.
 factorComp              Compare factor levels
 histogramArray          Histogram Array
 iNZightQQplot           iNZight QQ Plot
@@ -8,8 +7,5 @@ iNZightRegression       Additional functionality for iNZight
 iNZightSummary          Informative Summary Information for Regression
                         Models
 inzplot                 inzplot method
-moecalc                 Margin of Error Calculations
-multicomp               Multiple Comparisons Between Factor Levels
-partialResPlot          Draw multiple partial residual plots
+partialResPlot          Partial residual plot of continuous variable
 plotlm6                 Extended Plot Diagnostics for (g)lm Models
-ses.moecalc             Constructor function for Standard Error Class

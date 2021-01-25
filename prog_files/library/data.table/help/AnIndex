@@ -11,6 +11,7 @@ data.table-package	data.table
 .I	special-symbols
 .Last.updated	last.updated
 .N	special-symbols
+.NGRP	special-symbols
 .SD	special-symbols
 :=	assign
 address	address
@@ -57,6 +58,7 @@ autoindexing	datatable-optimize
 between	between
 c.IDate	IDateTime
 c.ITime	IDateTime
+cdatatable	cdt
 chgroup	chmatch
 chmatch	chmatch
 chorder	chmatch
@@ -78,6 +80,7 @@ duplicated	duplicated
 duplicated.data.table	duplicated
 except	setops
 fastorder	setorder
+fcase	fcase
 fcoalesce	coalesce
 fexcept	setops
 fifelse	fifelse
@@ -123,8 +126,7 @@ ITime	IDateTime
 ITime-class	IDateTime
 J	J
 key	setkey
-key2	set2key
-key<-	set2key
+key<-	deprecated
 lag	shift
 last	last
 Last.updated	last.updated
@@ -146,6 +148,8 @@ na.omit	na.omit.data.table
 na.omit.data.table	na.omit.data.table
 nafill	nafill
 nocb	nafill
+openMP	openmp-utils
+openmp	openmp-utils
 Ops.data.table	data.table
 order	setorder
 patterns	patterns
@@ -168,6 +172,7 @@ rollsum	froll
 rollup	groupingsets
 rollup.data.table	groupingsets
 round.IDate	IDateTime
+round.ITime	IDateTime
 rounding	datatable-optimize
 rowid	rowid
 rowidv	rowid
@@ -175,8 +180,6 @@ second	IDateTime
 seq.IDate	IDateTime
 seq.ITime	IDateTime
 set	assign
-set2key	set2key
-set2keyv	set2key
 setalloccol	truelength
 setattr	setattr
 setcoalesce	coalesce
@@ -214,6 +217,7 @@ transform	transform.data.table
 transform.data.table	transform.data.table
 transpose	transpose
 truelength	truelength
+trunc.ITime	IDateTime
 tstrsplit	tstrsplit
 union	setops
 unique	duplicated

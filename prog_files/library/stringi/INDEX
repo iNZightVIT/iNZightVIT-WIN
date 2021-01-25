@@ -1,5 +1,20 @@
+%s$%                    C-Style Formatting with sprintf as a Binary
+                        Operator
 %s+%                    Concatenate Two Character Vectors
 %s<%                    Compare Strings with or without Collation
+about_arguments         Passing Arguments to Functions in 'stringi'
+about_encoding          Character Encodings and 'stringi'
+about_locale            Locales and 'stringi'
+about_search            String Searching
+about_search_boundaries
+                        Text Boundary Analysis in 'stringi'
+about_search_charclass
+                        Character Classes in 'stringi'
+about_search_coll       Locale-Sensitive Text Searching in 'stringi'
+about_search_fixed      Locale-Insensitive Fixed Pattern Matching in
+                        'stringi'
+about_search_regex      Regular Expressions in 'stringi'
+about_stringi           THE String Processing Package
 stri_compare            Compare Strings with or without Collation
 stri_count              Count the Number of Pattern Matches
 stri_count_boundaries   Count the Number of Text Boundaries
@@ -7,19 +22,20 @@ stri_datetime_add       Date and Time Arithmetic
 stri_datetime_create    Create a Date-Time Object
 stri_datetime_fields    Get Values for Date and Time Fields
 stri_datetime_format    Date and Time Formatting and Parsing
-stri_datetime_fstr      Convert 'strptime'-style Format Strings
+stri_datetime_fstr      Convert strptime-Style Format Strings
 stri_datetime_now       Get Current Date and Time
 stri_datetime_symbols   List Localizable Date-Time Formatting Data
 stri_detect             Detect a Pattern Match
 stri_dup                Duplicate Strings
 stri_duplicated         Determine Duplicated Elements
 stri_enc_detect         Detect Character Set and Language
-stri_enc_detect2        Detect Locale-Sensitive Character Encoding
+stri_enc_detect2        [DEPRECATED] Detect Locale-Sensitive Character
+                        Encoding
 stri_enc_fromutf32      Convert From UTF-32
 stri_enc_info           Query a Character Encoding
 stri_enc_isascii        Check If a Data Stream Is Possibly in ASCII
-stri_enc_isutf16be      Check If a Data Stream Is Possibly in UTF16 or
-                        UTF32
+stri_enc_isutf16be      Check If a Data Stream Is Possibly in UTF-16 or
+                        UTF-32
 stri_enc_isutf8         Check If a Data Stream Is Possibly in UTF-8
 stri_enc_list           List Known Character Encodings
 stri_enc_mark           Get Declared Encodings of Each String
@@ -61,14 +77,15 @@ stri_pad_both           Pad (Center/Left/Right Align) a String
 stri_rand_lipsum        A Lorem Ipsum Generator
 stri_rand_shuffle       Randomly Shuffle Code Points in Each String
 stri_rand_strings       Generate Random Strings
-stri_read_lines         [DRAFT API] Read Text Lines from a Text File
-stri_read_raw           [DRAFT API] Read Whole Text File as Raw
+stri_read_lines         Read Text Lines from a Text File
+stri_read_raw           Read Text File as Raw
 stri_remove_empty       Remove All Empty Strings from a Character
                         Vector
 stri_replace_all        Replace Occurrences of a Pattern
 stri_replace_na         Replace Missing Values in a Character Vector
 stri_reverse            Reverse Each String
 stri_sort               Sorting
+stri_sort_key           Sort Keys
 stri_split              Split a String By Pattern Matches
 stri_split_boundaries   Split a String at Text Boundaries
 stri_split_lines        Split a String Into Text Lines
@@ -97,17 +114,4 @@ stri_unescape_unicode   Un-escape All Escape Sequences
 stri_unique             Extract Unique Elements
 stri_width              Determine the Width of Code Points
 stri_wrap               Word Wrap Text to Format Paragraphs
-stri_write_lines        [DRAFT API] Write Text Lines to a Text File
-stringi-arguments       Passing Arguments to Functions in 'stringi'
-stringi-encoding        Character Encodings and 'stringi'
-stringi-locale          Locales and 'stringi'
-stringi-package         THE String Processing Package
-stringi-search          String Searching
-stringi-search-boundaries
-                        Text Boundary Analysis in 'stringi'
-stringi-search-charclass
-                        Character Classes in 'stringi'
-stringi-search-coll     Locale-Sensitive Text Searching in 'stringi'
-stringi-search-fixed    Locale-Insensitive Fixed Pattern Matching in
-                        'stringi'
-stringi-search-regex    Regular Expressions in 'stringi'
+stri_write_lines        Write Text Lines to a Text File

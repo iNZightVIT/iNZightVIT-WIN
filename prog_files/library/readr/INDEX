@@ -21,6 +21,7 @@ parse_guess             Parse using the "best" type
 parse_logical           Parse logicals, integers, and reals
 parse_number            Parse numbers, flexibly
 problems                Retrieve parsing problems
+read_builtin            Read built-in object from package
 read_delim              Read a delimited file (including csv & tsv)
                         into a tibble
 read_file               Read/write a complete file

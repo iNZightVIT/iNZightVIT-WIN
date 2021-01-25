@@ -1,3 +1,9 @@
+25 Aug 2020: statmod 1.4.35
+
+- Fix bug in tweedie(link.power=0) so that the resulting functions
+  $linkinv() and $mu.eta() preserve the attributes of their
+  arguments.
+
 16 Feb 2020: statmod 1.4.34
 
 - Improve the model description provided in the remlscoregamma() help

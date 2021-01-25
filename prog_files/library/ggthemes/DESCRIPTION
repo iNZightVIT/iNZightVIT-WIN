@@ -1,5 +1,5 @@
 Package: ggthemes
-Version: 4.2.0
+Version: 4.2.4
 Title: Extra Themes, Scales and Geoms for 'ggplot2'
 Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     email = "jeffrey.arnold@gmail.com", 
@@ -27,14 +27,14 @@ Description: Some extra themes, geoms, and scales for 'ggplot2'.
     'Excel', and 'The Wall Street Journal', among others.
     Provides 'geoms' for Tufte's box plot and range frame.
 License: GPL-2
-URL: http://github.com/jrnold/ggthemes
-BugReports: http://github.com/jrnold/ggthemes
-RoxygenNote: 6.1.1
+URL: https://github.com/jrnold/ggthemes
+BugReports: https://github.com/jrnold/ggthemes
+RoxygenNote: 7.1.1
 LazyData: true
 Language: en-US
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2019-05-13 03:31:26 UTC; jrnold
+Packaged: 2021-01-20 02:04:38 UTC; jrnold
 Author: Jeffrey B. Arnold [aut, cre] (<https://orcid.org/0000-0001-9953-3904>),
   Gergely Daroczi [ctb],
   Bo Werth [ctb],
@@ -47,5 +47,5 @@ Author: Jeffrey B. Arnold [aut, cre] (<https://orcid.org/0000-0001-9953-3904>),
   Joshua London [ctb]
 Maintainer: Jeffrey B. Arnold <jeffrey.arnold@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-05-13 09:10:03 UTC
-Built: R 4.0.2; ; 2020-07-21 23:50:16 UTC; windows
+Date/Publication: 2021-01-20 16:50:03 UTC
+Built: R 4.0.3; ; 2021-01-23 06:54:28 UTC; windows

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Greg Freedman Ellis" />
+
+<meta name="date" content="2020-11-30" />
+
+<title>Extending srvyr</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Extending srvyr</h1>
+<h4 class="author">Greg Freedman Ellis</h4>
+<h4 class="date">2020-11-30</h4>
+
+
+
+<pre><code>## Loading required package: convey</code></pre>
+<pre><code>## Loading required package: laeken</code></pre>
+<p>I don’t expect this vignette to be help for most srvyr users, it is instead intended for other package developers. An exciting new feature that is easier now that I have reworked srvyr’s non-standard evaluation to match dplyr 0.7+ is that it is now possible for non-srvyr functions to be called from within <code>summarize</code>. This vignette describes some of the inner-workings of summarize so that others can extend srvyr. This is kind of a fiddly part of srvyr, and I don’t expect that many people will want or need to understand it, so this guide is mostly aimed at package authors who already have an understanding of how survey objects work. If you’d like more explanation, please let me know on <a href="https://github.com/gergness/srvyr">github</a>!</p>
+<p>This guide has also been rewritten for srvyr 1.0, as I had to rework summarize and was unable to maintain backwards compatibility.</p>
+<div id="translating-from-survey-to-srvyr" class="section level2">
+<h2>Translating from survey to srvyr</h2>
+<p>srvyr implements the “survey statistics” functions from the survey package. Some examples are the svymean, svytotal, svyciprop, svyquantile and svyratio all return a <code>svystat</code> object which usually prints out the estimate and its standard error and other estimates of the variance can be calculated from it. In srvyr, these estimates are created inside of a summarize call and the variance estimates are specified at the same time.</p>
+<p>The combination of srvyr’s group_by and summarize is analogous to the <code>svyby</code> function that performs one of the survey statistic function and performs it on multiple groups. However, as of srvyr 1.0, srvyr no longer uses <code>svyby</code>, instead the survey object is split into each group’s</p>
+</div>
+<div id="what-summarize-expects" class="section level2">
+<h2>What summarize expects</h2>
+<p>srvyr’s summarize expects that the survey statistics functions will return objects that are formatted in a particular way. Below, I’ll explain some of the functions that will help create these objects for you in most cases, but the return should be:</p>
+<ul>
+<li>A <code>data.frame</code> object</li>
+<li>Generally there should be 1 row for ungrouped, or 1 row per group, but this is no longer required.</li>
+<li>The names are based on the argument name from the summarize call but this name can’t provided to the functions. Instead, summarize does the renaming and your function should name the variables “coef” (which is renamed to the parameter name) or with a suffix that will be appended after the parameter name.</li>
+</ul>
+</div>
+<div id="helper-functions-exported-by-srvyr" class="section level2">
+<h2>Helper functions exported by srvyr</h2>
+<p>srvyr now exports several functions that can help convert functions designed for the survey package to this format.</p>
+<ul>
+<li><code>cur_svy()</code> - This function, modeled after <code>dplyr::current_vars()</code>, is a hidden way to send the survey object to the object (by hidden, I mean that the user doesn’t have to specify the survey in the arguments of their function call). To use it, you can now directly call <code>cur_svy()</code> from inside your function. This survey includes only the current group’s survey data.</li>
+<li><code>cur_svy_full()</code> - Like <code>cur_svy()</code>, but includes the full survey data intead of just the current group’s data.</li>
+<li><code>set_survey_vars()</code> - Many survey functions have limited support for both supplying a formula indicating the variables to calculate a statistic on as well as a vector. However, oftentimes the vector version is less well supported than the formula version. Since srvyr uses dplyr semantics, it ends up returning the values as vectors. This function will add on the variable to the survey, defaulting to having the name “__SRVYR_TEMP_VAR__”.</li>
+<li><code>get_var_est()</code> - A helper function that calculates variance estimates like standard error (se), confidence interval (ci), variance (var), or coefficient of variance (cv). For functions that support it, there is a separate argument for design effects (to match survey’s conventions).</li>
+</ul>
+<p>Note that these functions may not work in all cases. In srvyr, I’ve actually had to write multiple versions of <code>get_var_est()</code> because of minor differences in the way survey objects are returned. Hopefully they will help in most situations, or at least give you a good place to start.</p>
+</div>
+<div id="miscellaneous-conventions" class="section level2">
+<h2>Miscellaneous conventions</h2>
+<p>Two less important conventions that srvyr functions follow are:</p>
+<ol style="list-style-type: decimal">
+<li>snake_case function names (to better match the tidyverse)</li>
+<li>Multiple choice arguments that default to the first (so for var_type, if no parameters are specified, use only “se” not all of them).</li>
+</ol>
+</div>
+<div id="example-conveysvygini---survey_gini" class="section level2">
+<h2>Example: convey::svygini -&gt; survey_gini</h2>
+<p>That was just a lot of text, but I think it’s probably easiest just to provide an example. The convey package provides several methods for analysis of inequality using survey data. The svygini function calculates the gini coefficient. Here, we’ll write functions that make a srvyr version <code>survey_gini</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># S3 generic function</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>survey_gini &lt;-<span class="st"> </span><span class="cf">function</span>(</span>
+<span id="cb3-3"><a href="#cb3-3"></a>  x, <span class="dt">na.rm =</span> <span class="ot">FALSE</span>, <span class="dt">vartype =</span> <span class="kw">c</span>(<span class="st">&quot;se&quot;</span>, <span class="st">&quot;ci&quot;</span>, <span class="st">&quot;var&quot;</span>, <span class="st">&quot;cv&quot;</span>), ...</span>
+<span id="cb3-4"><a href="#cb3-4"></a>) {</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="cf">if</span> (<span class="kw">missing</span>(vartype)) vartype &lt;-<span class="st"> &quot;se&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  vartype &lt;-<span class="st"> </span><span class="kw">match.arg</span>(vartype, <span class="dt">several.ok =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  .svy &lt;-<span class="st"> </span>srvyr<span class="op">::</span><span class="kw">set_survey_vars</span>(srvyr<span class="op">::</span><span class="kw">cur_svy</span>(), x)</span>
+<span id="cb3-8"><a href="#cb3-8"></a>  </span>
+<span id="cb3-9"><a href="#cb3-9"></a>  out &lt;-<span class="st"> </span>convey<span class="op">::</span><span class="kw">svygini</span>(<span class="op">~</span><span class="st">`</span><span class="dt">__SRVYR_TEMP_VAR__</span><span class="st">`</span>, <span class="dt">na.rm =</span> na.rm, <span class="dt">design =</span> .svy)</span>
+<span id="cb3-10"><a href="#cb3-10"></a>  out &lt;-<span class="st"> </span>srvyr<span class="op">::</span><span class="kw">get_var_est</span>(out, vartype)</span>
+<span id="cb3-11"><a href="#cb3-11"></a>  out</span>
+<span id="cb3-12"><a href="#cb3-12"></a>}</span></code></pre></div>
+<p>And here’s what this function looks like in practice:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Example from ?convey::svygini</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">suppressPackageStartupMessages</span>({</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">library</span>(srvyr)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="kw">library</span>(survey)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="kw">library</span>(convey)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="kw">library</span>(laeken)</span>
+<span id="cb4-7"><a href="#cb4-7"></a>})</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">data</span>(eusilc) ; <span class="kw">names</span>( eusilc ) &lt;-<span class="st"> </span><span class="kw">tolower</span>( <span class="kw">names</span>( eusilc ) )</span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># Setup for survey package</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>des_eusilc &lt;-<span class="st"> </span><span class="kw">svydesign</span>(</span>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="dt">ids =</span> <span class="op">~</span>rb030, </span>
+<span id="cb4-13"><a href="#cb4-13"></a>  <span class="dt">strata =</span> <span class="op">~</span>db040,  </span>
+<span id="cb4-14"><a href="#cb4-14"></a>  <span class="dt">weights =</span> <span class="op">~</span>rb050, </span>
+<span id="cb4-15"><a href="#cb4-15"></a>  <span class="dt">data =</span> eusilc</span>
+<span id="cb4-16"><a href="#cb4-16"></a>)</span>
+<span id="cb4-17"><a href="#cb4-17"></a>des_eusilc &lt;-<span class="st"> </span><span class="kw">convey_prep</span>(des_eusilc)</span>
+<span id="cb4-18"><a href="#cb4-18"></a></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co"># Setup for srvyr package</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>srvyr_eusilc &lt;-<span class="st"> </span>eusilc <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="st">  </span><span class="kw">as_survey</span>(</span>
+<span id="cb4-22"><a href="#cb4-22"></a>    <span class="dt">ids =</span> rb030,</span>
+<span id="cb4-23"><a href="#cb4-23"></a>    <span class="dt">strata =</span> db040,</span>
+<span id="cb4-24"><a href="#cb4-24"></a>    <span class="dt">weights =</span> rb050</span>
+<span id="cb4-25"><a href="#cb4-25"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="st">  </span><span class="kw">convey_prep</span>()</span>
+<span id="cb4-27"><a href="#cb4-27"></a></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="co">## Ungrouped</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="co"># Calculate ungrouped for survey package</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="kw">svygini</span>(<span class="op">~</span>eqincome, <span class="dt">design =</span> des_eusilc)</span>
+<span id="cb4-31"><a href="#cb4-31"></a><span class="co">#&gt;             gini     SE</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a><span class="co">#&gt; eqincome 0.26497 0.0019</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a></span>
+<span id="cb4-34"><a href="#cb4-34"></a><span class="co"># Use new function from summarize</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a>srvyr_eusilc <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-36"><a href="#cb4-36"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">eqincome =</span> <span class="kw">survey_gini</span>(eqincome))</span>
+<span id="cb4-37"><a href="#cb4-37"></a><span class="co">#&gt;    eqincome eqincome_se</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a><span class="co">#&gt; 1 0.2649652 0.001946982</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a></span>
+<span id="cb4-40"><a href="#cb4-40"></a><span class="co">## Groups</span></span>
+<span id="cb4-41"><a href="#cb4-41"></a><span class="co"># Calculate by groups for survey</span></span>
+<span id="cb4-42"><a href="#cb4-42"></a>survey<span class="op">::</span><span class="kw">svyby</span>(<span class="op">~</span>eqincome, <span class="op">~</span>rb090, des_eusilc, convey<span class="op">::</span>svygini)</span>
+<span id="cb4-43"><a href="#cb4-43"></a><span class="co">#&gt;         rb090  eqincome          se</span></span>
+<span id="cb4-44"><a href="#cb4-44"></a><span class="co">#&gt; male     male 0.2578983 0.002617279</span></span>
+<span id="cb4-45"><a href="#cb4-45"></a><span class="co">#&gt; female female 0.2702080 0.002892713</span></span>
+<span id="cb4-46"><a href="#cb4-46"></a></span>
+<span id="cb4-47"><a href="#cb4-47"></a><span class="co"># Use new function from summarize</span></span>
+<span id="cb4-48"><a href="#cb4-48"></a>srvyr_eusilc <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-49"><a href="#cb4-49"></a><span class="st">  </span><span class="kw">group_by</span>(rb090) <span class="op">%&gt;%</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">eqincome =</span> <span class="kw">survey_gini</span>(eqincome))</span>
+<span id="cb4-51"><a href="#cb4-51"></a><span class="co">#&gt; # A tibble: 2 x 3</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a><span class="co">#&gt;   rb090  eqincome eqincome_se</span></span>
+<span id="cb4-53"><a href="#cb4-53"></a><span class="co">#&gt;   &lt;fct&gt;     &lt;dbl&gt;       &lt;dbl&gt;</span></span>
+<span id="cb4-54"><a href="#cb4-54"></a><span class="co">#&gt; 1 male      0.258     0.00262</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a><span class="co">#&gt; 2 female    0.270     0.00289</span></span></code></pre></div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

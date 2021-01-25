@@ -1,3 +1,112 @@
+# rlang 0.4.10
+
+* New `hash()` function to generate 128-bit hashes for arbitrary R objects
+  using the xxHash library. The implementation is modeled after
+  [xxhashlite](https://github.com/coolbutuseless/xxhashlite), created
+  by @coolbutuseless.
+
+* New `check_installed()` function. Unlike `is_installed()`, it asks
+  the user whether to install missing packages. If the user accepts,
+  the packages are installed with `pak::pkg_install()` if available,
+  or `utils::install.packages()` otherwise. If the session is non
+  interactive or if the user chooses not to install the packages, the
+  current evaluation is aborted (#1075).
+
+* rlang is now licensed as MIT (#1063).
+
+* Fixed an issue causing extra empty lines in `inform()` messages with
+  `.frequency` (#1076, @schloerke).
+
+* `expr_deparse()` now correctly wraps code using `::` and `:::`
+  (#1072, @krlmlr).
+
+
+# rlang 0.4.9
+
+## Breaking changes
+
+* Dropped support for the R 3.2 series.
+
+
+## New features
+
+* `inject()` evaluates its argument with `!!`, `!!!`, and `{{`
+  support.
+
+* New `enquo0()` and `enquos0()` operators for defusing function
+  arguments without automatic injection (unquotation).
+
+* `format_error_bullets()` is no longer experimental. The `message`
+  arguments of `abort()`, `warn()`, and `inform()` are automatically
+  passed to that function to make it easy to create messages with
+  regular, info, and error bullets. See `?format_error_bullets` for
+  more information.
+
+* New `zap_srcref()` function to recursively remove source references
+  from functions and calls.
+
+* A new compat file for the zeallot operator `%<-%` is now available
+  in the rlang repository.
+
+* New `%<~%` operator to define a variable lazily.
+
+* New `env_browse()` and `env_is_browsed()` functions. `env_browse()`
+  is equivalent to evaluating `browser()` within an environment. It
+  sets the environment to be persistently browsable (or unsets it if
+  `value = FALSE` is supplied).
+
+* Functions created from quosures with `as_function()` now print in a
+  more user friendly way.
+
+* New `rlang_print_backtrace` C callable for debugging from C
+  interpreters (#1059).
+
+
+## Bugfixes and improvements
+
+* The `.data` pronoun no longer skips functions (#1061). This solves a
+  dplyr issue involving rowwise data frames and list-columns of
+  functions (tidyverse/dplyr#5608).
+
+* `as_data_mask()` now intialises environments of the correct size to
+  improve efficiency (#1048).
+
+* `eval_bare()`, `eval_tidy()` (#961), and `with_handlers()` (#518)
+  now propagate visibility.
+
+* `cnd_signal()` now ignores `NULL` inputs.
+
+* Fixed bug that prevented splicing a named empty vector with the
+  `!!!` operator (#1045).
+
+* The exit status of is now preserved in non-interactive sessions when
+  `entrace()` is used as an `options(error = )` handler (#1052,
+  rstudio/bookdown#920).
+
+* `next` and `break` are now properly deparsed as nullary operators.
+
+
+# rlang 0.4.8
+
+* Backtraces now include native stacks (e.g. from C code) when the
+  [winch](https://r-prof.github.io/winch/) package is installed and
+  `rlang_trace_use_winch` is set to `TRUE` (@krlmlr).
+
+* Compatibility with upcoming testthat 3 and magrittr 2 releases.
+
+* `get_env()` now returns the proper environment with primitive
+  functions, i.e. the base namespace rather than the base environment
+  (r-lib/downlit#32).
+
+* `entrace()` no longer handles non-rlang errors that carry a
+  backtrace. This improves compatibility with packages like callr.
+
+* Backtraces of unhandled errors are now displayed without truncation
+  in non-interactive sessions (#856).
+
+* `is_interactive()` no longer consults "rstudio.notebook.executing"
+  option (#1031).
+
 
 # rlang 0.4.7
 

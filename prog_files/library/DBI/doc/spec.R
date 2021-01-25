@@ -50,7 +50,7 @@ patch_package_doc <- function(x) {
 }
 
 move_contents_of_usage_section <- function(x) {
-  # http://stackoverflow.com/a/3839299/946850
+  # https://stackoverflow.com/a/3839299/946850
   usage_contents <-
     x %>%
     xml_find_all(
@@ -58,7 +58,7 @@ move_contents_of_usage_section <- function(x) {
 
   usage_text <-
     usage_contents %>%
-    xml_find_first("//pre") %>% 
+    xml_find_first("//pre") %>%
     xml_text
 
   h3 <- x %>% xml_find_first("//h3")
@@ -82,7 +82,7 @@ move_contents_of_usage_section <- function(x) {
 }
 
 move_additional_arguments_section <- function(x) {
-  # http://stackoverflow.com/a/3839299/946850 and some trial and error
+  # https://stackoverflow.com/a/3839299/946850 and some trial and error
   additional_arguments <- x %>%
     xml_find_all(
       "//h3[.='Additional arguments'] | //h3[.='Additional arguments']/following-sibling::node()[following-sibling::h3]")
@@ -95,7 +95,7 @@ move_additional_arguments_section <- function(x) {
 }
 
 remove_see_also_section <- function(x) {
-  # http://stackoverflow.com/a/3839299/946850 and some trial and error
+  # https://stackoverflow.com/a/3839299/946850 and some trial and error
   x %>%
     xml_find_all(
       "//h3[.='See Also'] | //h3[.='See Also']/following-sibling::node()[following-sibling::h3]") %>%
@@ -104,7 +104,7 @@ remove_see_also_section <- function(x) {
 }
 
 remove_authors_section <- function(x) {
-  # http://stackoverflow.com/a/3839299/946850 and some trial and error
+  # https://stackoverflow.com/a/3839299/946850 and some trial and error
   x %>%
     xml_find_all(
       "//h3[.='Author(s)'] | //h3[.='Author(s)']/following-sibling::node()[following-sibling::h3]") %>%

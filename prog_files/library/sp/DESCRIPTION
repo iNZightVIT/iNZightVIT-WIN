@@ -1,5 +1,5 @@
 Package: sp
-Version: 1.4-2
+Version: 1.4-5
 Title: Classes and Methods for Spatial Data
 Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"),
 				email = "edzer.pebesma@uni-muenster.de"),
@@ -11,6 +11,7 @@ Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"),
 			person("Michael", "Sumner", role = "ctb"),
 			person("Don", "MacQueen", role = "ctb"),
 			person("Jim", "Lemon", role = "ctb"),
+                        person("Finn", "Lindgren", role = "ctb"),
 			person("Josh", "O'Brien", role = "ctb"),
 			person("Joseph", "O'Rourke", role = "ctb"))
 Depends: R (>= 3.0.0), methods
@@ -46,7 +47,7 @@ Collate: bpy.colors.R AAA.R Class-CRS.R CRS-methods.R Class-Spatial.R
         compassRose.R surfaceArea.R spOptions.R subset.R disaggregate.R
         sp_spat1.R merge.R aggregate.R
 NeedsCompilation: yes
-Packaged: 2020-05-18 09:24:15 UTC; edzer
+Packaged: 2021-01-10 11:49:13 UTC; edzer
 Author: Edzer Pebesma [aut, cre],
   Roger Bivand [aut],
   Barry Rowlingson [ctb],
@@ -55,10 +56,11 @@ Author: Edzer Pebesma [aut, cre],
   Michael Sumner [ctb],
   Don MacQueen [ctb],
   Jim Lemon [ctb],
+  Finn Lindgren [ctb],
   Josh O'Brien [ctb],
   Joseph O'Rourke [ctb]
 Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 Repository: CRAN
-Date/Publication: 2020-05-20 10:10:07 UTC
-Built: R 4.0.2; x86_64-w64-mingw32; 2020-07-21 17:33:29 UTC; windows
+Date/Publication: 2021-01-10 13:10:02 UTC
+Built: R 4.0.3; x86_64-w64-mingw32; 2021-01-23 13:40:39 UTC; windows
 Archs: i386, x64

@@ -13,7 +13,7 @@ wave <- function(time) {
   arclen <- arclen[keep]
   
   par3d(skipRedraw = TRUE)
-  if (nrow(rgl.ids())) rgl.pop()
+  if (nrow(ids3d())) pop3d()
   surface3d(x,y,z, texture_s=matrix(arclen/2, length(x), 20), texture_t=z, col="white")
   c(list(skipRedraw = FALSE), spin(time))
 }
@@ -23,4 +23,3 @@ material3d(texture = system.file("textures","rgl2.png", package="rgl"))
 spin <- spin3d(rpm=6,axis=c(0,0,1))
 if (!rgl.useNULL())
   play3d(wave, 10, startTime = 5)
-

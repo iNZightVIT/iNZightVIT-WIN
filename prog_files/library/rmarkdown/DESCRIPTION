@@ -1,7 +1,7 @@
 Package: rmarkdown
 Type: Package
 Title: Dynamic Documents for R
-Version: 2.3
+Version: 2.6
 Authors@R: c(
   person("JJ", "Allaire", role = "aut", email = "jj@rstudio.com"),
   person("Yihui", "Xie", role = c("aut", "cre"), email = "xie@yihui.name", comment = c(ORCID = "0000-0003-0645-5666")),
@@ -16,7 +16,9 @@ Authors@R: c(
   #
   # Contributors, ordered alphabetically by first name
   person("Andrew", "Dunning", role = "ctb", comment = c(ORCID = "0000-0003-0464-5036")),
-  person("Atsushi", "Yasumoto", role = "ctb", comment = c(ORCID = "0000-0002-8335-495X")),
+  person("Atsushi", "Yasumoto", role = c("ctb", "cph"),
+         comment = c(ORCID = "0000-0002-8335-495X",
+                     cph = "Number sections Lua filter")),
   person("Barret", "Schloerke", role = "ctb"),
   person("Christophe", "Dervieux", role = "ctb"),
   person("Frederik", "Aust", role = "ctb", email = "frederik.aust@uni-koeln.de", comment = c(ORCID = "0000-0003-4900-788X")),
@@ -70,27 +72,27 @@ Authors@R: c(
   person("Aidan", "Lister", role = c("ctb", "cph"), 
          comment = "jQuery StickyTabs"),
   person("Benct Philip", "Jonsson", role = c("ctb", "cph"), 
-         comment = "pagebreak lua filter"),
+         comment = "pagebreak Lua filter"),
   person("Albert", "Krewinkel", role = c("ctb", "cph"), 
-         comment = "pagebreak lua filter")
+         comment = "pagebreak Lua filter")
   )
 Maintainer: Yihui Xie <xie@yihui.name>
 Description: Convert R Markdown documents into a variety of formats.
 Depends: R (>= 3.0)
 Imports: tools, utils, knitr (>= 1.22), yaml (>= 2.1.19), htmltools (>=
-        0.3.5), evaluate (>= 0.13), base64enc, jsonlite, mime, tinytex
-        (>= 0.11), xfun, methods, stringr (>= 1.2.0)
-Suggests: shiny (>= 0.11), tufte, testthat, digest, dygraphs, tibble,
-        fs, pkgdown, rsconnect
-SystemRequirements: pandoc (>= 1.12.3) - http://pandoc.org
+        0.3.5), evaluate (>= 0.13), jsonlite, tinytex (>= 0.11), xfun
+        (>= 0.15), methods, stringr (>= 1.2.0)
+Suggests: shiny (>= 0.11), tufte, testthat (>= 2.0.0), digest,
+        dygraphs, vctrs, tibble, fs, rsconnect, withr (>= 2.3.0)
+SystemRequirements: pandoc (>= 1.14) - http://pandoc.org
 URL: https://github.com/rstudio/rmarkdown
 BugReports: https://github.com/rstudio/rmarkdown/issues
 License: GPL-3
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Encoding: UTF-8
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-06-18 13:32:36 UTC; yihui
+Packaged: 2020-12-14 16:19:32 UTC; yihui
 Author: JJ Allaire [aut],
   Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),
   Jonathan McPherson [aut],
@@ -102,7 +104,8 @@ Author: JJ Allaire [aut],
   Winston Chang [aut],
   Richard Iannone [aut] (<https://orcid.org/0000-0003-3925-190X>),
   Andrew Dunning [ctb] (<https://orcid.org/0000-0003-0464-5036>),
-  Atsushi Yasumoto [ctb] (<https://orcid.org/0000-0002-8335-495X>),
+  Atsushi Yasumoto [ctb, cph] (<https://orcid.org/0000-0002-8335-495X>,
+    Number sections Lua filter),
   Barret Schloerke [ctb],
   Christophe Dervieux [ctb],
   Frederik Aust [ctb] (<https://orcid.org/0000-0003-4900-788X>),
@@ -136,8 +139,8 @@ Author: JJ Allaire [aut],
   Ben Sperry [ctb] (Ionicons),
   Drifty [cph] (Ionicons),
   Aidan Lister [ctb, cph] (jQuery StickyTabs),
-  Benct Philip Jonsson [ctb, cph] (pagebreak lua filter),
-  Albert Krewinkel [ctb, cph] (pagebreak lua filter)
+  Benct Philip Jonsson [ctb, cph] (pagebreak Lua filter),
+  Albert Krewinkel [ctb, cph] (pagebreak Lua filter)
 Repository: CRAN
-Date/Publication: 2020-06-18 14:50:02 UTC
-Built: R 4.0.2; ; 2020-07-21 20:22:11 UTC; windows
+Date/Publication: 2020-12-14 18:00:03 UTC
+Built: R 4.0.3; ; 2021-01-23 16:36:21 UTC; windows

@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;validate&rsquo; version 0.9.3</h2>
+</div><h2>Documentation for package &lsquo;validate&rsquo; version 1.0.1</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -21,13 +21,35 @@
 <h2>Help Pages</h2>
 
 
+<p style="text-align: center;">
+<a href="#A">A</a>
+<a href="#B">B</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#F">F</a>
+<a href="#G">G</a>
+<a href="#H">H</a>
+<a href="#I">I</a>
+<a href="#K">K</a>
+<a href="#L">L</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#O">O</a>
+<a href="#P">P</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#V">V</a>
+<a href="#W">W</a>
+<a href="#misc">misc</a>
+</p>
+
+
+<h2><a name="A">-- A --</a></h2>
+
 <table width="100%">
-<tr><td style="width: 25%;"><a href="vin.html">%vin%</a></td>
-<td>A consistent set membership operator</td></tr>
-<tr><td style="width: 25%;"><a href="plus-indicator-indicator-method.html">+-method</a></td>
-<td>Combine two indicator objects</td></tr>
-<tr><td style="width: 25%;"><a href="plus-validator-validator-method.html">+-method</a></td>
-<td>Combine two validator objects</td></tr>
+<tr><td style="width: 25%;"><a href="add_indicators.html">add_indicators</a></td>
+<td>Add indicator values as columns to a data frame</td></tr>
 <tr><td style="width: 25%;"><a href="aggregate-validation-method.html">aggregate-method</a></td>
 <td>Aggregate validation results</td></tr>
 <tr><td style="width: 25%;"><a href="all-validation-method.html">all-method</a></td>
@@ -50,12 +72,22 @@
 <td>Export to yaml file</td></tr>
 <tr><td style="width: 25%;"><a href="export_yaml.html">as_yaml-method</a></td>
 <td>Export to yaml file</td></tr>
+</table>
+
+<h2><a name="B">-- B --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="barplot-cellComparison-method.html">barplot-method</a></td>
 <td>Barplot of cellComparison object</td></tr>
 <tr><td style="width: 25%;"><a href="barplot-validation-method.html">barplot-method</a></td>
 <td>Plot number of violations</td></tr>
 <tr><td style="width: 25%;"><a href="barplot-validatorComparison-method.html">barplot-method</a></td>
 <td>Barplot of validatorComparison object</td></tr>
+</table>
+
+<h2><a name="C">-- C --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="cells.html">cells</a></td>
 <td>Cell counts and differences for a series of datasets</td></tr>
 <tr><td style="width: 25%;"><a href="check_that.html">check_that</a></td>
@@ -68,6 +100,12 @@
 <td>Confront data with a (set of) expressionset(s)</td></tr>
 <tr><td style="width: 25%;"><a href="confront.html">confront-method</a></td>
 <td>Confront data with a (set of) expressionset(s)</td></tr>
+<tr><td style="width: 25%;"><a href="contains_exactly.html">contains_at_least</a></td>
+<td>Check records using a predifined table of (im)possible values</td></tr>
+<tr><td style="width: 25%;"><a href="contains_exactly.html">contains_at_most</a></td>
+<td>Check records using a predifined table of (im)possible values</td></tr>
+<tr><td style="width: 25%;"><a href="contains_exactly.html">contains_exactly</a></td>
+<td>Check records using a predifined table of (im)possible values</td></tr>
 <tr><td style="width: 25%;"><a href="created.html">created</a></td>
 <td>Creation timestamp</td></tr>
 <tr><td style="width: 25%;"><a href="created.html">created-method</a></td>
@@ -76,6 +114,11 @@
 <td>Creation timestamp</td></tr>
 <tr><td style="width: 25%;"><a href="created.html">created&lt;--method</a></td>
 <td>Creation timestamp</td></tr>
+</table>
+
+<h2><a name="D">-- D --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="description.html">description</a></td>
 <td>Rule description</td></tr>
 <tr><td style="width: 25%;"><a href="description.html">description-method</a></td>
@@ -84,6 +127,15 @@
 <td>Rule description</td></tr>
 <tr><td style="width: 25%;"><a href="description.html">description&lt;--method</a></td>
 <td>Rule description</td></tr>
+<tr><td style="width: 25%;"><a href="contains_exactly.html">does_not_contain</a></td>
+<td>Check records using a predifined table of (im)possible values</td></tr>
+<tr><td style="width: 25%;"><a href="do_by.html">do_by</a></td>
+<td>split-apply-combine for vectors, with equal-length outptu</td></tr>
+</table>
+
+<h2><a name="E">-- E --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="errors.html">errors</a></td>
 <td>Get messages from a confrontation object</td></tr>
 <tr><td style="width: 25%;"><a href="errors.html">errors-method</a></td>
@@ -104,14 +156,80 @@
 <td>Export to yaml file</td></tr>
 <tr><td style="width: 25%;"><a href="export_yaml.html">export_yaml-method</a></td>
 <td>Export to yaml file</td></tr>
+</table>
+
+<h2><a name="F">-- F --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="field_format.html">field_format</a></td>
+<td>Check whether a field conforms to a regular expression</td></tr>
+<tr><td style="width: 25%;"><a href="field_length.html">field_length</a></td>
+<td>Check number of code points</td></tr>
+</table>
+
+<h2><a name="G">-- G --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="rx.html">glob</a></td>
+<td>Label objects for interpretation as pattern</td></tr>
+</table>
+
+<h2><a name="H">-- H --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="hb.html">hb</a></td>
+<td>Hiridoglu-Berthelot function</td></tr>
+<tr><td style="width: 25%;"><a href="hierarchy.html">hierarchy</a></td>
+<td>Check aggregates defined by a hierarchical code list</td></tr>
+</table>
+
+<h2><a name="I">-- I --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">in_linear_sequence</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">in_linear_sequence.character</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">in_linear_sequence.Date</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">in_linear_sequence.numeric</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">in_linear_sequence.POSIXct</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="in_range.html">in_range</a></td>
+<td>Check variable range</td></tr>
+<tr><td style="width: 25%;"><a href="in_range.html">in_range.character</a></td>
+<td>Check variable range</td></tr>
+<tr><td style="width: 25%;"><a href="in_range.html">in_range.default</a></td>
+<td>Check variable range</td></tr>
 <tr><td style="width: 25%;"><a href="is_complete.html">is_complete</a></td>
 <td>Test for completeness of records</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">is_linear_sequence</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">is_linear_sequence.character</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">is_linear_sequence.Date</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">is_linear_sequence.numeric</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
+<tr><td style="width: 25%;"><a href="is_linear_sequence.html">is_linear_sequence.POSIXct</a></td>
+<td>Check whether a variable represents a linear sequence</td></tr>
 <tr><td style="width: 25%;"><a href="is_unique.html">is_unique</a></td>
 <td>Test for uniquenes of records</td></tr>
+</table>
+
+<h2><a name="K">-- K --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="keyset.html">keyset</a></td>
 <td>Get key set stored with a confrontation</td></tr>
 <tr><td style="width: 25%;"><a href="keyset.html">keyset-method</a></td>
 <td>Get key set stored with a confrontation</td></tr>
+</table>
+
+<h2><a name="L">-- L --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="label.html">label</a></td>
 <td>Rule label</td></tr>
 <tr><td style="width: 25%;"><a href="label.html">label-method</a></td>
@@ -120,6 +238,8 @@
 <td>Rule label</td></tr>
 <tr><td style="width: 25%;"><a href="label.html">label&lt;--method</a></td>
 <td>Rule label</td></tr>
+<tr><td style="width: 25%;"><a href="satisfying.html">lacking</a></td>
+<td>Select records (not) satisfying rules</td></tr>
 <tr><td style="width: 25%;"><a href="lbj_cells-class.html">lbj_cells</a></td>
 <td>Logging object to use with the lumberjack package</td></tr>
 <tr><td style="width: 25%;"><a href="lbj_cells-class.html">lbj_cells-class</a></td>
@@ -130,8 +250,17 @@
 <td>Logging object to use with the lumberjack package</td></tr>
 <tr><td style="width: 25%;"><a href="length.html">length-method</a></td>
 <td>Determine the number of elements in an object.</td></tr>
+</table>
+
+<h2><a name="M">-- M --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="match_cells.html">match_cells</a></td>
 <td>Create matching subsets of a sequence of data</td></tr>
+<tr><td style="width: 25%;"><a href="do_by.html">max_by</a></td>
+<td>split-apply-combine for vectors, with equal-length outptu</td></tr>
+<tr><td style="width: 25%;"><a href="do_by.html">mean_by</a></td>
+<td>split-apply-combine for vectors, with equal-length outptu</td></tr>
 <tr><td style="width: 25%;"><a href="meta.html">meta</a></td>
 <td>Get or set rule metadata</td></tr>
 <tr><td style="width: 25%;"><a href="meta.html">meta-method</a></td>
@@ -140,10 +269,26 @@
 <td>Get or set rule metadata</td></tr>
 <tr><td style="width: 25%;"><a href="meta.html">meta&lt;--method</a></td>
 <td>Get or set rule metadata</td></tr>
+<tr><td style="width: 25%;"><a href="do_by.html">min_by</a></td>
+<td>split-apply-combine for vectors, with equal-length outptu</td></tr>
+</table>
+
+<h2><a name="N">-- N --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="nace_rev2.html">nace_rev2</a></td>
+<td>NACE classification code table</td></tr>
 <tr><td style="width: 25%;"><a href="names.html">names-method</a></td>
 <td>Extract or set names</td></tr>
 <tr><td style="width: 25%;"><a href="names.html">names&lt;--method</a></td>
 <td>Extract or set names</td></tr>
+<tr><td style="width: 25%;"><a href="number_format.html">number_format</a></td>
+<td>Check the layouts of numbers.</td></tr>
+</table>
+
+<h2><a name="O">-- O --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="origin.html">origin</a></td>
 <td>Origin of rules</td></tr>
 <tr><td style="width: 25%;"><a href="origin.html">origin-method</a></td>
@@ -152,18 +297,30 @@
 <td>Origin of rules</td></tr>
 <tr><td style="width: 25%;"><a href="origin.html">origin&lt;--method</a></td>
 <td>Origin of rules</td></tr>
+</table>
+
+<h2><a name="P">-- P --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="validate.html">package-validate</a></td>
 <td>Data Validation Infrastructure</td></tr>
+<tr><td style="width: 25%;"><a href="part_whole_relation.html">part_whole_relation</a></td>
+<td>Test whether details combine to a chosen aggregate</td></tr>
 <tr><td style="width: 25%;"><a href="plot-cellComparison-method.html">plot-method</a></td>
 <td>Line graph of a cellComparison object.</td></tr>
 <tr><td style="width: 25%;"><a href="plot-validation-method.html">plot-method</a></td>
-<td>Plot a validation object</td></tr>
+<td>Plot validaiton results</td></tr>
 <tr><td style="width: 25%;"><a href="plot-validator-method.html">plot-method</a></td>
 <td>Plot a validator object</td></tr>
 <tr><td style="width: 25%;"><a href="plot-validatorComparison-method.html">plot-method</a></td>
 <td>Line graph of validatorComparison object</td></tr>
 <tr><td style="width: 25%;"><a href="run_validation_file.html">print.validations</a></td>
 <td>Run a file with confrontations. Capture results</td></tr>
+</table>
+
+<h2><a name="R">-- R --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="voptions.html">reset</a></td>
 <td>Set or get options globally or per object.</td></tr>
 <tr><td style="width: 25%;"><a href="voptions.html">reset-method</a></td>
@@ -174,6 +331,17 @@
 <td>Run a file with confrontations. Capture results</td></tr>
 <tr><td style="width: 25%;"><a href="run_validation_file.html">run_validation_file</a></td>
 <td>Run a file with confrontations. Capture results</td></tr>
+<tr><td style="width: 25%;"><a href="rx.html">rx</a></td>
+<td>Label objects for interpretation as pattern</td></tr>
+</table>
+
+<h2><a name="S">-- S --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="samplonomy.html">samplonomy</a></td>
+<td>Economic data on Samplonia</td></tr>
+<tr><td style="width: 25%;"><a href="satisfying.html">satisfying</a></td>
+<td>Select records (not) satisfying rules</td></tr>
 <tr><td style="width: 25%;"><a href="retailers.html">SBS2000</a></td>
 <td>data on Dutch supermarkets</td></tr>
 <tr><td style="width: 25%;"><a href="sort-validation-method.html">sort-method</a></td>
@@ -184,8 +352,15 @@
 <td>Create a summary</td></tr>
 <tr><td style="width: 25%;"><a href="run_validation_file.html">summary.validations</a></td>
 <td>Run a file with confrontations. Capture results</td></tr>
+<tr><td style="width: 25%;"><a href="do_by.html">sum_by</a></td>
+<td>split-apply-combine for vectors, with equal-length outptu</td></tr>
 <tr><td style="width: 25%;"><a href="syntax.html">syntax</a></td>
 <td>Syntax to define validation or indicator rules</td></tr>
+</table>
+
+<h2><a name="V">-- V --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="validate.html">validate</a></td>
 <td>Data Validation Infrastructure</td></tr>
 <tr><td style="width: 25%;"><a href="validate-summary.html">validate-summary</a></td>
@@ -206,11 +381,29 @@
 <td>Get variable names</td></tr>
 <tr><td style="width: 25%;"><a href="variables.html">variables-method</a></td>
 <td>Get variable names</td></tr>
+<tr><td style="width: 25%;"><a href="satisfying.html">violating</a></td>
+<td>Select records (not) satisfying rules</td></tr>
 <tr><td style="width: 25%;"><a href="voptions.html">voptions</a></td>
 <td>Set or get options globally or per object.</td></tr>
 <tr><td style="width: 25%;"><a href="voptions.html">voptions-method</a></td>
 <td>Set or get options globally or per object.</td></tr>
+</table>
+
+<h2><a name="W">-- W --</a></h2>
+
+<table width="100%">
 <tr><td style="width: 25%;"><a href="errors.html">warnings-method</a></td>
 <td>Get messages from a confrontation object</td></tr>
+</table>
+
+<h2><a name="misc">-- misc --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="vin.html">%vin%</a></td>
+<td>A consistent set membership operator</td></tr>
+<tr><td style="width: 25%;"><a href="plus-indicator-indicator-method.html">+-method</a></td>
+<td>Combine two indicator objects</td></tr>
+<tr><td style="width: 25%;"><a href="plus-validator-validator-method.html">+-method</a></td>
+<td>Combine two validator objects</td></tr>
 </table>
 </body></html>

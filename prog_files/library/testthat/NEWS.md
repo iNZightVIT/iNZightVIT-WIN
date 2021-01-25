@@ -1,3 +1,221 @@
+# testthat 3.0.1
+
+* New `testthat.progress.verbose_skips` option. Set to `FALSE` to stop
+  reporting skips as they occur; they will still appear in the summary
+  (#1209, @krlmlr).
+
+* `CheckReporter` results have been tweaked based on experiences from running
+  R CMD check on many packages. Hopefully it should now be easier to see
+  the biggest problems (i.e. failures and errors) while still having
+  skips and warnings available to check if needed (#1274). And now the full 
+  test name is always shown, no matter how long (#1268).
+
+* Catch C++ tests are no longer reported multiple times (#1237) and
+  are automatically skipped on Solaris since Catch is not supported (#1257).
+  `use_catch()` makes it more clear that your package needs to suggest 
+  xml2 (#1235).
+
+* `auto_test_package()` works once again (@mbojan, #1211, #1214).
+
+* `expect_snapshot()` gains new `error` argument which controls whether or not
+  an error is expected. If an unexpected error is thrown, or an expected error
+  is not thrown, `expect_snapshot()` will fail (even on CRAN) (#1200).
+
+* `expect_snapshot_value(style = "deparse")` handles more common R data
+  structures.
+  
+* `expect_snapshot_value()` now passes `...` on to `waldo::compare()` (#1222).
+
+* `expect_snapshot_file()` gives a hint as to next steps when a failure
+  occurs in non-interactive environments (with help from @maelle, #1179).
+  `expect_snapshot_*()` gives a more informative hint when you're running
+  tests interactively (#1226).
+
+* `expect_snapshot_*()` automatically removes the `_snaps` directory if
+  it's empty (#1180). It also warns if snapshots are discarded because tests
+  have duplicated names (#1278, @krlmlr).
+
+* `local_reproducible_output()` now sets the LANGUAGE env var to "en". This
+  matches the behaviour of R CMD check in interactive settings (#1213).
+  It also now unsets RSTUDIO envvar, instead of setting it to 0 (#1225).
+
+* `RstudioReporter` has been renamed to `RStudioReporter`.
+
+* `skip_if_not()` no longer appends "is not TRUE" to custom messages 
+  (@dpprdan, #1247).
+
+* `test_that()` now warns (3e only) if code doesn't have braces, since 
+  that makes it hard to track the source of an error (#1280, @krlmlr).
+
+# testthat 3.0.0
+
+## 3rd edition
+
+testhat 3.0.0 brings with it a 3rd edition that makes a number of breaking
+changes in order to clean up the interface and help you use our latest
+recommendations. To opt-in to the 3rd edition for your package, set
+`Config/testthat/edition: 3` in your `DESCRIPTION` or use `local_edition(3)` in
+individual tests. You can retrieve the active edition with `edition_get()`.
+Learn more in `vignette("third-edition")`.
+
+* `context()` is deprecated.
+
+* `expect_identical()` and `expect_equal()` use `waldo::compare()` to 
+   compare actual and expected results. This mostly yields much more 
+   informative output when the actual and expected values are different,
+   but while writing it uncovered some bugs in the existing comparison
+   code.
+   
+* `expect_error()`, `expect_warning()`, `expect_message()`, and 
+  `expect_condition()` now all use the same underlying logic: they
+  capture the first condition that matches `class`/`regexp` and
+  allow anything else to bubble up (#998/#1052). They also warn if 
+  there are unexpected arguments that are never used.
+
+* The `all` argument to `expect_message()` and `expect_warning()` is now
+  deprecated. It was never a particularly good idea or well documented, 
+  and is now superseded by the new condition capturing behaviour.
+
+* `expect_equivalent()`, `expect_reference()`, `expect_is()` and 
+  `expect_that()` are deprecated.
+
+* Messages are no longer automatically silenced. Either use 
+  `suppressMessages()` to hide unimportant messages, or
+  `expect_messsage()` to catch important messages (#1095).
+  
+* `setup()` and `teardown()` are deprecated in favour of test fixtures.
+  See `vignette("test-fixtures")` for more details.
+  
+* `expect_known_output()`, `expect_known_value()`, `expect_known_hash()`,
+  and `expect_equal_to_reference()` are all deprecated in favour of
+  `expect_snapshot_output()` and `expect_snapshot_value()`.
+  
+* `test_that()` now sets a number of options and env vars to make output as 
+  reproducible as possible (#1044). Many of these options were previously 
+  set in various places (in `devtools::test()`, `test_dir()`, `test_file()`,
+  or `verify_output()`) but they have now been centralised. You can use in
+  your own code, or when debugging tests interactively with
+  `local_test_context()`.
+
+* `with_mock()` and `local_mock()` are deprecated; please use the mockr
+  or mockery packages instead (#1099).
+
+## Snapshot testing
+
+New family of snapshot expectations (`expect_snapshot()`, `expect_snapshot_output()`, `expect_snapshot_error()`, and `expect_snapshot_value()`) provide "snapshot" tests, where the expected results are stored in separate files in `test/testthat/_snaps`. They're useful whenever it's painful to store expected results directly in the test files.
+
+`expect_snapshot_file()` along with `snapshot_review()` help snapshot
+more complex data, with initial support for text files, images, and data frames (#1050).
+
+See `vignette("snapshotting")` for more details.
+
+## Reporters
+
+* `CheckReporter` (used inside R CMD check) now prints out all problems
+  (i.e. errors, failures, warnings and skips; and not just the first 10), 
+  lists skips types, and records problems in machine readable format in
+  `tests/testthat-problems.rds` (#1075).
+  
+* New `CompactProgressReporter` tweaks the output of `ProgressReporter` for
+  use with a single file, as in `devtools::test_file()`. You can pick a 
+  different default by setting `testthat.default_compact_reporter` to
+  the name of a reporter.
+
+* `ProgressReporter` (the default reporter) now keeps the stack traces of
+  an errors that happen before the before test, making problems substantially
+  easier to track down (#1004). It checks if you've exceeded the maximum number 
+  of failures (from option `testthat.progress.max_fails`) after each 
+  expectation, rather than at the end of each file (#967). It also gains
+  new random praise options that use emoji, and lists skipped tests by type 
+  (#1028).
+
+* `StopReporter` adds random praise emoji when a single test passes (#1094).
+  It has more refined display of failures, now using the same style 
+  as `CompactProgressReporter` and `ProgressReporter`.
+
+* `SummaryReporter` now records file start, not just context start. This
+  makes it more compatible with modern style which does not use `context()`
+  (#1089).
+
+* All reporters now use exactly the same format when reporting the location
+  of an expectation.
+
+* Warnings now include a backtrace, making it easier to figure
+  out where they came from.
+  
+* Catch C++ tests now provide detailed results for each test. 
+  To upgrade existing code, re-run `testthat::use_catch()` (#1008).
+
+* Many reporters (e.g. the check reporter) no longer raise an error when any tests fail. Use the `stop_on_failure` argument to `devtools::test()` and `testthat::test_dir()` if your code relies on this. Alternatively, use `reporter = c("check", "fail")` to e.g. create a failing check reporter.
+
+## Fixures
+
+* New `vignette("test-fixtures")` describes test fixtures; i.e. how to 
+  temporarily and cleanly change global state in order to test parts of
+  your code that otherwise would be hard to run (#1042). `setup()` and 
+  `teardown()` are superseded in favour of test fixtures.
+
+* New `teardown_env()` for use with `withr::defer()`. This allows you to
+  run code after all other tests have been run.
+
+## Skips
+
+* New `vignette("skipping")` gives more general information on skipping
+  tests, include some basics on testing skipping helpers (#1060).
+
+* `ProgressReporter()` and `CheckReporter()` list the number of skipped tests
+  by reason at the end of the reporter. This makes it easier to check that
+  you're not skipping the wrong tests, particularly on CI services (#1028).
+
+## Test running
+
+* `test_that()` no longer triggers an error when run outside of tests;
+  instead it produces a more informative summary of all failures, errors,
+  warnings, and skips that occurred inside the test.
+
+* `test_that()` now errors if `desc` is not a string (#1161).
+  
+* `test_file()` now runs helper, setup, and teardown code, and has the
+  same arguments as `test_dir()` (#968). Long deprecated `encoding` argument 
+  has been removed.
+
+* `test_dir()` now defaults `stop_on_failure` to `TRUE` for consistency with
+  other `test_` functions. The `wrap` argument has been deprecated; it's not
+  clear that it should ever have been exposed.
+
+* New `test_local()` tests a local source package directory. It's equivalent 
+  to `devtools::test()` but doesn't require devtools and all its dependencies
+  to be installed (#1030).
+
+## Minor improvements and bug fixes
+
+* testthat no longer supports tests stored in `inst/tests`. This has been
+  deprecated since testthat 0.11.0 (released in 2015). `test_package()` 
+  (previously used for running tests in R CMD check) will fail silently
+  if no tests are found to avoid breaking old packages on CRAN (#1149).
+
+* `capture_output()` and `verify_output()` use a new `testthat_print()`
+  generic. This allows you to control the printed representation of your
+  object specifically for tests (i.e. if your usual print method shows
+  data that varies in a way that you don't care about for tests) (#1056).
+
+* `context_start_file()` is now exported for external reporters (#983, #1082).
+  It now only strips first instance of prefix/suffix (#1041, @stufield).
+
+* `expect_error()` no longer encourages you to use `class`. This advice removes
+  one type of fragility at the expense of creating a different type (#1013).
+
+* `expect_known_failure()` has been removed. As far as I can tell it was
+  only ever used by testthat, and is rather fragile.
+
+* `expect_true()`, `expect_false()`, and `expect_null()` now use waldo to
+  produce more informative failures.
+
+* `verify_output()` no longer always fails if output contains a carriage 
+  return character ("\r") (#1048). It uses the `pdf()` device instead of 
+  `png()` so it works on systems without X11 (#1011). And it uses 
+  `waldo::compare()` to give more informative failures.
+
 # testthat 2.3.2
 
 * Fix R CMD check issues
@@ -285,7 +503,7 @@ This release mostly focusses on an overhaul of how testthat works with condition
 * "Can't mock functions in base packages": You can no longer use `with_mock()` 
   to mock functions in base packages, because this no longer works in 
   R-devel due to changes with the byte code compiler. I recommend using
-  [mockery](https://github.com/n-s-f/mockery) or 
+  [mockery](https://github.com/r-lib/mockery) or 
   [mockr](https://github.com/krlmlr/mockr) instead.
 
 * The order of arguments to `expect_equivalent()` and `expect_error()` has
@@ -715,7 +933,7 @@ The reporters system class has been considerably refactored to make existing rep
 * `expect_identical()` and `is_identical_to()` now use `compare()` for more
   detailed output of differences (#319, @krlmlr).
 
-* Added [Catch](https://github.com/philsquared/Catch) v1.2.1 for unit testing of C++ code.
+* Added [Catch](https://github.com/catchorg/Catch2) v1.2.1 for unit testing of C++ code.
   See `?use_catch()` for more details. (@kevinushey)
 
 # testthat 0.11.0

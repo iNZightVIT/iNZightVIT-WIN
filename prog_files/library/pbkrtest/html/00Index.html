@@ -1,19 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>R: Parametric Bootstrap and Kenward Roger Based Methods for Mixed
-Model Comparison</title>
+<head><title>R: Parametric Bootstrap, Kenward-Roger and Satterthwaite Based
+Methods for Test in Mixed Models</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
-<h1> Parametric Bootstrap and Kenward Roger Based Methods for Mixed
-Model Comparison
+<h1> Parametric Bootstrap, Kenward-Roger and Satterthwaite Based
+Methods for Test in Mixed Models
 <img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
 </h1>
 <hr/>
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;pbkrtest&rsquo; version 0.4-8.6</h2>
+</div><h2>Documentation for package &lsquo;pbkrtest&rsquo; version 0.5-0.1</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -92,15 +92,13 @@ Model Comparison
 <td>Adjusted denomintor degress freedom for linear estimate for linear mixed model.</td></tr>
 <tr><td style="width: 25%;"><a href="kr-vcov.html">LMM_Sigma_G</a></td>
 <td>Ajusted covariance matrix for linear mixed models according to Kenward and Roger</td></tr>
+<tr><td style="width: 25%;"><a href="model-coerce.html">make_modelmat</a></td>
+<td>Conversion between a model object and a restriction matrix</td></tr>
+<tr><td style="width: 25%;"><a href="model-coerce.html">make_remat</a></td>
+<td>Conversion between a model object and a restriction matrix</td></tr>
 <tr><td style="width: 25%;"><a href="model-coerce.html">model-coerce</a></td>
 <td>Conversion between a model object and a restriction matrix</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">model2restrictionMatrix</a></td>
-<td>Conversion between a model object and a restriction matrix</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">model2restrictionMatrix.lm</a></td>
-<td>Conversion between a model object and a restriction matrix</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">model2restrictionMatrix.mer</a></td>
-<td>Conversion between a model object and a restriction matrix</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">model2restrictionMatrix.merMod</a></td>
+<tr><td style="width: 25%;"><a href="model-coerce.html">model2remat</a></td>
 <td>Conversion between a model object and a restriction matrix</td></tr>
 <tr><td style="width: 25%;"><a href="pb-modcomp.html">pb-modcomp</a></td>
 <td>Model comparison using parametric bootstrap methods.</td></tr>
@@ -130,19 +128,21 @@ Model Comparison
 <td>Internal functions for the pbkrtest package</td></tr>
 <tr><td style="width: 25%;"><a href="internal.html">print.summaryPB</a></td>
 <td>Internal functions for the pbkrtest package</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">restrictionMatrix2model</a></td>
+<tr><td style="width: 25%;"><a href="model-coerce.html">remat2model</a></td>
 <td>Conversion between a model object and a restriction matrix</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">restrictionMatrix2model.lm</a></td>
-<td>Conversion between a model object and a restriction matrix</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">restrictionMatrix2model.mer</a></td>
-<td>Conversion between a model object and a restriction matrix</td></tr>
-<tr><td style="width: 25%;"><a href="model-coerce.html">restrictionMatrix2model.merMod</a></td>
-<td>Conversion between a model object and a restriction matrix</td></tr>
+<tr><td style="width: 25%;"><a href="sat-modcomp.html">sat-modcomp</a></td>
+<td>F-test and degrees of freedom based on Satterthwaite approximation</td></tr>
+<tr><td style="width: 25%;"><a href="sat-modcomp.html">SATmodcomp</a></td>
+<td>F-test and degrees of freedom based on Satterthwaite approximation</td></tr>
+<tr><td style="width: 25%;"><a href="sat-modcomp.html">SATmodcomp.lmerMod</a></td>
+<td>F-test and degrees of freedom based on Satterthwaite approximation</td></tr>
 <tr><td style="width: 25%;"><a href="pb-modcomp.html">seqPBmodcomp</a></td>
 <td>Model comparison using parametric bootstrap methods.</td></tr>
 <tr><td style="width: 25%;"><a href="internal.html">summary.KRmodcomp</a></td>
 <td>Internal functions for the pbkrtest package</td></tr>
 <tr><td style="width: 25%;"><a href="internal.html">summary.PBmodcomp</a></td>
+<td>Internal functions for the pbkrtest package</td></tr>
+<tr><td style="width: 25%;"><a href="internal.html">tidy</a></td>
 <td>Internal functions for the pbkrtest package</td></tr>
 <tr><td style="width: 25%;"><a href="kr-vcov.html">vcovAdj</a></td>
 <td>Ajusted covariance matrix for linear mixed models according to Kenward and Roger</td></tr>

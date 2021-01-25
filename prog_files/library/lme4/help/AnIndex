@@ -93,6 +93,7 @@ isSingular	isSingular
 lFormula	modular
 llikAIC	utilities
 lme4	lme4-package
+lme4_testlevel	lme4_testlevel
 lmer	lmer
 lmerControl	lmerControl
 lmerMod-class	merMod-class
@@ -175,7 +176,7 @@ show.merMod	merMod-class
 show.summary.merMod	merMod-class
 sigma	sigma
 sigma.merMod	sigma
-simulate.formula	simulate.merMod
+simulate.formula	simulate.formula
 simulate.merMod	simulate.merMod
 sleepstudy	sleepstudy
 splom.thpr	plots.thpr

@@ -3,6 +3,7 @@ add_suffix              Add suffix to string
 aggregateData           Aggregate data by categorical variables
 aggregatedt             Aggregate datetimes
 appendrows              Append row to the dataset
+as_survey_spec          Parse survey to survey spec
 code                    Get Data's Code
 collapseLevels          Collapse data by values of a categorical
                         variable
@@ -56,6 +57,7 @@ smart_read              iNZight Smart Read
 sortVars                Sort data by variables
 stackVars               Stack variables
 standardizeVars         Standardize the data of a numeric variable
+survey_IQR              Interquartile range function for surveys
 tidy_all_code           iNZight Tidy Code
 transformVar            Transform data of a numeric variable
 unite                   Unite columns in a dataset

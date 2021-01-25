@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: 'dplyr'-Like Syntax for Summary Statistics of Survey Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> 'dplyr'-Like Syntax for Summary Statistics of Survey Data
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;srvyr&rsquo; version 1.0.0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<p style="text-align: center;">
+<a href="#A">A</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#F">F</a>
+<a href="#G">G</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#P">P</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#T">T</a>
+<a href="#U">U</a>
+<a href="#V">V</a>
+</p>
+
+
+<h2><a name="A">-- A --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="summarise_all.html">all_vars</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">any_vars</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey.html">as_survey</a></td>
+<td>Create a tbl_svy from a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey.html">as_survey.data.frame</a></td>
+<td>Create a tbl_svy from a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey.html">as_survey.survey.design2</a></td>
+<td>Create a tbl_svy from a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey.html">as_survey.svyrep.design</a></td>
+<td>Create a tbl_svy from a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey.html">as_survey.tbl_lazy</a></td>
+<td>Create a tbl_svy from a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey.html">as_survey.tbl_svy</a></td>
+<td>Create a tbl_svy from a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey.html">as_survey.twophase2</a></td>
+<td>Create a tbl_svy from a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">as_survey_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_design.html">as_survey_design</a></td>
+<td>Create a tbl_svy survey object using sampling design</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_design.html">as_survey_design.data.frame</a></td>
+<td>Create a tbl_svy survey object using sampling design</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_design.html">as_survey_design.survey.design2</a></td>
+<td>Create a tbl_svy survey object using sampling design</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_design.html">as_survey_design.tbl_lazy</a></td>
+<td>Create a tbl_svy survey object using sampling design</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">as_survey_design_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_rep.html">as_survey_rep</a></td>
+<td>Create a tbl_svy survey object using replicate weights</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_rep.html">as_survey_rep.data.frame</a></td>
+<td>Create a tbl_svy survey object using replicate weights</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_rep.html">as_survey_rep.survey.design2</a></td>
+<td>Create a tbl_svy survey object using replicate weights</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_rep.html">as_survey_rep.svyrep.design</a></td>
+<td>Create a tbl_svy survey object using replicate weights</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_rep.html">as_survey_rep.tbl_lazy</a></td>
+<td>Create a tbl_svy survey object using replicate weights</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_rep.html">as_survey_rep.tbl_svy</a></td>
+<td>Create a tbl_svy survey object using replicate weights</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">as_survey_rep_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_twophase.html">as_survey_twophase</a></td>
+<td>Create a tbl_svy survey object using two phase design</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_twophase.html">as_survey_twophase.data.frame</a></td>
+<td>Create a tbl_svy survey object using two phase design</td></tr>
+<tr><td style="width: 25%;"><a href="as_survey_twophase.html">as_survey_twophase.twophase2</a></td>
+<td>Create a tbl_svy survey object using two phase design</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">as_survey_twophase_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="as_tibble.html">as_tibble</a></td>
+<td>Coerce survey variables to a data frame (tibble)</td></tr>
+</table>
+
+<h2><a name="C">-- C --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="cascade.html">cascade</a></td>
+<td>Summarise multiple values into cascading groups</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">cascade_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="collect.html">collect</a></td>
+<td>Force computation of a database query</td></tr>
+<tr><td style="width: 25%;"><a href="collect.html">compute</a></td>
+<td>Force computation of a database query</td></tr>
+<tr><td style="width: 25%;"><a href="cur_svy.html">current_svy</a></td>
+<td>Get the survey data for the current context</td></tr>
+<tr><td style="width: 25%;"><a href="cur_svy.html">cur_svy</a></td>
+<td>Get the survey data for the current context</td></tr>
+<tr><td style="width: 25%;"><a href="cur_svy.html">cur_svy_full</a></td>
+<td>Get the survey data for the current context</td></tr>
+</table>
+
+<h2><a name="D">-- D --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="dplyr_single.html">dplyr_single</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_single.html">drop_na</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+</table>
+
+<h2><a name="F">-- F --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="dplyr_single.html">filter</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">filter_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">filter_all</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">filter_at</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">filter_if</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">funs</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">funs_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+</table>
+
+<h2><a name="G">-- G --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="get_var_est.html">get_var_est</a></td>
+<td>Get the variance estimates for a survey estimate</td></tr>
+<tr><td style="width: 25%;"><a href="groups.html">groups</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="group_by.html">group_by</a></td>
+<td>Group a (survey) dataset by one or more variables.</td></tr>
+<tr><td style="width: 25%;"><a href="group_by.html">group_by_</a></td>
+<td>Group a (survey) dataset by one or more variables.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">group_by_all</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">group_by_at</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">group_by_if</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="groups.html">group_data</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="groups.html">group_indices</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="groups.html">group_keys</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="group_map_dfr.html">group_map.tbl_svy</a></td>
+<td>Apply a function to each group</td></tr>
+<tr><td style="width: 25%;"><a href="group_map_dfr.html">group_map_dfr</a></td>
+<td>Apply a function to each group</td></tr>
+<tr><td style="width: 25%;"><a href="groups.html">group_rows</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="groups.html">group_size</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_single.html">group_trim</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+<tr><td style="width: 25%;"><a href="groups.html">group_vars</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+</table>
+
+<h2><a name="M">-- M --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="dplyr_single.html">mutate</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">mutate_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">mutate_all</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">mutate_at</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">mutate_each</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">mutate_each_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">mutate_if</a></td>
+<td>Manipulate multiple columns.</td></tr>
+</table>
+
+<h2><a name="N">-- N --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="groups.html">n_groups</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+</table>
+
+<h2><a name="P">-- P --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="dplyr_single.html">pull</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+</table>
+
+<h2><a name="R">-- R --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="dplyr_single.html">rename</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">rename_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">rename_all</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">rename_at</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">rename_if</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_single.html">rename_with</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+</table>
+
+<h2><a name="S">-- S --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="dplyr_single.html">select</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">select_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">select_all</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">select_at</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">select_if</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="set_survey_vars.html">set_survey_vars</a></td>
+<td>Set the variables for the current survey variable</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr.html">srvyr</a></td>
+<td>srvyr: A package for 'dplyr'-Like Syntax for Summary Statistics of Survey Data.</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">srvyr-se-deprecated</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise.html">summarise</a></td>
+<td>Summarise multiple values to a single value.</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">summarise_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarise_all</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarise_at</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarise_each</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">summarise_each_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarise_if</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise.html">summarize</a></td>
+<td>Summarise multiple values to a single value.</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">summarize_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarize_all</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarize_at</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarize_each</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">summarize_each_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+<tr><td style="width: 25%;"><a href="summarise_all.html">summarize_if</a></td>
+<td>Manipulate multiple columns.</td></tr>
+<tr><td style="width: 25%;"><a href="survey_tally.html">survey_count</a></td>
+<td>Count/tally survey weighted observations by group</td></tr>
+<tr><td style="width: 25%;"><a href="survey_mean.html">survey_mean</a></td>
+<td>Calculate the mean and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="survey_quantile.html">survey_median</a></td>
+<td>Calculate the quantile and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="survey_mean.html">survey_prop</a></td>
+<td>Calculate the mean and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="survey_quantile.html">survey_quantile</a></td>
+<td>Calculate the quantile and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="survey_ratio.html">survey_ratio</a></td>
+<td>Calculate the ratio and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="survey_var.html">survey_sd</a></td>
+<td>Calculate the population variance and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="survey_tally.html">survey_tally</a></td>
+<td>Count/tally survey weighted observations by group</td></tr>
+<tr><td style="width: 25%;"><a href="survey_total.html">survey_total</a></td>
+<td>Calculate the total and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="survey_var.html">survey_var</a></td>
+<td>Calculate the population variance and its variation using survey methods</td></tr>
+<tr><td style="width: 25%;"><a href="svychisq.html">svychisq</a></td>
+<td>Chisquared tests of association for survey data.</td></tr>
+</table>
+
+<h2><a name="T">-- T --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="tbl_svy.html">tbl_svy</a></td>
+<td>tbl_svy object.</td></tr>
+<tr><td style="width: 25%;"><a href="tbl_vars.html">tbl_vars</a></td>
+<td>List variables produced by a tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_single.html">transmute</a></td>
+<td>Single table verbs from dplyr and tidyr</td></tr>
+<tr><td style="width: 25%;"><a href="srvyr-se-deprecated.html">transmute_</a></td>
+<td>Deprecated SE versions of main srvyr verbs</td></tr>
+</table>
+
+<h2><a name="U">-- U --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="groups.html">ungroup</a></td>
+<td>Get/set the grouping variables for tbl.</td></tr>
+<tr><td style="width: 25%;"><a href="unweighted.html">unweighted</a></td>
+<td>Calculate the an unweighted summary statistic from a survey</td></tr>
+</table>
+
+<h2><a name="V">-- V --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="summarise_all.html">vars</a></td>
+<td>Manipulate multiple columns.</td></tr>
+</table>
+</body></html>

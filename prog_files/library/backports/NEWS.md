@@ -1,3 +1,23 @@
+# backports 1.2.0
+
+* Switched to semantic versioning.
+* Added backport for `asplit()` for R versions prior to 3.6.0 (#47).
+* Added backport for `removeSource()` which also supports language objects for R versions prior to 3.6.0 (#50).
+* Added backport for `isNamespaceLoaded` for R versions prior to 3.2.0 (#49).
+
+
+# backports 1.1.10
+* Added `suppressMessages()` and `suppressWarnings()` with support for argument `classes` for R versions prior to 4.0.0
+
+# backports 1.1.9
+* Added backports for `str2lang()` and `str2expression()` (#42)
+  Thanks to @dmurdoch.
+* `import()` imported too many functions and has been fixed.
+
+# backports 1.1.8
+* Added backport for `tools::vignetteInfo()` for R versions prior to 3.6.0
+* Fixed import of `list2DF()` and `deparse1()`
+
 # backports 1.1.7
 * Added backport for `deparse1()` for R versions prior to 4.0.0.
 * Added backport for `list2DF()` for R versions prior to 4.0.0.

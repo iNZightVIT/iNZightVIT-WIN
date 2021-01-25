@@ -1,5 +1,5 @@
-across                  Apply a function (or a set of functions) to a
-                        set of columns
+across                  Apply a function (or functions) across multiple
+                        columns
 all_vars                Apply predicate to all variables
 arrange                 Arrange rows by column values
 arrange_all             Arrange rows by a selection of variables
@@ -9,6 +9,7 @@ between                 Do values in a numeric vector fall in specified
                         range?
 bind                    Efficiently bind multiple data frames by row
                         and column
+c_across                Combine values from multiple columns
 case_when               A general vectorised if
 coalesce                Find first non-missing element
 compute                 Force computation of a database query

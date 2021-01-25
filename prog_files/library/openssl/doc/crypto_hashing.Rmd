@@ -14,7 +14,7 @@ knitr::opts_chunk$set(comment = "")
 library(openssl)
 ```
 
-The functions `sha1`, `sha256`, `sha512`, `md4`, `md5` and `ripemd160` bind to the respective [digest functions](https://www.openssl.org/docs/manmaster/man1/dgst.html) in OpenSSL's libcrypto. Both binary and string inputs are supported and the output type will match the input type.
+The functions `sha1`, `sha256`, `sha512`, `md4`, `md5` and `ripemd160` bind to the respective [digest functions](https://www.openssl.org/docs/man1.1.1/man1/openssl-dgst.html) in OpenSSL's libcrypto. Both binary and string inputs are supported and the output type will match the input type.
 
 ```{r}
 md5("foo")
@@ -36,11 +36,14 @@ myfile <- system.file("CITATION")
 md5(file(myfile))
 ```
 
-Same for URLs. The hash of the [`R-3.1.1-win.exe`](http://cran.us.r-project.org/bin/windows/base/old/3.1.1/R-3.1.1-win.exe) below should match the one in [`md5sum.txt`](http://cran.us.r-project.org/bin/windows/base/old/3.1.1/md5sum.txt) 
+Same for URLs. The hash of the [`R-installer.exe`](https://cran.r-project.org/bin/windows/base/old/4.0.0/R-4.0.0-win.exe) below should match the one in [`md5sum.txt`](https://cran.r-project.org/bin/windows/base/old/4.0.0/md5sum.txt) 
 
 ```{r eval=FALSE}
 # Stream-hash from a network connection
-md5(url("http://cran.us.r-project.org/bin/windows/base/old/3.1.1/R-3.1.1-win.exe"))
+as.character(md5(url("https://cran.r-project.org/bin/windows/base/old/4.0.0/R-4.0.0-win.exe")))
+
+# Compare
+readLines('https://cran.r-project.org/bin/windows/base/old/4.0.0/md5sum.txt')
 ```
 
 ## Compare to digest

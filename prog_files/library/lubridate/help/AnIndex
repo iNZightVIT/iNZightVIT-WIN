@@ -403,6 +403,7 @@ month<-	month
 month<-,Period-method	hidden_aliases
 months.numeric	period
 ms	hms
+my	ymd
 myd	ymd
 nanoseconds	period
 NA_Date_	date_utils
@@ -432,7 +433,9 @@ reexports	reexports
 rep,Duration-method	hidden_aliases
 rep,Interval-method	hidden_aliases
 rep,Period-method	hidden_aliases
-rollback	rollback
+rollback	rollbackward
+rollbackward	rollbackward
+rollforward	rollbackward
 round_date	round_date
 second	second
 second,Period-method	hidden_aliases
@@ -477,6 +480,7 @@ year,Period-method	hidden_aliases
 year<-	year
 year<-,Period-method	hidden_aliases
 years	period
+ym	ymd
 ymd	ymd
 ymd_h	ymd_hms
 ymd_hm	ymd_hms
